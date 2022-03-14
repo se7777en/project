@@ -16,8 +16,8 @@ if (num == 20) {
 } else if (num == 150) {
     console.log('V tochku!!');
 }
-
-(num < 150) ? console.log('Error'): console.log('asd');*/
+*/
+(num < 150) ? console.log('Error'): console.log('asd');
 
 switch (num) {
     case 50:
