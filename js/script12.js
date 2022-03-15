@@ -14,7 +14,7 @@ console.log(func(5, 7, 9));
 console.log(func(5, 7, 20));
 console.log(func(5, 40, 20));
 
-///////////////  strelochnie funkcii
+///////////////////  strelochnie funkcii
 
 const cal1 = () => console.log("my func");
 
