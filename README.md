@@ -1,0 +1,2 @@
+# project
+УЧИМ JAVASCRIPT!!!
