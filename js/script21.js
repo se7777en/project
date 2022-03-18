@@ -58,7 +58,7 @@ console.log(k2);
 console.log('////////////////');
 let arr8 = [1,4,6,5,67,8,9,5,4,3,8,33];
 let k2 =  arr8.sort(function(a,b){
-    return a-b;
+    return a - b;
 });
 console.log(typeof(k2));
 console.log(k2);
@@ -68,5 +68,28 @@ let arr9 = [1,4,6,5,67,8,9,5,4,3,8,33];
 arr9.reverse(); //menyaet poryadok elementov na obratni
 console.log(typeof(arr9));
 console.log(arr9);
+
+
+console.log('////////////////');
+let arr10 = [1,4,6,5,67,8,9,5,4,3,8,33];
+for(let value of arr10){ // u etogo tipa perebora est break; i continue;
+console.log(value);
+}
+
+console.log('////////////////');
+let arr13 = [1,4,6,5,67,8,9,5,4,3,8,33];
+
+arr13.forEach(function(item, i, arr){ // u etogo tipa perebora netu break; i continue;
+console.log(`${i} = ${item} > ${arr}`);
+});
+
+
+
+console.log('////////////////');
+let arr12 = [1,4,6,5,67,8,9,5,4,3,8,33];
+arr12[99] = 555;
+console.log(arr12.length);
+console.log(arr12);
+
 
 
