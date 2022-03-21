@@ -79,7 +79,7 @@ console.log(c);
 
 const num = [10,20,30];
 
-log(...num);
+log(...num);// razbivaet masiv num na sastavlyaushie i peredaet kak parametri
 
 
 const ar4 = ['a','b','c'];
