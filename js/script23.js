@@ -10,7 +10,8 @@ const john = {
     age: 36
 };
 
-//john.__proto__ = soldier; // pereadet svoistva ot soldier k john __proto__ - stari metod i uje ne ispolzuetsya (deprecated)
+//john.__proto__ = soldier; // pereadet svoistva ot soldier 
+//k john __proto__ - stari metod i uje ne ispolzuetsya (deprecated)
 //console.log(john.height);
 
 Object.setPrototypeOf(john,soldier); // dobavlyaet svoistva ot soldier k john 
