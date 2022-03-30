@@ -1,25 +1,26 @@
 "use strict";
 
-let numberOfFilms;
-let pr;
+//let numberOfFilms;
+//let pr;
 
 //start();
 
 //console.log(numberOfFilms);
 
 const personalMovieDB = {
-    count: numberOfFilms,
+    count: 0,
     movies: {},
     actors: {},
     genres: [],
     private: false,
     
     start:function () {
-        numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+        personalMovieDB.count = +prompt('Сколько фильмов вы уже посмотрели?', '');
     
-        while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
-            numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+        while (personalMovieDB.count == '' || personalMovieDB.count == null || isNaN(personalMovieDB.count)) {
+            personalMovieDB.count = +prompt('Сколько фильмов вы уже посмотрели?', '');
         }
+       
     },
 
     rememberMyFilms:function() {
@@ -57,42 +58,62 @@ const personalMovieDB = {
         }
     },
 
-    writeYourGenres: function () {
-        for (let i = 1; i <= 3; i++) {
-            pr = prompt(`Ваш любимый жанр под номером ${i}`);
-            while (pr == '' && pr == null && pr == isNaN) {
-                pr = prompt(`Ваш любимый жанр под номером ${i}`);
-            }
-            personalMovieDB.genres[i - 1] = pr;
-
-
+    toggleVisibleMyDB: function () {
+        if (personalMovieDB.private == false) {
+            personalMovieDB.private = true;
+        } else {
+            personalMovieDB.private = false;
         }
-
     },
 
-    toggleVisibleMyDB: function () {
-        if (this.private == false) {
-           this.private = true;
-        } else {
-           this.private = false;
+
+    writeYourGenres: function () {
+        for (let i = 1; i < 2; i++) {
+            let genre = prompt('Ваш любимый жанр cherez zapyatuu');
+            if (genre === '' || genre == null) {
+                console.log('Vi vveli chtoto ne pravilno!');
+                i--;
+            } else {
+                //personalMovieDB.genres[i - 1] = genre;
+                personalMovieDB.genres = genre.split(', ');
+                personalMovieDB.genres.sort();
+            }
         }
-        return this.private;
+
+        personalMovieDB.genres.forEach((item,ind) =>{
+            console.log(`lubimi janr ${item} pod nomerom ${ind + 1}`);
+        });
+
     }
     
 };
 
 
+
+
+/*
+
 personalMovieDB.start();
 personalMovieDB.rememberMyFilms();
 personalMovieDB.detectPersonalLevel();
-//personalMovieDB.showMyDB(personalMovieDB.private);
-//personalMovieDB.writeYourGenres();
+personalMovieDB.showMyDB(personalMovieDB.private);
+personalMovieDB.writeYourGenres();
 
+console.log('personalMovieDB.genres');
 console.log(personalMovieDB.genres);
 
 
 
 
-
+console.log('personalMovieDB');
 console.log(personalMovieDB);
+
+console.log('personalMovieDB.toggleVisibleMyDB()');
 console.log(personalMovieDB.toggleVisibleMyDB());
+
+console.log('personalMovieDB.genres.foreach');
+*/
+
+
+
+
