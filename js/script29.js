@@ -31,12 +31,38 @@ const box = document.getElementById('box'), // poluchaet element iz html s ident
 
      // document.querySelector('.wrapper').append(div);
      
-      //wrapper.append(div);
-      //wrapper.prepend(div);
+      wrapper.append(div);// vstavlyaet v konec raditelya element div
+      //wrapper.prepend(div);// vstavlyaet v konec raditelya element div
+/*
+      wrapper.insertBefore(div,hearts[1]);
 
-      //console.log(hearts);
-
+     //console.log(hearts);
      // hearts[0].before(div);
-     hearts[0].after(div); // dobavlyaet k ele
+     hearts[0].before(div); // dobavlyaet k masivu hearts posle nulevogo elementa blok div
+     circles[0].remove(); // udalyaet 0 element iz masiva circles 
+     hearts[0].replaceWith(circles[0]); // zamenyaet hearts[0] element iz masiva hearts na circle[0]
+     wrapper.replaceChild(circles[0],hearts[0]); // zamenyaet dochernie elementi heart[0] na circles[0]
+*/
+
+div.innerHTML = "Hellow how are you?"; // dobavlyaet tekst k div mojno ispolzovat html
+//div.textContent = "<h1>Hellow</h1>";// dobavlyaet k divu tolko tekst
+
+div.insertAdjacentHTML("afterbegin","<h2>afterbegin</h2>");// vstavlyaet html posle nachala
+div.insertAdjacentHTML("afterend","<h2>afterend</h2>"); // vstavlyaet html posle elementa 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
