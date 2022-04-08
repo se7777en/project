@@ -48,7 +48,7 @@ div.innerHTML = "Hellow how are you?"; // dobavlyaet tekst k div mojno ispolzova
 //div.textContent = "<h1>Hellow</h1>";// dobavlyaet k divu tolko tekst
 
 div.insertAdjacentHTML("afterbegin","<h2>afterbegin</h2>");// vstavlyaet html posle nachala
-div.insertAdjacentHTML("afterend","<h2>afterend</h2>"); // vstavlyaet html posle elementa 
+div.insertAdjacentHTML("afterend","<h2>afterend</h2>"); // vstavlyaet html posle elementa
 
 
 
