@@ -43,6 +43,8 @@ const adv = document.querySelectorAll('.promo__adv img'),
 
       list.innerHTML = "";
 
+      movieDB.movies.sort();
+
      movieDB.movies.forEach((item, i)=> {
         list.innerHTML += `        <li class="promo__interactive-item">${i + 1} ${item}
         <div class="delete"></div>
