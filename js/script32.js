@@ -9,7 +9,7 @@
 
 
 
-console.log(document.querySelector('.heart1').parentNode.parentNode); // poluchaet nodu raditelya u klassa heart1 dva raza
+//console.log(document.querySelector('.heart1').parentNode.parentNode); // poluchaet nodu raditelya u klassa heart1 dva raza
 //console.log(document.querySelector('.heart1').parentNode.parentElement); // poluchaet element raditelya u klassa heart1 odin raz
 
 //console.log(document.querySelector('[data-current = "3"]').previousSibling);
@@ -18,4 +18,12 @@ console.log(document.querySelector('.heart1').parentNode.parentNode); // polucha
 //nextSibling - poluchaet sledushuu nodu
 //previousSibling - poluchaet predidushuu nodu
 // [data-current = "3"] - osobi vid identificatora
+
+
+for(let node of document.body.childNodes){
+    if(node.nodeName == '#text'){
+        continue;
+    }
+    console.log(node);
+}
 
