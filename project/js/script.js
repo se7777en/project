@@ -28,7 +28,35 @@ const movieDB = {
 const adv = document.querySelectorAll('.promo__adv img'),
       poster = document.querySelector('.promo__bg'),
       genre = poster.querySelector('.promo__genre'),
-      list = document.querySelector('.promo__interactive-list');
+      list = document.querySelector('.promo__interactive-list'),
+      inp = document.querySelector('#butt');
+
+      
+
+      inp.addEventListener('click',(e)=>{
+            e.preventDefault();
+
+            let val = document.getElementById('txt').value;
+            //console.dir(movieDB.movies);
+           console.log(length(val));
+            movieDB.movies.push(val);
+           // console.dir(movieDB.movies);
+           
+
+           list.innerHTML = "";
+
+           movieDB.movies.sort();
+     
+          movieDB.movies.forEach((item, i)=> {
+             list.innerHTML += `        <li class="promo__interactive-item">${i + 1} ${item}
+             <div class="delete"></div>
+         </li>`;
+          });
+            
+            
+      });
+
+      
       
       //console.log(genre);
         //console.log(list.innerHTML);
