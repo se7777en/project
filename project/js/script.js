@@ -14,94 +14,92 @@
 
 'use strict';
 
-const movieDB = {
-    movies: [
-        "Логан",
-        "Лига справедливости",
-        "Ла-ла лэнд",
-        "Одержимость",
-        "Скотт Пилигрим против..."
-    ]
-};
+document.addEventListener('DOMContentLoaded', () => {
 
+    const movieDB = {
+        movies: [
+            "Логан",
+            "Лига справедливости",
+            "Ла-ла лэнд",
+            "Одержимость",
+            "Скотт Пилигрим против..."
+        ]
+    };
 
-const adv = document.querySelectorAll('.promo__adv img'),
-      poster = document.querySelector('.promo__bg'),
-      genre = poster.querySelector('.promo__genre'),
-      list = document.querySelector('.promo__interactive-list'),
-      inp = document.querySelector('#butt');
+    const adv = document.querySelectorAll('.promo__adv img'),
+        poster = document.querySelector('.promo__bg'),
+        genre = poster.querySelector('.promo__genre'),
+        movieList = document.querySelector('.promo__interactive-list'),
+        addForm = document.querySelector('form.add'),
+        addInput = addForm.querySelector('.adding__input'),
+        checkbox = addForm.querySelector('[type="checkbox"]');
 
-      
+    addForm.addEventListener('submit', (event) => {
+        event.preventDefault();
 
-      inp.addEventListener('click',(e)=>{
-            e.preventDefault();
+        let newFilm = addInput.value;
+        const favorite = checkbox.checked;
 
-            let val = document.getElementById('txt').value;
-            //console.dir(movieDB.movies);
-           console.log(length(val));
-            movieDB.movies.push(val);
-           // console.dir(movieDB.movies);
-           
+        if (newFilm) {
 
-           list.innerHTML = "";
+            if (newFilm.length > 21) {
+                newFilm = `${newFilm.substring(0, 22)}...`;
+            }
 
-           movieDB.movies.sort();
-     
-          movieDB.movies.forEach((item, i)=> {
-             list.innerHTML += `        <li class="promo__interactive-item">${i + 1} ${item}
-             <div class="delete"></div>
-         </li>`;
-          });
-            
-            
-      });
+            if (favorite) {
+                console.log("Добавляем любимый фильм");
+            }
 
-      
-      
-      //console.log(genre);
-        //console.log(list.innerHTML);
-        
-        adv.forEach(function (item) {
+            movieDB.movies.push(newFilm);
+            sortArr(movieDB.movies);
+    
+            createMovieList(movieDB.movies, movieList);
+        }
+
+        event.target.reset();
+
+    });
+
+    const deleteAdv = (arr) => {
+        arr.forEach(item => {
             item.remove();
         });
-      
-      genre.textContent = 'драма';
-      poster.style.backgroundImage = "url('img/bg.jpg')"; 
-      
+    };
 
-      list.innerHTML = "";
+    const makeChanges = () => {
+        genre.textContent = 'драма';
 
-      movieDB.movies.sort();
+        poster.style.backgroundImage = 'url("img/bg.jpg")';
+    };
 
-     movieDB.movies.forEach((item, i)=> {
-        list.innerHTML += `        <li class="promo__interactive-item">${i + 1} ${item}
-        <div class="delete"></div>
-    </li>`;
-     });
+    const sortArr = (arr) => {
+        arr.sort();
+    };
 
-      /*
-        <li class="promo__interactive-item">ЛОГАН
-                            <div class="delete"></div>
-                        </li>
-      */
+    function createMovieList(films, parent) {
+        parent.innerHTML = "";
+        sortArr(films);
+    
+        films.forEach((film, i) => {
+            parent.innerHTML += `
+                <li class="promo__interactive-item">${i + 1} ${film}
+                    <div class="delete"></div>
+                </li>
+            `;
+        });
 
-//promAdv.remove();
-//promobg.textContent =  genre.toUpperCase();
-//console.log(list);
+        document.querySelectorAll('.delete').forEach((btn, i) => {
+            btn.addEventListener('click', () => {
+                btn.parentElement.remove();
+                movieDB.movies.splice(i, 1);
 
-/*
-list.forEach((item,ind) =>{
+                createMovieList(films, parent);
+            });
+        });
+    }
 
-});*/
+    deleteAdv(adv);
+    makeChanges();
+    createMovieList(movieDB.movies, movieList);
 
-//console.log(list);
-/*
-for(let key in list){
-console.log(`kluch = ${key} ${list[key]}`);
-}*/
-
-//1console.log(movieDB.movies[0]);
-
-//&__bg
-
-
+});
