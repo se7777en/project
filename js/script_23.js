@@ -128,3 +128,75 @@ for (let i = 0; i <= lines; i++) {
 
 console.log(result);
 //
+
+
+function sayHello(name) {
+return `Привет , ${name}!`;
+}
+
+console.log(typeof(sayHello('Melik')));
+
+
+function returnNeighboringNumbers(num) {
+const arr = [];
+arr.push(num - 1);
+arr.push(num);
+arr.push(num + 1);
+return arr;
+}
+
+console.log(returnNeighboringNumbers(5));
+
+
+function getMathResult(a,b){
+if(typeof(b) !== 'number' || b <= 0){
+    return a;
+}
+let sum = 0;
+let val = '';
+let dif = '';
+
+for(let i = 0; i < b; i++){
+//sum += `---${sum}`;
+sum+=a;
+if(i > 0){dif = '---';}
+ val += dif + sum;
+}
+//console.log(val);
+return val;
+
+}
+
+console.log(getMathResult(3,4));
+
+
+
+function getMathResult(num, times) {
+    if (typeof(times) !== 'number' || times <= 0) {
+        return num;
+    }
+
+    let str = '';
+
+    for (let i = 1; i <= times; i++) {
+        if (i === times) {
+            str += `${num * i}`;
+            // Тут без черточек в конце
+        } else {
+            str += `${num * i}---`;
+            // Это тоже самое, что и
+            // str = str + num * i + "---"
+        }
+    }
+
+    return str;
+}
+
+console.log(getMathResult(5,3));
+
+
+
+
+
+
+
