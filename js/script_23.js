@@ -196,6 +196,115 @@ console.log(getMathResult(5,3));
 
 
 
+const fib = 0;
+//0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55
+let k = 0;
+
+let arr = [0,1];
+
+for (let i = 0; i < fib - 1; i++) {
+k = arr[i] + arr[i+1];
+
+arr.push(k);
+
+}
+console.log(arr.join(' '));
+
+
+
+
+function fibo(num){
+//0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55
+if (typeof(num) !== 'number' || num <= 0 || !Number.isInteger(num)) {
+    return "";
+}
+
+let k = 0;
+let arr = [0,1];
+for (let i = 0; i < num - 2; i++) {
+k = arr[i] + arr[i+1];
+arr.push(k);
+}
+return arr.join(' ');
+}
+
+
+
+
+function fib1(num) {
+    if (typeof(num) !== 'number' || num <= 0 || !Number.isInteger(num)) {
+        return "";
+    }
+
+    let result = '';
+    let first = 0;
+    let second = 1;
+
+    for (let i = 0; i < num; i++) {
+        if (i + 1 === num) {
+            result += `${first}`;
+            // Без пробела в конце
+        } else {
+            result += `${first} `;
+        }
+
+        let third = first + second;
+        first = second;
+        second = third;
+    }
+
+    return result;
+}
+
+console.log(fib1(0));
+console.log(fibo(0));
+
+
+
+const personalPlanPeter = {
+    name: "Peter",
+    age: "29",
+    skills: {
+        languages: ['ru', 'eng'],
+        programmingLangs: {
+            js: '20%',
+            php: '10%'
+        },
+        exp: '1 month'
+    }
+};
+
+
+//console.log(personalPlanPeter.skills.exp);
+function showExperience(plan){
+
+    return typeof(plan.skills.exp);
+}
+
+function showProgrammingLangs(plan) {
+
+    let arr1 = Object.keys(plan.skills.programmingLangs);
+    let arr2 = Object.values(plan.skills.programmingLangs);
+    let str = '';
+    if (arr1.length < 1 || arr2.length < 1) {
+        return "";
+    }
+    for (let i = 0; i < arr1.length; i++) {
+        str += `Язык ${arr1[i]} изучен на ${arr2[i]}\n`;
+    }
+    return str;
+}
+
+console.log(showProgrammingLangs(personalPlanPeter));
+
+console.log(showExperience(personalPlanPeter));
+
+
+
+
+
+
+
 
 
 
