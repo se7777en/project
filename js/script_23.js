@@ -196,6 +196,275 @@ console.log(getMathResult(5,3));
 
 
 
+function calculateVolumeAndArea(a) {
+let calc1 = 0;
+let calc2 = 0;
+//!Number.isInteger(a)
+    if(typeof(a)!=='number' || a <= 0 || a % 2 !== 0){
+    return 'При вычислении произошла ошибка';
+}
+calc1 = a * a * a;
+calc2 = 6 * (a * a);
+
+return `Объем куба: ${calc1}, площадь всей поверхности: ${calc2}`;
+
+}
+
+console.log(calculateVolumeAndArea(150));
+
+
+console.log(typeof(15));
+
+
+
+function getCoupeNumber(seatNumber) {
+    if (typeof(seatNumber) !== 'number' || seatNumber < 0 || !Number.isInteger(seatNumber)) {
+        return "Ошибка. Проверьте правильность введенного номера места";
+    }
+
+    if (seatNumber === 0 || seatNumber > 36) {
+        return "Таких мест в вагоне не существует";
+    }
+
+    for (let i = 4; i <= 36; i = i + 4) {
+        if (seatNumber <= i) {
+            return Math.ceil(i / 4);
+        }
+    }
+    // тут очень много вариантов решения, но выбрал один из элегантных :)
+}
+
+console.log(getCoupeNumber(3));
+
+
+
+function func(text,callback){
+   
+    console.log(`Privet: ${text}`);
+ callback();
+}
+
+func('JavaScript',()=>{
+console.log('done!');
+});
+
+
+function LinearSearch(t,A)      // t - искомый элемент,
+{                               // A - массив, в котором ищем.
+    let n = A.length,
+        i = 0;   
+   
+    A[n] = t;
+     console.log(A);  
+     
+    while (A[i] !== t){ i++;
+        
+                              
+    if (i < n) {return i;}          // На выходе индекс искомого элемента.
+    else {return -1;}    
+    }           // Если искомого элемента нет в массиве, то -1.
+}
+
+const arr = ['30','2','3','f',4];
+console.log(LinearSearch(3,arr));
+
+
+
+
+
+
+
+function searchEl(elem, arr) {
+    for (let i = 0; i <= arr.length; i++) {
+        if (arr[i] == elem) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+
+
+const arr5 = ['1','2','3','f',4];
+
+console.log(searchEl('f',arr5));
+
+
+
+
+function bm(x , y){
+    if(y === 0){
+        return 1;
+    }else{
+        return x * bm(x,y-1);
+    }
+}
+
+console.log(bm(2,2));
+
+
+
+function getTimeFromMinutes(min){
+
+    if(Number.isInteger(min) && typeof(min) === 'number' && min >= 0){
+
+
+        let hour = 0;
+        let min_ = 0;
+        let words = 'часов';
+        
+        if (min > 59) {
+            hour = Math.trunc(min / 60);
+            min_ = min - hour * 60;
+        } else {
+            hour = 0;
+            min_ = min;
+        }
+        
+        
+        if (hour < 59 || hour > 4) {
+            words = 'часов';
+        }
+        if (hour === 1) {
+            words = 'час';
+        }
+        if (hour > 1 && hour < 5) {
+            words = 'часа';
+        }
+       /* if (hour > 4) {
+            words = 'часов';
+        }*/
+        
+        return `Это ${hour} ${words} и ${min_} минут`;
+        }else{
+            return 'Ошибка, проверте данные';
+        }
+
+}
+console.log(getTimeFromMinutes(5.5));
+console.log(getTimeFromMinutes(50));
+console.log(getTimeFromMinutes(0));
+console.log(getTimeFromMinutes(-150));
+
+
+function FindMaxNumber(a, b, c, d) {
+    if (typeof (a) === 'number' && typeof (b) === 'number' && typeof (c) === 'number' && typeof (d) === 'number') {
+const arr = [a,b,c,d];
+
+return Math.max.apply(null,arr);
+
+    } else {
+        return 0;
+    }
+
+}
+
+console.log(FindMaxNumber(10,400,20,40));
+
+
+
+const personalPlanPeter = {
+    name: "Peter",
+    age: "29",
+    skills: {
+        languages: ['ru', 'eng'],
+        programmingLangs: {
+            js: '20%',
+            php: '10%'
+        },
+        exp: '1 month'
+    },
+    showAgeAndLangs:(obj)=>{    
+        const {languages} = obj.skills;
+        const {age} = obj;
+        let str = '';
+        for(let i = 0; i < languages.length;i++){
+            str+=`${languages[i]} `;
+        }
+        return `Мне ${age} и я владею языками: ${str.toUpperCase()}`;
+    }
+
+};
+
+
+console.log(personalPlanPeter.showAgeAndLangs(personalPlanPeter));
+
+
+
+function showExperience(plan) {
+    const{exp} = plan.skills;
+    console.log(exp);
+    }
+
+    showExperience(personalPlanPeter);
+
+
+function showProgrammingLangs(plan) {
+
+const {programmingLangs} = plan.skills; 
+/*
+let str = '';
+for(let val in programmingLangs){
+    str+=`Язык ${val} изучен на ${programmingLangs[val]} \n`;
+}
+return str;*/
+
+
+const val1 = Object.keys(programmingLangs);
+const val2 = Object.values(programmingLangs);
+
+if(val1.length < 1 && val2.length < 1){
+    return "";
+}
+let str = '';
+for(let i = 0; i < val1.length;i++){
+str+=`Язык ${val1[i]} изучен на ${val2[i]} \n`;
+}
+return str;
+}
+
+
+
+/*
+const {programmingLangs} = plan.skills; 
+let str = '';
+for(let val in programmingLangs){
+    str+=`Язык ${val} изучен на ${programmingLangs[val]} \n`;
+}
+return str;
+*/
+
+/*
+  let str = '';
+    const {programmingLangs} = plan.skills;
+    for (let key in programmingLangs) {
+        str += `Язык ${key} изучен на ${programmingLangs[key]}\n`
+    }
+
+    return str;
+*/
+
+
+
+
+
+
+
+console.log(showProgrammingLangs(personalPlanPeter));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
