@@ -1,5 +1,5 @@
 'use strict';
-
+//mint
 /*
 let k  = '';
 let lengt = 7;
