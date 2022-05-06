@@ -50,7 +50,7 @@ function getTotalProgressByIteration(data) {
         }
     }
 
-    return [sum, total];
+    return sum / total;
 
 
 }
@@ -77,6 +77,25 @@ function getTotalProgressByRecursion(data) {
 }
 
 console.log(getTotalProgressByIteration(student));
-console.log(getTotalProgressByRecursion(student));
+let rec = getTotalProgressByRecursion(student);
+console.log(rec[0] / rec[1]);
 
 //console.log(student.html.pro[0].name);
+
+
+function fact(num){
+    if (typeof (num) !== 'number' || !Number.isInteger(num)) {
+        return 'err';
+    }
+
+    if (num >= 1) {
+        return num * fact(num - 1);
+    } else {
+        return 1;
+    }
+
+
+    return num ? num * fact(num - 1) : 1;
+}
+
+console.log(fact(4));
