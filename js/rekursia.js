@@ -21,15 +21,16 @@ let student = {
         pro: [{
             name: 'James',
             progress: 50
-        }]/*,
-        semi:{
-             students:[
-                 {
-                     name: 'Test',
-                     progress: 100
-                 }
-             ]
-        }*/
+        }]
+        /*,
+                semi:{
+                     students:[
+                         {
+                             name: 'Test',
+                             progress: 100
+                         }
+                     ]
+                }*/
     }
 
 };
@@ -70,21 +71,24 @@ function getTotalProgressByRecursion(data) {
         for (let i = 0; i < data.length; i++) {
             total += data[i].progress;
         }
-
+        console.log('a');
         return [total, data.length];
+
     } else {
         let total = [0, 0];
 
         for (let arr of Object.values(data)) {
+            console.log('b');
             const result = getTotalProgressByRecursion(arr);
             total[0] += result[0];
             total[1] += result[1];
         }
+        console.log('c');
         return total;
     }
 }
 
-console.log(getTotalProgressByIteration(student));
+//console.log(getTotalProgressByIteration(student));
 let rec = getTotalProgressByRecursion(student);
 console.log(rec[0] / rec[1]);
 
