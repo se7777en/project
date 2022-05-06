@@ -21,7 +21,15 @@ let student = {
         pro: [{
             name: 'James',
             progress: 50
-        }]
+        }]/*,
+        semi:{
+             students:[
+                 {
+                     name: 'Test',
+                     progress: 100
+                 }
+             ]
+        }*/
     }
 
 };
