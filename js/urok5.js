@@ -15,19 +15,3 @@ function factorial(num) {
 console.log(factorial(5));
 
 
-function fact(num){
-    if (typeof (num) !== 'number' || !Number.isInteger(num)) {
-        return 'err';
-    }
-
-    if (num >= 1) {
-        return num * fact(num - 1);
-    } else {
-        return 1;
-    }
-
-
-    return num ? num * fact(num - 1) : 1;
-}
-
-console.log(fact(4));
