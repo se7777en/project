@@ -7,7 +7,7 @@ function sum1(a, b, c){
 
 
 function sum(a, b, c){ //  Оператор нулевого слияния (Nullish, ??) ES11
-    let k = `${c ?? 4}`;
+    let k = c ?? 4;
     return a * b * k;
 }
 
@@ -24,6 +24,6 @@ same: function(){
 };
 
 
-obj.sames?.();// Оператор опциональной цепочки (?.) ES11
+obj.same?.();// Оператор опциональной цепочки (?.) ES11
 obj.same();
 console.log('hi');
