@@ -19,10 +19,13 @@ console.log(sum(2,2));
 const obj = {
 name:'James',
 same: function(){
-    console.log('hellow');
+   // console.log('hellow');
 }
 };
 
+//console.log(obj.skill?.ur); // proveryaet na sushestvovanie skill u obiekta obj esli ne sushestvuet
+//prodoljaet vipolnenie koda
+console.log(obj);
 
 //obj.same?.();// Оператор опциональной цепочки (?.) ES11 esli metod same()
 //sushestvuet vizivaet ego v protivnom sluchae prodoljaet vipolnyat sledushi kod
