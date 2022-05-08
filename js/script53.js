@@ -28,3 +28,6 @@ same: function(){
 //sushestvuet vizivaet ego v protivnom sluchae prodoljaet vipolnyat sledushi kod
 obj.same();
 console.log('hi');
+
+//const k = null;
+//console.log(k ?? 'user');
