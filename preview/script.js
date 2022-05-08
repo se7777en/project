@@ -21,7 +21,9 @@ boxesGet[0].remove();
 for (let i = 0; i < 5; i++) {
     const div = document.createElement('div'); // sozdaet novi div
     div.classList.add('box');//dobavlyaet class 'box' k divu
+    div.innerHTML = `text ${i}`; //dobavlyet tekst v sozdanni div
     document.body.append(div);//i vivodit ego v konce dody
+
 }
 
 
