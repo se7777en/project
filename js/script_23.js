@@ -521,6 +521,27 @@ console.log(showProgrammingLangs(personalPlanPeter));
 
 
 
+function amountOfPages(summary) {
+    let str = '';
+    let n = 0;
+    for (let i = 1; i <= summary; i++) {
+        str += i;
+        if (str.length === summary) {
+            n = i;
+            break;
+        }
+
+    }
+    return n;
+}
+
+console.log(amountOfPages(25));
+
+function func(string) {
+    return 'abcdefghijklmnopqrstuvwxyz'
+        .split('')
+        .every((x) => string.toLowerCase().includes(x));
+}
 
 
 
