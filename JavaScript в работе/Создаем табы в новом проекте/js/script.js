@@ -45,10 +45,8 @@ window.addEventListener('DOMContentLoaded', () => {
         }
 
     });
-
+/////////////////////////////////////////////////////////////////////
     // Timer
-
-
 
     const deadline = '2022-06-11';
 
@@ -102,9 +100,11 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     setClock('.timer', deadline);
+let end = new Date();
 
- let end = new Date();
-console.log(end - start);  
+console.log(`Vremya skripta zanyalo ${end - start} millisekund`);
+/////////////////////////////////////////////////////////////////////
+
 
 });
 
