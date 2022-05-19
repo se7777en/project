@@ -101,7 +101,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     setClock('.timer', deadline);
 
-// Modal
+// Modal   Создаем модальное окно
 ///////////////////////////////////////////////////////////////
 const modalTrigger = document.querySelectorAll('[data-modal]'),
         modal = document.querySelector('.modal'),
