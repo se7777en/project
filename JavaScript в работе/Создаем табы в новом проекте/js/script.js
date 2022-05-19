@@ -47,9 +47,6 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
     // Timer
-
-
-
     const deadline = '2022-06-11';
 
     function getTimeRemaining(endtime) {
@@ -103,8 +100,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
     setClock('.timer', deadline);
 
- let end = new Date();
-console.log(end - start);  
+
+    
+    let end = new Date();
+    console.log(`Vremya roboto skripta sostavlyaet ${end - start} millisekund`);
 
 });
-
