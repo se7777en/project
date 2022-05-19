@@ -29,6 +29,6 @@ console.log(style.display);//poluchaem ix
 // psevdo element poluchit so stranici ne poluchitsya no stili
 // poluchit mojna const style = window.getComputedStyle(box, );
 
-console.log(document.documentElement.scrollTop);// osnovnoi scrol na stranice mojno zadat samomu
+console.log(document.documentElement.scrollTop);// osnovnoi scrol na stranice mojno zadat samomu document.documentElement.scrollTop = 0;
 window.scrollBy(0, 400);// ot tekushego pozicii 400 px vniz
 window.scrollTo(0, 400);// ot vsei stranici 400px vniz
