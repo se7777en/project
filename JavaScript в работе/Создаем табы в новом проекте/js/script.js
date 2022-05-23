@@ -141,7 +141,7 @@ const modalTrigger = document.querySelectorAll('[data-modal]'),
         }
     });
 
-    const settimeModal = setInterval(openModal,5000);
+   /* const settimeModal = setInterval(openModal,5000);
 
 function showModalByScroll(){
     if (window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight - 1) {
@@ -154,6 +154,6 @@ window.addEventListener('scroll', showModalByScroll);
 
 
 let end = new Date();
-console.log(`Vremya skripta zanyalo ${end - start} millisekund`);
+console.log(`Vremya skripta zanyalo ${end - start} millisekund`);*/
 /////////////////////////////////////////////////////////////////////  
 });
