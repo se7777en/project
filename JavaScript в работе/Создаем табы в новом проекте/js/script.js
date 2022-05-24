@@ -142,17 +142,13 @@ const modalTrigger = document.querySelectorAll('[data-modal]'),
     });
 
    /* const settimeModal = setInterval(openModal,5000);
-
 function showModalByScroll(){
     if (window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight - 1) {
         openModal();
         window.removeEventListener('scroll', showModalByScroll);
     }
 }
-
 window.addEventListener('scroll', showModalByScroll);
-
-
 let end = new Date();
 console.log(`Vremya skripta zanyalo ${end - start} millisekund`);*/
 /////////////////////////////////////////////////////////////////////  
@@ -160,12 +156,13 @@ console.log(`Vremya skripta zanyalo ${end - start} millisekund`);*/
 // Используем классы для создание карточек меню
 
 class MenuCard {
-    constructor(src, alt, title, descr, price, parentSelector) {
+    constructor(src, alt, title, descr, price, parentSelector, ...classes) {
         this.src = src;
         this.alt = alt;
         this.title = title;
         this.descr = descr;
         this.price = price;
+        this.classes = classes;
         this.parent = document.querySelector(parentSelector);
         this.transfer = 27;
         this.changeToUAH(); 
@@ -177,8 +174,16 @@ class MenuCard {
 
     render() {
         const element = document.createElement('div');
+        //element.classList.add('menu__item');
+
+        if (this.classes.length === 0) {
+          this.classes = 'menu__item';
+          element.classList.add(this.classes);
+        } else {
+          this.classes.forEach(clasname => element.classList.add(clasname));
+        }
+
         element.innerHTML = `
-            <div class="menu__item">
                 <img src=${this.src} alt=${this.alt}>
                 <h3 class="menu__item-subtitle">${this.title}</h3>
                 <div class="menu__item-descr">${this.descr}</div>
@@ -187,8 +192,7 @@ class MenuCard {
                     <div class="menu__item-cost">Цена:</div>
                     <div class="menu__item-total"><span>${this.price}</span> грн/день</div>
                 </div>
-            </div>
-        `;
+            `;
         this.parent.append(element);
     }
 }
@@ -199,7 +203,13 @@ new MenuCard(
     'Меню "Фитнес"',
     'Меню "Фитнес" - это новый подход к приготовлению блюд: больше свежих овощей и фруктов. Продукт активных и здоровых людей. Это абсолютно новый продукт с оптимальной ценой и высоким качеством!',
     9,
-    ".menu .container"
+    ".menu .container",
+    'menu__item',
+    'bg'
+
+    // mojno dobavluyat klassi  
+
+
 ).render();
 
 new MenuCard(
@@ -208,7 +218,7 @@ new MenuCard(
     'Меню "Постное"',
     'Меню “Постное” - это тщательный подбор ингредиентов: полное отсутствие продуктов животного происхождения, молоко из миндаля, овса, кокоса или гречки, правильное количество белков за счет тофу и импортных вегетарианских стейков.',
     14,
-    ".menu .container"
+    ".menu .container",
 ).render();
 
 new MenuCard(
