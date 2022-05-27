@@ -231,4 +231,77 @@ new MenuCard(
 ).render();
 
 
+
+
+// Forms  Реализация скрипта отправки данных на сервер
+
+const forms = document.querySelectorAll('form');
+
+const message = {// konteinet soobsheni
+loading: 'Zagruzka',
+success: 'Spasibo! mi Skoro s vami svyajemsya',
+failure: 'Chtoto poshlo ne tak...'
+};
+
+forms.forEach(item => {
+postData(item);
+
+});
+
+
+function postData(form) {
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+
+        const statusMessage = document.createElement('div');
+        statusMessage.classList.add('status');
+        statusMessage.textContent = message.loading;
+        form.append(statusMessage);
+
+
+        const request = new XMLHttpRequest(); // sozdaem zapros
+        request.open('POST', 'server.php'); // nastraivaem zapros
+
+       // request.setRequestHeader('Content-type', 'miltipart/form-data');// kogda mi ispolzuem XMLHttpRequest() i FormData() togda zagolovok ne nujen on sozdaetsya avtomaticheski
+       request.setRequestHeader('Content-type', 'applicatin/json'); // otprajka dannix na server v formate JSON
+       const formData = new FormData(form); // chtobi ne sobirat kajdi value po otdelnosti i potom sozdavat obiekt dlya nego dlya etogo est FormData
+        // kogda dannie idut na server s formi togda obizatelno doljni bit u vsex inputov atribut name
+        const object = {};
+        formData.forEach(function(value, key) {// dobavlyaem iz formData dannie value, key v pustoi obiekt cherez cikl forEach
+            object[key] = value;    
+        });
+        const json = JSON.stringify(object); // preobrazuem object v json
+
+       // request.send(formData);
+       request.send(json); // 
+
+        request.addEventListener('load', () => {
+            if (request.status === 200) {
+                console.log(request.response);
+                statusMessage.textContent = message.success;
+                form.reset();
+                setTimeout(() => {
+                            statusMessage.remove();
+                },2000);
+            } else {
+                statusMessage.textContent = message.failure;
+            }
+
+        });
+
+
+    });
+}
+
+
+
+/*
+// na servere sozdaem fail s imene server.php i v nego propisivaem
+<?php
+$_POST = json_decode(file_get_contents("php://input"),true);
+echo var_dump($_POST);
+?>*/
+
+
 });
