@@ -250,7 +250,7 @@ postData(item);
 
 
 function postData(form) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', (e) => { // u kajdoi knopki(sushnosti) gde est input est submit
         e.preventDefault();
 
 
@@ -273,8 +273,8 @@ function postData(form) {
         });
         const json = JSON.stringify(object); // preobrazuem object v json
 
-       // request.send(formData);
-       request.send(json); // 
+       // request.send(formData);// bez ispolzovaniya JSON
+       request.send(json); // s ispolzovaniem JSON
 
         request.addEventListener('load', () => {
             if (request.status === 200) {
