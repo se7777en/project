@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>znakomstvo s html tegami chast #3(Forms)</title>
+    <link rel="stylesheet" href="css/css.css">
+</head>
+<body>
+    <!--  eta blochni teg  u nego dva metoda GET i POST metod GET - otobrajaetsya v adresanoi stroke -->
+    <!-- metod POST ne otobrajaetsya peredaet zapros skritno  -->
+    <!-- esli xotim otpravlyat prikreplenie faili enctype="multipart/form-data" -->
+    <form action="#" method="GET" enctype="multipart/form-data">
+
+    </form>
+
+    <!-- tegi input strochnie i vistraivautsya v odnu stroku -->
+    <div>
+        <input tabindex="1" disabled placeholder="podpis polya" type="text" name="username" value="" />
+    </div>
+    <div>
+        <input type="password" name="userpass" value="" />
+    </div>
+    <div>
+        <!-- u radio tabindex doljen bit odinakovi -->
+        <p><input tabindex="2" checked type="radio" name="beer" value="lager"/> Svetloe pivo</p>
+        <p><input tabindex="2" type="radio" name="beer" value="dark"/> Temnoe pivo</p>
+    </div>
+    <br/>
+    <div>
+        <p><input type="radio" name="beer2" value="lager"/> Svetloe pivo</p>
+        <p><input checked type="radio" name="beer2" value="dark"/> Temnoe pivo</p>
+    </div>
+    <br/>
+    <div>
+        <!-- u tipa checkbox imena doljni bit raznie  iskluchenie tolka input s type radio-->
+        <p><input type="checkbox" name="car" value="yes"/>Nalichie avto</p>
+        <p><input checked type="checkbox" name="car2" value="yes"/>Nalichie avto2</p>
+        <p><input type="checkbox" name="car3" value="yes"/>Nalichie avto3</p>
+        <p><input checked type="checkbox" name="car4" value="yes"/>Nalichie avto4</p>
+    </div>
+    <br/>
+    <div>
+        <p><input checked type="file" name="photo"/></p>
+    </div>
+    <br/>
+    <!-- razmeri polya cols="30" rows="10" -->
+    <div>
+        <textarea name="text"></textarea>
+    </div>
+    <br/>
+    <!-- eto spisok multiple mojno pro zajatoi kontrol vibrat neskolko -->
+    <select name="color">
+        <option value="red">Krasni</option>
+        <option selected value="yellow">jolti</option>
+        <option value="blue">Goluboi</option>
+    </select>
+    <br/>
+    <div>
+        <button type = "submit">Otpravit</button>
+        <button type = "reset">Ochistit</button>
+    </div>
+</body>
+</html>
