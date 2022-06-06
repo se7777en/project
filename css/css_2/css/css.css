@@ -1,0 +1,135 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+*,*::before,*:after{
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+nav,footer,header,aside{display: block;}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+input,button,textarea{font-family: inherit;}
+
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding: 0;border: 0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+/*sbrasivaem vse brauzernie stili*/
+
+.arial{
+    /*ffa - font famili shrift*/
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+.fonstsize30{
+    /*fz - font size*/
+    font-size: 30px;
+}
+
+.italic{
+    /*fsi - font style*/
+font-style: italic;
+}
+
+.font700{
+    /*fw - znachenie 400 ispolzuetsya po umolchaniu parametr jirnosti teksta  
+    */
+    font-weight: 700;
+}
+
+.colorred{
+    /*
+    color: red;
+    color: rgb(255, 0, 0);*/
+    color: #f00f00;
+}
+.textright{
+    /*
+    right - viravnivaet po pravomu krau
+    center - viravnivaet po centru
+    justify - viravnivaet na vsu shirinu i dobavlyaet probeli mejdu tekstom
+    left - eto standartnoe znachenie
+    */
+    text-align: right;
+    text-align: justify;
+
+    text-align: center;
+}
+.decoration{
+    /*
+    underline - text budet podcherknuti
+    overline - tekst budet podcherknuti sverxu
+    line-through - zacherknuti tekst
+    none - uberet luboi efekt
+    */
+    text-decoration: underline;
+    text-decoration: overline;
+    text-decoration: none;
+
+    text-decoration: line-through;
+}
+
+.shadow{
+    /*
+    1 parametr - smeshenie po gorizontali vlevo
+    2 parametr - smeshenie po vertikali vniz
+    3 parametr - razmer razmitiya razmitie
+    4 parametr - cvet cvet
+
+    */
+    text-shadow: 1px 1px 1px #000000;
+}
+
+.uppercase{
+    /*
+    capitalize - kajdaya pervaya bukva v tekste zaglavnaya
+    lowercase -  vse bukvi perexodyat v nijni registr
+    uppercase -  vse bukvi stanovyatsya zaglavnimi
+    none -       perevodit tekst v normalnoe sostoyanie
+    */
+    text-transform: capitalize;
+    text-transform: lowercase;
+    text-transform: uppercase;
+    text-transform: none;
+}
+.ident{
+    /*ustonavlivaet vilichinu otstupa pervoi stroki bloka teksta, tipa abzaca*/
+    text-indent: 50px;
+}
+.lspace{
+/*Ustonavlivaet interval mejdu simvolami bukvami*/
+letter-spacing: 5px;
+}
+.wspace{
+    /*ustonavlivaet interval mejdu slovami */
+    word-spacing: 5px;
+}
+.whitespace{
+    /*nowrap - zapreshaet perenos stroki, stroka v odnu liniu
+    normal - otmenit izmeneniya
+    */
+    white-space: nowrap;
+}
+.lineheight{
+    /*
+    mejstrochnoe rastoyanie(rastoyanie mejdu strokami)
+    po umolchaniu raven 1 v nachem obshem obnulenii
+    */
+    line-height: 20px;
+}

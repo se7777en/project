@@ -56,3 +56,45 @@ const test = time => {
 Promise.all([test(1000), test(2000)]).then(() => {
     console.log('all');
 });
+
+
+
+
+//////////////////////////////////////////////////
+let isMomHappy = false;
+
+// Promise
+let willIGetNewPhone = new Promise(
+    function (resolve, reject) {
+        if (isMomHappy) {
+            let phone = {
+                brand: 'Samsung',
+                color: 'black'
+            };
+            resolve(phone); // Всё выполнено
+        } else {
+            let reason = new Error('mom is not happy');
+            reject(reason); // reject
+        }
+
+    }
+);
+
+
+
+// Вызываем промис
+let askMom = function () {
+    willIGetNewPhone
+        .then(function (fulfilled) {
+            // yay, you got a new phone
+            console.log(fulfilled);
+         // output: { brand: 'Samsung', color: 'black' }
+        })
+        .catch(function (error) {
+            // oops, mom don't buy it
+            console.log(error.message);
+         // output: 'mom is not happy'
+        });
+};
+
+askMom();
