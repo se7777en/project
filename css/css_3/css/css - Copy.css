@@ -1,0 +1,18 @@
+div {
+
+}
+
+.bigred {
+    font-size: 20px;
+    color: red;
+}
+
+.block>p{ /*pervi uroven vlojenosti p*/
+    color: blue;
+}
+
+.block{ 
+    color: blue;
+    font-size: 15px;
+    border: 1px solid black; /*ramka u bloka 1px*/
+}
