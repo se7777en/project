@@ -1,0 +1,65 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+*,*::before,*:after{
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+nav,footer,header,aside{display: block;}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+input,button,textarea{font-family: inherit;}
+
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding: 0;border: 0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+/*sbrasivaem vse brauzernie stili*/
+
+.example-block{
+padding: 10px 20px 30px 5px; /*padding - vnutreni otstup (sverxu spava snizu sleva)*/
+/*padding: 10px 20px 30px; 3 znacheniya 1 eto otstup sverxu 2 otstup sleva i sprava otstup snizu */
+/*padding: 10px 20px 2 znacheniya   1 otstup sverxu i snizu 2 otstup sleva i sprava */
+/*padding: 10px; 1 znachenie otstupi so vsex storon odinakovie*/
+/*sushestvennaya raznica mejdu paddingom i marginom eto shto u margina mojno zadavat otricatelnie znacheniya*/
+
+
+border: 1px solid #000;
+}
+/*
+overflow: visible; - otobrajaet ves kontent bloka i zapredelami ego
+overflow: hidden; - skrivaet vse za predelami bloka
+overflow: scroll; - prinuditelno vkluchaet scroll vertikalni i gorizontalni prinuditelno
+overflow: auto; - stavit scroll avtomaticheski
+
+*/
+
+/*
+display: block; - delaet element blochnim kak div
+display: inline; - mojet iz blochnogo elementa sdelat tipa strochni <span>
+display: inline-block; - eta gibrid mejdu strochnim i blochnim elementom
+display: none; - vremeno udalyaet element so stranici kakbudto ego nebilo
+*/
+
+
+.example-string{
+
+
+}
