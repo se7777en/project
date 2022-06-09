@@ -1,0 +1,93 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+*,*::before,*:after{
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+nav,footer,header,aside{display: block;}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+input,button,textarea{font-family: inherit;}
+
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding: 0;border: 0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: inherit;}
+/*sbrasivaem vse brauzernie stili*/
+
+.example-block {
+    
+   /* border: 10px solid #000; blok v obichnoi ramke*/
+   /* border: 10px dotted #000; /*blok obveden tochkami
+    border: 10px dashed #000; blok v obichnoi punktirom*/
+   font-size: 50px;
+   margin: 0 0 30px 0;
+   /*border-left: none;ubiram granicu s leva
+   border-radius: 10px 10px 10px 10px; skruglyaem granici
+   border-radius: 50px; u vsex uglov odinakovie zakruglenie granici
+   border-radius: 50px 0 50px 0; */
+   /*width: 100px;
+   height: 100px;*/
+    margin: 20px;
+   /*border-radius: 50px;*/
+   /*border: 10px solid #000;*/
+   /* margin: 40px;*/
+  /* overflow: hidden; skrivaet vse chto naxoditsya za granicei*/
+  
+   /*outline: 10px solid #000;ustonavlivaetsya liniya za granicei bloka,
+    ustonavlivaetsya srazu dlya vsex chetirex storon
+    dlya nego ne deistvuet border radius
+    obvodit granicu u strochnogo elementa ogibaet
+    */
+    padding: 15px;
+    box-shadow: 5px 5px 10px 5px #000;
+    /*box-shadow: 5px 5px 10px 5px #000, inset 5px 5px 10px 5px #000*/
+    border-radius: 30px;
+   
+    /*
+    1 - zdvig po gorizontali vlevo
+    2 - zdvig po vertikali vniz
+    3 - radius teni
+    4 - rastoyanie teni
+    5 - cvet
+    teni mojno ukazivat cherez zapyatuu 
+    ten mojnu stavit i vnutr 
+
+    box-shadow: 5px 5px 10px 5px #000, inset 5px 5px 10px 5px #000;
+    */
+    opacity: .8;/* ot 0 do 1 prozrachnost*/
+    visibility: hidden; /*mojno skrit element i mesto stanet svobodnim 
+    v otlichii ot display:none;
+    */
+
+}
+
+.example-string {  
+    font-size: 50px;
+    outline: 1px solid #000;
+}
+
+.example-image {
+    
+border-radius: 100px;
+overflow: hidden;
+}
