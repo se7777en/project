@@ -35,10 +35,48 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: inherit;}
 /*sbrasivaem vse brauzernie stili*/
 
 body{
+    
     padding: 30px;
+    /*background: url('../img/bg.jpg') center no-repeat fixed;kartinka v bloke po centru bez povtoreniya zafiksirovana*/
 }
 .block{
     /*background: url('../img/youtube.png'); izobrajenie b bloke*/
+   /* background-image: url('../img/youtube.png');*/
+    /*
+    eti dve zapisi delaut odno itoje
+    */
+    
+    /*background: url('../img/youtube.png') no-repeat; kartinka ne budet povtoryatsya*/
+   /* background: url('../img/youtube.png') repeat-x; povtorenie po gorizontali*/
+    /*background: url('../img/youtube.png') repeat-y; povtorenie po vertikali*/
+    /*background: url('../img/youtube.png') 20px 100px no-repeat;kartinka v bloke s zadannoi poziciei bez povtoreniya*/
+    /*background: url('../img/youtube.png') center no-repeat; kartinka v bloke po centru bez povtoreniya*/
+    /*background: url('../img/youtube.png') 50% no-repeat;kartinka v bloke po centru bez povtoreniya*/
+    /*background: url('../img/bg.jpg') center no-repeat fixed;kartinka v bloke po centru bez povtoreniya zafiksirovana*/
+    /*background: url('../img/youtube.png') 0 0/100% no-repeat;kartinka rastyanetsya po shirine na 100% a visota po umolchaniu auto (left top width height potom parametri)*/
+    /*background: url('../img/youtube.png') 0 0/auto 100% no-repeat;kartinka rastyanetsya po visote a shirina avtomaticheski*/
+    /*background: url('../img/youtube.png') 0 0/300px 100px no-repeat;kartinka rastyanetsya po shirine 300px po visote 100px*/
+    /*background: url('../img/youtube.png') 0 0/cover no-repeat;kartinka rastyanetsya na ves block kartinka pitaetsya vlezt v block kakbi*/
+    /*background: #18b5a4 url('../img/avatar.jpg') no-repeat;1 kartinka s cvetom*/
+    /*background: url('../img/avatar.jpg') left no-repeat, url('../img/bg.jpg') 50%/cover no-repeat;dve kartinki*/
+
+  /* background: url('../img/avatar.jpg') left top/50px no-repeat,
+     url('../img/avatar.jpg') left bottom/50px no-repeat,
+     url('../img/avatar.jpg') right bottom/50px no-repeat,
+     url('../img/bg.jpg') center/cover no-repeat;4 kartinki*/
+
+     background: url('../img/like.png') center/220px no-repeat;/*50% po centru*/
+     opacity: 0.2;
+
+  /*background: url('../img/avatar.jpg') left top/50px no-repeat,
+   url('../img/avatar_2.jpg') right bottom/50px no-repeat,
+    url('../img/avatar_3.jpg') center no-repeat,
+     url('../img/bg.jpg') 50%/cover no-repeat;*/
+
+
+
+
+
     /*background: rgb(14, 128, 235);
     background-color: red;
     eti dve zapisi odinakovie*/
@@ -46,10 +84,22 @@ body{
     /*background: -moz-linear-gradient(top, rgba(236, 232, 157, 1) 0%, rgb(94, 92, 69, 1) 50%, rgb(153, 68, 156, 1) 100%);gradient*/
     /*background:  -webkit-linear-gradient(top, rgba(236, 232, 157, 1) 0%, rgb(241, 222, 2) 50%, rgb(153, 68, 156, 1) 100%);gradient*/
 
-    background: linear-gradient(to bottom, rgba(236, 232, 157, 1) 0%,rgb(94, 92, 69, 1) 50%,rgb(153, 68, 156, 1) 100%);/*gradient  all browzer*/
+    /*background: linear-gradient(to bottom, rgba(236, 232, 157, 1) 0%,rgb(94, 92, 69, 1) 50%,rgb(153, 68, 156, 1) 100%);gradient  all browzer*/
+   
     height: 300px;
     border: 1px solid #000;
     border-radius: 15px;
     box-shadow: 0 0 10px #000;
     
+}
+
+
+.list{
+    margin: 0 0 30px 0;
+}
+.list li{
+    font-size: 24px;
+    margin: 0 0 10px 0;
+    background: url('../img/icons/li.svg') left 5px no-repeat;
+    padding: 0 0 0 20px;
 }
