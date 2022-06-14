@@ -1,0 +1,130 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+*,*::before,*:after{
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+nav,footer,header,aside{display: block;}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+input,button,textarea{font-family: inherit;}
+
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding: 0;border: 0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: inherit;}
+/*sbrasivaem vse brauzernie stili*/
+
+body{
+    width: 842px;
+    height: 1000px;
+    /* border: 1px solid #000; */
+    margin: 126px auto 0 auto;
+    background: rgb(232, 232, 232);
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.travel{
+    
+    font-size: 14px;
+    text-align: center;
+    text-transform: uppercase;
+    color: rgb(110, 112, 112); 
+}
+
+.dOnec{
+    font-size: 32px;
+    text-align: center;
+    padding: 28px 0 0 0;
+    line-height: 52px;
+    color:rgb(39, 61, 70);
+}
+
+.image{
+    height: 541px;
+    width: 821px;
+    box-shadow:0 0 10px #000;
+    margin: 76px auto 0;
+    /* border:solid 1px #000; */
+    outline: 11px solid white;
+    background: url('img/img1.jpg') 0 0/auto no-repeat;
+}
+
+.text{
+    margin: 99px 0 0 47px;
+    font-size: 25px;
+    color: rgb(98, 108, 113);
+    line-height: 32px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.list{
+    padding: 60px 0 0 47px;
+}
+
+.list li{
+    font-size: 24px;
+    margin: 0 0 15px 0;
+    background: url('img/01_03.png') left 5px/auto no-repeat;
+    padding: 0 0 0 40px;
+}
+.li1{
+color: rgb(39, 61, 70);
+
+}
+.li2{
+    color: rgb(128, 183, 179);
+    font-style: italic;
+}
+.li3{
+    color: rgb(39, 61, 70);
+    font-weight: 600;
+}
+.li4{
+    color: rgb(188, 191, 193);
+    text-decoration: line-through;
+}
+
+.btn{
+    width: 180px;
+    height: 40px;
+    border-radius: 30px;
+    background-color:rgb(128, 183, 179);
+    margin: 100px 0 40px 50px ;
+}
+div.btn{
+    padding-top: 14px;
+    font-weight: 500;
+   
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+}
+
+
+
+/* .block{
+    height: 300px;
+    width: 800px;
+    border: 1px solid #000;
+    box-shadow: 0 0 10px #000;
+    margin: 50px auto 0;
+} */
