@@ -40,9 +40,9 @@ body{
 .block{
     margin: 0px 0px 30px 0px;
 }
-.block:hover{
+/*.block:hover{deistvie pri navedenii mishi na blok block
     background: blue;
-}
+}*/
 
 .block p{
 font-size: 18px;
@@ -53,16 +53,27 @@ margin: 0px 0px 20px 0px;
 .link{
     color: red;
 }
+.link:visited{/*deistvie pri poseshenoi silke*/
+    color:green;
+}
 .link:hover{
     text-decoration: underline;
     color: blue;
 }
+.link:active{/*srabativaet pri najatii na element vosnovnom dlya silok ili knopok*/
+color: yellow;
+}
+
+.textinput:focus{/*srabativaet pri sfokusirovanom elemente*/
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
 .textinput {
     border: 1px solid #666;
+    width: 300px;
     height: 50px;
     padding: 0px 15px;
     font-size: 18px;
-    width: 300px;
     margin: 0px 0px 10px 0px;
 }
 
@@ -76,8 +87,42 @@ margin: 0px 0px 20px 0px;
     text-transform: uppercase;
     margin: 0px 0px 30px 0px;
 }
+.textbutton:hover{
+    background-color:#333;
+    color: yellow;
+}
+.textbutton:active{
+    background-color:#eee;
+}
 
 .list li{
     font-size: 18px;
     margin: 0px 0px 15px 0px;
 }
+.list li:first-child{ /*obrashaetsya k pervomu elementu li*/
+    color:green;
+}
+.list li:last-child{/*obrashaetsya k poslednemu elementu li*/
+    color: yellow;
+    font-weight: 700;
+}
+.list li:nth-child(4){ /*obrashenie k konkretnomu elementu spiska*/
+text-decoration: underline;
+}
+/*
+odd -  primenyaetsya ko vsem nechetnim elementam
+even - primenyaetsya ko vsem chetnim elementam
+*/
+
+/*.block p:last-child{delaem verxni registr u poslednego elementa u block
+    text-transform:uppercase;
+}*/
+
+.block p:nth-child(odd){/*obrashenie k nechetnim elementam 1-3*/
+    background-color:yellow;
+}
+
+.block p:nth-child(2):hover{/*pri navedenii na vtoroi element menyaetsya cvet*/
+    background-color: #555;
+}
+
