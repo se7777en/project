@@ -79,9 +79,14 @@ h6 {
 
 /*sbrasivaem vse brauzernie stili*/
 
-body {
+body{
     background-color: #eee;
-    padding: 126px 0px 0px 291px;
+}
+.container {
+    width: 842px;
+    height: 1472px;
+    margin: 0 auto;
+    padding: 126px 0px 104px 0px;
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
@@ -120,6 +125,9 @@ body {
 .list li:nth-child(4) {
     text-transform: uppercase;
 }
+.list2 li:last-child{
+    margin: 0 0 141px 0;
+}
 
 .list2 li {
     font-size: 20px;
@@ -132,4 +140,65 @@ body {
     background: url('img/li_red.svg') left top/auto no-repeat;
     cursor: pointer;
     color: red;
+}
+
+.btn{
+    background:rgb(128, 183, 179);  
+    color: white;
+    margin: 0 97px 0 18px;
+
+}
+
+.click{
+    background:rgb(128, 183, 179); 
+    color: white;
+    margin-right: 97px;
+}
+
+.hover{
+    background:rgb(128, 183, 179); 
+    color: white;
+}
+
+.knop{
+    display: inline-block;
+    width: 199px;
+    height: 44px;
+    text-align: center;
+    padding: 14px;
+    text-transform: uppercase;
+    border-radius: 30px;
+    font-size: 14px; 
+}
+
+.click:hover{
+    background:#666;
+    color: red;
+}
+
+.hover:active{
+    background:#666;
+    color: red;
+}
+.knopki{
+    margin-bottom: 122px;
+}
+
+.edt1{
+    width: 292px;
+    height: 50px;
+    padding: 0 10px;
+    font-size: 15px;
+    border: 1px solid rgb(116, 114, 114);
+    margin-right: 81px;
+}
+.edt2{
+    width: 292px;
+    height: 50px;
+    padding: 0 10px;
+    font-size: 15px;
+    border: 1px solid rgb(116, 114, 114);
+}
+.edt2:focus{
+    box-shadow: 0 0 10px rgb(47, 173, 47);
 }
