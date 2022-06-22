@@ -1,0 +1,103 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+*,*::before,*:after{
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+nav,footer,header,aside{display: block;}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+input,button,textarea{font-family: inherit;}
+
+input::-ms-clear{display: none;}/*ubiraet krestik u iternet explorera v input text*/
+button{cursor: pointer;}
+button::-moz-focus-inner {padding: 0;border: 0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: inherit;}
+/*sbrasivaem vse brauzernie stili*/
+
+body{
+    padding-top: 50px;
+}
+.container{
+    max-width: 600px;
+    height: 800px;
+    margin: 0 auto;
+    border: 1px solid #000;
+    text-align: center;
+}
+.btn1,.btn2,.btn3{
+    display: inline-block;
+}
+
+.btn1 {
+    float: left;
+    width: 150px;
+    height: 40px;
+    border-radius: 5px;
+    background:#444;
+font-size: 18px;
+line-height: 40px;
+text-align: center;
+}
+
+.btn1 span, .btn2 span, .btn3 span{
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.btn2 {
+    width: 150px;
+    height: 40px;
+    border-radius: 5px;
+    background:#444;
+font-size: 18px;
+line-height: 40px;
+text-align: center;
+    
+}
+
+
+.btn3 {
+    float: right;
+    width: 150px;
+    height: 40px;
+    border-radius: 5px;
+    background:#444;
+font-size: 18px;
+line-height: 40px;
+text-align: center;
+    
+}
+
+.btn1,.btn2,.btn3{
+    box-shadow: 0px 0px 5px  rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+.container span::after{
+    content: url('../img/li_green.svg');
+    padding-left: 10px;
+}
+
+
