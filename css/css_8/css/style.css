@@ -44,6 +44,7 @@ body{
     height: 800px;
     margin: 0 auto;
     border: 5px solid red;
+    position: relative;
 }
 
 
@@ -59,11 +60,32 @@ font-weight: 700;
     background-color: #ece89d;
 }
 .block2{
+   /* position: sticky;
+    top: 0;*/
     background-color: #5e5373;
     color: white;
+   /* position: fixed;
+    top: 0;
+    left: 0;*/
+    /*position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 100%;*/
+   
+    
 }
 .block3{
     background-color: #18b5a4;
+   /* position: relative;
+    z-index: 20*/;
+   /* position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 50px;
+    height: 120px;*/
 }
 
 /*
@@ -74,8 +96,17 @@ position: static;
 dopolnitelnie svoistva ono ustanovleno na vsex blokax po umolchaniu
 
 2 - (position: relative;) pri znachenii reletive poziciya ustonavlivaetsya otnositelno
-ego roditelya v kode, ono ispolzuetsya s dopolnitelnimi svoistvami left: right: top::after
-i bottom mi mojem sdvigat element (vlevo vpravo verx vniz) otnositelno ego roditelskovo elementa
+ego roditelya v kode, ono ispolzuetsya s dopolnitelnimi svoistvami left: right: top:
+i bottom mi mojem sdvigat element (vlevo vpravo verx vniz) "mojno isho zadavat znacheniya v procentax i otricatelnie znacheniya" otnositelno ego roditelskovo elementa
 u nego est esho odno svoistvo kotoroe nazivaetsya (z-index: 0;) - ego znachenie po umolchaniu 0
 eto polojenie bloka po osi Z
+
+3 - (position: absolute;) - on kak bi virivaetsya iz html bloka i perestaet imet razmeri fizicheskie i on dolje soprovojdatsya s top left bottom right
+i on vedet sebya kak strochni element, mojno ukazat u roditelya position: relative; i on budet pozicionirovatsya otnositelno roditelya
+
+4 - (position: fixed;) - on takje virivaetsya iz html bloka no on v otlichii ot absolute fiksiruetsya sugubo po oknu brauzera vne zavisimosti
+"est u roditelya position: relative; ili net" i on budet zafiksirovani takje u nego est top left bottom right width height z-index i na nego
+ne deistvuet (position: relative;)
+
+5 - position: sticky; eto svoistvo gibrid mejdu statik i fixed on fiksiruetsya otnositelno roditelya u nego ne dostatochnaya poderjka brauzerami
 */
