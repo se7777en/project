@@ -41,7 +41,7 @@ body{
 
 .block{
     max-width: 800px;
-    height: 800px;
+    height: 300px;
     margin: 0 auto;
     border: 5px solid red;
     position: relative;
@@ -87,6 +87,31 @@ font-weight: 700;
     width: 50px;
     height: 120px;*/
 }
+
+.list{
+    font-size: 18px;
+   
+}
+.list li{
+margin-bottom: 15px;
+position: relative;
+padding-left: 20px;
+}
+
+.list li::before{
+    content: '';
+    margin-bottom: 15px;
+    background: url('../img/li_green.svg') 0 0 no-repeat;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 20px;
+    height: 20px;
+    
+   
+}
+
+
 
 /*
 osnovnoe svoistvo pozicionirovaniya eto position: i ego svoistvo po umolchaniu eto static
