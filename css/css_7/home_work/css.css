@@ -40,7 +40,7 @@ body{
     background-color: rgb(232, 232, 232);
 }   
 .container{
-width: 842px;
+max-width: 842px;
 height: 1472px;
 }
 h1{
@@ -55,6 +55,7 @@ h1{
     }
 
 .list2 li{
+    cursor: pointer;
     font-size: 16px;
     line-height: 23px;
     
@@ -90,21 +91,24 @@ h1{
 .list2 li:hover{
     color: red;
 }
-.btn1{
-    display: inline-block;
+.btns{
+    text-align: center;
+    margin-bottom: 119px;
+}
+
+.btn1{ 
     width: 199px;
     height: 44px;
     background-color:rgb(128, 183, 179);
     border-radius: 30px;
     text-transform: uppercase;
     line-height: 44px;
-    text-align: center;
     color: white;
     box-shadow: 0px 0px 3px rgb(67, 136, 98); 
-    margin-right: 99px;
-}
+    float: left;
+    }
 .btn1 span::after{
-    content: '\2192';
+    content: '  \2192';
 }
 
 
@@ -119,13 +123,12 @@ h1{
     text-align: center;
     color: white;
     box-shadow: 0px 0px 3px rgb(67, 136, 98); 
-    margin-right: 99px;
-}
+  }
 .btn2 span::after{
-    content: '\2192';
+    content: '  \2192';
 }
+
 .btn3{
-    display: inline-block;
     width: 199px;
     height: 44px;
     background-color:rgb(128, 183, 179);
@@ -135,10 +138,30 @@ h1{
     text-align: center;
     color: white;
     box-shadow: 0px 0px 3px rgb(67, 136, 98); 
-    margin-bottom: 120px;
+    float: right;
+ }
+ .btn3 span::after{
+    content: '  \2192';
 }
+
 .btns{
-    padding-left: 15px;
+    padding-left: 25px;
+    padding-right: 29px;
+}
+.text1,.text2{
+    font-size: 16px;
+    line-height: 23px;
+}
+.text1{
+    padding-bottom: 53px;
+}
+.text1::first-line{
+color:red;
+}
+
+.text2::first-letter{
+    font-size: 54px;
+    color:red;
 }
 
 

@@ -1,0 +1,81 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+*,*::before,*:after{
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+nav,footer,header,aside{display: block;}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+input,button,textarea{font-family: inherit;}
+
+input::-ms-clear{display: none;}/*ubiraet krestik u iternet explorera v input text*/
+button{cursor: pointer;}
+button::-moz-focus-inner {padding: 0;border: 0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: inherit;}
+/*sbrasivaem vse brauzernie stili*/
+
+body{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    padding: 30px;
+}
+
+.block{
+    max-width: 800px;
+    height: 800px;
+    margin: 0 auto;
+    border: 5px solid red;
+}
+
+
+.block div{
+font-size: 18px;
+line-height: 50px; 
+font-size: 18px;
+text-align: center;
+font-weight: 700;
+}
+
+.block1{
+    background-color: #ece89d;
+}
+.block2{
+    background-color: #5e5373;
+    color: white;
+}
+.block3{
+    background-color: #18b5a4;
+}
+
+/*
+osnovnoe svoistvo pozicionirovaniya eto position: i ego svoistvo po umolchaniu eto static
+position: static;
+
+1 - (position: static) eto svoistvo po umolchaniu u vsex blokax, pri znachenii po umolchaniu position: static; vse bloki vivodyatsya kak obichno na nix ne deistvuet
+dopolnitelnie svoistva ono ustanovleno na vsex blokax po umolchaniu
+
+2 - (position: relative;) pri znachenii reletive poziciya ustonavlivaetsya otnositelno
+ego roditelya v kode, ono ispolzuetsya s dopolnitelnimi svoistvami left: right: top::after
+i bottom mi mojem sdvigat element (vlevo vpravo verx vniz) otnositelno ego roditelskovo elementa
+u nego est esho odno svoistvo kotoroe nazivaetsya (z-index: 0;) - ego znachenie po umolchaniu 0
+eto polojenie bloka po osi Z
+*/
