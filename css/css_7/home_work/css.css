@@ -38,6 +38,7 @@ body{
     padding: 126px 0px 104px 291px;
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     background-color: rgb(232, 232, 232);
+    min-width: 1016px;
 }   
 .container{
 max-width: 842px;
