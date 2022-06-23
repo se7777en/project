@@ -1,0 +1,143 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+*,
+*::before,
+*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+nav,
+footer,
+header,
+aside {
+    display: block;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+    font-family: inherit;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+/*ubiraet krestik u iternet explorera v input text*/
+button {
+    cursor: pointer;
+}
+
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+a,
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+/*sbrasivaem vse brauzernie stili*/
+
+body {
+    padding: 30px;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+
+
+.block {
+    width: 600px;
+    height: 600px;
+    border: 5px solid red;
+    margin: 0 auto;
+    text-transform: uppercase;
+    color: brown;
+    position: relative;
+}
+
+.block1{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 280px;
+    height: 40px;
+    border: 1px solid rgb(212, 19, 19);
+    font-size: 15px;
+    line-height: 40px;
+    text-align: center;
+    background-color: #444;
+    
+    cursor: pointer;
+}
+.block1  a{
+    color: white;
+}
+.block2{
+    position: absolute;
+    right: 50%;
+    background-color: #444;
+    color:white;
+    border: 1px solid red;
+}
+.block3{
+    position: absolute;
+    left: 50%;
+    background-color: #444;
+    color:white;
+    border: 1px solid red;
+}
+.block4{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: #444;
+    color:white;
+    border: 1px solid red;
+    width: 120px;
+    margin: 0px 20px 20px 0px;
+}
