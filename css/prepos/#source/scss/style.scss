@@ -1,12 +1,51 @@
-body{
-    color: red;
-  
+@import "nullstyle.scss";/*importiruem obnulyaushi file nashu zagotovku cherez @import*/
+
+$fz:100px;/*sozdaem peremennie cherez simvol $*/
+$color_1:green;
+%tplborder{/*sozdaem shablon dlya silok*/
+    border-bottom: 1px dashed red;
+    font-size: 25px;
+}/*mojno etot shablonchik ispolzovat kak obichni klass 
+vmesto % ispolzovat . no on budet vivoditsya, a cherez % budet vesti
+sebya kak peremennaya*/
+
+@mixin fontsz($f) {/*miksini podrugomu primesi u nix toje neploxoi funkcional
+    ona robotaet kak funkciya i ispolzuetsya cherez @include s imenem i pojno parametri*/
+    font-size: $f;
 }
 
-h1{
-    color: red;
+.block{
+    width: 300px / 960px * 100%;/*mojno proizvodit vichisleniya*/
+    font-size: 50px;
+    line-height: 60px;
+    padding: 30px;
+   >p{
+    color: gray;/*u elementa block pervi paragraf p*/
+   }
+
+    span{/*sass(scss) eta vlojenost*/
+        color: $color_1;
+    }
+    .block_text{/*eto toje vlojenost*/
+        font-size: 80px;
+        span{/*eto toje vlojenost span u .block_text i eto vse v bloke*/
+         color: red;   
+        }  
+    }
 }
-
-
-
-
+.link{
+    @extend %tplborder;
+    color:blue;
+    text-decoration: underline;
+    .block &{ /*eto toje vlojenost*/
+        font-size: $fz;
+    }
+    &:hover{ /*& - eto roditel i ego roditel eto link*/ 
+        color: chartreuse;
+    }
+}
+.link_2{
+    @include fontsz(120px);
+    @extend %tplborder;/*ispolzuem shablon dlya silki pri pomoshi @extend*/
+    /*eti shabloni mojno ispolzovat gde ugodno*/
+}
