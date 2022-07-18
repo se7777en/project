@@ -49,3 +49,8 @@ sebya kak peremennaya*/
     @extend %tplborder;/*ispolzuem shablon dlya silki pri pomoshi @extend*/
     /*eti shabloni mojno ispolzovat gde ugodno*/
 }
+body p{
+    color: green;
+    font-size: 25px;
+    margin: 30px;
+}
