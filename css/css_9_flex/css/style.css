@@ -1,0 +1,92 @@
+/**{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+*,*::before,*:after{
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+nav,footer,header,aside{display: block;}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+input,button,textarea{font-family: inherit;}
+
+input::-ms-clear{display: none;}ubiraet krestik u iternet explorera v input text
+button{cursor: pointer;}
+button::-moz-focus-inner {padding: 0;border: 0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: inherit;}
+sbrasivaem vse brauzernie stili*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+@media (min-width: 1200px){/*@media zapros primenyaetsya dlya shirini bolshe 500px*/
+.container-1{
+    display: flex; /*otobrajaet globalni blok po gorizontali*/
+    /*align-items: flex-start;bloki kakbi budut prijati k verxu i beloe prostranstvo ne budet*/
+    /*align-items: flex-end;bloki kakbi budut prijati k nuzu i beloe prostranstvo ne budet*/
+    /*align-items: center;bloki kakbi budut prijati po centru i beloe prostranstvo ne budet*/
+    /*align-items: stretch;eto znachenie po umolchaniu*/
+    /*flex-direction: column;bloki vstanut drug protiv drujki po gorizontali, kak bi po umolchaniu*/
+   /* flex-direction: column-reverse ;bloki vstanut drug protiv drujki po gorizontali v razvernutom vide*/
+   /*flex-direction: row;po umolchaniu bloki po gorizontali*/
+   /*flex-direction: row-reverse;po umolchaniu bloki po gorizontali v obratnom poryadke*/
+   align-items: stretch;
+   flex-direction: row;
+    }
+}
+
+.container-2{
+    display: flex;
+}
+.container-2 {
+    /*justify-content: flex-start;eto znachenie po umolchaniu*/
+    /*justify-content: flex-end;budut prijati k pravomu krau*/
+    /*justify-content: center;budut prijati po centru*/
+   /* justify-content: space-around;budut po centru simetrichno s otstupami s obeix storon*/
+    justify-content: space-between;/*budet vo vsu shirinu s simetrichnimi*/
+    /*flex-wrap: nowrap; nowwrap bloki ne budut perexodit na novuu stroku*/
+    flex-wrap: wrap;
+}
+
+.container-1 div,.container-2 div {
+
+    padding: 10px;
+    border: 1px solid silver;
+}
+
+.box-1 {
+    flex: 1;/*opredelyaet shirinu bloka(razmer) pri 1 vse bloki odinakovoi shirini , mojno regulirovat shirinu bloka*/
+order: 1;/*polojenoe bloka mojno pomenyat mestami (block-1 stanet na vtoruu poziciu po gorizontali)*/
+}
+.box-2 {
+    flex: 1;/*opredelyaet shirinu bloka(razmer) pri 1 vse bloki odinakovoi shirini , mojno regulirovat shirinu bloka*/
+    order: 1;/*polojenoe bloka mojno pomenyat mestami (block-2 stanet na pervuu poziciu po gorizontali)*/
+}
+.box-3{
+    flex: 1;/*opredelyaet shirinu bloka(razmer) pri 1 vse bloki odinakovoi shirini , mojno regulirovat shirinu bloka*/
+    order: 1;/*polojenoe bloka mojno pomenyat mestami (block-3 ostanetsya na 3 pozicii po gorizontali)*/
+}
+/*
+.box {
+width: 20%;kajdi blok budet imet shirinu 20%   flex-basis: 20%; toje samoe luchshe ispolzovat ego
+
+}*/
