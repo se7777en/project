@@ -99,3 +99,25 @@ let askMom = function () {
 
 askMom();
 ///
+
+
+const req3 = new Promise((resolve, reject)=>{
+
+    const obj = {
+        name: 'Will',
+        sorname: 'James'
+    };
+    resolve(obj);
+});
+
+req3.then(data =>{
+
+    return  new Promise((resolve)=>{
+        data.phone = '55555555';
+        resolve(data);
+    }).then(dat =>{
+console.log(dat);
+});
+
+
+});
