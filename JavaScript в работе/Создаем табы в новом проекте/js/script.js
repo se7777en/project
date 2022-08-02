@@ -268,23 +268,45 @@ function postData(form) {
         form.insertAdjacentElement('afterend', statusMessage); // metod vstavki
 
 
-        const request = new XMLHttpRequest(); // sozdaem zapros
-        request.open('POST', 'server.php'); // nastraivaem zapros
+       /* const request = new XMLHttpRequest(); // sozdaem zapros -- XMLHttpRequest eto stari metod no jelatelno ego znat
+        request.open('POST', 'server.php');*/ // nastraivaem zapros
+
 
        // request.setRequestHeader('Content-type', 'miltipart/form-data');// kogda mi ispolzuem XMLHttpRequest() i FormData() togda zagolovok ne nujen on sozdaetsya avtomaticheski
-       request.setRequestHeader('Content-type', 'applicatin/json'); // otprajka dannix na server v formate JSON
+      /* request.setRequestHeader('Content-type', 'applicatin/json');*/ // otprajka dannix na server v formate JSON
        const formData = new FormData(form); // chtobi ne sobirat kajdi value po otdelnosti i potom sozdavat obiekt dlya nego dlya etogo est FormData
         // kogda dannie idut na server s formi togda obizatelno doljni bit u vsex inputov atribut name
-        const object = {};
+       const object = {};
         formData.forEach(function(value, key) {// dobavlyaem iz formData dannie value, key v pustoi obiekt cherez cikl forEach
             object[key] = value;    
         });
-        const json = JSON.stringify(object); // preobrazuem object v json
-
+       /* const json = JSON.stringify(object); */// preobrazuem object v json
+ 
        // request.send(formData);// bez ispolzovaniya JSON
-       request.send(json); // s ispolzovaniem JSON
+       /*request.send(json);*/ // s ispolzovaniem JSON
 
-        request.addEventListener('load', () => {
+   //////////////////////////////////////////   fetch zaprosi 
+       fetch('server.php',{
+        method: "POST",
+        headers: {
+            'Content-type' : 'application/json'
+        },
+        body: JSON.stringify(object)
+    })
+    .then(data => data.text())
+    .then(data => {
+        console.log(data);
+        showThanksModal(message.success);
+        
+        statusMessage.remove();
+    }).catch(() => {
+        showThanksModal(message.failure);
+    }).finally(() => {
+        form.reset();
+    });
+    ///////////////////////////
+
+      /*  request.addEventListener('load', () => {
             if (request.status === 200) {
                 console.log(request.response);
                 //statusMessage.textContent = message.success;
@@ -298,7 +320,7 @@ function postData(form) {
                 showThanksModal(message.failure);
             }
 
-        });
+        });*/
 
 
     });
