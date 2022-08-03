@@ -293,3 +293,12 @@ console.log(Object.values(object1));
 
 */
 
+
+const arr6 = ['abc','aBc','DDD'];
+const resultt = arr6.map(item => {
+    return  item[0].toUpperCase() + item.slice(1).toLowerCase();
+});
+console.log(resultt);
+
+
+
