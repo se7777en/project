@@ -326,12 +326,34 @@ const films = [
 
 
 
+function setFilmsIds(arr){
+ return arr.map((item,i) => {
+  item.id = i;
+  return item;
+ });
+ 
+}
+
+
+const tranformedArray = setFilmsIds(films);
+
+function checkFilms(arr) {
+    return arr.every(film => film.id || film.id === 0 ? true : false);
+}
+
+
+console.log(checkFilms(tranformedArray));
+
+
+
+
 
 
 
 
  function showListOfFilms(arr){
   return  arr.map(item => item.name).join(',');
+  //return arr.reduce((acc, curr) =>`${typeof(acc) === 'object' ? acc.name : acc}, ${curr.name}`);
 }
 console.log(showListOfFilms(films));
 
