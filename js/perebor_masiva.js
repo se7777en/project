@@ -352,8 +352,8 @@ console.log(checkFilms(tranformedArray));
 
 
  function showListOfFilms(arr){
-  return  arr.map(item => item.name).join(',');
-  //return arr.reduce((acc, curr) =>`${typeof(acc) === 'object' ? acc.name : acc}, ${curr.name}`);
+  //return  arr.map(item => item.name).join(',');
+  return arr.reduce((acc, curr) =>`${typeof(acc) === 'object' ? acc.name : acc}, ${curr.name}`);
 }
 console.log(showListOfFilms(films));
 
@@ -367,7 +367,7 @@ function showListOfFilms(arr) {
 }
 console.log(showListOfFilms(films));*/
 
-
+//return arr.every(film => film.id || film.id === 0 ? true : false); // est li v masive u kajdogo elementa id
 
 function showGoodFilms(arr) {
 return arr.filter(item => item.rating >= 8);
@@ -378,3 +378,58 @@ console.log(showGoodFilms(films));
 
 
 
+const funds = [
+  { amount: -1400 },
+  { amount: 2400 },
+  { amount: -1000 },
+  { amount: 500 },
+  { amount: 10400 },
+  { amount: -11400 }
+];
+
+
+const getPositiveIncomeA = (data) => {
+  const double = data.reduce((sum, item) => {
+    if (item.amount > 0) {
+      sum += item.amount;
+    }
+    return sum;
+  }, 0);
+  return double;
+};
+
+
+
+const getTotalIncomeAmount = (data) => {
+  const doubl = data.some(item => item.amount < 0);
+  if (doubl) {
+   return funds.reduce((sum, item) => {
+      return sum + item.amount;
+    }, 0);
+  } else{
+    return getPositiveIncomeA(data);
+  }
+
+};
+
+console.log(getTotalIncomeAmount(funds));
+
+
+//////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*var initialValue = 0;
+var sum = [{x: 1}, {x:2}, {x:3}].reduce(function (accumulator, currentValue) {
+    return accumulator + currentValue.x;
+}, initialValue);*/
