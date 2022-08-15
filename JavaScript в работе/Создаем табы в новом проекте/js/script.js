@@ -365,5 +365,9 @@ $_POST = json_decode(file_get_contents("php://input"),true);
 echo var_dump($_POST);
 ?>*/
 
+fetch(' http://localhost:3000/menu')//db.json
+.then(data => data.json())
+.then(res => console.log(res));
+
 
 });
