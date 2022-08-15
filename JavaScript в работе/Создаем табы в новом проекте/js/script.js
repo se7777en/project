@@ -353,6 +353,11 @@ function postData(form) {
 
 
 
+fetch('http://localhost:3000/menu')
+.then(data => data.json())
+.then(res => console.log(res));
+
+
 /*
 // na servere sozdaem fail s imene server.php i v nego propisivaem
 <?php
