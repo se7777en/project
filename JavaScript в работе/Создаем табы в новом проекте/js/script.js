@@ -198,6 +198,52 @@ class MenuCard {
     }
 }
 
+const GetResource = async (url) => {
+    const res = await fetch(url);
+
+    if(!res.ok){ // u fetcha est OK - eto esli vse normalno i status - poluchaem status
+        throw new Error(`Could not fetch ${url}, status: ${res.status}`);
+    }
+
+    return await res.json();
+};
+
+//////////////////////////////////////////////
+/*GetResource('http://localhost:3000/menu')
+    .then(data => {
+        data.forEach(({img, altimg, title,descr, price}) => { // vitaskivaem iz obiekta svoistva eto destrukturizaciya
+            new MenuCard(img, altimg, title, descr, price, '.menu .container').render();
+        });
+    });*/
+
+////////////////////////////////////////////// ili
+
+
+//////////////////////////////////////////////
+    GetResource('http://localhost:3000/menu')
+    .then(data => createCard(data));
+
+    function createCard(data){
+        data.forEach(({img, altimg, title,descr, price}) => {
+            const element = document.createElement('div');
+            //price = price * 27;
+            element.classList.add('menu__item');
+
+            element.innerHTML = `<img src=${img} alt=${altimg}>
+            <h3 class="menu__item-subtitle">${title}</h3>
+            <div class="menu__item-descr">${descr}</div>
+            <div class="menu__item-divider"></div>
+            <div class="menu__item-price">
+                <div class="menu__item-cost">Цена:</div>
+                <div class="menu__item-total"><span>${price}</span> грн/день</div>
+            </div>`;
+
+            document.querySelector('.menu .container').append(element);
+        });
+    }
+//////////////////////////////////////////////    
+
+/*
 new MenuCard(
     "img/tabs/vegy.jpg",
     "vegy",
@@ -230,7 +276,7 @@ new MenuCard(
     21,
     ".menu .container"
 ).render();
-
+*/
 
 
 
@@ -245,12 +291,23 @@ failure: 'Chtoto poshlo ne tak...'
 };
 
 forms.forEach(item => {
-postData(item);
+    bindPostData(item);
 
 });
 
+const postData = async (url, data) => {
+    const res = await fetch(url, {
+        method: "POST",
+        headers: {
+            'Content-type' : 'application/json'
+        },
+        body: data
+    });
 
-function postData(form) {
+    return await res.json();
+};
+
+function bindPostData(form) {
     form.addEventListener('submit', (e) => { // u kajdoi knopki(sushnosti) gde est input est submit
         e.preventDefault();
 
@@ -276,24 +333,36 @@ function postData(form) {
       /* request.setRequestHeader('Content-type', 'applicatin/json');*/ // otprajka dannix na server v formate JSON
        const formData = new FormData(form); // chtobi ne sobirat kajdi value po otdelnosti i potom sozdavat obiekt dlya nego dlya etogo est FormData
         // kogda dannie idut na server s formi togda obizatelno doljni bit u vsex inputov atribut name
-       const object = {};
+     
+        /////////////
+        /*const object = {};
         formData.forEach(function(value, key) {// dobavlyaem iz formData dannie value, key v pustoi obiekt cherez cikl forEach
             object[key] = value;    
-        });
+        });*/
+        //////////////
+
+        const json = JSON.stringify(Object.fromEntries(formData.entries()));
+       // const obj = {a: 23, b: 50};
+        //console.log(Object.entries(obj));// prevrashaem obiekt v masiv masivov tipa matrici
        /* const json = JSON.stringify(object); */// preobrazuem object v json
  
        // request.send(formData);// bez ispolzovaniya JSON
        /*request.send(json);*/ // s ispolzovaniem JSON
 
    //////////////////////////////////////////   fetch zaprosi 
-       fetch('server.php',{
+   
+   ///////    
+   /*fetch('server.php',{
         method: "POST",
         headers: {
             'Content-type' : 'application/json'
         },
         body: JSON.stringify(object)
-    })
-    .then(data => data.text())
+    });*/
+   ///////
+
+    postData('http://localhost:3000/requests', json)
+    /*.then(data => data.text())*/
     .then(data => {
         console.log(data);
         showThanksModal(message.success);
