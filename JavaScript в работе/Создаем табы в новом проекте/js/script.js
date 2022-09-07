@@ -43,7 +43,6 @@ window.addEventListener('DOMContentLoaded', () => {
                 }
             });
         }
-
     });
 /////////////////////////////////////////////////////////////////////
     // Timer
@@ -226,7 +225,7 @@ const GetResource = async (url) => {
     function createCard(data){
         data.forEach(({img, altimg, title,descr, price}) => {
             const element = document.createElement('div');
-            //price = price * 27;
+            price = price * 27;
             element.classList.add('menu__item');
 
             element.innerHTML = `<img src=${img} alt=${altimg}>
@@ -339,9 +338,15 @@ function bindPostData(form) {
         formData.forEach(function(value, key) {// dobavlyaem iz formData dannie value, key v pustoi obiekt cherez cikl forEach
             object[key] = value;    
         });*/
-        //////////////
+        ////////////// ili 
 
-        const json = JSON.stringify(Object.fromEntries(formData.entries()));
+        const json = JSON.stringify(Object.fromEntries(formData.entries())); // vot tak bolee sovremenni metod
+        
+        //Object.entries() - preobrazuet obiekt v masiv - masiv masivov
+        //Object.fromEntries() -  prevrashaem masiv masivov v obiekt
+        //JSON.stringify() - prevrashaem obiekt v json
+        
+        
        // const obj = {a: 23, b: 50};
         //console.log(Object.entries(obj));// prevrashaem obiekt v masiv masivov tipa matrici
        /* const json = JSON.stringify(object); */// preobrazuem object v json
@@ -426,6 +431,78 @@ fetch('http://localhost:3000/menu')
 .then(data => data.json())
 .then(res => console.log(res));
 
+
+
+// sliders
+
+let slideNum = 1;
+
+const sliders = document.querySelectorAll('.offer__slide'),
+        prev = document.querySelector('.offer__slider-prev'),
+        next = document.querySelector('.offer__slider-next'),
+        current = document.querySelector('#current'),
+        total = document.querySelector('#total');
+
+        if(sliders.length < 10){
+            total.innerHTML = `0${sliders.length}`;
+        }else{
+            total.innerHTML = `${sliders.length}`;
+        }
+
+        slider(slideNum);
+
+        function slider(n){
+            if(n > sliders.length){
+                slideNum = 1;
+            }
+            if(n < 1){
+                slideNum = sliders.length;
+            }
+
+            sliders.forEach((item) => {
+               //item.style = 'display: none';
+               item.classList.add('hide');     
+            });
+            //sliders[slideNum -1].style = 'display: block';
+            if(sliders[slideNum - 1].classList.contains('hide')){
+                sliders[slideNum - 1].classList.remove('hide');
+            }
+
+            
+
+
+            if(slideNum < 10){
+                current.innerHTML = `0${slideNum}`;
+            }else{
+                current.innerHTML = `${slideNum}`;
+            }
+        }
+
+
+
+        function plusSlide(n){
+            slider(slideNum += n);
+        }
+
+
+        prev.addEventListener('click',()=>{
+            plusSlide(-1);
+        });
+
+        next.addEventListener('click',() => {
+            plusSlide(1);
+        });
+
+  //////////////////////////////////////////////////  
+
+
+
+
+   
+
+
+
+    
 
 /*
 // na servere sozdaem fail s imene server.php i v nego propisivaem
