@@ -433,4 +433,69 @@ fetch('http://localhost:3000/menu')
 $_POST = json_decode(file_get_contents("php://input"),true);
 echo var_dump($_POST);
 ?>*/
+
+
+
+// Slider
+
+const sliders = document.querySelectorAll('.offer__slide'),
+         prev = document.querySelector('.offer__slider-prev'),
+         next = document.querySelector('.offer__slider-next'),
+         current = document.querySelector('#current'),
+         total = document.querySelector('#total');
+
+
+         let slideIndex = 1;
+        if(sliders.length < 10){
+            total.textContent = `0${sliders.length}`;
+        }else{
+            total.textContent = sliders.length;
+        }
+
+        slider(slideIndex);
+
+        function slider(n){
+            if(n > sliders.length){
+                slideIndex = 1;
+            }
+            if(n < 1){
+                slideIndex = sliders.length;
+            }
+
+            sliders.forEach(item => {
+                 item.classList.add('hide');
+                 if(item.classList.contains('fade')){
+                    item.classList.remove('fade');
+                 }
+            });
+
+
+            if(sliders[slideIndex -1].classList.contains('hide')){
+                sliders[slideIndex -1].classList.remove('hide'); 
+                sliders[slideIndex -1].classList.add('fade'); 
+            }       
+
+            if(slideIndex < 10){
+                current.textContent = `0${slideIndex}`;
+            }else{
+                current.textContent = slideIndex;
+            }
+            
+        }
+
+        function displaySlide(n){
+            slider(slideIndex  += n);
+        }
+
+        prev.addEventListener('click',() => {
+            displaySlide(-1);
+        });
+
+        next.addEventListener('click',() => {
+            displaySlide(1);
+        });
+
+
+
+
 });
