@@ -432,6 +432,13 @@ fetch('http://localhost:3000/menu')
 .then(res => console.log(res));
 
 
+/*
+// na servere sozdaem fail s imene server.php i v nego propisivaem
+<?php
+$_POST = json_decode(file_get_contents("php://input"),true);
+echo var_dump($_POST);
+?>*/
+
 
 // sliders
 /*
@@ -553,23 +560,4 @@ const sliders = document.querySelectorAll('.offer__slide'),
         });
 
   //////////////////////////////////////////////////  
-
-
-
-
-   
-
-
-
-    
-
-/*
-// na servere sozdaem fail s imene server.php i v nego propisivaem
-<?php
-$_POST = json_decode(file_get_contents("php://input"),true);
-echo var_dump($_POST);
-?>*/
-
-
-
 });
