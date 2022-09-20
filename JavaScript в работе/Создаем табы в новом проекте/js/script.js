@@ -461,7 +461,7 @@ const sliders = document.querySelectorAll('.offer__slide'),
 
             sliders.forEach((item) => {
                //item.style = 'display: none';
-               item.classList.add('hide');     
+               item.classList.add('hide','fade');     
             });
             //sliders[slideNum -1].style = 'display: block';
             if(sliders[slideNum - 1].classList.contains('hide')){
