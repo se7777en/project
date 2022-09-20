@@ -501,7 +501,7 @@ const sliders = document.querySelectorAll('.offer__slide'),
         });
 *////////////////vtoroi variant
 
-
+/*
 const sliders = document.querySelectorAll('.offer__slide'),
          prev = document.querySelector('.offer__slider-prev'),
          next = document.querySelector('.offer__slider-next'),
@@ -560,4 +560,98 @@ const sliders = document.querySelectorAll('.offer__slide'),
         });
 
   //////////////////////////////////////////////////  
+
+  */
+ ////////////// 3 variant
+    //
+    let offset = 0;
+    let slideIndex = 1;
+    const sliders = document.querySelectorAll('.offer__slide'),
+        prev = document.querySelector('.offer__slider-prev'),
+        next = document.querySelector('.offer__slider-next'),
+        current = document.querySelector('#current'),
+        total = document.querySelector('#total'),
+        sliderWrapper = document.querySelector('.offer__slider-wrapper'),
+        sliderInner = document.querySelector('.offer_slider_inner'),
+        width = window.getComputedStyle(sliderWrapper).width;
+
+
+    if (sliders.length < 10) {
+        total.textContent = `0${sliders.length}`;
+        current.textContent = `0${slideIndex}`;
+    } else {
+        total.textContent = sliders.length;
+        current.textContent = slideIndex;
+    }
+
+    sliders.forEach((item) => {
+        item.style.width = width;
+    });
+
+    sliderInner.style.width = `${100 * sliders.length}%`;
+    sliderInner.style.display = 'flex';
+    sliderInner.style.transition = '0.5s all';
+
+
+    sliderWrapper.style.overflow = 'hidden';
+    
+
+    next.addEventListener('click', () => {
+        if (offset == (sliders.length - 1) * +width.slice(0, width.length - 2)) {
+            offset = 0;
+        } else {
+            offset += +width.slice(0, width.length - 2);
+        }
+        sliderInner.style.transform = `translateX(-${offset}px)`;
+
+        if (slideIndex == sliders.length) {
+            slideIndex = 1;
+        } else {
+            slideIndex++;
+        }
+
+        if (sliders.length < 10) {
+            current.textContent = `0${slideIndex}`;
+        } else {
+            current.textContent = slideIndex;
+        }
+
+
+    });
+
+    prev.addEventListener('click', () => {
+        if (offset == 0) {
+            offset = (sliders.length - 1) * +width.slice(0, width.length - 2);
+        } else {
+            offset -= +width.slice(0, width.length - 2);
+        }
+
+
+        sliderInner.style.transform = `translateX(-${offset}px)`;
+
+        if (slideIndex == 1) {
+            slideIndex = sliders.length;
+        } else {
+            slideIndex--;
+        }
+
+
+        if (sliders.length < 10) {
+            current.textContent = `0${slideIndex}`;
+        } else {
+            current.textContent = slideIndex;
+        }
+
+    });
+
+        //let ofset = 0;
+        //sliderInner.style.
+
+
+
+
+
+
+        // console.log(width);
+
 });
