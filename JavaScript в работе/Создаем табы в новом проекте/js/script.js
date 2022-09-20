@@ -434,7 +434,7 @@ fetch('http://localhost:3000/menu')
 
 
 // sliders
-
+/*
 let slideNum = 1;
 
 const sliders = document.querySelectorAll('.offer__slide'),
@@ -492,28 +492,8 @@ const sliders = document.querySelectorAll('.offer__slide'),
         next.addEventListener('click',() => {
             plusSlide(1);
         });
+*////////////////vtoroi variant
 
-  //////////////////////////////////////////////////  
-
-
-
-
-   
-
-
-
-    
-
-/*
-// na servere sozdaem fail s imene server.php i v nego propisivaem
-<?php
-$_POST = json_decode(file_get_contents("php://input"),true);
-echo var_dump($_POST);
-?>*/
-
-
-
-// Slider
 
 const sliders = document.querySelectorAll('.offer__slide'),
          prev = document.querySelector('.offer__slider-prev'),
@@ -572,6 +552,23 @@ const sliders = document.querySelectorAll('.offer__slide'),
             displaySlide(1);
         });
 
+  //////////////////////////////////////////////////  
+
+
+
+
+   
+
+
+
+    
+
+/*
+// na servere sozdaem fail s imene server.php i v nego propisivaem
+<?php
+$_POST = json_decode(file_get_contents("php://input"),true);
+echo var_dump($_POST);
+?>*/
 
 
 
