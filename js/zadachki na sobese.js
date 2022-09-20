@@ -124,3 +124,91 @@ vals.forEach((item) => {
 console.log(steck2);
 
 ////////////////////////////////////////
+
+
+/////////funkciya konstruktor
+function User(name, age){
+    this.name = name;
+    this.age = age;
+}
+let user = new User('James',36);
+console.log(user.name);
+console.log(user.age);
+
+
+
+
+function BigUser(name){
+    this.name = name;
+    return {
+        name: "Godzilla"
+    };
+}
+console.log(BigUser().name);
+/////////
+
+
+
+/////////// bind - создаёт новую функцию, которая при вызове устанавливает в качестве контекста выполнения this предоставленное значение. 
+const obj3 = {
+    name: 'James',
+    age: '37'
+}; 
+function func(){
+    return `Nashemu sosedu ${this.name} ${this.age} let`;
+}
+let funcUser = func.bind(obj3);
+console.log(funcUser());
+
+
+
+function mul(a, b){
+    return a * b;
+}
+let double = mul.bind(null, 4);// 1 param - kontekst 2 param - pervi parametr
+console.log(double(2));//vtoroi parametr
+console.log(double(3));//vtoroi parametr
+console.log(double(4));//vtoroi parametr
+
+//////////////////////////////////
+
+
+////////////metod call  вызывает функцию с указанным значением this и индивидуально предоставленными аргументами.
+function myfunc4(){
+    return this.name+" "+ this.age;
+}
+const obj4 = {
+    name: 'Melik',
+    age: 36
+};
+console.log(myfunc4.call(obj4));
+
+
+
+function myfunc5(name, age){
+    return this[name]+" "+ this[age];
+}
+const obj5 = {
+    name: 'Melik',
+    age: 36
+};
+
+console.log(myfunc5.call(obj5 , 'name', 'age'));
+////////////////////////////////////////////////////
+
+
+// Метод apply() вызывает функцию с указанным значением this и аргументами, предоставленными в виде массива
+////////////////////////////////
+
+const arr3 = [1,6,4,9,7];
+console.log(Math.max.apply(null,arr3));
+
+var ar4r = [];
+ar4r.push(1);
+ar4r.push(5);
+ar4r.push(2);
+
+// получить максимум из элементов arr
+console.log( Math.max.apply(null, ar4r) ); // 5
+
+////////////////////////////////
