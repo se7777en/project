@@ -1,4 +1,4 @@
-'use strict'; // use strict 
+'use strict'; // use strict 1234
 
 window.addEventListener('DOMContentLoaded', () => {
     let start = new Date();
