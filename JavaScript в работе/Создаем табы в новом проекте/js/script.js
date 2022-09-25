@@ -1,4 +1,4 @@
-'use strict';
+'use strict'; // use strict 
 
 window.addEventListener('DOMContentLoaded', () => {
     let start = new Date();
@@ -44,7 +44,7 @@ window.addEventListener('DOMContentLoaded', () => {
             });
         }
     });
-////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////A
     // Timer
 
     const deadline = '2022-10-11';
