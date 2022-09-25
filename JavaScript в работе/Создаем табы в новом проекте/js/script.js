@@ -1,4 +1,4 @@
-'use strict';//A
+'use strict';
 
 window.addEventListener('DOMContentLoaded', () => {
     let start = new Date();
