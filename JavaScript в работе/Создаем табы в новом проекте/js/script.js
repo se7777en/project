@@ -44,17 +44,17 @@ window.addEventListener('DOMContentLoaded', () => {
             });
         }
     });
-////////////////////////////////////////////////////////////////////A
+    ////////////////////////////////////////////////////////////////////A
     // Timer
 
     const deadline = '2022-10-11';
 
     function getTimeRemaining(endtime) {
         const t = Date.parse(endtime) - Date.parse(new Date()),
-            days = Math.floor( (t/(1000*60*60*24)) ),
-            seconds = Math.floor( (t/1000) % 60 ),
-            minutes = Math.floor( (t/1000/60) % 60 ),
-            hours = Math.floor( (t/(1000*60*60) % 24) );
+            days = Math.floor((t / (1000 * 60 * 60 * 24))),
+            seconds = Math.floor((t / 1000) % 60),
+            minutes = Math.floor((t / 1000 / 60) % 60),
+            hours = Math.floor((t / (1000 * 60 * 60) % 24));
 
         return {
             'total': t,
@@ -65,8 +65,8 @@ window.addEventListener('DOMContentLoaded', () => {
         };
     }
 
-    function getZero(num){
-        if (num >= 0 && num < 10) { 
+    function getZero(num) {
+        if (num >= 0 && num < 10) {
             return '0' + num;
         } else {
             return num;
@@ -100,20 +100,21 @@ window.addEventListener('DOMContentLoaded', () => {
 
     setClock('.timer', deadline);
 
-// Modal   Создаем модальное окно
-///////////////////////////////////////////////////////////////
-const modalTrigger = document.querySelectorAll('[data-modal]'),
-        modal = document.querySelector('.modal');/*,
-        modalCloseBtn = document.querySelector('[data-close]');*/
+    // Modal   Создаем модальное окно
+    ///////////////////////////////////////////////////////////////
+    const modalTrigger = document.querySelectorAll('[data-modal]'),
+        modal = document.querySelector('.modal');
+    /*,
+            modalCloseBtn = document.querySelector('[data-close]');*/
 
 
-        function openModal(){
-            modal.classList.add('show');
-            modal.classList.remove('hide');
-            // Либо вариант с toggle - но тогда назначить класс в верстке
-            document.body.style.overflow = 'hidden';
-            //clearInterval(settimeModal);
-        }
+    function openModal() {
+        modal.classList.add('show');
+        modal.classList.remove('hide');
+        // Либо вариант с toggle - но тогда назначить класс в верстке
+        document.body.style.overflow = 'hidden';
+        //clearInterval(settimeModal);
+    }
 
     modalTrigger.forEach(btn => {
         btn.addEventListener('click', openModal);
@@ -125,7 +126,7 @@ const modalTrigger = document.querySelectorAll('[data-modal]'),
         // Либо вариант с toggle - но тогда назначить класс в верстке
         document.body.style.overflow = '';
     }
-    
+
     //modalCloseBtn.addEventListener('click', closeModal);
 
     modal.addEventListener('click', (e) => {
@@ -135,13 +136,13 @@ const modalTrigger = document.querySelectorAll('[data-modal]'),
     });
 
     document.addEventListener('keydown', (e) => {
-        if (e.code === "Escape" && modal.classList.contains('show')) { 
+        if (e.code === "Escape" && modal.classList.contains('show')) {
             closeModal();
         }
     });
     //const settimeModal = setInterval(openModal,5000); // otobrajat cherez 5 sec
 
-   /* const settimeModal = setInterval(openModal,5000);
+    /* const settimeModal = setInterval(openModal,5000);
 function showModalByScroll(){
     if (window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight - 1) {
         openModal();
@@ -151,39 +152,39 @@ function showModalByScroll(){
 window.addEventListener('scroll', showModalByScroll);
 let end = new Date();
 console.log(`Vremya skripta zanyalo ${end - start} millisekund`);*/
-/////////////////////////////////////////////////////////////////////  
+    /////////////////////////////////////////////////////////////////////  
 
-// Используем классы для создание карточек меню
+    // Используем классы для создание карточек меню
 
-class MenuCard {
-    constructor(src, alt, title, descr, price, parentSelector, ...classes) {
-        this.src = src;
-        this.alt = alt;
-        this.title = title;
-        this.descr = descr;
-        this.price = price;
-        this.classes = classes;
-        this.parent = document.querySelector(parentSelector);
-        this.transfer = 27;
-        this.changeToUAH(); 
-    }
-
-    changeToUAH() {
-        this.price = this.price * this.transfer; 
-    }
-
-    render() {
-        const element = document.createElement('div');
-        //element.classList.add('menu__item');
-
-        if (this.classes.length === 0) {
-          this.classes = 'menu__item';
-          element.classList.add(this.classes);
-        } else {
-          this.classes.forEach(clasname => element.classList.add(clasname));
+    class MenuCard {
+        constructor(src, alt, title, descr, price, parentSelector, ...classes) {
+            this.src = src;
+            this.alt = alt;
+            this.title = title;
+            this.descr = descr;
+            this.price = price;
+            this.classes = classes;
+            this.parent = document.querySelector(parentSelector);
+            this.transfer = 27;
+            this.changeToUAH();
         }
 
-        element.innerHTML = `
+        changeToUAH() {
+            this.price = this.price * this.transfer;
+        }
+
+        render() {
+            const element = document.createElement('div');
+            //element.classList.add('menu__item');
+
+            if (this.classes.length === 0) {
+                this.classes = 'menu__item';
+                element.classList.add(this.classes);
+            } else {
+                this.classes.forEach(clasname => element.classList.add(clasname));
+            }
+
+            element.innerHTML = `
                 <img src=${this.src} alt=${this.alt}>
                 <h3 class="menu__item-subtitle">${this.title}</h3>
                 <div class="menu__item-descr">${this.descr}</div>
@@ -193,37 +194,43 @@ class MenuCard {
                     <div class="menu__item-total"><span>${this.price}</span> грн/день</div>
                 </div>
             `;
-        this.parent.append(element);
-    }
-}
-
-const GetResource = async (url) => {
-    const res = await fetch(url);
-
-    if(!res.ok){ // u fetcha est OK - eto esli vse normalno i status - poluchaem status
-        throw new Error(`Could not fetch ${url}, status: ${res.status}`);
+            this.parent.append(element);
+        }
     }
 
-    return await res.json();
-};
+    const GetResource = async (url) => {
+        const res = await fetch(url);
 
-//////////////////////////////////////////////
-/*GetResource('http://localhost:3000/menu')
-    .then(data => {
-        data.forEach(({img, altimg, title,descr, price}) => { // vitaskivaem iz obiekta svoistva eto destrukturizaciya
-            new MenuCard(img, altimg, title, descr, price, '.menu .container').render();
-        });
-    });*/
+        if (!res.ok) { // u fetcha est OK - eto esli vse normalno i status - poluchaem status
+            throw new Error(`Could not fetch ${url}, status: ${res.status}`);
+        }
 
-////////////////////////////////////////////// ili
+        return await res.json();
+    };
+
+    //////////////////////////////////////////////
+    /*GetResource('http://localhost:3000/menu')
+        .then(data => {
+            data.forEach(({img, altimg, title,descr, price}) => { // vitaskivaem iz obiekta svoistva eto destrukturizaciya
+                new MenuCard(img, altimg, title, descr, price, '.menu .container').render();
+            });
+        });*/
+
+    ////////////////////////////////////////////// ili
 
 
-//////////////////////////////////////////////
+    //////////////////////////////////////////////
     GetResource('http://localhost:3000/menu')
-    .then(data => createCard(data));
+        .then(data => createCard(data));
 
-    function createCard(data){
-        data.forEach(({img, altimg, title,descr, price}) => {
+    function createCard(data) {
+        data.forEach(({
+            img,
+            altimg,
+            title,
+            descr,
+            price
+        }) => {
             const element = document.createElement('div');
             price = price * 27;
             element.classList.add('menu__item');
@@ -240,173 +247,173 @@ const GetResource = async (url) => {
             document.querySelector('.menu .container').append(element);
         });
     }
-//////////////////////////////////////////////    
+    //////////////////////////////////////////////    
 
-/*
-new MenuCard(
-    "img/tabs/vegy.jpg",
-    "vegy",
-    'Меню "Фитнес"',
-    'Меню "Фитнес" - это новый подход к приготовлению блюд: больше свежих овощей и фруктов. Продукт активных и здоровых людей. Это абсолютно новый продукт с оптимальной ценой и высоким качеством!',
-    9,
-    ".menu .container",
-    'menu__item',
-    'bg'
+    /*
+    new MenuCard(
+        "img/tabs/vegy.jpg",
+        "vegy",
+        'Меню "Фитнес"',
+        'Меню "Фитнес" - это новый подход к приготовлению блюд: больше свежих овощей и фруктов. Продукт активных и здоровых людей. Это абсолютно новый продукт с оптимальной ценой и высоким качеством!',
+        9,
+        ".menu .container",
+        'menu__item',
+        'bg'
 
-    // mojno dobavluyat klassi  
-
-
-).render();
-
-new MenuCard(
-    "img/tabs/post.jpg",
-    "post",
-    'Меню "Постное"',
-    'Меню “Постное” - это тщательный подбор ингредиентов: полное отсутствие продуктов животного происхождения, молоко из миндаля, овса, кокоса или гречки, правильное количество белков за счет тофу и импортных вегетарианских стейков.',
-    14,
-    ".menu .container",
-).render();
-
-new MenuCard(
-    "img/tabs/elite.jpg",
-    "elite",
-    'Меню “Премиум”',
-    'В меню “Премиум” мы используем не только красивый дизайн упаковки, но и качественное исполнение блюд. Красная рыба, морепродукты, фрукты - ресторанное меню без похода в ресторан!',
-    21,
-    ".menu .container"
-).render();
-*/
+        // mojno dobavluyat klassi  
 
 
+    ).render();
 
-// Forms  Реализация скрипта отправки данных на сервер
-//////////////////////////////////////////////////////////////////////////////////
-const forms = document.querySelectorAll('form');
+    new MenuCard(
+        "img/tabs/post.jpg",
+        "post",
+        'Меню "Постное"',
+        'Меню “Постное” - это тщательный подбор ингредиентов: полное отсутствие продуктов животного происхождения, молоко из миндаля, овса, кокоса или гречки, правильное количество белков за счет тофу и импортных вегетарианских стейков.',
+        14,
+        ".menu .container",
+    ).render();
 
-const message = {// konteinet soobsheni
-loading: 'img/form/spinner.svg',
-success: 'Spasibo! mi Skoro s vami svyajemsya',
-failure: 'Chtoto poshlo ne tak...'
-};
+    new MenuCard(
+        "img/tabs/elite.jpg",
+        "elite",
+        'Меню “Премиум”',
+        'В меню “Премиум” мы используем не только красивый дизайн упаковки, но и качественное исполнение блюд. Красная рыба, морепродукты, фрукты - ресторанное меню без похода в ресторан!',
+        21,
+        ".menu .container"
+    ).render();
+    */
 
-forms.forEach(item => {
-    bindPostData(item);
 
-});
 
-const postData = async (url, data) => {
-    const res = await fetch(url, {
-        method: "POST",
-        headers: {
-            'Content-type' : 'application/json'
-        },
-        body: data
+    // Forms  Реализация скрипта отправки данных на сервер
+    //////////////////////////////////////////////////////////////////////////////////
+    const forms = document.querySelectorAll('form');
+
+    const message = { // konteinet soobsheni
+        loading: 'img/form/spinner.svg',
+        success: 'Spasibo! mi Skoro s vami svyajemsya',
+        failure: 'Chtoto poshlo ne tak...'
+    };
+
+    forms.forEach(item => {
+        bindPostData(item);
+
     });
 
-    return await res.json();
-};
+    const postData = async (url, data) => {
+        const res = await fetch(url, {
+            method: "POST",
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: data
+        });
 
-function bindPostData(form) {
-    form.addEventListener('submit', (e) => { // u kajdoi knopki(sushnosti) gde est input est submit
-        e.preventDefault();
+        return await res.json();
+    };
+
+    function bindPostData(form) {
+        form.addEventListener('submit', (e) => { // u kajdoi knopki(sushnosti) gde est input est submit
+            e.preventDefault();
 
 
-        //const statusMessage = document.createElement('div');
-        const statusMessage = document.createElement('img');
-        //statusMessage.classList.add('status');
-        statusMessage.src = message.loading;// mojno setAttribute
-        //statusMessage.textContent = message.loading;
-        statusMessage.style.cssText = `  
+            //const statusMessage = document.createElement('div');
+            const statusMessage = document.createElement('img');
+            //statusMessage.classList.add('status');
+            statusMessage.src = message.loading; // mojno setAttribute
+            //statusMessage.textContent = message.loading;
+            statusMessage.style.cssText = `  
         display: block;
         margin: 0 auto;
-        `;// dobavlyaem stili k statusMessage
-        //form.append(statusMessage);
-        form.insertAdjacentElement('afterend', statusMessage); // metod vstavki
+        `; // dobavlyaem stili k statusMessage
+            //form.append(statusMessage);
+            form.insertAdjacentElement('afterend', statusMessage); // metod vstavki
 
 
-       /* const request = new XMLHttpRequest(); // sozdaem zapros -- XMLHttpRequest eto stari metod no jelatelno ego znat
-        request.open('POST', 'server.php');*/ // nastraivaem zapros
+            /* const request = new XMLHttpRequest(); // sozdaem zapros -- XMLHttpRequest eto stari metod no jelatelno ego znat
+             request.open('POST', 'server.php');*/ // nastraivaem zapros
 
 
-       // request.setRequestHeader('Content-type', 'miltipart/form-data');// kogda mi ispolzuem XMLHttpRequest() i FormData() togda zagolovok ne nujen on sozdaetsya avtomaticheski
-      /* request.setRequestHeader('Content-type', 'applicatin/json');*/ // otprajka dannix na server v formate JSON
-       const formData = new FormData(form); // chtobi ne sobirat kajdi value po otdelnosti i potom sozdavat obiekt dlya nego dlya etogo est FormData
-        // kogda dannie idut na server s formi togda obizatelno doljni bit u vsex inputov atribut name
-     
-        /////////////
-        /*const object = {};
-        formData.forEach(function(value, key) {// dobavlyaem iz formData dannie value, key v pustoi obiekt cherez cikl forEach
-            object[key] = value;    
-        });*/
-        ////////////// ili 
+            // request.setRequestHeader('Content-type', 'miltipart/form-data');// kogda mi ispolzuem XMLHttpRequest() i FormData() togda zagolovok ne nujen on sozdaetsya avtomaticheski
+            /* request.setRequestHeader('Content-type', 'applicatin/json');*/ // otprajka dannix na server v formate JSON
+            const formData = new FormData(form); // chtobi ne sobirat kajdi value po otdelnosti i potom sozdavat obiekt dlya nego dlya etogo est FormData
+            // kogda dannie idut na server s formi togda obizatelno doljni bit u vsex inputov atribut name
 
-        const json = JSON.stringify(Object.fromEntries(formData.entries())); // vot tak bolee sovremenni metod
-        
-        //Object.entries() - preobrazuet obiekt v masiv - masiv masivov
-        //Object.fromEntries() -  prevrashaem masiv masivov v obiekt
-        //JSON.stringify() - prevrashaem obiekt v json
-        
-        
-       // const obj = {a: 23, b: 50};
-        //console.log(Object.entries(obj));// prevrashaem obiekt v masiv masivov tipa matrici
-       /* const json = JSON.stringify(object); */// preobrazuem object v json
- 
-       // request.send(formData);// bez ispolzovaniya JSON
-       /*request.send(json);*/ // s ispolzovaniem JSON
+            /////////////
+            /*const object = {};
+            formData.forEach(function(value, key) {// dobavlyaem iz formData dannie value, key v pustoi obiekt cherez cikl forEach
+                object[key] = value;    
+            });*/
+            ////////////// ili 
 
-   //////////////////////////////////////////   fetch zaprosi 
-   
-   ///////    
-   /*fetch('server.php',{
-        method: "POST",
-        headers: {
-            'Content-type' : 'application/json'
-        },
-        body: JSON.stringify(object)
-    });*/
-   ///////
+            const json = JSON.stringify(Object.fromEntries(formData.entries())); // vot tak bolee sovremenni metod
 
-    postData('http://localhost:3000/requests', json)
-    /*.then(data => data.text())*/
-    .then(data => {
-        console.log(data);
-        showThanksModal(message.success);
-        
-        statusMessage.remove();
-    }).catch(() => {
-        showThanksModal(message.failure);
-    }).finally(() => {
-        form.reset();
-    });
-    ///////////////////////////
-
-      /*  request.addEventListener('load', () => {
-            if (request.status === 200) {
-                console.log(request.response);
-                //statusMessage.textContent = message.success;
-                showThanksModal(message.success);
-                form.reset();
-                //setTimeout(() => {
-                            statusMessage.remove();
-                //},2000);
-            } else {
-                //statusMessage.textContent = message.failure;
-                showThanksModal(message.failure);
-            }
-
-        });*/
+            //Object.entries() - preobrazuet obiekt v masiv - masiv masivov
+            //Object.fromEntries() -  prevrashaem masiv masivov v obiekt
+            //JSON.stringify() - prevrashaem obiekt v json
 
 
-    });
-}
+            // const obj = {a: 23, b: 50};
+            //console.log(Object.entries(obj));// prevrashaem obiekt v masiv masivov tipa matrici
+            /* const json = JSON.stringify(object); */ // preobrazuem object v json
+
+            // request.send(formData);// bez ispolzovaniya JSON
+            /*request.send(json);*/ // s ispolzovaniem JSON
+
+            //////////////////////////////////////////   fetch zaprosi 
+
+            ///////    
+            /*fetch('server.php',{
+                 method: "POST",
+                 headers: {
+                     'Content-type' : 'application/json'
+                 },
+                 body: JSON.stringify(object)
+             });*/
+            ///////
+
+            postData('http://localhost:3000/requests', json)
+                /*.then(data => data.text())*/
+                .then(data => {
+                    console.log(data);
+                    showThanksModal(message.success);
+
+                    statusMessage.remove();
+                }).catch(() => {
+                    showThanksModal(message.failure);
+                }).finally(() => {
+                    form.reset();
+                });
+            ///////////////////////////
+
+            /*  request.addEventListener('load', () => {
+                  if (request.status === 200) {
+                      console.log(request.response);
+                      //statusMessage.textContent = message.success;
+                      showThanksModal(message.success);
+                      form.reset();
+                      //setTimeout(() => {
+                                  statusMessage.remove();
+                      //},2000);
+                  } else {
+                      //statusMessage.textContent = message.failure;
+                      showThanksModal(message.failure);
+                  }
+
+              });*/
+
+
+        });
+    }
 
     function showThanksModal(message) {
         const prevModalDialog = document.querySelector('.modal__dialog');
-    
+
         prevModalDialog.classList.add('hide');
         openModal();
 
-        const thanksModal = document.createElement('div'); 
+        const thanksModal = document.createElement('div');
         thanksModal.classList.add('modal__dialog');
         thanksModal.innerHTML = `
         <div class = "modal__content">
@@ -427,142 +434,142 @@ function bindPostData(form) {
 
 
 
-fetch('http://localhost:3000/menu')
-.then(data => data.json())
-.then(res => console.log(res));
+    fetch('http://localhost:3000/menu')
+        .then(data => data.json())
+        .then(res => console.log(res));
 
 
-/*
-// na servere sozdaem fail s imene server.php i v nego propisivaem
-<?php
-$_POST = json_decode(file_get_contents("php://input"),true);
-echo var_dump($_POST);
-?>*/
+    /*
+    // na servere sozdaem fail s imene server.php i v nego propisivaem
+    <?php
+    $_POST = json_decode(file_get_contents("php://input"),true);
+    echo var_dump($_POST);
+    ?>*/
 
 
-// sliders
-/*
-let slideNum = 1;
+    // sliders
+    /*
+    let slideNum = 1;
 
-const sliders = document.querySelectorAll('.offer__slide'),
-        prev = document.querySelector('.offer__slider-prev'),
-        next = document.querySelector('.offer__slider-next'),
-        current = document.querySelector('#current'),
-        total = document.querySelector('#total');
+    const sliders = document.querySelectorAll('.offer__slide'),
+            prev = document.querySelector('.offer__slider-prev'),
+            next = document.querySelector('.offer__slider-next'),
+            current = document.querySelector('#current'),
+            total = document.querySelector('#total');
 
-        if(sliders.length < 10){
-            total.innerHTML = `0${sliders.length}`;
-        }else{
-            total.innerHTML = `${sliders.length}`;
-        }
-
-        slider(slideNum);
-
-        function slider(n){
-            if(n > sliders.length){
-                slideNum = 1;
-            }
-            if(n < 1){
-                slideNum = sliders.length;
-            }
-
-            sliders.forEach((item) => {
-               //item.style = 'display: none';
-               item.classList.add('hide','fade');     
-            });
-            //sliders[slideNum -1].style = 'display: block';
-            if(sliders[slideNum - 1].classList.contains('hide')){
-                sliders[slideNum - 1].classList.remove('hide');
-            }
-
-            
-
-
-            if(slideNum < 10){
-                current.innerHTML = `0${slideNum}`;
+            if(sliders.length < 10){
+                total.innerHTML = `0${sliders.length}`;
             }else{
-                current.innerHTML = `${slideNum}`;
-            }
-        }
-
-
-
-        function plusSlide(n){
-            slider(slideNum += n);
-        }
-
-
-        prev.addEventListener('click',()=>{
-            plusSlide(-1);
-        });
-
-        next.addEventListener('click',() => {
-            plusSlide(1);
-        });
-*////////////////vtoroi variant
-
-/*
-const sliders = document.querySelectorAll('.offer__slide'),
-         prev = document.querySelector('.offer__slider-prev'),
-         next = document.querySelector('.offer__slider-next'),
-         current = document.querySelector('#current'),
-         total = document.querySelector('#total');
-
-
-         let slideIndex = 1;
-        if(sliders.length < 10){
-            total.textContent = `0${sliders.length}`;
-        }else{
-            total.textContent = sliders.length;
-        }
-
-        slider(slideIndex);
-
-        function slider(n){
-            if(n > sliders.length){
-                slideIndex = 1;
-            }
-            if(n < 1){
-                slideIndex = sliders.length;
+                total.innerHTML = `${sliders.length}`;
             }
 
-            sliders.forEach(item => {
-                 item.classList.add('hide');
-                 if(item.classList.contains('fade')){
-                    item.classList.remove('fade');
-                 }
+            slider(slideNum);
+
+            function slider(n){
+                if(n > sliders.length){
+                    slideNum = 1;
+                }
+                if(n < 1){
+                    slideNum = sliders.length;
+                }
+
+                sliders.forEach((item) => {
+                   //item.style = 'display: none';
+                   item.classList.add('hide','fade');     
+                });
+                //sliders[slideNum -1].style = 'display: block';
+                if(sliders[slideNum - 1].classList.contains('hide')){
+                    sliders[slideNum - 1].classList.remove('hide');
+                }
+
+                
+
+
+                if(slideNum < 10){
+                    current.innerHTML = `0${slideNum}`;
+                }else{
+                    current.innerHTML = `${slideNum}`;
+                }
+            }
+
+
+
+            function plusSlide(n){
+                slider(slideNum += n);
+            }
+
+
+            prev.addEventListener('click',()=>{
+                plusSlide(-1);
             });
 
+            next.addEventListener('click',() => {
+                plusSlide(1);
+            });
+    */ ///////////////vtoroi variant
 
-            if(sliders[slideIndex -1].classList.contains('hide')){
-                sliders[slideIndex -1].classList.remove('hide'); 
-                sliders[slideIndex -1].classList.add('fade'); 
-            }       
+    /*
+    const sliders = document.querySelectorAll('.offer__slide'),
+             prev = document.querySelector('.offer__slider-prev'),
+             next = document.querySelector('.offer__slider-next'),
+             current = document.querySelector('#current'),
+             total = document.querySelector('#total');
 
-            if(slideIndex < 10){
-                current.textContent = `0${slideIndex}`;
+
+             let slideIndex = 1;
+            if(sliders.length < 10){
+                total.textContent = `0${sliders.length}`;
             }else{
-                current.textContent = slideIndex;
+                total.textContent = sliders.length;
             }
-            
-        }
 
-        function displaySlide(n){
-            slider(slideIndex  += n);
-        }
+            slider(slideIndex);
 
-        prev.addEventListener('click',() => {
-            displaySlide(-1);
-        });
+            function slider(n){
+                if(n > sliders.length){
+                    slideIndex = 1;
+                }
+                if(n < 1){
+                    slideIndex = sliders.length;
+                }
 
-        next.addEventListener('click',() => {
-            displaySlide(1);
-        });
+                sliders.forEach(item => {
+                     item.classList.add('hide');
+                     if(item.classList.contains('fade')){
+                        item.classList.remove('fade');
+                     }
+                });
 
-  //////////////////////////////////////////////////  
 
-  */
- ////////////// 3 variant
+                if(sliders[slideIndex -1].classList.contains('hide')){
+                    sliders[slideIndex -1].classList.remove('hide'); 
+                    sliders[slideIndex -1].classList.add('fade'); 
+                }       
+
+                if(slideIndex < 10){
+                    current.textContent = `0${slideIndex}`;
+                }else{
+                    current.textContent = slideIndex;
+                }
+                
+            }
+
+            function displaySlide(n){
+                slider(slideIndex  += n);
+            }
+
+            prev.addEventListener('click',() => {
+                displaySlide(-1);
+            });
+
+            next.addEventListener('click',() => {
+                displaySlide(1);
+            });
+
+      //////////////////////////////////////////////////  
+
+      */
+    ////////////// 3 variant
     //
     let offset = 0;
     let slideIndex = 1;
@@ -596,10 +603,28 @@ const sliders = document.querySelectorAll('.offer__slide'),
 
 
     sliderWrapper.style.overflow = 'hidden';
-    
-//////////////////////////////
+
+    //////////////////////////////
+
+    function currentSlide(sliders, to) {
+        if (sliders.length < 10) {
+            to.textContent = `0${slideIndex}`;
+        } else {
+            to.textContent = slideIndex;
+        }
+
+    }
+
+    function dotOpacity(arr) {
+        arr.forEach(item => {
+            item.style.opacity = '.5';
+        });
+    }
+
+
+
     slide.style.position = 'relative';
-    const indicator = document.createElement('ul');
+    const indicator = document.createElement('ol');
     indicator.classList.add('carousel-indicators');
 
     indicator.style.cssText = `
@@ -615,12 +640,12 @@ const sliders = document.querySelectorAll('.offer__slide'),
     margin-bottom: 2%;
     list-style: none;`;
 
- slide.append(indicator);
+    slide.append(indicator);
 
-    for(let i = 0; i < sliders.length; i++){
+    for (let i = 0; i < sliders.length; i++) {
         const dot = document.createElement('li');
-              dot.setAttribute('data-carousel',i + 1);
-            dot.style.cssText = `
+        dot.setAttribute('data-carousel', i + 1);
+        dot.style.cssText = `
             box-sizing: content-box;
             flex: 0 1 auto;
             width: 30px;
@@ -634,33 +659,26 @@ const sliders = document.querySelectorAll('.offer__slide'),
             opacity: .5;
             transition: opacity .6s ease;
             `;
-            arr.push(dot);
+        arr.push(dot);
 
-           indicator.append(dot);
+        indicator.append(dot);
 
-           if(i == 0){
+        if (i == 0) {
             dot.style.opacity = '1';
-           }
+        }
 
     }
-//////////////////////////////////////////
+    //////////////////////////////////////////
 
     arr.forEach(dot => {
-        dot.addEventListener('click',(e)=>{
-            //console.log(e.target);
+        dot.addEventListener('click', (e) => {
             const ind = e.target.getAttribute('data-carousel');
             slideIndex = ind;
-            arr.forEach(item => {
-                item.style.opacity = '.5';
-            });
+            dotOpacity(arr);
 
             arr[slideIndex - 1].style.opacity = '1';
 
-            if (sliders.length < 10) {
-                current.textContent = `0${slideIndex}`;
-            } else {
-                current.textContent = slideIndex;
-            }
+            currentSlide(sliders, current);
 
             offset = +width.slice(0, width.length - 2) * (slideIndex - 1);
             sliderInner.style.transform = `translateX(-${offset}px)`;
@@ -685,17 +703,10 @@ const sliders = document.querySelectorAll('.offer__slide'),
             slideIndex++;
         }
 
-        if (sliders.length < 10) {
-            current.textContent = `0${slideIndex}`;
-        } else {
-            current.textContent = slideIndex;
-        }
-        arr.forEach(dot => {
-            dot.style.opacity = '.5';
-        });
+        currentSlide(sliders, current);
+        dotOpacity(arr);
+
         arr[slideIndex - 1].style.opacity = '1';
-
-
     });
 
 
@@ -707,7 +718,6 @@ const sliders = document.querySelectorAll('.offer__slide'),
             offset -= +width.slice(0, width.length - 2);
         }
 
-
         sliderInner.style.transform = `translateX(-${offset}px)`;
 
         if (slideIndex == 1) {
@@ -717,27 +727,12 @@ const sliders = document.querySelectorAll('.offer__slide'),
         }
 
 
-        if (sliders.length < 10) {
-            current.textContent = `0${slideIndex}`;
-        } else {
-            current.textContent = slideIndex;
-        }
+        currentSlide(sliders, current);
 
-        arr.forEach(dot => {
-            dot.style.opacity = '.5';
-        });
+        dotOpacity(arr);
+
         arr[slideIndex - 1].style.opacity = '1';
 
     });
-
-        //let ofset = 0;
-        //sliderInner.style.
-
-
-
-
-
-
-        // console.log(width);
 
 });
