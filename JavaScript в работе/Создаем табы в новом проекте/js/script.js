@@ -582,7 +582,11 @@ console.log(`Vremya skripta zanyalo ${end - start} millisekund`);*/
         total = document.querySelector('#total'),
         sliderWrapper = document.querySelector('.offer__slider-wrapper'),
         sliderInner = document.querySelector('.offer_slider_inner'),
-        width = window.getComputedStyle(sliderWrapper).width;
+        width = window.getComputedStyle(sliderWrapper).width,
+
+        prev1 = document.querySelector('prev'),
+        next1 = document.querySelector('next');    
+
 
 
     if (sliders.length < 10) {
@@ -668,7 +672,77 @@ console.log(`Vremya skripta zanyalo ${end - start} millisekund`);*/
         }
 
     }
+
+
+
+
+
+
+    ////////////////////////////////////////// slide po bokam
+    const slide1 = document.createElement('a');
+    slide1.classList.add('prev');
+    slide1.innerHTML = '❮';
+
+    const slide2 = document.createElement('a');
+    slide2.classList.add('next');
+    slide2.innerHTML = '❯';
+    slide.append(slide1, slide2);
+
+
+
+    slide.addEventListener('click', (e) => {
+        const target = e.target;
+        if (target && target.classList.contains('prev')) {
+
+            if (offset == 0) {
+                offset = 0;
+            } else {
+                offset -= +width.slice(0, width.length - 2);
+            }
+
+            sliderInner.style.transform = `translateX(-${offset}px)`;
+
+            if (slideIndex == 1) {
+                slideIndex = 1;
+            } else {
+                slideIndex--;
+            }
+            currentSlide(sliders, current);
+
+            dotOpacity(arr);
+            arr[slideIndex - 1].style.opacity = '1';
+
+
+        }
+
+    });
+
+    slide.addEventListener('click', (e) => {
+        const target = e.target;
+        if (target && target.classList.contains('next')) {
+
+            if (offset == (sliders.length - 1) * +width.slice(0, width.length - 2)) {
+                offset = (sliders.length - 1) * +width.slice(0, width.length - 2);
+            } else {
+                offset += +width.slice(0, width.length - 2);
+            }
+            sliderInner.style.transform = `translateX(-${offset}px)`;
+
+            if (slideIndex == sliders.length) {
+                slideIndex = sliders.length;
+            } else {
+                slideIndex++;
+            }
+            currentSlide(sliders, current);
+
+            dotOpacity(arr);
+            arr[slideIndex - 1].style.opacity = '1';
+
+        }
+
+    });
     //////////////////////////////////////////
+
 
     arr.forEach(dot => {
         dot.addEventListener('click', (e) => {
