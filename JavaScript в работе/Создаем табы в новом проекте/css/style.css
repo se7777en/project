@@ -735,3 +735,47 @@ a {
         opacity: 1;
     }
 }
+
+
+  .prev{
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    margin-left: 1%;
+    left: 0;
+    user-select: none;
+  }
+
+
+  
+.next{
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    margin-right: 1%;
+    right: 0;
+    user-select: none;
+  }  
+  
+
+  .prev:hover{
+    background-color: rgba(102, 101, 101, 0.8);
+  }
+
+.next:hover {
+    background-color: rgba(102, 101, 101, 0.8);
+  }
