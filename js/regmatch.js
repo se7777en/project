@@ -1,12 +1,21 @@
 'use strict';
 
 const str = 'hellow how are 200px you?';
-console.log(str.replace(/\D/g,""));
-
+console.log(str.replace(/\D/g,"")); // replace imeet dva argumenta 1 shto zamenyaem 2 na shto zamenyaem
+//   /./g - vse simvoli
 /////
 const reg = /\D/gi;
-console.log(reg.test(str));
+console.log(reg.test(str)); //est esho metod test
 /////
+
+
+function getNumberFromString(str){
+    const st =  str.replace(/\D/g,'');
+return +st;
+}
+
+const str3 = "width iz 200px and height";
+console.log(getNumberFromString(str3));
 
 
 
@@ -26,7 +35,4 @@ m - mnogostrochni rejim
 \S - spaces, vse ne probeli
 
 est esho metod test
-
-
-
 */
