@@ -625,6 +625,11 @@ console.log(`Vremya skripta zanyalo ${end - start} millisekund`);*/
         });
     }
 
+    function getNumberFromString(str){
+        const st =  str.replace(/\D/g,'');
+    return +st;
+    }
+
 
 
     slide.style.position = 'relative';
@@ -697,7 +702,7 @@ console.log(`Vremya skripta zanyalo ${end - start} millisekund`);*/
             if (offset == 0) {
                 offset = 0;
             } else {
-                offset -= +width.slice(0, width.length - 2);
+                offset -= getNumberFromString(width);//+width.slice(0, width.length - 2);
             }
 
             sliderInner.style.transform = `translateX(-${offset}px)`;
@@ -721,10 +726,10 @@ console.log(`Vremya skripta zanyalo ${end - start} millisekund`);*/
         const target = e.target;
         if (target && target.classList.contains('next')) {
 
-            if (offset == (sliders.length - 1) * +width.slice(0, width.length - 2)) {
-                offset = (sliders.length - 1) * +width.slice(0, width.length - 2);
+            if (offset == (sliders.length - 1) * getNumberFromString(width)) {
+                offset = (sliders.length - 1) * getNumberFromString(width);
             } else {
-                offset += +width.slice(0, width.length - 2);
+                offset += getNumberFromString(width);
             }
             sliderInner.style.transform = `translateX(-${offset}px)`;
 
@@ -754,7 +759,7 @@ console.log(`Vremya skripta zanyalo ${end - start} millisekund`);*/
 
             currentSlide(sliders, current);
 
-            offset = +width.slice(0, width.length - 2) * (slideIndex - 1);
+            offset = getNumberFromString(width) * (slideIndex - 1);
             sliderInner.style.transform = `translateX(-${offset}px)`;
 
         });
@@ -764,7 +769,7 @@ console.log(`Vremya skripta zanyalo ${end - start} millisekund`);*/
 
     next.addEventListener('click', () => {
         console.log(arr);
-        if (offset == (sliders.length - 1) * +width.slice(0, width.length - 2)) {
+        if (offset == (sliders.length - 1) * getNumberFromString(width)) {
             offset = 0;
         } else {
             offset += +width.slice(0, width.length - 2);
@@ -787,9 +792,9 @@ console.log(`Vremya skripta zanyalo ${end - start} millisekund`);*/
 
     prev.addEventListener('click', () => {
         if (offset == 0) {
-            offset = (sliders.length - 1) * +width.slice(0, width.length - 2);
+            offset = (sliders.length - 1) * getNumberFromString(width);//+width.slice(0, width.length - 2);
         } else {
-            offset -= +width.slice(0, width.length - 2);
+            offset -= getNumberFromString(width);//+width.slice(0, width.length - 2);
         }
 
         sliderInner.style.transform = `translateX(-${offset}px)`;
