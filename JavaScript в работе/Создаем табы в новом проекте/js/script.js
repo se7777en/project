@@ -804,4 +804,25 @@ console.log(`Vremya skripta zanyalo ${end - start} millisekund`);*/
         dotOpacity(arr);
     });
 
+
+/////////////////////////////////////////// calc
+    const result = document.querySelector('.calculating__result span');
+    let sex, height, weight, age, ratio;
+
+    function calcResult() {
+        if (!sex || !height || !weight || !age || !ratio) {
+
+            result.textContent = '____';
+            return;
+        }
+
+        if (age === "female") {
+            result.textContent = (447.6 + (9.2 * weight) + (3.1 * height) - (4.3 * age)) * ratio;
+        } else {
+            result.textContent = (88.36 + (13.4 * weight) + (4.8 * height) - (5.7 * age)) * ratio;
+        }
+
+    }
+    calcResult();
+
 });
