@@ -47,7 +47,7 @@ window.addEventListener('DOMContentLoaded', () => {
     ////////////////////////////////////////////////////////////////////A
     // Timer
 
-    const deadline = '2022-10-11';
+    const deadline = '2022-12-31';
 
     function getTimeRemaining(endtime) {
         const t = Date.parse(endtime) - Date.parse(new Date()),
@@ -807,5 +807,93 @@ console.log(`Vremya skripta zanyalo ${end - start} millisekund`);*/
 
 /////////////////////////////////////////// calc
    
+const result = document.querySelector('.calculating__result span');
+
+let sex = 'female',
+height, weight, age, 
+ratio = '1.375';
+
+function GetResult() {
+    if (!sex || !height || !weight || !age || !ratio) {
+        result.textContent = '____';
+        return;
+    }
+
+    if (sex === 'female') {
+        result.textContent = Math.round((447.6 + (9.2 * weight) + (3.1 * height) - (4.3 * age)) * ratio);
+    } else {
+        result.textContent = Math.round((88.36 + (13.4 * weight) + (4.8 * height) - (5.7 * age)) * ratio);
+    }
+}
+
+GetResult();
+
+
+function calcData(parent, activClass) {
+
+    const result = document.querySelectorAll(`${parent} div`);
+    result.forEach((item) => {
+        item.addEventListener('click', (e) => {
+            if (e.target.getAttribute('data-ratio')) {
+                ratio = +e.target.getAttribute('data-ratio');
+            } else {
+                sex = e.target.getAttribute('id');
+            }
+
+            result.forEach((item) => {
+                item.classList.remove(activClass);
+            });
+            item.classList.add(activClass);
+
+            GetResult();
+        });
+
+    });
+
+}
+
+calcData('.calculating__choose_big', 'calculating__choose-item_active');
+calcData('#gender', 'calculating__choose-item_active');
+
+
+
+function calcDataForInput(value) {
+    const input = document.querySelector(value);
+    input.addEventListener('input', () => {
+
+        if(input.value.match(/\D/g)){
+            input.style.border = '1px solid red';
+        }else{
+            input.style.border = 'none';
+        }
+
+        switch (input.getAttribute('id')) {
+
+            case 'height':
+                height = +input.value;
+                break;
+
+            case 'weight':
+                weight = +input.value;
+                break;
+
+            case 'age':
+                age = +input.value;
+                break;
+        }
+        GetResult();
+    });
+
+
+
+
+}
+
+calcDataForInput('#height');
+calcDataForInput('#weight');
+calcDataForInput('#age');
+
+
+
 
 });
