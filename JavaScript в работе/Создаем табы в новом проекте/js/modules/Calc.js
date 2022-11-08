@@ -67,6 +67,7 @@ function GetResult() {
 GetResult();
 
 
+
 function calcData(parent, activClass) {
 
     const result = document.querySelectorAll(parent);
