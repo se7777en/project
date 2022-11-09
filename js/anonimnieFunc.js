@@ -10,3 +10,21 @@ const obj = (function () {
 }());
 
 obj.message();
+
+
+/////////////////////////////////////////////////////
+
+const obj1 = (function () {
+    function func1() {
+        console.log('hellow1');
+    }
+    function func2() {
+        console.log('hi');
+    }
+    return {
+        f1: func1,
+        f2: func2
+    };
+}());
+
+obj1.f2();

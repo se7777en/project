@@ -77,6 +77,7 @@ function GetResult() {
 GetResult();
 
 
+
 function calcData(parent, activClass) {
 
     const result = document.querySelectorAll(parent);
@@ -105,8 +106,7 @@ function calcData(parent, activClass) {
 calcData('.calculating__choose_big div', 'calculating__choose-item_active');
 calcData('#gender div', 'calculating__choose-item_active');
 
-
-
+//
 function calcDataForInput(value) {
     const input = document.querySelector(value);
     input.addEventListener('input', () => {
