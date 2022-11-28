@@ -1,5 +1,5 @@
 'use strict';
 
-let alert = console.log.bind(console);
+const C = console.log.bind(console);
 
-alert('hellow');
+C('hello');
