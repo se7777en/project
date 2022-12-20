@@ -44,11 +44,12 @@ body{
     border-radius: 16px;
     box-shadow: 0 4px 30px rgb(35, 35, 0.1);
     color: #232323;
-    font-size: 35;
+    font-size: 35px;
     overflow: auto;
     padding: 20px;
     text-align: right;
     width: 326px;
+    font-weight: 600;
 }
 
 .calc-button-row{
