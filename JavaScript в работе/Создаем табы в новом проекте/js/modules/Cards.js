@@ -1,4 +1,5 @@
-'use strict';
+import {GetResource} from "../services/services";
+
 
 function Cards(){
 
@@ -44,15 +45,7 @@ function Cards(){
         }
     }
 
-    const GetResource = async (url) => {
-        const res = await fetch(url);
 
-        if (!res.ok) { // u fetcha est OK - eto esli vse normalno i status - poluchaem status
-            throw new Error(`Could not fetch ${url}, status: ${res.status}`);
-        }
-
-        return await res.json();
-    };
 
     //////////////////////////////////////////////
     /*GetResource('http://localhost:3000/menu')
@@ -131,4 +124,5 @@ function Cards(){
     */
 }
 
-module.exports = Cards;
+//module.exports = Cards;
+export default Cards;

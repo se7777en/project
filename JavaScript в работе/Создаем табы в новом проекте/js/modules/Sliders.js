@@ -361,4 +361,5 @@ function Sliders(){
     });
 }
 
-module.exports = Sliders;
+//module.exports = Sliders;
+export default Sliders;
