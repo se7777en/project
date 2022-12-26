@@ -1,5 +1,5 @@
 'use strict';
-const endtime = "2023-02-18";
+const endtime = "2023-01-01";
 
 function countdown(endtime){
     const t = Date.parse(endtime) - Date.parse(new Date()),
