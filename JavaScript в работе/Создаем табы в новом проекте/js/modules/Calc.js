@@ -134,4 +134,5 @@ calcDataForInput('#weight');
 calcDataForInput('#age');
 }
 
-module.exports = Calc;
+//module.exports = Calc;
+export default Calc;
