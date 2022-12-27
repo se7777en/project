@@ -21,13 +21,22 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
-      Tabs();
+      Tabs('.tabheader__item', '.tabheader__items', '.tabcontent', 'tabheader__item_active');
       Modals('[data-modal]','.modal',modalTimerId);
-      Timer();
+      Timer('.timer', '2022-12-31');
       Cards();
       Calc();
       Forms('form', modalTimerId);
-      Sliders();
+      Sliders({
+            container: '.offer__slider',
+            nextArrow: '.offer__slider-next',
+            prevArrow: '.offer__slider-prev',
+            totalCounter: '#total',
+            currentCounter: '#current',
+            wrapper: '.offer__slider-wrapper',
+            field: '.offer_slider_inner',
+            slider: '.offer__slide'
+      });
 
 });
 

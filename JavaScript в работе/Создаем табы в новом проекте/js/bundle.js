@@ -558,7 +558,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 
 
-function Sliders(){
+
 ///////////////////////////////
 /*
     let slideNum = 1;
@@ -684,22 +684,24 @@ function Sliders(){
 
       */
 ///////////////////////////////
-   
+
+function Sliders({container, slider, nextArrow, prevArrow, totalCounter, currentCounter, wrapper,field}){
+
     let offset = 0;
     let slideIndex = 1;
-    const sliders = document.querySelectorAll('.offer__slide'),
+    const sliders = document.querySelectorAll(slider),
         arr = [],
-        slide = document.querySelector('.offer__slider'),
-        prev = document.querySelector('.offer__slider-prev'),
-        next = document.querySelector('.offer__slider-next'),
-        current = document.querySelector('#current'),
-        total = document.querySelector('#total'),
-        sliderWrapper = document.querySelector('.offer__slider-wrapper'),
-        sliderInner = document.querySelector('.offer_slider_inner'),
-        width = window.getComputedStyle(sliderWrapper).width,
+        slide = document.querySelector(container),
+        prev = document.querySelector(prevArrow),
+        next = document.querySelector(nextArrow),
+        current = document.querySelector(currentCounter),
+        total = document.querySelector(totalCounter),
+        sliderWrapper = document.querySelector(wrapper),
+        sliderInner = document.querySelector(field),
+        width = window.getComputedStyle(sliderWrapper).width; 
 
-        prev1 = document.querySelector('prev'),
-        next1 = document.querySelector('next');    
+        //prev1 = document.querySelector('prev'), 
+       // next1 = document.querySelector('next');    
 
 
 
@@ -936,10 +938,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 
 
-function Tabs(){
-    const tabs = document.querySelectorAll('.tabheader__item'),
-    tabParent = document.querySelector('.tabheader__items'),
-    tabContent = document.querySelectorAll('.tabcontent');
+function Tabs(tabsSelector, tabsContentSelector, tabsParentSelector, activeClass){
+    const tabs = document.querySelectorAll(tabsSelector),
+    tabParent = document.querySelector(tabsContentSelector),
+    tabContent = document.querySelectorAll(tabsParentSelector);
 
 
 function HideTabsContent() {
@@ -950,8 +952,8 @@ function HideTabsContent() {
     });
 
     tabs.forEach((item) => {
-        if (item.classList.contains('tabheader__item_active')) {
-            item.classList.remove('tabheader__item_active');
+        if (item.classList.contains(activeClass)) {
+            item.classList.remove(activeClass);
         }
     });
 }
@@ -960,7 +962,7 @@ function ShowTabsContent(i = 0) {
     // tabContent[i].style.display = 'block';
     tabContent[i].classList.add('show', 'fade');
     tabContent[i].classList.remove('hide');
-    tabs[i].classList.add('tabheader__item_active');
+    tabs[i].classList.add(activeClass);
 
 }
 HideTabsContent();
@@ -969,7 +971,7 @@ ShowTabsContent();
 
 tabParent.addEventListener('click', (event) => {
     const target = event.target;
-    if (target && target.classList.contains('tabheader__item')) {
+    if (target && target.classList.contains(tabsSelector.slice(1))) {
         tabs.forEach((item, i) => {
             if (target == item) {
                 HideTabsContent();
@@ -997,9 +999,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 
 
-function Timer(){
+function Timer(id, deadline){
     
-    const deadline = '2022-12-31';
+   // const deadline = '2022-12-31';
 
     function getTimeRemaining(endtime) {
         const t = Date.parse(endtime) - Date.parse(new Date()),
@@ -1050,7 +1052,7 @@ function Timer(){
         }
     }
 
-    setClock('.timer', deadline);
+    setClock(id, deadline);
 }
 
 //module.exports = Timer;
@@ -1192,13 +1194,22 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
-      (0,_modules_Tabs__WEBPACK_IMPORTED_MODULE_0__["default"])();
+      (0,_modules_Tabs__WEBPACK_IMPORTED_MODULE_0__["default"])('.tabheader__item', '.tabheader__items', '.tabcontent', 'tabheader__item_active');
       (0,_modules_Modals__WEBPACK_IMPORTED_MODULE_1__["default"])('[data-modal]','.modal',modalTimerId);
-      (0,_modules_Timer__WEBPACK_IMPORTED_MODULE_2__["default"])();
+      (0,_modules_Timer__WEBPACK_IMPORTED_MODULE_2__["default"])('.timer', '2022-12-31');
       (0,_modules_Cards__WEBPACK_IMPORTED_MODULE_3__["default"])();
       (0,_modules_Calc__WEBPACK_IMPORTED_MODULE_4__["default"])();
       (0,_modules_Forms__WEBPACK_IMPORTED_MODULE_5__["default"])('form', modalTimerId);
-      (0,_modules_Sliders__WEBPACK_IMPORTED_MODULE_6__["default"])();
+      (0,_modules_Sliders__WEBPACK_IMPORTED_MODULE_6__["default"])({
+            container: '.offer__slider',
+            nextArrow: '.offer__slider-next',
+            prevArrow: '.offer__slider-prev',
+            totalCounter: '#total',
+            currentCounter: '#current',
+            wrapper: '.offer__slider-wrapper',
+            field: '.offer_slider_inner',
+            slider: '.offer__slide'
+      });
 
 });
 

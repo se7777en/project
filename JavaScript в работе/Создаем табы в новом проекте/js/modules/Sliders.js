@@ -1,6 +1,6 @@
 'use strict';
 
-function Sliders(){
+
 ///////////////////////////////
 /*
     let slideNum = 1;
@@ -126,22 +126,24 @@ function Sliders(){
 
       */
 ///////////////////////////////
-   
+
+function Sliders({container, slider, nextArrow, prevArrow, totalCounter, currentCounter, wrapper,field}){
+
     let offset = 0;
     let slideIndex = 1;
-    const sliders = document.querySelectorAll('.offer__slide'),
+    const sliders = document.querySelectorAll(slider),
         arr = [],
-        slide = document.querySelector('.offer__slider'),
-        prev = document.querySelector('.offer__slider-prev'),
-        next = document.querySelector('.offer__slider-next'),
-        current = document.querySelector('#current'),
-        total = document.querySelector('#total'),
-        sliderWrapper = document.querySelector('.offer__slider-wrapper'),
-        sliderInner = document.querySelector('.offer_slider_inner'),
-        width = window.getComputedStyle(sliderWrapper).width,
+        slide = document.querySelector(container),
+        prev = document.querySelector(prevArrow),
+        next = document.querySelector(nextArrow),
+        current = document.querySelector(currentCounter),
+        total = document.querySelector(totalCounter),
+        sliderWrapper = document.querySelector(wrapper),
+        sliderInner = document.querySelector(field),
+        width = window.getComputedStyle(sliderWrapper).width; 
 
-        prev1 = document.querySelector('prev'),
-        next1 = document.querySelector('next');    
+        //prev1 = document.querySelector('prev'), 
+       // next1 = document.querySelector('next');    
 
 
 
