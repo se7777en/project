@@ -1,8 +1,8 @@
 'use strict';
 
-function Timer(){
+function Timer(id, deadline){
     
-    const deadline = '2022-12-31';
+   // const deadline = '2022-12-31';
 
     function getTimeRemaining(endtime) {
         const t = Date.parse(endtime) - Date.parse(new Date()),
@@ -53,7 +53,7 @@ function Timer(){
         }
     }
 
-    setClock('.timer', deadline);
+    setClock(id, deadline);
 }
 
 //module.exports = Timer;
