@@ -36,17 +36,26 @@ try {
         
         arr.forEach((item, i) => {
         const element = document.createElement(item.tag);
-        if (!item.id) {throw new Error(`identifikator itsustvuet ${i + 1}`);}
+        if (!item.id) {throw new SyntaxError(`identifikator itsustvuet ${i + 1}`);}
         
         element.setAttribute('id',item.id);
         document.body.append(element); 
     });
 
 } catch (error) {
-    console.log(error.message);
+    
+if(error.name === 'SyntaxError'){
+    console.log('ERR');
+}
+
 } finally {
     console.log('Kod vipolnyaetsya v lubom sluchae');
 }
 
+console.log('////////');
+const err = new Error('sfsf');
+console.log(err.name);
+console.log(err.message);
+console.log(err.stack);
 
 
