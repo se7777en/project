@@ -1,0 +1,2 @@
+(()=>{var o={256:o=>{"use strict";o.exports=function(){console.log("file module1___")}},796:o=>{"use strict";o.exports=function(){console.log("file module2")}}},e={};function t(r){var s=e[r];if(void 0!==s)return s.exports;var n=e[r]={exports:{}};return o[r](n,n.exports,t),n.exports}(()=>{const o=t(256),e=t(796);o(),e()})()})();
+//# sourceMappingURL=bundle.js.map
