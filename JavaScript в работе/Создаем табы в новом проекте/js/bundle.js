@@ -1196,7 +1196,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
       (0,_modules_Tabs__WEBPACK_IMPORTED_MODULE_0__["default"])('.tabheader__item', '.tabheader__items', '.tabcontent', 'tabheader__item_active');
       (0,_modules_Modals__WEBPACK_IMPORTED_MODULE_1__["default"])('[data-modal]','.modal',modalTimerId);
-      (0,_modules_Timer__WEBPACK_IMPORTED_MODULE_2__["default"])('.timer', '2022-12-31');
+      (0,_modules_Timer__WEBPACK_IMPORTED_MODULE_2__["default"])('.timer', '2023-01-03');
       (0,_modules_Cards__WEBPACK_IMPORTED_MODULE_3__["default"])();
       (0,_modules_Calc__WEBPACK_IMPORTED_MODULE_4__["default"])();
       (0,_modules_Forms__WEBPACK_IMPORTED_MODULE_5__["default"])('form', modalTimerId);
