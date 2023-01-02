@@ -23,7 +23,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
       Tabs('.tabheader__item', '.tabheader__items', '.tabcontent', 'tabheader__item_active');
       Modals('[data-modal]','.modal',modalTimerId);
-      Timer('.timer', '2022-12-31');
+      Timer('.timer', '2023-01-03');
       Cards();
       Calc();
       Forms('form', modalTimerId);
