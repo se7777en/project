@@ -23,7 +23,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
       Tabs('.tabheader__item', '.tabheader__items', '.tabcontent', 'tabheader__item_active');
       Modals('[data-modal]','.modal',modalTimerId);
-      Timer('.timer', '2023-01-03');
+      Timer('.timer', '2023-01-05 00:00:00');
+      //Wed Jan 04 2023 10:51:18 GMT+0400
       Cards();
       Calc();
       Forms('form', modalTimerId);
