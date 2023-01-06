@@ -27,13 +27,19 @@ function* count(n){
         yield i;
     }
 }
-
+/*
 const counter = count(4);
 
 console.log(counter.next().value);
 console.log(counter.next().value);
 console.log(counter.next().value);
-console.log(counter.next().value);
+console.log(counter.next().value);*/
+
+
+//perebiraem funkciu generator
+for(let k of count(5)){
+    console.log(k);
+}
 
 /// funkciya generator
 
