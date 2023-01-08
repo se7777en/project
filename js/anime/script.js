@@ -3,6 +3,7 @@
 const btn = document.querySelector('.btn'),
       box =  document.querySelector('.box');
 
+    
       let pos = 0;
 
 /*
