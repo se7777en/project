@@ -121,3 +121,35 @@ line-height: 120%;
 text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 margin-bottom: 50px;
 }
+
+
+.footer__inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 300px;
+}
+
+.concept{
+    padding-top: 150px;
+    margin-bottom: 150px;
+}
+
+.concept__inner {
+    max-width: 900px;
+    margin-left: auto;
+}
+
+.section__title {
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    color: #F402A2;
+    font-size: 18px;
+    font-family: 'Corporate-A-Bold';
+}
+
+.concept__text {
+    font-size: 24px;
+    margin-bottom: 25px;
+    line-height: 120%;
+}
