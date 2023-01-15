@@ -196,3 +196,50 @@ margin-bottom: 50px;
     color: #53A1CB;;
     border: 1px solid #53A1CB;
 }
+
+.video {
+    margin-bottom: 150px;
+}
+.video__img {
+    margin-bottom: 25px;
+}
+
+.video__btn {
+    font-family: 'Corporate-A-Bold';
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    font-size: 18px;
+    line-height: 120%;
+    color: #F402A2;
+    padding: 14px;
+    border: 1px solid #F402A2;
+    cursor: pointer;
+    transition: all .2s;
+    gap: 10px;
+}
+
+.video__btn span {
+    padding-top: 2px;
+}
+
+.video__btn:hover {
+    color: #53A1CB;
+    border: 1px solid #53A1CB;
+}
+
+.video__btn path {
+  transition: all .2s;  
+}
+
+.video__btn:hover path {
+    fill: #53A1CB;
+}
+
+.design__interior {
+    display: grid;
+    grid-template-columns: 255px 255px auto 330px;
+    grid-template-rows: auto auto;
+}
