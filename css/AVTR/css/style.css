@@ -281,11 +281,11 @@ margin-bottom: 50px;
 }
 
 .slick-track {
-    margin-left: -30px;
+    margin-left: -10px;
 }
 
 .design-slider {
-    margin-bottom: 25px;
+    padding-bottom: 25px;
 }
 
 .arrow {
@@ -299,10 +299,12 @@ margin-bottom: 50px;
 
 .arrow-left {
     transform: translate(-80px);
+    
 }
 
 .arrow-right {
     transform: translate(30px);
+    
 }
 
 .design__box {
@@ -321,4 +323,10 @@ margin-bottom: 50px;
 
 .design__box-text {
     margin-bottom: 15px;
+}
+
+.design__img {
+    max-width: 100%;
+    display: block;
+    object-fit: cover;
 }
