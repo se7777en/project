@@ -329,4 +329,22 @@ margin-bottom: 50px;
     max-width: 100%;
     display: block;
     object-fit: cover;
+    margin: 0 auto;
+}
+
+
+@media (max-width: 1000px){
+    body {
+        color: red;
+    }
+}
+
+
+@media (max-width: 500px){
+    body {
+        color: green;
+    }
+}
+.concept, .premier, .container, .design, .design__img, .footer {
+    display: none;
 }
