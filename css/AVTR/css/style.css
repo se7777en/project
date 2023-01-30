@@ -23,9 +23,10 @@ body {
     font-size: 16px;
     line-height: 120%;
     color: #fff;
+   
 }
 
-img {
+img :not(.design__slider-item) {
     width: 100%;
 }
 
@@ -210,6 +211,8 @@ margin-bottom: 50px;
 }
 .video__img {
     margin-bottom: 25px;
+    display: block;
+    max-width: 100%;
 }
 
 .video__btn {
@@ -270,6 +273,10 @@ margin-bottom: 50px;
     grid-row-end: -1;
     display: flex;
     align-items: flex-end;
+}
+
+.design__iterior-img {
+    grid-column: 2/-1;
 }
 
 
@@ -337,6 +344,28 @@ margin-bottom: 50px;
 }
 
 
+@media (max-width: 1366px){
+
+    .footer__inner {
+        height: 150px;
+    }
+}
+
+@media (max-width: 1020px){
+    .design__interior {
+        display: block;
+    }
+    .design__iterior-img {
+        width: 100%;
+        margin-bottom: 25px;
+    }
+
+    .design__cell-three .design__iterior-img {
+        max-width: 100%;
+        width: auto;
+    }
+}
+
 @media (max-width: 768px){
     .header__logo {
         /* margin: 0 auto; */
@@ -384,19 +413,44 @@ margin-bottom: 50px;
     .premier__btn {
         margin-bottom: 25px;
     }
+
+    .design__box {
+        margin: 75px auto;
+        display: block;
+    }
+
+    .design__box-column {
+        width: 100%;
+    }
 }
 
 
 
 
 
+@media (max-width: 620px){
 
+    .footer__inner {
+        flex-wrap: wrap;
+        align-content: center;
+    }
+
+    .footer .list {
+        width: 100%;
+        margin-top: 10px;
+        justify-content: center;
+    }
+}
 
 
 @media (max-width: 520px){
     .header__top {
         flex-wrap: wrap;
         align-content: center;
+    }
+    .footer__inner {
+        flex-direction: column;
+        padding-top: 10px;
     }
     .list {
         justify-content: center;
@@ -412,7 +466,11 @@ margin-bottom: 50px;
     .header__content {
         background-position: -981px;
     }
+
+ 
 }
+
+
 
 
 @media (max-width: 414px) {
@@ -427,9 +485,16 @@ margin-bottom: 50px;
     }
 }
 
+@media (max-width: 360px) {
+ .design__slider-item {
+    margin: 0;
+ }
 
-
-
-.footer {
-    display: none;
+ .slick-track {
+    margin-left: 0;
 }
+}
+
+
+
+
