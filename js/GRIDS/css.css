@@ -1,0 +1,44 @@
+body {
+    padding: 50px 100px;
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.item {
+    border: 1px solid #000;
+    background-color: #57a152;
+    color: #fff;
+    padding: 15px;
+}
+
+.box {
+    display: grid;
+    /*grid-template-columns: 200px 300px 15% auto; skolko kolonok mojno pisat v raznix edinicax pri auto shirina vishitivaetsya otnositelno kontenta*/
+    /*grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr; mojno po frakciyam raspredelit na ravnie chasti otnositelno kontenta*/
+    grid-template-columns: repeat(3, 400px); /*2 kolonki po 1 frakcii     2, 1fr*/
+    grid-template-rows: 100px 300px 150px; /*3 ryada po zadonomu kolichestvu pikselei*/
+    
+    
+    /*column-gap: 20px;
+    row-gap: 40px;*/
+    gap: 40px 20px; /* 1 - mejdu ryadami 2 - mejdu kolonkami  toje samoe chto naverxu*/
+
+
+
+   /* gap: 20px;  mejdu ryadami i kolonkami po 20px */
+
+}
+
+
+.item-1 {
+    /*grid-column-start: span 2; budet zanimat dve kolonki po gorizontali*/
+    /*grid-row-start: span 2; budet zanimat dve kolonki po vertikali*/
+    /*span - esli xochesh chtobi kakayato yacheika stala bolshe pishesh span i potom cifru tipa ne nujna pisat koordinatu nachala*/
+
+    grid-column-start: 2; /*nachinaetsya s pervoi linii po gorizontali*/ 
+    grid-column-end: 4; /*zakanchivaetsya na tretei linii po gorizontali*/
+
+    grid-row-start: 1; /*nachinaetsya s pervoi linii po vertikali*/
+    grid-row-end: 3;    /*zakanchivaetsya na tretei linii po vertikali*/
+}
