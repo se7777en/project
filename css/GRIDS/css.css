@@ -16,10 +16,27 @@ body {
     display: grid;
     /*grid-template-columns: 200px 300px 15% auto; skolko kolonok mojno pisat v raznix edinicax pri auto shirina vishitivaetsya otnositelno kontenta*/
     /*grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr; mojno po frakciyam raspredelit na ravnie chasti otnositelno kontenta*/
-    grid-template-columns: repeat(3, 400px); /*2 kolonki po 1 frakcii     2, 1fr*/
-    grid-template-rows: 100px 300px 150px; /*3 ryada po zadonomu kolichestvu pikselei*/
+    grid-template-columns: repeat(3, 400px); /*2 kolonki po 1 frakcii     2, 1fr*/ 
+    grid-template-rows: 100px 300px 150px; /*3 ryada po zadonomu kolichestvu pikselei*/    
+   
+    /*grid-template: 100px 300px 150px / 400px 400px 400px; eto shortkat dlya grid-template-columns i grid-template-row
+    ukorocheni variant
+    */
     
     
+    /*grid-template-rows: [one] 100px [two] 300px [three] 150px [four];*/
+    /*mojno linii naimit i obrashatsa k nim ne po cifram a po imenam*/
+    
+    /*grid-auto-rows: 125px; po 125px vse neyavnie ostalnie ryadi budut po 125px*/
+    /*grid-auto-rows: 125px 225px; budet cherez odnu povtoryatsa 125px potom 225px potom 125px potom 225px
+    i togdalee vse neyavnie ryadi
+    i anologichno grid-auto-column
+    */
+
+    /*grid-auto-flow: column; po umolchaniu novie kolonki poyavlyautsya v ryadax mojno pomenyat na columt 
+    i oni budut poyavlyatsya s prava v kolonke 
+    */
+
     /*column-gap: 20px;
     row-gap: 40px;*/
     gap: 40px 20px; /* 1 - mejdu ryadami 2 - mejdu kolonkami  toje samoe chto naverxu*/
@@ -28,6 +45,21 @@ body {
 
    /* gap: 20px;  mejdu ryadami i kolonkami po 20px */
 
+   /*---------*/
+   /*grid-auto-flow: dense; zapolnyaet vse yacheiki pri ne rovnom sootnoshenii
+   i anologichno dlya kolonok grid-auto-flow: column dense;*/
+   /*---------*/
+
+
+   /*justify-items: center; kak u flexov mojno centrirovat kontent so svoim boxom
+    align-items: center;
+    
+    place-items: center; - ukorocheni variant dlya dvux oboix justify-items: center; i align-items: center;
+    
+    mojno dva znacheniya
+    place-items: end start; - elementi budut vnizu i v nachale
+    */
+    
 }
 
 
@@ -36,9 +68,73 @@ body {
     /*grid-row-start: span 2; budet zanimat dve kolonki po vertikali*/
     /*span - esli xochesh chtobi kakayato yacheika stala bolshe pishesh span i potom cifru tipa ne nujna pisat koordinatu nachala*/
 
+
+/*obiedinenie kolonok*/
     grid-column-start: 2; /*nachinaetsya s pervoi linii po gorizontali*/ 
     grid-column-end: 4; /*zakanchivaetsya na tretei linii po gorizontali*/
+   /* grid-column: 2/4; ukorocheni variant dlya column*/
+    
 
     grid-row-start: 1; /*nachinaetsya s pervoi linii po vertikali*/
     grid-row-end: 3;    /*zakanchivaetsya na tretei linii po vertikali*/
+   /* grid-row: 1/3; ukorocheni variant dlya row*/
+   /*grid-row: 1/ span 3; s pervogo esho 3, skolko doljen zanimat yacheek s tekushego polojeniya*/
+
+   /*grid-row: 1/-1; -1 - eto poslednyaya -2 - predposlednyaya i togdalee.. chtobi konkretno ne zadavat*/
+
 }
+
+
+
+/*//////////// sozdaem tablicu 3 na 3*/
+.wrapper {
+    display: grid;
+    grid-template-rows: repeat(3, 200px);
+    grid-template-areas: 
+    "header header header" /*he he he*/
+    "main . aside"
+    "footer footer aside";
+}
+
+.element {
+    border: 1px solid #000;
+   /* height: 300px;*/
+}
+
+
+
+/*//////////// opredelyaem kto est kto*/
+.header {
+    grid-area: header; /*he*/
+}
+
+.main {
+    grid-area: main;
+}
+
+.aside {
+    grid-area: aside;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+
+
+
+/*--------------*/
+.item-9 {
+    grid-column: span 2;
+}
+
+.item-7 {
+    grid-column: 2/4;
+    /*justify-self: center;   vsya yacheika po centru*/
+}
+
+.item-2 {
+    justify-self: center;
+    
+}
+
