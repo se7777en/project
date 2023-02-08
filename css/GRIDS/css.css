@@ -138,3 +138,62 @@ body {
     
 }
 
+/*++++++++++++++++++*/
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.item_Q {
+    border: 3px solid #786a6a;
+    color: #ab2424;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.item_Q:hover {
+    background: #53ea93;
+    -webkit-transition: all 0.3s ease;;
+    -moz-transition: all 0.3s ease;;
+    -o-transition: all 0.3s ease;;
+    transition: all 0.3s ease;
+}
+
+.wrap {
+    display: grid;
+    grid-template-columns: repeat(3, 50px);
+    grid-template-rows: 50px 50px 50px;
+    padding-top: 150px;
+    justify-content: center;
+    
+    
+    
+    
+}
+
+.ite1,.ite2,.ite3{
+    border-top: none;
+}
+
+
+.ite3,.ite6,.ite9{
+    border-right: none;
+}
+
+.ite7,.ite8,.ite9{
+    border-bottom: none;
+}
+
+.ite1,.ite4,.ite7{
+    border-left: none;
+}
+
+.ite1,.ite2,.ite3,.ite4,.ite5,.ite6,.ite7,.ite8,.ite9{
+    cursor: pointer;
+
+}
+
