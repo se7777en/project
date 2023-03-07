@@ -16,9 +16,6 @@ line-height: 140%;
 color: #1f1e1e;
 }
 
-.header__title {
-    font-family: 'PT Serif', serif;
-}
 
 a {
     text-decoration: none;
@@ -84,4 +81,34 @@ background-size: cover;
     color: #fff;
 }
 
+.header__title{
+    font-family: 'PT Serif', serif;
+    font-weight: 700;
+    font-size: 90px;
+    line-height: 130%;
+    text-align: center;
+    margin-bottom: auto;
+}
+
+.header__descr{
+    font-weight: 700;
+    font-size: 20px;
+    max-width: 420px;
+    margin-bottom: 20px;
+}
+
+.header__btn {
+    display: inline-block;
+    font-size: 18px;
+    color: #fff;
+    padding: 19px 55px 20px;
+    background:#886239;
+    border-radius: 30px;   
+    margin-bottom: 20px;
+}
+
+.header__arrow{
+text-align: center;
+margin-bottom: 15px;
+}
 
