@@ -478,10 +478,7 @@ transform: translate(-50%, -50%);
 .footer{
     background: #1F1E1E;
     padding: 80px 0;
-    /* font-weight: 500;
-    font-size: 14px;
-    line-height: 130%;
-    color: #fff; */
+   
 }
 .footer__logo{
     text-align: center;
@@ -495,6 +492,12 @@ transform: translate(-50%, -50%);
     justify-content: space-between;
     color: #fff;
     font-size: 14px;
+    line-height: 130%;
+    max-width: 830px;
+    margin: 0 auto;
+     /* font-weight: 500;
+    font-size: 14px;
+    color: #fff; */
 }
 
 
@@ -515,15 +518,20 @@ transform: translate(-50%, -50%);
     opacity: .8;
 }
 .footer__address {
-    width: 164px;
+    width: 165px;
 }
 .footer__address-text {
 }
 .footer__contacts {
-    width: 209px;
+    width: 210px;
 }
 .footer__phone {
+    opacity: .8;
 }
 .footer__email {
+    opacity: .8;
+    display: block;
 }
+
+
 
