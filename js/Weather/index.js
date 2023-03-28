@@ -7,7 +7,8 @@ const container = document.querySelector('.container'),
       error404 = document.querySelector('.not-found'),
       searchOnEnter = document.querySelector('.search-box input'),
       lon = document.querySelector('.location .lon'),
-      lat = document.querySelector('.location .lat'); 
+      lat = document.querySelector('.location .lat'),
+      loc = document.querySelector('.location');
 
     
       const APIKey = 'c0ed29dd64ccbf9bc67b00b213484cf0';  
@@ -15,7 +16,8 @@ const container = document.querySelector('.container'),
 function weather(){             
     const city = document.querySelector('.search-box input').value;
 
-    if(city == ''){
+    if(city == ''){ 
+        loc.classList.add('hide');
         return;
     }
 
@@ -27,11 +29,16 @@ function weather(){
             weatherDetails.style.display = 'none';
             error404.style.display = 'block';
             error404.classList.add('fadeIn');
+            
+            lon.innerHTML = '0';
+            lat.innerHTML = '0';
+            loc.classList.add('hide');
             return;
         }
 
         
 
+        
         error404.style.display = 'none';
         error404.classList.add('remove');
 
@@ -73,6 +80,7 @@ function weather(){
         humidity.innerHTML = `${json.main.humidity}%`;
         wind.innerHTML = `${parseInt(json.wind.speed)}km/h`;
        
+        loc.classList.remove('hide');
         lon.innerHTML = json.coord.lon;
         lat.innerHTML = json.coord.lat;
       

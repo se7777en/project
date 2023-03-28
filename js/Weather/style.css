@@ -164,6 +164,7 @@ body{
     font-size: 22px;
     font-weight: 500;
     margin-top: 12px;
+    margin-bottom: 40px;
 }
 
 .weather-box, .weather-details{
@@ -189,12 +190,28 @@ body{
     display: flex;
     justify-content: center;
     opacity: .5;
-    border-top: 1px solid #1d1b1b;
+    border-top: 1px solid #413c3c;
     padding-top: 8px;
 }
 .location .lon{
     padding-right: 30px;
 }
+
+.loc {
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    margin-bottom: 20px;
+}
+
+
+.hide {
+    display: none;
+}
+
+
+
 
 
 
