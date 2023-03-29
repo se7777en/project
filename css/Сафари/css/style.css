@@ -490,11 +490,14 @@ transform: translate(-50%, -50%);
 .footer__box{
     display: flex;
     justify-content: space-between;
-    color: #fff;
     font-size: 14px;
     line-height: 130%;
     max-width: 830px;
     margin: 0 auto;
+    color: rgba(255, 255, 255, .8)
+
+
+
      /* font-weight: 500;
     font-size: 14px;
     color: #fff; */
@@ -505,31 +508,31 @@ transform: translate(-50%, -50%);
 .footer__info {
   width: 225px;  
 }
+
 .footer__box-title {
     margin-bottom: 7px;
     font-weight: 500;
 }
+
 .footer__copy {
     margin-bottom: 3px;
-    opacity: .8;
 }
+
 .footer__link {
     text-decoration: underline;
-    opacity: .8;
 }
+
 .footer__address {
     width: 165px;
 }
-.footer__address-text {
-}
+
+
 .footer__contacts {
     width: 210px;
 }
-.footer__phone {
-    opacity: .8;
-}
+
+
 .footer__email {
-    opacity: .8;
     display: block;
 }
 
