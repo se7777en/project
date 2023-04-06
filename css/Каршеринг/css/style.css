@@ -13,6 +13,11 @@ https://t.me/from0to1com  silki na shabloni figma i sam kanal*/
     https://kenwheeler.github.io/slick/
     https://dimsemenov.com/plugins/magnific-popup/
 
+
+    https://kenwheeler.github.io/slick/?ref=blogduwebdesign.com slick slider
+
+    include: slick.min.js
+    include: jquery.min.js
 */
 
 html{
@@ -94,7 +99,8 @@ body{
 
 .top__content{
     text-align: center;
-    padding-top: 90px;   
+    padding-top: 90px;  
+    width: 50%; 
 }
 
 
@@ -110,7 +116,7 @@ body{
 .top__text{
     font-size: 24px;
     line-height: 28px;
-    margin:0 auto 60px;
+    margin: 0 auto 60px;
     max-width: 470px;
 }
 
@@ -128,6 +134,77 @@ body{
     background: #FEFEFE;
     border: 1px solid #C5AC2D;
     color: #C5AC2D;
+}
+
+.top__slider{
+    width: 50%;
+}
+
+.slick-dots{
+    list-style: none;
+    text-align: center;
+    
+}
+
+.top__slider .slick-dots{
+    position: absolute;
+    right: 0;
+    /* top: 153px; */
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+
+.slick-dots button{
+    font-size: 0;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #332208;
+    border: none;
+    padding: 0;
+}
+
+.slick-active button{
+    width: 16px;
+    height: 16px;
+}
+
+
+.top__slider-text{
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 500;
+    padding-right: 108px;
+    text-align: right;
+  
+}
+
+.top__slider-text span + span{ /*vse krome pervogo no ani dolni idti druz za drugom*/ 
+   padding-left: 12px;
+}
+
+
+.top__bottom{
+    display: flex;
+    justify-content: space-between;
+}
+
+.top__items{
+    display: flex;
+    justify-content: space-between;
+}
+
+.top__item{
+    width: 150px;
+    height: 150px;
+    border: 1px solid #332208;
+    margin-right: 50px;
+}
+
+.top__item-img{
+    /* text-align: center; */
+    /* padding: 24px 45px 12px; */
 }
 
 
