@@ -18,6 +18,10 @@ https://t.me/from0to1com  silki na shabloni figma i sam kanal*/
 
     include: slick.min.js
     include: jquery.min.js
+
+
+    fancybox
+    https://obu.edu/_resources/ldp/galleries/fancybox/#video
 */
 
 html {
@@ -397,4 +401,9 @@ body {
     background-repeat: no-repeat;
     top: 12px;
     left: 34px;
+}
+
+.reviews{
+    padding: 100px 0;   
+    background-color: #332208;
 }
