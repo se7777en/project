@@ -1,0 +1,33 @@
+html{
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+   
+}
+
+.box{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border: 1px solid #000;
+}
+
+.text__element::before{
+    content: '';
+    position: absolute;
+    padding-left: 200px;
+    left: 0;
+}
