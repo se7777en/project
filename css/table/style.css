@@ -15,6 +15,13 @@ html{
     left: 50%;
     transform: translate(-50%,-50%); */
     
+
+    body{
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        font-size: 14px;
+        color: #6d6666;
+    }
     
 .container{
     display: flex;
@@ -29,7 +36,7 @@ html{
     grid-template-rows: repeat(21, 1fr);
     grid-template-columns: repeat(21, 1fr);
     grid-gap: 5px;
-}
+    }
 
 .box__item{
     width: 20px;
@@ -41,21 +48,39 @@ html{
 }
 
 .item{
-    background-color: green;
+    background: green;
 }
 
 
 
-.name{
+
+.box__item-textT{
     position: relative;
+    margin-top: -62px;
+     
+    width: 80px;
+    left: -30px;
+    
+    text-align: right; 
+    transform: rotate(90deg);
+    
 }
 
-.box__item-text::before{
-content: '';
-position: absolute;
-margin-left: -50px;
-left: 0px;
 
+
+
+.box__item-textL{
+    position: relative;
+    margin-top: -2px;
+    margin-left: -60px;
+    text-align: right;
+    left: -29px;
+   
 }
+
+.first{
+    margin-top: 39px;   
+}
+
 
 
