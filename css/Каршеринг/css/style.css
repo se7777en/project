@@ -408,3 +408,53 @@ body {
     background-color: #332208;
     color: #FEFEFE;
 }
+
+.reviews__title{
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    margin-bottom: 70px;
+}
+
+.revirws__item{
+    border: 1px solid #C5AC2D;
+    padding: 45px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 270px;
+    min-height: 300px;
+    text-align: center;
+    margin-right: 30px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.reviews__item-name{
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+}
+
+.reviews__slider .slick-dots button{
+    background-color: #C5AC2D;
+}
+
+.reviews__slider .slick-dots{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 35px;
+    
+
+}
+
+.reviews__slider button{
+    margin: 0 5px;
+    line-height: 12px;  
+}
+
+.slick-initialized .slick-slide{
+    display: flex;
+}
