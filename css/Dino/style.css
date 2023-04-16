@@ -1,0 +1,65 @@
+html{
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    width: 600px;
+    height: 200px;
+    border-bottom: 1px solid #000;
+    margin: 0 auto;
+    
+}
+
+.dino{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background: url("img/dino.png");
+    background-size: 50px 50px;
+    top: 150px
+}
+
+.cactus{
+    position: relative;
+    width: 20px;
+    height: 40px;
+    background: url("img/cactus.png");
+    background-size: 20px 40px;
+    top: 110px;
+    left: 580px;
+    animation: 2s anime infinite linear;
+}
+
+@keyframes anime {
+    from{
+        left: 580px;
+    }
+
+    to{
+        left: -20px;
+    }
+}
+
+
+.jump{
+    animation: .2s jump linear;
+}
+
+@keyframes jump{
+    from{
+        top: 150px;
+    }
+
+    to{
+        top: 70px;
+    }
+}
+
