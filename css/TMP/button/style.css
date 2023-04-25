@@ -1,0 +1,38 @@
+html{
+    box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before{
+
+box-sizing: inherit;
+margin: 0;
+padding: 0;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+   }
+
+ .btn{
+    background-color: rgb(55, 80, 80);
+    padding: 15px 80px;
+    text-decoration: none; 
+    transition: transform 250ms;
+}  
+
+
+.btn:hover{
+    /* transform: translateY(-2px); */
+    background-color: rgb(207, 35, 107);
+    opacity: .4;
+    scale: 1.1;
+
+}
+
+
+
