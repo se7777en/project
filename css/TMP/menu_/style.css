@@ -1,0 +1,160 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto Condensed' sans-serif;
+}
+
+body, html{
+    overflow: hidden;
+}
+
+nav{
+    margin: 0 auto;
+    max-width: 1120px;
+    padding: 0 10px;
+    width: inherit;
+}
+
+#checkbox-menu,
+.toggle{
+    display: none;
+}
+
+.menu{
+    padding: 0;
+    margin: 0;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+}
+
+.menu li a{
+    color: #000;
+    text-decoration: none;
+    align-self: center;
+    font-size: 13px;
+    padding: 10px 15px;
+    transition: background .2s linear;
+}
+
+.menu li a:hover{
+    background: #ffcc01;
+    border-radius: 3px;
+}
+
+.menu li a.logo{
+    font-size: 25px;
+    margin-right: 240px;
+}
+
+.menu li a.contacts{
+    margin-right: 100px;
+}
+
+
+
+
+@media screen and (max-width: 1049px){
+    .menu li a.logo{
+        margin-right: 200px;
+    }
+    
+    .menu li a.contacts{
+        margin-right: 60px;
+    }
+}
+
+@media screen and (max-width: 972px){
+    .menu li a.logo{
+        margin-right: 80px;
+    }
+    
+    .menu li a.contacts{
+        margin-right: 40px;
+    }
+}
+
+@media screen and (max-width: 831px){
+    .menu li a.logo{
+        margin-right: 20px;
+    }
+
+    .menu li a.contacts{
+        margin-right: 10px;
+    }
+}
+
+@media screen and (max-width: 789px){
+    .menu li a.logo{
+        margin-right: 20px;
+    }
+
+    .menu li a.contacts{
+        margin-right: 20px;
+    }
+    
+}
+
+@media screen and (max-width: 765px){
+    .toggle{
+        clear: both;
+        display: block;
+        text-align: center;
+        font-size: 18px;
+        line-height: 40px;
+        width: 100%;
+        color: #000;
+        background: #ffcc01;
+        transition: all .1s linear;
+    }
+
+    .toggle:hover{
+        background: #d3a900;
+    }
+
+    #checkbox-menu:checked + label .touch li{
+        opacity: 1;
+        visibility: visible;
+        transition: all .7s linear;
+    }
+
+    #checkbox-menu:checked + label .touch{
+        height: 350px;
+    }
+
+    .menu{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 0;
+        transition: .3s linear;
+    }
+
+    .menu li{
+        display: flex;
+        align-self: center;
+        width: 95%;
+        opacity: 0;
+        visibility: hidden; 
+    }
+
+    .menu li a{
+        width: 95%;
+        text-align: center;
+        align-self: center;
+        align-content: center;
+    }
+
+    .menu li a.logo{
+        font-size: 21px;
+        margin-right: 0px;
+    }
+    
+    .menu li a.contacts{
+        margin-right: 0px;
+    }
+}
