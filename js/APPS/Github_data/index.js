@@ -1,6 +1,19 @@
 'use strict';
 
-document.querySelector("body").addEventListener('keyup', e => {
+
+/*
+async function GetResource(url){
+    const res = await fetch(url);
+
+    if (!res.ok) { // u fetcha est OK - eto esli vse normalno i status - poluchaem status
+        throw new Error(`Could not fetch ${url}, status: ${res.status}`);
+    }
+
+    return await res.json();
+}
+*/
+
+document.querySelector("#searchInput").addEventListener('keyup', e => {
     if(e.code === 'Enter'){
         searchGithub();
     }
@@ -13,6 +26,8 @@ const searchGithub = async function() {
     const response = await fetch(`https://api.github.com/users/${username}`);
     
     const data = await response.json();
+
+    
 
     const detailsContainer = document.querySelector(".details");//details
  console.log(data);
