@@ -70,9 +70,23 @@ const searchGithub = async function() {
     </div>
 </div>`;
     } else {
-        alert(data.message);
-        detailsContainer.style.display = "none";
+        //alert(data.message);
+        detailsContainer.style.display = "flex";
+        detailsContainer.innerHTML = `
+        <div class="notFound">
+            <h2 class="name">Data not found</h2>
+        </div>
+        `;
     }
+
+    
+    /*
+    <div class="notFound">
+        <h2 class="name">Data not found</h2>
+    </div>
+
+    display: flex;justify-content: center;padding: 100px 50px;
+    */
 };
 
 
