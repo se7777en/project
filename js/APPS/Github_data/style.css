@@ -74,7 +74,6 @@ body {
     border: 1px solid #999;
     border-radius: 6px;
     display: none;
-
 }
 
 .profile {
@@ -133,4 +132,10 @@ body {
     align-items: center;
     font-size: 13px;
 
+}
+
+.notFound{
+    margin: 0 auto;
+
+    
 }
