@@ -1,0 +1,75 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    font-size: 14px;
+    color: #fefefe;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 200,
+  'GRAD' -25,
+  'opsz' 10
+}
+
+
+
+.header {
+    background-color: #1d314a;
+    max-width: 1170px;
+    margin: 0 auto;
+    border-radius: 6px;
+
+}
+
+.container {
+    max-width: 1170px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+
+
+
+
+.header__items {
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+    height: 34px;
+    align-items: center;
+}
+
+
+
+.header__link {
+    text-decoration: none;
+    line-height: 1.5;
+    position: relative;
+    padding-left: 25px;
+}
+
+.header__link:hover, .header__link span:hover{
+    color: red;
+    transition: all .5s;
+}
+
+.header__item span{
+   position: absolute;
+   left: 0;
+}
+
+/* .material-symbols-outlined:hover{
+    color: red;
+}  */
