@@ -16,14 +16,18 @@ html {
 
 
 
-.material-symbols-outlined {
+/* .material-symbols-outlined {
+    color: red;
   font-variation-settings:
   'FILL' 0,
   'wght' 200,
-  'GRAD' -25,
-  'opsz' 10
-}
+  'GRAD' 200,
+  'opsz' 20
+} */
 
+.material-symbols-outlined {
+    transform: scale(.7);
+}
 
 
 .header {
@@ -49,6 +53,7 @@ html {
     list-style-type: none;
     height: 34px;
     align-items: center;
+    position: relative;
 }
 
 
@@ -60,14 +65,16 @@ html {
     padding-left: 25px;
 }
 
-.header__link:hover, .header__link span:hover{
+.header__item:hover *{
     color: red;
     transition: all .5s;
 }
 
 .header__item span{
    position: absolute;
-   left: 0;
+   top: 6px;
+       
+  
 }
 
 /* .material-symbols-outlined:hover{
