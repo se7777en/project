@@ -195,7 +195,6 @@ body {
 
     .header__menu.active{
         top: 0;
-        
     }
     /*otobrajenie menu pri klase active* (top:-100%) pri najatii (top:0)*/
 
