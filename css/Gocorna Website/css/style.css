@@ -62,13 +62,41 @@ body {
 }
 
 [class*="__container"] {
-    max-width: 1057px;
-    margin: 0 auto;
+    max-width: 1087px;
+    margin: 0px auto;
+    padding: 0px 15px;
 }
 
 
+/* PC */
+@media (max-width: 1087px){
+    [class*="__container"] {
+        max-width: 970px;
+    }
+}
 
-.header {}
+/* Tablet */
+@media (max-width: 991.98px){ /*992px*/
+    [class*="__container"] {
+        max-width: 750px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 767.98px){ /*768px*/
+    [class*="__container"] {
+        max-width: none;
+    }
+}
+
+
+.header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 50;
+}
 
 .header__container {
     display: flex;
@@ -88,20 +116,57 @@ body {
     justify-content: flex-end;
 }
 
+ 
+
+
+
 .menu {
     display: flex;
     justify-content: flex-end;
+    padding: 0px 20px 0px 0px;
 }
 
 .menu__list {
     display: flex;
+    /* gap: 40px; */
 }
 
-.menu__items {}
+.menu__items {
+    margin: 0px 40px 0px 0px;
+}
 
-.menu__link {}
 
 
+.menu__link {
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 12px; /*1.2 ili 120%*/
+    color: #000;
+    letter-spacing: 1px;
+}
+
+/* @media (max-width: 991.98px){
+    .header__button {
+        flex: 0 0 170px;
+    }
+}  */
+
+
+@media (max-width: 991.98px){
+    .header__container {
+        min-height: 80px;
+    }
+
+    .header__button {
+        flex: 0 0 170px;
+    }
+
+    .menu__item {
+        margin: 0px 30px 0px 0px;
+    }
+}
 
 .button {
     display: inline-block;
@@ -110,7 +175,8 @@ body {
     font-weight: 800;
     font-size: 10px;
     line-height: 120%;
-     letter-spacing: 1px;/*0.14em; */
+    letter-spacing: 1px;
+    /*0.14em; */
     color: #FCFDFE;
     padding: 14px 30px;
     border-radius: 5px;
@@ -118,11 +184,10 @@ body {
     transition: background-color .3s ease 0s;
 }
 
-.button:hover{
+.button:hover {
     background-color: #f37a82;
-} 
+}
 
 .button__blue {
     background-color: #4285F4;
 }
-
