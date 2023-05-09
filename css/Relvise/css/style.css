@@ -39,6 +39,7 @@ body {
     line-height: 1;
     font-size: 14px;
     color: #252B42;
+    background-color: #fafafa;
     font-weight: 500;
     font-family: 'Montserrat', sans-serif;
 }
@@ -155,12 +156,55 @@ body {
     }
 }
 
-/* .....Main...................................... */
+/* .....PAGE...................................... */
 .page {
     flex: 1 1 auto;
 }
 
 .page__main-block {}
+
+.page__services {
+    position: relative;
+    z-index: 2;
+    margin: -111px 0px 0px 0px;
+}
+
+.page__advantages {}
+.page__practice {}
+
+
+/* .....Header block...................................... */
+.header-block {
+    text-align: center;
+    letter-spacing: 0.2px;
+}
+
+.header-block__title {
+    line-height: 142%;
+    font-weight: 700;
+    font-size: 40px;
+}
+
+.header-block__title:not(:last-child) {
+    margin: 0px 0px 10px 0px;
+}
+
+.header-block__sub-title {
+    line-height: 142%;
+    color: #737373;
+}
+
+@media (max-width: 992px) {
+    .header-block__title {
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 767px) {
+    .header-block__title {
+        font-size: 30px;
+    }
+}
 
 /* .....Podval...................................... */
 .footer {}
@@ -186,6 +230,12 @@ body {
 @media (max-width: 992px) {
     .main-block__body {
         padding: 120px 0px 191px 0px;
+    }
+}
+
+@media (max-width: 479px) {
+    .main-block__body {
+        padding: 115px 0px 160px 0px;
     }
 }
 
@@ -220,7 +270,7 @@ body {
     /*mojno 1.5*/
 }
 
-@media (max-width: 479px){
+@media (max-width: 479px) {
     .main-block__text {
         color: #585757;
     }
@@ -248,17 +298,17 @@ body {
     margin: 10px 0;
 }
 
-@media (max-width: 479px){
+@media (max-width: 479px) {
     .main-block__button {
         flex: 1 1 100%;
     }
 }
 
 
-@media (min-width: 479px){
-.main-block__button:not(:last-child) {
-    margin-right: 10px;
-}
+@media (min-width: 479px) {
+    .main-block__button:not(:last-child) {
+        margin-right: 10px;
+    }
 }
 
 .main-block__button_orange {
@@ -294,4 +344,301 @@ body {
 
         /*spozicionirovat kartinku*/
     }
+}
+
+/*--------------------------------------------*/
+
+
+
+.services {}
+
+.services__container {}
+
+.services__body {}
+
+@media (min-width: 670px) {
+    .services__body {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0px -15px;
+    }
+}
+
+
+
+.services__column {
+    flex: 0 1 33.333%;
+
+}
+
+
+
+@media (min-width: 670px) {
+    .services__column {
+        padding: 0px 15px;
+    }
+
+
+
+}
+
+
+@media (max-width: 992px) {
+    .services__column {
+        flex: 0 1 50%;
+    }
+
+    .services__column:not(:last-child) {
+        margin: 0px 0px 30px 0px;
+    }
+
+    .services__column:last-child {
+        flex: 1 1 100%;
+    }
+}
+
+
+
+.services__item {
+    box-shadow: 0px 13px 19px rgba(0, 0, 0, 0.07);
+    background-color: #fff;
+    padding: 35px;
+    height: 100%;
+}
+
+@media (max-width: 479px) {
+    .services__item {
+        padding: 25px;
+    }
+}
+
+.item-service {}
+
+.item-service_green {
+    background-color: #0D5C63;
+}
+
+.item-service_green .item-service__title {
+    color: #fff;
+}
+
+.item-service_green .item-service__text {
+    color: #fff;
+}
+
+.item-service>*:not(:last-child) {
+    margin: 0px 0px 10px 0px;
+}
+
+.item-service__icon {}
+
+.item-service__title {
+    font-weight: 700;
+    letter-spacing: 0.1px;
+    font-size: 24px;
+    line-height: calc(32 / 24 * 100%);
+    /*133%*/
+}
+
+.item-service__text {
+    color: #737373;
+    font-size: 14px;
+    line-height: calc(20 / 14 * 100%);
+    /*142%*/
+}
+
+
+/*----------------------------------------------------*/
+
+
+.advantages {
+    padding: 80px 0;
+}
+
+@media (max-width: 992px) {
+    .advantages {
+        padding: 50px 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .advantages {
+        padding: 40px 0;
+    }
+}
+
+.advantages__container {}
+
+.advantages__header {
+    margin: 0px 0px 50px 0px;
+}
+
+
+@media (max-width: 767px) {
+    .advantages__header {
+        margin: 0px 0px 25px 0px;
+    }
+}
+
+
+.advantages__body {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px -15px -30px;
+}
+
+.advantages__column {
+    padding: 0px 15px;
+    margin: 0px 0px 30px 0px;
+    flex: 0 1 25%;
+}
+
+@media (max-width: 1020px) {
+    .advantages__column {
+        flex: 0 1 50%;
+    }
+}
+
+
+@media (max-width: 560px) {
+    .advantages__column {
+        flex: 0 1 100%;
+    }
+}
+
+
+.advantages__item {
+    background-color: #fff;
+    padding: 30px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.advantages__item>*:not(:last-child) {
+    margin: 0px 0px 10px 0px;
+}
+
+.advantages__icon {
+    height: 48px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+}
+
+.advantages__value {
+    font-size: 40px;
+    line-height: 142%;
+}
+
+.advantages__text {
+    color: #737373;
+    font-size: 16px;
+    line-height: 150%;
+}
+
+/*------------------------------------------------------------------------------*/
+
+
+
+.practice {
+    padding: 0px 0px 80px 0px;
+}
+
+@media (max-width: 993px){
+    .practice {
+        padding: 40px 0px 80px 0px;
+    }
+}
+
+@media (max-width: 767px){
+    .practice {
+        padding: 0px 0px 40px 0px;
+    }
+}
+
+.practice__container {}
+
+.practice__header {
+    margin: 0px 0px 45px 0px;
+}
+
+@media (max-width: 767px){
+    .practice__header {
+        margin: 0px 0px 25px 0px;
+    }
+}
+
+.practice__body {
+    margin: 0px -20px -30px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.practice__column {
+    padding: 0px 20px;
+    margin: 0px 0px 30px 0px;
+    flex: 0 1 25%;
+}
+
+@media (max-width: 1040px){
+    .practice__column {
+        flex: 0 1 50%;
+    }
+}
+
+@media (max-width: 630px){
+    .practice__column {
+        flex: 0 1 100%;
+    }
+}
+
+
+
+.practice__item {}
+
+.item-practice {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.item-practice__content{
+    padding: 30px;
+    flex: 1 1 auto;
+}
+
+.item-practice__link {
+    display: inline-block;
+    color: inherit;
+}
+
+.item-practice__link:hover {
+    text-decoration: underline;
+}
+
+.item-practice__link:not(:last-child){
+    margin: 0px 0px 15px 0px;
+}
+
+
+
+
+.item-practice__title {
+  letter-spacing: 0.1px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 150%;
+}
+
+
+.item-practice__text {
+    color: #737373;
+    line-height: 142%;
+}
+
+.item-practice__image {
+    display: block;
+    padding: 0px 0px 60% 0px;
 }
