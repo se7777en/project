@@ -1,6 +1,6 @@
 /* https://www.youtube.com/watch?v=sohdv21BVNI 
 
-2:47
+3.21
 eCSStractor
 */
 *,
@@ -522,15 +522,8 @@ body {
 
 .stay-safe__media {
     flex: 0 1 50%;
-    padding: 0px 0px 0px 47px;
 }
 
-@media (min-width: 991.98px) {
-    .stay-safe__media {
-        padding: 0px 0px 0px 47px;
-    }
-
-}
 
 .stay-safe__content {
     flex: 0 1 50%;
@@ -553,11 +546,13 @@ body {
     border-radius: 16px;
     /* border: 1px dashed #000; */
     position: relative;
+    width: 61.5%;
 }
 
 .media-stay-safe__image img {
     position: relative;
     z-index: 5;
+    max-width: 100%;
 }
 
 .media-stay-safe__image::after {
@@ -567,9 +562,9 @@ body {
     left: 12px;
     width: 206px;
     height: 27px;
+    z-index: 2;
     background: rgba(240, 240, 240, 0.49);
     border-radius: 16px;
-    z-index: 2;
 }
 
 /*=======*Dekor==========================*/
@@ -599,3 +594,196 @@ body {
     right: 34px;
 
 }
+
+
+@media (max-width: 991.98px) {
+    .stay-safe {
+        padding: 40px 0;
+    }
+}
+
+@media (min-width: 991.98px) {
+    .stay-safe__media {
+        padding: 0px 0px 0px 47px;
+    }
+}
+
+
+@media (max-width: 767.98px) {
+    .stay-safe__container {
+        flex-direction: column-reverse;
+    }
+
+    .stay-safe__content {
+        margin: 0px 0px 30px 0px;
+    }
+}
+
+@media (max-width: 479.98px) {
+    .media-stay-safe {
+        width: 290px;
+    }
+}
+
+/*==================================================================*/
+.experts {
+    background-color: #fafbfd;
+    padding: 103px 0px 116px 0px;
+}
+
+.experts__container {}
+
+.experts__statistics {
+    
+}
+
+.experts__block-text {
+    max-width: 400px;
+}
+
+.statistics-experts {
+    max-width: 655px;
+    margin: 0px auto;
+    position: relative;
+}
+
+.experts__body {
+    display: flex;
+    align-items: center;
+}
+
+.experts__content {
+    flex: 0 1 50%;
+    padding: 0px 20px 0px 0px;
+}
+
+.experts__video {
+    flex: 0 1 50%;
+    padding: 0px 0px 31% 0px;
+    position: relative;
+}
+
+.experts__video iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+
+@media (max-width: 767.98px) {
+    .experts {
+        padding: 103px 0px 116px 0px;
+    }
+
+    .experts__body {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .experts__video {
+        padding: 0px 0px 58% 0px;
+    }
+
+    .experts__content {
+        padding: 0;
+        margin: 0px 0px 30px 0px;
+    }
+}
+
+.statistics-experts__body {
+    background-color: #fff;
+    box-shadow: 0px 2px 24px rgba(88, 126, 236, 0.15);
+    border-radius: 16px;
+    position: relative;
+    z-index: 2;
+    margin: 0px 0px 80px 0px;
+}
+
+.statistics-experts__decor {
+    position: absolute;
+    background-color: #ec5863;
+    border-radius: 30px;
+}
+
+.statistics-experts__decor1 {
+    width: 65px;
+    height: 65px;
+    transform: rotate(-30deg);
+    bottom: -21px;
+    left: -21px;
+    border-radius: 16px;
+}
+
+.statistics-experts__decor2 {
+    width: 85px;
+    height: 84px;
+    right: 58%;
+    top: -34px;
+    transform: rotate(17deg);
+    border-radius: 30px;
+}
+
+.statistics-experts__decor3 {
+    width: 124px;
+    height: 124px;
+    right: -48px;
+    top: -2px;
+    border-radius: 30px;
+    transform: rotate(-35deg);
+}
+
+
+
+.body-statistics-experts {
+    padding: 25px 80px;
+    display: flex;
+    align-items: center;
+}
+
+.body-statistics-experts__item {
+    flex: 0 1 25%;
+    text-align: center;
+}
+
+.body-statistics-experts__item:last-child {
+    flex: 0 1 50%;
+}
+
+.body-statistics-experts__value {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.2;
+    /* display: flex;
+    align-items: center;
+    text-align: center; */
+    letter-spacing: 1px;
+    color: #ec5863;
+}
+
+.body-statistics-experts__text {
+    font-weight: 700;
+    font-size: 11px;
+    line-height: 1.8;
+    /*(13/11)*/
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+@media (max-width: 767.98px) {
+    .statistics-experts__body {
+        margin: 0px 0px 50px 0px;
+    }
+    .body-statistics-experts {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 479.98px) {
+    .body-statistics-experts {
+        flex-direction: column;
+    }
+}
+
