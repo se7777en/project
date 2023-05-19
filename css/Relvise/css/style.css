@@ -1,4 +1,6 @@
-/* https://www.youtube.com/watch?v=f-irDQwt1l4  1:49:20*/
+/* https://www.youtube.com/watch?v=f-irDQwt1l4  1:49:20
+https://www.youtube.com/watch?v=0UUK4VDblXM  48:42
+*/
 
 *,
 *::before,
@@ -170,7 +172,10 @@ body {
 }
 
 .page__advantages {}
+
 .page__practice {}
+
+.page__whoweare {}
 
 
 /* .....Header block...................................... */
@@ -545,13 +550,13 @@ body {
     padding: 0px 0px 80px 0px;
 }
 
-@media (max-width: 993px){
+@media (max-width: 993px) {
     .practice {
         padding: 40px 0px 80px 0px;
     }
 }
 
-@media (max-width: 767px){
+@media (max-width: 767px) {
     .practice {
         padding: 0px 0px 40px 0px;
     }
@@ -563,7 +568,7 @@ body {
     margin: 0px 0px 45px 0px;
 }
 
-@media (max-width: 767px){
+@media (max-width: 767px) {
     .practice__header {
         margin: 0px 0px 25px 0px;
     }
@@ -581,13 +586,13 @@ body {
     flex: 0 1 25%;
 }
 
-@media (max-width: 1040px){
+@media (max-width: 1040px) {
     .practice__column {
         flex: 0 1 50%;
     }
 }
 
-@media (max-width: 630px){
+@media (max-width: 630px) {
     .practice__column {
         flex: 0 1 100%;
     }
@@ -604,7 +609,7 @@ body {
     height: 100%;
 }
 
-.item-practice__content{
+.item-practice__content {
     padding: 30px;
     flex: 1 1 auto;
 }
@@ -618,7 +623,7 @@ body {
     text-decoration: underline;
 }
 
-.item-practice__link:not(:last-child){
+.item-practice__link:not(:last-child) {
     margin: 0px 0px 15px 0px;
 }
 
@@ -626,10 +631,10 @@ body {
 
 
 .item-practice__title {
-  letter-spacing: 0.1px;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 150%;
+    letter-spacing: 0.1px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 150%;
 }
 
 
@@ -641,4 +646,158 @@ body {
 .item-practice__image {
     display: block;
     padding: 0px 0px 60% 0px;
+}
+
+/* ========================================== */
+
+
+
+.whoweare {
+    padding: #fff;;
+    padding: 80px 0px 130px 0px;
+}
+
+.whoweare__container {}
+
+.whoweare__header {
+    margin: 0px 0px 100px 0px;
+}
+
+.whoweare__body {
+    display: flex;
+    align-items: flex-start;
+}
+
+.whoweare__video {
+    flex: 0 0 57%;
+    position: relative;
+    padding: 0px 0px 42.25% 0px;
+}
+
+.whoweare__video iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+
+.whoweare__content {
+    flex: 1 1 auto;
+    padding: 20px 0px 0px 121px;
+}
+
+.whoweare__title {
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 142%;
+    letter-spacing: 0.2px;
+}
+
+.whoweare__title:not(:last-child) {
+    margin: 0px 0px 10px 0px;
+}
+
+.whoweare__text {
+    color: #737373;
+    line-height: 142%;
+}
+
+.whoweare__top:not(:last-child) {
+    margin: 0px 0px 50px 0px;
+}
+
+.whoweare__items {}
+
+.whoweare__item {}
+
+.whoweare__item:not(:last-child) {
+    margin: 0px 0px 30px 0px;
+}
+
+.item-whoweare {
+    display: flex;
+}
+
+.item-whoweare__icon {
+    flex: 0 0 32px;
+}
+
+.item-whoweare__body {
+    flex: 1 1 auto;
+    padding: 0px 0px 0px 20px;
+}
+
+.item-whoweare__title {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 150%;
+}
+
+
+.item-whoweare__title:not(:last-child) {
+    margin: 0px 0px 5px 0px;
+}
+
+.item-whoweare__text {
+    color: #737373;
+    white-space: nowrap;
+    line-height: 142%;
+    width: 225px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media (max-width: 1080px) {
+    .whoweare__content {
+        padding: 0px 0px 0px 50px;
+    }
+}
+
+@media (max-width: 950px) {
+    .whoweare {
+        padding: 50px 0px 50px 0px;
+    }
+
+    .whoweare__body {
+        flex-direction: column-reverse;
+        align-items: stretch;
+    }
+
+
+
+    .whoweare__title {
+        font-size: 24px;
+    }
+
+    .whoweare__content {
+        padding: 0px 0px 0px 0px;
+    }
+
+    .whoweare__video:not(:last-child) {
+        margin: 50px 0px 0px 0px;
+    }
+
+    .whoweare__video {
+        padding: 0px 0px 56.25% 0px;
+    }
+
+    .whoweare__header {
+        margin: 0px 0px 30px 0px;
+    }
+}
+
+@media (max-width: 767px) {
+    .whoweare {
+        padding: 20px 0px 50px 0px;
+    }
+
+    .whoweare__top:not(:last-child) {
+        margin: 0px 0px 30px 0px;
+    }
+
+    .whoweare__video:not(:last-child) {
+        margin: 30px 0px 0px 0px;
+    }
 }
