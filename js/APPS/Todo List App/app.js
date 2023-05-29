@@ -75,7 +75,7 @@ const loadTodos = (filter, filteredTodos) => {
             todoItem.innerHTML = todoElement;
             todoList.appendChild(todoItem);
 
-        })
+        });
     }
 };
 
@@ -140,12 +140,12 @@ const toggleTodoState = (todoItem) => {
 
     //toggle the state
     if (todo.state === 'pending') {
-        todo.state = 'completed'
-        todoItem.classList = 'completed'
+        todo.state = 'completed';
+        todoItem.classList = 'completed';
         todoItem.querySelector('.fa-regular').classList = 'fa-regular fa-circle-check';
     } else if (todo.state === 'completed') {
-        todo.state = 'pending'
-        todoItem.classList = 'pending'
+        todo.state = 'pending';
+        todoItem.classList = 'pending';
         todoItem.querySelector('.fa-regular').classList = 'fa-regular fa-circle';
     }
 
@@ -193,7 +193,7 @@ const filterTodos = (filter) => {
     switch (filter) {
         case 'today':
             filteredTodos = getTodayTodos(today);
-            loadTodos(filter, filtredTodos);
+            loadTodos(filter, filteredTodos);
             break;
 
         case 'overdue':
@@ -218,7 +218,7 @@ const filterTodos = (filter) => {
 
         case 'all':
         default:
-            filterTodos = [];
+            filteredTodos = [];
             loadTodos();
             break;
     }
@@ -228,7 +228,7 @@ const getTodayTodos = (today) => {
     const todayFormatted = formatDate(today);
     const todayTodos = todoListArray.filter(
         (todo) =>
-            formatDate(todo.date) === todayFormatted && todo.state === 'pending'
+        formatDate(todo.date) === todayFormatted && todo.state === 'pending'
     );
 
     return todayTodos;
@@ -237,8 +237,8 @@ const getTodayTodos = (today) => {
 const getOverdueTodos = (today) => {
     const overdueTodos = todoListArray.filter(
         (todo) =>
-            dateStringToDate(formatDate(todo.date)) < today &&
-            todo.state === 'pending'
+        dateStringToDate(formatDate(todo.date)) < today &&
+        todo.state === 'pending'
     );
     return overdueTodos;
 };
@@ -246,8 +246,8 @@ const getOverdueTodos = (today) => {
 const getScheduledTodos = (today) => {
     const scheduledTodos = todoListArray.filter(
         (todo) =>
-            dateStringToDate(formatDate(todo.date)) > today &&
-            todo.state === 'pending'
+        dateStringToDate(formatDate(todo.date)) > today &&
+        todo.state === 'pending'
     );
     return scheduledTodos;
 };
@@ -259,7 +259,7 @@ const getStateTodos = (state) => {
 
 /* utility function */
 //convert date string to date object for comparison
-const dataStringToDate = (dateString) => {
+const dateStringToDate = (dateString) => {
     const [day, month, year] = dateString.split('/');
     return new Date(year, month - 1, day);
 };
@@ -272,7 +272,7 @@ const formatDate = (todoDate) => {
     const year = date.getFullYear();
 
     return `${day}/${month}/${year}`;
-}
+};
 
 // load todos on page load
 loadTodos();
