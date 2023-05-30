@@ -5,14 +5,14 @@ let todoListArray = [];
 let todosFilter = 'all';
 let filteredTodos = [];
 
+
 /* localStorage functions */
-
 const saveTodos = () => {
-    const todoListJson = JSON.stringify(todoListArray);
-    localStorage.setItem('todoList', todoListJson);
-}
+    const todoListJson = JSON.stringify(todoListArray); // объект JavaScript в строку в формате JSON
+    localStorage.setItem('todoList', todoListJson); // soxranyaem v localStorage
+};
 
-const getTodos = () => JSON.parse(localStorage.getItem('todoList')) || [];
+const getTodos = () => JSON.parse(localStorage.getItem('todoList')) || []; //строку JavaScript в объект
 
 //add a new todo
 addTodoBtn.addEventListener('click', (event) => {
@@ -30,7 +30,7 @@ addTodoBtn.addEventListener('click', (event) => {
             date: todoDate,
             state: 'pending',
             id: new Date().getTime()
-        }
+        };
 
         // add todo to the array
         todoListArray = [...todoListArray, todo];
