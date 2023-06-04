@@ -230,11 +230,23 @@ header {
 }
 
 .arrow__left:hover::before,
-.arrow__left:hover::after{
+.arrow__left:hover::after {
     background-color: red;
 }
 
 .arrow__right:hover::before,
-.arrow__right:hover::after{
+.arrow__right:hover::after {
     background-color: red;
+}
+
+.footer {
+    margin: 32px 0px 0px 0px;
+}
+
+.footer__text p {
+    font-family: 'Alike';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 125%;
 }
