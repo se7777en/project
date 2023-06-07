@@ -43,6 +43,10 @@ body {
 
 }
 
+/* body.lock {
+    overflow: hidden;
+} */
+
 .container {
     max-width: 1054px;
     margin: 0 auto;
@@ -89,7 +93,6 @@ header {
     background-clip: text;
     margin: 0px 27px 0px 0px;
     z-index: 15;
-
 }
 
 .header__inner {
@@ -424,6 +427,8 @@ header {
         top: 0;
     }
 
+  
+
 
     .header::before {
         z-index: 20;
@@ -459,6 +464,7 @@ header {
 
 /*popup*/
 
+/*======================================================================================*/
 .popup {
     display: none;
     /*eto temni zadni fon fixiruem ego na ves ekran*/
@@ -468,8 +474,22 @@ header {
     top: 0;
     left: 0;
     z-index: 100;
-    background-color: rgba(0, 0, 0, .8)
+    background-color: rgba(0, 0, 0, .8);
+    /* overflow-y: auto;
+    overflow-x: hidden; */
 }
+
+.popup.active{
+    display: block;
+   }
+
+   body.lock{
+    overflow: hidden;
+   }
+
+   /* .popup.close {
+    display: none;
+   } */
 
 .popup__body {
     /*stavim nash kontent po centru*/
@@ -527,11 +547,11 @@ header {
 
 .form__input {
     padding: 8px;
+    position: relative;
 }
 
 
 .inp_mail {
-    display: block;
     width: 100%;
     font-size: 17px;
     padding-left: 14px;
@@ -545,12 +565,12 @@ header {
     border-radius: 5px;
 }
 
-.inp_mail::after {
+/* .inp_mail::after {
     content: '*';
     position: absolute;
     right: 15px;
     bottom: 40%;
-}
+} */
 
 .form__button {
     padding: 8px;
@@ -612,5 +632,19 @@ header {
 .popup__close:hover {
     scale: 1.1;
     transition: all .2s ease 0s;
+}
+
+.form__input strong {
+    position: absolute;
+    right: 15px;
+    bottom: 40%;
+    color: #D4696A;
+}
+/*======================================================================================*/
+
+.showmodal {
+    cursor: pointer;
+    color: red;
+    text-decoration: underline;
 }
 
