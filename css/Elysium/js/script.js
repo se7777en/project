@@ -8,7 +8,6 @@ $(document).ready(function(){
     $('.showmodal').click(function(){
         $('.popup').addClass('active');
          $('body').addClass('lock');
-
     });
 
     $('.popup__close').click(function(){
