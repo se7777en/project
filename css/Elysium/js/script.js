@@ -4,4 +4,20 @@ $(document).ready(function(){
         $('body').toggleClass('lock');
 
     });
+
+    $('.showmodal').click(function(){
+        $('.popup').addClass('active');
+         $('body').addClass('lock');
+
+    });
+
+    $('.popup__close').click(function(){
+        $('.popup').removeClass('active');
+        $('body').removeClass('lock');
+    });
+
+    
+
+   
+    
 });
