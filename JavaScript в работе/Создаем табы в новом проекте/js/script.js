@@ -1,6 +1,7 @@
 require('es6-promise').polyfill(); // dlya standarta es6
 import 'nodelist-foreach-polyfill'; // polifil dlya foreach
 
+
 import Tabs from './modules/Tabs';
 import Modals from './modules/Modals';
 import Timer from './modules/Timer';
