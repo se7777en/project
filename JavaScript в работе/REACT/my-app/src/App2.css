@@ -1,0 +1,25 @@
+.App {
+   position: absolute;
+   top:50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+
+.content  {
+     border: 1px solid #000;
+     padding: 25px;
+     margin: 10px 0px 10px 0px;
+}
+
+.btn, .link {
+    display: flex;
+    justify-content: center;
+}
+
+.btn button {
+    padding: 3px 15px;
+}
+
+h2 span {
+    color: green;
+}
