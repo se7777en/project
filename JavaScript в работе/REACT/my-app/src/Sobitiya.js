@@ -6,7 +6,8 @@ class WhoAmI extends Component {
         super(props);
         this.state = {
             years: 27,
-            text: '+++'
+            text: '+++',
+            data: ''
         }
     }
 
@@ -22,13 +23,24 @@ class WhoAmI extends Component {
         //============================
     }
 
- render() {
+    LogChanges = (e) => {
+        this.setState({
+            data: e.target.value
+        })
+    }
+
+ render(){
     const {name, surname, link} = this.props;
     return (
         <div>
             <button onClick={this.netxYear}>{this.state.text}</button>
-            <h1>My name is {name} surname is {surname} age - {this.state.years}</h1>
+            <h1>My name is {name} surname is {surname} age - {this.state.years} data {this.state.data}</h1>
             <a href={link}>My Profile</a>
+            <form >
+                <span>
+                    <input type="text" onChange={this.LogChanges}/>
+                </span>
+            </form>
         </div>
     )
  }
@@ -39,6 +51,9 @@ function App() {
     return (
         <div className="App">
             <WhoAmI name = 'Melik' surname = "Papikyan" link = "facebook.com"/>
+            <WhoAmI name = 'John' surname = "Smith" link = "mail.com"/>
+            <WhoAmI name = 'John' surname = "Smith" link = "mail.com"/>
+            <WhoAmI name = 'John' surname = "Smith" link = "mail.com"/>
             <WhoAmI name = 'John' surname = "Smith" link = "mail.com"/>
         </div>
     );  
