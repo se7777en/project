@@ -7,9 +7,24 @@ class WhoAmI extends Component {
         this.state = {
             years: 27,
             text: '+++',
-            data: ''
+            data: '',
+            val: 0
         }
+        //this.Value = this.Value.bind(this);
+        
+        // eto dlya function declaration no dlya kajdogo metoda nujno otdelno pisat
+        // 1 eto pervi variant
+        // 2 variant eto strelochnaya funkciya
+        
+        // 3 variant peredat v rendere anonimnuu funkciu i vizvat ee minus v tom chto  collback
+        // budet peredavatsya kajdi raz pri rendere
     }
+    
+    Value(){
+        this.setState(state => ({
+          val: state.val + 1
+      }))
+  }
 
     netxYear = () => {
         console.log('+++');
@@ -23,11 +38,25 @@ class WhoAmI extends Component {
         //============================
     }
 
+
     LogChanges = (e) => {
+        // e.preventDefault()
         this.setState({
             data: e.target.value
         })
     }
+
+    LogChanges1 = (e, color) => {
+        console.log(color) // peredaem color dalshe po ierarxii cherez callback funkciu
+        //(e) => this.LogChanges(e,'color')
+        // e.preventDefault()
+        this.setState({
+            data: e.target.value
+        })
+    }
+
+
+
 
  render(){
     const {name, surname, link} = this.props;
@@ -36,10 +65,15 @@ class WhoAmI extends Component {
             <button onClick={this.netxYear}>{this.state.text}</button>
             <h1>My name is {name} surname is {surname} age - {this.state.years} data {this.state.data}</h1>
             <a href={link}>My Profile</a>
-            <form >
-                <span>
-                    <input type="text" onChange={this.LogChanges}/>
-                </span>
+            <button onClick={() => this.Value()}>+ value</button>
+
+            <form>
+                <span>Введите должность </span>
+                <input onChange={this.LogChanges} type="text" />
+                <input onChange={(e) => this.LogChanges1(e,'color')} type="text" />
+                <div>
+                    <h2>{this.state.val}</h2>
+                </div>
             </form>
         </div>
     )
@@ -51,9 +85,6 @@ function App() {
     return (
         <div className="App">
             <WhoAmI name = 'Melik' surname = "Papikyan" link = "facebook.com"/>
-            <WhoAmI name = 'John' surname = "Smith" link = "mail.com"/>
-            <WhoAmI name = 'John' surname = "Smith" link = "mail.com"/>
-            <WhoAmI name = 'John' surname = "Smith" link = "mail.com"/>
             <WhoAmI name = 'John' surname = "Smith" link = "mail.com"/>
         </div>
     );  
