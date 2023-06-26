@@ -7,7 +7,7 @@
 //     if (increase) {
 //         classNames += ' increase';
 //     }
-    
+
 
 //     return (
 //         <li className={classNames}>
@@ -31,10 +31,10 @@
 
 
 import './employer-list-item.css';
-import {Component} from 'react'
+import { Component } from 'react'
 
 class EmployerListItem extends Component {
-    constructor(props){
+    constructor(props) {
         super(props)
         this.state = {
             increase: false,
@@ -43,32 +43,32 @@ class EmployerListItem extends Component {
     }
 
     onIncrease = () => {
-        this.setState(({increase}) => ({
+        this.setState(({ increase }) => ({
             increase: !increase
         }))
     }
 
     onRise = () => {
-        this.setState(({rise}) => ({
+        this.setState(({ rise }) => ({
             rise: !rise
         }))
     }
 
 
-    render(){
-        const {name, sallary} = this.props
-        const {rise, increase} = this.state
+    render() {
+        const { name, sallary } = this.props
+        const { rise, increase } = this.state
 
         let classNames = "list-group-item d-flex justify-content-between";
         if (increase) {
             classNames += ' increase';
         }
 
-        if(rise) {
+        if (rise) {
             classNames += ' like';
         }
-        
-    //like
+
+        //like
         return (
             <li className={classNames}>
                 <span onClick={this.onRise} className="list-group-item-label">{name}</span>
@@ -78,7 +78,7 @@ class EmployerListItem extends Component {
                         className="btn-cookie btn-sm ">
                         <i className="fas fa-cookie"></i>
                     </button>
-    
+
                     <button type="button"
                         className="btn-trash btn-sm">
                         <i className="fas fa-trash"></i>
