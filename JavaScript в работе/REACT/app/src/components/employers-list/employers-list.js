@@ -21,7 +21,7 @@ const EmployersList = ({data}) => {
     const element = data.map((item) => {
         const  {id, ...itemProps} = item; /*razbivaet obiekt masisa na 2 chasti 1 eto id a vtoroe vse ostalnoe iz item*/
         return (
-            <EmployeesListItem {...itemProps} key={id}/>/*...item      name={item.name} sallary = {item.sallary} increase = {item.increase}*/
+            <EmployeesListItem key={id} {...itemProps}/>/*...item      name={item.name} sallary = {item.sallary} increase = {item.increase}*/
         )
     })
 
