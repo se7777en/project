@@ -1,6 +1,7 @@
 
 
-import {Component} from 'react';
+import { Component } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 import AppInfo from '../app-info/app-info';
 import SearchPanel from '../search-panel/search-panel';
@@ -37,38 +38,64 @@ import './app.css';
 
 class App extends Component {
 
- constructor(props){
-    super(props)
-    this.state = {
-        data: [
-            {name: "John C.", sallary: 800, increase: false, id: 1},
-            {name: "Alex M.", sallary: 3000, increase: true, id: 2},
-            {name: "Carl W.", sallary: 15000, increase: false, id: 3}
-        ]
-    }
- }
+    constructor(props) {
+        super(props)
+        this.state = {
+            data: [
+                { name: "John C.", sallary: 800, increase: false, id: 1 },
+                { name: "Alex M.", sallary: 3000, increase: true, id: 2 },
+                { name: "Carl W.", sallary: 15000, increase: false, id: 3 }
+            ]
 
- deleteItem = (id) => {
-    this.setState(({data})=>{
-        return{
-            data: data.filter((item)=> item.id !== id)
         }
-    })
- }
 
- 
-    render(){
+        this.maxId = 4
+
+    }
+
+
+    deleteItem = (id) => {
+        this.setState(({ data }) => {
+            return {
+                data: data.filter((item) => item.id !== id)
+            }
+        })
+    }
+
+
+    //   generateUniqueId() {  dlya generacii klucha no ne sovsem nadejnaya
+    //     return Date.now().toString(36) + Math.random().toString(36).substr(2);
+    //   }
+
+    addItem = (name, sallary) => {
+        const item = {
+            name: name,
+            sallary: sallary,
+            increase: false,
+            id: uuidv4()
+        }
+
+        this.setState(({ data }) => {
+            const newarr = [...data, item];
+            return {
+                data: newarr
+            }
+        })
+
+    }
+
+    render() {
         return (
             <div className='app'>
-                <AppInfo/>
+                <AppInfo />
                 <div className="search-panel">
-                    <SearchPanel/>
-                    <AppFilter/>
+                    <SearchPanel />
+                    <AppFilter />
                 </div>
                 <EmployersList data={this.state.data}
-                onDelete={this.deleteItem}
+                    onDelete={this.deleteItem}
                 />
-                <EmployersAddForm/>
+                <EmployersAddForm onAdd={this.addItem} />
             </div>
         );
     }
