@@ -62,7 +62,7 @@ class EmployersAddForm extends Component {
                         placeholder="Как его зовут?"
                         name="name"
                         value={name}
-                        onChange={this.onChangeInputValue} required
+                        onChange={this.onChangeInputValue}
                     />
                     <input type="number"
                         className="form-control new-post-label"
