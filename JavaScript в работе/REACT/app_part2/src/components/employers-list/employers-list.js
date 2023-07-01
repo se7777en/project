@@ -17,12 +17,20 @@ import './employers-list.css';
 // }
 
 
-const EmployersList = ({data, onDelete}) => {
+const EmployersList = ({data, onDelete, onToggleProp}) => {
     const element = data.map((item) => {
         const  {id, ...itemProps} = item; /*razbivaet obiekt masisa na 2 chasti 1 eto id a vtoroe vse ostalnoe iz item*/
         return (
-            <EmployeesListItem key={id} {...itemProps}
+            <EmployeesListItem 
+            key={id} 
+            {...itemProps}
             onDelete={()=>onDelete(id)}
+
+           /* onToggleIncrease={()=>onToggleIncrease(id)}
+            onToggleRise={()=>onToggleRise(id)}*/
+            onToggleProp={(e)=>onToggleProp(id, e.currentTarget.getAttribute('data-toggle'))}
+
+
             />/*...item      name={item.name} sallary = {item.sallary} increase = {item.increase}*/
         )
     })
