@@ -45,9 +45,13 @@ class App extends Component {
                 { name: "John C.", sallary: 800, increase: false, rise: true, id: 1 },
                 { name: "Alex M.", sallary: 3000, increase: true, rise: false, id: 2 },
                 { name: "Carl W.", sallary: 15000, increase: false, rise: false, id: 3 }
-            ]
+            ],
+
+            term: '',
+            filter: 'all'
 
         }
+
 
         this.maxId = 4
 
@@ -68,7 +72,7 @@ class App extends Component {
     //   }
 
     addItem = (name, sallary) => {
-        if(name.length < 3) return
+        if (name.length < 3) return
         const item = {
             name: name,
             sallary: sallary,
@@ -87,72 +91,102 @@ class App extends Component {
     }
 
 
-/*==============================*/
-/*
-    onToggleIncrease = (id) => {
-        console.log('ok1')
-        //console.log(`Increase this ${id}`);
-        this.setState(({ data }) => ({
-            // const index = data.findIndex((elem) => elem.id === id);
-            // const old = data[index];
-            // const newItem = { ...old, increase: !old.increase }
-            // const newArr = [...data.slice(0, index), newItem, ...data.slice(index + 1)]
+    /*==============================*/
+    /*
+        onToggleIncrease = (id) => {
+            console.log('ok1')
+            //console.log(`Increase this ${id}`);
+            this.setState(({ data }) => ({
+                // const index = data.findIndex((elem) => elem.id === id);
+                // const old = data[index];
+                // const newItem = { ...old, increase: !old.increase }
+                // const newArr = [...data.slice(0, index), newItem, ...data.slice(index + 1)]
+    
+                // return {
+                //     data: newArr
+                // }
+    
+    
+                data: data.map((item) => {
+                    if (item.id === id) {
+                        return { ...item, increase: !item.increase }
+                    }
+                    return item
+                })
+    
+            }))
+        }
+    
+        onToggleRise = (id) => {
+            console.log('ok2')
+            this.setState(({ data }) => ({
+                data: data.map((item) => {
+                    if (item.id === id) {
+                        return { ...item, rise: !item.rise }
+                    }
+                    return item
+                })
+            }))
+        }
+    */
+    /*==============================*/
 
-            // return {
-            //     data: newArr
-            // }
-
-
-            data: data.map((item) => {
-                if (item.id === id) {
-                    return { ...item, increase: !item.increase }
-                }
-                return item
-            })
-
-        }))
-    }
-
-    onToggleRise = (id) => {
+    // ukorocheni variant 2 v odnom
+    onToggleProp = (id, prop) => {
         console.log('ok2')
         this.setState(({ data }) => ({
             data: data.map((item) => {
                 if (item.id === id) {
-                    return { ...item, rise: !item.rise }
+                    return { ...item, [prop]: !item[prop] }
                 }
                 return item
             })
         }))
     }
-*/
-/*==============================*/
 
-// ukorocheni variant 2 v odnom
-onToggleProp = (id, prop) => {
-    console.log('ok2')
-    this.setState(({ data }) => ({
-        data: data.map((item) => {
-            if (item.id === id) {
-                return { ...item, [prop]: !item[prop] }
-            }
-            return item
+    filterDat = (dat, term) => {
+        return dat.filter(item => {
+            return item.name.indexOf(term) > -1
         })
-    }))
-}
+    }
+
+    sendTerm = (term) => {
+        this.setState({ term })
+    }
+
+
+    forFilter = (items, filt) => {
+        switch(filt) {
+            case 'moreThen1000':
+                return items.filter((item) => item.sallary > 1000)
+            case 'rise':
+                return items.filter((item)=>item.rise === true)
+            default:
+                return items
+        }
+    }
+
+    upName = (filter) => {
+        this.setState({filter})
+    }
 
 
     render() {
+        const { data, term, filter } = this.state
         const employees = this.state.data.length;
         const increased = this.state.data.filter(item => item.increase).length;
+        const result = this.forFilter(this.filterDat(data, term), filter);
+
         return (
             <div className='app'>
                 <AppInfo employees={employees} increased={increased} />
                 <div className="search-panel">
-                    <SearchPanel />
-                    <AppFilter />
+                    <SearchPanel sendTerm={this.sendTerm} />
+                    <AppFilter filter={filter} upName={this.upName}/>
                 </div>
                 <EmployersList
-                    data={this.state.data}
+                    //data={this.state.data}
+                    data={result}
                     onDelete={this.deleteItem}
                     /*onToggleIncrease={this.onToggleIncrease}
                     onToggleRise={this.onToggleRise}*/
