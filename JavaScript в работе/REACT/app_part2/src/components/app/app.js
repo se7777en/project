@@ -156,18 +156,34 @@ class App extends Component {
 
 
     forFilter = (items, filt) => {
-        switch(filt) {
+        switch (filt) {
             case 'moreThen1000':
                 return items.filter((item) => item.sallary > 1000)
             case 'rise':
-                return items.filter((item)=>item.rise === true)
+                return items.filter((item) => item.rise === true)
             default:
                 return items
         }
     }
 
     upName = (filter) => {
-        this.setState({filter})
+        this.setState({ filter })
+    }
+
+
+    UpdateSallary = (id, sall) => {
+      // sall =  sall[-1] !== '$' ? sall : sall.pop() 
+        this.setState(({ data }) => {
+            return {
+                data: data.filter((item) => {
+                    if (item.id === id) {
+                        console.log(sall)
+                        return item.sallary = sall
+                    }
+                    return item;
+                })
+            }
+        })
     }
 
 
@@ -182,12 +198,13 @@ class App extends Component {
                 <AppInfo employees={employees} increased={increased} />
                 <div className="search-panel">
                     <SearchPanel sendTerm={this.sendTerm} />
-                    <AppFilter filter={filter} upName={this.upName}/>
+                    <AppFilter filter={filter} upName={this.upName} />
                 </div>
                 <EmployersList
                     //data={this.state.data}
                     data={result}
                     onDelete={this.deleteItem}
+                    UpdateSallary={this.UpdateSallary}
                     /*onToggleIncrease={this.onToggleIncrease}
                     onToggleRise={this.onToggleRise}*/
                     onToggleProp={this.onToggleProp}

@@ -1,7 +1,24 @@
+import { Component } from 'react'
 import './employer-list-item.css';
-const EmployerListItem = (props) => {
 
-        const { name, sallary, onDelete, onToggleProp , increase, rise } = props /*onToggleIncrease, onToggleRise  2 v odnom onToggleProp*/
+class EmployerListItem extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            sallary: ''
+        }
+    }
+
+    sall = () => {
+        this.setState(({sallary})=>{
+            
+        })
+    }
+    
+    
+    render() {
+        const { name, onDelete, onToggleProp, increase, rise, sallary, SallaryChange } = this.props /*onToggleIncrease, onToggleRise  2 v odnom onToggleProp*/
+       // const {sallary} = this.state;
         let classNames = "list-group-item d-flex justify-content-between";
         if (increase) {
             classNames += ' increase';
@@ -10,10 +27,11 @@ const EmployerListItem = (props) => {
         if (rise) {
             classNames += ' like';
         }
+
         return (
             <li className={classNames}>
                 <span onClick={onToggleProp} className="list-group-item-label" data-toggle="rise">{name}</span>
-                <input type="text" className="list-group-item-input" defaultValue={sallary + '$'} />
+                <input type="text" className="list-group-item-input" defaultValue={sallary + '$'} onChange={SallaryChange} />
                 <div className='d-flex justify-content-center align-items-center'>
                     <button onClick={onToggleProp} data-toggle="increase" type="button"
                         className="btn-cookie btn-sm ">
@@ -21,7 +39,7 @@ const EmployerListItem = (props) => {
                     </button>
 
                     <button type="button"
-                        className="btn-trash btn-sm" 
+                        className="btn-trash btn-sm"
                         onClick={onDelete}>
                         <i className="fas fa-trash"></i>
                     </button>
@@ -29,7 +47,8 @@ const EmployerListItem = (props) => {
                 </div>
             </li>
         );
-    
+    }
+
 
 }
 
