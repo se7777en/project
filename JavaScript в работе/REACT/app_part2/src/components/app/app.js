@@ -172,12 +172,10 @@ class App extends Component {
 
 
     UpdateSallary = (id, sall) => {
-      // sall =  sall[-1] !== '$' ? sall : sall.pop() 
         this.setState(({ data }) => {
             return {
                 data: data.filter((item) => {
                     if (item.id === id) {
-                        console.log(sall)
                         return item.sallary = sall
                     }
                     return item;
