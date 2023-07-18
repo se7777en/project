@@ -9,11 +9,7 @@ class EmployerListItem extends Component {
         }
     }
 
-    sall = () => {
-        this.setState(({sallary})=>{
-            
-        })
-    }
+  
     
     
     render() {
@@ -31,7 +27,7 @@ class EmployerListItem extends Component {
         return (
             <li className={classNames}>
                 <span onClick={onToggleProp} className="list-group-item-label" data-toggle="rise">{name}</span>
-                <input type="text" className="list-group-item-input" defaultValue={sallary + '$'} onChange={SallaryChange} />
+                <input type="text" className="list-group-item-input" defaultValue={sallary[sallary.length -1] !== '$' ? sallary + '$': sallary} onChange={SallaryChange} />
                 <div className='d-flex justify-content-center align-items-center'>
                     <button onClick={onToggleProp} data-toggle="increase" type="button"
                         className="btn-cookie btn-sm ">
