@@ -1,0 +1,36 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+ol,ul,li {
+    list-style: none;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+
+
+html, body {
+    height: 100%;
+    line-height: 1;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
+
+p {
+    font-weight: 400;
+}
