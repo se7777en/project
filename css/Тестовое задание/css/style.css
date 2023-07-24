@@ -148,15 +148,11 @@ p {
 .slider__content {
     width: 100%;
     height: 367px;
-    /* Установите нужную высоту для содержимого слайдера */
     background-image: url("../img/slider.jpg");
-    /* Путь к вашему фоновому изображению */
     background-size: cover;
-    /* Масштабируем изображение, чтобы оно заполнило всю площадь */
     background-position: center;
-    /* Выравнивание изображения по центру */
     background-repeat: no-repeat;
-    /* Отключаем повторение фонового изображения */
+
 }
 
 
@@ -325,6 +321,7 @@ p {
     letter-spacing: 0.025em;
     color: #767676;
     flex: 0 1 50%;
+    margin-right: -23px;
 }
 
 .content__footer {
@@ -332,4 +329,278 @@ p {
     padding-top: 32px;
 }
 
+.img__logo {
+    display: block;
+}
 
+.pricelist__logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 110px;
+}
+
+.pricelist__logo-text {
+    font-family: inherit;
+    font-size: 30px;
+    line-height: 25px;
+    font-weight: 700;
+    letter-spacing: 0.025em;
+    color: #444444;
+    padding-top: 5px;
+}
+
+.footer__inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__inner * {
+    font-family: inherit;
+    color: #fff;
+}
+
+.footer__inner-main {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    line-height: 26px;
+    font-weight: 400;
+    letter-spacing: 0.025em;
+
+
+}
+
+.footer__inner-main a {
+    text-decoration: underline;
+}
+
+.footer__inner-info {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+    letter-spacing: 0.025em;
+}
+
+
+.footer {
+    height: 220px;
+    background-color: #777777;
+    padding: 49px 0px;
+    margin: 160px 0px 0px 0px;
+}
+
+
+
+.footer__inner-title {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+    letter-spacing: 0.025em;  
+}
+
+.footer__inner-title a {
+    text-decoration: underline;
+}
+/*===================*/
+.header__burger {
+    display: none;
+}
+
+
+@media (max-width: 780px) {
+    /*borger_menu*/
+ .header__burger {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 20px;
+    position: relative;
+    z-index: 21;
+}
+
+.header__burger span {
+    position: absolute;
+    background-color: #000000;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    top: 9px;
+    transition: all .3s ease 0s;
+}
+
+.header__burger::before,
+.header__burger::after {
+    content: '';
+    background-color: #000000;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    transition: all .3s ease 0s;
+}
+
+.header__burger::before {
+    top: 0;
+}
+
+.header__burger::after {
+    bottom: 0;
+} 
+
+  /*strelki*/
+  .header__burger.active::before {
+    transform: rotate(45deg);
+    top: 9px;
+}
+
+.header__burger.active::after {
+    transform: rotate(-45deg);
+    bottom: 9px;
+}
+
+.header__burger.active span {
+    scale: 0;
+}
+
+/*strelki*/
+
+
+/* .main-menu {
+    display: none;
+} */
+
+.header__inner {
+    display: none;
+}
+
+.menu__container {
+    justify-content: left;
+}
+
+.menu__list {
+    display: block;
+    
+} 
+
+.menu__item {
+    border: none;
+    transition: all .3s ease 0s;
+   
+}
+
+.menu__item:hover {
+    border: none;
+    transition: all .3s ease 0s;
+   
+}
+
+
+.menu li:not(:last-child)::after {
+    content: "";
+}
+
+.menu__list li{
+    padding: 6px 30px 15px;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.main-menu {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: #85858a;
+    padding: 70px 10px 20px 20px;
+    transition: all .3s ease 0s;
+    z-index: -1;
+}
+
+
+
+
+
+.main-menu.active {
+    top: 27px;
+    z-index: -1;
+}
+
+
+
+
+.slider {
+    display: none;
+}
+
+
+.content__filter {
+    display: none;
+}
+
+.content__inner {
+    margin-top: 47px;
+}
+
+.content__column {
+    margin: 0 auto 21px;
+    flex: 0 1 33.3333%;
+    max-width: 250px;
+}
+
+
+
+.content__inner {
+      display: flex;
+    justify-content: center;
+
+}
+
+.pagination {
+    display: none;
+}
+
+}
+
+@media (max-width: 890px) {
+ 
+    
+    .content__footer-inner .text:not(:last-child) {
+        margin-bottom: 20px;
+       
+    }
+
+    .content__footer-inner .text {
+        margin-right: -5px;
+    }
+}
+
+
+@media (max-width: 682px) {
+
+    .content__footer-inner {
+        display: block;
+    }
+}
+
+
+@media (max-width: 560px) {
+    .footer__inner {
+        display: block;
+    }
+    .footer__inner > div:not(:last-child) {
+        margin-bottom: 15px;
+    }
+
+    .footer {
+        height: auto;
+    }
+
+}
