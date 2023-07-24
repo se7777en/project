@@ -311,6 +311,7 @@ p {
 .content__footer-inner {
     display: flex;
     justify-content: space-between;
+    column-gap: 35px;
 }
 
 .content__footer-inner .text {
@@ -321,7 +322,7 @@ p {
     letter-spacing: 0.025em;
     color: #767676;
     flex: 0 1 50%;
-    margin-right: -23px;
+    margin-right: -4px;
 }
 
 .content__footer {
@@ -389,6 +390,7 @@ p {
     background-color: #777777;
     padding: 49px 0px;
     margin: 160px 0px 0px 0px;
+    margin-top: 60px;
 }
 
 
@@ -473,10 +475,12 @@ p {
 
 .header__inner {
     display: none;
+    
 }
 
 .menu__container {
     justify-content: left;
+    min-height: 54px;
 }
 
 .menu__list {
@@ -546,7 +550,8 @@ p {
 }
 
 .content__inner {
-    margin-top: 47px;
+    margin-top: -5px;
+    column-gap: 6px;
 }
 
 .content__column {
@@ -565,6 +570,15 @@ p {
 
 .pagination {
     display: none;
+}
+
+
+.footer {
+    margin-top: 60px;
+}
+
+.breadcrumbs {
+    margin: 76px 10px 26px 0px;
 }
 
 }
