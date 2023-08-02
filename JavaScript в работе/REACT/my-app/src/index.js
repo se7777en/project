@@ -1,9 +1,20 @@
 import React, {StrictMode} from 'react';
 import ReactDOM from 'react-dom/client';
+import  styled from 'styled-components'
 import './index.css';
 //import App from './props';
 //import App from './props2';
 import App from './Sobitiya';
+import {Buttom} from './Sobitiya'
+
+// perenaznachaem importirovanie stili Buttom
+const BigButton = styled(Buttom)`
+width: 245px;
+margin: 0 auto;
+text-align: center;
+`;
+
+
 // import {Header} from './App';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 // const root2 = ReactDOM.createRoot(document.getElementById('h2'));
@@ -27,6 +38,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <StrictMode>
     <App/>
+    <BigButton as="a">Отправить отчет</BigButton>   {/*delaem  BigButton silkoi */}
+    
   </StrictMode>
 );
 
