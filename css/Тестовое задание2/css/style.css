@@ -225,7 +225,7 @@ body {
 .service {
     width: 100%;
     background-color: #3A4574;
-    margin-top: 197px;
+    margin-top: 263px;
     padding: 220px 0;
 }
 
@@ -268,7 +268,7 @@ body {
 
 
 .food {
-    margin-top: 109px;
+    margin: 109px 0px 80px;
 }
 
 .food__inner {
@@ -279,6 +279,9 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-right: 30px;
+    position: relative;
+    
 }
 
 .food__title {
@@ -287,10 +290,143 @@ body {
     font-weight: 700;
     font-size: 40px;
     padding-bottom: 20px;
+    
 }
 
 .food__text {
     color: #808080;
     line-height: 32px;
     max-width: 476px;
+}
+
+.food__text {
+    max-width: 490px;
+}
+
+.food__image {
+    max-width: 670px;
+}
+
+
+
+
+
+
+.food__decore {
+    position: absolute;
+    width: 108px;
+    height: 3px;
+    background-color: #D3B47F;
+    top: 264px;
+    left: -52px;
+}
+
+
+.food__inner:not(:last-child){
+    margin-bottom: 30px;
+}
+
+
+.food__inner-collection:nth-child(2) {
+padding-left: 30px;
+}
+
+.food__decore-middle:nth-child(2) {
+    left: -22px;
+}
+
+.slider {
+    width: 100%;
+    background-color: #3A4574;
+    height: 605px;
+    margin-top: 80px;
+}
+
+.slider__inner-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.slider__panel {
+    max-width: 569px;
+}
+
+
+.slider__inner-title {
+    color: #fff;
+    font-weight: 600;
+    line-height: 88px;
+    font-size: 48px;
+}
+
+.slider__inner-text {
+    color: #fff;
+}
+
+.slider__images {
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.slider__item:not(:last-child) {
+    padding-right: 20px;
+}
+
+.slider__container {
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+
+.contancts {
+    margin-top: 327px;
+}
+
+.contact__inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact__title {
+    line-height: 88px;
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.contact__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 64px;
+    height: 64px;
+    line-height: 64px;
+    text-align: center;
+    background-color: #D3B47F;
+    border-radius: 50%;
+}
+
+.contact__address {
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+}
+
+.contact__address-title {
+    line-height: 32px;
+    color: #2E2E2E;
+}
+
+.contact__address-info {
+    line-height: 32px;
+    font-size: 24px;
+    color: #2E2E2E;
+    font-weight: 500;
+} 
+
+.contact__address:not(:last-child) {
+    padding-bottom: 40px;
 }
