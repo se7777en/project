@@ -18,12 +18,26 @@
                 <a href="#" class="logo">
                     <img src="img/logo.png" alt="logo">
                 </a>
+                <div class="header__burger">
+                    <span></span>
+                </div>
                 <nav class="menu">
                     <ul class="menu__list">
                         <li class="menu__item"><a href="#" class="menu__item-link">À la carte</a></li>
                         <li class="menu__item"><a href="#" class="menu__item-link">Wijnkaart</a></li>
                         <li class="menu__item"><a href="#" class="menu__item-link">Lunchmenu</a></li>
                         <li class="menu__item"><a href="#" class="menu__item-link">Contact</a></li>
+                    </ul>
+
+                    <div class="menu_header__contact">
+                        <a href="tel:3292825725" class="contacts__header-item contact__header-phone">+32 9 282 57 25</a>
+                    </div>
+
+                    <ul class="menu__header-inner">
+                        <li class="header__inner-item"><a href="#" class="header__inner-link">Fb</a></li>
+                        <li class="header__inner-item"><a href="#" class="header__inner-link">Ig</a></li>
+                        <li class="header__inner-item"><a href="#" class="header__inner-link">Tw</a></li>
+                        <li class="header__inner-item"><a href="#" class="header__inner-link">Yt</a></li>
                     </ul>
                 </nav>
                 <div class="header__contact">
@@ -53,7 +67,7 @@
         </div>
     </header>
 
-
+<!--
     <section class="view">
         <div class="container">
             <div class="view__items">
@@ -242,11 +256,11 @@
                         <div class="contact__group">
                             <div class="contact__group-item">
                                 <label class="contact__lab" for="name">name</label>
-                                <input type="text" placeholder="Input your name" name="name">
+                                <input type="text" placeholder="Input your name" name="name" required>
                             </div>
                             <div class="contact__group-item">
                                 <label class="contact__lab" for="mail">email</label>
-                                <input type="text" placeholder="Input your email" name="mail">
+                                <input type="email" placeholder="Input your email" name="mail" required>
                             </div>
                         </div>
                         <div class="contact__group-area">
@@ -297,8 +311,10 @@
         </div>
     </footer>
 
+     -->
 
-    <script src=""></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
