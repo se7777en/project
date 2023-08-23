@@ -534,16 +534,25 @@ body {
     display: none;
 }
 
-.swiper-slide {
-    display: flex !important;
+.service__slider {
+    display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 43px
 }
 
 
 
+/*slider__*/
+/* Лента слайдов */
+.slick-track{
+	display: flex;
+	align-items: flex-start;
+}
 
+/* Ограничивающая оболочка */
+.slick-list {
+	overflow: hidden;
+}
 
 
 @media (max-width: 1100px) {
