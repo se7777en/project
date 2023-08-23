@@ -9,4 +9,16 @@ $(document).ready(function(){
 
 
 
+/*Slick__Slider*/
+$(document).ready(function(){
+	$('.service__wrapper').slick({
+        arrows:true,
+		dots:false,
+		slidesToShow:1,
+		autoplay:false,
+		speed:1000,
+		autoplaySpeed:800,
+    });
+});
+
   
