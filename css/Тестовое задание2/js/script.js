@@ -18,6 +18,7 @@ $(document).ready(function(){
 		autoplay:false,
 		speed:1000,
 		autoplaySpeed:800,
+        
     });
 });
 
