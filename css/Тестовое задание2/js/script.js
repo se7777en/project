@@ -23,7 +23,7 @@ $(document).ready(function () {
         adaptiveHeight: true, /* dlya adaptacii po visote*/
         slidesToScroll: 1, /*kolichestvo slaidov prokruchivaemoe za odin raz*/
         easing: 'ease', /*animaciya perexoda slaida po umolchaniu linear  https://fls.guru/csstransition.html*/
-        infinite: true, /*buder li slaider beskonechni po umolchaniu true*/
+        infinite: false, /*buder li slaider beskonechni po umolchaniu true*/
         initialSlide: 0, /* startovi slaid po umolchaniu 0*/
 
         pauseOnFocus: false, /*ostanavlivaet prokrutku pri fokuse*/
@@ -74,6 +74,20 @@ $(document).ready(function () {
 
     $('.link_l').click(function (event) {
         $('.service__wrapper').slick('slickPause');/*postavit na pauzu*/
+    });
+});
+
+
+
+
+$(document).ready(function () {
+    $('.slider__images').slick({
+        arrows: true, /*strelki*/
+        slidesToShow: 3,/*kolichestvo slaidov kotoroe otobrajaetsya*/ 
+        appendArrows: $('.slider__inner-arrows'),
+        infinite: false,
+        speed: 1000,
+        easing: 'ease'
     });
 });
 
