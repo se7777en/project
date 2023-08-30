@@ -52,10 +52,22 @@ $(document).ready(function () {
         //asNavFor: ".slider", /*kogda 2 slaidera, mojno ix svyazat u 1 slaida ukazat klass 2 slaida u 2 slaida ukazat klass 1 slaida i pri skrole 2 slaida skrolitsya budut oba slaida*/
 
 
-        mobileFirst: true, /* vkluchaet mobile first dlya responsive:*/
+        mobileFirst: false, /* vkluchaet mobile first dlya responsive:*/
 
         //  appendArrows: $('.content'), /*peremeshaet strelki v opredeleni block*/
         //  appendDots: $('.content') /*peremeshaet dotsi v opredeleni block*/
+
+        responsive: [
+            {
+              breakpoint: 937,
+              settings: {
+                dots: false,
+                arrows: false,
+                autoplay: false,
+                infinite: true
+
+              }
+                }]
     });
 
     // $('.service__wrapper').slick('setPosition'); /* vstrexnet slaider i postavit na mesto*/
