@@ -1,5 +1,36 @@
 import './App.css';
 import { Component } from 'react';
+import  styled from 'styled-components'
+
+
+const EmpItem = styled.div` // styled-components podderjivaet preprocesori
+padding: 20px;
+margin-bottom: 15px;
+border-radius: 5px;
+box-shadow: 5px 5px 10px rgba(0,0,0, .2);
+    a {
+        display: block;
+        margin: 10px 0 10px 0;
+        color: ${props => props.active ? 'orange': 'black'}; // peredaem props active
+    }
+
+    input {
+        display: block;
+        margin-top: 10px; 
+    }
+`;
+
+const Header = styled.h2`
+font-size: 22px;
+`;
+
+export const Buttom = styled.button`
+display: block;
+padding: 5px 15px;
+background-color: gold;
+border: 1px solid rgba(0,0,0, .2);
+box-shadow: 5px 5px 10px rgba(0,0,0, .2);
+`;
 
 class WhoAmI extends Component {
     constructor(props) {
@@ -55,6 +86,7 @@ class WhoAmI extends Component {
 
 
 
+<<<<<<< HEAD
     render() {
         const { name, surname, link } = this.props;
         return (
@@ -75,16 +107,51 @@ class WhoAmI extends Component {
             </div>
         )
     }
+=======
+ render(){
+    const {name, surname, link} = this.props;
+    return (
+        <EmpItem active>
+            <Buttom onClick={this.netxYear}>{this.state.text}</Buttom>
+            <Header>My name is {name} surname is {surname} age - {this.state.years} data {this.state.data}</Header>
+            <a href={link}>My Profile</a>
+            <button onClick={() => this.Value()}>+ value</button>
+
+            <form>
+                <span>Введите должность </span>
+                <input onChange={this.LogChanges} type="text" />
+                <input onChange={(e) => this.LogChanges1(e,'color')} type="text" />
+                <div>
+                    <h2>{this.state.val}</h2>
+                </div>
+            </form>
+        </EmpItem>
+    )
+ }
+>>>>>>> b77c1a2a423fea80bef2a0e80c6356faf124784b
 }
 
 
+const Wrapper = styled.div`
+    width: 600px;
+    margin: 80px auto 0 auto;
+`;
+
 function App() {
     return (
+<<<<<<< HEAD
         <div className="App">
             <WhoAmI name='Melik' surname="Papikyan" link="facebook.com" />
             <WhoAmI name='John' surname="Smith" link="mail.com" />
         </div>
     );
+=======
+        <Wrapper>
+            <WhoAmI name = 'Melik' surname = "Papikyan" link = "facebook.com"/>
+            <WhoAmI name = 'John' surname = "Smith" link = "mail.com"/>
+        </Wrapper>
+    );  
+>>>>>>> b77c1a2a423fea80bef2a0e80c6356faf124784b
 }
 // ====================================================================
 
