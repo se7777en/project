@@ -1,13 +1,12 @@
-const shortBtn = document.getElementById('short');
-const reloadBtn = document.getElementById('rel');
-console.log(reloadBtn);
+const shortBtn = document.getElementById('short-btn');
+const reloadBtn = document.getElementById('reload-btn');
 
 shortBtn.addEventListener('click', shortenUrl);
 
 function shortenUrl() {
-    var originalUrl = document.getElementById("inpuMail").value,
-     apiUrl = "https://tinyurl.com/api-create.php?url=" + encodeURIComponent(originalUrl),
-     shortenedUrlTextarea = document.getElementById("textArea");
+    var originalUrl = document.getElementById("originalUrl").value;
+    var apiUrl = "https://tinyurl.com/api-create.php?url=" + encodeURIComponent(originalUrl);
+    shortenedUrlTextarea = document.getElementById("shortenedUrl");
 
     fetch(apiUrl).then(response => response.text()).then(data => {
         shortenedUrlTextarea.value = data;
