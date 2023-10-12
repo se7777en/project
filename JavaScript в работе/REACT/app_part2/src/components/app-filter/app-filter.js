@@ -6,13 +6,14 @@ const AppFilter = (props) => {
     const btnData = [
         {name:'all', label: 'Все сотрудники'},
         {name:'rise', label: 'На повышение'},
-        {name:'moreThen1000', label: 'З/П больше 1000$', colored: true}
+        {name:'moreThen1000', label: 'З/П больше 1000$'}
     ];
 
-    const buttons = btnData.map(({name, label, colored}) => {
+    const buttons = btnData.map(({name, label}) => {
         const result = props.filter === name
+        //console.log(result)
         const clazz = result ? 'btn-light' : 'btn-outline-light' 
-        const style = colored ? {color: 'red'}: null;
+        const style = (result) ? {color: 'red'}: null;
         return (
         <button className={`btn ${clazz}`} 
                 type="button" 
