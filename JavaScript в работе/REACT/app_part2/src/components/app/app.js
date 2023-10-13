@@ -133,7 +133,9 @@ class App extends Component {
 
     // ukorocheni variant 2 v odnom
     onToggleProp = (id, prop) => {
-        console.log('ok2')
+
+        console.log(id);
+        console.log(prop);
         this.setState(({ data }) => ({
             data: data.map((item) => {
                 if (item.id === id) {
