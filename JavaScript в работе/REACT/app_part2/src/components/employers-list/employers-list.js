@@ -21,7 +21,7 @@ import './employers-list.css';
 
 const EmployersList = ({data, onDelete, onToggleProp,UpdateSallary}) => { 
   
-    const element = data.map((item) => {
+    let element = data.map((item) => {
         const  {id, ...itemProps} = item; /*razbivaet obiekt masisa na 2 chasti 1 eto id a vtoroe vse ostalnoe iz item*/
        
         return (
@@ -39,6 +39,11 @@ const EmployersList = ({data, onDelete, onToggleProp,UpdateSallary}) => {
             />/*...item      name={item.name} sallary = {item.sallary} increase = {item.increase}*/
         )
     })
+
+
+    if(element.length < 1){
+        element = <h3>Items not found!</h3>
+    }
 
     return (
         <ul className="app-list list-group">
