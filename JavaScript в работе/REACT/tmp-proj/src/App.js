@@ -46,13 +46,13 @@ class WhoAmI extends Component{
   }
 
 render() {
-  const {name, surname} = this.props;
+  const {names, surnames} = this.props;
   return (
     <div>
       <div className="wrapper">
         <button onClick={this.counter}>+++</button>
         <button onClick={this.counterInc}>---</button>
-      <h1>My name is {name} surname is {surname}</h1>
+      <h1>My name is {names} surname is {surnames}</h1>
       <a href="http://vk.com">My Profile</a>
         <p>{this.state.counter}</p>
       </div>
@@ -63,9 +63,9 @@ render() {
 function App(){
   return (
     <div className="App">
-      <WhoAmI name = "Melik" surname = "Papikyan"/>
-      <WhoAmI name = "James" surname = "Gordon"/>
-      <WhoAmI name = "Wiliam" surname = "Ant"/>
+      <WhoAmI names = "Melik" surnames = "Papikyan"/>
+      <WhoAmI names = "James" surnames = "Gordon"/>
+      <WhoAmI names = "Wiliam" surnames = "Ant"/>
     </div>
   );
 }
