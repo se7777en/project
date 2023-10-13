@@ -13,6 +13,8 @@ const AppFilter = (props) => {
         const result = props.filter === name
         const clazz = result ? 'btn-light' : 'btn-outline-light' 
         const style = colored ? {color: 'red'}: null;
+        
+        //console.log(style);
         return (
         <button className={`btn ${clazz}`} 
                 type="button" 
