@@ -1,0 +1,144 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+li,ul,ol {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    background-color: rgb(73, 63, 54);
+}
+
+.wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    padding: 20px 30px;
+    border-radius: 4px;
+    background-color: rgb(32, 32, 32);
+    box-shadow: 0 0 5px 1px rgba(221, 221, 221, 1);
+    cursor: pointer;
+    transition: .3s all ease;
+    border: 1px solid transparent;
+}
+
+.wrapper:hover {
+    /* box-shadow: none; */
+    border: 1px solid #000;
+}
+
+
+
+.wrapper h1 {
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-align: center;
+    margin-bottom: 25px;
+    color: #aaa5a5;
+}
+
+.form__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+
+.form__inner input {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #2b2929;
+    outline: none;
+    caret-color: #682424; 
+    color: #ffffff;
+    box-shadow: 0 0 5px 1px rgba(221, 221, 221, 1);
+    cursor: pointer;
+    transition: .3s all ease;
+}
+
+.form__inner input:hover {
+    box-shadow: none;
+}
+
+.form__inner input::placeholder {
+    font-size: inherit;
+}
+
+
+.form__inner input:not(:last-child) {
+    margin-bottom: 25px;
+}
+
+.wrapper .form button {
+    padding: 10px 30px;
+    border: none;
+    border-radius: 3px;
+    color:#fff;
+    letter-spacing: .1em;
+    background-color: rgb(209, 88, 52);
+    cursor: pointer;
+    transition: .3s all ease;
+    box-shadow: 0 0 5px 1px rgba(221, 221, 221, 1);
+    border: 1px solid transparent;
+}
+
+.wrapper .form button:hover {
+    box-shadow: none;
+    background-color: rgb(168, 91, 67);   
+}
+
+
+.wrapper__inner {
+    position: relative;
+}
+
+
+.wrapper__inner-form::before {
+    content: "";
+    position: absolute;
+    top: 110%;
+    left: -135px;
+    width: 60px;
+    height: 60px;
+    background-color: red;
+    filter: blur(90px);
+}
+
+
+.wrapper__inner-form::after {
+    content: "";
+    position: absolute;
+    top: -40%;
+    left: 120%;
+    width: 60px;
+    height: 60px;
+    background-color: red;
+    filter: blur(90px);
+}
+
+
