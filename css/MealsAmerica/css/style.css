@@ -148,7 +148,7 @@ transition: all .2s ease;
     outline: none;
 }
 
-.group input:before{
+ .group input:before{
     position: absolute;
     content: "";
     background-color: #757575;
@@ -162,6 +162,7 @@ transition: all .2s ease;
 .group input:checked{
     background-color: #b3e5fc;
 }
+
 
 .group input:checked:before{
     background-color: #0d47a1;
