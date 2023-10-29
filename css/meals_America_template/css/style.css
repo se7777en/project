@@ -71,7 +71,9 @@ a {
     text-decoration: none;
 }
 
-ul,ol,li {
+ul,
+ol,
+li {
     list-style: none;
 }
 
@@ -79,7 +81,12 @@ img {
     vertical-align: top;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-size: inherit;
     font-weight: inherit;
 }
@@ -88,6 +95,7 @@ h1,h2,h3,h4,h5,h6 {
 body {
     font-family: 'Stolzl_regular';
     font-size: 16px;
+    background-color: #FAFAFA;
 }
 
 .container {
@@ -96,11 +104,11 @@ body {
     padding: 0 10px;
 }
 
-.info_container {
+/* .info_container {
     max-width: 1300px;
     margin: 0 auto;
     padding: 0 10px;
-}
+} */
 
 .header__inner-items {
     display: flex;
@@ -118,6 +126,7 @@ body {
 .menu__items {
     display: flex;
 }
+
 .menu__items li:not(:last-child) {
     padding-right: 60px;
 }
@@ -144,17 +153,18 @@ body {
 
 
 .delivery {
-    margin-bottom: 217px;
-    /* position: relative; */
+    margin-bottom: 173px;
+    position: relative;
 }
 
 .delivery__inner-items {
     display: flex;
-    position: relative;
+    /* position: relative; */
 }
 
 .delivery__inner-item {
     padding-top: 327px;
+    /* position: relative; */
 }
 
 
@@ -173,6 +183,7 @@ body {
     letter-spacing: 1px;
     font-size: 62px;
 }
+
 .delivery__text {
     font-family: 'Stolzl_Book';
     color: #366126;
@@ -180,6 +191,7 @@ body {
     line-height: 36px;
     padding-bottom: 43px;
 }
+
 .delivery__item-btns {
     display: flex;
     gap: 30px;
@@ -187,10 +199,10 @@ body {
 
 .delivery__item-btns .btn {
     font-family: 'Stolzl_bold';
-    font-size: 18px; 
+    font-size: 18px;
     text-transform: uppercase;
-    border-radius: 40px; 
-    
+    border-radius: 40px;
+
 
 }
 
@@ -208,35 +220,43 @@ body {
 }
 
 .delivery .img {
-    position: relative;
+    position: absolute;
+    right: 0px;
+    z-index: -1;
 }
 
 .delivery img {
-    z-index: -1;
-    position: absolute;
-    left: -81px;
-    right: 0;
+   width: 100%;
+   height: auto;
 }
 
 .info {
-    margin-bottom: 200px;
+    margin-bottom: 151px;
 }
 
 .info__inner-items {
     display: flex;
     flex-wrap: wrap;
-    /* gap: 72px; */
+    min-width: 430px;
+    gap: 25px;
+}
+
+.info__inner-box {
+    max-width: 277px;
 }
 
 .info__inner-item {
     display: flex;
-    align-items: center;
-    gap: 25px;
-    max-width: 374px;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 32px 27px 32px 30px;
+    max-width: 430px;
+    gap: 30px;
+    /* align-items: center; */
 }
 
 .info__inner-title {
-    font-family: 'Stolzl_bold'; 
+    font-family: 'Stolzl_bold';
     font-size: 18px;
     color: #363333;
     padding-bottom: 20px;
@@ -255,6 +275,202 @@ body {
 
 .info__item {
     /* padding: 0px 36px; */
-    flex: 0 1 33.3333%;
-    padding: 0px 0px 76px 0px;
+    /* flex: 0 1 33.3333%;
+    padding: 0px 0px 76px 0px; */
+}
+
+
+
+.about__inner-title::before {
+    content: '';
+    position: absolute;
+    background-image: url("../img/decore/unsplash__.svg");
+    background-repeat: no-repeat;
+    width: 205px;
+    height: 188px;
+    top: -95px;
+    left: -99px;
+    transform: rotate(358deg);
+    z-index: -1;
+}
+
+.about__inner-items {
+    display: flex;
+}
+
+.about__inner-item {
+    max-width: 619px;
+}
+
+.about__inner-title {
+    font-family: 'Stolzl_bold';
+    font-size: 48px;
+    line-height: 140%;
+    color: #333333;
+    padding: 0px 0px 30px 0px;
+    position: relative;
+}
+
+.about__inner-text {
+    font-family: 'Stolzl_Book';
+    font-size: 20px;
+    line-height: 32px;
+    color: #626262;
+    padding: 0px 0px 30px 0px;
+}
+
+.about__inner-text p:not(:last-child) {
+    padding-bottom: 30px;
+}
+
+.about__inner-btn {
+    color: #05581C;
+    font-size: 16px;
+    font-family: inherit;
+    border: 1.5px solid #05581C;
+    padding: 21px 54px;
+    border-radius: 30px;
+    background-color: #FAFAFA;
+}
+
+.about__inner-img {
+    position: absolute;
+    right: 0px;
+    z-index: -1;
+
+}
+
+.about__inner-img img {
+    /* position: absolute; */
+    width: 100%;
+    height: auto;
+}
+
+
+/* font-family: 'Stolzl_medium'; */
+
+.options {
+    margin-top: 54px;
+}
+
+
+	
+.options__inner input {
+    display: none; 
+}
+
+.castom_chkbox {
+display: inline-block;
+position: relative;
+width: 32px;
+height: 32px;
+top: 2px;
+left: 0px;
+border-radius: 8px;
+background-color: #05581C;
+border: none;
+cursor: pointer;
+margin-right: 4px;
+}
+
+.castom_chkbox::before {
+content: '';
+display: inline-block;
+width: 13px;
+height: 13px;
+margin-left: 9px;
+margin-top: 10px; 
+background-image: url('../img/chkbox/chkb.svg');
+scale: 0;
+background-size: contain;
+background-repeat: no-repeat;
+transition: all .2s ease;
+}
+
+.options__inner input:checked + .castom_chkbox:before {
+    scale: 1;
+} 
+
+
+.options__inner {
+    display: flex;
+}
+
+.options__inner label {
+   display: inline-block;
+   margin: 0px 118px 30px 0px;
+   font-family: 'Stolzl_medium';
+   font-size: 18px;
+   line-height: 28px;
+}
+
+
+.delicious {
+    margin-top: 106px;
+}
+
+.delicious__inner-items {
+    display: flex;
+    gap: 40px;
+}
+
+.delicious__inner-item {
+    max-width: 526px;
+}
+
+.delicious__inner-signature {
+    font-family: 'Miniver', cursive;
+    line-height: 26px;
+    font-size: 22px;
+    color: #05581C;
+    padding-bottom: 10px;
+}
+
+.delicious__inner-title {
+    font-family: 'Stolzl_medium';
+    font-size: 48px;
+    line-height: 56px;
+    color: #333333;
+    padding-bottom: 29px;
+}
+
+
+.delicious__inner-text {
+    font-family: 'Stolzl_Book';
+    font-size: 16px;
+    line-height: 24px;
+    color: #828282;
+    padding-bottom: 30px;
+}
+
+
+.inner__box-text {
+    font-family: 'Stolzl_medium';
+    font-size: 18px;
+    line-height: 28px;
+    color: #4F4F4F;
+}
+
+
+
+.delicious__inner_box-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 11px 96px 11px 15px;
+    background-color: #fff;
+    border-radius: 6px;
+    max-width: 380px;
+    height: 77px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.delicious__inner_box-item img {
+    padding-right: 15px;
+    width: 56px;
+    height: 56px;
+}
+
+.delicious__inner_box-item:not(:last-child) {
+    margin-bottom: 15px;
 }

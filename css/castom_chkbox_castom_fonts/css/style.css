@@ -93,7 +93,7 @@
 }
 
 
-/* 
+
 .group {
     
 }
@@ -134,9 +134,9 @@ transition: all .2s ease;
 
 .real_chkbox:checked + .castom_chkbox:before {
     scale: 1;
-} */
+} 
 
-
+/* 
 .group input{
     appearance: none;
     height: 1.6em;
@@ -167,4 +167,4 @@ transition: all .2s ease;
 .group input:checked:before{
     background-color: #0d47a1;
     left: 2em;
-}
+} */
