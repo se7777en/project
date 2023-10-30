@@ -462,7 +462,7 @@ transition: all .2s ease;
     border-radius: 6px;
     max-width: 380px;
     height: 77px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 250px 0px rgba(0, 0, 0, 0.1);
 }
 
 .delicious__inner_box-item img {
