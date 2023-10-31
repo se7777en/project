@@ -513,3 +513,121 @@ transition: all .2s ease;
 .delicious__inner_box-item:not(:last-child) {
     margin-bottom: 15px;
 }
+
+
+.nutrition {
+    margin-top: 55px;
+    background-color: #05581C;
+    border-radius:262px 262px 0px 0px; 
+}
+
+.nutrition__head {
+    text-align: center;
+    padding: 90px 0px 60px 0px;
+}
+
+.nutrition__text {
+    font-family: 'Miniver', cursive;
+    font-size: 34px;
+    line-height: 26px;
+    color: #A9DDB7;
+    padding-bottom: 30px;
+}
+
+.nutrition__title {
+    font-family: 'Stolzl_medium';
+    font-size: 48px;  
+    line-height: 56px;
+    color: #fff;
+}
+
+.nutrition__inner {
+    background-color: #F8FFF5;
+    border-radius: 46px;
+    padding: 51px 60px 60px;
+    display: flex;
+    flex-direction: column;
+}
+
+.nutrition__inner-list {
+    padding-bottom: 27px;
+}
+
+.nutrition__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nutrition__list-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    /* gap: 14px; */
+}
+
+
+.nutrition__item-title {
+    font-family: 'Stolzl_medium';
+    font-size: 20px;
+    line-height: 56px; 
+    color: #05581C;  
+}
+
+
+.nutrition__inner-items {
+    display: flex;
+    gap: 25px;
+}
+
+.nutrition__inner-meals {
+    font-family: 'Stolzl_medium';
+    font-size: 24px;
+    /* line-height: 56px; */
+    padding-bottom: 10px;
+    color: #333333;
+}
+
+.nutrition__meals-list li {
+    font-family: 'Stolzl_Book';
+    font-size: 16px;
+    line-height: 34px;
+    color: #5B5B5B;
+}
+
+
+.nutrition__meals-item {
+    padding-left: 21px;
+    position: relative;
+}
+
+.nutrition__meals-item::before {
+    content: '\2022';
+    position: absolute;
+    left: 5px;
+    color:#5B5B5B;
+}
+
+.nutrition__meals-list li:not(:last-child) {
+    /* padding-bottom: 6px; */
+} 
+
+
+.nutrition__meals-btns {
+    display: flex;
+    margin-top: 40px;
+    gap: 28px;
+}
+
+/* font-family: 'Miniver', cursive; */
+/* A9DDB7 */
+
+/* font-family: 'Stolzl_medium'; */
+
+/* C6DDBB */
+
+/* font-family: 'Stolzl_Book'; */
+
+
+
