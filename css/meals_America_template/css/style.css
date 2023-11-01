@@ -519,6 +519,7 @@ transition: all .2s ease;
     margin-top: 55px;
     background-color: #05581C;
     border-radius:185px 185px 0px 0px; 
+    padding: 0px 0px 100px 0px;
     
     z-index: 7;
 
@@ -672,10 +673,12 @@ transition: all .2s ease;
     text-transform:uppercase;
     cursor: pointer;
     box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 41px;
 }
 
 .nutrition_btn:hover {
     box-shadow: none;
+
 }
 
 .nutrition__meals-menu {
@@ -687,9 +690,59 @@ transition: all .2s ease;
 .nutrition__meals-start {
     color: #fff;
     background-color: #05581C;
-    padding: 29px 64px;
-    
+    padding: 29px 64px;   
 }
+
+
+
+.schedule {
+    position: relative;
+}
+
+.schedule__img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.schedule__background {
+    width: 100%;
+}
+
+.schedule__inner {
+    display: flex;
+    justify-content: flex-end;
+    padding: 164px 0px 168px 168px;
+} 
+
+.schedule__inner-title {
+    font-family: 'Stolzl_bold';
+    font-size: 54px;
+    line-height: 56px;
+    color: #fff;
+    padding-bottom: 69px;
+}
+
+.schedule__inner-title span {
+    color: #1AC94B;
+}
+
+
+.schedule__inner-btn {
+    font-family: 'Stolzl_bold';
+    font-size: 18px;
+    color: 18px;
+    padding: 25px 74px;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #1AC94B;
+    border-radius: 46px;
+    outline: none;
+}
+
 
 
 
