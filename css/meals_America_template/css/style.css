@@ -437,8 +437,8 @@ transition: all .2s ease;
     position: absolute;
     top: -101px;
     left: 306px;
-    width: 100%;
-    height: 100%;
+    width: 333px;
+    height: 336px;
     background-image: url(../img/delicious/img-3.svg);
     background-repeat: no-repeat;
     z-index: -1;
@@ -518,13 +518,46 @@ transition: all .2s ease;
 .nutrition {
     margin-top: 55px;
     background-color: #05581C;
-    border-radius:262px 262px 0px 0px; 
+    border-radius:185px 185px 0px 0px; 
+    
+    z-index: 7;
+
 }
 
 .nutrition__head {
     text-align: center;
     padding: 90px 0px 60px 0px;
+    position: relative;
+    overflow: hidden;
+    z-index: 5;
 }
+
+.nutrition__head::before {
+    content: '';
+    position: absolute;
+    background-image:url('../img/nutrition/Mask.png');
+    background-repeat:no-repeat;
+    background-size: cover;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: soft-light;
+    opacity: 0.5; /* 20% интенсивности */
+    
+}
+
+/* .nutrition__head::after {
+    content: '';
+    position: absolute;
+    background-image:url('../img/nutrition/Rectangle.jpg');
+    background-repeat:no-repeat;
+    background-size: cover;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+} */
 
 .nutrition__text {
     font-family: 'Miniver', cursive;
@@ -547,6 +580,19 @@ transition: all .2s ease;
     padding: 51px 60px 60px;
     display: flex;
     flex-direction: column;
+    position: relative;
+}
+
+.nutrition__inner::after {
+    content: '';
+    position: absolute;
+    background-image: url('../img/nutrition/decore.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    right: -3px;
+    top: -90px;
+    width: 150px;
+    height: 150px;
 }
 
 .nutrition__inner-list {
@@ -609,9 +655,6 @@ transition: all .2s ease;
     color:#5B5B5B;
 }
 
-.nutrition__meals-list li:not(:last-child) {
-    /* padding-bottom: 6px; */
-} 
 
 
 .nutrition__meals-btns {
@@ -619,6 +662,39 @@ transition: all .2s ease;
     margin-top: 40px;
     gap: 28px;
 }
+
+
+
+.nutrition_btn {
+    font-family: 'Stolzl_bold';
+    font-size: 18px;
+    border-radius: 8px;
+    text-transform:uppercase;
+    cursor: pointer;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
+}
+
+.nutrition_btn:hover {
+    box-shadow: none;
+}
+
+.nutrition__meals-menu {
+    color: #05581C;
+    border: 1px solid #05581C;
+    padding: 28px 41px;
+}
+
+.nutrition__meals-start {
+    color: #fff;
+    background-color: #05581C;
+    padding: 29px 64px;
+    
+}
+
+
+
+
+
 
 /* font-family: 'Miniver', cursive; */
 /* A9DDB7 */
@@ -628,6 +704,8 @@ transition: all .2s ease;
 /* C6DDBB */
 
 /* font-family: 'Stolzl_Book'; */
+
+/* font-family: 'Stolzl_bold'; */
 
 
 
