@@ -1,0 +1,248 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *::before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*sbrasivaem vse brauzernie stil i*/
+/*importiruem obnulyaushi file nashu zagotovku cherez @import*/
+/*sozdaem peremennie cherez simvol $*/
+.link_2, .link { /*sozdaem shablon dlya silok*/
+  border-bottom: 1px dashed red;
+  font-size: 25px;
+} /*mojno etot shablonchik ispolzovat kak obichni klass 
+vmesto % ispolzovat . no on budet vivoditsya, a cherez % budet vesti
+sebya kak peremennaya*/
+.block {
+  width: 31.25%; /*mojno proizvodit vichisleniya*/
+  font-size: 50px;
+  line-height: 60px;
+  padding: 30px;
+}
+.block > p {
+  color: gray; /*u elementa block pervi paragraf p*/
+}
+.block span { /*sass(scss) eta vlojenost*/
+  color: green;
+}
+.block .block_text { /*eto toje vlojenost*/
+  font-size: 80px;
+}
+.block .block_text span { /*eto toje vlojenost span u .block_text i eto vse v bloke*/
+  color: red;
+}
+
+.link {
+  color: blue;
+  text-decoration: underline;
+}
+.block .link { /*eto toje vlojenost*/
+  font-size: 100px;
+}
+.link:hover { /*& - eto roditel i ego roditel eto link*/
+  color: chartreuse;
+}
+
+.link_2 {
+  /*miksini podrugomu primesi u nix toje neploxoi funkcional
+  ona robotaet kak funkciya i ispolzuetsya cherez @include s imenem i pojno parametri*/
+  font-size: 120px;
+  /*ispolzuem shablon dlya silki pri pomoshi @extend*/
+  /*eti shabloni mojno ispolzovat gde ugodno*/
+}
+
+body p {
+  color: green;
+  font-size: 25px;
+  margin: 30px;
+}/*# sourceMappingURL=style.css.map */ms: center;
+}
+#todos-list li button {
+  padding: 8px 8px 8px 0;
+  border-radius: 50%;
+  font-size: 1.25rem;
+  color: #999;
+}
+#todos-list li button:hover {
+  color: #595959;
+}
+#todos-list li .delete-btn {
+  padding: 8px 0 8px 8px;
+}
+#todos-list li .todo-text {
+  font-weight: 600;
+  font-size: 14px;
+  padding-bottom: 4px;
+  margin: 0;
+}
+#todos-list li .todo-date {
+  font-size: 12px;
+  color: #666;
+}
+#todos-list li .todo-date.overdue {
+  color: red;
+}
+#todos-list li.complated {
+  opacity: 0.6;
+}
+#todos-list li.complated .todo-btn {
+  color: green;
+}
+
+/*glenn2223.live-sass
+Name: Live Sass Compiler
+Id: glenn2223.live-sass
+Description: Compile Sass or Scss to CSS at realtime.
+Version: 6.0.5
+Publisher: Glenn Marks
+VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=glenn2223.live-sass
+*//*# sourceMappingURL=style.css.map */top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background: url("../icons/Star.svg") center center/cover no-repeat;
+}
+.promo__interactive-item:before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  display: block;
+  width: calc(100% - 40px);
+  height: 2px;
+  background-color: #FFD500;
+}
+.promo__interactive-item:hover .delete {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background: url("../icons/trash.png") center center/cover no-repeat;
+}
+.promo__interactive .add .promo__interactive-title {
+  margin-bottom: 25px;
+}
+.promo__interactive .add span {
+  display: block;
+  margin: 10px 0;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 16px;
+  color: #000000;
+}
+.promo__interactive .add .yes {
+  display: inline;
+  margin-left: 10px;
+}
+.promo__interactive .add input[type=text] {
+  width: 270px;
+  height: 45px;
+  line-height: 50px;
+  font-size: 16px;
+  background: rgba(196, 196, 196, 0.29);
+  border: 1px solid rgba(0, 0, 0, 0.19);
+  padding: 0 15px;
+  outline: none;
+  border-radius: 4px;
+}
+.promo__interactive .add input[type=text]::placeholder {
+  font-weight: 300;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.53);
+}
+.promo__interactive .add button {
+  display: block;
+  margin-top: 15px;
+  width: 170px;
+  height: 45px;
+  background: #FFD500;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 14px;
+  color: #FFFFFF;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.promo__interactive .add button:active {
+  transform: scale(0.95);
+}
+.promo__adv {
+  background: #212121;
+  width: 300px;
+  height: 100%;
+}
+.promo__adv-title {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+  color: #FFD500;
+  margin: 20px 0;
+  text-align: center;
+}
+.promo__adv img {
+  width: 100%;
+  margin-bottom: 10px;
+}/*# sourceMappingURL=style.css.map */
