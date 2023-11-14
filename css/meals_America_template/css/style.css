@@ -104,11 +104,9 @@ body {
     padding: 0 10px;
 }
 
-/* .info_container {
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 0 10px;
-} */
+.info_container {
+   position: relative;
+}
 
 .header__inner-items {
     display: flex;
