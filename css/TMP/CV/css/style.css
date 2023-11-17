@@ -408,7 +408,7 @@ body {
     background-color: #2319a3;
     top: 0;
     right: 15%;
-    filter: blur(112px);
+    filter: blur(102px);
 }
 
 .right-side.side::before {
@@ -419,5 +419,5 @@ body {
     background-color: #2319a3;
     bottom: 0;
     left: 1%;
-    filter: blur(112px);
+    filter: blur(102px);
 }
