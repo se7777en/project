@@ -1,0 +1,73 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: inherit;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+body {
+    font-size: 18px;
+
+}
+
+.box1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.box1_inner {
+    width: 150px;
+    height: 150px;
+   
+    border: 1px solid #cf2020;
+    border-radius: 5px 20px;
+    /* border-radius: 10px; */
+    /* border-bottom-left-radius: 50%; */
+    /* border-top: none;
+    border-bottom-width:20px; */
+    /* position: relative; */
+}
+
+.box1__text {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+   /* position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%); */
+}
