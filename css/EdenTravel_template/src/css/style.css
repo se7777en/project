@@ -57,7 +57,7 @@ body {
 } */
 
 .container {
-    max-width: 1130px;
+    max-width: 1150px;
     margin: 0 auto;
     padding: 0 10px;
     /* box-sizing: content-box; */
@@ -166,7 +166,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
+    gap: 16px;
     flex-wrap: wrap;
 
 }
@@ -195,7 +195,7 @@ body {
 }
 
 .travel-item__inner input[type="text"] {
-    padding: 16px 21px 16px 15px;
+    padding: 16px 22px 16px 15px;
     background-color: #fff;
     border-radius: 8px;
     color: #999999;
@@ -203,7 +203,7 @@ body {
 }
 
 .travel-item__inner input[type="date"] {
-    padding: 15px 96px 14px 15px;
+    padding: 15px 98px 14px 15px;
     background-color: #fff;
     border-radius: 8px;
     color: #999999;
@@ -251,6 +251,7 @@ body {
 
 .page__adventure {
     background-color: #17C3B2;
+    padding: 70px 0px 115px 0px;
 }
 
 
@@ -301,7 +302,8 @@ body {
 }
 
 .adventure__container {
-    padding: 70px 0px 115px 0px
+    padding-top: 70px;
+    padding-bottom: 115px;
 }
 
 .adventure-title {
@@ -465,6 +467,8 @@ body {
 .popular-destinations__items .slick-track {
     display: flex;
     /* 1 chtobi vse slaidi vistroilis v ryad*/
+    /* justify-content: center;
+    align-items: center; */
     align-items: flex-start;
     /*prijimaet slaid k verxu dlya adaptacii slaida po visote*/
 }
@@ -1233,6 +1237,16 @@ body {
 
 }
 
+@media (max-width: 768px) {
+    .adventure-travell__items {
+        justify-content: center;
+    }
+
+    .page__descr .adventure-title {
+        margin-bottom: 10px;
+    }
+}
+
 
 @media (max-width: 523px) {
 
@@ -1245,11 +1259,23 @@ body {
 
 
 
+@media (max-width: 915px) {
+    .page__title h2::before {
+        display: none;
+    }
 
-@media (max-width: 468px) {
+}
+
+
+@media (max-width: 768px) {
+
+    .main__block-body {
+        padding: 0 20px;
+    }
 
     .travel-plan__items {
         display: block;
+        padding: 0 22px;
     }
 
     .travel-item__inner input {
@@ -1261,15 +1287,46 @@ body {
         text-align: center;
     }
 
+    .travel-item__inner:not(:last-child) {
+        margin-bottom: 15px;
+    }
+
+    .main__block-container {
+        height: 690px;
+    }
+
+    .page__travel {
+        background-color: #025951;
+        opacity: 1;
+    }
+
+    .main__block-body h1 {
+        font-size: 59px;
+    }
+
+    .adventure__container {
+        padding-top: 0px;
+    }
+
 }
 
-/*
-@media (max-width: 1168px) {
 
-   
+@media (max-width: 446px) {
+    .main__block-body h1 {
+        font-size: 49px;
+    }
+
+    .page .travel__body h2 {
+        font-size: 35px;
+    }
 }
 
-@media (max-width: 1168px) {
-    .travel-item__inner {}
+@media (max-width: 395px) {
+    .main__block-body h1 {
+        font-size: 39px;
+    }
 
-} */
+    .page .travel__body h2 {
+        font-size: 28px;
+    }
+}
