@@ -544,6 +544,11 @@ body {
     cursor: pointer;
 }
 
+.destionations__item-inner {
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
 /* stilizuem aktivni dots*/
 .popular-destinations__items .slick-dots li.slick-active button {
     background-color: #17C3B2;
