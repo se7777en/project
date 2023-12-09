@@ -464,13 +464,23 @@ body {
     line-height: 100%;
 }
 
+.page__popular .slick-slider {
+    min-width: 0;
+    padding: 0 60px;
+
+}
+
 .popular-destinations__items .slick-track {
     display: flex;
     /* 1 chtobi vse slaidi vistroilis v ryad*/
     /* justify-content: center;
     align-items: center; */
+    /* justify-content: space-between; */
+    justify-content: center;
+
     align-items: flex-start;
     /*prijimaet slaid k verxu dlya adaptacii slaida po visote*/
+    transform: translate3d(-5px, 0px, 0px)
 }
 
 .popular-destinations__items .slick-list {
@@ -480,7 +490,14 @@ body {
 
 .popular-destinations__items {
     position: relative;
+    /* padding: 0 42px; */
 }
+
+.destionations__item-inner {
+    /* padding: 0 15px; */
+}
+
+
 
 .popular-destinations__items .slick-arrow {
     /*stilizuem strelki*/
@@ -500,7 +517,7 @@ body {
 }
 
 .popular-destinations__items .slick-arrow.slick-prev {
-    right: -33px;
+    right: 0px;
     cursor: pointer;
     background: url('../img/popular/arrow_right.svg') 0 0 / 100% no-repeat;
 
@@ -508,7 +525,7 @@ body {
 }
 
 .popular-destinations__items .slick-arrow.slick-next {
-    left: -56px;
+    left: 0px;
     cursor: pointer;
     background: url('../img/popular/arrow_left.svg') 0 0 / 100% no-repeat;
 }
@@ -589,7 +606,13 @@ body {
 
 .blog__item-img {
     margin-bottom: 15px;
-    max-width: 550px;
+    max-width: 100%;
+    height: auto;
+
+}
+
+.blog__item-img img {
+    /* max-width: 550px; */
 }
 
 .blog__item-text {
@@ -698,6 +721,9 @@ body {
 .blog-item .item-blog {
     margin-bottom: 57px;
 }
+
+
+
 
 .blog-item__inner {
     margin-bottom: 87px;
@@ -1107,6 +1133,28 @@ body {
     display: none;
 }
 
+@media (max-width: 1140px) {
+    .page__blog .blog__items {
+        flex-wrap: wrap;
+    }
+
+    .blog-item .item-blog {
+        margin-bottom: 30px;
+    }
+
+    .blog-item:first-child {
+        margin-bottom: 60px;
+    }
+
+    .blog-item__inner {
+        margin-bottom: 30px;
+    }
+
+    /* .blog__item-img {
+        scale: .7;
+    } */
+}
+
 @media (max-width: 789px) {
     .menu {
         padding: 0;
@@ -1326,6 +1374,8 @@ body {
     }
 }
 
+
+
 @media (max-width: 395px) {
     .main__block-body h1 {
         font-size: 39px;
@@ -1333,5 +1383,13 @@ body {
 
     .page .travel__body h2 {
         font-size: 28px;
+    }
+
+}
+
+
+@media (max-width: 387px) {
+    .blog__descr .adventure-title h2 {
+        font-size: 40px;
     }
 }
