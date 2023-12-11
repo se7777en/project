@@ -1,25 +1,42 @@
 $(document).ready(function () {
   $('.destionations__item-inner').slick({
-    arrows: false,
+    arrows: true,
     /*strelki*/
     slidesToShow: 4,
     infinite: false,
-    dots: false,
-    // responsive:[
-		// 	{
-		// 		breakpoint: 1098,
-		// 		settings: {
-		// 			slidesToShow: 3
-		// 		}
-		// 	},
+    dots: true,
+    responsive:[
+			{
+				breakpoint: 1376,
+				settings: {
+					slidesToShow: 3
+				}
+			},
 
-		// 	{
-		// 		breakpoint: 550,
-		// 		settings: {
-		// 			slidesToShow: 1
-		// 		}
-		// 	}
-		// ]
+			{
+				breakpoint: 1090,
+				settings: {
+					arrows: false,
+          slidesToShow: 3
+				}
+			},
+
+      {
+				breakpoint: 851,
+				settings: {
+					arrows: false,
+          slidesToShow: 2
+				}
+			},
+
+      {
+				breakpoint: 572,
+				settings: {
+					arrows: false,
+          slidesToShow: 1
+				}
+			}
+		]
 
   });
 });
