@@ -386,31 +386,23 @@ body {
 }
 
 
+/*card style start*/
 .popular-destinations__item {
-    width: 259px;
+    max-width: 259px;
     position: relative;
-}
-
-.popular-destinations__img {
-    width: 100%;
 }
 
 .popular-destinations__descr {
     width: 100%;
-    text-align: center;
     position: absolute;
     bottom: 31px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
 }
 
-.popular-destinations__items {
-    /* display: flex;
-    justify-content: space-between; */
-}
-
-/*inner styled*/
 .destinations-descr__country {
     color: #FFF;
-
     text-align: center;
     font-family: 'DM Serif Display', serif;
     font-size: 36px;
@@ -421,14 +413,12 @@ body {
     /* 36px */
 }
 
-/*inner styled*/
-
 .destinations-descr__location {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     gap: 7px;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .destinations-descr__location img {
@@ -438,16 +428,19 @@ body {
 
 .destinations-descr__city {
     color: #FFF;
+    text-align: center;
+    font-family: inherit;
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
     line-height: 100%;
-
     /* 16px */
 }
 
 .destinations-descr__price {
     color: #FFF;
+    text-align: center;
+    font-family: inherit;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -458,123 +451,56 @@ body {
 
 .destinations-descr__price span {
     color: #17C3B2;
+    font-family: inherit;
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
     line-height: 100%;
 }
 
-.page__popular .slick-slider {
-    min-width: 0;
-    padding: 0 60px;
-
+.destinations-descr__stars {
+    display: block;
+    width: 100%;
+    height: 24px;
 }
 
-.popular-destinations__items .slick-track {
+/*card style end*/
+
+
+
+/*slider_start*/
+.destionations__item-inner .slick-track {
     display: flex;
     /* 1 chtobi vse slaidi vistroilis v ryad*/
     /* justify-content: center;
     align-items: center; */
-    /* justify-content: space-between; */
-    justify-content: center;
-
     align-items: flex-start;
     /*prijimaet slaid k verxu dlya adaptacii slaida po visote*/
-    transform: translate3d(-5px, 0px, 0px)
 }
 
-.popular-destinations__items .slick-list {
+.destionations__item-inner .slick-list {
     overflow: hidden;
     /* 2 uberaem lishnuu chast*/
 }
 
+/* .popular-destinations__item {
+    display: block;
+    max-width: 259px;
+} */
+
 .popular-destinations__items {
-    position: relative;
-    /* padding: 0 42px; */
-}
-
-.destionations__item-inner {
-    /* padding: 0 15px; */
-}
-
-
-
-.popular-destinations__items .slick-arrow {
-    /*stilizuem strelki*/
-    position: absolute;
-    top: 50%;
-    /* margin: -23px 0px 0px 0px; */
-    transform: translateY(-50%);
-    z-index: 10;
-    font-size: 0;
-    /*ubiraem nadpisi na knopke*/
-    width: 40px;
-    height: 40px;
-    border: none;
-    background-color: #17C3B2;
-    border-radius: 50%;
-
-}
-
-.popular-destinations__items .slick-arrow.slick-prev {
-    right: 0px;
-    cursor: pointer;
-    background: url('../img/popular/arrow_right.svg') 0 0 / 100% no-repeat;
-
-
-}
-
-.popular-destinations__items .slick-arrow.slick-next {
-    left: 0px;
-    cursor: pointer;
-    background: url('../img/popular/arrow_left.svg') 0 0 / 100% no-repeat;
-}
-
-.popular-destinations__items .slick-arrow:not(:last-child) {
-    /* margin-right: 78px; */
-}
-
-.popular-destinations__items .slick-arrow.slick-disabled {
-    /*pri infinite: false*/
-    opacity: 0.2;
-}
-
-/*stilizuem dotsi*/
-.popular-destinations__items .slick-dots {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.popular-destinations__items .slick-dots li {
-    list-style: none;
-    margin: 0 8px;
-}
-
-.popular-destinations__items .slick-dots button {
-    font-size: 0;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: #D9D9D9;
-    border: none;
-    cursor: pointer;
-}
-
-.destionations__item-inner {
+    max-width: 1130px;
     margin: 0 auto;
-    padding: 0 20px;
+    /* padding: 0 69px; */
 }
 
-/* stilizuem aktivni dots*/
-.popular-destinations__items .slick-dots li.slick-active button {
-    background-color: #17C3B2;
-    border: none;
+.popular-destinations__item .slider-wrapper {
+    max-width: 259px;
+    margin: 0 auto;
 }
 
-.page__popular {
-    margin-bottom: 133px;
-}
+
+/*slider_end*/
 
 
 .blog__descr .adventure-text {

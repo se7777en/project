@@ -1,25 +1,25 @@
 $(document).ready(function () {
-  $('.popular-destinations__items').slick({
-    arrows: true,
+  $('.destionations__item-inner').slick({
+    arrows: false,
     /*strelki*/
     slidesToShow: 4,
     infinite: false,
-    dots: true,
-    responsive:[
-			{
-				breakpoint: 1098,
-				settings: {
-					slidesToShow: 3
-				}
-			},
+    dots: false,
+    // responsive:[
+		// 	{
+		// 		breakpoint: 1098,
+		// 		settings: {
+		// 			slidesToShow: 3
+		// 		}
+		// 	},
 
-			{
-				breakpoint: 550,
-				settings: {
-					slidesToShow: 1
-				}
-			}
-		]
+		// 	{
+		// 		breakpoint: 550,
+		// 		settings: {
+		// 			slidesToShow: 1
+		// 		}
+		// 	}
+		// ]
 
   });
 });
