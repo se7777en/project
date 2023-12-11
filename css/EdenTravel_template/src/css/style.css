@@ -464,6 +464,11 @@ body {
     height: 24px;
 }
 
+
+.popular-destinations {
+    margin-bottom: 72px;
+}
+
 /*card style end*/
 
 
@@ -689,8 +694,11 @@ body {
 }
 
 .blog-inner__item img {
-    max-width: 100px;
+    width: 100px;
+    height: 100px;
 }
+
+
 
 .blog-inner__item {
     display: flex;
@@ -702,6 +710,7 @@ body {
     flex-direction: column;
     gap: 19px;
     justify-content: center;
+    max-width: 500px;
 }
 
 
@@ -733,7 +742,7 @@ body {
 
 
 .blog-item__inner {
-    margin-bottom: 87px;
+    margin-bottom: 63px;
 }
 
 .page__blog {
@@ -825,9 +834,9 @@ body {
 }
 
 
-.page__stories {
+/* .page__stories {
     padding: 88px 0px 146px 0px;
-}
+} */
 
 .page__stories .stories__descr {
     padding: 0px 0px 114px 0px;
@@ -939,6 +948,7 @@ body {
     /* 1 chtobi vse slaidi vistroilis v ryad*/
     align-items: flex-start;
     justify-content: space-around;
+    gap: 20px;
     /*prijimaet slaid k verxu dlya adaptacii slaida po visote*/
 
 
@@ -970,7 +980,7 @@ body {
 }
 
 .stories-items .slick-arrow.slick-prev {
-    right: -25px;
+    right: -3px;
     cursor: pointer;
     background: url('../img/stories/arrow_right.svg') 0 0 / 100% no-repeat;
 
@@ -978,7 +988,7 @@ body {
 }
 
 .stories-items .slick-arrow.slick-next {
-    left: -25px;
+    left: -3px;
     cursor: pointer;
     background: url('../img/stories/arrow_left.svg') 0 0 / 100% no-repeat;
 }
@@ -1140,7 +1150,21 @@ body {
     display: none;
 }
 
-@media (max-width: 1140px) {
+.page__stories {
+    margin-bottom: 146px;
+}
+
+@media (max-width: 983px) {
+    .blog-item__title-text {
+        font-size: 18px;
+    }
+
+    .inner-blog .inner-blog__text {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 961px) {
     .page__blog .blog__items {
         flex-wrap: wrap;
     }
@@ -1160,6 +1184,11 @@ body {
     /* .blog__item-img {
         scale: .7;
     } */
+    .page__blog {
+        background-color: #f6f6f6;
+        padding: 30px 0;
+    }
+
 }
 
 @media (max-width: 1250px) {
@@ -1329,7 +1358,7 @@ body {
 
 
 
-@media (max-width: 915px) {
+@media (max-width: 1300px) {
     .page__title h2::before {
         display: none;
     }
@@ -1381,6 +1410,15 @@ body {
 }
 
 
+@media (max-width: 586px) {
+    .stories-item__text::before {
+        top: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+
 @media (max-width: 446px) {
     .main__block-body h1 {
         font-size: 49px;
@@ -1402,21 +1440,41 @@ body {
         font-size: 28px;
     }
 
+    .page__blog .blog__descr h2 {
+        font-size: 35px;
+    }
+
+    .page__blog .adventure-text {
+        font-size: 18px;
+    }
+
 }
+
 
 
 @media (max-width: 504px) {
     .popular_descr .adventure-title {
         font-size: 35px;
     }
+
     .adventure-text {
         font-size: 19px;
     }
+
+    .blog__descr .adventure-title h2 {
+        line-height: 120%;
+    }
+
+
+
+
+
 }
 
 @media (max-width: 387px) {
     .blog__descr .adventure-title h2 {
         font-size: 40px;
+
     }
 
 
