@@ -67,8 +67,10 @@ body {
     left: 0;
     border-radius: 8px;
     -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    touch-action: manipulation;
     border: 2px solid #ddd;
-    
+
 }
 
 .cover .switch::before {
@@ -83,17 +85,19 @@ body {
     background-color: #ddd;
     transition: .2s ease-in-out;
     -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    touch-action: manipulation;
     box-shadow: 0 0 .5rem #000;
-    
+
 }
 
 
-.cover input:checked + .switch{
-   background-color: green;
-   border: 2px solid transparent;
-   
+.cover input:checked+.switch {
+    background-color: green;
+    border: 2px solid transparent;
+
 }
 
-.cover input:checked+ .switch::before{
+.cover input:checked+.switch::before {
     transform: translateX(50px);
- }
+}
