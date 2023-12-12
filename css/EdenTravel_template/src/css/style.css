@@ -251,7 +251,7 @@ body {
 
 .page__adventure {
     background-color: #17C3B2;
-    padding: 70px 0px 115px 0px;
+    padding: 70px 0px 0px 0px;
 }
 
 
@@ -1084,8 +1084,9 @@ body {
     font-size: 18px;
     font-style: normal;
     font-weight: 500;
-    line-height: normal;
+    line-height: 250%;
     text-transform: uppercase;
+    margin-bottom: 3px;
 }
 
 .footer-item__text {
@@ -1200,6 +1201,97 @@ body {
         right: 3px;
     }
 }
+
+@media (max-width: 1127px) {
+    .footer__item:not(:last-child) {
+        margin-bottom: 30px;
+    }
+
+    .footer {
+        background-color: #073D37;
+    }
+
+    .footer__items {
+        flex-wrap: wrap;
+    }
+
+    .footer__item {
+        margin-right: 0px;
+    }
+
+    .footer .footer-item__title {
+        color: #17C3B2;
+    }
+
+    .footer .info-item {
+        color: #fff;
+    }
+
+    .footer .footer-item__text {
+        color: #fff;
+    }
+
+    .page__stories {
+        margin-bottom: 24px;
+    }
+
+
+}
+
+@media (max-width: 563px) {
+    .footer__copyright {
+        border-top: none;
+    }
+
+    .footer-copyright-text {
+        display: none;
+    }
+
+    .footer-copyright-logo {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .footer-copyright-logo .logo {
+        font-size: 24px;
+    }
+
+    .footer-copyright-logo img {
+        width: 27px;
+        height: 34px;
+    }
+
+    .stories__descr h2 {
+        font-size: 35px;
+    }
+
+}
+
+@media (max-width: 451px) {
+    .footer__item:first-child {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer__item:nth-child(3) {
+        margin-right: 0px;
+    }
+
+    .footer__item:last-child {
+        margin-right: 0px;
+    }
+}
+
+
+
+
+@media (max-width: 1250px) {
+    .footer__item:first-child {
+        margin-right: 34px;
+    }
+}
+
 
 @media (max-width: 789px) {
     .menu {
@@ -1410,6 +1502,14 @@ body {
 }
 
 
+
+@media (max-width: 643px) {
+    .main__block-body h1 {
+        font-size: 49px;
+    }
+}
+
+
 @media (max-width: 586px) {
     .stories-item__text::before {
         top: -10px;
@@ -1419,15 +1519,23 @@ body {
 }
 
 
-@media (max-width: 446px) {
+@media (max-width: 531px) {
     .main__block-body h1 {
-        font-size: 49px;
+        font-size: 44px;
     }
 
     .page .travel__body h2 {
         font-size: 35px;
     }
 }
+
+
+@media (max-width: 447px) {
+    .main__block-container {
+        height: 757px;
+    }
+}
+
 
 
 
@@ -1446,6 +1554,10 @@ body {
 
     .page__blog .adventure-text {
         font-size: 18px;
+    }
+
+    .stories__descr h2 {
+        font-size: 30px;
     }
 
 }
