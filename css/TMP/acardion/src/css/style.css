@@ -55,6 +55,7 @@ body {
 }
 
 .accordion {
+    display: block;
     max-width: 530px;
     padding: 10px;
     font-size: 12px;
