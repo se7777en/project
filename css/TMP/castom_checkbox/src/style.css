@@ -69,10 +69,15 @@ body {
 
 .wrap .move:focus {
     outline-offset: none;
-    width: 0px;
-    height: 0px;
+    width: 1px;
+    height: 1px;
 }
 
+.wrap:focus {
+    outline-offset: none;
+    width: 1px;
+    height: 1px;
+}
 .wrap .move::before {
     position: absolute;
     content: '';
