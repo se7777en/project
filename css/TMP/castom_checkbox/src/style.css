@@ -68,13 +68,13 @@ body {
 }
 
 .wrap .move:focus {
-    outline-offset: none;
+    outline-offset: 0;
     width: 1px;
     height: 1px;
 }
 
 .wrap:focus {
-    outline-offset: none;
+    outline-offset: 0;
     width: 1px;
     height: 1px;
 }
