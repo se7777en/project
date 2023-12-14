@@ -76,6 +76,7 @@ body {
 .accordion__item {
     border-bottom: 1px solid #d2d2d7;
     cursor: pointer;
+    user-select: none;
 }
 
 .accordion__header i {
@@ -99,7 +100,6 @@ body {
 
 .accordion__descr {
     height: 0px;
-    opacity: 0;
     overflow: hidden;
     transition: all .3s ease-out; 
 }

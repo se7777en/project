@@ -9,7 +9,7 @@ items.forEach((item, ind) => {
         const element = item.querySelector('.accordion__descr');
 
         if (item.classList.contains('open')) {
-            element.style = 'transition: all .3s linear; opacity: 1;';
+            element.style = 'transition: all .3s linear;';
             element.style.height = `${element.scrollHeight}px`;
             // item.querySelector('i').classList.replace('fa-plus', 'fa-minus');
              item.querySelector('i').style = 'transform: rotate(45deg);';
