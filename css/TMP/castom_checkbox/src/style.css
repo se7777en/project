@@ -98,6 +98,7 @@ body {
     background-color: #fff;
     box-shadow: 0 .2rem .5rem #000;
     transform: .5s;
+    outline-offset: 0;
 }
 
 .wrap input:checked + .move {
