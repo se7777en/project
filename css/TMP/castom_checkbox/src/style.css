@@ -70,6 +70,7 @@ body {
     background-color: #fff;
     border: .1rem solid #ddd;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
 /* .wrap .move:focus {
@@ -95,6 +96,7 @@ body {
     background-color: #fff;
     box-shadow: 0 .2rem .5rem #000;
     transform: .5s;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .wrap input:checked + .move {
