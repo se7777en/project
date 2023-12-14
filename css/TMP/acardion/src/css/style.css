@@ -67,6 +67,8 @@ body {
     -webkit-tap-highlight-color: transparent;
 }
 
+
+
 .accordion__header {
     display: flex;
     justify-content: space-between;
@@ -89,6 +91,13 @@ body {
     user-select: none;
     -webkit-tap-highlight-color: transparent;
 }
+
+.accordion__item:focus {
+    outline-offset: 0;
+    width: 1px;
+    height: 1px;
+}
+
 
 .accordion__header i {
     margin-right: 8px;
