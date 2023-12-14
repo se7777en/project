@@ -46,10 +46,16 @@ body {
     width: 6.5rem;
     height: 3.5rem;
     -webkit-tap-highlight-color: transparent;
+    outline-offset: 0;
+    width: 1px;
+    height: 1px;
 }
 
 .wrap:focus {
     -webkit-tap-highlight-color: transparent;
+    outline-offset: 0;
+    width: 1px;
+    height: 1px;
 }
 
 .wrap input {
