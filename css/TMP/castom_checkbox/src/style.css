@@ -45,18 +45,11 @@ body {
     position: relative;
     width: 6.5rem;
     height: 3.5rem;
-    
     -webkit-tap-highlight-color: transparent;
-    outline-offset: 0;
-    width: 1px;
-    height: 1px;
 }
 
 .wrap:focus {
     -webkit-tap-highlight-color: transparent;
-    outline-offset: 0;
-    width: 1px;
-    height: 1px;
 }
 
 .wrap input {
@@ -86,11 +79,15 @@ body {
     height: 1px;
 }
 
+/* -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;*/
+
 .wrap:focus {
     outline-offset: 0;
     width: 1px;
     height: 1px;
-} */
+} 
 .wrap .move::before {
     position: absolute;
     content: '';
@@ -103,7 +100,6 @@ body {
     background-color: #fff;
     box-shadow: 0 .2rem .5rem #000;
     transform: .5s;
-    -webkit-tap-highlight-color: transparent;
 }
 
 .wrap input:checked + .move {
