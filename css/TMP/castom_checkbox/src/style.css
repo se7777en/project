@@ -71,12 +71,20 @@ body {
     outline-offset: 0;
     width: 1px;
     height: 1px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .wrap:focus {
     outline-offset: 0;
     width: 1px;
     height: 1px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 .wrap .move::before {
     position: absolute;
