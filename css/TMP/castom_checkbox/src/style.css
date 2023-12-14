@@ -51,12 +51,12 @@ body {
     height: 1px;
 }
 
-.wrap:focus {
+/* .wrap:focus {
     -webkit-tap-highlight-color: transparent;
     outline-offset: 0;
     width: 1px;
     height: 1px;
-}
+} */
 
 .wrap input {
     opacity: 1;
