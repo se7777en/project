@@ -61,6 +61,7 @@ body {
     color: #1d1d1f;
     background: unset;
     user-select: none;
+    
 }
 
 .accordion__header {
@@ -80,6 +81,8 @@ body {
     cursor: pointer;
     user-select: none;
     background: unset;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
 }
 
 .accordion__header i {
