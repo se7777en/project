@@ -74,6 +74,8 @@ body {
     opacity: 1;
     width: 0;
     height: 0;
+    visibility: hidden;
+    display: none;
 }
 
 .wrap__inner span {
