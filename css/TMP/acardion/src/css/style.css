@@ -61,6 +61,7 @@ body {
     color: #1d1d1f;
     background: unset;
     user-select: none;
+    -webkit-touch-callout: none;
     
 }
 
@@ -83,6 +84,7 @@ body {
     background: unset;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
+    -webkit-touch-callout: none;
 }
 
 .accordion__header i {
