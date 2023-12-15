@@ -1,8 +1,8 @@
 'use strict';
 
 const items = document.querySelectorAll('.accordion__item'),
-      light = document.querySelectorAll('.wrap .wrap__inner input'),
-      main = document.querySelector('.accordion');
+    light = document.querySelectorAll('.wrap .wrap__inner input'),
+    main = document.querySelector('.accordion');
 
 
 items.forEach((item, ind) => {
@@ -27,6 +27,45 @@ items.forEach((item, ind) => {
     });
 });
 
+const coloredBlock = function (color, block, id) {
+    if (id === 'dark') {
+        main.style = 'color: #f5f5f7';
+        document.body.style = 'background-color: #1d1d1f';
+        block.forEach((item, ind) => {
+            let borderStyle = `border-bottom: 1px solid ${color}`;
+            if (ind === 0) {
+                borderStyle += ` ; border-top: 1px solid ${color}`;
+            }
+            item.style = borderStyle;
+        });
+    }
+
+    if (id === 'light') {
+        main.style = 'color: #1d1d1f';
+        document.body.style = 'background-color: #fff';
+        block.forEach((item, ind) => {
+            let borderStyle = `border-bottom: 1px solid ${color}`;
+            if (ind === 0) {
+                borderStyle += ` ; border-top: 1px solid ${color}`;
+            }
+            item.style = borderStyle;
+        });
+    }
+
+    if (id === 'auto') {
+        main.style = 'color: #1d1d1f';
+        document.body.style = 'background-color: #f5f5f7';
+        block.forEach((item, ind) => {
+            let borderStyle = `border-bottom: 1px solid ${color}`;
+            if (ind === 0) {
+                borderStyle += ` ; border-top: 1px solid ${color}`;
+            }
+            item.style = borderStyle;
+        });
+    }
+}
+
+
 light.forEach((item) => {
     item.addEventListener('click', (e) => {
         if (e.target.type === 'radio') {
@@ -37,20 +76,17 @@ light.forEach((item) => {
             switch (val) {
                 case 'light':
                     console.log('light');
-                    main.style = 'color: #1d1d1f';
-                    document.body.style = 'background-color: #fff';
+                    coloredBlock('#d2d2d7', items, 'light');
                     break;
 
                 case 'dark':
                     console.log('dark');
-                    main.style = 'color: #f5f5f7';
-                    document.body.style = 'background-color: #1d1d1f';
+                    coloredBlock('#424245', items, 'dark');
                     break;
 
                 case 'auto':
                     console.log('auto');
-                    main.style = 'color: #1d1d1f';
-                    document.body.style = 'background-color: #f5f5f7';
+                    coloredBlock('#d2d2d7', items, 'auto');
                     break;
             }
         }
