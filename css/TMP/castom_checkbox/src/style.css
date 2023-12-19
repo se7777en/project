@@ -46,6 +46,11 @@ body {
     position: relative;
     width: 6.5rem;
     height: 3.5rem;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.wrap:focus {
+    -webkit-tap-highlight-color: transparent;
 }
 
 .wrap input {
@@ -66,8 +71,24 @@ body {
     background-color: #fff;
     border: .1rem solid #ddd;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
+/* .wrap .move:focus {
+    outline-offset: 0;
+    width: 1px;
+    height: 1px;
+}
+
+/* -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;*/
+
+.wrap:focus {
+    outline-offset: 0;
+    width: 1px;
+    height: 1px;
+} 
 .wrap .move::before {
     position: absolute;
     content: '';
