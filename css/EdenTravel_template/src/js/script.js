@@ -69,3 +69,34 @@ active.addEventListener('click', () => {
 	headerMenu.classList.toggle('active');
 	body.classList.toggle('lock');
 });
+
+
+
+
+
+const items = document.querySelectorAll('.footer__item');
+
+items.forEach((item, ind) => {
+
+    item.addEventListener('click', (e) => {
+	
+        item.classList.toggle('open');
+
+
+        const element = item.querySelector('.footer-item__support');
+
+        if (item.classList.contains('open')) {
+            element.style = 'transition: all .3s linear;';
+            element.style.height = `${element.scrollHeight + 20}px`;
+            // item.querySelector('i').classList.replace('fa-plus', 'fa-minus');
+            item.querySelector('i').style = 'transform: rotate(45deg);';
+
+
+        } else {
+            element.style = 'transition: none; opacity: 0;';
+            element.style.height = '0px';
+            // item.querySelector('i').classList.replace('fa-minus', 'fa-plus');
+            item.querySelector('i').style = 'transform: rotate(0deg);';
+        }
+    });
+});
