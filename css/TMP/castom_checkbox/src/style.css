@@ -38,6 +38,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    
 }
 
 .wrap {
@@ -84,8 +85,13 @@ body {
 .wrap input:checked + .move {
     background-color: green;
     border: .1rem solid transparent;
+    
 }
 
 .wrap input:checked + .move::before {
     transform: translateX(3.1rem);
+}
+
+.color {
+    background-color : gray;    
 }
