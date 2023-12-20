@@ -1,5 +1,4 @@
-@import "./../fonts/Gilroy/stylesheet.css";
-/* Reset and base styles  */
+@import "./../fonts/Gilroy/stylesheet.css"; /* Reset and base styles  */
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Inter:wght@400;600&display=swap");
 * {
   padding: 0px;
@@ -355,8 +354,7 @@ body {
   border-radius: 42px;
   border: 0.862px solid rgba(255, 255, 255, 0.6);
   background: rgba(255, 255, 255, 0.15);
-  -webkit-backdrop-filter: blur(4px);
-          backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
 }
 
 .search-form__input {
@@ -365,10 +363,6 @@ body {
   font-size: 18px;
   font-weight: 500;
   line-height: 150%; /* 27px */
-}
-.search-form__input::-moz-placeholder {
-  color: #fff;
-  font-weight: 400;
 }
 .search-form__input::placeholder {
   color: #fff;
@@ -407,8 +401,7 @@ body {
   border: 0.86px solid #fff;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.2);
-  -webkit-backdrop-filter: blur(4px);
-          backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
   animation: pulse 1s infinite alternate;
 }
 
@@ -444,8 +437,7 @@ body {
 
 .info-hint__radio {
   clip: rect(0 0 0 0);
-  -webkit-clip-path: inset(50%);
-          clip-path: inset(50%);
+  clip-path: inset(50%);
   height: 1px;
   overflow: hidden;
   position: absolute;
@@ -874,4 +866,6 @@ body {
   display: grid;
   gap: 14px;
   font-size: 16px;
-}/*# sourceMappingURL=main.css.map */
+}
+
+/*# sourceMappingURL=main.css.map */
