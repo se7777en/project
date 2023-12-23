@@ -1,0 +1,88 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    font-size: 18px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.inp {
+    position: relative;
+}
+
+.inp input {
+    max-width: 209px;
+    height: 50px;
+    border-radius: 8px;
+    background-color: #fff;
+    border: none;
+    border: 1px solid #ddd;
+    padding: 14px 82px 14px 13px;
+    color: #999;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
+
+.inp input[type="date"]::-webkit-calendar-picker-indicator {
+    transform: translateX(69px);
+    /* padding: 10px; */
+    color: rgba(0, 0, 0, 0);
+    opacity: 0;
+}
+
+input[type="date"]:hover::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+}
+
+
+.inp i {
+    position: absolute;
+    /* width: 18px;
+    height: 24px; */
+    top: 50%;
+    right: 13px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #17C3B2;
+}
+
