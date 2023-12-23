@@ -1,76 +1,31 @@
-// .inp {
-//     position: relative;
+.inp {
+    position: relative;
 
-//     input {
-//         max-width: 209px;
-//         height: 50px;
-//         border-radius: 8px;
-//         background-color: #fff;
-//         border: none;
-//         border: 1px solid #ddd;
-//         padding: 14px 82px 14px 13px;
-//         color: #999;
-//         font-size: 15px;
-//         text-transform: uppercase;
-//     }
+    input {
+        max-width: 209px;
+        height: 50px;
+        border-radius: 8px;
+        background-color: #fff;
+        border: none;
+        border: 1px solid #ddd;
+        padding: 14px 82px 14px 13px;
+        color: #999;
+        font-size: 15px;
+        text-transform: uppercase;
+    }
 
-//     input[type="date"]::-webkit-calendar-picker-indicator {
-//         cursor: pointer;
-//         position: absolute;
-//         top: 50%;
-//         right: 12px;
-//         width: 19px;
-//         height: 24px;
-//         transform: translateY(-50%);
-//         background-image: url('../img/date_icon.svg');
-//         background-repeat: no-repeat;
-//     }
+    input[type="date"]::-webkit-calendar-picker-indicator {
+        display: block;
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        right: 12px;
+        width: 19px;
+        height: 24px;
 
-// }
+        transform: translateY(-50%);
+        background-image: url('../img/date_icon.svg');
+        background-repeat: no-repeat;
+    }
 
-
-input[type=date] {
-	background: #ccc;
-	background: linear-gradient(90deg, #ddd, #ccc);
-	border: 3px solid #eee;
-	border-radius: 20px;
-	box-shadow: 0 3px 3px rgba(0,0,0,0.1);
-	color: #222;
-	font: 16px Helvetica,Arial,sans-serif;
-	left: 50%;
-	line-height: 20px;
-	margin: -15px 0 0 -100px;
-	outline: 0;
-	padding: 5px 10px;
-	position: absolute;
-	top: 50%;
-	width: 200px;
-}
-input[type=date]::-webkit-calendar-picker-indicator {
-	color: #999;
-	height: 8px;
-	position: relative;
-	width: 8px;
-	z-index: 0;
-
-}
-input[type=date]::-webkit-calendar-picker-indicator:before {
-	background: #eee;
-	background: linear-gradient(90deg, #eee, #fff);
-	box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-	border-radius: 24px;
-	content: '';
-	display: block;
-	height: 22px;
-	left: -2px;
-	position: absolute;
-	top: -5px;
-	width: 22px;
-	z-index: -1;
-}
-input[type=date]::-webkit-calendar-picker-indicator:hover {
-	background: none;
-}
-input[type=date]:focus {
-	border-color: #3399ff;
 }
