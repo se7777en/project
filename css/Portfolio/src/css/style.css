@@ -63,7 +63,6 @@ body {
 .wrapper__left {
     padding: 80px 238px 80px 80px;
     flex: 0 1 58.2%;
-    height: 100%;
 
 }
 
@@ -76,7 +75,6 @@ body {
 .wrapper__right {
     background-color: #633BBC;
     flex: 0 1 41.8%;
-    height: 100%;
     padding: 80px;
 }
 
