@@ -366,3 +366,15 @@ body {
     transform: translateY(-50%);
     background: url('../img/ArrowUpRight.svg') 0 0 no-repeat;
 }
+
+
+@media (max-width: 768px) {
+    .wrapper {
+        flex-direction: column;
+    }
+
+    .wrapper__left,
+    .wrapper__right {
+        width: 100%;
+    }
+}
