@@ -1,0 +1,365 @@
+/* font-family: 'Roboto', sans-serif; */
+/* font-family: 'IBM Plex Sans', sans-serif; */
+/* font-family: 'Titillium Web', sans-serif; */
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: inherit;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    vertical-align: top;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+
+.container {
+    max-width: 1630px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.wrapper__inner {
+    display: flex;
+
+}
+
+
+.wrapper__right {
+    padding: 80px;
+}
+
+.wrapper__left {
+    padding: 80px 238px 80px 80px;
+    flex: 0 1 58.2%;
+}
+
+
+.wrapper__left-inner {
+    /* max-width: 600px; */
+
+}
+
+.wrapper__right {
+    background-color: #633BBC;
+    flex: 0 1 41.8%;
+}
+
+.wrapper__right-inner {
+    /* max-width: 522px; */
+
+}
+
+.wrapper__text {
+    font-family: inherit;
+    color: #633BBC;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 160%;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.wrapper__title {
+    color: #271A45;
+    font-family: Roboto;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 125%;
+    margin-bottom: 16px;
+    /* 60px */
+}
+
+.wrapper__content {
+    color: #323238;
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+    margin-bottom: 24px;
+    /* 32px */
+}
+
+.wrapper__content p:not(:last-child) {
+    margin-bottom: 32px;
+}
+
+.wrapper__comece-title {
+    color: #271A45;
+    font-family: inherit;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 125%;
+    margin-bottom: 24px;
+    /* 50px */
+}
+
+.wrapper__comece-list {
+    padding-bottom: 25px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid #C4C4CC;
+}
+
+.wrapper__comece-list li {
+    list-style-type: disc;
+}
+
+
+.wrapper__comece-list a {
+    color: #323238;
+    font-family: inherit;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+    /* 38.4px */
+    text-decoration-line: underline;
+}
+
+.wrapper__comece-list li:not(:last-child) {
+    margin-bottom: 12px;
+}
+
+.wrapper__about-title {
+    font-family: inherit;
+    font-size: 18px;
+    font-style: normal;
+    color: #633BBC;
+    font-weight: 600;
+    line-height: 160%;
+    /* 28.8px */
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+
+.wrapper__about-inner {
+    display: flex;
+    gap: 16px;
+}
+
+.wrapper__about-name {
+    font-family: inherit;
+    color: #271A45;
+    font-size: 24px;
+    opacity: .9;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    margin-bottom: 8px;
+    /* 100% */
+}
+
+.wrapper__about-position {
+    color: #323238;
+    font-family: inherit;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    margin-bottom: 16px;
+    /* 120% */
+}
+
+.wrapper__about-links a {
+    color: #323238;
+    font-family: inherit;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration-line: underline;
+}
+
+.wrapper__about-links .tweeter {
+    margin-right: 16px;
+    padding-left: 26px;
+}
+
+.wrapper__about-links .linkin {
+    padding-left: 26px;
+}
+
+.wrapper__about-links {
+    display: flex;
+}
+
+.wrapper__about-link {
+    position: relative;
+}
+
+.wrapper__about-link .tweeter::before {
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background: url('../img/icon_1.svg') 0 0 no-repeat;
+}
+
+.wrapper__about-link .linkin::before {
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background: url('../img/icon_2.svg') 0 0 no-repeat;
+}
+
+.wrapper__right-logo {
+    margin-bottom: 33px;
+}
+
+.wrapper__right-title {
+    color: #fff;
+    font-family: inherit;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 125%;
+    margin-bottom: 24px;
+    /* 60px */
+}
+
+.wrapper__right-text {
+    font-family: inherit;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+    color: #fff;
+    margin-bottom: 24px;
+    opacity: .9;
+    /* 32px */
+}
+
+.wrapper__right-descr {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 58px;
+    margin-bottom: 58px;
+}
+
+.wrapper__right-descr {
+    border-bottom: 1px solid #996DFF;
+    opacity: .5;
+}
+
+
+.wrapper__right-item-title {
+    color: #FFF;
+    /* Heading md */
+    font-family: inherit;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+    margin-bottom: 8px;
+}
+
+.wrapper__right-item-title span {
+    color: #04D361;
+    /* Heading md */
+    font-family: inherit;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+    /* 33.6px */
+}
+
+.wrapper__right-item-text {
+    color: #FFF;
+    font-family: inherit;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+    opacity: .9;
+    /* 32px */
+}
+
+.wrapper__right-footer-title {
+    color: #FFF;
+    /* Heading lg */
+    font-family: Roboto;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+    /* 44.8px */
+    margin-bottom: 32px;
+}
+
+.wrapper__right-footer-item a {
+    color: #FFF;
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+    /* 32px */
+    text-decoration-line: underline;
+}
+
+.wrapper__right-footer-item:not(:last-child) {
+    margin-bottom: 8px;
+}
+
+.wrapper__right-footer-item {
+    position: relative;
+    padding-left: 28px;
+}
+
+.footer__link::before {
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    transform: translateY(-50%);
+    background: url('../img/ArrowUpRight.svg') 0 0 no-repeat;
+}
