@@ -57,13 +57,12 @@ body {
 }
 
 
-.wrapper__right {
-    padding: 80px;
-}
+
 
 .wrapper__left {
     padding: 80px 238px 80px 80px;
     flex: 0 1 58.2%;
+    min-height: 100vh;
 }
 
 
@@ -75,6 +74,8 @@ body {
 .wrapper__right {
     background-color: #633BBC;
     flex: 0 1 41.8%;
+    min-height: 100vh;
+    padding: 80px;
 }
 
 .wrapper__right-inner {
