@@ -94,7 +94,8 @@ document.addEventListener('DOMContentLoaded', () => {
         answer_3 = document.querySelector('.lab3'),
         answer_4 = document.querySelector('.lab4'),
         submit = document.querySelector('.btn'),
-        inputs = document.querySelectorAll('.list__item input');
+        inputs = document.querySelectorAll('.list__item input'),
+        status  =document.querySelector('.status');
 
 
 
@@ -133,6 +134,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (userAnswer === rightAnswer) {
             correct += 1;
+            showStatusIcon();
+            
         } else {
             wrong += 1;
         }
@@ -141,9 +144,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
+    const showStatusIcon = () => {
+        setTimeout(() => {
+            status.style.visibility = 'visible';
+            status.style.opacity = '.6';
+        }, 10);
+
+        setTimeout(() => {
+            status.style.visibility = 'hidden';
+            status.style.opacity = '0';
+        }, 700);
+    }
+
+    
 
 
     if (window.innerWidth < 768) {
+        
         submit.addEventListener('touchend', (e) => {
             e.preventDefault();
             if (counter < testData.length) {
@@ -166,6 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     } else {
         submit.addEventListener('click', (e) => {
+        
             e.preventDefault();
             if (counter < testData.length) {
 
