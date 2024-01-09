@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    submit.addEventListener('click', () => {
+    submit.addEventListener('touchend', () => {
         if (counter < testData.length) {
 
             let ind = getCheckedInputIndex();
