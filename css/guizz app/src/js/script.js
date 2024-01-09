@@ -83,78 +83,163 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
     ];
-    //testData
+
     let counter = 0;
-    const inputs = document.querySelectorAll('.list input'),
-        labels = document.querySelectorAll('.list label'),
-        ques = document.querySelector('.form__header'),
-        submit = document.querySelector('.btn');
+
+    let correct = 0;
+    let wrong = 0;
+    const question = document.querySelector('.form__header'),
+        answer_1 = document.querySelector('.lab1'),
+        answer_2 = document.querySelector('.lab2'),
+        answer_3 = document.querySelector('.lab3'),
+        answer_4 = document.querySelector('.lab4'),
+        submit = document.querySelector('.btn'),
+        inputs = document.querySelectorAll('.list__item input');
 
 
-    const updateQuestion = () => {
-        let check = false;
-        inputs.forEach((item) => {
-            if(item.checked) check = true;
-        })
-         if(check === false && counter > 0) return;
-        if (counter >= testData.length -1) return;
 
-        const data = testData[counter];
-        ques.innerHTML = data.question;
-        labels.forEach((item, i) => {
-            let txt = '';
-            if (i === 0) {
-                txt = data.a;
-            }
-            if (i === 1) {
-                txt = data.b;
-            }
-            if (i === 2) {
-                txt = data.c;
-            }
-            if (i === 3) {
-                txt = data.d;
-            }
-            item.innerText = txt;
-        });
+    const LoadData = (data, counter) => {
+        question.innerHTML = data[counter].question;
+        answer_1.innerHTML = data[counter].a;
+        answer_2.innerHTML = data[counter].b;
+        answer_3.innerHTML = data[counter].c;
+        answer_4.innerHTML = data[counter].d;
+    }
 
+    LoadData(testData, 0);
 
-       
-        
+    const getCheckedInputIndex = () => {
+        return Array.from(inputs).findIndex(item => item.checked)
+    }
+
+    const uncheckRadios = () => {
         inputs.forEach((item) => {
             item.checked = false;
         })
+    }
 
-       
+
+    const checkRightAnsw = (data, ind, counter) => {
+        if (ind === -1) return;
+
+        let rem = "";
+        if (ind === 0) rem = 'a';
+        if (ind === 1) rem = 'b';
+        if (ind === 2) rem = 'c';
+        if (ind === 3) rem = 'd';
+
+        const userAnswer = rem;
+        const rightAnswer = data[counter].rightAnswer;
+
+        if (userAnswer === rightAnswer) {
+            correct += 1;
+        } else {
+            wrong += 1;
+        }
+        //console.log(`userAnswer = ${userAnswer} rightAnswer = ${rightAnswer}`);
 
     }
 
-    updateQuestion();
 
 
-    submit.addEventListener('click', updateQuestion);
 
-    let right = 0;
-    let wrong = 0;
-    inputs.forEach((item) => {
-        item.addEventListener('click', (e) => {
-            if (e.target.checked) {
-                // label value === rightAnswer
-                const yourAnswer = e.target.id;
-                const rightAnswer = testData[counter].rightAnswer;
-                //console.log(`rightAnswer = ${testData[counter].rightAnswer} \n Selected = ${lab}`);
+    submit.addEventListener('click', () => {
+        if (counter < testData.length) {
 
-                if (rightAnswer === yourAnswer) {
-                    right += 1;
-                } else {
-                    wrong += 1;
-                }
+            let ind = getCheckedInputIndex();
+            if (ind !== -1) {
+                checkRightAnsw(testData, ind, counter);
+                console.log(`correct = ${correct} wrong = ${wrong}`);
+                counter++;
 
-                console.log(`right = ${right} wrong = ${wrong} yourAnswer = ${yourAnswer} rightAnswer = ${rightAnswer} counter = ${counter}`);
+                if (counter === testData.length) {
+                    alert(`correctAnswer = ${correct} wrongAnswer = ${wrong});`);
+                    return;
+                };
 
+                LoadData(testData, counter);
+                uncheckRadios();
             }
-        })
-    })
+        }
+    });
+
+
+
+
+
+
+    //testData
+    // let counter = 0;
+    // const inputs = document.querySelectorAll('.list input'),
+    //     labels = document.querySelectorAll('.list label'),
+    //     ques = document.querySelector('.form__header'),
+    //     submit = document.querySelector('.btn');
+
+
+    // const updateQuestion = () => {
+    //     let check = false;
+    //     inputs.forEach((item) => {
+    //         if(item.checked) check = true;
+    //     })
+    //      if(check === false && counter > 0) return;
+    //     if (counter >= testData.length -1) return;
+
+    //     const data = testData[counter];
+    //     ques.innerHTML = data.question;
+    //     labels.forEach((item, i) => {
+    //         let txt = '';
+    //         if (i === 0) {
+    //             txt = data.a;
+    //         }
+    //         if (i === 1) {
+    //             txt = data.b;
+    //         }
+    //         if (i === 2) {
+    //             txt = data.c;
+    //         }
+    //         if (i === 3) {
+    //             txt = data.d;
+    //         }
+    //         item.innerText = txt;
+    //     });
+
+
+
+
+    //     inputs.forEach((item) => {
+    //         item.checked = false;
+    //     })
+
+
+
+    // }
+
+    // updateQuestion();
+
+
+    // submit.addEventListener('click', updateQuestion);
+
+    // let right = 0;
+    // let wrong = 0;
+    // inputs.forEach((item) => {
+    //     item.addEventListener('click', (e) => {
+    //         if (e.target.checked) {
+    //             // label value === rightAnswer
+    //             const yourAnswer = e.target.id;
+    //             const rightAnswer = testData[counter].rightAnswer;
+    //             //console.log(`rightAnswer = ${testData[counter].rightAnswer} \n Selected = ${lab}`);
+
+    //             if (rightAnswer === yourAnswer) {
+    //                 right += 1;
+    //             } else {
+    //                 wrong += 1;
+    //             }
+
+    //             console.log(`right = ${right} wrong = ${wrong} yourAnswer = ${yourAnswer} rightAnswer = ${rightAnswer} counter = ${counter}`);
+
+    //         }
+    //     })
+    // })
 
 
 
