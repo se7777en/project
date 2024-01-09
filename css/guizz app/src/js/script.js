@@ -143,7 +143,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    submit.addEventListener('touchend', () => {
+    submit.addEventListener('touchend', (e) => {
+        e.preventDefault();
         if (counter < testData.length) {
 
             let ind = getCheckedInputIndex();
