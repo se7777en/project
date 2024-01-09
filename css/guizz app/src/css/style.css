@@ -44,6 +44,9 @@ body {
     background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
     font-family: 'Poppins', sans-serif;
     color: #1c1b1b;
+    -webkit-tap-highlight-color: transparent;
+    /* -webkit-tap-highlight-color: rgba(0,0,0,0); */
+    user-select: none;
 }
 
 .container {
