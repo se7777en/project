@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     counter++;
 
                     if (counter === testData.length) {
-                        alert(`correctAnswer = ${correct} wrongAnswer = ${wrong});`);
+                        alert(`correctAnswer = ${correct} wrongAnswer = ${wrong}`);
                         return;
                     };
 
