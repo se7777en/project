@@ -66,10 +66,12 @@ body {
 
 input, label{
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
 label {
     font-size: 18px;
+    
 }
 
 .list {
