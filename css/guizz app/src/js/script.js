@@ -143,26 +143,49 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    submit.addEventListener('touchend', (e) => {
-        e.preventDefault();
-        if (counter < testData.length) {
+    if (window.innerWidth < 768) {
+        submit.addEventListener('touchend', (e) => {
+            e.preventDefault();
+            if (counter < testData.length) {
 
-            let ind = getCheckedInputIndex();
-            if (ind !== -1) {
-                checkRightAnsw(testData, ind, counter);
-                console.log(`correct = ${correct} wrong = ${wrong}`);
-                counter++;
+                let ind = getCheckedInputIndex();
+                if (ind !== -1) {
+                    checkRightAnsw(testData, ind, counter);
+                    console.log(`correct = ${correct} wrong = ${wrong}`);
+                    counter++;
 
-                if (counter === testData.length) {
-                    alert(`correctAnswer = ${correct} wrongAnswer = ${wrong});`);
-                    return;
-                };
+                    if (counter === testData.length) {
+                        alert(`correctAnswer = ${correct} wrongAnswer = ${wrong});`);
+                        return;
+                    };
 
-                LoadData(testData, counter);
-                uncheckRadios();
+                    LoadData(testData, counter);
+                    uncheckRadios();
+                }
             }
-        }
-    });
+        });
+    } else {
+        submit.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (counter < testData.length) {
+
+                let ind = getCheckedInputIndex();
+                if (ind !== -1) {
+                    checkRightAnsw(testData, ind, counter);
+                    console.log(`correct = ${correct} wrong = ${wrong}`);
+                    counter++;
+
+                    if (counter === testData.length) {
+                        alert(`correctAnswer = ${correct} wrongAnswer = ${wrong});`);
+                        return;
+                    };
+
+                    LoadData(testData, counter);
+                    uncheckRadios();
+                }
+            }
+        });
+    }
 
 
 

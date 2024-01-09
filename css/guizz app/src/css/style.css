@@ -54,6 +54,9 @@ body {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    -webkit-tap-highlight-color: transparent;
+    /* -webkit-tap-highlight-color: rgba(0,0,0,0); */
+    user-select: none;
 }
 
 .container__inner {
