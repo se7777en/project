@@ -109,16 +109,50 @@ const View = ({ char }) => {
             <div className="char__comics">Comics:</div>
             <ul className="char__comics-list">
                 {comics.length > 0 ? null : 'There is no comics with this character'}
+
+
                 {
-                    comics.map((item, i) => {
-                        if (i > 9) return;
-                        return (
-                            <li key={i} className="char__comics-item">
-                                {item.name}
-                            </li>
-                        )
-                    })
+                    comics.map((item, i) => i > 9 ? null : (
+                        <li key={i} className="char__comics-item">
+                            {item.name}
+                        </li>
+                    )
+                    )
+
+
+                    //  (
+                    //     <ul>
+                    //         {(function() {
+                    //             let comicsItems = [];
+
+                    //             for (let i = 0; i < comics.length; i++) {
+                    //                 if (i > 9) break;
+
+                    //                 comicsItems.push(
+                    //                     <li key={i} className="char__comics-item">
+                    //                         {comics[i].name}
+                    //                     </li>
+                    //                 );
+                    //             }
+
+                    //             return comicsItems;
+                    //         })()}
+                    //     </ul>
+                    // )
+
+
+
+                    // comics.map((item, i) => {
+                    //     if (i > 9) return;
+                    //     return (
+                    //         <li key={i} className="char__comics-item">
+                    //             {item.name}
+                    //         </li>
+                    //     )
+                    // })
                 }
+
+
 
             </ul>
         </>
