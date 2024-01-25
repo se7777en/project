@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>React lifecycles</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="container__inner">
+
+
+                <div class="mounting__items inner__item">
+                    <div class="mounting__header">
+                        <div class="mounting__header-item header-title">Mounting</div>
+                        <div class="mounting__header-item">constructor</div>
+                    </div>
+                    <div class="mounting__footer">
+                        <div class="mounting__item">componentDidMount</div>
+                    </div>
+                </div>
+
+
+
+                <div class="updating__items inner__item">
+                    <div class="updating__header">
+                        <div class="updating__header-title header-title">Updating</div>
+                        <div class="updating__header-items">
+                            <div class="updating__header-item">New props</div>
+                            <div class="updating__header-item">set­State()</div>
+                            <div class="updating__header-item">force­Update()</div>
+                        </div>
+                    </div>
+                    <div class="updating__footer">
+                        <div class="updating__footer-item">componentDidUpdate</div>
+                    </div>
+                </div>
+
+
+
+                <div class="unmounting__items inner__item">
+                    <div class="unmounting__title header-title">Unmounting</div>
+                    <div class="unmounting__footer">
+                        <div class="unmounting__footer-item">component­Will­Unmount</div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
