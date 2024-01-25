@@ -16,7 +16,18 @@
     <div class="lifecycle">
         <div class="container">
             <div class="container__inner">
-                <div class="container__item descr">
+                <div class="psudo__elements">
+                    <span class="constructor"></span>
+                    <span class="render"></span>
+                    <span class="react_dom"></span>
+                    <span class="compdidmount"></span>
+                    <span class="compdidupdate"></span>
+                    <span class="comp­will­unmount"></span>
+                    <span class="arrow1">
+                        <span></span>
+                    </span>
+                </div>
+                <div class="descr">
                     <div class="render"><span>“Render phase”</span>
                         Pure and has no side effects. May be paused, aborted or restarted by React.</div>
                     <div class="commit"><span>“Commit phase”</span>
@@ -24,15 +35,15 @@
                 </div>
 
                 <div class="container__item mounting">
-                    <div class="mounting__header">
+                    <div class="mounting__header bg">
                         <div class="mounting__header-title">Mounting</div>
                     </div>
-                    <div class="mounting__header-footer"></div>
+                    <div class="mounting__header-footer item__footer"></div>
                 </div>
 
 
                 <div class="container__item updating">
-                    <div class="updating__header">
+                    <div class="updating__header bg">
                         <div class="updating__header-title">updating</div>
                         <div class="updating__header-list">
                             <div class="updating__header-item">New props</div>
@@ -40,15 +51,15 @@
                             <div class="updating__header-item">force­Update()</div>
                         </div>
                     </div>
-                    <div class="updating__header-footer"></div>
+                    <div class="updating__header-footer item__footer"></div>
                 </div>
 
 
                 <div class="container__item unmounting">
-                    <div class="unmounting__header">
+                    <div class="unmounting__header bg">
                         <div class="unmounting__header-title">Unmounting</div>
                     </div>
-                    <div class="unmounting__header-footer"></div>
+                    <div class="unmounting__header-footer item__footer"></div>
                 </div>
             </div>
         </div>

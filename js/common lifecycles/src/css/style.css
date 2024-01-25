@@ -1,0 +1,133 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    color: #000;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 80px 15px 0px 15px;
+}
+
+
+.container__inner {
+    display: flex;
+    gap: 20px;
+    overflow: hidden;
+
+}
+
+.inner__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid #000;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.mounting__header, .updating__header, .unmounting__title {
+    flex: 1 0 234px;
+}
+
+.mounting__footer, .updating__footer, .unmounting__footer {
+    flex: 1 0 153px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.mounting__header, .updating__header, .unmounting__title {
+    background-color: #f7f7f7;
+} 
+
+.mounting__items {
+    width: 240px;
+}
+
+.updating__items {
+    width: 350px;
+}
+
+.unmounting__items {
+    width: 240px;
+}
+
+.header-title {
+    text-align: center;
+    font-size: 24px;
+    padding: 15px 20px 10px;
+}
+
+
+/* 
+width: 900px
+
+column width: 240px
+
+middle column width 350
+
+
+    border: 1px solid rgb(106,106,106);
+
+border-top: 1px solid rgb(#a9a9a9);
+
+
+top-background: #00000008
+
+   
+
+
+
+
+constructor color: 0, 106, 255
+
+­React обновляет ­D­O­M и рефы -  245, 179, 0
+componentDidMount -  12, 120, 0
+
+
+
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal; */
