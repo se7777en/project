@@ -4,7 +4,7 @@ import  styled from 'styled-components'
 import './index.css';
 //import App from './props';
 //import App from './props2';
-import App from './App';
+import App from './props';
 import {Buttom} from './Sobitiya'
 
 // perenaznachaem importirovanie stili Buttom
