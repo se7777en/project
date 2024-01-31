@@ -1,0 +1,168 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+img {
+    vertical-align: top;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(#e8e7fe, #e9e7fd);
+    color: #2b2b2b;
+}
+
+
+.annotation {
+    /* border: 1px solid #000; */
+    padding: 77px 118px;
+    border-radius: 23px;
+    background-color: #fff;
+}
+
+
+.annotation__title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.annotation__title-descr {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.annotation__title-descr a {
+    cursor: pointer;
+    color: #1b1bc2;
+}
+
+
+.form__name {
+    margin-bottom: 18px;
+
+}
+
+.form__name label {
+    font-weight: 600;
+    line-height: 30px;
+    /* color: #2b2b2b; */
+}
+
+.form__name input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #e8e8e8;
+}
+
+.form__name input::placeholder {
+    color: #aaaaaa;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+
+/* //////// */
+
+
+.form__email {
+    margin-bottom: 18px;
+}
+
+.form__email label {
+    font-weight: 600;
+    line-height: 30px;
+    /* color: #2b2b2b; */
+}
+
+.form__email input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #e8e8e8;
+}
+
+.form__email input::placeholder {
+    color: #aaaaaa;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.form__password {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form__password-item {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.form__password input {
+     width: 235px; 
+}
+
+.form__password {
+    margin-bottom: 18px;
+}
+
+.form__password label {
+    font-weight: 600;
+    line-height: 30px;
+    /* color: #2b2b2b; */
+}
+
+.form__password input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #e8e8e8;
+}
+
+.form__password input::placeholder {
+    color: #aaaaaa;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+
+
