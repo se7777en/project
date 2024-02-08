@@ -1,0 +1,95 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+}
+
+/* .wrapper {
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 20px;
+    background-color: #d2d2d2;
+    border-radius: 20px;
+    margin-bottom: 50px;
+}
+
+
+.button {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background-color: tomato;
+    border-radius: 50%;
+    left: 1px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.wrapper input:checked + .button {
+   right: 1px;
+} */
+
+.checkbox {
+    width: 0;
+    height: 0;
+    scale: 1;
+    display: none;
+}
+
+.btn {
+    width: 50px;
+    height: 20px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.btn__inner {
+
+    
+    
+}
