@@ -37,15 +37,15 @@ h6 {
     font-weight: inherit;
 }
 
-/* body {
+ body {
     font-size: 16px;
     display: flex;
     justify-content: center;
-    padding-top: 50px;
     align-items: center;
     min-height: 100vh;
-    background-color: tomato;
-} */
+  /*  padding-top: 50px;
+    background-color: tomato; */
+}
 
 .wrap {
     display: block;
