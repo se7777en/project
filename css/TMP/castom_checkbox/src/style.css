@@ -111,6 +111,7 @@ body {
 
 .wrap input:checked + .move::before {
     transform: translateX(3.1rem);
+  
 }
 
 .color {
