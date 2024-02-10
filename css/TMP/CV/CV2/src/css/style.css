@@ -74,10 +74,7 @@ body {
     /* display: block; */
 }
 
-.wrapper__inner .logo__img:hover {
-    /* transition: all .3s ease-in-out;
-    box-shadow: 0px 0px 15px 10px #000; */
-}
+
 
 .inner__item-info {
     margin-bottom: 65px;
@@ -118,7 +115,6 @@ body {
     font-size: 31px;
     font-weight: 900;
     margin-bottom: 32px;
-    font-family: 'CarosMediumRegular', sans-serif;
 }
 
 .education__descr {
@@ -147,13 +143,11 @@ body {
     font-size: 31px;
     font-weight: 900;
     margin-bottom: 32px;
-    font-family: 'CarosMediumRegular', sans-serif;
 }
 
 .expertise__descr {
     font-weight: 500;
     font-size: 23px;
-    font-family: 'CarosMediumRegular', sans-serif;
 }
 
 .expertise__descr:not(:last-child) {
@@ -167,14 +161,12 @@ body {
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 30px;
-    font-family: 'CarosMediumRegular', sans-serif;
 }
 
 .person__position {
     font-size: 25px;
     letter-spacing: 10px;
     font-weight: 500;
-    font-family: 'CarosMediumRegular', sans-serif;
     padding-bottom: 20px;
     border-bottom: 2px solid #494049;
     margin-bottom: 105px;
@@ -189,12 +181,10 @@ body {
     font-size: 31px;
     font-weight: 900;
     margin-bottom: 32px;
-    font-family: 'CarosMediumRegular', sans-serif;
 }
 
 .about__descr {
     color: inherit;
-    font-family: 'CarosRegular', sans-serif;
     margin-bottom: 31px;
     font-size: 18px;
 }
@@ -203,7 +193,6 @@ body {
     font-size: 31px;
     font-weight: 900;
     margin-bottom: 32px;
-    font-family: 'CarosMediumRegular';
 }
 
 
@@ -219,9 +208,8 @@ body {
 
 .experience__descr_item-date,
 .experience__descr_item-location {
-    font-family: 'CarosLightRegular', sans-serif;
     font-weight: 500;
-    font-size: 17px;
+    font-size: 18px;
 }
 
 .experience__descr_item-location {
@@ -229,14 +217,13 @@ body {
 }
 
 .experience__descr_item-title {
-    font-family: 'CarosRegular', sans-serif;
     font-size: 22px;
     margin-bottom: 7px;
+    font-weight: 500;
 }
 
 .experience__descr_item-text {
-    font-family: 'CarosRegular', sans-serif;
-    font-style: 17px;
+    font-size: 17px;
 }
 
 .experience__descr-item {
@@ -267,13 +254,11 @@ body {
     font-size: 31px;
     font-weight: 900;
     margin-bottom: 42px;
-    font-family: 'CarosMediumRegular', sans-serif;
 }
 
 .language__item {
     font-weight: 500;
     font-size: 23px;
-    font-family: 'CarosMediumRegular', sans-serif;
 }
 
 .language__item:not(:last-child) {
@@ -284,13 +269,11 @@ body {
     font-size: 31px;
     font-weight: 900;
     margin-bottom: 42px;
-    font-family: 'CarosMediumRegular', sans-serif;
 }
 
 .references__person {
     font-weight: 600;
     font-size: 27px;
-    font-family: 'CarosMediumRegular', sans-serif;
 }
 
 .references__ceo {
