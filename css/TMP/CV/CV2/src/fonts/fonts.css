@@ -1,0 +1,99 @@
+/* https://transfonter.org/ */
+@font-face {
+    font-family: 'CarosThinRegular';
+    src: url('CarosThinRegular.eot');
+    src: url('CarosThinRegular.eot?#iefix') format('embedded-opentype'),
+        /* url('CarosThinRegular.woff2') format('woff2'), */
+        url('CarosThinRegular.woff') format('woff'),
+        url('CarosThinRegular.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CarosExtraLightRegular';
+    src: url('CarosExtraLightRegular.eot');
+    src: url('CarosExtraLightRegular.eot?#iefix') format('embedded-opentype'),
+        /* url('CarosExtraLightRegular.woff2') format('woff2'), */
+        url('CarosExtraLightRegular.woff') format('woff'),
+        url('CarosExtraLightRegular.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CarosLightRegular';
+    src: url('CarosLightRegular.eot');
+    src: url('CarosLightRegular.eot?#iefix') format('embedded-opentype'),
+        /* url('CarosLightRegular.woff2') format('woff2'), */
+        url('CarosLightRegular.woff') format('woff'),
+        url('CarosLightRegular.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CarosRegular';
+    src: url('CarosRegular.eot');
+    src: url('CarosRegular.eot?#iefix') format('embedded-opentype'),
+        /* url('CarosRegular.woff2') format('woff2'), */
+        url('CarosRegular.woff') format('woff'),
+        url('CarosRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CarosMediumRegular';
+    src: url('CarosMediumRegular.eot');
+    src: url('CarosMediumRegular.eot?#iefix') format('embedded-opentype'),
+        /* url('CarosMediumRegular.woff2') format('woff2'), */
+        url('CarosMediumRegular.woff') format('woff'),
+        url('CarosMediumRegular.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CarosBoldRegular';
+    src: url('CarosBoldRegular.eot');
+    src: url('CarosBoldRegular.eot?#iefix') format('embedded-opentype'),
+        /* url('CarosBoldRegular.woff2') format('woff2'), */
+        url('CarosBoldRegular.woff') format('woff'),
+        url('CarosBoldRegular.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CarosExtraBoldRegular';
+    src: url('CarosExtraBoldRegular.eot');
+    src: url('CarosExtraBoldRegular.eot?#iefix') format('embedded-opentype'),
+        /* url('CarosExtraBoldRegular.woff2') format('woff2'), */
+        url('CarosExtraBoldRegular.woff') format('woff'),
+        url('CarosExtraBoldRegular.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CarosHeavyRegular';
+    src: url('CarosHeavyRegular.eot');
+    src: url('CarosHeavyRegular.eot?#iefix') format('embedded-opentype'),
+        /* url('CarosHeavyRegular.woff2') format('woff2'), */
+        url('CarosHeavyRegular.woff') format('woff'),
+        url('CarosHeavyRegular.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CarosBlackRegular';
+    src: url('CarosBlackRegular.eot');
+    src: url('CarosBlackRegular.eot?#iefix') format('embedded-opentype'),
+        /* url('CarosBlackRegular.woff2') format('woff2'), */
+        url('CarosBlackRegular.woff') format('woff'),
+        url('CarosBlackRegular.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
