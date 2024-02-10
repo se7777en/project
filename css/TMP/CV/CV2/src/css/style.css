@@ -344,6 +344,51 @@ body {
     .wrapper__inner {
         padding-top: 10px;
     }
+
+    .about__descr {
+        line-height: 28px;
+    }
+
+    .person__position {
+        margin-bottom: 79px;
+    }
+
+    .about__title {
+        font-size: 25px;
+    }
+
+
+    .language__title {
+        font-size: 20px;
+    }
+
+    .work__experience-title {
+        font-size: 25px;
+    }
+
+    .references__title {
+        font-size: 25px;
+    }
+
+    .references__title {
+        font-size: 20px;
+    }
+
+    .references__person {
+        font-size: 18px;
+    }
+
+    .references__ceo {
+        font-size: 16px;
+    }
+
+    .references__phone {
+        font-size: 16px;
+    }
+
+    .language__item {
+        font-size: 18px;
+    }
 }
 
 @media (max-width: 730px) {
@@ -397,6 +442,24 @@ body {
     .person__position {
         margin-bottom: 62px;
     }
+
+    .about__title {
+        font-size: 18px;
+    }
+
+    .about__title {
+        margin-bottom: 18px;
+    }
+
+    .work__experience-title {
+        margin-bottom: 18px;
+    }
+
+    .work__experience-title {
+        font-size: 18px;
+    }
+
+   
 }
 
 
