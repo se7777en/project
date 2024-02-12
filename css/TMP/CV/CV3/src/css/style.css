@@ -203,13 +203,13 @@ body {
 }
 
 .main__item-education {
-    padding-bottom: 20px;
+    padding-bottom: 13px;
     margin-bottom: 20px;
     position: relative;
     /* border-bottom: 1px solid #2b2b2b; */
 }
 
-.main__item-education::after {
+.foter_decore::after {
     content: '';
     position: absolute;
     width: 80px;
@@ -228,7 +228,7 @@ body {
 }
 
 .main__item-descr {
-    font-weight: 500;
+    font-weight: 700;
     font-size: 18px;
     text-transform: capitalize;
 }
@@ -247,8 +247,55 @@ body {
 }
 
 .main__item-skills {
+    padding-bottom: 28px;
     margin-bottom: 20px;
+    position: relative;
 }
+
+
+/* //////////////////// */
+
+
+.experience__item {
+    display: flex;
+    /* gap: 20px; */
+}
+
+
+.experience__item-descr {
+    flex: 0 1 20%;
+}
+
+.experience__item-text {
+    flex: 0 1 80%;
+}
+
+.experience__item:not(:last-child) {
+    margin-bottom: 22px;
+}
+
+
+.experience__descr-title {
+    font-weight: 700;
+    font-size: 18px;
+    text-transform: capitalize;
+}
+
+.experience__descr-title {
+    margin-bottom: 5px;
+}
+
+.experience__descr-text {
+    margin-bottom: 5px;
+}
+
+.experience__descr-date {
+    padding: 4px 5px;
+    background-color: #d2d2d2;
+    
+}
+
+
 
 
 /* 
