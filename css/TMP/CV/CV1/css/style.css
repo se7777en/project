@@ -382,7 +382,7 @@ body {
 
 .right__mobile {
     display: none;
-    position:relative;
+    position: relative;
 }
 
 .right__mobile .left-side__title-back {
@@ -464,10 +464,10 @@ body {
     .right__mobile {
         display: flex;
         justify-content: space-between;
-        padding-bottom: 50px;
-        margin-bottom: 50px;
+        padding-bottom: 38px;
+        margin-bottom: 30px;
         flex-wrap: wrap;
-        align-items: center;
+        /* align-items: center; */
         gap: 20px;
     }
 
@@ -498,13 +498,53 @@ body {
     .wrapper {
         margin-top: 15px;
     }
+
+    .right-side {
+        padding: 0px;
+    }
 }
 
 
 
 
 @media (max-width: 690px) {
-    /* .right__mobile {
-        flex-wrap: wrap;
-    } */
+    .right-side__title {
+        font-size: 20px;
+        letter-spacing: 7px;
+    }
+
+    .right-side__position {
+        font-size: 20px;
+        letter-spacing: 7px;
+    }
+
+    .right-side .right-side__education {
+        font-size: 20px;
+    }
+
+    .right-side .right-side__diploma {
+        letter-spacing: 7px;
+        font-size: 18px;
+    }
+
+    .right-side .right-side__text {
+        font-size: 18px;
+    }
+
+    .right-side__name,
+    .right-side__location,
+    .right-side__status,
+    /* .right-side__experience, */
+    .right-side__item {
+        font-size: 18px;
+    }
+
+    .right-side .right__side-university {
+        font-size: 18px;
+    }
+
+    .right-side .right__side-school {
+        font-size: 18px;
+    }
+
 }
