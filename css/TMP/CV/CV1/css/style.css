@@ -547,4 +547,13 @@ body {
         font-size: 18px;
     }
 
+    .right-side__item::before {
+        content: '';
+        top: 8px;
+        /* transform: translateY(-50%); */
+        width: 6px;
+        height: 6px;
+    }
+
+
 }
