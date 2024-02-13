@@ -83,6 +83,7 @@ body {
 .header__contacts {
     font-size: inherit;
     font-weight: 400;
+    margin-left: auto;
 
 
 }
@@ -454,7 +455,7 @@ body {
 
 
 
-@media (max-width: 690px) {
+ @media (max-width: 690px) {
     .header__title {
         font-size: 75px;
     }
@@ -477,7 +478,7 @@ body {
     .header__title {
         font-size: 45px;
     }
-}
+} 
 
 
 @media (max-width: 425px) {
