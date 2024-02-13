@@ -386,7 +386,7 @@ body {
 }
 
 .right__mobile .left-side__title-back {
-    font-size: 120px;
+    font-size: 60px;
     text-transform: uppercase;
     color: #305fec;
     font-weight: 800;
@@ -443,7 +443,7 @@ body {
 
 .right__mobile .left-side__list-back .item-back {
     color: #305fec;
-    font-size: 28px;
+    font-size: 18px;
     font-weight: 600;
     letter-spacing: 1px;
     padding-left: 37px;
@@ -467,6 +467,7 @@ body {
         padding-bottom: 50px;
         margin-bottom: 50px;
         flex-wrap: wrap;
+        align-items: center;
         gap: 20px;
     }
 
