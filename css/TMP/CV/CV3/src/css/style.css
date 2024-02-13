@@ -342,7 +342,7 @@ body {
     position: relative;
 }
 
-.experience-item::before {
+.experience-item::after {
     content: '';
     position: absolute;
     left: 0px;
