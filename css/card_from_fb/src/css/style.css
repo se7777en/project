@@ -1,0 +1,200 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+body {
+    font-size: 16px;
+    font-family: "Roboto", sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.card {
+    min-width: 150px;
+    min-height: calc(150px / 100 * 177.3);
+    
+    border: 1px solid #e6e5e9;
+    border-radius: 7px;
+}
+
+.card__inner {
+    overflow: hidden;
+    position: relative;
+}
+
+.card__title {
+    padding:  0px 10px 10px 10px;
+}
+
+.card__img {
+    width: 100%;
+    border-radius: 6px 6px 0px 0px ;
+    height: 133px;
+    margin-bottom: 7px;
+    
+}
+
+
+
+.card__title-icon {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+
+.card__title-inner {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.title__descr-alliance {
+    font-size: 8px;
+    font-weight: 500;
+}
+
+.title__descr-estate {
+    font-size: 7px;
+    color: #68676a;
+}
+
+.card__title-inner {
+    margin-bottom: 10px;
+}
+
+.card__likes {
+    font-size: 8px;
+    color: #68676a;
+    margin-bottom: 19px;
+}
+
+
+.card__title-btn {
+    font-size: 10px;
+    padding: 5px 0;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+}
+
+.card__btn-like {
+    background-color: #0865fe;
+    color: #fff;
+    margin-bottom: 4px;
+}
+
+.card-preview {
+    background-color: #e5e6eb;
+    color: #030505;
+}
+
+.card__inner .close img{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    /* background-color: #bec2cb;
+    color: #4f5474;
+    border-radius: 50%; */
+    top: 7px;
+    right: 6px;
+    /* font-size: 7px;
+    display: flex;
+    justify-content: center; */
+    cursor: pointer;
+}
+
+.card__btn-like {
+    position: relative;
+}
+
+.card__btn-like i{
+    position: absolute;
+    left: 28px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.title__descr-estate i {
+    padding-right: 5px;
+    color: #0865fe;
+}
+
+.title__descr-estate span {
+    color: #0865fe;
+}
+
+.title__descr-estate {
+    position: relative;
+}
+
+.title__descr-estate .point {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    background-color: #68676a;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20px;
+    border-radius: 50%;
+}
+
+.wrapper {
+
+}
+
+.wrapper__inner {
+    display: flex;
+    gap: 15px;
+}
+
+
+
+
+/* nravitsya color: bg #0865fe cvet teksta: beli
+predprosmotr color: bg #e5e6eb   cvet teksta: #030505
+
+nedvijimost cvet: #68676a
+
+
+cvex iksa bg #bec2cb sam iks cvet #4f5474
+
+177.3%  sootnoshenie storon */
