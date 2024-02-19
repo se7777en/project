@@ -45,6 +45,7 @@ body {
 .wrapper {
     padding: 20px 0;
     -webkit-tap-highlight-color: transparent;
+    user-select: none;
 }
 
 .container {
