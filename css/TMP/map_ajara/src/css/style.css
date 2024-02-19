@@ -149,10 +149,13 @@ body {
     cursor: pointer;
 }
 
-@media (max-width: 768px) {
-    .container {
-        max-width: 500px;
-        margin: 0 auto;
-        padding: 0 15px;
+/* @media (max-width: 768px) {
+    svg {
+        width: 80%;
+        height: 80%;
     }
-}
+
+    .wrapper__map {
+        text-align: center;
+    }
+} */
