@@ -148,3 +148,11 @@ body {
     fill: red;
     cursor: pointer;
 }
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+}
