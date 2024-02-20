@@ -1,0 +1,164 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+}
+
+.container {
+    max-width: 1044px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+
+.wrapper__item {
+    display: flex;
+    padding: 10px 0;
+    box-shadow: inset 0 -1px 0 0 rgba(100,121,143,0.122);
+    -webkit-box-shadow: inset 0 -1px 0 0 rgba(100,121,143,0.122),inset 0 1px 0 0 rgba(100,121,143,0.122);
+}
+
+
+.wrapper__chb-cover {
+    flex: 0 1 3%;
+}
+
+.wrapper__item-star {
+    flex: 0 1 3%;
+}
+
+.wrapper__item-decore {
+    flex: 0 1 3%;
+}
+
+.wrapper__item-descr {
+    flex: 0 1 13%;
+}
+
+.wrapper__item-text {
+    flex: 0 1 69%;
+}
+
+.wrapper__item-date {
+    flex: 0 1 9%;
+}
+
+.wrapper__title {
+    padding: 15px 0;
+    font-size: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.wrapper__chb-cover {
+    position: relative;
+}
+
+.castom__chb {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0px;
+    width: 18px;
+    height: 18px;
+    border-radius: 3px;
+    border: 1px solid #acacac;
+}
+
+.castom__chb::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: '';
+    display: inline-block;
+    background: url('./icons/check.svg') 0 0 no-repeat;
+    width: 15px;
+    height: 15px;
+    scale: 0;
+}
+
+.wrapper__chb-cover input:checked + .castom__chb:after {
+    scale: 1;
+}
+
+.wrapper__chb {
+    position: absolute;
+    top: -9999em;
+    opacity: 0;
+}
+
+
+/*-webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+
+    box-shadow: inset 0 -1px 0 0 rgba(100,121,143,0.122);
+-webkit-box-shadow: inset 0 -1px 0 0 rgba(100,121,143,0.122);
+
+clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%); 320x280
+
+clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);  zvezdochka 280x280
+
+
+    background: #f2f6fc;
+     color: #202124;
+
+"Google Sans", Roboto, RobotoDraft, Helvetica, Arial, sans-serif
+
+
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+font-family: "Roboto", sans-serif;
+
+
+width: 1560px
+
+1- 40px 2.56%
+2- 40px 2.56%
+3- 40px 2.56%
+4 - 200px 12.8%
+5- 1160px 74.3%
+6 - 80px 5.12%
+*/
