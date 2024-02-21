@@ -259,7 +259,7 @@ body {
     scale: 0;
 }
 
-.trash-shadow:hover::after {
+.trash-shadow:active::after {
     scale: 1;
     opacity: .15;
 }
@@ -283,7 +283,7 @@ body {
     scale: 0;
 }
 
-.castom__chb-shadow:hover::after {
+.castom__chb-shadow:active::after {
     scale: 1;
     opacity: .15;
 }
@@ -308,7 +308,7 @@ body {
     scale: 0;
 }
 
-.star-shadow:hover::after {
+.star-shadow:active::after {
     scale: 1;
     opacity: .15;
 }
@@ -335,7 +335,7 @@ body {
     scale: 0;
 }
 
-.decore-shadow:hover::after {
+.decore-shadow:active::after {
     scale: 1;
     opacity: .15;
 }
