@@ -3,20 +3,19 @@
 window.addEventListener('DOMContentLoaded', (e) => {
     e.preventDefault();
 
-
     const wrapper__item = document.querySelectorAll('.wrapper__item');
          
 
     wrapper__item.forEach((item)=>{
-        const  trashBtn = item.querySelector('.trash__btn');
-        console.log(trashBtn);
+        const  chb = item.querySelector('.castom__chb'),
+        trashBtn = chb.querySelector('.trash__btn');
 
-        item.addEventListener('mouseover', () => {
+
+        chb.addEventListener('click', () => {
             trashBtn.style = 'scale: 1';
         });
-        item.addEventListener('mouseout', () => {
+        item.addEventListener('click', () => {
             trashBtn.style = 'scale: 0';
-            trashBtn.style.backgroundColor  = '';
         });
 
     })
