@@ -16,6 +16,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
         });
         item.addEventListener('mouseout', () => {
             trashBtn.style = 'scale: 0';
+            trashBtn.style.backgroundColor  = '';
         });
 
     })
