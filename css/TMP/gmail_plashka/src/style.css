@@ -41,7 +41,6 @@ body {
     font-family: "Roboto", sans-serif;
     font-size: 14px;
     color: #202124;
-
     -webkit-user-drag: none;
     -webkit-user-select: none;
     user-select: none;
@@ -259,7 +258,7 @@ body {
     scale: 0;
 }
 
-.trash-shadow:active::after {
+.trash-shadow:hover::after {
     scale: 1;
     opacity: .15;
 }
@@ -283,7 +282,7 @@ body {
     scale: 0;
 }
 
-.castom__chb-shadow:active::after {
+.castom__chb-shadow:hover::after {
     scale: 1;
     opacity: .15;
 }
@@ -308,7 +307,7 @@ body {
     scale: 0;
 }
 
-.star-shadow:active::after {
+.star-shadow:hover::after {
     scale: 1;
     opacity: .15;
 }
@@ -335,7 +334,7 @@ body {
     scale: 0;
 }
 
-.decore-shadow:active::after {
+.decore-shadow:hover::after {
     scale: 1;
     opacity: .15;
 }
