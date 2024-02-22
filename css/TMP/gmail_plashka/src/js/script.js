@@ -6,7 +6,16 @@ window.addEventListener('DOMContentLoaded', (e) => {
         dialogBtn = document.querySelector('.wrapper__footer span'),
         mainDialog = document.querySelector('.dialog__wrap'),
         mainBody = document.querySelector('body'),
-        checkIcon = document.querySelector('.dialog__icons .check');
+        checkIcon = document.querySelector('.dialog__icons .check'),
+        leftArr = document.querySelector('.dialog__icons .left__arrow'),
+
+        simbolsCount = document.querySelector('.subtitle__simbols span'),
+        dialogArea = document.querySelector('.dialog__text .textarea'),
+        wrapDate = document.querySelector('.dialog__inner-subtitle .subtitle__date');
+
+
+
+
 
     const itemBoxShadow = (labelChb, classname) => {
         labelChb.addEventListener('click', () => {
@@ -46,7 +55,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     const itemBg = (currentStar, classname) => {
         currentStar.addEventListener('click', () => {
             currentStar.classList.toggle(classname);
-            console.log(currentStar);
+            // console.log(currentStar);
         })
     }
 
@@ -65,20 +74,75 @@ window.addEventListener('DOMContentLoaded', (e) => {
     const showWrapperDlg = () => {
         dialogBtn.addEventListener('click', () => {
             mainDialog.classList.toggle('showdialog');
-             mainBody.classList.add("lock");
-            // console.log(dialogBtn);
+            mainBody.classList.add("lock");
+           
+            let count = dialogArea.value.length; // shitaem simvoli pri pervom zapuske
+            simbolsCount.textContent = count;
+
+            wrapDate.textContent = getCurrentTime(); // dobavlyaem vremya v dialogbox
+            //22 февраля 5:07 PM
         });
     }
     showWrapperDlg();
 
+
+
     const closeWrapperDlg = () => {
-       //console.log(checkIcon);
-        checkIcon.addEventListener('click',()=>{
-             mainDialog.classList.remove('showdialog');
-             mainBody.classList.remove('lock');
+        //console.log(checkIcon);
+        checkIcon.addEventListener('click', () => {
+            mainDialog.classList.remove('showdialog');
+            mainBody.classList.remove('lock');
+        });
+    }
+
+    const returnToMainArr = () => {
+        //console.log(checkIcon);
+        leftArr.addEventListener('click', () => {
+            mainDialog.classList.remove('showdialog');
+            mainBody.classList.remove('lock');
         });
     }
     closeWrapperDlg();
+    returnToMainArr();
+
+
+
+
+    const calcTexareaSimbols = () => {
+        dialogArea.addEventListener('input', () => {
+            let count = dialogArea.value.length;
+            simbolsCount.textContent = count;
+            //   console.log(count);
+        })
+    }
+    calcTexareaSimbols();
+
+
+
+    const getCurrentTime = () => {
+        var currentDate = new Date(); // Получаем текущую дату и время
+        var dayOfMonth = currentDate.getDate(); // Получаем день месяца
+        var monthNames = ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"]; // Создаем массив с названиями месяцев
+        var monthNumber = currentDate.getMonth();// Получаем номер месяца и его название
+        var monthName = monthNames[monthNumber];
+       
+        var year = currentDate.getFullYear(); // Получаем год
+        
+        var hours = currentDate.getHours();// Получаем часы и минуты
+        var minutes = currentDate.getMinutes();
+       
+        var ampm = (hours >= 12) ? "PM" : "AM";  // Определяем AM или PM
+        
+        hours = (hours > 12) ? hours - 12 : hours; // Преобразуем часы в 12-часовой формат
+        hours = (hours === 0) ? 12 : hours;
+        // Формируем строку с текущим временем и датой
+        var formattedTime = dayOfMonth + " " + monthName + " " + hours + ":" + (minutes < 10 ? '0' : '') + minutes + " " + ampm;
+        // Выводим текущее время и дату в консоль (вы можете использовать другие способы отображения)
+        return formattedTime;
+    }
+
+    // const dialogDate = getCurrentTime();
+
 
 
 
@@ -96,7 +160,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
             trashShadow = item.querySelector('.trash__img-item'),
             editShadow = item.querySelector('.edit__img-item'),
             dataItem = item.querySelector('.wrapper__item-date');
-            // castomChb = item.querySelector('.wrapper__chb');
+        // castomChb = item.querySelector('.wrapper__chb');
 
 
         itemBoxShadow(labelChb, 'castom__chb-shadow');
@@ -113,11 +177,14 @@ window.addEventListener('DOMContentLoaded', (e) => {
         showTrashBoxOnChb(chbCover, trashBtn, 'item-trash', trashShadow, editShadow, dataItem);
 
 
+
+
+
         // castomChb.addEventListener('change', (e) => {
         //     e.preventDefault();
         //     console.log('ok');
         // });
-        
+
 
 
         //wrapper__item-decore decore-bg
@@ -155,12 +222,12 @@ window.addEventListener('DOMContentLoaded', (e) => {
         });
         ////otobrajenie pri hovere na plashku//////
 
-    //     document.querySelector('.wrapper__item-chb').addEventListener('click',function(event){
-    //         event.preventDefault();
+        //     document.querySelector('.wrapper__item-chb').addEventListener('click',function(event){
+        //         event.preventDefault();
 
-    //         const checkbox = document.querySelector('.wrapper__chb');
-    // console.log('Checkbox is checked:', checkbox.checked);
-    //     });
+        //         const checkbox = document.querySelector('.wrapper__chb');
+        // console.log('Checkbox is checked:', checkbox.checked);
+        //     });
 
     });
 
