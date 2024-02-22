@@ -2,8 +2,11 @@
 
 window.addEventListener('DOMContentLoaded', (e) => {
     e.preventDefault();
-    const wrapper__item = document.querySelectorAll('.wrapper__item'); // poluchaem vse plashku
-
+    const wrapper__item = document.querySelectorAll('.wrapper__item'), // poluchaem vse plashku
+        dialogBtn = document.querySelector('.wrapper__footer span'),
+        mainDialog = document.querySelector('.dialog__wrap'),
+        mainBody = document.querySelector('body'),
+        checkIcon = document.querySelector('.dialog__icons .check');
 
     const itemBoxShadow = (labelChb, classname) => {
         labelChb.addEventListener('click', () => {
@@ -15,6 +18,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
             //show trash
         })
     }
+
+
 
     const showTrashBoxOnChb = (onChbCover, classTotrashBox, showtrash, trashshadow, editshadow, dataItem) => {
         const checkbox = onChbCover.querySelector('.wrapper__chb');
@@ -48,14 +53,35 @@ window.addEventListener('DOMContentLoaded', (e) => {
     const hideItem = (element) => {
         if (!element.classList.contains('hide')) {
             element.classList.add('hide');
-        } 
+        }
     }
 
     const showItem = (element) => {
         if (element.classList.contains('hide')) {
             element.classList.remove('hide');
-        } 
+        }
     }
+
+    const showWrapperDlg = () => {
+        dialogBtn.addEventListener('click', () => {
+            mainDialog.classList.toggle('showdialog');
+             mainBody.classList.add("lock");
+            // console.log(dialogBtn);
+        });
+    }
+    showWrapperDlg();
+
+    const closeWrapperDlg = () => {
+       //console.log(checkIcon);
+        checkIcon.addEventListener('click',()=>{
+             mainDialog.classList.remove('showdialog');
+             mainBody.classList.remove('lock');
+        });
+    }
+    closeWrapperDlg();
+
+
+
 
 
     wrapper__item.forEach((item) => { // perebiraem plashki s itemami
@@ -70,6 +96,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
             trashShadow = item.querySelector('.trash__img-item'),
             editShadow = item.querySelector('.edit__img-item'),
             dataItem = item.querySelector('.wrapper__item-date');
+            // castomChb = item.querySelector('.wrapper__chb');
 
 
         itemBoxShadow(labelChb, 'castom__chb-shadow');
@@ -84,6 +111,13 @@ window.addEventListener('DOMContentLoaded', (e) => {
         itemBg(decoreBgItem, 'decore-bg');
         // console.log('OK');
         showTrashBoxOnChb(chbCover, trashBtn, 'item-trash', trashShadow, editShadow, dataItem);
+
+
+        // castomChb.addEventListener('change', (e) => {
+        //     e.preventDefault();
+        //     console.log('ok');
+        // });
+        
 
 
         //wrapper__item-decore decore-bg
@@ -121,7 +155,12 @@ window.addEventListener('DOMContentLoaded', (e) => {
         });
         ////otobrajenie pri hovere na plashku//////
 
+    //     document.querySelector('.wrapper__item-chb').addEventListener('click',function(event){
+    //         event.preventDefault();
 
+    //         const checkbox = document.querySelector('.wrapper__chb');
+    // console.log('Checkbox is checked:', checkbox.checked);
+    //     });
 
     });
 
@@ -140,4 +179,4 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
 
 
-})
+});

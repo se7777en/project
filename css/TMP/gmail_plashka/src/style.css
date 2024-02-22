@@ -45,6 +45,8 @@ body {
     -webkit-user-select: none;
     user-select: none;
     -webkit-tap-highlight-color: transparent;
+    /* overflow: hidden; */
+    /* overflow-y: hidden; */
 }
 
 .container {
@@ -81,6 +83,7 @@ body {
 .item-trash {
     scale: 1 !important;
 }
+
 
 
 
@@ -398,7 +401,7 @@ body {
 .wrapper__inner {
     margin-bottom: 40px;
     /* padding-bottom: 40px; */
-    
+
 
 }
 
@@ -413,12 +416,15 @@ body {
     font-size: 50px;
     cursor: pointer;
     padding-right: 20px;
+    color: #f7ca4c;
+    /* transition: all .1s ease-in-out; */
 
 }
 
 .footer-item:hover {
-    color: #f7ca4c;
-    transition: all .2s ease-in-out;
+    color: #ecc14c;
+    /* box-shadow: 0px 4px 8px rgba(0, 0, 0, .4) */
+
 }
 
 .trash__btn-inner {
@@ -435,6 +441,162 @@ body {
     margin-right: 10px;
 } */
 
+
+/* ////////////dialog////////////// */
+.dialog__wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.dialog__item {
+    /* position: relative; */
+}
+
+.dialog__inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+}
+
+.dialog-item {
+    background-color: #fff;
+    min-width: 400px;
+    padding: 15px;
+    border-radius: 10px;
+    opacity: 1;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, .3);
+    
+}
+
+.dialog__inner-title input {
+    width: 100%;
+    height: 20px;
+    margin-bottom: 10px;
+    color: #afafaf;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.dialog__inner-title input::placeholder {
+    color: #d3d3d3;
+    font-size: 18px;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+.dialog__inner-subtitle {
+    display: flex;
+    gap: 30px;
+    font-size: 13px;
+    color: #c6c6c6;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.subtitle__simbols {
+    position: relative;
+}
+.subtitle__simbols::before {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 60%;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -15px;
+    background-color: #c6c6c6;
+}
+
+.dialog__text textarea {
+    width: 100%;
+    height: 150px;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    overflow-y: auto;
+    resize: none;
+    padding: 10px;
+    color: #727272;
+    transition: .3s all ease-in-out;
+    cursor: pointer;
+    overflow: auto;
+}
+
+.dialog__text textarea:hover,
+.dialog__text textarea:active{
+    border: 1px solid #c6c6c6;
+}
+
+.dialog__text {
+    overflow: hidden;
+}
+
+.dialog__text textarea::placeholder {
+    color: #c6c6c6;
+}
+
+
+textarea::-webkit-scrollbar {
+    width: 5px;
+}
+
+textarea::-webkit-scrollbar-thumb {
+    background-color: #c6c6c6;
+    /* border-radius: 8px; */
+}
+
+.dialog__icons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    font-size: 20px;
+    /* position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer; */
+}
+
+
+.dialog__icons .left__arrow {
+    cursor: pointer;
+}
+
+.dialog__icons .check {
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+.dialog__icons .check:hover {
+    color: green;
+}
+
+/* .dialog__icons .check i {
+    color: green;
+} */
+
+
+/* ////////////dialog////////////// */
+
+
+.dialog__wrap {
+    visibility: hidden;
+    scale: 0;
+}
+
+.showdialog {
+    visibility: visible;
+    scale: 1;
+}
+
+.lock{
+    overflow: hidden;
+}
 
 
 
