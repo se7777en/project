@@ -452,9 +452,6 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.dialog__item {
-    /* position: relative; */
-}
 
 .dialog__inner {
     position: absolute;
@@ -636,3 +633,51 @@ width: 1560px
 5- 1160px 74.3%
 6 - 80px 5.12%
 */
+
+@media (max-width: 420px) {
+    .dialog-item {
+        min-width: 390px;
+    }
+}
+
+@media (max-width: 410px) {
+    .dialog-item {
+        min-width: 380px;
+    }
+}
+
+@media (max-width: 400px) {
+    .dialog-item {
+        min-width: 370px;
+    }
+}
+
+@media (max-width: 390px) {
+    .dialog-item {
+        min-width: 360px;
+    }
+}
+
+@media (max-width: 380px) {
+    .dialog-item {
+        min-width: 350px;
+    }
+}
+
+@media (max-width: 370px) {
+    .dialog-item {
+        min-width: 340px;
+    }
+}
+
+@media (max-width: 360px) {
+    .dialog-item {
+        min-width: 330px;
+    }
+}
+
+@media (max-width: 350px) {
+    .dialog-item {
+        min-width: 320px;
+    }
+}
