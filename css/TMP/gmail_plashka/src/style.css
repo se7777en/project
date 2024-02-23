@@ -62,7 +62,7 @@ body {
     align-items: center;
     -webkit-box-shadow: inset 0 -1px 0 0 rgba(100, 121, 143, 0.122);
     box-shadow: inset 0 -1px 0 0 rgba(100, 121, 143, 0.122);
-    padding-left: 10px;
+    padding-left: 13px;
     cursor: pointer;
     position: relative;
 }
@@ -74,7 +74,7 @@ body {
     position: absolute;
     width: 13px;
     height: 13px;
-    right: 4.2%;
+    right: 5.4%;
     top: 50%;
     transform: translateY(-50%);
     scale: 0;
@@ -144,14 +144,47 @@ body {
 
 
 .wrapper__chb-cover {
-    flex: 0 1 3%;
+    /* flex: 0 0 3%; */
+    flex: 0 0 17px;
+    /* padding-left: 4px; */
 }
 
-
-
 .wrapper__item-star {
-    flex: 0 1 3%;
+    /* flex: 0 0 3%; */
+    flex: 0 0 32px;
     position: relative;
+}
+
+.wrapper__item-decore {
+    /* flex: 0 0 3%; */
+    flex: 0 0 32px;
+    position: relative;
+    white-space: nowrap;
+}
+
+.wrapper__item-descr {
+    flex: 0 0 13%;
+    padding-left: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.wrapper__item-text {
+    flex: 0 1 69%;
+    padding-left: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.wrapper__item-date {
+    /* flex: 0 0 9%; */
+    flex: 0 0 96px;
+    white-space: nowrap;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 
@@ -177,10 +210,7 @@ body {
     background-color: #f7ca4c;
 } */
 
-.wrapper__item-decore {
-    flex: 0 1 3%;
-    position: relative;
-}
+
 
 .wrapper__item-decore span {
     position: absolute;
@@ -206,21 +236,11 @@ body {
 
 
 
-.wrapper__item-descr {
-    flex: 0 1 13%;
-    padding-left: 5px;
-}
 
 
 
-.wrapper__item-text {
-    flex: 0 1 69%;
-    padding-left: 5px;
-}
 
-.wrapper__item-date {
-    flex: 0 1 9%;
-}
+
 
 .wrapper__title {
     padding: 15px 0;
@@ -401,8 +421,6 @@ body {
 .wrapper__inner {
     margin-bottom: 40px;
     /* padding-bottom: 40px; */
-
-
 }
 
 .wrapper__footer {
@@ -676,7 +694,36 @@ width: 1560px
     .dialog__text textarea:active {
         border: none;
     }
+
+    .trash__btn {
+        right: 7.5%;
+    }
+    
 }
+
+@media (max-width: 530px){
+    .trash__btn {
+        right: 11%;
+    }
+}
+
+@media (max-width: 480px){
+    .trash__btn {
+        right: 12%;
+    }
+}
+
+@media (max-width: 365px){
+    .trash__btn {
+        right: 16%;
+    }
+}
+/* 
+@media (max-width: 690px){
+    .wrapper__item-descr {
+        flex: 0 0 80px;
+    }
+} */
 
 
 /* 
