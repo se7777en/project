@@ -41,10 +41,17 @@ body {
     font-family: "Roboto", sans-serif;
     font-size: 14px;
     color: #202124;
+
+
     -webkit-user-drag: none;
     -webkit-user-select: none;
     user-select: none;
     -webkit-tap-highlight-color: transparent;
+    /* -webkit-appearance: none;
+    -moz-appearance: none; */
+   
+
+
     /* overflow: hidden; */
     /* overflow-y: hidden; */
 }
@@ -147,6 +154,11 @@ body {
     /* flex: 0 0 3%; */
     flex: 0 0 17px;
     /* padding-left: 4px; */
+    /* -webkit-appearance: none;
+    -moz-appearance: none; */
+    /* text-indent: 0.01px;
+    text-overflow: ''; */
+
 }
 
 .wrapper__item-star {
@@ -269,7 +281,7 @@ body {
 .castom__chb::after {
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 45%;
     transform: translate(-38%, -43%);
     content: '';
     display: inline-block;
@@ -302,23 +314,26 @@ body {
     scale: 1;
     opacity: .15;
 } */
-/* 
+
+
+
 .edit-shadow {
     position: relative;
 }
 
-.edit-shadow {
+.edit-shadow:after {
+    content: '';
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -56%);
+    transform: translate(-50%, -51%);
     width: 30px;
     height: 30px;
     border-radius: 50%;
     background-color: #acacac;
     z-index: -1;
     opacity: .15;
-} */
+}
 
 
 
@@ -331,7 +346,7 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-33%, -50%);
+    transform: translate(-60%, -50%);
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -409,7 +424,8 @@ body {
 }
 
 .wrapper__chb {
-    position: absolute;
+    /* position: absolute; bila problema s marganie checkboksa */ 
+    position: fixed;
     top: -9999em;
     opacity: 0;
 }
