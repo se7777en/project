@@ -119,6 +119,17 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
 
 
+    const forKeyboard = () => {
+        dialogArea.addEventListener('focus', function () {
+            // Adjust the body height to show the keyboard at the bottom
+            document.body.style.height = '100vh';
+            document.body.style.overflow = 'hidden';
+        });
+    }
+    forKeyboard();
+
+
+
     const getCurrentTime = () => {
         var currentDate = new Date(); // Получаем текущую дату и время
         var dayOfMonth = currentDate.getDate(); // Получаем день месяца
