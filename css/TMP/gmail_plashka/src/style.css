@@ -278,6 +278,7 @@ body {
     border: 1px solid #acacac;
 }
 
+
 .castom__chb::after {
     position: absolute;
     top: 50%;

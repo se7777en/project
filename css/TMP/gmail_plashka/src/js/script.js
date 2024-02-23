@@ -37,6 +37,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
             checked = checkbox.checked;
             // checked? classTotrashBox.classList.add(clasname): classTotrashBox.classList.remove(clasname);
 
+            
             //showTrashBoxOnChb(chbCover, trashBtn, 'item-trash', trashShadow, editShadow);
             if (checked) {
                 classTotrashBox.classList.add(showtrash);
