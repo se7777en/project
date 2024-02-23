@@ -161,7 +161,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
     wrapper__item.forEach((item) => { // perebiraem plashki s itemami
         const trashBtn = item.querySelector('.trash__btn'), // poluchaem u plashki roditelya korzini
-            labelChb = item.querySelector('.wrapper__item-chb'),
+            // labelChb = item.querySelector('.wrapper__item-chb'),
             starShadow = item.querySelector('.wrapper__item-star'),
             decoreShadow = item.querySelector('.wrapper__item-decore'),
             starBgItem = item.querySelector('.wrapper__item-star'),
@@ -174,7 +174,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
         // castomChb = item.querySelector('.wrapper__chb');
 
 
-        itemBoxShadow(labelChb, 'castom__chb-shadow');
+        itemBoxShadow(chbCover, 'castom__chb-shadow');
         itemBoxShadow(starShadow, 'star-shadow');
         itemBoxShadow(decoreShadow, 'decore-shadow');
 
