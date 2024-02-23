@@ -667,8 +667,14 @@ width: 1560px
     }
 
     .dialog__text textarea {
-        height: 300px;
-        min-height: 0;
+        height: 425px;
+        /* min-height: 0; */
+        border: none;
+    }
+
+    .dialog__text textarea:hover,
+    .dialog__text textarea:active {
+        border: none;
     }
 }
 
