@@ -119,14 +119,14 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
 
 
-    const forKeyboard = () => {
-        dialogArea.addEventListener('focus', function () {
-            // Adjust the body height to show the keyboard at the bottom
-            document.body.style.height = '100vh';
-            document.body.style.overflow = 'hidden';
-        });
-    }
-    forKeyboard();
+    // const forKeyboard = () => {
+    //     dialogArea.addEventListener('focus', function () {
+    //         // Adjust the body height to show the keyboard at the bottom
+    //         document.body.style.height = '100vh';
+    //         document.body.style.overflow = 'hidden';
+    //     });
+    // }
+    // forKeyboard();
 
 
 
