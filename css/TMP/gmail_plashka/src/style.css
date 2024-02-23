@@ -443,6 +443,17 @@ body {
 
 
 /* ////////////dialog////////////// */
+
+.dialog__wrap {
+    visibility: hidden;
+    scale: 0;
+}
+
+.showdialog {
+    visibility: visible;
+    scale: 1;
+}
+
 .dialog__wrap {
     position: fixed;
     top: 0;
@@ -451,7 +462,6 @@ body {
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
 }
-
 
 .dialog__inner {
     position: absolute;
@@ -468,8 +478,14 @@ body {
     border-radius: 10px;
     opacity: 1;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, .3);
-    
 }
+
+
+
+
+
+
+
 
 .dialog__inner-title input {
     width: 100%;
@@ -500,6 +516,7 @@ body {
 .subtitle__simbols {
     position: relative;
 }
+
 .subtitle__simbols::before {
     content: '';
     position: absolute;
@@ -526,7 +543,7 @@ body {
 }
 
 .dialog__text textarea:hover,
-.dialog__text textarea:active{
+.dialog__text textarea:active {
     border: 1px solid #c6c6c6;
 }
 
@@ -581,17 +598,9 @@ textarea::-webkit-scrollbar-thumb {
 /* ////////////dialog////////////// */
 
 
-.dialog__wrap {
-    visibility: hidden;
-    scale: 0;
-}
 
-.showdialog {
-    visibility: visible;
-    scale: 1;
-}
 
-.lock{
+.lock {
     overflow: hidden;
 }
 
@@ -634,6 +643,37 @@ width: 1560px
 6 - 80px 5.12%
 */
 
+@media (max-width: 768px) {
+
+    .dialog__wrap {
+        /* for width 768 */
+        background-color: initial;
+    }
+
+    .dialog__inner {
+        /* for width 768 */
+        position: static;
+        top: initial;
+        left: initial;
+        transform: initial;
+    }
+
+    .dialog-item {
+        /* for width 768 */
+        min-width: initial;
+        min-height: 100vh;
+        border-radius: initial;
+        box-shadow: initial;
+    }
+
+    .dialog__text textarea {
+        height: 300px;
+        min-height: 0;
+    }
+}
+
+
+/* 
 @media (max-width: 420px) {
     .dialog-item {
         min-width: 390px;
@@ -680,4 +720,4 @@ width: 1560px
     .dialog-item {
         min-width: 320px;
     }
-}
+} */
