@@ -661,7 +661,7 @@ width: 1560px
 6 - 80px 5.12%
 */
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
 
     .dialog__wrap {
         /* for width 768 */
