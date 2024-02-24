@@ -3,6 +3,7 @@
 window.addEventListener('DOMContentLoaded', (e) => {
     e.preventDefault();
     const wrapInner = document.querySelector('.wrapper .wrapper__inner');
+    
 
     //const uniqueId = `id_${Date.now()}_${Math.floor(Math.random() * 1000)}`;
 
@@ -32,40 +33,57 @@ window.addEventListener('DOMContentLoaded', (e) => {
             id: uniqueId(),
             important: false,
             favorite: false,
-            title: 'SAP 4',
+            title: 'SAP 3',
             text: 'As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
-            date: '21 Feb3'
+            date: '20 Feb2'
         },
         {
             id: uniqueId(),
             important: false,
             favorite: false,
-            title: 'SAP 4',
+            title: 'SAP 3',
             text: 'As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
-            date: '21 Feb3'
+            date: '20 Feb2'
         },
         {
             id: uniqueId(),
             important: false,
             favorite: false,
-            title: 'SAP 4',
+            title: 'SAP 3',
             text: 'As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
-            date: '21 Feb3'
+            date: '20 Feb2'
+        },
+        {
+            id: uniqueId(),
+            important: false,
+            favorite: false,
+            title: 'SAP 3',
+            text: 'As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
+            date: '20 Feb2'
+        },
+        {
+            id: uniqueId(),
+            important: false,
+            favorite: false,
+            title: 'SAP 3',
+            text: 'As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
+            date: '20 Feb2'
         }
 
     ];
 
     let elements = '';
-    wrapData.forEach((item) => {
+    const addItemsFromObj = (data) => {
+        elements = ''
+        data.forEach((item) => {
+            const important = item.important;
+            const favorite = item.favorite;
+            const data_id = item.id;
+            const title = item.title;
+            const text = item.text;
+            const date = item.date;
 
-        const important = item.important;
-        const favorite = item.favorite;
-        const data_id = item.id;
-        const title = item.title;
-        const text = item.text;
-        const date = item.date;
-
-        elements += `
+            elements += `
             <div class="wrapper__item" data-id="${data_id}">
                     <div class="trash__btn">
                         <div class="trash__btn-inner">
@@ -93,9 +111,15 @@ window.addEventListener('DOMContentLoaded', (e) => {
                     <div class="wrapper__item-text">${text}</div>
                     <div class="wrapper__item-date">${date}</div>
                 </div>`;
-    });
+        });
+        
+      return  wrapInner.innerHTML = elements;
+    }
 
-    wrapInner.innerHTML = elements;
+    addItemsFromObj(wrapData);
+    
+
+
 
 
 
@@ -111,25 +135,26 @@ window.addEventListener('DOMContentLoaded', (e) => {
         wrapDate = document.querySelector('.dialog__inner-subtitle .subtitle__date');
 
 
-        function dataFilter() {
-            wrapper__item.forEach((item) => {
-                let trashImg = item.querySelector('.trash__img-item');
-                trashImg.addEventListener('click', (event) => {
-                    let wrapItem = event.currentTarget.closest('.wrapper__item');
-                    let dataId = wrapItem.dataset.id;    
-                    console.log(dataId); 
-                  let tmpArr = wrapData.filter((item)=> item.id !== dataId );
-                  console.dir(tmpArr); 
-                  wrapData = tmpArr;
-                  return tmpArr;
-                });
-            });
-        }
-        dataFilter();
+    function dataFilter() {
+        wrapper__item.forEach((item) => {
+            let trashImg = item.querySelector('.trash__img-item');
 
-        
-        
-        
+            trashImg.addEventListener('click', (event) => {
+                let wrapItem = event.currentTarget.closest('.wrapper__item');
+                let dataId = wrapItem.dataset.id;
+             
+                let tmpArr = wrapData.filter((item) => item.id !== dataId);
+                // wrapInner.removeChild(wrapper__item);
+            addItemsFromObj(tmpArr);
+            });
+        });
+    }
+
+    dataFilter();
+
+    //   const filtredData = dataFilter();
+    //     console.log(filtredData);
+    // addItemsFromObj(dataFilter());
 
 
 
@@ -140,7 +165,6 @@ window.addEventListener('DOMContentLoaded', (e) => {
             setTimeout(() => {
                 labelChb.classList.remove(classname);
             }, 500);
-
             //show trash
         })
     }
@@ -253,22 +277,22 @@ window.addEventListener('DOMContentLoaded', (e) => {
     }
 
 
- 
 
-   
+
+
 
 
     wrapper__item.forEach((item) => { // perebiraem plashki s itemami
         const trashBtn = item.querySelector('.trash__btn'), // poluchaem u plashki roditelya korzini
-        // labelChb = item.querySelector('.wrapper__item-chb'),
-        starShadow = item.querySelector('.wrapper__item-star'),
-        decoreShadow = item.querySelector('.wrapper__item-decore'),
-        starBgItem = item.querySelector('.wrapper__item-star'),
-        decoreBgItem = item.querySelector('.wrapper__item-decore'),
-        chbCover = item.querySelector('.wrapper__chb-cover'),
-        editShadow = item.querySelector('.edit__img-item'),
-        dataItem = item.querySelector('.wrapper__item-date'),
-        trashBtnItem = item.querySelector('.trash__img-item');
+            // labelChb = item.querySelector('.wrapper__item-chb'),
+            starShadow = item.querySelector('.wrapper__item-star'),
+            decoreShadow = item.querySelector('.wrapper__item-decore'),
+            starBgItem = item.querySelector('.wrapper__item-star'),
+            decoreBgItem = item.querySelector('.wrapper__item-decore'),
+            chbCover = item.querySelector('.wrapper__chb-cover'),
+            editShadow = item.querySelector('.edit__img-item'),
+            dataItem = item.querySelector('.wrapper__item-date'),
+            trashBtnItem = item.querySelector('.trash__img-item');
 
         itemBoxShadow(chbCover, 'castom__chb-shadow');
         itemBoxShadow(starShadow, 'star-shadow');
@@ -278,8 +302,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
         // console.log('OK');
         showTrashBoxOnChb(chbCover, trashBtn, 'item-trash', trashBtnItem, editShadow, dataItem);
 
-   // dataFilter(trashBtnItem);
-
+        // dataFilter(trashBtnItem);
     });
 
 
