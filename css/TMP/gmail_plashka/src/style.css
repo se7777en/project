@@ -182,6 +182,11 @@ body {
     text-overflow: ellipsis;
 }
 
+/* .wrapper__item-descr:hover,
+.wrapper__item-descr:active {
+    color: #000000;
+} */
+
 .wrapper__item-text {
     flex: 0 1 69%;
     padding-left: 5px;
@@ -189,6 +194,11 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+/* .wrapper__item-text:hover,
+.wrapper__item-text:active {
+    color: #000000;
+} */
 
 .wrapper__item-date {
     /* flex: 0 0 9%; */
@@ -198,6 +208,11 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+/* .wrapper__item-date:hover,
+.wrapper__item-date:active {
+    color: #000000;
+} */
 
 
 
