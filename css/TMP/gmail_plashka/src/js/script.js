@@ -250,8 +250,6 @@ window.addEventListener('DOMContentLoaded', (e) => {
         });
 
     }
-<<<<<<< HEAD
-=======
 
 
     const addEventOnTrashBtn = () => {
@@ -285,43 +283,6 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
     addStyles();
     addEventOnTrashBtn();
->>>>>>> 1336b36833173e3cbdfa52971b558a08062de6b2
-
-
-    const addEventOnTrashBtn = () => {
-        const items = document.querySelectorAll('.wrapper__item');
-        items.forEach((item) => {
-            let trashImg = item.querySelector('.trash__img-item');
-            trashImg.addEventListener('click', (event) => {
-                let wrapItem = event.currentTarget.closest('.wrapper__item');
-                let dataId = wrapItem.dataset.id;
-
-                let tmpArr = objfromStorage.filter((item) => item.id !== dataId);
-
-
-                window.localStorage.setItem('myobj', JSON.stringify(tmpArr)); // save to storage
-                addItemsFromObj(tmpArr); // add on page
-                addStyles();
-                console.log(tmpArr);
-            });
-
-<<<<<<< HEAD
-        });
-
-    }
-
-    function dataFilter() {
-        addEventOnTrashBtn();
-        console.log('dataFilter');
-    }
-
-
-    dataFilter();
-
-    addStyles();
-    addEventOnTrashBtn();
-=======
->>>>>>> 1336b36833173e3cbdfa52971b558a08062de6b2
 
 
 
