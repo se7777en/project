@@ -293,6 +293,11 @@ window.addEventListener('DOMContentLoaded', (e) => {
     }
 
 
+
+    
+
+
+    
     const addEventOnTrashBtn = () => {
         const items = document.querySelectorAll('.wrapper__item');
         items.forEach((item) => {
