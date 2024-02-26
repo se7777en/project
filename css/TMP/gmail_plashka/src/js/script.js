@@ -1,5 +1,6 @@
 'use strict';
 
+//js file
 window.addEventListener('DOMContentLoaded', (e) => {
     e.preventDefault();
     const wrapInner = document.querySelector('.wrapper .wrapper__inner'),
@@ -297,7 +298,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     
 
 
-    
+
     const addEventOnTrashBtn = () => {
         const items = document.querySelectorAll('.wrapper__item');
         items.forEach((item) => {
