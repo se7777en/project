@@ -52,46 +52,6 @@ window.addEventListener('DOMContentLoaded', (e) => {
             title: 'SAP 5',
             text: 'As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
             date: '20 Feb2'
-        },
-        {
-            id: uniqueId(),
-            important: false,
-            favorite: false,
-            title: 'SAP 6',
-            text: 'As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
-            date: '20 Feb2'
-        },
-        {
-            id: uniqueId(),
-            important: false,
-            favorite: false,
-            title: 'SAP 7',
-            text: 'As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
-            date: '20 Feb2'
-        },
-        {
-            id: uniqueId(),
-            important: false,
-            favorite: false,
-            title: 'SAP 8',
-            text: 'As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
-            date: '20 Feb2'
-        },
-        {
-            id: uniqueId(),
-            important: false,
-            favorite: false,
-            title: 'SAP 9',
-            text: 'As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
-            date: '20 Feb2'
-        },
-        {
-            id: uniqueId(),
-            important: false,
-            favorite: false,
-            title: 'SAP 10',
-            text: 'As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
-            date: '20 Feb2'
         }
 
     ];
