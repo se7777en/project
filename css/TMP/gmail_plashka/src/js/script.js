@@ -24,8 +24,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
     let wrapData = [
         {
             id: uniqueId(),
-            important: false,
-            favorite: false,
+            important: true,
+            favorite: true,
             title: 'SAP 2',
             text: 'As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
             date: '19 Feb1QQ'
@@ -40,8 +40,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
         },
         {
             id: uniqueId(),
-            important: false,
-            favorite: false,
+            important: true,
+            favorite: true,
             title: 'SAP 4',
             text: 'As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
             date: '20 Feb2AA'
@@ -56,8 +56,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
         },
         {
             id: uniqueId(),
-            important: false,
-            favorite: false,
+            important: true,
+            favorite: true,
             title: 'SAP 6',
             text: 'As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
             date: '20 Feb2AA3'
@@ -111,8 +111,9 @@ window.addEventListener('DOMContentLoaded', (e) => {
     const addItemsFromObj = (data) => {
         elements = '';
         data.forEach((item) => {
-            const important = item.important;
-            const favorite = item.favorite;
+            let starFavorite = item.favorite;
+            let important = item.important;
+
             const data_id = item.id;
             const title = item.title;
             const text = item.text;
@@ -136,10 +137,10 @@ window.addEventListener('DOMContentLoaded', (e) => {
                             <span class="castom__chb"></span>
                         </label>
                     </div>
-                    <div class="wrapper__item-star">
+                    <div class="wrapper__item-star ${starFavorite ? 'star-bg' :false}">
                         <span></span>
                     </div>
-                    <div class="wrapper__item-decore">
+                    <div class="wrapper__item-decore ${important ? 'decore-bg' :false}">
                         <span></span>
                     </div>
                     <div class="wrapper__item-descr">${title}</div>
@@ -292,11 +293,6 @@ window.addEventListener('DOMContentLoaded', (e) => {
         });
 
     }
-
-
-
-    
-
 
 
     const addEventOnTrashBtn = () => {
