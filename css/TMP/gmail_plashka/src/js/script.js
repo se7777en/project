@@ -28,7 +28,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
             favorite: false,
             title: 'SAP 2',
             text: 'As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
-            date: '19 Feb1'
+            date: '19 Feb1QQ'
         },
         {
             id: uniqueId(),
@@ -36,7 +36,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
             favorite: false,
             title: 'SAP 3',
             text: 'As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
-            date: '20 Feb2'
+            date: '20 Feb2BB'
         },
         {
             id: uniqueId(),
@@ -44,7 +44,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
             favorite: false,
             title: 'SAP 4',
             text: 'As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
-            date: '20 Feb2'
+            date: '20 Feb2AA'
         },
         {
             id: uniqueId(),
@@ -52,7 +52,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
             favorite: false,
             title: 'SAP 5',
             text: 'As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
-            date: '20 Feb2'
+            date: '20 Feb2AA2'
         },
         {
             id: uniqueId(),
@@ -60,7 +60,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
             favorite: false,
             title: 'SAP 6',
             text: 'As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
-            date: '20 Feb2'
+            date: '20 Feb2AA3'
         },
         {
             id: uniqueId(),
@@ -68,7 +68,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
             favorite: false,
             title: 'SAP 7',
             text: 'As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
-            date: '20 Feb2'
+            date: '20 Feb2AA4'
         },
         {
             id: uniqueId(),
@@ -76,7 +76,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
             favorite: false,
             title: 'SAP 8',
             text: 'As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
-            date: '20 Feb2'
+            date: '20 Feb2AA5'
         },
         {
             id: uniqueId(),
@@ -84,7 +84,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
             favorite: false,
             title: 'SAP 9',
             text: 'As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
-            date: '20 Feb2'
+            date: '20 Feb2AA6'
         },
         {
             id: uniqueId(),
@@ -92,7 +92,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
             favorite: false,
             title: 'SAP 10',
             text: 'As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
-            date: '20 Feb2'
+            date: '20 Feb2AA7'
         }
 
 
