@@ -52,7 +52,48 @@ window.addEventListener('DOMContentLoaded', (e) => {
             title: 'SAP 5',
             text: 'As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
             date: '20 Feb2'
+        },
+        {
+            id: uniqueId(),
+            important: false,
+            favorite: false,
+            title: 'SAP 6',
+            text: 'As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
+            date: '20 Feb2'
+        },
+        {
+            id: uniqueId(),
+            important: false,
+            favorite: false,
+            title: 'SAP 7',
+            text: 'As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
+            date: '20 Feb2'
+        },
+        {
+            id: uniqueId(),
+            important: false,
+            favorite: false,
+            title: 'SAP 8',
+            text: 'As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
+            date: '20 Feb2'
+        },
+        {
+            id: uniqueId(),
+            important: false,
+            favorite: false,
+            title: 'SAP 9',
+            text: 'As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
+            date: '20 Feb2'
+        },
+        {
+            id: uniqueId(),
+            important: false,
+            favorite: false,
+            title: 'SAP 10',
+            text: 'As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
+            date: '20 Feb2'
         }
+
 
     ];
 
@@ -260,29 +301,26 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 let wrapItem = event.currentTarget.closest('.wrapper__item');
                 let dataId = wrapItem.dataset.id;
 
+                if (window.localStorage.getItem('myobj')) {
+                    objfromStorage = JSON.parse(window.localStorage.getItem('myobj'));
+                }
+
                 let tmpArr = objfromStorage.filter((item) => item.id !== dataId);
 
 
                 window.localStorage.setItem('myobj', JSON.stringify(tmpArr)); // save to storage
                 addItemsFromObj(tmpArr); // add on page
                 addStyles();
+                addEventOnTrashBtn();
                 console.log(tmpArr);
             });
-
         });
-
-    }
-
-    function dataFilter() {
-        addEventOnTrashBtn();
-        console.log('dataFilter');
     }
 
 
-    dataFilter();
-
-    addStyles();
     addEventOnTrashBtn();
+    addStyles();
+
 
 
 
