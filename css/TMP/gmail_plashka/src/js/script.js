@@ -186,10 +186,19 @@ window.addEventListener('DOMContentLoaded', (e) => {
         });
     }
 
-    const itemBg = (currentStar, classname) => {
+    const itemBg = (currentStar, classname, index) => {
         currentStar.addEventListener('click', () => {
             currentStar.classList.toggle(classname);
             // console.log(currentStar);
+
+            // let wrapItem = currentStar.closest('.wrapper__item');
+            // let dataId = wrapItem.dataset.id;
+            // if(dataId === objfromStorage[index].id) {
+            //     console.log(dataId, '---', objfromStorage[index].id);
+            //     console.log(objfromStorage[index].favorite);
+               
+            //     objfromStorage[index].favorite = !objfromStorage[index].favorite;
+            // }
         })
     }
 
@@ -271,7 +280,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
     function addStyles() {
         const items = document.querySelectorAll('.wrapper__item');
-        items.forEach((item) => { // perebiraem plashki s itemami
+        items.forEach((item, index) => { // perebiraem plashki s itemami
             const trashBtn = item.querySelector('.trash__btn'), // poluchaem u plashki roditelya korzini
                 // labelChb = item.querySelector('.wrapper__item-chb'),
                 starDecore = item.querySelector('.wrapper__item-star'),
@@ -284,8 +293,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
             itemBoxShadow(chbCover, 'castom__chb-shadow');
             itemBoxShadow(starDecore, 'star-shadow');
             itemBoxShadow(decoreStyles, 'decore-shadow');
-            itemBg(starDecore, 'star-bg');
-            itemBg(decoreStyles, 'decore-bg');
+            itemBg(starDecore, 'star-bg',index);
+            itemBg(decoreStyles, 'decore-bg',index);
             // console.log('OK');
 
             showTrashBoxOnChb(chbCover, trashBtn, 'item-trash', trashBtnItem, editShadow, dataItem);
