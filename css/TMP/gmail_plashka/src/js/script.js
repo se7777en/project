@@ -24,74 +24,74 @@ window.addEventListener('DOMContentLoaded', (e) => {
     let wrapData = [
         {
             id: uniqueId(),
-            important: true,
             favorite: true,
-            title: 'SAP 2',
-            text: 'As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
+            important: false,
+            title: '2SAP 2',
+            text: '2As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
             date: '19 Feb1QQ'
         },
         {
             id: uniqueId(),
-            important: false,
             favorite: false,
-            title: 'SAP 3',
-            text: 'As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
+            important: false,
+            title: '3SAP 3',
+            text: '3As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
             date: '20 Feb2BB'
         },
         {
             id: uniqueId(),
-            important: true,
-            favorite: true,
-            title: 'SAP 4',
-            text: 'As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
+            favorite: false,
+            important: false,
+            title: '4SAP 4',
+            text: '4As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
             date: '20 Feb2AA'
         },
         {
             id: uniqueId(),
-            important: false,
             favorite: false,
-            title: 'SAP 5',
-            text: 'As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
+            important: false,
+            title: '5SAP 5',
+            text: '5As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
             date: '20 Feb2AA2'
         },
         {
             id: uniqueId(),
-            important: true,
-            favorite: true,
-            title: 'SAP 6',
-            text: 'As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
+            favorite: false,
+            important: false,
+            title: '6SAP 6',
+            text: '6As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
             date: '20 Feb2AA3'
         },
         {
             id: uniqueId(),
-            important: false,
             favorite: false,
-            title: 'SAP 7',
-            text: 'As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
+            important: false,
+            title: '7SAP 7',
+            text: '7As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
             date: '20 Feb2AA4'
         },
         {
             id: uniqueId(),
-            important: false,
             favorite: false,
-            title: 'SAP 8',
-            text: 'As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
+            important: false,
+            title: '8SAP 8',
+            text: '8As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
             date: '20 Feb2AA5'
         },
         {
             id: uniqueId(),
-            important: false,
             favorite: false,
-            title: 'SAP 9',
-            text: 'As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
+            important: false,
+            title: '9SAP 9',
+            text: '9As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
             date: '20 Feb2AA6'
         },
         {
             id: uniqueId(),
+            favorite: true,
             important: false,
-            favorite: false,
-            title: 'SAP 10',
-            text: 'As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
+            title: '10SAP 10',
+            text: '10As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
             date: '20 Feb2AA7'
         }
 
@@ -137,10 +137,10 @@ window.addEventListener('DOMContentLoaded', (e) => {
                             <span class="castom__chb"></span>
                         </label>
                     </div>
-                    <div class="wrapper__item-star ${starFavorite ? 'star-bg' :false}">
+                    <div class="wrapper__item-star ${starFavorite ? 'star-bg' : false}">
                         <span></span>
                     </div>
-                    <div class="wrapper__item-decore ${important ? 'decore-bg' :false}">
+                    <div class="wrapper__item-decore ${important ? 'decore-bg' : false}">
                         <span></span>
                     </div>
                     <div class="wrapper__item-descr">${title}</div>
@@ -189,16 +189,22 @@ window.addEventListener('DOMContentLoaded', (e) => {
     const itemBg = (currentStar, classname, index) => {
         currentStar.addEventListener('click', () => {
             currentStar.classList.toggle(classname);
-            // console.log(currentStar);
+            console.log(currentStar);
 
-            // let wrapItem = currentStar.closest('.wrapper__item');
-            // let dataId = wrapItem.dataset.id;
-            // if(dataId === objfromStorage[index].id) {
-            //     console.log(dataId, '---', objfromStorage[index].id);
-            //     console.log(objfromStorage[index].favorite);
-               
-            //     objfromStorage[index].favorite = !objfromStorage[index].favorite;
-            // }
+            let wrapItem = currentStar.closest('.wrapper__item');
+            let dataId = wrapItem.dataset.id;
+            if (dataId === objfromStorage[index].id) {
+                // console.log(dataId, '---', objfromStorage[index].id);
+                // console.log(objfromStorage[index].favorite);
+                // const data = JSON.parse(window.localStorage.getItem('myobj'));
+                if (classname === 'star-bg') {
+                    objfromStorage[index].favorite = !objfromStorage[index].favorite;
+                } else {
+                    objfromStorage[index].important = !objfromStorage[index].important;
+                }
+                window.localStorage.setItem('myobj', JSON.stringify(objfromStorage));
+
+            }
         })
     }
 
@@ -228,11 +234,14 @@ window.addEventListener('DOMContentLoaded', (e) => {
     }
     showWrapperDlg();
 
+
+
     const closeWrapperDlg = () => {
         //console.log(checkIcon);
         checkIcon.addEventListener('click', () => {
-            mainDialog.classList.remove('showdialog');
-            mainBody.classList.remove('lock');
+            // mainDialog.classList.remove('showdialog');
+            // mainBody.classList.remove('lock');
+            console.log('Exit');
         });
     }
     closeWrapperDlg();
@@ -245,6 +254,10 @@ window.addEventListener('DOMContentLoaded', (e) => {
         });
     }
     returnToMainArr();
+
+    // const saveTo = () => {
+    //     dialog__icons
+    // }
 
     const calcTexareaSimbols = () => {
         dialogArea.addEventListener('input', () => {
@@ -290,11 +303,12 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 dataItem = item.querySelector('.wrapper__item-date'),
                 trashBtnItem = item.querySelector('.trash__img-item');
 
+
             itemBoxShadow(chbCover, 'castom__chb-shadow');
             itemBoxShadow(starDecore, 'star-shadow');
             itemBoxShadow(decoreStyles, 'decore-shadow');
-            itemBg(starDecore, 'star-bg',index);
-            itemBg(decoreStyles, 'decore-bg',index);
+            itemBg(starDecore, 'star-bg', index);
+            itemBg(decoreStyles, 'decore-bg', index);
             // console.log('OK');
 
             showTrashBoxOnChb(chbCover, trashBtn, 'item-trash', trashBtnItem, editShadow, dataItem);
@@ -308,6 +322,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
         const items = document.querySelectorAll('.wrapper__item');
         items.forEach((item) => {
             let trashImg = item.querySelector('.trash__img-item');
+            let editItem = item.querySelector('.edit__img-item');
             trashImg.addEventListener('click', (event) => {
                 let wrapItem = event.currentTarget.closest('.wrapper__item');
                 let dataId = wrapItem.dataset.id;
@@ -325,8 +340,51 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 addEventOnTrashBtn();
                 console.log(tmpArr);
             });
+
+            editItem.addEventListener('click', () => {
+                console.log(item);
+                mainDialog.classList.toggle('showdialog');
+                mainBody.classList.add("lock");
+             
+
+                //////zagolovok///////
+                const areaTitle = document.querySelector('.dialog__wrap .title__input');
+                const title = item.querySelector('.wrapper__item-descr');
+                areaTitle.value = title.innerText;
+                //////zagolovok///////    
+
+                //////text///////    
+                const textToArea = document.querySelector('.dialog__text .textarea');
+                const text = item.querySelector('.wrapper__item-text');
+                textToArea.value = text.innerText; 
+                ///////text//////
+
+
+
+                wrapDate.textContent = getCurrentTime(); 
+                let count = dialogArea.value.length; // shitaem simvoli pri pervom zapuske
+                simbolsCount.textContent = count;
+
+           
+               
+                // if (window.localStorage.getItem('myobj')) {
+                //     objfromStorage = JSON.parse(window.localStorage.getItem('myobj'));
+                // }
+            });
         });
     }
+
+
+
+    // const editItem = () => {
+    //     const  editBtnItem = item.querySelector('.edit__img-item');
+    //     editBtnItem.addEventListener('click', () => {
+    //         showWrapperDlg();
+    //     });
+    // }
+
+    // editItem();
+
 
 
     addEventOnTrashBtn();
