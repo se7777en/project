@@ -11,7 +11,10 @@ window.addEventListener('DOMContentLoaded', (e) => {
         leftArr = document.querySelector('.dialog__icons .left__arrow'),
         checkIcon = document.querySelector('.dialog__icons .check'),
         mainBody = document.querySelector('body'),
-        mainDialog = document.querySelector('.dialog__wrap');
+        mainDialog = document.querySelector('.dialog__wrap'),
+        addNewItem = document.querySelector('.add__item footer-item');
+
+
 
 
     //const uniqueId = `id_${Date.now()}_${Math.floor(Math.random() * 1000)}`;
@@ -220,87 +223,88 @@ window.addEventListener('DOMContentLoaded', (e) => {
         }
     }
 
-    const showWrapperDlg = () => {
-        dialogBtn.addEventListener('click', () => {
-            mainDialog.classList.toggle('showdialog');
-            mainBody.classList.add("lock");
+    // const showWrapperDlg = () => {
+    //     dialogBtn.addEventListener('click', () => {
+    //         mainDialog.classList.toggle('showdialog');
+    //         mainBody.classList.add("lock");
 
-            let count = dialogArea.value.length; // shitaem simvoli pri pervom zapuske
-            simbolsCount.textContent = count;
+    //          let count = dialogArea.value.length; // shitaem simvoli pri pervom zapuske
+    //          simbolsCount.textContent = count;
 
-            wrapDate.textContent = getCurrentTime(); // dobavlyaem vremya v dialogbox
-            //22 февраля 5:07 PM
-        });
-    }
-    showWrapperDlg();
+    //          wrapDate.textContent = getCurrentTime(); // dobavlyaem vremya v dialogbox
+    //         //22 февраля 5:07 PM
+    //     });
+    // }
+    // showWrapperDlg();
 
 
 
     const closeAndSaveDlg = () => {
+   
         checkIcon.addEventListener('click', () => {
+        
+                console.log('ok');
+                const dlgTitle = document.querySelector('.dialog__wrap .title__input').value,
+                    dlgsubTitleDate = document.querySelector('.dialog__wrap .subtitle__date').textContent,
+                    dlgTextarea = document.querySelector('.dialog__text .textarea').value;
 
-            console.log('ok');
-            const dlgTitle = document.querySelector('.dialog__wrap .title__input').value,
-                dlgsubTitleDate = document.querySelector('.dialog__wrap .subtitle__date').textContent,
-                dlgTextarea = document.querySelector('.dialog__text .textarea').value;
-
-            const checkbox = document.querySelectorAll('.wrapper__item .wrapper__chb');
-            let checkedId = '';
-            let stoploop = false;
-            checkbox.forEach((item) => {
-                if (stoploop) return;
-                let checked = item.checked;
-                if (checked) {
-                    let formParent = item.closest('.wrapper__item');
-                    checkedId = formParent.dataset.id;
-                    stoploop = true;
-                }
-            });
-
-            let obj = '';
-            if (window.localStorage.getItem('myobj')) {
-                obj = JSON.parse(window.localStorage.getItem('myobj'));
-            }
-            let stoploop2 = false;
-            obj.forEach((item) => {
-                if (stoploop2) return;
-                if (item.id === checkedId) {
-                    console.log('found!');
-                    item.title = dlgTitle;
-                    item.text = dlgTextarea;
-                    item.date = dlgsubTitleDate;
-
-                    if (window.localStorage.getItem('myobj')) {
-                        window.localStorage.setItem('myobj', JSON.stringify(obj));
+                const checkbox = document.querySelectorAll('.wrapper__item .wrapper__chb');
+                let checkedId = '';
+                let stoploop = false;
+                checkbox.forEach((item) => {
+                    if (stoploop) return;
+                    let checked = item.checked;
+                    if (checked) {
+                        let formParent = item.closest('.wrapper__item');
+                        checkedId = formParent.dataset.id;
+                        stoploop = true;
                     }
-                    stoploop2 = true;
+                });
+
+                let obj = '';
+                if (window.localStorage.getItem('myobj')) {
+                    obj = JSON.parse(window.localStorage.getItem('myobj'));
                 }
-            });
+                let stoploop2 = false;
+                obj.forEach((item) => {
+                    if (stoploop2) return;
+                    if (item.id === checkedId) {
+                        console.log('found!');
+                        item.title = dlgTitle;
+                        item.text = dlgTextarea;
+                        item.date = dlgsubTitleDate;
+
+                        if (window.localStorage.getItem('myobj')) {
+                            window.localStorage.setItem('myobj', JSON.stringify(obj));
+                        }
+                        stoploop2 = true;
+                    }
+                });
 
 
-            let dataRefresh = '';
-            if(window.localStorage.getItem('myobj')){
-                dataRefresh = JSON.parse(window.localStorage.getItem('myobj'));
-            }
-           
+                let dataRefresh = '';
+                if (window.localStorage.getItem('myobj')) {
+                    dataRefresh = JSON.parse(window.localStorage.getItem('myobj'));
+                }
 
-            addItemsFromObj(dataRefresh);
-            addStyles();
-            addEventOnTrashBtn();
 
-            mainDialog.classList.remove('showdialog');
-            mainBody.classList.remove('lock');
+                addItemsFromObj(dataRefresh);
+                addStyles();
+                addEventOnTrashBtn();
 
-        });
+                mainDialog.classList.remove('showdialog');
+                mainBody.classList.remove('lock');
+            
+        });   
+  
 
     }
     closeAndSaveDlg();
-    
+
 
 
 
     const returnToMainArr = () => {
-        //console.log(checkIcon);
         leftArr.addEventListener('click', () => {
             mainDialog.classList.remove('showdialog');
             mainBody.classList.remove('lock');
@@ -308,9 +312,6 @@ window.addEventListener('DOMContentLoaded', (e) => {
     }
     returnToMainArr();
 
-    // const saveTo = () => {
-    //     dialog__icons
-    // }
 
     const calcTexareaSimbols = () => {
         dialogArea.addEventListener('input', () => {
@@ -430,30 +431,79 @@ window.addEventListener('DOMContentLoaded', (e) => {
     }
 
 
+    const wrapperShowAddNote = () => {
+        dialogBtn.addEventListener('click', () => {
+           
+            console.log('wrapperShowAddNote');
+            mainDialog.classList.toggle('showdialog');
+            mainBody.classList.add("lock");
 
-    // const editItem = () => {
-    //     const  editBtnItem = item.querySelector('.edit__img-item');
-    //     editBtnItem.addEventListener('click', () => {
-    //         showWrapperDlg();
-    //     });
-    // }
+            let count = dialogArea.value.length; // shitaem simvoli pri pervom zapuske
+            simbolsCount.textContent = count;
+            wrapDate.textContent = getCurrentTime(); // dobavlyaem vremya v dialogbox
+            //22 февраля 5:07 PM
 
-    // editItem();
+        });
+    }
+    // wrapperShowAddNote();
+
+
+    const addItemFromNote = () => {
+            console.log('addItemFromNote');
+            checkIcon.addEventListener('click', () => {
+                const dlgTitle = document.querySelector('.dialog__wrap .title__input').value,
+                    dlgTextarea = document.querySelector('.dialog__text .textarea').value,
+                    dlgsubTitleDate = document.querySelector('.dialog__wrap .subtitle__date').textContent;
+
+                let newdate = {
+                    id: uniqueId(),
+                    favorite: false,
+                    important: false,
+                    title: dlgTitle,
+                    text: dlgTextarea,
+                    date: dlgsubTitleDate
+                }
+
+                let wrapperObj = '';
+                if (!window.localStorage.getItem('myobj')) {
+                    window.localStorage.setItem('myobj', JSON.stringify(newdate));
+                } else {
+                    wrapperObj = JSON.parse(window.localStorage.getItem('myobj'));
+                }
+                wrapperObj.push(newdate);
+
+                if (window.localStorage.getItem('myobj')) {
+                    window.localStorage.setItem('myobj', JSON.stringify(wrapperObj));
+                }
+                console.log(wrapperObj);
+                console.log(wrapData.length);
+
+
+                ////////////////////
+                let dataRefresh = '';
+                if (window.localStorage.getItem('myobj')) {
+                    dataRefresh = JSON.parse(window.localStorage.getItem('myobj'));
+                }
+                addItemsFromObj(dataRefresh);
+                addStyles();
+                addEventOnTrashBtn();
+                mainDialog.classList.remove('showdialog');
+                mainBody.classList.remove('lock');
+                ////////////////////
+
+            });
+     
+
+    }
+
+    // addItemFromNote();
+
+
+
 
 
 
     addEventOnTrashBtn();
     addStyles();
-
-
-
-
-
-
-
-
-
-
-
 
 });
