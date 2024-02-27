@@ -236,15 +236,16 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
 
 
-    const closeWrapperDlg = () => {
+    const closeandSaveDlg = (item) => {
         //console.log(checkIcon);
         checkIcon.addEventListener('click', () => {
             // mainDialog.classList.remove('showdialog');
             // mainBody.classList.remove('lock');
-            console.log('Exit');
+            const dlgTitle = document.querySelector('.dialog__wrap .title__input');
+            item.querySelector('.wrapper__item-descr').innerText = dlgTitle.value;
         });
     }
-    closeWrapperDlg();
+    // closeWrapperDlg();
 
     const returnToMainArr = () => {
         //console.log(checkIcon);
@@ -371,6 +372,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 //     objfromStorage = JSON.parse(window.localStorage.getItem('myobj'));
                 // }
             });
+
+            closeandSaveDlg(item); 
         });
     }
 
