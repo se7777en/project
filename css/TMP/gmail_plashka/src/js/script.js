@@ -236,16 +236,64 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
 
 
-    const closeandSaveDlg = (item) => {
-        //console.log(checkIcon);
+    const closeAndSaveDlg = () => {
         checkIcon.addEventListener('click', () => {
-            // mainDialog.classList.remove('showdialog');
-            // mainBody.classList.remove('lock');
-            const dlgTitle = document.querySelector('.dialog__wrap .title__input');
-            item.querySelector('.wrapper__item-descr').innerText = dlgTitle.value;
+
+            console.log('ok');
+            const dlgTitle = document.querySelector('.dialog__wrap .title__input').value,
+                dlgsubTitleDate = document.querySelector('.dialog__wrap .subtitle__date').textContent,
+                dlgTextarea = document.querySelector('.dialog__text .textarea').value;
+
+            const checkbox = document.querySelectorAll('.wrapper__item .wrapper__chb');
+            let checkedId = '';
+            let stoploop = false;
+            checkbox.forEach((item) => {
+                if (stoploop) return;
+                let checked = item.checked;
+                if (checked) {
+                    let formParent = item.closest('.wrapper__item');
+                    checkedId = formParent.dataset.id;
+                    stoploop = true;
+                }
+            });
+
+            let obj = '';
+            if (window.localStorage.getItem('myobj')) {
+                obj = JSON.parse(window.localStorage.getItem('myobj'));
+            }
+            let stoploop2 = false;
+            obj.forEach((item) => {
+                if (stoploop2) return;
+                if (item.id === checkedId) {
+                    console.log('found!');
+                    item.title = dlgTitle;
+                    item.text = dlgTextarea;
+                    item.date = dlgsubTitleDate;
+
+                    if (window.localStorage.getItem('myobj')) {
+                        window.localStorage.setItem('myobj', JSON.stringify(obj));
+                    }
+                    stoploop2 = true;
+                }
+            });
+
+
+
+            const dataRefresh = JSON.parse(window.localStorage.getItem('myobj'));
+            addItemsFromObj(dataRefresh);
+            addStyles();
+            addEventOnTrashBtn();
+
+            mainDialog.classList.remove('showdialog');
+            mainBody.classList.remove('lock');
+
         });
+
     }
-    // closeWrapperDlg();
+    closeAndSaveDlg();
+    
+
+
 
     const returnToMainArr = () => {
         //console.log(checkIcon);
@@ -339,14 +387,14 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 addItemsFromObj(tmpArr); // add on page
                 addStyles();
                 addEventOnTrashBtn();
-                console.log(tmpArr);
+                //console.log(tmpArr);
             });
 
             editItem.addEventListener('click', () => {
                 console.log(item);
                 mainDialog.classList.toggle('showdialog');
                 mainBody.classList.add("lock");
-             
+
 
                 //////zagolovok///////
                 const areaTitle = document.querySelector('.dialog__wrap .title__input');
@@ -357,23 +405,23 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 //////text///////    
                 const textToArea = document.querySelector('.dialog__text .textarea');
                 const text = item.querySelector('.wrapper__item-text');
-                textToArea.value = text.innerText; 
+                textToArea.value = text.innerText;
                 ///////text//////
 
 
 
-                wrapDate.textContent = getCurrentTime(); 
+                wrapDate.textContent = getCurrentTime();
                 let count = dialogArea.value.length; // shitaem simvoli pri pervom zapuske
                 simbolsCount.textContent = count;
 
-           
-               
+
+
                 // if (window.localStorage.getItem('myobj')) {
                 //     objfromStorage = JSON.parse(window.localStorage.getItem('myobj'));
                 // }
             });
 
-            closeandSaveDlg(item); 
+            // closeandSaveDlg(item); 
         });
     }
 
