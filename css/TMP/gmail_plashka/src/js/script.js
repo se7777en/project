@@ -278,8 +278,12 @@ window.addEventListener('DOMContentLoaded', (e) => {
             });
 
 
+            let dataRefresh = '';
+            if(window.localStorage.getItem('myobj')){
+                dataRefresh = JSON.parse(window.localStorage.getItem('myobj'));
+            }
+           
 
-            const dataRefresh = JSON.parse(window.localStorage.getItem('myobj'));
             addItemsFromObj(dataRefresh);
             addStyles();
             addEventOnTrashBtn();
