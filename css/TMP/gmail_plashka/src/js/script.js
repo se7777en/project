@@ -293,7 +293,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     const getCurrentTime = () => {
         var currentDate = new Date(); // Получаем текущую дату и время
         var dayOfMonth = currentDate.getDate(); // Получаем день месяца
-        var monthNames = ["янв", "фев", "мар", "апр", "мая", "июн", "июл", "авг", "сен", "окт", "ноя", "дек"]; // Создаем массив с названиями месяцев
+        var monthNames = ["январь", "февраль", "март", "апрель", "май", "июнь", "июль", "август", "сентябрь", "октябрь", "ноябрь", "декабрь"]; // Создаем массив с названиями месяцев
         var monthNumber = currentDate.getMonth();// Получаем номер месяца и его название
         var monthName = monthNames[monthNumber];
 
