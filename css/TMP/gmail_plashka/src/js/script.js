@@ -87,7 +87,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
             const data_id = item.id;
             const title = item.title;
             const text = item.text;
-            const date = item.date;
+            const date = item.date.split(" ").slice(0, 2).join(" ");
 
             elements += `
             <div class="wrapper__item" data-id="${data_id}">
