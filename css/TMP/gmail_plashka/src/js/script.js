@@ -17,13 +17,13 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
       
        
-       document.addEventListener('click', () => {
-        const  size =  window.getComputedStyle(mainBody);
-        const size_x = size.width;
-        const size_y = size.height;
-        document.querySelector('.wrapper__size').textContent = `width = ${size_x} , height = ${size_y}`;
+    //    document.addEventListener('click', () => {
+    //     const  size =  window.getComputedStyle(mainBody);
+    //     const size_x = size.width;
+    //     const size_y = size.height;
+    //     document.querySelector('.wrapper__size').textContent = `width = ${size_x} , height = ${size_y}`;
 
-       })
+    //    })
        
 
 
