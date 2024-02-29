@@ -674,6 +674,13 @@ textarea::-webkit-scrollbar-thumb {
 }
 
 
+.wrapper__size {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+
 
 
 
@@ -751,6 +758,12 @@ width: 1560px
     }
     
 }
+
+/* @media (max-width: 840px) {   //edit trash container
+    .trash__btn-inner {
+        padding-left: 8px;
+    }
+} */
 
 @media (max-width: 530px){
     .trash__btn {
