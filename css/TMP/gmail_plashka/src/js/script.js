@@ -10,9 +10,26 @@ window.addEventListener('DOMContentLoaded', (e) => {
         dialogBtn = document.querySelector('.wrapper__footer span'),
         leftArr = document.querySelector('.dialog__icons .left__arrow'),
         checkIcon = document.querySelector('.dialog__icons .check'),
+        addItem = document.querySelector('.dialog__icons .addItem'),
         mainBody = document.querySelector('body'),
-        mainDialog = document.querySelector('.dialog__wrap'),
-        addNewItem = document.querySelector('.add__item footer-item');
+        mainDialog = document.querySelector('.dialog__wrap');
+       
+
+      
+       
+       document.addEventListener('click', () => {
+        const  size =  window.getComputedStyle(mainBody);
+        const size_x = size.width;
+        const size_y = size.height;
+        document.querySelector('.wrapper__size').textContent = `width = ${size_x} , height = ${size_y}`;
+
+       })
+       
+
+
+
+
+
 
 
 
@@ -31,74 +48,24 @@ window.addEventListener('DOMContentLoaded', (e) => {
             important: false,
             title: '2SAP 2',
             text: '2As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
-            date: '19 Feb1QQ'
+            date: '19 Feb'
         },
         {
             id: uniqueId(),
             favorite: false,
-            important: false,
+            important: true,
             title: '3SAP 3',
             text: '3As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
-            date: '20 Feb2BB'
-        },
-        {
-            id: uniqueId(),
-            favorite: false,
-            important: false,
-            title: '4SAP 4',
-            text: '4As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
-            date: '20 Feb2AA'
-        },
-        {
-            id: uniqueId(),
-            favorite: false,
-            important: false,
-            title: '5SAP 5',
-            text: '5As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
-            date: '20 Feb2AA2'
-        },
-        {
-            id: uniqueId(),
-            favorite: false,
-            important: false,
-            title: '6SAP 6',
-            text: '6As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
-            date: '20 Feb2AA3'
-        },
-        {
-            id: uniqueId(),
-            favorite: false,
-            important: false,
-            title: '7SAP 7',
-            text: '7As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
-            date: '20 Feb2AA4'
-        },
-        {
-            id: uniqueId(),
-            favorite: false,
-            important: false,
-            title: '8SAP 8',
-            text: '8As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
-            date: '20 Feb2AA5'
-        },
-        {
-            id: uniqueId(),
-            favorite: false,
-            important: false,
-            title: '9SAP 9',
-            text: '9As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
-            date: '20 Feb2AA6'
+            date: '20 Feb'
         },
         {
             id: uniqueId(),
             favorite: true,
             important: false,
-            title: '10SAP 10',
-            text: '10As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
-            date: '20 Feb2AA7'
+            title: '4SAP 4',
+            text: '4As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
+            date: '20 Feb'
         }
-
-
     ];
 
     let objfromStorage = '';
@@ -172,7 +139,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
         checkbox.addEventListener('change', () => {
             checked = checkbox.checked;
             // checked? classTotrashBox.classList.add(clasname): classTotrashBox.classList.remove(clasname);
-
+            // hideElem(one);
+            // showElem(checkIcon);
 
             //showTrashBoxOnChb(chbCover, trashBtn, 'item-trash', trashShadow, editShadow);
             if (checked) {
@@ -240,63 +208,63 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
 
     const closeAndSaveDlg = () => {
-   
+
         checkIcon.addEventListener('click', () => {
-        
-                console.log('ok');
-                const dlgTitle = document.querySelector('.dialog__wrap .title__input').value,
-                    dlgsubTitleDate = document.querySelector('.dialog__wrap .subtitle__date').textContent,
-                    dlgTextarea = document.querySelector('.dialog__text .textarea').value;
+            console.log('ok');
+            const dlgTitle = document.querySelector('.dialog__wrap .title__input').value,
+                dlgsubTitleDate = document.querySelector('.dialog__wrap .subtitle__date').textContent,
+                dlgTextarea = document.querySelector('.dialog__text .textarea').value;
 
-                const checkbox = document.querySelectorAll('.wrapper__item .wrapper__chb');
-                let checkedId = '';
-                let stoploop = false;
-                checkbox.forEach((item) => {
-                    if (stoploop) return;
-                    let checked = item.checked;
-                    if (checked) {
-                        let formParent = item.closest('.wrapper__item');
-                        checkedId = formParent.dataset.id;
-                        stoploop = true;
-                    }
-                });
+            const checkbox = document.querySelectorAll('.wrapper__item .wrapper__chb');
+            let checkedId = '';
+            let stoploop = false;
+            checkbox.forEach((item) => {
 
-                let obj = '';
-                if (window.localStorage.getItem('myobj')) {
-                    obj = JSON.parse(window.localStorage.getItem('myobj'));
+                if (stoploop) return;
+                let checked = item.checked;
+                if (checked) {
+                    let formParent = item.closest('.wrapper__item');
+                    checkedId = formParent.dataset.id;
+                    stoploop = true;
                 }
-                let stoploop2 = false;
-                obj.forEach((item) => {
-                    if (stoploop2) return;
-                    if (item.id === checkedId) {
-                        console.log('found!');
-                        item.title = dlgTitle;
-                        item.text = dlgTextarea;
-                        item.date = dlgsubTitleDate;
+            });
 
-                        if (window.localStorage.getItem('myobj')) {
-                            window.localStorage.setItem('myobj', JSON.stringify(obj));
-                        }
-                        stoploop2 = true;
+            let obj = '';
+            if (window.localStorage.getItem('myobj')) {
+                obj = JSON.parse(window.localStorage.getItem('myobj'));
+            }
+            let stoploop2 = false;
+            obj.forEach((item) => {
+                if (stoploop2) return;
+                if (item.id === checkedId) {
+                    console.log('found!');
+                    item.title = dlgTitle;
+                    item.text = dlgTextarea;
+                    item.date = dlgsubTitleDate;
+
+                    if (window.localStorage.getItem('myobj')) {
+                        window.localStorage.setItem('myobj', JSON.stringify(obj));
                     }
-                });
-
-
-                let dataRefresh = '';
-                if (window.localStorage.getItem('myobj')) {
-                    dataRefresh = JSON.parse(window.localStorage.getItem('myobj'));
+                    stoploop2 = true;
                 }
+            });
 
 
-                addItemsFromObj(dataRefresh);
-                addStyles();
-                addEventOnTrashBtn();
+            let dataRefresh = '';
+            if (window.localStorage.getItem('myobj')) {
+                dataRefresh = JSON.parse(window.localStorage.getItem('myobj'));
+            }
 
-                mainDialog.classList.remove('showdialog');
-                mainBody.classList.remove('lock');
-            
-        });   
-  
+
+            addItemsFromObj(dataRefresh);
+            addStyles();
+            addEventOnTrashBtn();
+
+            mainDialog.classList.remove('showdialog');
+            mainBody.classList.remove('lock');
+
+        });
+
 
     }
     closeAndSaveDlg();
@@ -325,7 +293,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     const getCurrentTime = () => {
         var currentDate = new Date(); // Получаем текущую дату и время
         var dayOfMonth = currentDate.getDate(); // Получаем день месяца
-        var monthNames = ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"]; // Создаем массив с названиями месяцев
+        var monthNames = ["янв", "фев", "мар", "апр", "мая", "июн", "июл", "авг", "сен", "окт", "ноя", "дек"]; // Создаем массив с названиями месяцев
         var monthNumber = currentDate.getMonth();// Получаем номер месяца и его название
         var monthName = monthNames[monthNumber];
 
@@ -372,12 +340,16 @@ window.addEventListener('DOMContentLoaded', (e) => {
     }
 
 
+
+
+
     const addEventOnTrashBtn = () => {
         const items = document.querySelectorAll('.wrapper__item');
         items.forEach((item) => {
             let trashImg = item.querySelector('.trash__img-item');
             let editItem = item.querySelector('.edit__img-item');
             trashImg.addEventListener('click', (event) => {
+
                 let wrapItem = event.currentTarget.closest('.wrapper__item');
                 let dataId = wrapItem.dataset.id;
 
@@ -396,6 +368,14 @@ window.addEventListener('DOMContentLoaded', (e) => {
             });
 
             editItem.addEventListener('click', () => {
+
+                //show checkIcon on Dlg header //
+                checkIcon.classList.remove('hide__icon', 'show__icon');
+                addItem.classList.remove('hide__icon', 'show__icon');
+                checkIcon.classList.add('show__icon');
+                addItem.classList.add('hide__icon');
+                ////
+
                 console.log(item);
                 mainDialog.classList.toggle('showdialog');
                 mainBody.classList.add("lock");
@@ -431,9 +411,28 @@ window.addEventListener('DOMContentLoaded', (e) => {
     }
 
 
+    // const hideElem = (element) => {
+    //     element.classList.add('hide');
+    // }
+
+    // const showElem = (element) => {
+    //     element.classList.add('show');
+    // }
+
     const wrapperShowAddNote = () => {
         dialogBtn.addEventListener('click', () => {
-           
+            // hideElem(checkIcon);
+            // showElem(one);
+            console.log('+');
+
+            ///////show addItem icon on Dlg header///////
+            checkIcon.classList.remove('hide__icon', 'show__icon');
+            addItem.classList.remove('hide__icon', 'show__icon');
+            checkIcon.classList.add('hide__icon');
+            addItem.classList.add('show__icon');
+            //////////
+
+
             console.log('wrapperShowAddNote');
             mainDialog.classList.toggle('showdialog');
             mainBody.classList.add("lock");
@@ -443,60 +442,69 @@ window.addEventListener('DOMContentLoaded', (e) => {
             wrapDate.textContent = getCurrentTime(); // dobavlyaem vremya v dialogbox
             //22 февраля 5:07 PM
 
+            document.querySelector('.dialog__wrap .title__input').value = '';
+            document.querySelector('.dialog__text .textarea').value = '';
+           // document.querySelector('.dialog__wrap .subtitle__date').textContent = '';
+
+
+
         });
     }
-    // wrapperShowAddNote();
+    wrapperShowAddNote();
 
 
     const addItemFromNote = () => {
-            console.log('addItemFromNote');
-            checkIcon.addEventListener('click', () => {
-                const dlgTitle = document.querySelector('.dialog__wrap .title__input').value,
-                    dlgTextarea = document.querySelector('.dialog__text .textarea').value,
-                    dlgsubTitleDate = document.querySelector('.dialog__wrap .subtitle__date').textContent;
+        console.log('addItemFromNote');
+        addItem.addEventListener('click', () => {
+            const dlgTitle = document.querySelector('.dialog__wrap .title__input').value,
+                dlgTextarea = document.querySelector('.dialog__text .textarea').value,
+                dlgsubTitleDate = document.querySelector('.dialog__wrap .subtitle__date').textContent;
 
-                let newdate = {
-                    id: uniqueId(),
-                    favorite: false,
-                    important: false,
-                    title: dlgTitle,
-                    text: dlgTextarea,
-                    date: dlgsubTitleDate
-                }
+            let newdate = {
+                id: uniqueId(),
+                favorite: false,
+                important: false,
+                title: dlgTitle,
+                text: dlgTextarea,
+                date: dlgsubTitleDate
+            }
 
-                let wrapperObj = '';
-                if (!window.localStorage.getItem('myobj')) {
-                    window.localStorage.setItem('myobj', JSON.stringify(newdate));
-                } else {
-                    wrapperObj = JSON.parse(window.localStorage.getItem('myobj'));
-                }
-                wrapperObj.push(newdate);
+            let wrapperObj = '';
+            if (!window.localStorage.getItem('myobj')) {
+                window.localStorage.setItem('myobj', JSON.stringify(newdate));
+            } else {
+                wrapperObj = JSON.parse(window.localStorage.getItem('myobj'));
+            }
+            wrapperObj.push(newdate);
 
-                if (window.localStorage.getItem('myobj')) {
-                    window.localStorage.setItem('myobj', JSON.stringify(wrapperObj));
-                }
-                console.log(wrapperObj);
-                console.log(wrapData.length);
+            if (window.localStorage.getItem('myobj')) {
+                window.localStorage.setItem('myobj', JSON.stringify(wrapperObj));
+            }
+            console.log(wrapperObj);
+            console.log(wrapData.length);
 
 
-                ////////////////////
-                let dataRefresh = '';
-                if (window.localStorage.getItem('myobj')) {
-                    dataRefresh = JSON.parse(window.localStorage.getItem('myobj'));
-                }
-                addItemsFromObj(dataRefresh);
-                addStyles();
-                addEventOnTrashBtn();
-                mainDialog.classList.remove('showdialog');
-                mainBody.classList.remove('lock');
-                ////////////////////
+            ////////////////////
+            let dataRefresh = '';
+            if (window.localStorage.getItem('myobj')) {
+                dataRefresh = JSON.parse(window.localStorage.getItem('myobj'));
+            }
+            addItemsFromObj(dataRefresh);
+            addStyles();
+            addEventOnTrashBtn();
+            mainDialog.classList.remove('showdialog');
+            mainBody.classList.remove('lock');
 
-            });
-     
+
+
+            ////////////////////
+
+        });
+
 
     }
 
-    // addItemFromNote();
+    addItemFromNote();
 
 
 

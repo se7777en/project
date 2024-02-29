@@ -493,6 +493,18 @@ body {
     scale: 0 !important;
 }
 
+.hide__icon {
+    display: none;
+    visibility: hidden;
+}
+
+
+
+.show__icon {
+    display: block;
+    visibility: visible;
+}
+
 /* .footer-item:not(:last-child) {
     margin-right: 10px;
 } */
