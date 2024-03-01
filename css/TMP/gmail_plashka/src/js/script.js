@@ -214,9 +214,10 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
         checkIcon.addEventListener('click', () => {
             console.log('ok');
-            const dlgTitle = document.querySelector('.dialog__wrap .title__input').value,
+            const dlgTitle = document.querySelector('.dialog__wrap .title__input').value.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br/>'),
+                           
                 dlgsubTitleDate = document.querySelector('.dialog__wrap .subtitle__date').textContent,
-                dlgTextarea = document.querySelector('.dialog__text .textarea').value;
+                dlgTextarea = document.querySelector('.dialog__text .textarea').value.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br/>');
 
             const checkbox = document.querySelectorAll('.wrapper__item .wrapper__chb');
             let checkedId = '';
@@ -459,8 +460,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
     const addItemFromNote = () => {
         console.log('addItemFromNote');
         addItem.addEventListener('click', () => {
-            const dlgTitle = document.querySelector('.dialog__wrap .title__input').value,
-                dlgTextarea = document.querySelector('.dialog__text .textarea').value,
+            const dlgTitle = document.querySelector('.dialog__wrap .title__input').value.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br/>'),
+                dlgTextarea = document.querySelector('.dialog__text .textarea').value.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br/>'),
                 dlgsubTitleDate = document.querySelector('.dialog__wrap .subtitle__date').textContent;
 
             let newdate = {
