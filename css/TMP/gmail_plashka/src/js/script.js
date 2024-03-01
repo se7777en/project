@@ -13,18 +13,23 @@ window.addEventListener('DOMContentLoaded', (e) => {
         addItem = document.querySelector('.dialog__icons .addItem'),
         mainBody = document.querySelector('body'),
         mainDialog = document.querySelector('.dialog__wrap');
-       
 
-      
-       
-       document.addEventListener('click', () => {
-        const  size =  window.getComputedStyle(mainBody);
+
+    const dlgTitle = document.querySelector('.dialog__wrap .title__input');
+
+    const dlgDate = document.querySelector('.dialog__wrap .subtitle__date');
+
+
+
+
+    document.addEventListener('click', () => {
+        const size = window.getComputedStyle(mainBody);
         const size_x = size.width;
         const size_y = size.height;
         document.querySelector('.wrapper__size').textContent = `width = ${size_x} , height = ${size_y}`;
 
-       })
-       
+    })
+
 
 
 
@@ -89,7 +94,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
             const data_id = item.id;
             const title = item.title;
-            const text = item.text;
+            const text = item.text.replace(/<br\/>/g, '');
             const date = item.date.split(" ").slice(0, 2).join(" ");
 
             elements += `
@@ -215,7 +220,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
         checkIcon.addEventListener('click', () => {
             console.log('ok');
             const dlgTitle = document.querySelector('.dialog__wrap .title__input').value.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br/>'),
-                           
+
                 dlgsubTitleDate = document.querySelector('.dialog__wrap .subtitle__date').textContent,
                 dlgTextarea = document.querySelector('.dialog__text .textarea').value.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br/>');
 
@@ -371,7 +376,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 //console.log(tmpArr);
             });
 
-            editItem.addEventListener('click', () => {
+            editItem.addEventListener('click', (event) => {
 
                 //show checkIcon on Dlg header //
                 checkIcon.classList.remove('hide__icon', 'show__icon');
@@ -385,23 +390,42 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 mainBody.classList.add("lock");
 
 
+                let trashWrapItem = event.currentTarget.closest('.wrapper__item');
+                let trashDataId = trashWrapItem.dataset.id;
+
+                let trashObj = '';
+                if (window.localStorage.getItem('myobj')) {
+                    trashObj = JSON.parse(window.localStorage.getItem('myobj'));
+                }
+
+                const dlgText = document.querySelector('.dialog__wrap .textarea');
+                trashObj.forEach((item) => {
+                    if (item.id === trashDataId) {
+                        dlgTitle.value = item.title;
+                        dlgText.value = item.text;
+                        dlgDate.textContent = item.date;
+
+                        let count = dlgText.value.length; // shitaem simvoli pri pervom zapuske
+                        simbolsCount.textContent = count;
+                    }
+                })
+
                 //////zagolovok///////
-                const areaTitle = document.querySelector('.dialog__wrap .title__input');
-                const title = item.querySelector('.wrapper__item-descr');
-                areaTitle.value = title.innerText;
+
+                // const title = item.querySelector('.wrapper__item-descr');
+                // areaTitle.value = title.innerText;
                 //////zagolovok///////    
 
                 //////text///////    
-                const textToArea = document.querySelector('.dialog__text .textarea');
-                const text = item.querySelector('.wrapper__item-text');
-                textToArea.value = text.innerText;
+
+
+                // textToArea.value = text.innerText;
                 ///////text//////
 
 
 
-                wrapDate.textContent = getCurrentTime();
-                let count = dialogArea.value.length; // shitaem simvoli pri pervom zapuske
-                simbolsCount.textContent = count;
+                // wrapDate.textContent = getCurrentTime();
+
 
 
 
@@ -441,14 +465,15 @@ window.addEventListener('DOMContentLoaded', (e) => {
             mainDialog.classList.toggle('showdialog');
             mainBody.classList.add("lock");
 
-            let count = dialogArea.value.length; // shitaem simvoli pri pervom zapuske
-            simbolsCount.textContent = count;
+            dialogArea.value = ''; // shitaem simvoli pri pervom zapuske
+            dlgTitle.value = '';
+            simbolsCount.textContent = 0;
             wrapDate.textContent = getCurrentTime(); // dobavlyaem vremya v dialogbox
             //22 февраля 5:07 PM
-
-            document.querySelector('.dialog__wrap .title__input').value = '';
-            document.querySelector('.dialog__text .textarea').value = '';
-           // document.querySelector('.dialog__wrap .subtitle__date').textContent = '';
+           
+            // document.querySelector('.dialog__wrap .title__input').value = '';
+            // document.querySelector('.dialog__text .textarea').value = '';
+            // document.querySelector('.dialog__wrap .subtitle__date').textContent = '';
 
 
 
@@ -460,7 +485,10 @@ window.addEventListener('DOMContentLoaded', (e) => {
     const addItemFromNote = () => {
         console.log('addItemFromNote');
         addItem.addEventListener('click', () => {
-            const dlgTitle = document.querySelector('.dialog__wrap .title__input').value.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br/>'),
+            
+
+            if(dialogArea.value.length > 0 && dlgTitle.value.length > 0) {
+                const dlgTitle = document.querySelector('.dialog__wrap .title__input').value.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br/>'),
                 dlgTextarea = document.querySelector('.dialog__text .textarea').value.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br/>'),
                 dlgsubTitleDate = document.querySelector('.dialog__wrap .subtitle__date').textContent;
 
@@ -493,9 +521,15 @@ window.addEventListener('DOMContentLoaded', (e) => {
             if (window.localStorage.getItem('myobj')) {
                 dataRefresh = JSON.parse(window.localStorage.getItem('myobj'));
             }
+
+          // dlgTextarea = document.querySelector('.dialog__text .textarea')
+            //simbolsCount.textContent = dlgTextarea.value.length;
+
             addItemsFromObj(dataRefresh);
             addStyles();
             addEventOnTrashBtn();
+            }
+
             mainDialog.classList.remove('showdialog');
             mainBody.classList.remove('lock');
 
