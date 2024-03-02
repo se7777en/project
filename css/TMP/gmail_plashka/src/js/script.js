@@ -84,6 +84,25 @@ window.addEventListener('DOMContentLoaded', (e) => {
     }
 
 
+    const dateFormat = (item) => {
+        const month = item.split(" ").slice(1, 2).join(" ");
+        const months = ["янв", "фев", "мар", "апр", "май", "июн", "июл", "авг", "сен", "окт", "ноя", "дек"];
+        let search = '';
+        let loop = false;
+        months.forEach((item) => {
+            if (loop) return;
+            if (month.includes(item)) {
+                search = item;
+                loop = true;
+            }
+        });
+        let mon = item.split(" ");
+        mon[1] = search;
+        return mon.slice(0, 2).join(' ');
+    }
+
+
+
 
     let elements = '';
     const addItemsFromObj = (data) => {
@@ -95,7 +114,9 @@ window.addEventListener('DOMContentLoaded', (e) => {
             const data_id = item.id;
             const title = item.title;
             const text = item.text.replace(/<br\/>/g, '');
-            const date = item.date.split(" ").slice(0, 2).join(" ");
+            const date = dateFormat(item.date);
+           // const date = item.date.split(" ").slice(0, 2).join(" ");
+
 
             elements += `
             <div class="wrapper__item" data-id="${data_id}">
@@ -302,7 +323,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
     const getCurrentTime = () => {
         var currentDate = new Date(); // Получаем текущую дату и время
         var dayOfMonth = currentDate.getDate(); // Получаем день месяца
-        var monthNames = ["янв", "фев", "мар", "апр", "май", "июн", "июл", "авг", "сен", "окт", "ноя", "дек"]; // Создаем массив с названиями месяцев
+        // var monthNames = ["янв", "фев", "мар", "апр", "май", "июн", "июл", "авг", "сен", "окт", "ноя", "дек"]; // Создаем массив с названиями месяцев
+        var monthNames = ["январь", "февраль", "март", "апрель", "май", "июнь", "июль", "август", "сентябрь", "октябрь", "ноябрь", "декабрь"]; // Создаем массив с названиями месяцев
         var monthNumber = currentDate.getMonth();// Получаем номер месяца и его название
         var monthName = monthNames[monthNumber];
 
@@ -470,7 +492,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
             simbolsCount.textContent = 0;
             wrapDate.textContent = getCurrentTime(); // dobavlyaem vremya v dialogbox
             //22 февраля 5:07 PM
-           
+
             // document.querySelector('.dialog__wrap .title__input').value = '';
             // document.querySelector('.dialog__text .textarea').value = '';
             // document.querySelector('.dialog__wrap .subtitle__date').textContent = '';
@@ -483,51 +505,51 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
 
     const addItemFromNote = () => {
-        console.log('addItemFromNote');
+      //  console.log('addItemFromNote');
         addItem.addEventListener('click', () => {
-            
 
-            if(dialogArea.value.length > 0 && dlgTitle.value.length > 0) {
+
+            if (dialogArea.value.length > 0 && dlgTitle.value.length > 0) {
                 const dlgTitle = document.querySelector('.dialog__wrap .title__input').value.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br/>'),
-                dlgTextarea = document.querySelector('.dialog__text .textarea').value.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br/>'),
-                dlgsubTitleDate = document.querySelector('.dialog__wrap .subtitle__date').textContent;
+                    dlgTextarea = document.querySelector('.dialog__text .textarea').value.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br/>'),
+                    dlgsubTitleDate = document.querySelector('.dialog__wrap .subtitle__date').textContent;
 
-            let newdate = {
-                id: uniqueId(),
-                favorite: false,
-                important: false,
-                title: dlgTitle,
-                text: dlgTextarea,
-                date: dlgsubTitleDate
-            }
+                let newdate = {
+                    id: uniqueId(),
+                    favorite: false,
+                    important: false,
+                    title: dlgTitle,
+                    text: dlgTextarea,
+                    date: dlgsubTitleDate
+                }
 
-            let wrapperObj = '';
-            if (!window.localStorage.getItem('myobj')) {
-                window.localStorage.setItem('myobj', JSON.stringify(newdate));
-            } else {
-                wrapperObj = JSON.parse(window.localStorage.getItem('myobj'));
-            }
-            wrapperObj.push(newdate);
+                let wrapperObj = '';
+                if (!window.localStorage.getItem('myobj')) {
+                    window.localStorage.setItem('myobj', JSON.stringify(newdate));
+                } else {
+                    wrapperObj = JSON.parse(window.localStorage.getItem('myobj'));
+                }
+                wrapperObj.push(newdate);
 
-            if (window.localStorage.getItem('myobj')) {
-                window.localStorage.setItem('myobj', JSON.stringify(wrapperObj));
-            }
-            console.log(wrapperObj);
-            console.log(wrapData.length);
+                if (window.localStorage.getItem('myobj')) {
+                    window.localStorage.setItem('myobj', JSON.stringify(wrapperObj));
+                }
+                console.log(wrapperObj);
+                console.log(wrapData.length);
 
 
-            ////////////////////
-            let dataRefresh = '';
-            if (window.localStorage.getItem('myobj')) {
-                dataRefresh = JSON.parse(window.localStorage.getItem('myobj'));
-            }
+                ////////////////////
+                let dataRefresh = '';
+                if (window.localStorage.getItem('myobj')) {
+                    dataRefresh = JSON.parse(window.localStorage.getItem('myobj'));
+                }
 
-          // dlgTextarea = document.querySelector('.dialog__text .textarea')
-            //simbolsCount.textContent = dlgTextarea.value.length;
+                // dlgTextarea = document.querySelector('.dialog__text .textarea')
+                //simbolsCount.textContent = dlgTextarea.value.length;
 
-            addItemsFromObj(dataRefresh);
-            addStyles();
-            addEventOnTrashBtn();
+                addItemsFromObj(dataRefresh);
+                addStyles();
+                addEventOnTrashBtn();
             }
 
             mainDialog.classList.remove('showdialog');
