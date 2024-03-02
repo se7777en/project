@@ -56,7 +56,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
             important: false,
             title: '2SAP 2',
             text: '2As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
-            date: '19 Feb'
+            date: '3 март 12:09 AM'
         },
         {
             id: uniqueId(),
@@ -64,7 +64,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
             important: true,
             title: '3SAP 3',
             text: '3As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
-            date: '20 Feb'
+            date: '3 март 12:09 AM'
         },
         {
             id: uniqueId(),
@@ -72,7 +72,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
             important: false,
             title: '4SAP 4',
             text: '4As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
-            date: '20 Feb'
+            date: '3 март 12:09 AM'
         }
     ];
 
