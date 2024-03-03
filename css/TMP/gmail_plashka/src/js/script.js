@@ -586,7 +586,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
         let timeoutId;
         const wrap = document.querySelectorAll('.wrapper__item');
         wrap.forEach((item) => {
-            item.addEventListener('touchstart', () => {
+            item.addEventListener('mousedown', () => {
                 timeoutId = setTimeout(() => {
 
                     ///////show addItem icon on Dlg header///////
@@ -616,7 +616,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                             dlgTitle.value = item.title;
                             dlgDate.textContent = item.date;
                             dialogArea.value = item.text;
-                            simbolsCount.textContent = item.date.length;
+                            simbolsCount.textContent = item.text.length;
                             loop = true;
                         }
                     })
@@ -624,7 +624,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 }, 500);
             })
 
-            item.addEventListener('touchend', () => {
+            item.addEventListener('mouseup', () => {
                 clearInterval(timeoutId);
                 dlgTitle.removeAttribute("readonly");
                 dlgDate.removeAttribute("readonly");
