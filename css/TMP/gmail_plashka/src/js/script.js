@@ -5,7 +5,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     e.preventDefault();
     const wrapInner = document.querySelector('.wrapper .wrapper__inner'),
         simbolsCount = document.querySelector('.subtitle__simbols span'),
-        dialogArea = document.querySelector('.dialog__text .textarea'),
+
         wrapDate = document.querySelector('.dialog__inner-subtitle .subtitle__date'),
         dialogBtn = document.querySelector('.wrapper__footer span'),
         leftArr = document.querySelector('.dialog__icons .left__arrow'),
@@ -16,8 +16,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
 
     const dlgTitle = document.querySelector('.dialog__wrap .title__input');
-
     const dlgDate = document.querySelector('.dialog__wrap .subtitle__date');
+    const dialogArea = document.querySelector('.dialog__text .textarea');
 
 
 
@@ -307,6 +307,11 @@ window.addEventListener('DOMContentLoaded', (e) => {
         leftArr.addEventListener('click', () => {
             mainDialog.classList.remove('showdialog');
             mainBody.classList.remove('lock');
+
+            dlgTitle.removeAttribute("readonly");
+            dlgDate.removeAttribute("readonly");
+            dialogArea.removeAttribute("readonly");
+
         });
     }
     returnToMainArr();
@@ -424,7 +429,9 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 }
 
                 const dlgText = document.querySelector('.dialog__wrap .textarea');
+                let loop = false;
                 trashObj.forEach((item) => {
+                    if(loop) return;
                     if (item.id === trashDataId) {
                         dlgTitle.value = item.title;
                         dlgText.value = item.text;
@@ -432,6 +439,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
                         let count = dlgText.value.length; // shitaem simvoli pri pervom zapuske
                         simbolsCount.textContent = count;
+                        loop = true;
                     }
                 })
 
@@ -487,7 +495,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
             //////////
 
 
-            console.log('wrapperShowAddNote');
+           // console.log('wrapperShowAddNote');
             mainDialog.classList.toggle('showdialog');
             mainBody.classList.add("lock");
 
@@ -559,45 +567,81 @@ window.addEventListener('DOMContentLoaded', (e) => {
             mainDialog.classList.remove('showdialog');
             mainBody.classList.remove('lock');
 
-            
+
             onWrapperItemActive();
             ////////////////////
 
         });
-        
+
 
     }
 
 
     const onWrapperItemActive = () => {
+
+        let touchOne = '';
+        let touchTwo = '';
+
+        if ('ontouchstart' in window || navigator.msMaxTouchPoints) {
+            touchOne = 'touchstart';
+            touchTwo = 'touchend';
+        }else {
+            touchOne = 'mousedown';
+            touchTwo = 'mouseup';
+        }
         let timeoutId;
         const wrap = document.querySelectorAll('.wrapper__item');
         wrap.forEach((item) => {
-            item.addEventListener('touchstart', () => {
-               timeoutId =  setTimeout(() => {
+            item.addEventListener(touchOne, () => {
+                timeoutId = setTimeout(() => {
 
-                   ///////show addItem icon on Dlg header///////
-            checkIcon.classList.remove('hide__icon', 'show__icon');
-            addItem.classList.remove('hide__icon', 'show__icon');
-            checkIcon.classList.add('hide__icon');
-            addItem.classList.add('hide__icon');
-            //////////
-
+                    ///////show addItem icon on Dlg header///////
+                    checkIcon.classList.remove('hide__icon', 'show__icon');
+                    addItem.classList.remove('hide__icon', 'show__icon');
+                    checkIcon.classList.add('hide__icon');
+                    addItem.classList.add('hide__icon');
+                    //////////
                     mainDialog.classList.toggle('showdialog');
                     mainBody.classList.add("lock");
-                    
-                }, 700);
+
+
+                    let wrapId = item.dataset.id;
+                    console.log(wrapId);
+
+
+                    if (window.localStorage.getItem('myobj')) {
+                        objfromStorage = JSON.parse(window.localStorage.getItem('myobj'));
+                    }
+                    let loop = false;
+                    objfromStorage.forEach((item) => {
+                        if (loop) return;
+                        if (item.id === wrapId) {
+                            dlgTitle.value = item.title;
+                            dlgDate.textContent = item.date;
+                            dialogArea.value = item.text;
+
+                            dlgTitle.setAttribute("readonly", "true");
+                            dlgDate.setAttribute("readonly", "true");
+                            dialogArea.setAttribute("readonly", "true");
+
+                            loop = true;
+                        }
+                    })
+
+                }, 500);
             })
 
-            item.addEventListener('touchend', () => {
+            item.addEventListener(touchTwo, () => {
                 clearInterval(timeoutId);
-                //setTimeout(() => {
-                    // mainDialog.classList.remove('showdialog');
-                    // mainBody.classList.remove("lock");
-                //}, 1000);
             })
         });
     }
+
+    /*
+    moble-events
+    touchstart
+    touchend
+    */
     onWrapperItemActive();
 
 
