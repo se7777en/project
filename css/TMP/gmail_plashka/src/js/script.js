@@ -293,10 +293,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
             mainDialog.classList.remove('showdialog');
             mainBody.classList.remove('lock');
 
-            
-            dlgTitle.removeAttribute("readonly");
-            dlgDate.removeAttribute("readonly");
-            dialogArea.removeAttribute("readonly");
+
+        
             onWrapperItemActive();
 
         });
@@ -316,7 +314,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
             dlgTitle.removeAttribute("readonly");
             dlgDate.removeAttribute("readonly");
             dialogArea.removeAttribute("readonly");
-            onWrapperItemActive();
+            // onWrapperItemActive();
 
         });
     }
@@ -471,7 +469,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 // if (window.localStorage.getItem('myobj')) {
                 //     objfromStorage = JSON.parse(window.localStorage.getItem('myobj'));
                 // }
-                onWrapperItemActive();
+                
             });
 
             // closeandSaveDlg(item); 
@@ -599,6 +597,9 @@ window.addEventListener('DOMContentLoaded', (e) => {
                     //////////
                     mainDialog.classList.add('showdialog');
                     mainBody.classList.add("lock");
+                    dlgTitle.setAttribute("readonly", "true");
+                    dlgDate.setAttribute("readonly", "true");
+                    dialogArea.setAttribute("readonly", "true");
 
 
                     let wrapId = item.dataset.id;
@@ -616,11 +617,6 @@ window.addEventListener('DOMContentLoaded', (e) => {
                             dlgDate.textContent = item.date;
                             dialogArea.value = item.text;
                             simbolsCount.textContent = item.date.length;
-
-                            dlgTitle.setAttribute("readonly", "true");
-                            dlgDate.setAttribute("readonly", "true");
-                            dialogArea.setAttribute("readonly", "true");
-
                             loop = true;
                         }
                     })
