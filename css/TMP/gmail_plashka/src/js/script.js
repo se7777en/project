@@ -578,21 +578,11 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
 
     const onWrapperItemActive = () => {
-
-        let touchOne = '';
-        let touchTwo = '';
-
-        if ('ontouchstart' in window || navigator.msMaxTouchPoints) {
-            touchOne = 'touchstart';
-            touchTwo = 'touchend';
-        }else {
-            touchOne = 'mousedown';
-            touchTwo = 'mouseup';
-        }
+        
         let timeoutId;
         const wrap = document.querySelectorAll('.wrapper__item');
         wrap.forEach((item) => {
-            item.addEventListener(touchOne, () => {
+            item.addEventListener('touchstart', () => {
                 timeoutId = setTimeout(() => {
 
                     ///////show addItem icon on Dlg header///////
@@ -631,7 +621,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 }, 500);
             })
 
-            item.addEventListener(touchTwo, () => {
+            item.addEventListener('touchend', () => {
                 clearInterval(timeoutId);
             })
         });
@@ -641,6 +631,10 @@ window.addEventListener('DOMContentLoaded', (e) => {
     moble-events
     touchstart
     touchend
+
+    pc-events
+    mousedown
+    mouseup
     */
     onWrapperItemActive();
 
