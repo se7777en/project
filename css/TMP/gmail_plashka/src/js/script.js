@@ -115,7 +115,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
             const title = item.title;
             const text = item.text.replace(/<br\/>/g, '');
             const date = dateFormat(item.date);
-           // const date = item.date.split(" ").slice(0, 2).join(" ");
+            // const date = item.date.split(" ").slice(0, 2).join(" ");
 
 
             elements += `
@@ -292,6 +292,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
             mainDialog.classList.remove('showdialog');
             mainBody.classList.remove('lock');
+            onWrapperItemActive();
 
         });
 
@@ -395,6 +396,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 addItemsFromObj(tmpArr); // add on page
                 addStyles();
                 addEventOnTrashBtn();
+
+                onWrapperItemActive();
                 //console.log(tmpArr);
             });
 
@@ -454,6 +457,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 // if (window.localStorage.getItem('myobj')) {
                 //     objfromStorage = JSON.parse(window.localStorage.getItem('myobj'));
                 // }
+                onWrapperItemActive();
             });
 
             // closeandSaveDlg(item); 
@@ -505,7 +509,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
 
     const addItemFromNote = () => {
-      //  console.log('addItemFromNote');
+        //  console.log('addItemFromNote');
         addItem.addEventListener('click', () => {
 
 
@@ -555,22 +559,52 @@ window.addEventListener('DOMContentLoaded', (e) => {
             mainDialog.classList.remove('showdialog');
             mainBody.classList.remove('lock');
 
-
-
+            
+            onWrapperItemActive();
             ////////////////////
 
         });
-
+        
 
     }
 
+
+    const onWrapperItemActive = () => {
+        let timeoutId;
+        const wrap = document.querySelectorAll('.wrapper__item');
+        wrap.forEach((item) => {
+            item.addEventListener('mousedown', () => {
+               timeoutId =  setTimeout(() => {
+
+                   ///////show addItem icon on Dlg header///////
+            checkIcon.classList.remove('hide__icon', 'show__icon');
+            addItem.classList.remove('hide__icon', 'show__icon');
+            checkIcon.classList.add('hide__icon');
+            addItem.classList.add('hide__icon');
+            //////////
+
+                    mainDialog.classList.toggle('showdialog');
+                    mainBody.classList.add("lock");
+                    
+                }, 700);
+            })
+
+            item.addEventListener('mouseup', () => {
+                clearInterval(timeoutId);
+                //setTimeout(() => {
+                    // mainDialog.classList.remove('showdialog');
+                    // mainBody.classList.remove("lock");
+                //}, 1000);
+            })
+        });
+    }
+    onWrapperItemActive();
+
+
+
+
+
     addItemFromNote();
-
-
-
-
-
-
     addEventOnTrashBtn();
     addStyles();
 
