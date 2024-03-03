@@ -751,8 +751,8 @@ width: 1560px
     }
 
     .dialog__text textarea {
-        /* height: 425px; */
-        min-height: calc(100vh - 155px);
+        height: 425px;
+        /* min-height: calc(100vh - 155px); */
         /* min-height: 0; */
         border: none;
     }
