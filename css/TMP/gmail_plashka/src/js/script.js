@@ -573,7 +573,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
         let timeoutId;
         const wrap = document.querySelectorAll('.wrapper__item');
         wrap.forEach((item) => {
-            item.addEventListener('mousedown', () => {
+            item.addEventListener('touchstart', () => {
                timeoutId =  setTimeout(() => {
 
                    ///////show addItem icon on Dlg header///////
@@ -589,7 +589,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 }, 700);
             })
 
-            item.addEventListener('mouseup', () => {
+            item.addEventListener('touchend', () => {
                 clearInterval(timeoutId);
                 //setTimeout(() => {
                     // mainDialog.classList.remove('showdialog');
