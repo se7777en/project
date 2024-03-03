@@ -431,7 +431,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 const dlgText = document.querySelector('.dialog__wrap .textarea');
                 let loop = false;
                 trashObj.forEach((item) => {
-                    if(loop) return;
+                    if (loop) return;
                     if (item.id === trashDataId) {
                         dlgTitle.value = item.title;
                         dlgText.value = item.text;
@@ -495,7 +495,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
             //////////
 
 
-           // console.log('wrapperShowAddNote');
+            // console.log('wrapperShowAddNote');
             mainDialog.classList.toggle('showdialog');
             mainBody.classList.add("lock");
 
@@ -578,7 +578,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
 
     const onWrapperItemActive = () => {
-        
+
         let timeoutId;
         const wrap = document.querySelectorAll('.wrapper__item');
         wrap.forEach((item) => {
@@ -624,6 +624,9 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
             item.addEventListener('touchend', () => {
                 clearInterval(timeoutId);
+                dlgTitle.removeAttribute("readonly");
+                dlgDate.removeAttribute("readonly");
+                dialogArea.removeAttribute("readonly");
             })
         });
     }
