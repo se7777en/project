@@ -292,6 +292,11 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
             mainDialog.classList.remove('showdialog');
             mainBody.classList.remove('lock');
+
+            
+            dlgTitle.removeAttribute("readonly");
+            dlgDate.removeAttribute("readonly");
+            dialogArea.removeAttribute("readonly");
             onWrapperItemActive();
 
         });
@@ -311,6 +316,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
             dlgTitle.removeAttribute("readonly");
             dlgDate.removeAttribute("readonly");
             dialogArea.removeAttribute("readonly");
+            onWrapperItemActive();
 
         });
     }
@@ -416,7 +422,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 ////
 
                 console.log(item);
-                mainDialog.classList.toggle('showdialog');
+                mainDialog.classList.add('showdialog');
                 mainBody.classList.add("lock");
 
 
@@ -496,7 +502,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
 
             // console.log('wrapperShowAddNote');
-            mainDialog.classList.toggle('showdialog');
+            mainDialog.classList.add('showdialog');
             mainBody.classList.add("lock");
 
             dialogArea.value = ''; // shitaem simvoli pri pervom zapuske
@@ -591,7 +597,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                     checkIcon.classList.add('hide__icon');
                     addItem.classList.add('hide__icon');
                     //////////
-                    mainDialog.classList.toggle('showdialog');
+                    mainDialog.classList.add('showdialog');
                     mainBody.classList.add("lock");
 
 
