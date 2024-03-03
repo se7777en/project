@@ -423,6 +423,10 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 mainDialog.classList.add('showdialog');
                 mainBody.classList.add("lock");
 
+                dlgTitle.removeAttribute("readonly");
+                dlgDate.removeAttribute("readonly");
+                dialogArea.removeAttribute("readonly");
+
 
                 let trashWrapItem = event.currentTarget.closest('.wrapper__item');
                 let trashDataId = trashWrapItem.dataset.id;
@@ -572,7 +576,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
             mainBody.classList.remove('lock');
 
 
-            onWrapperItemActive();
+           // onWrapperItemActive();
             ////////////////////
 
         });
@@ -626,9 +630,9 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
             item.addEventListener('touchend', () => {
                 clearInterval(timeoutId);
-                dlgTitle.removeAttribute("readonly");
-                dlgDate.removeAttribute("readonly");
-                dialogArea.removeAttribute("readonly");
+                // dlgTitle.removeAttribute("readonly");
+                // dlgDate.removeAttribute("readonly");
+                // dialogArea.removeAttribute("readonly");
             })
         });
     }
