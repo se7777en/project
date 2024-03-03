@@ -681,6 +681,11 @@ textarea::-webkit-scrollbar-thumb {
 }
 
 
+.readonly {
+    readonly: true;
+}
+
+
 
 
 
