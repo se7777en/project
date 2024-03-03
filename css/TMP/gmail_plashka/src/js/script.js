@@ -609,6 +609,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                             dlgTitle.value = item.title;
                             dlgDate.textContent = item.date;
                             dialogArea.value = item.text;
+                            simbolsCount.textContent = item.date.length;
 
                             dlgTitle.setAttribute("readonly", "true");
                             dlgDate.setAttribute("readonly", "true");
