@@ -427,7 +427,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
     const wrapperShowAddNote = () => {
         dialogBtn.addEventListener('click', () => {
-  
+
             console.log('+');
 
             ///////show addItem icon on Dlg header///////
@@ -516,10 +516,21 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
     const onWrapperItemActive = () => {
 
+        let eventAdd = '';
+        let eventClear = '';
+        if (window.innerWidth < 1001) {
+            eventAdd = 'touchstart';
+            eventClear = 'touchend';
+        } else {
+            eventAdd = 'mousedown';
+            eventClear = 'mouseup';
+        }
+///////////////////////////////////////////////
+
         let timeoutId;
         const wrap = document.querySelectorAll('.wrapper__item');
         wrap.forEach((item) => {
-            item.addEventListener('mousedown', () => {
+            item.addEventListener(eventAdd, () => {
                 timeoutId = setTimeout(() => {
 
                     ///////show addItem icon on Dlg header///////
@@ -557,7 +568,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 }, 500);
             })
 
-            item.addEventListener('mouseup', () => {
+            item.addEventListener(eventClear, () => {
                 clearInterval(timeoutId);
                 // dlgTitle.removeAttribute("readonly");
                 // dlgDate.removeAttribute("readonly");
