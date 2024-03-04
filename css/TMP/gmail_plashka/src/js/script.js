@@ -525,6 +525,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
             eventAdd = 'mousedown';
             eventClear = 'mouseup';
         }
+        console.log(eventAdd);
 ///////////////////////////////////////////////
 
         let timeoutId;
