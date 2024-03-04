@@ -68,6 +68,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     let objfromStorage = '';
     if (!window.localStorage.getItem('myobj')) {
         window.localStorage.setItem('myobj', JSON.stringify(wrapData));
+        objfromStorage = JSON.parse(window.localStorage.getItem('myobj'));
     } else {
         objfromStorage = JSON.parse(window.localStorage.getItem('myobj'));
     }
