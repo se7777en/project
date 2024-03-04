@@ -64,6 +64,9 @@ body {
     padding: 0 10px;
 }
 
+.wrapper {
+    position: relative;
+}
 
 
 
@@ -462,7 +465,6 @@ body {
 }
 
 .wrapper__footer {
-    position: relative;
     text-align: right;
     padding-bottom: 20px;
     border-bottom: 1px solid #64798f1f;
