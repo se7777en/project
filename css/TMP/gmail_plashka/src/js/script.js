@@ -428,6 +428,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
     const wrapperShowAddNote = () => {
         dialogBtn.addEventListener('click', () => {
+            console.log(window.getComputedStyle(dialogArea).top);
 
             console.log('+');
 

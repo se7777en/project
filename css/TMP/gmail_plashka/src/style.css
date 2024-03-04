@@ -755,7 +755,7 @@ width: 1560px
 
     .dialog__text textarea {
         /* height: 425px; */
-        height: calc(100vh - 170px);
+        height: calc(100vh - 190px);
         /* min-height: 0; */
         border: none;
     }
