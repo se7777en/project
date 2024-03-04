@@ -64,9 +64,9 @@ body {
     padding: 0 10px;
 }
 
-.wrapper {
-    /* position: relative; */
-}
+/* .wrapper {
+    position: relative;
+} */
 
 
 
@@ -754,8 +754,8 @@ width: 1560px
     }
 
     .dialog__text textarea {
-        height: 425px;
-        /* min-height: calc(100vh - 155px); */
+        /* height: 425px; */
+        height: calc(100vh - 155px);
         /* min-height: 0; */
         border: none;
     }
