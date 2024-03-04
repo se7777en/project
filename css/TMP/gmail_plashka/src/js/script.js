@@ -31,17 +31,6 @@ window.addEventListener('DOMContentLoaded', (e) => {
     })
 
 
-
-
-
-
-
-
-
-
-
-
-
     //const uniqueId = `id_${Date.now()}_${Math.floor(Math.random() * 1000)}`;
 
     const uniqueId = () => {
@@ -220,26 +209,10 @@ window.addEventListener('DOMContentLoaded', (e) => {
         }
     }
 
-    // const showWrapperDlg = () => {
-    //     dialogBtn.addEventListener('click', () => {
-    //         mainDialog.classList.toggle('showdialog');
-    //         mainBody.classList.add("lock");
-
-    //          let count = dialogArea.value.length; // shitaem simvoli pri pervom zapuske
-    //          simbolsCount.textContent = count;
-
-    //          wrapDate.textContent = getCurrentTime(); // dobavlyaem vremya v dialogbox
-    //         //22 февраля 5:07 PM
-    //     });
-    // }
-    // showWrapperDlg();
-
-
 
     const closeAndSaveDlg = () => {
-
         checkIcon.addEventListener('click', () => {
-            console.log('ok');
+            console.log('checkIcon');
             const dlgTitle = document.querySelector('.dialog__wrap .title__input').value.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br/>'),
 
                 dlgsubTitleDate = document.querySelector('.dialog__wrap .subtitle__date').textContent,
@@ -293,13 +266,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
             mainDialog.classList.remove('showdialog');
             mainBody.classList.remove('lock');
 
-
-        
             onWrapperItemActive();
-
         });
-
-
     }
     closeAndSaveDlg();
 
@@ -450,49 +418,16 @@ window.addEventListener('DOMContentLoaded', (e) => {
                         loop = true;
                     }
                 })
-
-                //////zagolovok///////
-
-                // const title = item.querySelector('.wrapper__item-descr');
-                // areaTitle.value = title.innerText;
-                //////zagolovok///////    
-
-                //////text///////    
-
-
-                // textToArea.value = text.innerText;
-                ///////text//////
-
-
-
-                // wrapDate.textContent = getCurrentTime();
-
-
-
-
-                // if (window.localStorage.getItem('myobj')) {
-                //     objfromStorage = JSON.parse(window.localStorage.getItem('myobj'));
-                // }
-                
             });
 
-            // closeandSaveDlg(item); 
+
         });
     }
 
 
-    // const hideElem = (element) => {
-    //     element.classList.add('hide');
-    // }
-
-    // const showElem = (element) => {
-    //     element.classList.add('show');
-    // }
-
     const wrapperShowAddNote = () => {
         dialogBtn.addEventListener('click', () => {
-            // hideElem(checkIcon);
-            // showElem(one);
+  
             console.log('+');
 
             ///////show addItem icon on Dlg header///////
@@ -512,12 +447,6 @@ window.addEventListener('DOMContentLoaded', (e) => {
             simbolsCount.textContent = 0;
             wrapDate.textContent = getCurrentTime(); // dobavlyaem vremya v dialogbox
             //22 февраля 5:07 PM
-
-            // document.querySelector('.dialog__wrap .title__input').value = '';
-            // document.querySelector('.dialog__text .textarea').value = '';
-            // document.querySelector('.dialog__wrap .subtitle__date').textContent = '';
-            
-
 
         });
     }
@@ -576,11 +505,11 @@ window.addEventListener('DOMContentLoaded', (e) => {
             mainBody.classList.remove('lock');
 
 
-           // onWrapperItemActive();
+            onWrapperItemActive();
             ////////////////////
 
         });
-        onWrapperItemActive();
+        // onWrapperItemActive();
 
     }
 
@@ -590,7 +519,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
         let timeoutId;
         const wrap = document.querySelectorAll('.wrapper__item');
         wrap.forEach((item) => {
-            item.addEventListener('touchstart', () => {
+            item.addEventListener('mousedown', () => {
                 timeoutId = setTimeout(() => {
 
                     ///////show addItem icon on Dlg header///////
@@ -628,7 +557,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 }, 500);
             })
 
-            item.addEventListener('touchend', () => {
+            item.addEventListener('mouseup', () => {
                 clearInterval(timeoutId);
                 // dlgTitle.removeAttribute("readonly");
                 // dlgDate.removeAttribute("readonly");
