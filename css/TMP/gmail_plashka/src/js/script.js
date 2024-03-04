@@ -516,7 +516,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
             // document.querySelector('.dialog__wrap .title__input').value = '';
             // document.querySelector('.dialog__text .textarea').value = '';
             // document.querySelector('.dialog__wrap .subtitle__date').textContent = '';
-
+            
 
 
         });
@@ -580,7 +580,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
             ////////////////////
 
         });
-
+        onWrapperItemActive();
 
     }
 
