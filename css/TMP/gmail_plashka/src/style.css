@@ -51,7 +51,7 @@ body {
     -webkit-tap-highlight-color: transparent;
     /* -webkit-appearance: none;
     -moz-appearance: none; */
-   
+
 
 
     /* overflow: hidden; */
@@ -449,7 +449,7 @@ body {
 }
 
 .wrapper__chb {
-    /* position: absolute; bila problema s marganie checkboksa */ 
+    /* position: absolute; bila problema s marganie checkboksa */
     position: fixed;
     top: -9999em;
     opacity: 0;
@@ -602,7 +602,7 @@ body {
     background-color: #c6c6c6;
 }
 
-.dialog__text textarea {
+.dialog__wrap textarea {
     width: 100%;
     height: 150px;
     border: 1px solid transparent;
@@ -616,16 +616,16 @@ body {
     overflow: auto;
 }
 
-.dialog__text textarea:hover,
-.dialog__text textarea:active {
+.dialog__wrap textarea:hover,
+.dialog__wrap textarea:active {
     border: 1px solid #c6c6c6;
 }
 
-.dialog__text {
+.dialog__wrap {
     overflow: hidden;
 }
 
-.dialog__text textarea::placeholder {
+.dialog__wrap textarea::placeholder {
     color: #c6c6c6;
 }
 
@@ -746,29 +746,44 @@ width: 1560px
     }
 
     .dialog-item {
-        /* for width 768 */
-        min-width: initial;
         min-height: 100vh;
         border-radius: initial;
         box-shadow: initial;
+        /* for width 768 */
+        /* min-width: initial;
+        
+         */
+        display: flex;
+        flex-direction: column;
     }
 
-    .dialog__text textarea {
+    .dialog__item-header {
+        flex: 0 1 17%;
+    }
+
+    .dialog__wrap .textarea {
+        flex: 1 1 83%;
+    }
+
+
+
+
+    .dialog__wrap textarea {
         /* height: 425px; */
-        height: calc(100vh - 190px);
+        /* height: calc(100vh - 190px); */
         /* min-height: 0; */
         border: none;
     }
 
-    .dialog__text textarea:hover,
-    .dialog__text textarea:active {
+    .dialog__wrap textarea:hover,
+    .dialog__wrap textarea:active {
         border: none;
     }
 
     .trash__btn {
         right: 7.5%;
     }
-    
+
 }
 
 /* @media (max-width: 840px) {   //edit trash container
@@ -777,23 +792,24 @@ width: 1560px
     }
 } */
 
-@media (max-width: 530px){
+@media (max-width: 530px) {
     .trash__btn {
         right: 11%;
     }
 }
 
-@media (max-width: 480px){
+@media (max-width: 480px) {
     .trash__btn {
         right: 12%;
     }
 }
 
-@media (max-width: 365px){
+@media (max-width: 365px) {
     .trash__btn {
         right: 16%;
     }
 }
+
 /* 
 @media (max-width: 690px){
     .wrapper__item-descr {

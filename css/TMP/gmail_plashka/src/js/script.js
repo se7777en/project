@@ -17,7 +17,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
     const dlgTitle = document.querySelector('.dialog__wrap .title__input');
     const dlgDate = document.querySelector('.dialog__wrap .subtitle__date');
-    const dialogArea = document.querySelector('.dialog__text .textarea');
+    const dialogArea = document.querySelector('.dialog__wrap .textarea');
 
 
 
@@ -217,7 +217,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
             const dlgTitle = document.querySelector('.dialog__wrap .title__input').value.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br/>'),
 
                 dlgsubTitleDate = document.querySelector('.dialog__wrap .subtitle__date').textContent,
-                dlgTextarea = document.querySelector('.dialog__text .textarea').value.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br/>');
+                dlgTextarea = document.querySelector('.dialog__wrap .textarea').value.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br/>');
 
             const checkbox = document.querySelectorAll('.wrapper__item .wrapper__chb');
             let checkedId = '';
@@ -462,7 +462,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
             if (dialogArea.value.length > 0 && dlgTitle.value.length > 0) {
                 const dlgTitle = document.querySelector('.dialog__wrap .title__input').value.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br/>'),
-                    dlgTextarea = document.querySelector('.dialog__text .textarea').value.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br/>'),
+                    dlgTextarea = document.querySelector('.dialog__wrap .textarea').value.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br/>'),
                     dlgsubTitleDate = document.querySelector('.dialog__wrap .subtitle__date').textContent;
 
                 let newdate = {
