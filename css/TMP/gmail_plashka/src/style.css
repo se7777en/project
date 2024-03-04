@@ -681,6 +681,7 @@ textarea::-webkit-scrollbar-thumb {
     position: absolute;
     bottom: 10px;
     left: 10px;
+    font-size: 10px;
 }
 
 
