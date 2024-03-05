@@ -609,7 +609,8 @@ body {
     border-radius: 2px;
     overflow-y: auto;
     resize: none;
-    padding: 10px 10px 15px 10px;
+    /* padding: 10px 10px 15px 10px; */
+    margin-bottom: 15px;
     color: #727272;
     transition: .3s all ease-in-out;
     cursor: pointer;
