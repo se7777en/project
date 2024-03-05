@@ -547,7 +547,7 @@ body {
 .dialog-item {
     background-color: #fff;
     min-width: 40vw;
-    padding: 15px 15px 25px 15px;
+    padding: 15px;
     border-radius: 10px;
     opacity: 1;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, .3);
@@ -613,7 +613,6 @@ body {
     color: #727272;
     transition: .3s all ease-in-out;
     cursor: pointer;
-    margin-bottom: 10px;
 }
 
 .dialog__wrap textarea:hover,
@@ -747,31 +746,19 @@ width: 1560px
     }
 
     .dialog-item {
-        min-height: 100vh;
         border-radius: initial;
         box-shadow: initial;
         position: relative;
-        /* for width 768 */
-        /* min-width: initial;
-        
-         */
         display: flex;
         flex-direction: column;
        }
 
-    .dialog__item-header {
-        flex: 0 0 17%;
-    }
-
-    .dialog__wrap .textarea {
-        flex: 1 0 83%;
-    }
 
 
 
 
     .dialog__wrap textarea {
-        /* height: 425px; */
+        height: 60vh;
         /* height: calc(100vh - 190px); */
         /* min-height: 0; */
         /* border: none; */
@@ -785,6 +772,8 @@ width: 1560px
     .trash__btn {
         right: 7.5%;
     }
+
+ 
 
 }
 
