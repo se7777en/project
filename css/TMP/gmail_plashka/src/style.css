@@ -755,14 +755,15 @@ width: 1560px
          */
         display: flex;
         flex-direction: column;
-    }
+       }
 
     .dialog__item-header {
         /* flex: 0 0 17%; */
     }
 
     .dialog__wrap .textarea {
-        flex: 1 0 100%;
+        flex: 1;
+    
     }
 
 
