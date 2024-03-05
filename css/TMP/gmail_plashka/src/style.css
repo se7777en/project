@@ -735,6 +735,7 @@ width: 1560px
     .dialog__wrap {
         /* for width 768 */
         background-color: initial;
+        overflow-y: auto;
     }
 
     .dialog__inner {
