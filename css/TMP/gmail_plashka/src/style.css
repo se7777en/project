@@ -567,7 +567,7 @@ body {
     color: #afafaf;
     font-size: 18px;
     cursor: pointer;
-    padding: 18px 0;
+    padding: 1.2em 0;
 }
 
 .dialog__inner-title input::placeholder {
@@ -758,11 +758,11 @@ width: 1560px
     }
 
     .dialog__item-header {
-        flex: 0 0 17%;
+        /* flex: 0 0 17%; */
     }
 
     .dialog__wrap .textarea {
-        flex: 1 1 83%;
+        flex: 1 1 100%;
     }
 
 
