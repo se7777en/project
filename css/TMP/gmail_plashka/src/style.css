@@ -609,7 +609,7 @@ body {
     border-radius: 2px;
     overflow-y: auto;
     resize: none;
-    padding: 10px;
+    padding: 10px 10px 15px 10px;
     color: #727272;
     transition: .3s all ease-in-out;
     cursor: pointer;
@@ -764,7 +764,7 @@ width: 1560px
     }
 
     .dialog__wrap .textarea {
-        flex: 1;
+        flex: 1 1 100%;
     
     }
 
