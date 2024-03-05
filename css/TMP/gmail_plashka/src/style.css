@@ -546,7 +546,7 @@ body {
 
 .dialog-item {
     background-color: #fff;
-    min-width: 400px;
+    min-width: 40vw;
     padding: 15px 15px 25px 15px;
     border-radius: 10px;
     opacity: 1;
