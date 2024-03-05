@@ -546,7 +546,7 @@ body {
 
 .dialog-item {
     background-color: #fff;
-    min-width: 40vw;
+    min-width: 400px;
     padding: 15px;
     border-radius: 10px;
     opacity: 1;
@@ -751,14 +751,14 @@ width: 1560px
         position: relative;
         display: flex;
         flex-direction: column;
-       }
+    }
 
 
 
 
 
     .dialog__wrap textarea {
-        height: 60vh;
+        /* height: 60vh; */
         /* height: calc(100vh - 190px); */
         /* min-height: 0; */
         /* border: none; */
@@ -773,7 +773,7 @@ width: 1560px
         right: 7.5%;
     }
 
- 
+
 
 }
 
@@ -798,6 +798,18 @@ width: 1560px
 @media (max-width: 365px) {
     .trash__btn {
         right: 16%;
+    }
+}
+
+@media (max-width: 400px) {
+    .dialog-item {
+        min-width: 360px;
+    }
+}
+
+@media (max-width: 370px) {
+    .dialog-item {
+        min-width: 320px;
     }
 }
 
