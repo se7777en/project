@@ -18,7 +18,12 @@ window.addEventListener('DOMContentLoaded', (e) => {
     const dlgTitle = document.querySelector('.dialog__wrap .title__input');
     const dlgDate = document.querySelector('.dialog__wrap .subtitle__date');
     const dialogArea = document.querySelector('.dialog__wrap .textarea');
+    const dlgTitleowner = document.querySelector('.dialog__inner-title');
 
+
+    dlgTitleowner.addEventListener('click',() => {
+        mainDialog.scrollTop = 0;
+    });
 
 
 
