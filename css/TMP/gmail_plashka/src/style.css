@@ -762,7 +762,7 @@ width: 1560px
     }
 
     .dialog__wrap .textarea {
-        flex: 1 1 100%;
+        flex: 1 0 100%;
     }
 
 
