@@ -21,9 +21,9 @@ window.addEventListener('DOMContentLoaded', (e) => {
     const dlgTitleowner = document.querySelector('.dialog__inner-title');
 
 
-    // dlgTitleowner.addEventListener('click',() => {
-    //     mainDialog.scrollTop = 0;
-    // });
+    dlgTitleowner.addEventListener('click',() => {
+        mainDialog.scrollTop = 0;
+    });
 
 
 
