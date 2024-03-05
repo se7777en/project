@@ -19,10 +19,13 @@ window.addEventListener('DOMContentLoaded', (e) => {
     const dlgDate = document.querySelector('.dialog__wrap .subtitle__date');
     const dialogArea = document.querySelector('.dialog__wrap .textarea');
     const dlgTitleowner = document.querySelector('.dialog__inner-title');
+    const  dlgIcons = document.querySelector('.dialog__icons');
 
 
     dlgTitleowner.addEventListener('click',() => {
+        dlgIcons.classList.toggle('dlgheaderhider');
         mainDialog.scrollTop = 0;
+        
     });
 
 

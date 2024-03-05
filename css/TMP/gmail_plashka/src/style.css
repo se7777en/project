@@ -500,6 +500,12 @@ body {
     visibility: hidden;
 }
 
+.dlgheaderhider {
+    /* dialog__icons */
+    display: none !important;
+    margin-bottom: 0px !important;
+}
+
 
 
 .show__icon {
