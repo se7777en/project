@@ -31,6 +31,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
     })
 
 
+
+
     //const uniqueId = `id_${Date.now()}_${Math.floor(Math.random() * 1000)}`;
 
     const uniqueId = () => {
@@ -294,7 +296,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
         dialogArea.addEventListener('input', () => {
             let count = dialogArea.value.length;
             simbolsCount.textContent = count;
-            //   console.log(count);
+            //   console.log(count);            
         })
     }
     calcTexareaSimbols();
