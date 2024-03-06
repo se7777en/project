@@ -1,0 +1,156 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    vertical-align: top;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+}
+
+
+.container {
+    max-width: 530px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+
+.wrapper__title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: inherit;
+    font-size: 18px;
+    color: #d2d2d2;
+}
+
+.password {
+    /* border: 1px solid #000; */
+    width: 88%;
+    padding: 3px 5px;
+    color: #666666;
+    font-weight: 600;
+}
+
+.password__content {
+    position: relative;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+.refresh__icon {
+    position: absolute;
+    top: 28%;
+    transform: translateY(-50%);
+    right: 0px;
+    color: #666666;
+    cursor: pointer;
+}
+
+.copy__icon {
+    position: absolute;
+    top: 28%;
+    transform: translateY(-50%);
+    right: 40px;
+    color: #666666;
+    cursor: pointer;
+}
+
+/* ///////////////////  */
+.tumbler {
+    position: relative;
+}
+
+.tumbler .tumb-wrap {
+    position: relative;
+    cursor: pointer;
+}
+
+.tumbler .tumb-wrap .btn {
+    position: absolute;
+    width: 50px;
+    height: 24px;
+    background-color: #efefed;
+    border-radius: 65px;
+}
+
+.tumbler .tumb-wrap .btn::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #fff;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 2px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, .4);
+    transition: all .2s ease-in-out;
+}
+
+.tumbler input:checked+.btn::before {
+    left: calc(100% - 20px - 2px);
+}
+
+.tumbler input:checked+.btn {
+    background-color: #00d54f;
+}
+
+.tumbler .inp {
+    appearance: none;
+    width: 1px;
+    height: 1px;
+    margin-left: -1px;
+}
+
+.tumbler .tumb-lab {
+    position: absolute;
+    top: 59%;
+    transform: translateY(-50%);
+    left: 60px;  
+}
+
+.tumbler {
+    margin-bottom: 50px;
+} 
+
+
+
+
+/* padding-left: 55px; 
+    pointer-events: none;
+    */
