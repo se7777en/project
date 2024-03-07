@@ -108,11 +108,12 @@ input[type=range] {
     -webkit-appearance: none;
     margin: 10px 0;
     width: 100%;
-  }
-  /* input[type=range]:focus {
+}
+
+/* input[type=range]:focus {
     outline: none;
   } */
-  input[type=range]::-webkit-slider-runnable-track {
+input[type=range]::-webkit-slider-runnable-track {
     width: 100%;
     height: 4px;
     cursor: pointer;
@@ -120,8 +121,9 @@ input[type=range] {
     background: #2497E3;
     border-radius: 2px;
     border: 0px solid #000000;
-  }
-  input[type=range]::-webkit-slider-thumb {
+}
+
+input[type=range]::-webkit-slider-thumb {
     box-shadow: 0px 0px 0px #000000;
     border: 1px solid #2497E3;
     height: 28px;
@@ -131,11 +133,12 @@ input[type=range] {
     cursor: pointer;
     -webkit-appearance: none;
     margin-top: -12px;
-  }
-  /* input[type=range]:focus::-webkit-slider-runnable-track {
+}
+
+/* input[type=range]:focus::-webkit-slider-runnable-track {
     background: #2497E3;
   } */
-  input[type=range]::-moz-range-track {
+input[type=range]::-moz-range-track {
     width: 100%;
     height: 5px;
     cursor: pointer;
@@ -143,8 +146,9 @@ input[type=range] {
     background: #2497E3;
     border-radius: 2px;
     border: 0px solid #000000;
-  }
-  input[type=range]::-moz-range-thumb {
+}
+
+input[type=range]::-moz-range-thumb {
     box-shadow: 0px 0px 0px #000000;
     border: 1px solid #2497E3;
     height: 28px;
@@ -152,7 +156,8 @@ input[type=range] {
     border-radius: 50%;
     background: #A1D0FF;
     cursor: pointer;
-  }
+}
+
 /*  input[type=range]::-ms-track {
     width: 100%;
     height: 5px;
@@ -189,13 +194,13 @@ input[type=range] {
   input[type=range]:focus::-ms-fill-upper {
     background: #2497E3;
   } */
-  
-  
+
+
 /* ////////Range/////// */
 
-  
 
-  
+
+
 
 .refresh__icon {
     position: absolute;
@@ -205,6 +210,27 @@ input[type=range] {
     color: #4c535e;
     cursor: pointer;
     font-size: 22px;
+    /* transition: all .3s ease-in-out; */
+}
+
+.refresh__icon:hover {
+    color: green;
+    /* transition: all .3s ease-in-out; */
+}
+
+/* .refresh__icon i {
+    transition: all .3s ease-in-out;
+} */
+
+
+
+
+
+
+
+.rotate {
+    transition: all .2s ease-in-out;
+    transform: rotate(360deg);
 }
 
 .copy__icon {
@@ -215,6 +241,17 @@ input[type=range] {
     color: #4c535e;
     cursor: pointer;
     font-size: 22px;
+    transition: all .3s ease-in-out;
+}
+
+.copy__icon i {
+    transition: all .3s ease-in-out;
+}
+
+
+
+.copy__icon:hover {
+    color: green;
 }
 
 /* ///////////////////  */
@@ -308,7 +345,7 @@ input[type=range] {
     background-color: transparent;
     margin-bottom: 20px;
     position: relative;
-    border-radius:2px;
+    border-radius: 2px;
 }
 
 .indicator::before {
@@ -325,28 +362,34 @@ input[type=range] {
 
 .indicator.very-weak::before {
     width: 20%;
-    background: #ff0000; /* Красный для "very weak" */
+    background: #ff0000;
+    /* Красный для "very weak" */
 }
 
 .indicator.weak::before {
     width: 40%;
-    background: #ffa700; /* Оранжевый для "weak" */
+    background: #ffa700;
+    /* Оранжевый для "weak" */
 }
 
 .indicator.moderate::before {
     width: 60%;
-    background: #fff400; /* Желтый для "moderate" */
+    background: #fff400;
+    /* Желтый для "moderate" */
 }
 
 .indicator.strong::before {
     width: 80%;
-    background: #a3ff00; /* Зеленый для "strong" */
+    background: #a3ff00;
+    /* Зеленый для "strong" */
 }
 
 .indicator.very-strong::before {
     width: 100%;
-    background: #2cba00; /* Синий для "very strong" */
+    background: #2cba00;
+    /* Синий для "very strong" */
 }
+
 /* ////indicator//// */
 
 /* padding-left: 55px; 

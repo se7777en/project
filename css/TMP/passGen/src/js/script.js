@@ -1,10 +1,16 @@
 'use strict';
 
+
 const range = document.querySelector('.wrapper__range .rage__val'),
     spanValue = document.querySelector('.wrapper__range span'),
     indicator = document.querySelector('.tumblers .indicator'),
-    tumblers = document.querySelectorAll('.tumblers__inner .inp');
-
+    tumblers = document.querySelectorAll('.tumblers__inner .inp'),
+    password = document.querySelector('.password__content .password'),
+    refreshPass = document.querySelector('.password__content .refresh__icon'),
+    refreshPassIcon = document.querySelector('.refresh__icon .fa-solid'),
+    copyIcon = document.querySelector('.password__content .copy__icon'),
+    copyIconInner = document.querySelector('.copy__icon .fa-solid');
+    
 
 
 
@@ -51,30 +57,118 @@ const addClassToIndicator = () => {
     }
 }
 
+
+
+
+
+const getCheckedSymbols = () => {
+    let allSymbols = '';
+    tumblers.forEach((item) => {
+        let dataId = '';
+        if (item.checked) {
+            let head = item.closest('.tumbler');
+            dataId = head.dataset.case;
+
+            if (dataId === 'uppercase') {
+                allSymbols += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            }
+
+            if (dataId === 'lowercase') {
+                allSymbols += 'abcdefghijklmnopqrstuvwxyz';
+            }
+
+            if (dataId === 'numbers') {
+                allSymbols += '0123456789';
+            }
+
+            if (dataId === 'symbols') {
+                allSymbols += '!@#$%^&*()-=+[]{};:".<>/?';
+            }
+        }
+    });
+
+    return allSymbols;
+}
+
+// console.log(getCheckedSymbols());
+
+
+
+
+
+
+const getPassword = (symbols, length) => {
+    let pwd = '';
+    for (let i = 0; i < length; i++) {
+        let rnd = Math.floor(Math.random() * symbols.length);
+        pwd += symbols[rnd];
+    }
+    return pwd;
+}
+
+
+
 const rangeToSpanValue = () => {
     range.addEventListener('input', () => {
         addClassToIndicator();
+        const count = range.value;
+        password.value = getPassword(getCheckedSymbols(), count);
+
     });
 }
 rangeToSpanValue();
 
 
 tumblers.forEach((item) => {
-
-    // checked = checkbox.checked;
-    //  console.log('item');
-    //   if(item.checked === false) {console.log('true');}
     item.addEventListener('change', () => {
-        let dataId = '';
-        if (item.checked) {
-            //console.log('checked');
-            let head = item.closest('.tumbler');
-            dataId = head.dataset.case;
-            console.log(dataId);
-
-        } else {
-            console.log('false');
-        }
+        password.value = getPassword(getCheckedSymbols(), range.value);
     });
+})
 
+
+refreshPass.addEventListener('click', () => {
+    password.value = getPassword(getCheckedSymbols(), range.value);
+
+    refreshPassIcon.classList.add('rotate');
+    
+
+     setTimeout(() => {
+        refreshPassIcon.classList.remove('rotate');
+     }, 250);
 });
+
+
+
+copyIcon.addEventListener('click', () => {
+console.log('ok');
+navigator.clipboard.writeText(password.value);
+
+copyIconInner.classList.remove('fa-copy');
+copyIconInner.classList.add('fa-check');
+setTimeout(() => {
+    copyIconInner.classList.remove('fa-check');
+    copyIconInner.classList.add('fa-copy');
+}, 1500);
+});
+
+
+
+const count = range.value;
+password.value = getPassword(getCheckedSymbols(), count);
+
+
+
+// let symbols = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-=+[]{};:".<>/?';
+// console.log(getPassword(symbols, 10));
+
+
+
+
+
+
+
+
+// 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+// 'abcdefghijklmnopqrstuvwxyz';
+// '0123456789';
+// '!@#$%^&*()-=+[]{};:".<>/?';
