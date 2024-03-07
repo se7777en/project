@@ -44,50 +44,177 @@ body {
 
 
 .container {
-    max-width: 530px;
+    max-width: 768px;
+    /* padding: 0 15px; */
+    margin: 0 auto;
+}
+
+.tumbler__container {
+    max-width: 470px;
     padding: 0 15px;
     margin: 0 auto;
+
 }
 
 
 .wrapper__title {
     text-align: center;
-    margin-bottom: 20px;
-    font-weight: inherit;
-    font-size: 18px;
-    color: #d2d2d2;
+    margin-bottom: 42px;
+    font-weight: 700;
+    font-size: 27px;
+    color: #262a2c;
 }
 
 .password {
     /* border: 1px solid #000; */
-    width: 88%;
-    padding: 3px 5px;
-    color: #666666;
+    width: 65%;
+    padding: 3px 0px 3px 15px;
+    color: #000100;
     font-weight: 600;
+    font-size: 18px;
+    background-color: transparent;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
+
+/* .password__content input {
+    width: 400px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    pointer-events: none;
+} */
 
 .password__content {
     position: relative;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
+    /* margin-bottom: 20px;
+    padding-bottom: 20px; */
 }
+
+
+.wrapper__range {
+    margin-bottom: 20px;
+}
+
+.wrapper__range label {
+    display: block;
+    color: #262a2c;
+    font-weight: 500;
+    font-size: 18px;
+    padding-bottom: 15px;
+}
+
+/* ////////Range/////// */
+input[type=range] {
+    -webkit-appearance: none;
+    margin: 10px 0;
+    width: 100%;
+  }
+  /* input[type=range]:focus {
+    outline: none;
+  } */
+  input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 4px;
+    cursor: pointer;
+    box-shadow: 0px 0px 0px #000000;
+    background: #2497E3;
+    border-radius: 2px;
+    border: 0px solid #000000;
+  }
+  input[type=range]::-webkit-slider-thumb {
+    box-shadow: 0px 0px 0px #000000;
+    border: 1px solid #2497E3;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background: #A1D0FF;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -12px;
+  }
+  /* input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #2497E3;
+  } */
+  input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    box-shadow: 0px 0px 0px #000000;
+    background: #2497E3;
+    border-radius: 2px;
+    border: 0px solid #000000;
+  }
+  input[type=range]::-moz-range-thumb {
+    box-shadow: 0px 0px 0px #000000;
+    border: 1px solid #2497E3;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background: #A1D0FF;
+    cursor: pointer;
+  }
+/*  input[type=range]::-ms-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
+  input[type=range]::-ms-fill-lower {
+    background: #2497E3;
+    border: 0px solid #000000;
+    border-radius: 2px;
+    box-shadow: 0px 0px 0px #000000;
+  }
+    input[type=range]::-ms-fill-upper {
+    background: #2497E3;
+    border: 0px solid #000000;
+    border-radius: 2px;
+    box-shadow: 0px 0px 0px #000000;
+  }
+ input[type=range]::-ms-thumb {
+    margin-top: 1px;
+    box-shadow: 0px 0px 0px #000000;
+    border: 1px solid #2497E3;
+    height: 28px;
+    width: 28px;
+    border-radius: 31px;
+    background: #A1D0FF;
+    cursor: pointer;
+  }
+  input[type=range]:focus::-ms-fill-lower {
+    background: #2497E3;
+  }
+  input[type=range]:focus::-ms-fill-upper {
+    background: #2497E3;
+  } */
+  
+  
+/* ////////Range/////// */
+
+  
+
+  
 
 .refresh__icon {
     position: absolute;
-    top: 28%;
+    top: 50%;
     transform: translateY(-50%);
-    right: 0px;
-    color: #666666;
+    right: 30px;
+    color: #4c535e;
     cursor: pointer;
+    font-size: 22px;
 }
 
 .copy__icon {
     position: absolute;
-    top: 28%;
+    top: 50%;
     transform: translateY(-50%);
-    right: 40px;
-    color: #666666;
+    right: 85px;
+    color: #4c535e;
     cursor: pointer;
+    font-size: 22px;
 }
 
 /* ///////////////////  */
@@ -102,8 +229,8 @@ body {
 
 .tumbler .tumb-wrap .btn {
     position: absolute;
-    width: 50px;
-    height: 24px;
+    width: 55px;
+    height: 30px;
     background-color: #efefed;
     border-radius: 65px;
 }
@@ -111,23 +238,23 @@ body {
 .tumbler .tumb-wrap .btn::before {
     content: '';
     position: absolute;
-    width: 20px;
-    height: 20px;
+    width: 27px;
+    height: 27px;
     border-radius: 50%;
     background-color: #fff;
     top: 50%;
     transform: translateY(-50%);
-    left: 2px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, .4);
+    left: 1.5px;
+    /* box-shadow: 0px 4px 8px rgba(0, 0, 0, .4); */
     transition: all .2s ease-in-out;
 }
 
 .tumbler input:checked+.btn::before {
-    left: calc(100% - 20px - 2px);
+    left: calc(100% - 27px - 1.5px);
 }
 
 .tumbler input:checked+.btn {
-    background-color: #00d54f;
+    background-color: #79BC9C;
 }
 
 .tumbler .inp {
@@ -137,19 +264,90 @@ body {
     margin-left: -1px;
 }
 
-.tumbler .tumb-lab {
+/* .tumbler .tumb-lab {
     position: absolute;
     top: 59%;
     transform: translateY(-50%);
     left: 60px;  
-}
+} */
 
 .tumbler {
-    margin-bottom: 50px;
-} 
+    margin-bottom: 35px;
+}
+
+
+.tumbler {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tumblers .tumb {
+    transform: translateX(-55px);
+}
+
+.tumblers .tumb__title {
+    color: #262a2c;
+    font-weight: 500;
+}
+
+
+.wrapper__header {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    padding-top: 15px;
+    background-color: #ecf6ee;
+    border-bottom: 4px solid #79BC9C;
+}
 
 
 
+/* ////indicator//// */
+.indicator {
+    width: 100%;
+    height: 8px;
+    background-color: transparent;
+    margin-bottom: 20px;
+    position: relative;
+    border-radius:2px;
+}
+
+.indicator::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 8px;
+
+    width: 80%;
+    background-color: #7CFC00;
+    transition: all .3s ease-in-out;
+}
+
+.indicator.very-weak::before {
+    width: 20%;
+    background: #ff0000; /* Красный для "very weak" */
+}
+
+.indicator.weak::before {
+    width: 40%;
+    background: #ffa700; /* Оранжевый для "weak" */
+}
+
+.indicator.moderate::before {
+    width: 60%;
+    background: #fff400; /* Желтый для "moderate" */
+}
+
+.indicator.strong::before {
+    width: 80%;
+    background: #a3ff00; /* Зеленый для "strong" */
+}
+
+.indicator.very-strong::before {
+    width: 100%;
+    background: #2cba00; /* Синий для "very strong" */
+}
+/* ////indicator//// */
 
 /* padding-left: 55px; 
     pointer-events: none;
