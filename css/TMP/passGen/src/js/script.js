@@ -26,6 +26,8 @@ let strange = 24;
 
 
 const valurColored = (str) => {
+
+    if (!str) return false;
     // let str = 'melo7m77elo';
     let styledStr = '';
 
@@ -138,7 +140,7 @@ const getCheckedSymbols = () => {
         if (item.checked) {
             let head = item.closest('.tumbler');
             dataId = head.dataset.case;
-
+            console.log(dataId);
             if (dataId === 'uppercase') {
                 allSymbols += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
                 strange += 5;
@@ -160,7 +162,7 @@ const getCheckedSymbols = () => {
             }
         }
     });
-
+    if (allSymbols.length < 1) return false;
     return allSymbols;
 }
 
@@ -172,6 +174,7 @@ const getCheckedSymbols = () => {
 
 
 const getPassword = (symbols, length) => {
+    if (!symbols) return false;
     let pwd = '';
     for (let i = 0; i < length; i++) {
         let rnd = Math.floor(Math.random() * symbols.length);
@@ -186,7 +189,9 @@ const rangeToSpanValue = () => {
     range.addEventListener('input', () => {
         addClassToIndicator();
         const count = range.value;
-        password.innerHTML = valurColored(getPassword(getCheckedSymbols(), count));
+        let val = valurColored(getPassword(getCheckedSymbols(), count));
+        if (!val) { val = 'password'; description.innerHTML = ''; classRemover('indicator'); }
+        password.innerHTML = val;
 
     });
 }
@@ -195,14 +200,19 @@ rangeToSpanValue();
 
 tumblers.forEach((item) => {
     item.addEventListener('change', () => {
-        password.innerHTML = valurColored(getPassword(getCheckedSymbols(), range.value));
+        let val = valurColored(getPassword(getCheckedSymbols(), range.value));
         addClassToIndicator();
+        if (!val) { val = 'password'; description.innerHTML = ''; classRemover('indicator'); }
+        password.innerHTML = val;
+
     });
 })
 
 
 refreshPass.addEventListener('click', () => {
-    password.innerHTML = valurColored(getPassword(getCheckedSymbols(), range.value));
+    let val = valurColored(getPassword(getCheckedSymbols(), range.value));
+    if (!val) { val = 'password'; description.innerHTML = ''; classRemover('indicator'); }
+    password.innerHTML = val;
     refreshPassIcon.classList.add('rotate');
     // refreshPassIcon.classList.add('refreshbg');
 
@@ -229,7 +239,7 @@ copyIcon.addEventListener('click', () => {
 
 
 const count = range.value;
-password.innerHTML =  valurColored(getPassword(getCheckedSymbols(), count));
+password.innerHTML = valurColored(getPassword(getCheckedSymbols(), count));
 
 
 
