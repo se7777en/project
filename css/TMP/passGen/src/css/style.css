@@ -66,15 +66,15 @@ body {
 }
 
 .password {
-    /* border: 1px solid #000; */
     width: 65%;
     padding: 3px 0px 3px 15px;
-    color: #000100;
+    color: #020f66;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 25px;
     background-color: transparent;
     text-overflow: ellipsis;
     overflow: hidden;
+    text-wrap: nowrap;
 }
 
 /* .password__content input {
@@ -241,16 +241,16 @@ input[type=range]::-moz-range-thumb {
     color: #4c535e;
     cursor: pointer;
     font-size: 22px;
-    transition: all .3s ease-in-out;
+   
 }
 
-.copy__icon i {
-    transition: all .3s ease-in-out;
-}
+/* .copy__icon i {
+    transition: all .1s ease-in-out;
+} */
 
 
 
-.copy__icon:hover {
+.copy__icon:active {
     color: green;
 }
 
@@ -354,7 +354,6 @@ input[type=range]::-moz-range-thumb {
     top: 0;
     left: 0;
     height: 8px;
-
     width: 80%;
     background-color: #7CFC00;
     transition: all .3s ease-in-out;
@@ -395,3 +394,55 @@ input[type=range]::-moz-range-thumb {
 /* padding-left: 55px; 
     pointer-events: none;
     */
+
+
+ /* ////////////description////////////    */
+ .tumblers__inner {
+    margin-bottom: 50px;
+ }
+
+ 
+.very-weak {
+    color: #ff0000;
+    font-weight: 500;
+    /* Красный для "very weak" */
+}
+
+.weak {
+    color: #ffa700;
+    font-weight: 500;
+    /* Оранжевый для "weak" */
+}
+
+.moderate {
+    color: #fff400;
+    font-weight: 500;
+    /* Желтый для "moderate" */
+}
+
+.strong {
+    color: #a3ff00;
+    font-weight: 500;
+    /* Зеленый для "strong" */
+}
+
+.very-strong {
+    font-weight: 500;
+    color: #2cba00;
+    /* Синий для "very strong" */
+}
+ /* ////////////description////////////    */
+
+
+
+ /* /////input values color///// */
+ 
+ .digit {
+    color: #175ddc;
+ }
+
+ .special-char {
+    color: #ff4e63;
+ }
+ 
+ /* /////input values color///// */

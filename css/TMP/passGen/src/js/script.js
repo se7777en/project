@@ -9,11 +9,37 @@ const range = document.querySelector('.wrapper__range .rage__val'),
     refreshPass = document.querySelector('.password__content .refresh__icon'),
     refreshPassIcon = document.querySelector('.refresh__icon .fa-solid'),
     copyIcon = document.querySelector('.password__content .copy__icon'),
-    copyIconInner = document.querySelector('.copy__icon .fa-solid');
-    
+    copyIconInner = document.querySelector('.copy__icon .fa-solid'),
+    description = document.querySelector('.tumblers__descr');
 
 
+const ObjDescr = {
+    veryWeek: `This password is <span class="very-weak">very weak</span>. It is highly recommended to choose a stronger password for better security.`,
+    weak: `Oh no, it’s a bit <span class="weak">weak</span>. Make it stronger by adding length, special characters & uppercase letters.`,
+    moderate: `This password has <span class="moderate">moderate</span> strength. Consider enhancing it with additional characters and complexity for better security.`,
+    strong: `Congratulations! This is a <span class="strong">strong</span> password. Ensure you keep it secure and avoid sharing it with others.`,
+    veryStrong: `Excellent! Your password is <span class="very-strong">very strong</span>. Keep it safe and avoid using it for multiple accounts.`
+};
 
+
+let strange = 24;
+
+
+const valurColored = (str) => {
+    // let str = 'melo7m77elo';
+    let styledStr = '';
+
+    for (let char of str) {
+        if (/\d/.test(char)) {
+            styledStr += `<span class="digit">${char}</span>`;
+        } else if (/[!@#$%&/?]/.test(char)) {
+            styledStr += `<span class="special-char">${char}</span>`;
+        } else {
+            styledStr += char;
+        }
+    }
+    return styledStr;
+}
 
 const classRemover = (clasname) => {
     const list = document.querySelector('.tumblers .indicator');
@@ -27,41 +53,78 @@ const classRemover = (clasname) => {
 }
 
 
+
+
 const addClassToIndicator = () => {
     const rangeValue = document.querySelector('.wrapper__range .rage__val').value;
     spanValue.textContent = rangeValue;
 
-    if (rangeValue >= 1 && rangeValue <= 5) {
+    if (rangeValue >= 1 && rangeValue < 4) {
         classRemover('indicator');
         indicator.classList.add('very-weak');
+        description.innerHTML = ObjDescr.veryWeek;
+        console.log(strange);
     }
 
-    if (rangeValue >= 5 && rangeValue <= 10) {
+    if (rangeValue >= 5 && rangeValue < 9) {
         classRemover('indicator');
-        indicator.classList.toggle('weak');
+        //indicator.classList.toggle('weak');
+        //description.innerHTML = ObjDescr.weak;
+        console.log(strange);
+
+        if (strange < 15) {
+            description.innerHTML = ObjDescr.veryWeek;
+            indicator.classList.toggle('very-weak');
+        } else {
+            description.innerHTML = ObjDescr.weak;
+            indicator.classList.toggle('weak');
+        }
     }
 
-    if (rangeValue >= 10 && rangeValue <= 15) {
+    if (rangeValue >= 9 && rangeValue <= 11) {
         classRemover('indicator');
         indicator.classList.toggle('moderate');
+        description.innerHTML = ObjDescr.moderate;
+        console.log(strange);
     }
 
-    if (rangeValue >= 15 && rangeValue <= 20) {
+    if (rangeValue >= 12 && rangeValue <= 15) {
         classRemover('indicator');
-        indicator.classList.toggle('strong');
+
+
+        console.log(strange);
+        if (strange < 15) {
+            description.innerHTML = ObjDescr.moderate;
+            indicator.classList.toggle('moderate');
+        } else {
+            description.innerHTML = ObjDescr.strong;
+            indicator.classList.toggle('strong');
+        }
     }
 
-    if (rangeValue >= 20 && rangeValue <= 25) {
+    if (rangeValue >= 16 && rangeValue <= 25) {
         classRemover('indicator');
-        indicator.classList.toggle('very-strong');
+        //indicator.classList.toggle('very-strong');
+        //description.innerHTML = ObjDescr.veryStrong;
+        console.log(strange);
+
+        if (strange < 15) {
+            description.innerHTML = ObjDescr.strong;
+            indicator.classList.toggle('strong');
+        } else {
+            description.innerHTML = ObjDescr.veryStrong;
+            indicator.classList.toggle('very-strong');
+        }
     }
 }
+addClassToIndicator();
 
 
 
 
 
 const getCheckedSymbols = () => {
+    strange = 0;
     let allSymbols = '';
     tumblers.forEach((item) => {
         let dataId = '';
@@ -71,18 +134,22 @@ const getCheckedSymbols = () => {
 
             if (dataId === 'uppercase') {
                 allSymbols += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                strange += 5;
             }
 
             if (dataId === 'lowercase') {
                 allSymbols += 'abcdefghijklmnopqrstuvwxyz';
+                strange += 5;
             }
 
             if (dataId === 'numbers') {
-                allSymbols += '0123456789';
+                allSymbols += '01234567890123456789';
+                strange += 4;
             }
 
             if (dataId === 'symbols') {
-                allSymbols += '!@#$%^&*()-=+[]{};:".<>/?';
+                allSymbols += '!@#$%&/?!@#$%&/?';
+                strange += 10;
             }
         }
     });
@@ -112,7 +179,7 @@ const rangeToSpanValue = () => {
     range.addEventListener('input', () => {
         addClassToIndicator();
         const count = range.value;
-        password.value = getPassword(getCheckedSymbols(), count);
+        password.innerHTML = valurColored(getPassword(getCheckedSymbols(), count));
 
     });
 }
@@ -121,45 +188,52 @@ rangeToSpanValue();
 
 tumblers.forEach((item) => {
     item.addEventListener('change', () => {
-        password.value = getPassword(getCheckedSymbols(), range.value);
+        password.innerHTML = valurColored(getPassword(getCheckedSymbols(), range.value));
+        addClassToIndicator();
     });
 })
 
 
 refreshPass.addEventListener('click', () => {
-    password.value = getPassword(getCheckedSymbols(), range.value);
-
+    password.innerHTML = valurColored(getPassword(getCheckedSymbols(), range.value));
     refreshPassIcon.classList.add('rotate');
-    
-
-     setTimeout(() => {
+    setTimeout(() => {
         refreshPassIcon.classList.remove('rotate');
-     }, 250);
+    }, 250);
 });
 
 
 
 copyIcon.addEventListener('click', () => {
-console.log('ok');
-navigator.clipboard.writeText(password.value);
+    console.log('ok');
+    navigator.clipboard.writeText(password.textContent);
 
-copyIconInner.classList.remove('fa-copy');
-copyIconInner.classList.add('fa-check');
-setTimeout(() => {
-    copyIconInner.classList.remove('fa-check');
-    copyIconInner.classList.add('fa-copy');
-}, 1500);
+    copyIconInner.classList.remove('fa-copy');
+    copyIconInner.classList.add('fa-check');
+    setTimeout(() => {
+        copyIconInner.classList.remove('fa-check');
+        copyIconInner.classList.add('fa-copy');
+    }, 1500);
 });
 
 
 
 const count = range.value;
-password.value = getPassword(getCheckedSymbols(), count);
+password.innerHTML =  valurColored(getPassword(getCheckedSymbols(), count));
 
 
 
 // let symbols = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-=+[]{};:".<>/?';
 // console.log(getPassword(symbols, 10));
+
+
+
+
+
+
+//console.log(styledStr);
+
+
 
 
 
