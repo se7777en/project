@@ -248,6 +248,7 @@ copyIcon.addEventListener('click', () => {
 
 
 
+
 const count = range.value;
 password.innerHTML = valurColored(getPassword(getCheckedSymbols(), count));
 
