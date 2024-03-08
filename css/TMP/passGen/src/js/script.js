@@ -243,7 +243,7 @@ copyIcon.addEventListener('click', () => {
     setTimeout(() => {
         copyIconInner.classList.remove('fa-check');
         copyIconInner.classList.add('fa-copy');
-    }, 1500);
+    }, 2000);
 });
 
 
