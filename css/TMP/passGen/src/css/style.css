@@ -359,8 +359,10 @@ input[type=range]::-moz-range-thumb {
     top: 0;
     left: 0;
     height: 8px;
-    width: 80%;
-    background-color: #7CFC00;
+    /* width: 80%; */
+    width: 0%;
+    /* background-color: #7CFC00; */
+    background-color: transparent;
     transition: all .3s ease-in-out;
 }
 
