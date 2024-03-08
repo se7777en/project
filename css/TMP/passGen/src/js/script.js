@@ -10,7 +10,11 @@ const range = document.querySelector('.wrapper__range .rage__val'),
     refreshPassIcon = document.querySelector('.refresh__icon .fa-solid'),
     copyIcon = document.querySelector('.password__content .copy__icon'),
     copyIconInner = document.querySelector('.copy__icon .fa-solid'),
-    description = document.querySelector('.tumblers__descr');
+    description = document.querySelector('.tumblers__descr'),
+    modal = document.querySelector('.modal'),
+    modalPassword = document.querySelector('.modal__password');
+
+    
 
 
 const ObjDescr = {
@@ -227,6 +231,12 @@ refreshPass.addEventListener('click', () => {
 copyIcon.addEventListener('click', () => {
     console.log('ok');
     navigator.clipboard.writeText(password.textContent);
+
+    modalPassword.textContent = password.textContent;
+    modal.classList.add('modalposition');
+    setTimeout(() => {
+        modal.classList.remove('modalposition');
+    }, 1500);
 
     copyIconInner.classList.remove('fa-copy');
     copyIconInner.classList.add('fa-check');
