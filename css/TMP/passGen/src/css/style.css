@@ -44,16 +44,15 @@ body {
 
 
 .container {
-    max-width: 768px;
+    max-width: 900px;
     /* padding: 0 15px; */
     margin: 0 auto;
 }
 
 .tumbler__container {
-    max-width: 470px;
+    max-width: 420px;
     padding: 0 15px;
     margin: 0 auto;
-
 }
 
 
@@ -399,6 +398,10 @@ input[type=range]::-moz-range-thumb {
  /* ////////////description////////////    */
  .tumblers__inner {
     margin-bottom: 50px;
+ }
+
+ .tumblers__descr {
+    margin-bottom: 20px;
  }
 
  

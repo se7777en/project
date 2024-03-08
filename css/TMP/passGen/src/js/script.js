@@ -102,7 +102,7 @@ const addClassToIndicator = () => {
         }
     }
 
-    if (rangeValue >= 16 && rangeValue <= 25) {
+    if (rangeValue >= 16 && rangeValue <= 19) {
         classRemover('indicator');
         //indicator.classList.toggle('very-strong');
         //description.innerHTML = ObjDescr.veryStrong;
@@ -115,6 +115,13 @@ const addClassToIndicator = () => {
             description.innerHTML = ObjDescr.veryStrong;
             indicator.classList.toggle('very-strong');
         }
+    }
+
+    if (rangeValue >= 20 && rangeValue <= 25) {
+        classRemover('indicator');
+        indicator.classList.toggle('very-strong');
+        description.innerHTML = ObjDescr.veryStrong;
+        console.log(strange);
     }
 }
 addClassToIndicator();
