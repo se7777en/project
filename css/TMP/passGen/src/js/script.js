@@ -204,8 +204,11 @@ tumblers.forEach((item) => {
 refreshPass.addEventListener('click', () => {
     password.innerHTML = valurColored(getPassword(getCheckedSymbols(), range.value));
     refreshPassIcon.classList.add('rotate');
+    // refreshPassIcon.classList.add('refreshbg');
+
     setTimeout(() => {
         refreshPassIcon.classList.remove('rotate');
+        // refreshPassIcon.classList.remove('refreshbg');
     }, 250);
 });
 
