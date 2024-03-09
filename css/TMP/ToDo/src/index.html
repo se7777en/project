@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+    <title>ToDo App</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+                <img class="header__img" src="./img/logo.png" alt="logo">
+            </div>
+        </header>
+        <main class="main">
+            <div class="container">
+                <div class="task">
+                    <input class="task__input" type="text" placeholder="Adicione uma nova tarefa">
+                    <a class="task__btn btn-task" href="!#">
+                        <div class="btn-text">Criar</div>
+                        <div class="btn__img">
+                            <img src="./img/plus.svg" alt="btn-logo">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="description">
+                    <div class="task__created description-item">
+                        <div class="created__descr">Tarefas criadas</div>
+                        <span class="created_num num-item">0</span>
+                    </div>
+                    <div class="task__completed description-item">
+                        <div class="completed__descr">Concluídas</div>
+                        <span class="completed__num num-item">2 de 5</span>
+                    </div>
+                </div>
+
+                <div class="tasks">
+                    <div class="empty__task">
+                        <img class="empty__img" src="./img/cliboard.png" alt="empty">
+                        <div class="empty__descr"><span class="descr__text-one">Você ainda não tem tarefas cadastradas</span>
+                            <span class="descr__text-two">Crie tarefas e organize seus itens a fazer</span></div>
+                    </div>
+
+                    <!-- <div class="task__item">
+                        <input class="radio__btn" type="radio">
+                        <div class="task__item__descr">Integer urna interdum massa libero auctor neque</div>
+                        <a class="task__trash" href="#!">
+                            <img src="./img/trash.svg" alt="trash">
+                        </a>
+                    </div> -->
+                </div>
+
+            </div>
+
+        </main>
+    </div>
+    </div>
+
+
+</body>
+
+</html>
