@@ -71,7 +71,7 @@ body {
     align-items: center;
     gap: 8px;
     margin-bottom: 64px;
-    height: 52px;
+    /* height: 52px; */
 }
 
 .task__input {
