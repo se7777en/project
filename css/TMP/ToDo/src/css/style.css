@@ -71,6 +71,7 @@ body {
     align-items: center;
     gap: 8px;
     margin-bottom: 64px;
+    height: 52px;
 }
 
 .task__input {
@@ -80,8 +81,7 @@ body {
 .task__btn img {
     width: 16px;
     height: 16px;
-    display: flex;
-    align-items: center;
+    display: block;
 }
 
 .task__input {
@@ -102,11 +102,11 @@ body {
 .btn-task {
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 8px;
     background-color: #1E6F9F;
-    padding: 17px;
+    padding: 0px 16px;
     border-radius: 8px;
+    height: 51.2px;
 }
 
 .task__input::placeholder {
