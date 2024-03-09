@@ -14,7 +14,7 @@ const range = document.querySelector('.wrapper__range .rage__val'),
     modal = document.querySelector('.modal'),
     modalPassword = document.querySelector('.modal__password');
 
-    
+
 
 
 const ObjDescr = {
@@ -25,6 +25,13 @@ const ObjDescr = {
     veryStrong: `Excellent! Your password is <span class="very-strong">very strong</span>. Keep it safe and avoid using it for multiple accounts.`
 };
 
+
+const passObj = {
+    uppercase: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+    lowercase: 'abcdefghijklmnopqrstuvwxyz',
+    numbers: '01234567890123456789',
+    symbols: '!@#$%&?!@#$%&?!@#$%&?'
+}
 
 let strange = 24;
 
@@ -146,22 +153,22 @@ const getCheckedSymbols = () => {
             dataId = head.dataset.case;
             console.log(dataId);
             if (dataId === 'uppercase') {
-                allSymbols += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                allSymbols += passObj.uppercase;
                 strange += 5;
             }
 
             if (dataId === 'lowercase') {
-                allSymbols += 'abcdefghijklmnopqrstuvwxyz';
+                allSymbols += passObj.lowercase;
                 strange += 5;
             }
 
             if (dataId === 'numbers') {
-                allSymbols += '01234567890123456789';
+                allSymbols += passObj.numbers;
                 strange += 4;
             }
 
             if (dataId === 'symbols') {
-                allSymbols += '!@#$%&/?!@#$%&/?';
+                allSymbols += passObj.symbols;
                 strange += 10;
             }
         }
