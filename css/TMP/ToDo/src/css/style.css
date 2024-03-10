@@ -90,6 +90,7 @@ body {
     border-radius: 8px;
     font-family: "Inter", sans-serif;
     font-size: 16px;
+    color: #F2F2F2;
 }
 
 .btn-text {
@@ -254,7 +255,7 @@ body {
 
 .task__item {
     display: grid;
-    grid-template-columns: 1fr 12fr 1fr;
+    grid-template-columns: 56px 12fr 56px;
     align-items: center;
     background-color: #262626;
     border-radius: 8px;
@@ -267,14 +268,27 @@ body {
     color: #F2F2F2;
 }
 
-.task__trash span {
+.task__item__descr.textdecore{
     color: #808080;
-    font-size: 18px;
-    transition: all .1s ease-in-out;
-   
+    text-decoration: line-through;
 }
 
-.task__trash span:hover {
+.task__trash span {
+    color: #808080;
+    font-size: 22px;
+    transition: all .1s ease-in-out;
+}
+
+.task__trash {
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+
+.task__trash.trashdecore span:hover {
     color: #E25858;
     padding: 4px;
     border-radius: 3px;
@@ -289,6 +303,11 @@ body {
 .task__chb {
     display: flex;
     justify-content: center;
+    
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .task__trash {
