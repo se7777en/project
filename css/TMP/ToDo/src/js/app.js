@@ -6,9 +6,9 @@ const trashDecore = document.querySelector('.task__item .task__trash'),
 const addHoverOnTrash = () => {
     trashDecore.addEventListener('mouseenter', () => {
         trashDecore.classList.add('trashdecore');
-    });
-    trashDecore.addEventListener('mouseleave', () => {
-        trashDecore.classList.remove('trashdecore');
+        setTimeout(() => {
+            trashDecore.classList.remove('trashdecore');
+        }, 1000);
     });
 }
 addHoverOnTrash();
