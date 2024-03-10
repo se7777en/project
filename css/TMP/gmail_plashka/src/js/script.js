@@ -19,13 +19,13 @@ window.addEventListener('DOMContentLoaded', (e) => {
     const dlgDate = document.querySelector('.dialog__wrap .subtitle__date');
     const dialogArea = document.querySelector('.dialog__wrap .textarea');
     const dlgTitleowner = document.querySelector('.dialog__inner-title');
-    const  dlgIcons = document.querySelector('.dialog__icons');
+    const dlgIcons = document.querySelector('.dialog__icons');
 
 
-    dlgTitleowner.addEventListener('click',() => {
+    dlgTitleowner.addEventListener('click', () => {
         dlgIcons.classList.toggle('dlgheaderhider');
         mainDialog.scrollTop = 0;
-        
+
     });
 
 
@@ -50,28 +50,6 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
     let wrapData = [
         {
-            id: uniqueId(),
-            favorite: true,
-            important: false,
-            title: '2SAP 2',
-            text: '2As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
-            date: '3 март 12:09 AM'
-        },
-        {
-            id: uniqueId(),
-            favorite: false,
-            important: true,
-            title: '3SAP 3',
-            text: '3As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
-            date: '3 март 12:09 AM'
-        },
-        {
-            id: uniqueId(),
-            favorite: true,
-            important: false,
-            title: '4SAP 4',
-            text: '4As the capabilities of SAP Business Network keep evolving to best answer the needs of all trading partners',
-            date: '3 март 12:09 AM'
         }
     ];
 
@@ -538,7 +516,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
             eventClear = 'mouseup';
         }
         console.log(eventAdd);
-///////////////////////////////////////////////
+        ///////////////////////////////////////////////
 
         let timeoutId;
         const wrap = document.querySelectorAll('.wrapper__item');
