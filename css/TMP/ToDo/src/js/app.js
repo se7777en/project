@@ -14,34 +14,18 @@ window.addEventListener('DOMContentLoaded', (e) => {
         return 'id-' + Math.random().toString(36).substr(2, 9);
     }
 
-    // const toDoObj = [
-    //     {
-    //         id: uniqueId(),
-    //         text: 'Integer urna interdum massa`libero auctor neque turpis',
-    //         read: true
-    //     }, {
-    //         id: uniqueId(),
-    //         text: 'Integer urna interdum massa`libero auctor neque turpis',
-    //         read: true
-    //     }, {
-    //         id: uniqueId(),
-    //         text: 'Integer urna interdum massa`libero auctor neque turpis',
-    //         read: true
-    //     }, {
-    //         id: uniqueId(),
-    //         text: 'Integer urna interdum massa`libero auctor neque turpis',
-    //         read: false
-    //     }, {
-    //         id: uniqueId(),
-    //         text: 'Integer urna interdum massa`libero auctor neque turpis',
-    //         read: false
-    //     }
-    // ];
+    const toDoObj = [
+        {
+          
+        }
+    ];
 
 
     let objfromStorage = '';
     if (window.localStorage.getItem('toDoObj')) {
         objfromStorage = JSON.parse(window.localStorage.getItem('toDoObj'));
+    }else {
+        window.localStorage.setItem('myobj', JSON.stringify(toDoObj));
     }
 
 
