@@ -1,10 +1,14 @@
 'use strict';
+window.addEventListener('DOMContentLoaded', (e) => {
+    e.preventDefault();
+
+
 const trashDecore = document.querySelector('.task__item .task__trash'),
     todoText = document.querySelector('.task__item .task__item__descr'),
     todoChb = document.querySelector('.task__item .realchb');
 
 const addHoverOnTrash = () => {
-    trashDecore.addEventListener('click', () => {
+    trashDecore.addEventListener('mouseenter', () => {
         trashDecore.classList.add('trashdecore');
         setTimeout(() => {
             trashDecore.classList.remove('trashdecore');
@@ -25,3 +29,5 @@ const addTextDecoreOnChb = () => {
     });
 }
 addTextDecoreOnChb();
+
+});
