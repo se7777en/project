@@ -4,11 +4,11 @@ const trashDecore = document.querySelector('.task__item .task__trash'),
     todoChb = document.querySelector('.task__item .realchb');
 
 const addHoverOnTrash = () => {
-    trashDecore.addEventListener('mouseenter', () => {
+    trashDecore.addEventListener('click', () => {
         trashDecore.classList.add('trashdecore');
         setTimeout(() => {
             trashDecore.classList.remove('trashdecore');
-        }, 1000);
+        }, 800);
     });
 }
 addHoverOnTrash();
