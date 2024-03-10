@@ -14,59 +14,67 @@ window.addEventListener('DOMContentLoaded', (e) => {
         return 'id-' + Math.random().toString(36).substr(2, 9);
     }
 
-    const toDoObj = [
-        {
-            id: uniqueId(),
-            text: 'Integer urna interdum massa`libero auctor neque turpis',
-            read: true
-        }, {
-            id: uniqueId(),
-            text: 'Integer urna interdum massa`libero auctor neque turpis',
-            read: true
-        }, {
-            id: uniqueId(),
-            text: 'Integer urna interdum massa`libero auctor neque turpis',
-            read: true
-        }, {
-            id: uniqueId(),
-            text: 'Integer urna interdum massa`libero auctor neque turpis',
-            read: false
-        }, {
-            id: uniqueId(),
-            text: 'Integer urna interdum massa`libero auctor neque turpis',
-            read: false
-        }
-    ];
+    // const toDoObj = [
+    //     {
+    //         id: uniqueId(),
+    //         text: 'Integer urna interdum massa`libero auctor neque turpis',
+    //         read: true
+    //     }, {
+    //         id: uniqueId(),
+    //         text: 'Integer urna interdum massa`libero auctor neque turpis',
+    //         read: true
+    //     }, {
+    //         id: uniqueId(),
+    //         text: 'Integer urna interdum massa`libero auctor neque turpis',
+    //         read: true
+    //     }, {
+    //         id: uniqueId(),
+    //         text: 'Integer urna interdum massa`libero auctor neque turpis',
+    //         read: false
+    //     }, {
+    //         id: uniqueId(),
+    //         text: 'Integer urna interdum massa`libero auctor neque turpis',
+    //         read: false
+    //     }
+    // ];
 
 
     let objfromStorage = '';
-    if (!window.localStorage.getItem('toDoObj')) {
-        window.localStorage.setItem('toDoObj', JSON.stringify(toDoObj));
-        objfromStorage = JSON.parse(window.localStorage.getItem('toDoObj'));
-    } else {
+    if (window.localStorage.getItem('toDoObj')) {
         objfromStorage = JSON.parse(window.localStorage.getItem('toDoObj'));
     }
 
 
     const wrightItemsToPage = (obj) => {
+        console.log(obj.length);
         let elements = '';
-        obj.forEach((item) => {
-            let readeStatus = '';
-            if (item.read) { readeStatus = 'checked'; } else { readeStatus = ''; }
+        if(obj.length > 0) {
+            obj.forEach((item) => {
+                let readeStatus = '';
+                if (item.read) { readeStatus = 'checked'; } else { readeStatus = ''; }
+    
+                elements += `<div class="task__item item" data-id="${item.id}">
+    <div class="task__chb">
+        <label>
+            <input type="checkbox" class="realchb" ${readeStatus}>
+            <span class="castomchb"></span>
+        </label>
+    </div>
+    <div class="task__item__descr">${item.text}</div>
+    <a class="task__trash" href="#!">
+        <span class="material-symbols-outlined">delete</span>
+    </a>
+    </div>`;
+            });
+        }else {
+            elements = `<div class="empty__task">
+            <img class="empty__img" src="./img/cliboard.png" alt="empty">
+            <div class="empty__descr"><span class="descr__text-one">Você ainda não tem tarefas cadastradas</span>
+                <span class="descr__text-two">Crie tarefas e organize seus itens a fazer</span></div>
+        </div>`;
+        }
 
-            elements += `<div class="task__item item" data-id="${item.id}">
-<div class="task__chb">
-    <label>
-        <input type="checkbox" class="realchb" ${readeStatus}>
-        <span class="castomchb"></span>
-    </label>
-</div>
-<div class="task__item__descr">${item.text}</div>
-<a class="task__trash" href="#!">
-    <span class="material-symbols-outlined">delete</span>
-</a>
-</div>`;
-        });
+        
 
         tasks.innerHTML = '';
         tasks.innerHTML = elements;
@@ -80,12 +88,16 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
 
     /////////////
+const calcItems = (objfromStorage) => {
     tasksCount.textContent = objfromStorage.length;
     let count = 0;
     objfromStorage.forEach((item) => {
         if (item.read) count += 1;
     })
     complatedNum.textContent = `${count} of ${objfromStorage.length}`;
+}
+
+calcItems(objfromStorage);
     /////////////
 
 
@@ -143,6 +155,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
                     todoText.classList.remove('textdecore');
                 }
+
+                calcItems(JSON.parse(window.localStorage.getItem('toDoObj')));
             });
         });
     }
@@ -162,7 +176,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
             filtred.push(newData);
             window.localStorage.setItem('toDoObj', JSON.stringify(filtred));
            
-            wrightItemsToPage(JSON.parse(window.localStorage.getItem('toDoObj')));
+            const newArr = JSON.parse(window.localStorage.getItem('toDoObj'));
+            wrightItemsToPage(newArr);
             addHoverOnTrash();
             addTextDecoreOnChb();
 
@@ -174,6 +189,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
             // })
             // complatedNum.textContent = `${count} of ${objfromStorage.length}`;
             trashItem();
+            calcItems(newArr);
 
         });
     }
@@ -203,6 +219,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
              addTextDecoreOnChb();
 
              trashItem();
+             calcItems(objfromStorage1);
             });
         });
     }
