@@ -16,27 +16,32 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
     const toDoObj = [
         {
-          
+            id: uniqueId(),
+            text: 'Temporary todo',
+            read: true
         }
     ];
 
-
     let objfromStorage = '';
-    if (window.localStorage.getItem('toDoObj')) {
-        objfromStorage = JSON.parse(window.localStorage.getItem('toDoObj'));
-    }else {
-        window.localStorage.setItem('myobj', JSON.stringify(toDoObj));
-    }
+    window.localStorage.setItem('toDoObj', JSON.stringify(toDoObj));
+    objfromStorage = JSON.parse(window.localStorage.getItem('toDoObj'));
+
+    // let objfromStorage = '';
+    // if (window.localStorage.getItem('toDoObj')) {
+    //     objfromStorage = JSON.parse(window.localStorage.getItem('toDoObj'));
+    // }else {
+    //     window.localStorage.setItem('myobj', JSON.stringify(toDoObj));
+    // }
 
 
     const wrightItemsToPage = (obj) => {
         console.log(obj.length);
         let elements = '';
-        if(obj.length > 0) {
+        if (obj.length > 0) {
             obj.forEach((item) => {
                 let readeStatus = '';
                 if (item.read) { readeStatus = 'checked'; } else { readeStatus = ''; }
-    
+
                 elements += `<div class="task__item item" data-id="${item.id}">
     <div class="task__chb">
         <label>
@@ -50,7 +55,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     </a>
     </div>`;
             });
-        }else {
+        } else {
             elements = `<div class="empty__task">
             <img class="empty__img" src="./img/cliboard.png" alt="empty">
             <div class="empty__descr"><span class="descr__text-one">Você ainda não tem tarefas cadastradas</span>
@@ -58,7 +63,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
         </div>`;
         }
 
-        
+
 
         tasks.innerHTML = '';
         tasks.innerHTML = elements;
@@ -72,16 +77,16 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
 
     /////////////
-const calcItems = (objfromStorage) => {
-    tasksCount.textContent = objfromStorage.length;
-    let count = 0;
-    objfromStorage.forEach((item) => {
-        if (item.read) count += 1;
-    })
-    complatedNum.textContent = `${count} of ${objfromStorage.length}`;
-}
+    const calcItems = (objfromStorage) => {
+        tasksCount.textContent = objfromStorage.length;
+        let count = 0;
+        objfromStorage.forEach((item) => {
+            if (item.read) count += 1;
+        })
+        complatedNum.textContent = `${count} of ${objfromStorage.length}`;
+    }
 
-calcItems(objfromStorage);
+    calcItems(objfromStorage);
     /////////////
 
 
@@ -112,11 +117,11 @@ calcItems(objfromStorage);
             } else {
                 todoText.classList.remove('textdecore');
             }
-            
+
             todoChb.addEventListener('change', () => {
                 const objfromStorage1 = JSON.parse(window.localStorage.getItem('toDoObj'));
                 if (todoChb.checked) {
-                   
+
                     let taskItem = todoChb.closest('.task__item');
                     let dataId = taskItem.dataset.id;
                     objfromStorage1.forEach((item) => {
@@ -156,10 +161,10 @@ calcItems(objfromStorage);
                 read: false
             }
 
-            const filtred =  JSON.parse(window.localStorage.getItem('toDoObj'));
+            const filtred = JSON.parse(window.localStorage.getItem('toDoObj'));
             filtred.push(newData);
             window.localStorage.setItem('toDoObj', JSON.stringify(filtred));
-           
+
             const newArr = JSON.parse(window.localStorage.getItem('toDoObj'));
             wrightItemsToPage(newArr);
             addHoverOnTrash();
@@ -187,23 +192,23 @@ calcItems(objfromStorage);
         const trashBtns = document.querySelectorAll('.task__item .task__trash');
         trashBtns.forEach((item) => {
             item.addEventListener('click', () => {
-               
+
                 let trashParent = item.closest('.task__item');
                 let parenId = trashParent.dataset.id;
                 console.log(parenId);
                 const storeObj = JSON.parse(window.localStorage.getItem('toDoObj'));
                 const newArr = storeObj.filter((item) => item.id !== parenId);
-                 window.localStorage.setItem('toDoObj', JSON.stringify(newArr));
-            //   
+                window.localStorage.setItem('toDoObj', JSON.stringify(newArr));
+                //   
 
-            const objfromStorage1 = JSON.parse(window.localStorage.getItem('toDoObj'));
-            wrightItemsToPage(objfromStorage1);
-              
+                const objfromStorage1 = JSON.parse(window.localStorage.getItem('toDoObj'));
+                wrightItemsToPage(objfromStorage1);
+
                 addHoverOnTrash();
-             addTextDecoreOnChb();
+                addTextDecoreOnChb();
 
-             trashItem();
-             calcItems(objfromStorage1);
+                trashItem();
+                calcItems(objfromStorage1);
             });
         });
     }
