@@ -31,9 +31,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
 
     const geDataFromStorage = () => {
-        if (JSON.parse(window.localStorage.getItem('toDoObj'))) {
-            return JSON.parse(window.localStorage.getItem('toDoObj'))
-        }
+        return JSON.parse(window.localStorage.getItem('toDoObj')) || [];
     }
 
     const setDataToStorage = (obj) => {
@@ -41,24 +39,23 @@ window.addEventListener('DOMContentLoaded', (e) => {
     }
 
 
-  
+
 
 
 
 
     let objfromStorage = geDataFromStorage();
-// console.log(objfromStorage);
+    // console.log(objfromStorage);
 
     /////1)//////
     const wrightItemsToPage = (obj) => {
         // console.log(obj.length);
         let elements = '';
-        if (obj && Object.keys(obj).length !== 0) {
-           
+        if (obj.length !== 0) {
+
             obj.forEach((item) => {
-                console.log(obj);
-                let readStatus = '';
-                if (item.read) { readStatus = 'checked'; } else { readStatus = ''; }
+                // console.log(obj);
+                let readStatus = item.read ? 'checked' : '';
 
                 elements += `<div class="task__item item" name="todo" data-id="${item.id}">
     <div class="task__chb">
@@ -80,7 +77,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 <span class="descr__text-two">Crie tarefas e organize seus itens a fazer</span></div>
         </div>`;
         }
-        tasks.innerHTML = '';
+        //tasks.innerHTML = '';
         tasks.innerHTML = elements;
     }
 
@@ -88,28 +85,20 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
 
 
-/////////////2)///////////////
+    /////////////2)///////////////
     const addNewItem = () => {
         addItem.addEventListener('click', () => {
-            const newData = 
-                {
-                    id: uniqueId(),
-                    text: todoInput.value,
-                    read: false
-                };
+            const newData =
+            {
+                id: uniqueId(),
+                text: todoInput.value,
+                read: false
+            };
             let filtred = geDataFromStorage();
-            if (filtred && Object.keys(filtred).length > 0) {
-                filtred.push(newData); // dobavlyaem novi element
-                // setDataToStorage(filtred);
-                setDataToStorage(filtred);
-                console.log('1');
-            } else {
-                console.log('2');
-                //setDataToStorage(newData);
-                window.localStorage.setItem('toDoObj', JSON.stringify([newData])); // pervaya zapis v storage
-            }
-            wrightItemsToPage(geDataFromStorage());
-            
+            filtred.push(newData); // dobavlyaem novi element
+            setDataToStorage(filtred);
+            wrightItemsToPage(filtred);
+
 
             // zapisivaem v localstorage
             //let newArr = geDataFromStorage();
@@ -126,55 +115,27 @@ window.addEventListener('DOMContentLoaded', (e) => {
     addNewItem();
 
 
-    ////////////3)////////////////
-    // const trashItem = () => {
-    //     const trashBtns = document.querySelectorAll('.task__item .task__trash');
-    //     trashBtns.forEach((item) => {
-    //         item.addEventListener('click', () => {
-
-    //             let trashParent = item.closest('.task__item');
-    //             let parenId = trashParent.dataset.id;
-                
-    //             let storeObj = geDataFromStorage();
-    //             const newArr = storeObj.filter((item) => item.id !== parenId);
-
-    //             setDataToStorage(newArr)
-    //             let objfromStorage1 = geDataFromStorage();
-    //             wrightItemsToPage(objfromStorage1);
-               
-                
-               
-    //             // addHoverOnTrash();
-    //             // addTextDecoreOnChb();
-    //             // calcItems();
-    //         });
-            
-    //     });
-        
-    // }
-   // trashItem();
-
-   tasks.addEventListener('click', (event) => {
-    const trashBtn = event.target.closest('.task__trash');
+    tasks.addEventListener('click', (event) => {
+        const trashBtn = event.target.closest('.task__trash');
 
 
-    if (trashBtn) {
-        let trashParent = trashBtn.closest('.task__item');
-        let parentId = trashParent.dataset.id;
-        let storeObj = geDataFromStorage();
-        const newArr = storeObj.filter((item) => item.id !== parentId);
-        setDataToStorage(newArr);
-        let objFromStorage = geDataFromStorage();
-        wrightItemsToPage(objFromStorage);
-        
+        if (trashBtn) {
+            let trashParent = trashBtn.closest('.task__item');
+            let parentId = trashParent.dataset.id;
+            let storeObj = geDataFromStorage();
+            const newArr = storeObj.filter((item) => item.id !== parentId);
+            setDataToStorage(newArr);
+            let objFromStorage = geDataFromStorage();
+            wrightItemsToPage(objFromStorage);
 
-        // Дополнительные функции, если необходимо
-        // addHoverOnTrash();
-        // addTextDecorOnChb();
-        // calcItems();
-    }
-});
-    
+
+            // Дополнительные функции, если необходимо
+            // addHoverOnTrash();
+            // addTextDecorOnChb();
+            // calcItems();
+        }
+    });
+
 
 
 
@@ -281,6 +242,6 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
 
 
-    
+
 
 });
