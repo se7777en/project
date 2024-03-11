@@ -46,6 +46,23 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
 
 
+    const geDataFromStorage = (tmpObject) => {
+        if (JSON.parse(window.localStorage.getItem('toDoObj'))) {
+            return JSON.parse(window.localStorage.getItem('toDoObj'))
+        } else {
+            return tmpObject;
+        }
+    }
+
+    //geDataFromStorage(toDoObj);
+
+    const setDataToStorage = (obj) => {
+        window.localStorage.setItem('toDoObj', JSON.stringify(obj));
+    }
+
+
+
+
     const wrightItemsToPage = (obj) => {
         // console.log(obj.length);
         let elements = '';
@@ -91,14 +108,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
     /////////////
     const calcItems = () => {
 
-        let obj = "";
-        if (JSON.parse(window.localStorage.getItem('toDoObj'))) {
-            obj = JSON.parse(window.localStorage.getItem('toDoObj'));
-            tasksCount.textContent = obj.length;
-        } else {
-            obj = toDoObj;
-            tasksCount.textContent = 0;
-        }
+        let obj = geDataFromStorage(toDoObj);
+        tasksCount.textContent = obj.length;
 
         let count = 0;
         obj.forEach((item) => {
@@ -133,50 +144,87 @@ window.addEventListener('DOMContentLoaded', (e) => {
             const todoText = item.querySelector('.task__item__descr');
             const todoChb = item.querySelector('.realchb');
 
+            let startTodoObj = geDataFromStorage(toDoObj);
             if (todoChb.checked) {
                 todoText.classList.add('textdecore');
+                /////////////////
+                let taskItem = todoChb.closest('.task__item');
+                let dataId = taskItem.dataset.id;
+                let loop = false;
+                startTodoObj.forEach((item) => {
+                    if (loop) return;
+                    if (item.id === dataId) {
+                        item.read = true;
+                        loop = true;
+                    }
+                })
+                setDataToStorage(startTodoObj);
+                if (!todoText.classList.contains('textdecore')) {
+                    todoText.classList.add('textdecore');
+                }
+                /////////////////
             } else {
                 todoText.classList.remove('textdecore');
+                ////////////////////
+                let taskItem = todoChb.closest('.task__item');
+                let dataId = taskItem.dataset.id;
+                let loop = false;
+                startTodoObj.forEach((item) => {
+                    if (loop) return;
+                    if (item.id === dataId) {
+                        item.read = false;
+                        loop = true;
+                    }
+                })
+                setDataToStorage(startTodoObj);
+
+                if (todoText.classList.contains('textdecore')) {
+                    todoText.classList.remove('textdecore');
+                }
+                ////////////////////
             }
 
             todoChb.addEventListener('change', () => {
 
-                let objfromStorage1 = "";
-                if (JSON.parse(window.localStorage.getItem('toDoObj'))) {
-                    objfromStorage1 = JSON.parse(window.localStorage.getItem('toDoObj'))
-                } else {
-                    objfromStorage1 = toDoObj;
-                }
+                let objfromStorage1 = geDataFromStorage(toDoObj);
+
 
                 if (todoChb.checked) {
-
+                    ///////////////////////////////////////////////
                     let taskItem = todoChb.closest('.task__item');
                     let dataId = taskItem.dataset.id;
+                    let loop = false;
                     objfromStorage1.forEach((item) => {
+                        if (loop) return;
                         if (item.id === dataId) {
                             item.read = true;
+                            loop = true;
                         }
                     })
-                    window.localStorage.setItem('toDoObj', JSON.stringify(objfromStorage1));
-
+                    setDataToStorage(objfromStorage1);
                     if (!todoText.classList.contains('textdecore')) {
                         todoText.classList.add('textdecore');
                     }
-
-                } else {
+                } else
+                ///////////////////////////////////////////////
+                {
                     let taskItem = todoChb.closest('.task__item');
                     let dataId = taskItem.dataset.id;
+                    let loop = false;
                     objfromStorage1.forEach((item) => {
+                        if (loop) return;
                         if (item.id === dataId) {
                             item.read = false;
+                            loop = true;
                         }
                     })
-                    window.localStorage.setItem('toDoObj', JSON.stringify(objfromStorage1));
+                    setDataToStorage(objfromStorage1);
 
                     if (todoText.classList.contains('textdecore')) {
                         todoText.classList.remove('textdecore');
                     }
                 }
+                ///////////////////////////////////////////////
 
                 calcItems();
             });
