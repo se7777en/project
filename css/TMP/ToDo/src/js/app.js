@@ -75,7 +75,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
 
 
-/*
+
 
 
     /////////////
@@ -158,10 +158,10 @@ window.addEventListener('DOMContentLoaded', (e) => {
     }
     addTextDecoreOnChb();
 
-*/
 
 
-/*
+
+
     const addNewItem = () => {
         addItem.addEventListener('click', () => {
             // console.log(todoInput.value);
@@ -194,10 +194,10 @@ window.addEventListener('DOMContentLoaded', (e) => {
     }
 
     addNewItem();
-    */
+   
 
 
-/*
+
 
     const trashItem = () => {
         const trashBtns = document.querySelectorAll('.task__item .task__trash');
@@ -229,7 +229,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
 
 
-*/
+
 
 
 
