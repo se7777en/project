@@ -56,6 +56,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
             obj.forEach((item) => {
                 // console.log(obj);
                 let readStatus = item.read ? 'checked' : '';
+                //textdecore
+                let textdecore = item.read ? 'textdecore' : '';
 
                 elements += `<div class="task__item item" name="todo" data-id="${item.id}">
     <div class="task__chb">
@@ -64,8 +66,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
             <span class="castomchb"></span>
         </label>
     </div>
-    <div class="task__item__descr">${item.text}</div>
-    <a class="task__trash" href="#!">
+    <div class="task__item__descr ${textdecore}">${item.text}</div>
+    <a class="task__trash trashdecore" href="#!">
     <img src="./img/trash_2.svg" alt="trash">
     </a>
     </div>`;
@@ -97,9 +99,9 @@ window.addEventListener('DOMContentLoaded', (e) => {
             let filtred = geDataFromStorage();
             filtred.push(newData); // dobavlyaem novi element
             setDataToStorage(filtred);
-           
-           
-           await wrightItemsToPage(filtred);
+
+            calcItems();
+            await wrightItemsToPage(filtred);
 
 
             // zapisivaem v localstorage
@@ -130,13 +132,73 @@ window.addEventListener('DOMContentLoaded', (e) => {
             let objFromStorage = geDataFromStorage();
             wrightItemsToPage(objFromStorage);
 
-
+            calcItems();
             // Дополнительные функции, если необходимо
             // addHoverOnTrash();
             // addTextDecorOnChb();
             // calcItems();
         }
     });
+
+    ///////3)//////////////
+    const calcItems = () => {
+
+        let obj = geDataFromStorage();
+        tasksCount.textContent = obj.length;
+
+        let count = 0;
+        obj.forEach((item) => {
+            if (item.read) count += 1;
+        })
+        complatedNum.textContent = `${count} of ${obj.length}`;
+    }
+    calcItems();
+
+
+    function restoreCheckboxState() {
+        tasks.addEventListener('change', (e) => {
+            const chb = e.target.closest('.realchb');
+
+            if (chb) {
+
+                const text = chb.closest('.task__item').querySelector('.task__item__descr');
+                const itemId = chb.closest('.task__item').dataset.id;
+                console.log(itemId);
+
+                let storeObj = geDataFromStorage();
+                storeObj.forEach((item) => {
+                    if (item.id === itemId) {
+                        if (chb.checked) {
+
+                            text.classList.add('textdecore');
+                            item.read = true;
+                        } else {
+
+                            text.classList.remove('textdecore');
+                            item.read = false;
+                        }
+                    }
+                });
+
+                setDataToStorage(storeObj);
+            }
+            calcItems();
+        });
+    }
+
+    restoreCheckboxState();
+
+
+    // const addHoverOnTrash = () => {
+
+    //     tasks.addEventListener('mouseout', (event) => {
+    //         const trashBtn = event.target.closest('.task__trash');
+    //         if (trashBtn) {
+    //             trashBtn.classList.add('trashdecore');
+    //         }
+    //     });
+    // }
+    // addHoverOnTrash();
 
 
 
@@ -191,34 +253,10 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
 
     /////////////
-    /*  const calcItems = () => {
-  
-          let obj = geDataFromStorage(toDoObj);
-          tasksCount.textContent = obj.length;
-  
-          let count = 0;
-          obj.forEach((item) => {
-              if (item.read) count += 1;
-          })
-          complatedNum.textContent = `${count} of ${obj.length}`;
-      }
-  
-      calcItems();*/
+
     /////////////
 
-    /*
-        const addHoverOnTrash = () => {
-            const trashDecore = document.querySelectorAll('.task__item .task__trash');
-            trashDecore.forEach((item) => {
-                item.addEventListener('mouseenter', () => {
-                    item.classList.add('trashdecore');
-                    setTimeout(() => {
-                        item.classList.remove('trashdecore');
-                    }, 800);
-                });
-            });
-        }
-        addHoverOnTrash();*/
+
 
 
 
