@@ -26,9 +26,9 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
 
 
-    let objfromStorage =  JSON.parse(window.localStorage.getItem('toDoObj'));
+    let objfromStorage = JSON.parse(window.localStorage.getItem('toDoObj'));
 
-    if(!objfromStorage) {
+    if (!objfromStorage) {
         window.localStorage.setItem('toDoObj', JSON.stringify(toDoObj));
         objfromStorage = toDoObj;
     }
@@ -47,7 +47,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
 
     const wrightItemsToPage = (obj) => {
-        console.log(obj.length);
+        // console.log(obj.length);
         let elements = '';
         if (obj.length > 0) {
             obj.forEach((item) => {
@@ -89,16 +89,25 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
 
     /////////////
-    const calcItems = (objfromStorage) => {
-        tasksCount.textContent = objfromStorage.length;
+    const calcItems = () => {
+
+        let obj = "";
+        if (JSON.parse(window.localStorage.getItem('toDoObj'))) {
+            obj = JSON.parse(window.localStorage.getItem('toDoObj'));
+            tasksCount.textContent = obj.length;
+        } else {
+            obj = toDoObj;
+            tasksCount.textContent = 0;
+        }
+
         let count = 0;
-        objfromStorage.forEach((item) => {
+        obj.forEach((item) => {
             if (item.read) count += 1;
         })
-        complatedNum.textContent = `${count} of ${objfromStorage.length}`;
+        complatedNum.textContent = `${count} of ${obj.length}`;
     }
 
-    calcItems(objfromStorage);
+    calcItems();
     /////////////
 
 
@@ -131,7 +140,14 @@ window.addEventListener('DOMContentLoaded', (e) => {
             }
 
             todoChb.addEventListener('change', () => {
-                const objfromStorage1 = JSON.parse(window.localStorage.getItem('toDoObj'));
+
+                let objfromStorage1 = "";
+                if (JSON.parse(window.localStorage.getItem('toDoObj'))) {
+                    objfromStorage1 = JSON.parse(window.localStorage.getItem('toDoObj'))
+                } else {
+                    objfromStorage1 = toDoObj;
+                }
+
                 if (todoChb.checked) {
 
                     let taskItem = todoChb.closest('.task__item');
@@ -162,7 +178,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                     }
                 }
 
-                //calcItems(JSON.parse(window.localStorage.getItem('toDoObj')));
+                calcItems();
             });
         });
     }
@@ -181,11 +197,24 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 read: false
             }
 
-            const filtred = JSON.parse(window.localStorage.getItem('toDoObj'));
-            filtred.push(newData);
-            window.localStorage.setItem('toDoObj', JSON.stringify(filtred));
+            let filtred = "";
+            if (JSON.parse(window.localStorage.getItem('toDoObj'))) {
+                filtred = JSON.parse(window.localStorage.getItem('toDoObj'));
+            } else {
+                filtred = toDoObj;
+            }
 
-            const newArr = JSON.parse(window.localStorage.getItem('toDoObj'));
+            filtred.push(newData); // dobavlyaem novi element
+
+            window.localStorage.setItem('toDoObj', JSON.stringify(filtred)); // zapisivaem v localstorage
+
+            let newArr = "";
+            if (JSON.parse(window.localStorage.getItem('toDoObj'))) {
+                newArr = JSON.parse(window.localStorage.getItem('toDoObj'));
+            } else {
+                newArr = toDoObj;
+            }
+
             wrightItemsToPage(newArr);
             addHoverOnTrash();
             addTextDecoreOnChb();
@@ -198,13 +227,13 @@ window.addEventListener('DOMContentLoaded', (e) => {
             // })
             // complatedNum.textContent = `${count} of ${objfromStorage.length}`;
             trashItem();
-            calcItems(newArr);
+            calcItems();
 
         });
     }
 
     addNewItem();
-   
+
 
 
 
@@ -216,20 +245,34 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
                 let trashParent = item.closest('.task__item');
                 let parenId = trashParent.dataset.id;
-                console.log(parenId);
-                const storeObj = JSON.parse(window.localStorage.getItem('toDoObj'));
+                // console.log(parenId);
+
+                let storeObj = "";
+                if (JSON.parse(window.localStorage.getItem('toDoObj'))) {
+                    storeObj = JSON.parse(window.localStorage.getItem('toDoObj'));
+                } else {
+                    storeObj = toDoObj;
+                }
+
+
                 const newArr = storeObj.filter((item) => item.id !== parenId);
                 window.localStorage.setItem('toDoObj', JSON.stringify(newArr));
                 //   
 
-                const objfromStorage1 = JSON.parse(window.localStorage.getItem('toDoObj'));
+                let objfromStorage1 = "";
+                if (JSON.parse(window.localStorage.getItem('toDoObj'))) {
+                    objfromStorage1 = JSON.parse(window.localStorage.getItem('toDoObj'))
+                } else {
+                    objfromStorage1 = toDoObj;
+                }
+
                 wrightItemsToPage(objfromStorage1);
 
                 addHoverOnTrash();
                 addTextDecoreOnChb();
 
                 trashItem();
-                calcItems(objfromStorage1);
+                calcItems();
             });
         });
     }
