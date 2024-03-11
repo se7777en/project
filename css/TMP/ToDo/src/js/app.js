@@ -124,7 +124,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     </div>`;
             });
         } else {
-            elements = `<div class="empty__task">
+            elements = `<div class="empty__task wrapselect">
             <img class="empty__img" src="./img/cliboard.png" alt="empty">
             <div class="empty__descr"><span class="descr__text-one">Você ainda não tem tarefas cadastradas</span>
                 <span class="descr__text-two">Crie tarefas e organize seus itens a fazer</span></div>
