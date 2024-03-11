@@ -106,55 +106,55 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
 
 
-    const addTextDecoreOnChb = () => {
-        const taskItems = document.querySelectorAll('.tasks .task__item');
-        taskItems.forEach((item) => {
-            const todoText = item.querySelector('.task__item__descr');
-            const todoChb = item.querySelector('.realchb');
+    // const addTextDecoreOnChb = () => {
+    //     const taskItems = document.querySelectorAll('.tasks .task__item');
+    //     taskItems.forEach((item) => {
+    //         const todoText = item.querySelector('.task__item__descr');
+    //         const todoChb = item.querySelector('.realchb');
 
-            if (todoChb.checked) {
-                todoText.classList.add('textdecore');
-            } else {
-                todoText.classList.remove('textdecore');
-            }
+    //         if (todoChb.checked) {
+    //             todoText.classList.add('textdecore');
+    //         } else {
+    //             todoText.classList.remove('textdecore');
+    //         }
 
-            todoChb.addEventListener('change', () => {
-                const objfromStorage1 = JSON.parse(window.localStorage.getItem('toDoObj'));
-                if (todoChb.checked) {
+    //         todoChb.addEventListener('change', () => {
+    //             const objfromStorage1 = JSON.parse(window.localStorage.getItem('toDoObj'));
+    //             if (todoChb.checked) {
 
-                    let taskItem = todoChb.closest('.task__item');
-                    let dataId = taskItem.dataset.id;
-                    objfromStorage1.forEach((item) => {
-                        if (item.id === dataId) {
-                            item.read = true;
-                        }
-                    })
-                    window.localStorage.setItem('toDoObj', JSON.stringify(objfromStorage1));
+    //                 let taskItem = todoChb.closest('.task__item');
+    //                 let dataId = taskItem.dataset.id;
+    //                 objfromStorage1.forEach((item) => {
+    //                     if (item.id === dataId) {
+    //                         item.read = true;
+    //                     }
+    //                 })
+    //                 window.localStorage.setItem('toDoObj', JSON.stringify(objfromStorage1));
 
-                    if (!todoText.classList.contains('textdecore')) {
-                        todoText.classList.add('textdecore');
-                    }
+    //                 if (!todoText.classList.contains('textdecore')) {
+    //                     todoText.classList.add('textdecore');
+    //                 }
 
-                } else {
-                    let taskItem = todoChb.closest('.task__item');
-                    let dataId = taskItem.dataset.id;
-                    objfromStorage1.forEach((item) => {
-                        if (item.id === dataId) {
-                            item.read = false;
-                        }
-                    })
-                    window.localStorage.setItem('toDoObj', JSON.stringify(objfromStorage1));
+    //             } else {
+    //                 let taskItem = todoChb.closest('.task__item');
+    //                 let dataId = taskItem.dataset.id;
+    //                 objfromStorage1.forEach((item) => {
+    //                     if (item.id === dataId) {
+    //                         item.read = false;
+    //                     }
+    //                 })
+    //                 window.localStorage.setItem('toDoObj', JSON.stringify(objfromStorage1));
 
-                    if (todoText.classList.contains('textdecore')) {
-                        todoText.classList.remove('textdecore');
-                    }
-                }
+    //                 if (todoText.classList.contains('textdecore')) {
+    //                     todoText.classList.remove('textdecore');
+    //                 }
+    //             }
 
-                //calcItems(JSON.parse(window.localStorage.getItem('toDoObj')));
-            });
-        });
-    }
-    addTextDecoreOnChb();
+    //             //calcItems(JSON.parse(window.localStorage.getItem('toDoObj')));
+    //         });
+    //     });
+    // }
+    // addTextDecoreOnChb();
 
 
     const addNewItem = () => {
@@ -173,7 +173,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
             const newArr = JSON.parse(window.localStorage.getItem('toDoObj'));
             wrightItemsToPage(newArr);
             addHoverOnTrash();
-            addTextDecoreOnChb();
+            //addTextDecoreOnChb();
 
             // objfromStorage = JSON.parse(window.localStorage.getItem('toDoObj'));
             // tasksCount.textContent = objfromStorage.length;
@@ -210,7 +210,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 wrightItemsToPage(objfromStorage1);
 
                 addHoverOnTrash();
-                addTextDecoreOnChb();
+                //addTextDecoreOnChb();
 
                 trashItem();
                 calcItems(objfromStorage1);
