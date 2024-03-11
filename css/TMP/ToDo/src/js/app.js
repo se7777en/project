@@ -159,6 +159,9 @@ window.addEventListener('DOMContentLoaded', (e) => {
     addTextDecoreOnChb();
 
 */
+
+
+/*
     const addNewItem = () => {
         addItem.addEventListener('click', () => {
             // console.log(todoInput.value);
@@ -191,6 +194,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     }
 
     addNewItem();
+    */
 
 
 /*
