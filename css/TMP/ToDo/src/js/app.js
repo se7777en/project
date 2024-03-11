@@ -27,7 +27,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     if (JSON.parse(window.localStorage.getItem('toDoObj'))) {
         console.log('ok');
         objfromStorage = JSON.parse(window.localStorage.getItem('toDoObj'));
-    }else {
+    } else {
         console.log('ok2');
         window.localStorage.setItem('toDoObj', JSON.stringify(toDoObj));
         objfromStorage = JSON.parse(window.localStorage.getItem('toDoObj'));
@@ -131,7 +131,10 @@ window.addEventListener('DOMContentLoaded', (e) => {
                     })
                     window.localStorage.setItem('toDoObj', JSON.stringify(objfromStorage1));
 
-                    todoText.classList.add('textdecore');
+                    if (!todoText.classList.contains('textdecore')) {
+                        todoText.classList.add('textdecore');
+                    }
+
                 } else {
                     let taskItem = todoChb.closest('.task__item');
                     let dataId = taskItem.dataset.id;
@@ -142,10 +145,12 @@ window.addEventListener('DOMContentLoaded', (e) => {
                     })
                     window.localStorage.setItem('toDoObj', JSON.stringify(objfromStorage1));
 
-                    todoText.classList.remove('textdecore');
+                    if (todoText.classList.contains('textdecore')) {
+                        todoText.classList.remove('textdecore');
+                    }
                 }
 
-                calcItems(JSON.parse(window.localStorage.getItem('toDoObj')));
+                //calcItems(JSON.parse(window.localStorage.getItem('toDoObj')));
             });
         });
     }
