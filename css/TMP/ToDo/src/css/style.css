@@ -41,6 +41,12 @@ body {
     font-family: "Roboto", sans-serif;
     font-size: 18px;
     background-color: #1A1A1A;
+
+
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .container {
@@ -59,10 +65,7 @@ body {
     width: 128px;
     height: 46px;
 
-    -webkit-user-drag: none;
-    -webkit-user-select: none;
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
+
 }
 
 
@@ -115,10 +118,7 @@ body {
     height: 51.2px;
     transition: all .2s ease-in-out;
 
-    -webkit-user-drag: none;
-    -webkit-user-select: none;
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
+
 }
 
 .btn-task:hover {
@@ -142,18 +142,10 @@ body {
     align-items: center;
     gap: 8px;
 
-    -webkit-user-drag: none;
-    -webkit-user-select: none;
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
+
 }
 
-.task__completed {
-    -webkit-user-drag: none;
-    -webkit-user-select: none;
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
-}
+
 
 /* #0D0D0D  header color*/
 /* #454545  main color*/
@@ -199,10 +191,7 @@ body {
     border-top: 2px solid #262626;
     /*333333;*/
 
-    -webkit-user-drag: none;
-    -webkit-user-select: none;
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
+
 }
 
 .empty__img {
@@ -309,12 +298,7 @@ body {
     transition: all .1s ease-in-out;
 }
 
-.task__trash {
-    -webkit-user-drag: none;
-    -webkit-user-select: none;
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
-}
+
 
 
 /* .task__trash img{
@@ -333,19 +317,11 @@ body {
 
 
 
-
-
-
-
-
 .task__chb {
     display: flex;
     justify-content: center;
 
-    -webkit-user-drag: none;
-    -webkit-user-select: none;
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
+
 }
 
 .task__trash {
