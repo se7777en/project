@@ -61,6 +61,45 @@ window.addEventListener('DOMContentLoaded', (e) => {
     }
 
 
+    const onCheckboxClick = (todoChb, objfromStorage1, todoText) => {
+        if (todoChb.checked) {
+            ///////////////////////////////////////////////
+            let taskItem = todoChb.closest('.task__item');
+            let dataId = taskItem.dataset.id;
+            let loop = false;
+            objfromStorage1.forEach((item) => {
+                if (loop) return;
+                if (item.id === dataId) {
+                    item.read = true;
+                    loop = true;
+                }
+            })
+            setDataToStorage(objfromStorage1);
+            if (!todoText.classList.contains('textdecore')) {
+                todoText.classList.add('textdecore');
+            }
+        } else
+        ///////////////////////////////////////////////
+        {
+            let taskItem = todoChb.closest('.task__item');
+            let dataId = taskItem.dataset.id;
+            let loop = false;
+            objfromStorage1.forEach((item) => {
+                if (loop) return;
+                if (item.id === dataId) {
+                    item.read = false;
+                    loop = true;
+                }
+            })
+            setDataToStorage(objfromStorage1);
+
+            if (todoText.classList.contains('textdecore')) {
+                todoText.classList.remove('textdecore');
+            }
+        }
+    }
+
+
 
 
     const wrightItemsToPage = (obj) => {
@@ -143,89 +182,12 @@ window.addEventListener('DOMContentLoaded', (e) => {
         taskItems.forEach((item) => {
             const todoText = item.querySelector('.task__item__descr');
             const todoChb = item.querySelector('.realchb');
-
-            let startTodoObj = geDataFromStorage(toDoObj);
-            if (todoChb.checked) {
-                todoText.classList.add('textdecore');
-                /////////////////
-                let taskItem = todoChb.closest('.task__item');
-                let dataId = taskItem.dataset.id;
-                let loop = false;
-                startTodoObj.forEach((item) => {
-                    if (loop) return;
-                    if (item.id === dataId) {
-                        item.read = true;
-                        loop = true;
-                    }
-                })
-                setDataToStorage(startTodoObj);
-                if (!todoText.classList.contains('textdecore')) {
-                    todoText.classList.add('textdecore');
-                }
-                /////////////////
-            } else {
-                todoText.classList.remove('textdecore');
-                ////////////////////
-                let taskItem = todoChb.closest('.task__item');
-                let dataId = taskItem.dataset.id;
-                let loop = false;
-                startTodoObj.forEach((item) => {
-                    if (loop) return;
-                    if (item.id === dataId) {
-                        item.read = false;
-                        loop = true;
-                    }
-                })
-                setDataToStorage(startTodoObj);
-
-                if (todoText.classList.contains('textdecore')) {
-                    todoText.classList.remove('textdecore');
-                }
-                ////////////////////
-            }
+            let beforeLisenerObj = geDataFromStorage(toDoObj);
+            onCheckboxClick(todoChb, beforeLisenerObj, todoText);
 
             todoChb.addEventListener('change', () => {
-
-                let objfromStorage1 = geDataFromStorage(toDoObj);
-
-
-                if (todoChb.checked) {
-                    ///////////////////////////////////////////////
-                    let taskItem = todoChb.closest('.task__item');
-                    let dataId = taskItem.dataset.id;
-                    let loop = false;
-                    objfromStorage1.forEach((item) => {
-                        if (loop) return;
-                        if (item.id === dataId) {
-                            item.read = true;
-                            loop = true;
-                        }
-                    })
-                    setDataToStorage(objfromStorage1);
-                    if (!todoText.classList.contains('textdecore')) {
-                        todoText.classList.add('textdecore');
-                    }
-                } else
-                ///////////////////////////////////////////////
-                {
-                    let taskItem = todoChb.closest('.task__item');
-                    let dataId = taskItem.dataset.id;
-                    let loop = false;
-                    objfromStorage1.forEach((item) => {
-                        if (loop) return;
-                        if (item.id === dataId) {
-                            item.read = false;
-                            loop = true;
-                        }
-                    })
-                    setDataToStorage(objfromStorage1);
-
-                    if (todoText.classList.contains('textdecore')) {
-                        todoText.classList.remove('textdecore');
-                    }
-                }
-                ///////////////////////////////////////////////
-
+                let afterLisenerObj = geDataFromStorage(toDoObj);
+                onCheckboxClick(todoChb, afterLisenerObj, todoText);
                 calcItems();
             });
         });
