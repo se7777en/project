@@ -49,6 +49,13 @@ body {
     -webkit-tap-highlight-color: transparent;
 }
 
+.wrapselect {
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
 .container {
     max-width: 766px;
     margin: 0 auto;
