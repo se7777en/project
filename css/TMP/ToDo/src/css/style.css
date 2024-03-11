@@ -50,10 +50,7 @@ body {
 }
 
 .wrapselect {
-    -webkit-user-drag: none;
-    -webkit-user-select: none;
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
+    pointer-events: none;
 }
 
 .container {
