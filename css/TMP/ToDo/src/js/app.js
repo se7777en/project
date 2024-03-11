@@ -22,16 +22,16 @@ window.addEventListener('DOMContentLoaded', (e) => {
         }
     ];
 
-    let objfromStorage = '';
-    window.localStorage.setItem('toDoObj', JSON.stringify(toDoObj));
-    objfromStorage = JSON.parse(window.localStorage.getItem('toDoObj'));
 
-    // let objfromStorage = '';
-    // if (window.localStorage.getItem('toDoObj')) {
-    //     objfromStorage = JSON.parse(window.localStorage.getItem('toDoObj'));
-    // }else {
-    //     window.localStorage.setItem('myobj', JSON.stringify(toDoObj));
-    // }
+    let objfromStorage = '';
+    if (JSON.parse(window.localStorage.getItem('toDoObj'))) {
+        console.log('ok');
+        objfromStorage = JSON.parse(window.localStorage.getItem('toDoObj'));
+    }else {
+        console.log('ok2');
+        window.localStorage.setItem('toDoObj', JSON.stringify(toDoObj));
+        objfromStorage = JSON.parse(window.localStorage.getItem('toDoObj'));
+    }
 
 
     const wrightItemsToPage = (obj) => {
@@ -51,7 +51,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     </div>
     <div class="task__item__descr">${item.text}</div>
     <a class="task__trash" href="#!">
-        <span class="material-symbols-outlined">delete</span>
+    <img src="./img/trash_2.svg" alt="trash">
     </a>
     </div>`;
             });
