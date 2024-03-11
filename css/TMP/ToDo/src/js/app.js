@@ -175,8 +175,6 @@ window.addEventListener('DOMContentLoaded', (e) => {
     addHoverOnTrash();
 
 
-
-
     const addTextDecoreOnChb = () => {
         const taskItems = document.querySelectorAll('.tasks .task__item');
         taskItems.forEach((item) => {
@@ -195,9 +193,6 @@ window.addEventListener('DOMContentLoaded', (e) => {
     addTextDecoreOnChb();
 
 
-
-
-
     const addNewItem = () => {
         addItem.addEventListener('click', () => {
             // console.log(todoInput.value);
@@ -207,23 +202,15 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 read: false
             }
 
-            let filtred = "";
-            if (JSON.parse(window.localStorage.getItem('toDoObj'))) {
-                filtred = JSON.parse(window.localStorage.getItem('toDoObj'));
-            } else {
-                filtred = toDoObj;
-            }
+            let filtred = geDataFromStorage(toDoObj);
+
 
             filtred.push(newData); // dobavlyaem novi element
 
-            window.localStorage.setItem('toDoObj', JSON.stringify(filtred)); // zapisivaem v localstorage
+            setDataToStorage(filtred); // zapisivaem v localstorage
 
-            let newArr = "";
-            if (JSON.parse(window.localStorage.getItem('toDoObj'))) {
-                newArr = JSON.parse(window.localStorage.getItem('toDoObj'));
-            } else {
-                newArr = toDoObj;
-            }
+            let newArr = geDataFromStorage(toDoObj);
+
 
             wrightItemsToPage(newArr);
             addHoverOnTrash();
@@ -238,14 +225,9 @@ window.addEventListener('DOMContentLoaded', (e) => {
             // complatedNum.textContent = `${count} of ${objfromStorage.length}`;
             trashItem();
             calcItems();
-
         });
     }
-
     addNewItem();
-
-
-
 
 
     const trashItem = () => {
@@ -257,24 +239,14 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 let parenId = trashParent.dataset.id;
                 // console.log(parenId);
 
-                let storeObj = "";
-                if (JSON.parse(window.localStorage.getItem('toDoObj'))) {
-                    storeObj = JSON.parse(window.localStorage.getItem('toDoObj'));
-                } else {
-                    storeObj = toDoObj;
-                }
 
+                let storeObj = geDataFromStorage(toDoObj);
 
                 const newArr = storeObj.filter((item) => item.id !== parenId);
-                window.localStorage.setItem('toDoObj', JSON.stringify(newArr));
-                //   
+                setDataToStorage(newArr)
 
-                let objfromStorage1 = "";
-                if (JSON.parse(window.localStorage.getItem('toDoObj'))) {
-                    objfromStorage1 = JSON.parse(window.localStorage.getItem('toDoObj'))
-                } else {
-                    objfromStorage1 = toDoObj;
-                }
+                let objfromStorage1 = geDataFromStorage(toDoObj);;
+
 
                 wrightItemsToPage(objfromStorage1);
 
@@ -286,17 +258,6 @@ window.addEventListener('DOMContentLoaded', (e) => {
             });
         });
     }
-
     trashItem();
-
-
-
-
-
-
-
-
-
-
 
 });
