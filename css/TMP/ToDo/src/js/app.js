@@ -175,6 +175,9 @@ window.addEventListener('DOMContentLoaded', (e) => {
     addHoverOnTrash();
 
 
+
+
+
     const addTextDecoreOnChb = () => {
         const taskItems = document.querySelectorAll('.tasks .task__item');
         taskItems.forEach((item) => {
@@ -214,7 +217,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
             wrightItemsToPage(newArr);
             addHoverOnTrash();
-            addTextDecoreOnChb();
+             addTextDecoreOnChb();
+            
 
             // objfromStorage = JSON.parse(window.localStorage.getItem('toDoObj'));
             // tasksCount.textContent = objfromStorage.length;
@@ -249,11 +253,11 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
 
                 wrightItemsToPage(objfromStorage1);
-
+                
+                
+                trashItem();
                 addHoverOnTrash();
                 addTextDecoreOnChb();
-
-                trashItem();
                 calcItems();
             });
         });
