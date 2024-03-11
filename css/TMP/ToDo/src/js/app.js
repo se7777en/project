@@ -87,7 +87,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
     /////////////2)///////////////
     const addNewItem = () => {
-        addItem.addEventListener('click', () => {
+        addItem.addEventListener('click', async () => {
             const newData =
             {
                 id: uniqueId(),
@@ -97,7 +97,9 @@ window.addEventListener('DOMContentLoaded', (e) => {
             let filtred = geDataFromStorage();
             filtred.push(newData); // dobavlyaem novi element
             setDataToStorage(filtred);
-            wrightItemsToPage(filtred);
+           
+           
+           await wrightItemsToPage(filtred);
 
 
             // zapisivaem v localstorage
