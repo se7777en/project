@@ -24,7 +24,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
 
     let objfromStorage = '';
-    if (JSON.parse(window.localStorage.getItem('toDoObj'))) {
+    if (window.localStorage.getItem('toDoObj')) {
         console.log('ok');
         objfromStorage = JSON.parse(window.localStorage.getItem('toDoObj'));
     } else {
@@ -39,7 +39,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     const wrightItemsToPage = (obj) => {
         console.log(obj.length);
         let elements = '';
-        if (obj.length > 0) {
+        // if (obj.length > 0) {
             obj.forEach((item) => {
                 let readStatus = '';
                 if (item.read) { readStatus = 'checked'; } else { readStatus = ''; }
@@ -57,13 +57,13 @@ window.addEventListener('DOMContentLoaded', (e) => {
     </a>
     </div>`;
             });
-        } else {
-            elements = `<div class="empty__task">
-            <img class="empty__img" src="./img/cliboard.png" alt="empty">
-            <div class="empty__descr"><span class="descr__text-one">Você ainda não tem tarefas cadastradas</span>
-                <span class="descr__text-two">Crie tarefas e organize seus itens a fazer</span></div>
-        </div>`;
-        }
+        // } else {
+        //     elements = `<div class="empty__task">
+        //     <img class="empty__img" src="./img/cliboard.png" alt="empty">
+        //     <div class="empty__descr"><span class="descr__text-one">Você ainda não tem tarefas cadastradas</span>
+        //         <span class="descr__text-two">Crie tarefas e organize seus itens a fazer</span></div>
+        // </div>`;
+        // }
 
 
 
