@@ -219,14 +219,6 @@ window.addEventListener('DOMContentLoaded', (e) => {
             addHoverOnTrash();
              addTextDecoreOnChb();
             
-
-            // objfromStorage = JSON.parse(window.localStorage.getItem('toDoObj'));
-            // tasksCount.textContent = objfromStorage.length;
-            // count = 0;
-            // objfromStorage.forEach((item) => {
-            //     if (item.read) count += 1;
-            // })
-            // complatedNum.textContent = `${count} of ${objfromStorage.length}`;
             trashItem();
             calcItems();
         });
