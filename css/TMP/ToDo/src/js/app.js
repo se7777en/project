@@ -99,6 +99,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
             let filtred = geDataFromStorage();
             filtred.push(newData); // dobavlyaem novi element
             setDataToStorage(filtred);
+            todoInput.value = '';
 
             calcItems();
             await wrightItemsToPage(filtred);
