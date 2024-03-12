@@ -69,28 +69,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
     /////////////2)///////////////
     const addNewItem = () => {
         addItem.addEventListener('click', async () => {
-            const newData =
-            {
-                id: uniqueId(),
-                text: todoInput.value,
-                read: false
-            };
-            let filtred = geDataFromStorage();
-            filtred.push(newData); // dobavlyaem novi element
-            setDataToStorage(filtred);
-            todoInput.value = '';
 
-            calcItems();
-            await wrightItemsToPage(filtred);
-
-        });
-    }
-    addNewItem();
-
-
-    const addNewItemFromKeyboard = () => {
-        todoInput.addEventListener('keydown', async (e) => {
-            if (e.key === 'Enter') {
+            if (todoInput.value.length > 0) {
                 const newData =
                 {
                     id: uniqueId(),
@@ -104,6 +84,30 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
                 calcItems();
                 await wrightItemsToPage(filtred);
+            }
+        });
+    }
+    addNewItem();
+
+
+    const addNewItemFromKeyboard = () => {
+        todoInput.addEventListener('keydown', async (event) => {
+            if (event.key === 'Enter') {
+                if (todoInput.value.length > 0) {
+                    const newData =
+                    {
+                        id: uniqueId(),
+                        text: todoInput.value,
+                        read: false
+                    };
+                    let filtred = geDataFromStorage();
+                    filtred.push(newData); // dobavlyaem novi element
+                    setDataToStorage(filtred);
+                    todoInput.value = '';
+
+                    calcItems();
+                    await wrightItemsToPage(filtred);
+                }
             }
 
         });
