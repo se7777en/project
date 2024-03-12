@@ -88,6 +88,29 @@ window.addEventListener('DOMContentLoaded', (e) => {
     addNewItem();
 
 
+    const addNewItemFromKeyboard = () => {
+        todoInput.addEventListener('keydown', async (e) => {
+            if (e.key === 'Enter') {
+                const newData =
+                {
+                    id: uniqueId(),
+                    text: todoInput.value,
+                    read: false
+                };
+                let filtred = geDataFromStorage();
+                filtred.push(newData); // dobavlyaem novi element
+                setDataToStorage(filtred);
+                todoInput.value = '';
+
+                calcItems();
+                await wrightItemsToPage(filtred);
+            }
+
+        });
+    }
+    addNewItemFromKeyboard();
+
+
     tasks.addEventListener('click', (event) => {
         const trashBtn = event.target.closest('.task__trash');
 
