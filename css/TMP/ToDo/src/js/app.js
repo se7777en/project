@@ -57,7 +57,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 // console.log(obj);
                 let readStatus = item.read ? 'checked' : '';
                 //textdecore
-                let textdecore = item.read ? 'textdecore' : '';
+                let textdecore = readStatus ? 'textdecore' : '';
 
                 elements += `<div class="task__item item" name="todo" data-id="${item.id}">
     <div class="task__chb">
