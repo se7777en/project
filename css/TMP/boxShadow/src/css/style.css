@@ -1,0 +1,57 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #e6d6d6;
+}
+
+
+/* https://neumorphism.io/ */
+/* https://getcssscan.com/css-box-shadow-examples */
+.box {
+    width: 150px;
+    height: 150px;
+    border-radius: 50px;
+    background: #d5c8c8;
+    box-shadow:  20px 20px 60px #b5aaaa,
+                 -20px -20px 60px #f5e6e6;
+}
