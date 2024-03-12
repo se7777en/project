@@ -10,53 +10,33 @@ window.addEventListener('DOMContentLoaded', (e) => {
         todoInput = document.querySelector('.wrapper .task__input');
 
 
-    // const toDoObj = [
-    //     {
-    //         id: uniqueId(),
-    //         text: 'Temporary todo',
-    //         read: true
-    //     }
-    // ];
-
-
-    // const toDoObj = [];
-    // if (window.localStorage.getItem(toDoObj)) {
-    //     window.localStorage.setItem('toDoObj', toDoObj);
-    // }
-
-
     const uniqueId = () => {
-        return 'id-' + Math.random().toString(36).substr(2, 9);
+        // return 'id-' + Math.random().toString(36).substr(2, 9);
+        const timestamp = new Date().getTime();
+        const uniquePart = (Math.random() * 100000).toFixed(0); // Уникальная случайная часть
+        const hash = (Math.random() * 100000).toString(36).replace('.', ''); // Хэш от случайного числа
+        return 'id-' + timestamp + '-' + uniquePart + '-' + hash;
     }
 
 
     const geDataFromStorage = () => {
         return JSON.parse(window.localStorage.getItem('toDoObj')) || [];
     }
-
     const setDataToStorage = (obj) => {
         window.localStorage.setItem('toDoObj', JSON.stringify(obj));
     }
 
 
 
-
-
-
-
     let objfromStorage = geDataFromStorage();
-    // console.log(objfromStorage);
 
-    /////1)//////
     const wrightItemsToPage = (obj) => {
         // console.log(obj.length);
         let elements = '';
         if (obj.length !== 0) {
 
             obj.forEach((item) => {
-                // console.log(obj);
                 let readStatus = item.read ? 'checked' : '';
-                //textdecore
                 let textdecore = item.read ? 'textdecore' : '';
 
                 elements += `<div class="task__item item" name="todo" data-id="${item.id}">
@@ -79,7 +59,6 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 <span class="descr__text-two">Crie tarefas e organize seus itens a fazer</span></div>
         </div>`;
         }
-        //tasks.innerHTML = '';
         tasks.innerHTML = elements;
     }
 
@@ -104,17 +83,6 @@ window.addEventListener('DOMContentLoaded', (e) => {
             calcItems();
             await wrightItemsToPage(filtred);
 
-
-            // zapisivaem v localstorage
-            //let newArr = geDataFromStorage();
-
-
-            // wrightItemsToPage(newArr);
-            // addHoverOnTrash();
-            // addTextDecoreOnChb();
-
-            // trashItem();
-            // calcItems();
         });
     }
     addNewItem();
@@ -134,10 +102,6 @@ window.addEventListener('DOMContentLoaded', (e) => {
             wrightItemsToPage(objFromStorage);
 
             calcItems();
-            // Дополнительные функции, если необходимо
-            // addHoverOnTrash();
-            // addTextDecorOnChb();
-            // calcItems();
         }
     });
 
@@ -161,7 +125,6 @@ window.addEventListener('DOMContentLoaded', (e) => {
             const chb = e.target.closest('.realchb');
 
             if (chb) {
-
                 const text = chb.closest('.task__item').querySelector('.task__item__descr');
                 const itemId = chb.closest('.task__item').dataset.id;
                 console.log(itemId);
@@ -188,101 +151,4 @@ window.addEventListener('DOMContentLoaded', (e) => {
     }
 
     restoreCheckboxState();
-
-
-    // const addHoverOnTrash = () => {
-
-    //     tasks.addEventListener('mouseout', (event) => {
-    //         const trashBtn = event.target.closest('.task__trash');
-    //         if (trashBtn) {
-    //             trashBtn.classList.add('trashdecore');
-    //         }
-    //     });
-    // }
-    // addHoverOnTrash();
-
-
-
-
-    /*
-        const onCheckboxClick = (todoChb, objfromStorage1, todoText) => {
-            if (todoChb.checked) {
-                ///////////////////////////////////////////////
-                let taskItem = todoChb.closest('.task__item');
-                let dataId = taskItem.dataset.id;
-                let loop = false;
-                objfromStorage1.forEach((item) => {
-                    if (loop) return;
-                    if (item.id === dataId) {
-                        item.read = true;
-                        loop = true;
-                    }
-                })
-                setDataToStorage(objfromStorage1);
-                if (!todoText.classList.contains('textdecore')) {
-                    todoText.classList.add('textdecore');
-                }
-            } else
-            ///////////////////////////////////////////////
-            {
-                let taskItem = todoChb.closest('.task__item');
-                let dataId = taskItem.dataset.id;
-                let loop = false;
-                objfromStorage1.forEach((item) => {
-                    if (loop) return;
-                    if (item.id === dataId) {
-                        item.read = false;
-                        loop = true;
-                    }
-                })
-                setDataToStorage(objfromStorage1);
-    
-                if (todoText.classList.contains('textdecore')) {
-                    todoText.classList.remove('textdecore');
-                }
-            }
-        }
-    */
-
-
-
-
-
-
-
-
-
-
-    /////////////
-
-    /////////////
-
-
-
-
-
-    /*
-    
-        const addTextDecoreOnChb = () => {
-            const taskItems = document.querySelectorAll('.tasks .task__item');
-            taskItems.forEach((item) => {
-                const todoText = item.querySelector('.task__item__descr');
-                const todoChb = item.querySelector('.realchb');
-                let beforeLisenerObj = geDataFromStorage(toDoObj);
-                onCheckboxClick(todoChb, beforeLisenerObj, todoText);
-    
-                todoChb.addEventListener('change', () => {
-                    let afterLisenerObj = geDataFromStorage(toDoObj);
-                    onCheckboxClick(todoChb, afterLisenerObj, todoText);
-                    calcItems();
-                });
-            });
-        }
-        addTextDecoreOnChb();*/
-
-
-
-
-
-
 });
