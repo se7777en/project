@@ -10,34 +10,54 @@ window.addEventListener('DOMContentLoaded', (e) => {
         todoInput = document.querySelector('.wrapper .task__input');
 
 
+    // const toDoObj = [
+    //     {
+    //         id: uniqueId(),
+    //         text: 'Temporary todo',
+    //         read: true
+    //     }
+    // ];
+
+
+    // const toDoObj = [];
+    // if (window.localStorage.getItem(toDoObj)) {
+    //     window.localStorage.setItem('toDoObj', toDoObj);
+    // }
+
+
     const uniqueId = () => {
-        // return 'id-' + Math.random().toString(36).substr(2, 9);
-        const timestamp = new Date().getTime();
-        const uniquePart = (Math.random() * 100000).toFixed(0); // Уникальная случайная часть
-        const hash = (Math.random() * 100000).toString(36).replace('.', ''); // Хэш от случайного числа
-        return 'id-' + timestamp + '-' + uniquePart + '-' + hash;
+        return 'id-' + Math.random().toString(36).substr(2, 9);
     }
 
 
     const geDataFromStorage = () => {
         return JSON.parse(window.localStorage.getItem('toDoObj')) || [];
     }
+
     const setDataToStorage = (obj) => {
         window.localStorage.setItem('toDoObj', JSON.stringify(obj));
     }
 
 
 
-    let objfromStorage = geDataFromStorage();
 
+
+
+
+    let objfromStorage = geDataFromStorage();
+    // console.log(objfromStorage);
+
+    /////1)//////
     const wrightItemsToPage = (obj) => {
         // console.log(obj.length);
         let elements = '';
         if (obj.length !== 0) {
 
             obj.forEach((item) => {
+                // console.log(obj);
                 let readStatus = item.read ? 'checked' : '';
-                let textdecore = item.read ? 'textdecore' : '';
+                //textdecore
+                let textdecore = readStatus ? 'textdecore' : '';
 
                 
                 elements += `<div class="task__item item" name="todo" data-id="${item.id}">
@@ -56,10 +76,11 @@ window.addEventListener('DOMContentLoaded', (e) => {
         } else {
             elements = `<div class="empty__task wrapselect">
             <img class="empty__img" src="./img/cliboard.png" alt="empty">
-            <div class="empty__descr"><div class="descr__text-one">You don't have tasks registered yet</div>
-                <div class="descr__text-two">Create tasks and organize your to-do items</div></div>
+            <div class="empty__descr"><span class="descr__text-one">Você ainda não tem tarefas cadastradas</span>
+                <span class="descr__text-two">Crie tarefas e organize seus itens a fazer</span></div>
         </div>`;
         }
+        //tasks.innerHTML = '';
         tasks.innerHTML = elements;
     }
 
@@ -70,50 +91,33 @@ window.addEventListener('DOMContentLoaded', (e) => {
     /////////////2)///////////////
     const addNewItem = () => {
         addItem.addEventListener('click', async () => {
+            const newData =
+            {
+                id: uniqueId(),
+                text: todoInput.value,
+                read: false
+            };
+            let filtred = geDataFromStorage();
+            filtred.push(newData); // dobavlyaem novi element
+            setDataToStorage(filtred);
 
-            if (todoInput.value.length > 0) {
-                const newData =
-                {
-                    id: uniqueId(),
-                    text: todoInput.value,
-                    read: false
-                };
-                let filtred = geDataFromStorage();
-                filtred.push(newData); // dobavlyaem novi element
-                setDataToStorage(filtred);
-                todoInput.value = '';
+            calcItems();
+            await wrightItemsToPage(filtred);
 
-                calcItems();
-                await wrightItemsToPage(filtred);
-            }
+
+            // zapisivaem v localstorage
+            //let newArr = geDataFromStorage();
+
+
+            // wrightItemsToPage(newArr);
+            // addHoverOnTrash();
+            // addTextDecoreOnChb();
+
+            // trashItem();
+            // calcItems();
         });
     }
     addNewItem();
-
-
-    const addNewItemFromKeyboard = () => {
-        todoInput.addEventListener('keydown', async (event) => {
-            if (event.key === 'Enter') {
-                if (todoInput.value.length > 0) {
-                    const newData =
-                    {
-                        id: uniqueId(),
-                        text: todoInput.value,
-                        read: false
-                    };
-                    let filtred = geDataFromStorage();
-                    filtred.push(newData); // dobavlyaem novi element
-                    setDataToStorage(filtred);
-                    todoInput.value = '';
-
-                    calcItems();
-                    await wrightItemsToPage(filtred);
-                }
-            }
-
-        });
-    }
-    addNewItemFromKeyboard();
 
 
     tasks.addEventListener('click', (event) => {
@@ -130,6 +134,10 @@ window.addEventListener('DOMContentLoaded', (e) => {
             wrightItemsToPage(objFromStorage);
 
             calcItems();
+            // Дополнительные функции, если необходимо
+            // addHoverOnTrash();
+            // addTextDecorOnChb();
+            // calcItems();
         }
     });
 
@@ -153,6 +161,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
             const chb = e.target.closest('.realchb');
 
             if (chb) {
+
                 const text = chb.closest('.task__item').querySelector('.task__item__descr');
                 const itemId = chb.closest('.task__item').dataset.id;
                 console.log(itemId);
@@ -179,4 +188,101 @@ window.addEventListener('DOMContentLoaded', (e) => {
     }
 
     restoreCheckboxState();
+
+
+    // const addHoverOnTrash = () => {
+
+    //     tasks.addEventListener('mouseout', (event) => {
+    //         const trashBtn = event.target.closest('.task__trash');
+    //         if (trashBtn) {
+    //             trashBtn.classList.add('trashdecore');
+    //         }
+    //     });
+    // }
+    // addHoverOnTrash();
+
+
+
+
+    /*
+        const onCheckboxClick = (todoChb, objfromStorage1, todoText) => {
+            if (todoChb.checked) {
+                ///////////////////////////////////////////////
+                let taskItem = todoChb.closest('.task__item');
+                let dataId = taskItem.dataset.id;
+                let loop = false;
+                objfromStorage1.forEach((item) => {
+                    if (loop) return;
+                    if (item.id === dataId) {
+                        item.read = true;
+                        loop = true;
+                    }
+                })
+                setDataToStorage(objfromStorage1);
+                if (!todoText.classList.contains('textdecore')) {
+                    todoText.classList.add('textdecore');
+                }
+            } else
+            ///////////////////////////////////////////////
+            {
+                let taskItem = todoChb.closest('.task__item');
+                let dataId = taskItem.dataset.id;
+                let loop = false;
+                objfromStorage1.forEach((item) => {
+                    if (loop) return;
+                    if (item.id === dataId) {
+                        item.read = false;
+                        loop = true;
+                    }
+                })
+                setDataToStorage(objfromStorage1);
+    
+                if (todoText.classList.contains('textdecore')) {
+                    todoText.classList.remove('textdecore');
+                }
+            }
+        }
+    */
+
+
+
+
+
+
+
+
+
+
+    /////////////
+
+    /////////////
+
+
+
+
+
+    /*
+    
+        const addTextDecoreOnChb = () => {
+            const taskItems = document.querySelectorAll('.tasks .task__item');
+            taskItems.forEach((item) => {
+                const todoText = item.querySelector('.task__item__descr');
+                const todoChb = item.querySelector('.realchb');
+                let beforeLisenerObj = geDataFromStorage(toDoObj);
+                onCheckboxClick(todoChb, beforeLisenerObj, todoText);
+    
+                todoChb.addEventListener('change', () => {
+                    let afterLisenerObj = geDataFromStorage(toDoObj);
+                    onCheckboxClick(todoChb, afterLisenerObj, todoText);
+                    calcItems();
+                });
+            });
+        }
+        addTextDecoreOnChb();*/
+
+
+
+
+
+
 });
