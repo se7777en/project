@@ -39,6 +39,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 let readStatus = item.read ? 'checked' : '';
                 let textdecore = item.read ? 'textdecore' : '';
 
+                
                 elements += `<div class="task__item item" name="todo" data-id="${item.id}">
     <div class="task__chb">
         <label>
