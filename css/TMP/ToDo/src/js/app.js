@@ -2,7 +2,7 @@
 window.addEventListener('DOMContentLoaded', (e) => {
     e.preventDefault();
 
-    
+
 
     const tasks = document.querySelector('.wrapper .tasks'),
         tasksCount = document.querySelector('.wrapper .created_num'),
@@ -38,7 +38,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
             obj.forEach((item) => {
                 let readStatus = item.read ? 'checked' : '';
-                let textdecore = item.read ? 'textdecore' : '';
+                let textdecore = readStatus ? 'textdecore' : '';
 
                 
                 elements += `<div class="task__item item" name="todo" data-id="${item.id}">
