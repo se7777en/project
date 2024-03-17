@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded',() => {
     let endX;
     let startY;
     let endY;
-    let threshold = 10; // порог для определения свайпа или клика
+    let threshold = 25; // порог для определения свайпа или клика
     
     sliderInner.addEventListener('touchstart', (e) => {
         startX = e.touches[0].clientX;
