@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const Count = 11; // number of image
     const spaceBetweenSliders = 0; // space between sliders in px
-    let itemWidht = 300; // width in pixel
+    let itemWidht = 200; // width in pixel
     let slideToshow = 4; // slider on page count
 
 
@@ -36,37 +36,43 @@ document.addEventListener('DOMContentLoaded', () => {
     // }
 
 
-
+/*
     sliderCountOnPage.style = `width: ${itemWidht * slideToshow}px`;
 
     sliderItemWidth.forEach((item) => {
         item.style = `width: ${itemWidht}px`;
     })
-    // sliderItemWidth.style = `width: ${itemWidht}px`;
-    //sliderInner.style = `gap: ${spaceBetweenSliders}px;`;
+*/
+    // itemWidht = itemWidht + spaceBetweenSliders;
+    // const forLerft = Count * itemWidht - (itemWidht * slideToshow);
 
-    itemWidht = itemWidht + spaceBetweenSliders;
-    const forLerft = Count * itemWidht - (itemWidht * slideToshow);
 
+
+
+
+    //11 * 300 - ((300 + 5) *  4) =     3,300 - 1,220 = 2,080
     // const sliderWidth = Count * itemWidht;
 
 
+    //2,200 - vsya lenta
+    
+
     let shift = 0;
     leftArrow.addEventListener('click', () => {
-        if (shift > -(forLerft)) {
-            shift = shift - itemWidht;
+        //if (shift > -(forLerft)) {
+            shift = shift - 200;
             sliderInner.style = `transform: translateX(${shift}px);`;
-        }
+       // }
 
     });
 
 
 
     rightArrow.addEventListener('click', () => {
-        if (shift < 0) {
-            shift = shift + itemWidht;
+       // if (shift < 0) {
+            shift = shift + 200;
             sliderInner.style = `transform: translateX(${shift}px);`;
-        }
+       // }
 
     });
 
