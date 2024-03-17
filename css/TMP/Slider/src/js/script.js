@@ -65,27 +65,39 @@ document.addEventListener('DOMContentLoaded',() => {
 
     //////swaip///////////
 
-let startX;
-let endX;
-
-sliderInner.addEventListener('touchstart', (e) => {
-    startX = e.touches[0].clientX;
-});
-
-sliderInner.addEventListener('touchmove', (e) => {
-    endX = e.touches[0].clientX;
-});
-
-sliderInner.addEventListener('touchend', () => {
-    const deltaX = startX - endX;
-    if (deltaX > 50) {
-        // свайп влево
-        scrollToNextSlide();
-    } else if (deltaX < -50) {
-        // свайп вправо
-        scrollToPreviousSlide();
-    }
-});
+    let startX;
+    let endX;
+    let startY;
+    let endY;
+    let threshold = 10; // порог для определения свайпа или клика
+    
+    sliderInner.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+    });
+    
+    sliderInner.addEventListener('touchmove', (e) => {
+        endX = e.touches[0].clientX;
+        endY = e.touches[0].clientY;
+    });
+    
+    sliderInner.addEventListener('touchend', () => {
+        const deltaX = startX - endX;
+        const deltaY = startY - endY;
+        if (Math.abs(deltaX) > threshold || Math.abs(deltaY) > threshold) {
+            if (Math.abs(deltaX) > Math.abs(deltaY)) {
+                if (deltaX > 50) {
+                    // свайп влево
+                    scrollToNextSlide();
+                } else if (deltaX < -50) {
+                    // свайп вправо
+                    scrollToPreviousSlide();
+                }
+            }
+        } else {
+            // Это был клик, ничего не делаем
+        }
+    });
 
 function scrollToNextSlide() {
     // Реализуйте логику для прокрутки к следующему слайду
