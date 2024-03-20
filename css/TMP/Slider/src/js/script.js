@@ -4,9 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
         leftArrow = document.querySelector('.sliderWrapper .slider__leftArrow'),
         rightArrow = document.querySelector('.sliderWrapper .slider__rightArrow'),
         slider = document.querySelector('.sliderWrapper .slider'),
-
-        sliderItemWidth = document.querySelectorAll('.sliderWrapper .slider__inner img'),
-        sliderWrapper = document.querySelector('.sliderWrapper');
+        footerBlock = document.querySelector('.sliderWrapper .building-blocks'),
+        footerBlocks = document.querySelectorAll('.sliderWrapper .building-block'),
+        sliderInner = document.querySelector('.sliderWrapper .slider__inner');
 
 
 
@@ -25,38 +25,100 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    let shift = 0;
-    let slideToshow = 4;
+
+    let slideToshow = 3;
     let gap = 5;
     let itemWidht = 200 + gap;
 
 
-
-
+    slider.style.width = `${itemWidht * slideToshow}px`;
+    sliderInner.style.gap = `${gap}px`;
+    let shift = 0;
     let sliderCount = sliderInnerItems.length;
 
-    slider.style.width = `${sliderCount * itemWidht}px, overflow: hidden`;
 
 
+    console.log(sliderCount);
+
+    // slider.style.width = `${sliderCount * itemWidht}px, overflow: hidden`;
     let forLeft = (sliderCount * itemWidht) - (itemWidht * slideToshow);
     leftArrow.addEventListener('click', () => {
         if (shift > -forLeft) {
             const parent = document.querySelector('.sliderWrapper .slider__inner');
             shift -= itemWidht;
             parent.style.transform = `translateX(${shift}px)`;
-
         }
 
     });
 
     rightArrow.addEventListener('click', () => {
         if (shift < 0) {
-            console.log(shift);
+            //console.log(shift);
             const parent = document.querySelector('.sliderWrapper .slider__inner');
             shift += itemWidht;
             parent.style.transform = `translateX(${shift}px)`;
         }
     });
+
+    const buildingBlock = () => {
+        let items = '';
+        for (let i = 0; i < sliderCount; i++) {
+            items += `<div class="building-block"></div>`;
+        }
+        footerBlock.innerHTML = items;
+    }
+    buildingBlock();
+
+
+
+    const disableActive = (items, status = 'active') => {
+        items.forEach((item) => {
+            if (item.classList.contains(status)) {
+                item.classList.remove(status);
+            }
+        })
+    }
+
+    const buildingBlockStatus = () => {
+        const id = -itemWidht;
+        const footerBlocks = document.querySelectorAll('.sliderWrapper .building-block');
+        const length = footerBlocks.length;
+        footerBlocks.forEach((item, i) => {
+            item.addEventListener('click', () => {
+                disableActive(footerBlocks);
+                item.classList.add('active');
+                //if(i > 0){
+                let identify = i * id;
+                let parent = document.querySelector('.sliderWrapper .slider__inner');
+                if (identify >= -forLeft) {
+                    parent.style.transform = `translateX(${identify}px)`;
+                    shift = identify;
+                } else {
+                    parent.style.transform = `translateX(${(length * id) - slideToshow * id}px)`;
+                    shift = (length * id) - slideToshow * id;
+                }
+
+
+                disableActive(sliderInnerItems, 'active__styles');
+                sliderInnerItems[i].classList.add('active__styles');
+                //}
+            })
+        });
+
+        sliderInnerItems.forEach((item, i) => {
+            item.addEventListener('click', () => {
+                disableActive(footerBlocks);
+                footerBlocks[i].classList.add('active');
+            });
+        })
+    }
+
+    buildingBlockStatus();
+    //
+
+
+    //sliderCount
+    //footerBlocks
 
 
 

@@ -75,10 +75,18 @@ body {
 .slider__inner-item:hover {
     cursor: pointer;
     scale: 1.05;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, .4);
     transition: all .1s ease-in-out;
     /* box-shadow: 3px 3px 1px #ccc;
     -webkit-box-shadow: 3px 3px 1px #ccc;
     -moz-box-shadow: 3px 3px 1px #ccc; */
+}
+
+.active__styles {
+    cursor: pointer;
+    scale: 1.05;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, .4);
+    transition: all .1s ease-in-out;
 }
 
 
@@ -99,7 +107,7 @@ body {
 }
 
 
-.sliderWrapper .arrow{
+.sliderWrapper .arrow {
     color: #ff0808;
     font-size: 30px;
 }
@@ -149,14 +157,25 @@ body {
     left: 50%;
     transform: translateX(-50%);
     display: flex;
+    align-items: center;
     gap: 10px;
 }
 
 .building-block {
     width: 8px;
     height: 8px;
-    border: 1px solid #000;
+    border: 1px solid tomato;
     cursor: pointer;
+    transition: all .1s ease-in-out;
+}
+
+/* .building-block:hover {
+  
+} */
+
+.active {
+    background-color: tomato;
+    scale: 2;
 }
 
 
