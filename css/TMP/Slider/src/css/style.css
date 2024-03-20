@@ -92,7 +92,7 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    left: 0px;
+    left: 15px;
     cursor: pointer;
     font-size: 50px;
     transition: all .1s ease-in-out;
@@ -101,6 +101,7 @@ body {
 
 .sliderWrapper .arrow{
     color: #fff;
+    font-size: 30px;
 }
 
 .slider__leftArrow:hover {
@@ -113,7 +114,7 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    right: 0px;
+    right: 15px;
     cursor: pointer;
     font-size: 50px;
     transition: all .1s ease-in-out;
