@@ -59,6 +59,7 @@ body {
     width: 820px;
     overflow: hidden;
     padding: 20px 0;
+   
 }
 
 
@@ -178,10 +179,10 @@ body {
     scale: 2;
 }
 
-
+/* 
 @media (max-width: 1340px) {
     .sliderWrapper .arrow {
         visibility: hidden;
         display: none;
     }
-}
+} */

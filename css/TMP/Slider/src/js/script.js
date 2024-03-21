@@ -31,39 +31,58 @@ document.addEventListener('DOMContentLoaded', () => {
     let itemWidht = 200 + gap;
 
 
-    slider.style.width = `${itemWidht * slideToshow}px`;
+    slider.style.width = `${itemWidht * slideToshow - gap}px`;
     sliderInner.style.gap = `${gap}px`;
     let shift = 0;
     let sliderCount = sliderInnerItems.length;
 
 
 
-    console.log(sliderCount);
+    //console.log(sliderCount);
 
     // slider.style.width = `${sliderCount * itemWidht}px, overflow: hidden`;
-    let forLeft = (sliderCount * itemWidht) - (itemWidht * slideToshow);
+    let forLeft = (sliderCount * itemWidht) - itemWidht * slideToshow;
+    console.log(forLeft);
+    //console.log(forLeft);
+
     leftArrow.addEventListener('click', () => {
+        let footerBlocks = document.querySelectorAll('.sliderWrapper .building-block');
         if (shift > -forLeft) {
             const parent = document.querySelector('.sliderWrapper .slider__inner');
-            shift -= itemWidht;
+            shift -= itemWidht * slideToshow;
             parent.style.transform = `translateX(${shift}px)`;
-        }
 
+            //  console.log(Math.abs(((shift / itemWidht) / slideToshow))); //tekushi slaid
+            let index = Math.abs(((shift / itemWidht) / slideToshow));
+            disableActive(footerBlocks);
+            console.log(index);
+            footerBlocks[index].classList.add('active');
+        }
     });
 
+
     rightArrow.addEventListener('click', () => {
+        let footerBlocks = document.querySelectorAll('.sliderWrapper .building-block');
         if (shift < 0) {
             //console.log(shift);
             const parent = document.querySelector('.sliderWrapper .slider__inner');
-            shift += itemWidht;
+            shift += itemWidht * slideToshow;
+            console.log(Math.abs(((shift / itemWidht) / slideToshow)));
             parent.style.transform = `translateX(${shift}px)`;
+
+              //  console.log(Math.abs(((shift / itemWidht) / slideToshow))); //tekushi slaid
+              let index = Math.abs(((shift / itemWidht) / slideToshow));
+              disableActive(footerBlocks);
+              console.log(index);
+              footerBlocks[index].classList.add('active');
         }
     });
 
     const buildingBlock = () => {
         let items = '';
-        for (let i = 0; i < sliderCount; i++) {
-            items += `<div class="building-block"></div>`;
+        for (let i = 0; i < Math.floor(sliderCount / slideToshow); i++) {
+           let active = (i === 0) ? 'active' : '';
+            items += `<div class="building-block ${active}"></div>`;
         }
         footerBlock.innerHTML = items;
     }
@@ -87,30 +106,16 @@ document.addEventListener('DOMContentLoaded', () => {
             item.addEventListener('click', () => {
                 disableActive(footerBlocks);
                 item.classList.add('active');
-                //if(i > 0){
-                let identify = i * id;
+                let identify = i * id * slideToshow;
                 let parent = document.querySelector('.sliderWrapper .slider__inner');
-                if (identify >= -forLeft) {
+               // if (identify >= -forLeft) {
                     parent.style.transform = `translateX(${identify}px)`;
                     shift = identify;
-                } else {
-                    parent.style.transform = `translateX(${(length * id) - slideToshow * id}px)`;
-                    shift = (length * id) - slideToshow * id;
-                }
-
-
-                disableActive(sliderInnerItems, 'active__styles');
-                sliderInnerItems[i].classList.add('active__styles');
-                //}
-            })
+                //} 
+            });
         });
 
-        sliderInnerItems.forEach((item, i) => {
-            item.addEventListener('click', () => {
-                disableActive(footerBlocks);
-                footerBlocks[i].classList.add('active');
-            });
-        })
+ 
     }
 
     buildingBlockStatus();
