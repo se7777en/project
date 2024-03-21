@@ -29,10 +29,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     let slideToshow = 3;
-    let gap = 5;
-    let itemWidht = 150;
+    let gap = 10;
+    let itemWidht = 300;
     let borderRadius = 10;
     let dots = true;
+    let dotsDecor = false;
 
 
 
@@ -46,6 +47,19 @@ document.addEventListener('DOMContentLoaded', () => {
         item.style.width = `${itemWidht - gap}px`; // shirina kajdoi kartinki
         item.style.borderRadius = `${borderRadius}px`;
     });
+
+
+
+const foooterBloksDecore = () => {
+    if(dotsDecor) {
+        const footerBlockItems = document.querySelectorAll('.sliderWrapper .building-blocks .building-block');
+        footerBlockItems.forEach((item)=> {
+            item.style.borderRadius = '50%';
+        });
+    }
+}
+
+
 
 
 
@@ -75,6 +89,15 @@ document.addEventListener('DOMContentLoaded', () => {
             footerBlocks[index].classList.add('active');
         }
 
+        // console.log(`${shift} - ${forLeft}`);
+        if (Math.abs(shift) === forLeft) {
+            rightArrowBg.classList.add('disabled');
+            leftArrowBg.classList.remove('disabled');
+        } else {
+            leftArrowBg.classList.remove('disabled');
+            rightArrowBg.classList.remove('disabled');
+        }
+
     }
 
     const rightArrowFunc = () => {
@@ -92,26 +115,35 @@ document.addEventListener('DOMContentLoaded', () => {
             disableActive(footerBlocks);
             footerBlocks[index].classList.add('active');
         }
-        // else if (shift === 0) {
-        //     rightArrowBg.classList.add('disabled');
-        // }
+
+       // console.log(`${shift}`);
+        if (shift === 0) {
+            leftArrowBg.classList.add('disabled');
+            rightArrowBg.classList.remove('disabled');
+        } else {
+            leftArrowBg.classList.remove('disabled');
+            rightArrowBg.classList.remove('disabled');
+        }
     }
+    rightArrowFunc();
 
     leftArrow.addEventListener('click', () => {
-        leftArrowFunc();
+        rightArrowFunc();
     });
 
     rightArrow.addEventListener('click', () => {
-        rightArrowFunc();
+
+        leftArrowFunc();
     });
 
 
 
     document.addEventListener('keydown', (event) => {
         if (event.key === "ArrowLeft") {
-            leftArrowFunc();
-        } else if (event.key === "ArrowRight") {
             rightArrowFunc();
+        } else if (event.key === "ArrowRight") {
+
+            leftArrowFunc();
         }
     });
 
@@ -124,14 +156,18 @@ document.addEventListener('DOMContentLoaded', () => {
             let items = '';
             for (let i = 0; i < Math.floor(sliderCount / slideToshow); i++) {
                 let active = (i === 0) ? 'active' : '';
+
                 items += `<div class="building-block ${active}"></div>`;
             }
             footerBlock.innerHTML = items;
-        }else {
+        } else {
             footerBlock.innerHTML = '';
         }
     }
     buildingBlock();
+    foooterBloksDecore();
+
+ 
 
 
 
@@ -165,22 +201,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     buildingBlockStatus();
-    //
-
-
-    //sliderCount
-    //footerBlocks
-
-
-
-    // sliderInnerItems[0].style = `border-radius: 0px 5px 5px 0px`;
-    // sliderInnerItems[sliderInnerItems.length].style = `border-radius: 5px 0px 0px 5px`;
-
-
-
-
-
-    //transform: translateX(200px);
 
 
     //////swaip///////////
