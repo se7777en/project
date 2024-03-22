@@ -115,6 +115,10 @@ body {
     color: #ff0808;
     font-size: 30px;
    
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
     
 }
 

@@ -28,10 +28,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    let slideToshow = 3;
+    let slideToshow = 2;
     let gap = 10;
-    let itemWidht = 300;
-    let borderRadius = 10;
+    let itemWidht = 400;
+    let borderRadius = 20;
     let dots = true;
     let dotsDecor = false;
 
@@ -50,14 +50,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-const foooterBloksDecore = () => {
-    if(dotsDecor) {
-        const footerBlockItems = document.querySelectorAll('.sliderWrapper .building-blocks .building-block');
-        footerBlockItems.forEach((item)=> {
-            item.style.borderRadius = '50%';
-        });
+    const foooterBloksDecore = () => {
+        if (dotsDecor) {
+            const footerBlockItems = document.querySelectorAll('.sliderWrapper .building-blocks .building-block');
+            footerBlockItems.forEach((item) => {
+                item.style.borderRadius = '50%';
+            });
+        }
     }
-}
 
 
 
@@ -116,7 +116,7 @@ const foooterBloksDecore = () => {
             footerBlocks[index].classList.add('active');
         }
 
-       // console.log(`${shift}`);
+        // console.log(`${shift}`);
         if (shift === 0) {
             leftArrowBg.classList.add('disabled');
             rightArrowBg.classList.remove('disabled');
@@ -167,7 +167,7 @@ const foooterBloksDecore = () => {
     buildingBlock();
     foooterBloksDecore();
 
- 
+
 
 
 
@@ -190,13 +190,32 @@ const foooterBloksDecore = () => {
                 item.classList.add('active');
                 let identify = i * id * slideToshow;
                 let parent = document.querySelector('.sliderWrapper .slider__inner');
-                // if (identify >= -forLeft) {
                 parent.style.transform = `translateX(${identify}px)`;
                 shift = identify;
-                //} 
+
+
+                if (i === 0) {
+                    console.log('left');
+                    leftArrowBg.classList.add('disabled');
+                    rightArrowBg.classList.remove('disabled');
+                    
+                }
+
+                if (i > 0 && i < footerBlocks.length - 1) {
+                    console.log('middle');
+                    leftArrowBg.classList.remove('disabled');
+                    rightArrowBg.classList.remove('disabled');
+                }
+
+
+                if (i === footerBlocks.length - 1) {
+                    console.log('right');
+                    rightArrowBg.classList.add('disabled');
+                    leftArrowBg.classList.remove('disabled');
+                }
+
             });
         });
-
 
     }
 
