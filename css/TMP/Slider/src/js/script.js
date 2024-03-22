@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
         leftArrow = document.querySelector('.sliderWrapper .slider__leftArrow'),
         rightArrow = document.querySelector('.sliderWrapper .slider__rightArrow'),
         slider = document.querySelector('.sliderWrapper .slider'),
+        sliderWrapper = document.querySelector('.sliderWrapper'),
         footerBlock = document.querySelector('.sliderWrapper .building-blocks'),
         sliderInner = document.querySelector('.sliderWrapper .slider__inner'),
         images = document.querySelectorAll('.sliderWrapper .slider__inner img'),
@@ -30,15 +31,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let slideToshow = 2;
     let gap = 10;
-    let itemWidht = 400;
-    let borderRadius = 20;
+    let itemWidht = 550;
+    let borderRadius = 80;
     let dots = true;
     let dotsDecor = false;
 
 
 
     itemWidht = itemWidht + gap;
-    slider.style.width = `${itemWidht * slideToshow - gap}px`;
+    //slider.style.width = `${itemWidht * slideToshow - gap}px`;
+    sliderWrapper.style.width = `${itemWidht * slideToshow - gap}px`;
+
     sliderInner.style.gap = `${gap}px`;
     let shift = 0;
     let sliderCount = sliderInnerItems.length;

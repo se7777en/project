@@ -39,10 +39,10 @@ li {
 }
 
 body {
-    display: flex;
+    /* display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 100vh; */
 }
 
 /* .sliderWrapper {
@@ -55,10 +55,14 @@ body {
     padding: 0 15px;
 }
 
+.sliderWrapper {
+    position: relative;
+}
+
 .slider {
-    width: 820px;
+    /* width: 820px; */
     overflow: hidden;
-    padding: 40px 0;
+    margin-bottom: 25px;
     position: relative;
    
 }
@@ -177,12 +181,9 @@ body {
 
 
 .building-blocks {
-    position: absolute;
-    bottom: 16px;
-    left: 50%;
-    transform: translateX(-50%);
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
 }
 
