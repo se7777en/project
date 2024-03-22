@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let slideToshow = 2;
     let gap = 10;
-    let itemWidht = 400;
+    let itemWidht = 600;
     let borderRadius = 5;
     let dots = true;
     let dotsDecor = false;
