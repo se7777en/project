@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Accardion</title>
+</head>
+<body>
+    
+<div class="accordion">
+    <div contenteditable="true" class="accordion__item">Lorem ipsum dolor sit amet consect</div>
+</div>
+
+<div class="svg__box">
+    <svg class="reading-progress" viewBox="0 0 320 320" width="320" height="320">
+        <g transform="rotate(-90 160 160)">
+            <circle id="reading-progress2" cx="160" cy="160" r="100" stroke-dasharray="628.3185307"></circle>
+            <circle id="reading-progress" cx="160" cy="160" r="100" stroke-dasharray="314.15926535 628.3185307"></circle>
+            <text class="circle__text" x="160" y="160" text-anchor="middle" alignment-baseline="middle" transform="rotate(90 160 160)">50%</text>
+        </g>
+    </svg>
+    <!-- <div class="svg__text">50%</div> -->
+
+    <input class="range" type="range" min="0" max="100" step="1" value="50">
+</div>
+
+
+<!-- // Радиус круга
+var radius = 22;
+
+// Длина видимой линии (значение в stroke-dasharray)
+var visibleLength = 30.80933951704765;
+
+// Вычисляем длину окружности
+var circumference = 2 * Math.PI * radius;
+
+// Вычисляем длину промежутка
+var gapLength = circumference - visibleLength;
+
+console.log("Длина промежутка:", gapLength); -->
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
