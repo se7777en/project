@@ -21,27 +21,32 @@
                             <img class="logo__img" src="./img/rhino_1.svg" alt="logo">
                         </a>
                     </div>
-                    <button class="header__contact" type="button">
-                        <div class="contact__inner">
-                            <img class="contact__img" src="./img/headset.svg" alt="contact">
-                            <span class="online"></span>
-                        </div>
+                    <div class="header__contact">
+                        <button class="header__btn" type="button">
+                            <div class="contact__inner">
+                                <img class="contact__img" src="./img/headset.svg" alt="contact">
+                                <span class="status"></span>
+                            </div>
+                        </button>
                         <div class="help">
                             <div class="help__header">
                                 <div class="help__header-text">Поддержка клиентов</div>
                                 <div class="help__close"><i class="fa-solid fa-xmark"></i></div>
                             </div>
-                            <!-- <div class="help__main">
-                                <img class="help__profile" src="#!" alt="profile">
-                                <div class="help__athor">Илья Василенко</div>
+                            <div class="help__main">
+                                <div class="help__main-img">
+                                    <img class="help__profile" src="./img/profile.jpg" alt="profile">
+                                    <span class="status"></span>
+                                </div>
+                                <div class="help__athor">Melik Papikyan</div>
                                 <div class="help__title">основатель сайта</div>
                                 <div class="help__text">Задать вопрос</div>
                                 <div class="help__contacts">
-                                    <button class="help__email"><i class="fa-solid fa-envelope"></i></button>
-                                    <button class="help__whatsapp"><i class="fa-brands fa-whatsapp"></i></button>
-                                    <button class="help__telegram"><i class="fa-brands fa-telegram"></i></button>
+                                    <button class="help__email" onclick="window.location.href = '#!'"><i class="fa-solid fa-envelope"></i></button>
+                                    <button class="help__whatsapp" onclick="window.location.href = '#!'"><i class="fa-brands fa-whatsapp"></i></button>
+                                    <button class="help__telegram" onclick="window.location.href = '#!'"><i class="fa-brands fa-telegram"></i></button>
                                 </div>
-                            </div> -->
+                            </div>
                             <div class="help__footer">
                                 <div class="help__footer-text">Поддержка клиентов</div>
                                 <a class="help__footer-phone" href="tel:77172760581">+7 717 276 05 81</a>
@@ -50,11 +55,14 @@
                                 </div>
                             </div>
                         </div>
-                    </button>
+                    </div>
+                    
                 </div>
             </div>
         </header>
     </div>
+
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
