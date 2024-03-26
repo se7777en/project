@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>JS Book</title>
 </head>
 
@@ -42,9 +42,10 @@
                                 <div class="help__title">основатель сайта</div>
                                 <div class="help__text">Задать вопрос</div>
                                 <div class="help__contacts">
-                                    <button class="help__email" onclick="window.location.href = '#!'"><i class="fa-solid fa-envelope"></i></button>
-                                    <button class="help__whatsapp" onclick="window.location.href = '#!'"><i class="fa-brands fa-whatsapp"></i></button>
-                                    <button class="help__telegram" onclick="window.location.href = '#!'"><i class="fa-brands fa-telegram"></i></button>
+
+                                    <a class="help__email" href=""><i class="fa-solid fa-envelope"></i></a>
+                                    <a class="help__whatsapp" href=""><i class="fa-brands fa-whatsapp"></i></a>
+                                    <a class="help__telegram" href=""><i class="fa-brands fa-telegram"></i></a>
                                 </div>
                             </div>
                             <div class="help__footer">
@@ -56,11 +57,80 @@
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </header>
+        <main class="main">
+            <div class="container">
+                <div class="main__inner">
+                    <div class="main__inner-text">
+                        <section class="introduction">
+                            <h1>Введение в JavaScript</h1>
+                            <p>JavaScript является языком программирования веб-сети. Подавляющее
+                                большинство веб-сайтов использует JavaScript, а все современные веб-браузе-
+                                ры — в настольных компьютерах, планшетах и смартфонах — включают интерпретаторы
+                                JavaScript, делая JavaScript самым распространенным языком программирования
+                                в истории. За последнее десятилетие исполняющая среда Node.js
+                                открыла возможность программирования на JavaScript за пределами веб-брау-
+                                зеров, и феноменальный успех Node означает, что JavaScript теперь также представляет
+                                собой наиболее часто применяемый язык программирования в сообществе
+                                разработчиков программного обеспечения (ПО). Независимо от того,
+                                начинаете вы с нуля или уже профессионально использовали JavaScript, книга
+                                позволит вам мастерски овладеть языком.</p>
+                            <p>Если вы знакомы с другими языками программирования, то это поможет вам
+                                понять, что JavaScript — высокоуровневый, динамический, интерпретируемый
+                                язык программирования, который хорошо подходит для объектно-ориентированного
+                                и функционального стилей программирования. Переменные JavaScript
+                                являются нетипизированными. Синтаксис в определенной степени основан на
+                                Java, но в остальном языки не связаны. JavaScript получает свои первоклассные
+                                функции от языка функционального программирования Scheme, а основанное
+                                на прототипах наследование — от малоизвестного языка объектно-ориентированного
+                                программирования Self. Но для чтения этой книги и изучения JavaScript
+                                вам не нужно знать упомянутые языки или быть знакомым с их элементами.</p>
+                            <p>Название “JavaScript* довольно обманчиво. За исключением кажущегося
+                                синтаксического сходства JavaScript совершенно отличается от языка программирования
+                                Java. К тому же JavaScript давно избавился от своих корней языка
+                                написания сценариев, чтобы стать надежным и эффективным языком, подходящим
+                                для серьезной разработки ПО и проектов с гигантскими базами исходного
+                                кода.</p>
+                        </section>
+                       
+                    </div>
+                    <div class="main__inner-desc sticky">
+                        <div class="descr__header">
+                            <div class="descr__title">Навигация</div>
+                            <div class="descr__up">
+                                <span class="descr__up-text">Наверх</span>
+                                <div class="descr__up-icon"><i class="fa-solid fa-arrow-up"></i></div>
+                            </div>
+                        </div>
+                        <div class="descr__inner">
+                            <div class="descr__item">Введение в JavaScript</div>
+                            <div class="descr__item">Лексическая структура</div>
+                            <div class="descr__item">Типы, значения и переменные</div>
+                            <div class="descr__item">Выражения и операции</div>
+                            <div class="descr__item">Операторы</div>
+                            <div class="descr__item">Объекты</div>
+                            <div class="descr__item">Массивы</div>
+                            <div class="descr__item">Функции</div>
+                            <div class="descr__item">Классы</div>
+                            <div class="descr__item">Модули</div>
+                            <div class="descr__item">Стандартная библиотека JavaScript</div>
+                            <div class="descr__item">Итераторы и генераторы</div>
+                            <div class="descr__item">Асинхронный JavaScript</div>
+                            <div class="descr__item">Метапрограммирование</div>
+                            <div class="descr__item">JavaScript в веб-браузерах</div>
+                            <div class="descr__item">JavaScript на стороне сервера с использованием Node</div>
+                            <div class="descr__item">Инструменты и расширения JavaScript</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
     </div>
+
+    <!-- <img src="./img/tmp.png" alt=""> -->
 
     <script src="./js/script.js"></script>
 </body>
