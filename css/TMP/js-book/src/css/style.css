@@ -41,6 +41,7 @@ a {
 body {
     font-family: "Montserrat", sans-serif;
     font-size: 16px;
+    color: #2d3e50;
 }
 
 .container {
@@ -68,12 +69,21 @@ header {
     border-bottom: 1px solid #f5f5f4;
 }
 
+
+
 .header__contact {
     position: relative;
+}
+
+.header__btn {
     padding: 10px;
     border-radius: 7px;
     background-color: transparent;
     cursor: pointer;
+}
+
+.header__btn:hover {
+    background-color: #f1f8f9;
 }
 
 .contact__img {
@@ -85,43 +95,61 @@ header {
     position: relative;
 }
 
-.online {
+.status {
     position: absolute;
     width: 13px;
     height: 13px;
     border-radius: 50%;
     border: 2px solid #fff;
     background-color: #37b757;
+
+}
+
+.contact__inner .status {
     top: -3px;
     right: 0;
 }
 
-.header__contact:hover {
-    background-color: #f1f8f9;
-}
 
 
+/* //////////card//////// */
 .help {
+    visibility: hidden;
+    scale: 0;
+   
     position: absolute;
-    top: 66px;
-    left: 50%;
-    transform: translateX(-50%);
+    right: 10px;
+    bottom: -18px;
+    transform: translateY(100%);
     width: 280px;
-    height: 410px;
-    padding: 15px;
+    height: auto;
+    padding: 0px 15px 15px 15px;
     border-radius: 8px;
     box-shadow: 0 4px 16px 0 #00000029;
     cursor: initial;
 }
 
+
+.show {
+    visibility: visible;
+    scale: 1;
+    transition: all .2s  ease;
+}
+
+/* .hide {
+    visibility: hidden;
+    scale: 0;
+    transition: all .2s  ease-in-out;
+} */
+
 .help__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-height: 42px;
+    padding: 14px 0;
     border-bottom: 1px solid #f5f5f4;
-    /* margin-bottom: 10px; */
-    padding-bottom: 13px;
+    margin-bottom: 14px;
+    /* padding-bottom: 13px; */
 }
 
 .help__header-text {
@@ -130,8 +158,119 @@ header {
     font-weight: 600;
 }
 
-.help__close i {
-   font-size: 24px;
-   color: #adb3ba;
-    
+.help__close {
+    cursor: pointer;
 }
+
+.help__close i {
+    font-size: 20px;
+    color: #adb3ba;
+}
+
+.help__main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 14px;
+    margin-bottom: 17px;
+    border-bottom: 1px solid #f5f5f4;
+}
+
+.help__profile {
+    display: block;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+}
+
+.help__main-img {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.help__main-img .status {
+    top: 5px;
+    right: 2px;
+}
+
+.help__athor {
+    font-family: 19px;
+    font-weight: 600;
+    color: #2d3e50;
+    margin-bottom: 8px;
+}
+
+.help__title {
+    color: #00afca;
+    padding: 3px 8px;
+    background-color: #00afca1a;
+    font-size: 12px;
+    border-radius: 4px;
+    margin-bottom: 25px;
+}
+
+.help__text {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.help__email,
+.help__whatsapp,
+.help__telegram {
+    padding: 15px;
+    border-radius: 13px;
+    background-color: #f1f8f9;
+    /* background-color: #1f2020; */
+}
+
+.help__contacts i {
+    color: #00afca;
+    font-size: 20px;
+}
+
+.help__contacts {
+    display: flex;
+    gap: 5px;
+}
+
+.help__contacts button {
+    cursor: pointer;
+}
+
+
+.help__contacts button:hover,
+.help__contacts button:hover .fa-solid,
+.help__contacts button:hover .fa-brands
+{
+    background-color: #00afca;
+    color: #fff; 
+}
+
+
+
+
+.help__footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.help__footer-text {
+    font-size: 12px;
+}
+
+.help__footer-phone {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.help__footer-phone:hover {
+    text-decoration: underline;
+}
+
+.work__from-time * {
+    font-size: 12px;
+}
+
+/* //////////card_end//////// */
