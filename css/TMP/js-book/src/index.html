@@ -65,176 +65,194 @@
             <div class="container">
                 <div class="main__inner">
                     <div class="main__inner-text" id="header__top">
-                        <section class="introduction">
-                            <h1 class="topic">Введение в JavaScript</h1>
-                            <p class="first__paragraph">JavaScript является языком программирования веб-сети.
-                                Подавляющее
-                                большинство веб-сайтов использует JavaScript, а все современные веб-браузе-
-                                ры — в настольных компьютерах, планшетах и смартфонах — включают интерпретаторы
-                                JavaScript, делая JavaScript самым распространенным языком программирования
-                                в истории. За последнее десятилетие исполняющая среда Node.js
-                                открыла возможность программирования на JavaScript за пределами веб-брау-
-                                зеров, и феноменальный успех Node означает, что JavaScript теперь также представляет
-                                собой наиболее часто применяемый язык программирования в сообществе
-                                разработчиков программного обеспечения (ПО). Независимо от того,
-                                начинаете вы с нуля или уже профессионально использовали JavaScript, книга
-                                позволит вам мастерски овладеть языком.</p>
-                            <p class="indent">Если вы знакомы с другими языками программирования, то это поможет вам
-                                понять, что JavaScript — высокоуровневый, динамический, интерпретируемый
-                                язык программирования, который хорошо подходит для объектно-ориентированного
-                                и функционального стилей программирования. Переменные JavaScript
-                                являются нетипизированными. Синтаксис в определенной степени основан на
-                                Java, но в остальном языки не связаны. JavaScript получает свои первоклассные
-                                функции от языка функционального программирования Scheme, а основанное
-                                на прототипах наследование — от малоизвестного языка объектно-ориентированного
-                                программирования Self. Но для чтения этой книги и изучения JavaScript
-                                вам не нужно знать упомянутые языки или быть знакомым с их элементами.</p>
-                            <p class="indent marginb">Название “JavaScript* довольно обманчиво. За исключением
-                                кажущегося
-                                синтаксического сходства JavaScript совершенно отличается от языка программирования
-                                Java. К тому же JavaScript давно избавился от своих корней языка
-                                написания сценариев, чтобы стать надежным и эффективным языком, подходящим
-                                для серьезной разработки ПО и проектов с гигантскими базами исходного
-                                кода.</p>
-                            <!-- ///////////// -->
-                            <div class="note">
-                                <p class="note__inner">JavaScript: названия, версии и режимы</p>
+
+                        <div class="array__methods">
+                            <div class="method__header">Mетоды для перебора массива</div>
+                            <div class="methods">
+                                <div class="method" id="for">
+                                    <div class="method__descr"><code class="method__item-decore">for</code>: Это
+                                        классический цикл, который позволяет перебирать элементы массива по одному,
+                                        используя индекс.</div>
+                                    <div class="method__title">Цикл:</div>
+                                    <div class="method__example">
+                                        <div class="method__example-title">JavaScript:</div>
+                                        <pre>
+    <code>
+const arr = ["a", "b", "c"];
+for (let i = 0; i < arr.length; i++) {
+console.log(arr[i]);
+}</code>
+    </pre>
+                                    </div>
+                                    <div class="info">
+                                        <pre>fsdjkfhsdkf</pre>
+                                    </div>
+                                </div>
+
+                                <div class="method" id="for__of">
+                                    <div class="method__descr"><code class="method__item-decore">for...of</code>: Это
+                                        более современный цикл, который позволяет перебирать элементы массива без
+                                        использования индекса.</div>
+                                    <div class="method__title">Цикл:</div>
+                                    <div class="method__example">
+                                        <div class="method__example-title">JavaScript:</div>
+                                        <pre>
+    <code>
+const arr = ["a", "b", "c"];
+for (const element of arr) {
+console.log(element);
+}</code>
+    </pre>
+                                    </div>
+                                    <div class="info">
+                                        <pre>fsdjkfhsdkf</pre>
+                                    </div>
+                                </div>
+
+                                <div class="method" id="foreach">
+                                    <div class="method__descr"><code class="method__item-decore">forEach</code>: Этот
+                                        метод позволяет перебирать элементы массива и выполнять для каждого элемента
+                                        заданную функцию.</div>
+                                    <div class="method__title">Цикл:</div>
+                                    <div class="method__example">
+                                        <div class="method__example-title">JavaScript:</div>
+                                        <pre>
+    <code>
+const arr = ["a", "b", "c"];
+arr.forEach((element) => {
+console.log(element);
+});</code>
+    </pre>
+                                    </div>
+                                    <div class="info">
+                                        <pre>fsdjkfhsdkf</pre>
+                                    </div>
+                                </div>
+
+                                <div class="method" id="map">
+                                    <div class="method__descr"><code class="method__item-decore">map</code>: Этот метод
+                                        позволяет преобразовать каждый элемент массива в новый элемент, используя
+                                        заданную функцию.</div>
+                                    <div class="method__title">Функциональный метод:</div>
+                                    <div class="method__example">
+                                        <div class="method__example-title">JavaScript:</div>
+                                        <pre>
+    <code>
+const arr = [1, 2, 3];
+
+const doubledArr = arr.map((element) => element * 2);
+        
+console.log(doubledArr); // [2, 4, 6]</code>
+    </pre>
+                                    </div>
+                                    <div class="info">
+                                        <pre>fsdjkfhsdkf</pre>
+                                    </div>
+                                </div>
+
+                                <div class="method" id="filter">
+                                    <div class="method__descr"><code class="method__item-decore">filter</code>: Этот
+                                        метод позволяет отфильтровать элементы массива, оставляя только те, для которых
+                                        заданная функция возвращает <code class="method__item-decore">true</code>.</div>
+                                    <div class="method__title">Функциональный метод:</div>
+                                    <div class="method__example">
+                                        <div class="method__example-title">JavaScript:</div>
+                                        <pre>
+    <code>
+const arr = [1, 2, 3, 4, 5];
+
+const evenArr = arr.filter((element) => element % 2 === 0);
+        
+console.log(evenArr); // [2, 4]</code>
+    </pre>
+                                    </div>
+                                    <div class="info">
+                                        <pre>fsdjkfhsdkf</pre>
+                                    </div>
+                                </div>
+
+                                <div class="method" id="reduce">
+                                    <div class="method__descr"><code class="method__item-decore">reduce</code>: Этот
+                                        метод позволяет свести массив к одному значению, используя заданную функцию.
+                                    </div>
+                                    <div class="method__title">Функциональный метод:</div>
+                                    <div class="method__example">
+                                        <div class="method__example-title">JavaScript:</div>
+                                        <pre>
+    <code>
+const arr = [1, 2, 3, 4, 5];
+
+const sum = arr.reduce((accumulator, currentValue) => accumulator + currentValue);
+        
+console.log(sum); // 15</code>
+    </pre>
+                                    </div>
+                                    <div class="info">
+                                        <pre>fsdjkfhsdkf</pre>
+                                    </div>
+                                </div>
+
+                                <div class="method" id="some">
+                                    <div class="method__descr"><code class="method__item-decore">some</code>: Этот метод
+                                        проверяет, существует ли хотя бы один элемент массива, для которого заданная
+                                        функция возвращает <code class="method__item-decore">true</code>.</div>
+                                    <div class="method__title">Функциональный метод:</div>
+                                    <div class="method__example">
+                                        <div class="method__example-title">JavaScript:</div>
+                                        <pre>
+    <code>
+const numbers = [1, 2, 3, 4, 5];
+
+// Проверяет, есть ли хотя бы одно четное число
+const hasEven = numbers.some((number) => number % 2 === 0);
+        
+console.log(hasEven); // true
+        
+// Проверяет, есть ли хотя бы одно число больше 10
+const hasGreaterThanTen = numbers.some((number) => number > 10);
+        
+console.log(hasGreaterThanTen); // false</code>
+    </pre>
+                                    </div>
+                                    <div class="info">
+                                        <pre>fsdjkfhsdkf</pre>
+                                    </div>
+                                </div>
+
+                                <div class="method" id="every">
+                                    <div class="method__descr"><code class="method__item-decore">every</code>: Этот
+                                        метод проверяет, для всех ли элементов массива заданная функция возвращает <code
+                                            class="method__item-decore">true</code>.</div>
+                                    <div class="method__title">Функциональный метод:</div>
+                                    <div class="method__example">
+                                        <div class="method__example-title">JavaScript:</div>
+                                        <pre>
+    <code>
+const numbers = [2, 4, 6, 8];
+
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+        
+console.log(allEven); // true
+        
+const numbers2 = [2, 4, 6, 9];
+        
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);
+        
+console.log(allGreaterThanFive); // false</code>
+    </pre>
+                                    </div>
+                                    <div class="info">
+                                        <pre>fsdjkfhsdkf</pre>
+                                    </div>
+                                </div>
+
+
                             </div>
-                            <p class="">Язык JavaScript был создан в компании Netscape Communications на заре
-                                истории веб-сети. Формально “JavaScript” — это торговая марка, зарегистрированная
-                                компанией Sun Microsystems (теперь Oracle), которая применяется
-                                для описания реализации языка от Netscape (в настоящее время
-                                Mozilla). Компания Netscape представила язык для стандартизации
-                                Европейской Ассоциации производителей компьютеров (European Computer
-                                Manufacturer’s Association — ЕСМА) и по причине сложностей с торговой
-                                маркой стандартизированной версии языка было навязано неуклюжее название
-                                “ECMAScript”. На практике все называют язык просто JavaScript. Для
-                                ссылки на стандарт языка и на его версии в книге используется название
-                                “ECMAScript” и аббревиатура “ES”.</p>
-                            <p class="">На протяжении большей части 2010-х годов все веб-браузеры поддерживали
-                                версию 5 стандарта ECMAScript. В этой книге ES5 рассматривается как отправная
-                                точка совместимости и предшествующие ей версии языка больше не
-                                обсуждаются. Стандарт ES6 был выпущен в 2015 году и обзавелся важными
-                                новыми средствами, включая синтаксис классов и модулей, которые превратили
-                                JavaScript из языка написания сценариев в серьезный универсальный
-                                язык, подходящий для крупномасштабной разработки ПО. Начиная с ES6,
-                                спецификация ECMAScript перешла на ежегодный ритм выпусков и теперь
-                                версии языка — ES2016, ES2017, ES2018, ES2019 и ES2020 — идентифицируются
-                                по году выхода.</p>
+                        </div>
 
-                            <p class="borderb">По мере развития JavaScript проектировщики языка пытались устранить
-                                дефекты
-                                в ранних версиях (до ES5). Ради поддержки обратной совместимости
-                                невозможно удалить устаревшие функции, какими бы дефектными они ни
-                                были. Но в ES5 и последующих версиях программы могут выбирать строгий
-                                (strict) режим JavaScript, в котором был исправлен ряд ранних языковых
-                                ошибок. Механизм включения представляет собой директиву use s t r i c t ,
-                                описанную в подразделе 5.6.3, где также обобщаются отличия между устаревшим
-                                JavaScript и строгим JavaScript. В ES6 и последующих версиях применение
-                                новых функциональных средств часто неявно вызывает строгий
-                                режим. Например, если вы используете ключевое слово c la s s из ES6 или
-                                создаете модуль ES6, тогда весь код внутри класса или модуля автоматически
-                                становится строгим, и в таких контекстах старые, дефектные функции
-                                не будут доступными. В книге раскрываются устаревшие функциональные
-                                средства JavaScript, но важно помнить о том, что в строгом режиме они
-                                не доступны.</p>
 
-                            <p class="indent">Чтобы быть полезным, каждый язык обязан иметь платформу, или стандартную
-                                библиотеку, для выполнения таких действий, как базовый ввод и вывод.
-                                В основном языке JavaScript определен минимальный API-интерфейс для чисел,
-                                текста, массивов, множеств, отображений и т.д., но какая-либо функциональность
-                                ввода или вывода отсутствует. За ввод и вывод (а также за более сложные
-                                средства наподобие работы с сетью, хранилищем и графикой) несет ответственность
-                                “среда размещения”, внутрь котор'ой встраивается JavaScript.</p>
-                            <!-- ///////////// -->
-                            <p class="indent">Первоначальной средой размещения для JavaScript был веб-браузер, и он
-                                по-прежнему является самой распространенной исполняющей средой для кода
-                                JavaScript. Среда веб-браузера позволяет коду JavaScript получать ввод от мыши
-                                и клавиатуры пользователя и отправлять HTTP-запросы. Вдобавок она разрешает
-                                коду JavaScript отображать вывод пользователю с помощью HTML и CSS.</p>
-                            <p class="indent">Начиная с 2010 года, для кода JavaScript стала доступной еще одна среда
-                                размещения. Вместо того, чтобы ограничивать JavaScript работой с API-
-                                интерфейсами, предоставляемыми веб-браузером, Node дает JavaScript доступ
-                                к целой операционной системе, позволяя программам JavaScript читать и записывать
-                                в файлы, посылать и получать данные по сети, а также отправлять и
-                                обслуживать HTTP-запросы. Node — популярный вариант для реализации вебсерверов
-                                и удобный инструмент для написания простых служебных сценариев
-                                как альтернативы сценариям командной оболочки.</p>
-                            <p class="indent">Большая часть этой книги сосредоточена на самом языке JavaScript. В главе
-                                11 описана стандартная библиотека JavaScript, в главе 15 представлена среда
-                                размещения веб-браузера, а в главе 16 обсуждается среда размещения Node.</p>
-                            <p class="indent martginb">В книге сначала раскрываются низкоуровневые основы, на которых затем
-                                строятся более развитые и высокоуровневые абстракции. Главы лучше читать
-                                более или менее в порядке их следования в книге. Но изучение нового языка
-                                программирования никогда не выглядело как линейный процесс, да и описание
-                                языка тоже нелинейно: каждое языковое средство связано с другими средствами,
-                                потому книга полна перекрестных ссылок — иногда назад, а временами
-                                вперед — на связанные материалы. В этой вводной главе предлагается краткий
-                                обзор языка, представляющий ключевые средства, который облегчит понимание
-                                их углубленного рассмотрения в последующих главах. Если вы уже являетесь
-                                практикующим программистом на JavaScript, тогда вполне можете пропустить
-                                текущую главу. (Хотя до того, как двигаться дальше, вы можете насладиться
-                                чтением примера 1.1 в конце главы.)</p>
-
-                            <h2 class="topic">Исследование JavaScript</h2>
-                            <p class="indent">При изучении нового языка программирования важно опробовать примеры
-                                в книге, затем модифицировать их и снова испытать, чтобы проверить знание
-                                языка. Для этого вам необходим интерпретатор JavaScript.</p>
-                            <p class="indent">Простейший способ испытания нескольких строк кода JavaScript
-                                предусматривает
-                                открытие инструментов разработчика вашего веб-браузера (нажав <span class="abbr">&lt;F12&gt</span>,
-                                    <span class="abbr">&lt;Ctrl+Shift+l&gt</span> или <span class="abbr">&lt;Command+Option+l&gt</span>) и выбор вкладки Консоль.
-                                            Далее вы можете
-                                            набирать код в приглашении на ввод и по мере набора видеть результаты.
-                                            Инструменты разработчика браузера часто появляются в виде панелей в нижней
-                                            или правой части окна браузера, но обычно вы можете открепить их, сделав
-                                            отдельными окнами (рис. 1.1), что часто действительно удобно.</p>
-                            <p class="indent">Еще один способ опробовать код JavaScript заключается в загрузке и
-                                установке
-                                Node из <a class="link" href="https://nodejs.org/">https://nodejs.org/</a> . После
-                                установки Node в системе вы можете
-                                просто открыть окно терминала и ввести node, чтобы начать интерактивный
-                                сеанс JavaScript вроде показанного ниже:</p>
-                            <!-- ///////////// -->
-                            <p>
-                                <pre>
-                                    <code>
-                                        $ node
-Welcome to Node.js vl2.13.0.
-Type ".help" fo r more information.
-Добро пожаловать в Node.jsvl2.13.0.
-Введите .help для получения дополнительной информации.
-> .help
-.break Sometimes you get stuck, this gets you out
-.c le a r A lia s fo r .break
-.e d ito r Enter ed ito r mode
-.e x i t Exit the repl
-.h e lp Print th is help message
-.lo ad Load JS from a f i l e in to the REPL s e s s io n
-.sa v e Save a l l evaluated commands in th is REPL s e s s io n to a f i l e
-.b r e a k Когда вы застряли, это поможет выбраться
-. c l e a r Псевдоним для .b r e a k
-. e d i t o r Вход в режим редактора
-. e x i t Выход из сеанса REPL
-.h e lp Вывод этого справочного сообщения
-. load З а гр у зк а кода JS и з файла в сеанс REPL
-. s a v e Сохранение всех команд, выполненных в этом с еансе REPL, в файл
-Press АС to abort current exp re ssion , AD to e x i t the repl
-Нажмите ЛС для прекращения текущего выражения, AD для выхода из сеанса REPL
-> l e t х = 2, у = 3;
-undefined
-не определено
-> х + у
-5>
-(х === 2) && (у === 3)
-true
-> (х > 3) | | (у < 3)
-f a ls e
-                                    </code>
-                                </pre>
-                            </p>
-                            <!-- ///////////// -->
-                        </section>
 
 
                     </div>
@@ -250,23 +268,38 @@ f a ls e
                                 </div>
                             </div>
                             <div class="descr__inner">
-                                <div class="descr__item">Введение в JavaScript</div>
-                                <div class="descr__item">Лексическая структура</div>
-                                <div class="descr__item">Типы, значения и переменные</div>
-                                <div class="descr__item">Выражения и операции</div>
-                                <div class="descr__item">Операторы</div>
-                                <div class="descr__item">Объекты</div>
-                                <div class="descr__item">Массивы</div>
-                                <div class="descr__item">Функции</div>
-                                <div class="descr__item">Классы</div>
-                                <div class="descr__item">Модули</div>
-                                <div class="descr__item">Стандартная библиотека JavaScript</div>
-                                <div class="descr__item">Итераторы и генераторы</div>
-                                <div class="descr__item">Асинхронный JavaScript</div>
-                                <div class="descr__item">Метапрограммирование</div>
-                                <div class="descr__item">JavaScript в веб-браузерах</div>
-                                <div class="descr__item">JavaScript на стороне сервера с использованием Node</div>
-                                <div class="descr__item">Инструменты и расширения JavaScript</div>
+                                <a href="#for" class="descr__item-link">
+                                    <div class="descr__item">for</div>
+                                </a>
+                                <a href="#for__of" class="descr__item-link">
+                                    <div class="descr__item">for...of</div>
+                                </a>
+                                <a href="#foreach" class="descr__item-link">
+                                    <div class="descr__item">forEach</div>
+                                </a>
+                                <a href="#map" class="descr__item-link">
+                                    <div class="descr__item">map</div>
+                                </a>
+                                <a href="#filter" class="descr__item-link">
+                                    <div class="descr__item">filter</div>
+                                </a>
+                                <a href="#reduce" class="descr__item-link">
+                                    <div class="descr__item">reduce</div>
+                                </a>
+                                <a href="#some" class="descr__item-link">
+                                    <div class="descr__item">some</div>
+                                </a>
+                                <a href="#every" class="descr__item-link">
+                                    <div class="descr__item">every</div>
+                                </a>
+
+
+
+
+
+
+
+
                             </div>
                         </div>
                     </div>
