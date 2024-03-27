@@ -284,8 +284,31 @@ header {
 
 .main__inner-text {
     flex: 0 1 75%;
+    border: 1px solid #f5f5f4;
+    border-radius: 10px;
+    padding: 20px 10px 20px 20px;
+    /* height: calc(100vh - 80px); */
 }
 
+
+.main__inner-right {
+    flex: 0 1 25%;
+    border: 1px solid #f5f5f4;
+    border-radius: 10px;
+    padding: 20px 10px 20px 10px;
+}
+
+/* /////Scroll/////// */
+.main__inner-desc::-webkit-scrollbar {
+    width: 5px;
+}
+
+.main__inner-desc::-webkit-scrollbar-thumb {
+    background-color: #c6c6c6;
+    border-radius: 2px;
+}
+
+/* /////Scroll/////// */
 
 
 .main__inner-desc .descr__item {
@@ -301,19 +324,15 @@ header {
 
 
 .main__inner-desc .descr__item:not(:last-child) {
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
 }
 
 .main__inner-desc {
-    position:-webkit-sticky; 
-    position:sticky; 
-    top:0;
-
-    flex: 0 1 25%; 
-    border: 1px solid #f5f5f4;
-    border-radius: 10px;
-    padding: 20px 10px 20px 10px;
     background-color: #fff;
+    height: 70vh;
+    overflow-y: scroll;
+    position: sticky;
+    top: 30px;
 }
 
 .descr__item {
@@ -340,11 +359,8 @@ header {
 }
 
 .descr__title {
-
     font-size: 23px;
-
     color: #2d3e50;
-
     font-weight: 700;
 }
 
@@ -361,9 +377,7 @@ header {
     cursor: pointer;
 }
 
-.descr__up {
-    /* position: relative;
-    color: #2d3e50; */
+.descr__up-link {
     display: flex;
     gap: 8px;
 }
@@ -372,19 +386,65 @@ header {
     text-decoration: underline;
 }
 
-/* .descr__up-icon {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: -25px;
-    font-size: 12px;
-} */
 
-/* .main__inner-desc .descr__item:active {
-    color: #93870030;
-    font-weight: 500;
+/* //////////Posts////////// */
+
+.introduction {
+    line-height: 1.35rem;
 }
 
+.topic {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
 
+.indent {
+    text-indent: 30px;
+}
 
-*/
+.introduction p:not(:last-child) {
+    margin-bottom: 8px;
+}
+
+.note__inner {
+    display: inline-block;
+    border-radius: 0px 6px 6px 0px;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 10px;
+    background-color: #f1f8f9;
+    border-left: 3px solid #00afca;
+}
+
+.note {
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #f5f5f4;
+    /* f5f5f4 */
+}
+
+.paddingb {
+    padding-bottom: 30px;
+}
+
+.borderb {
+    border-bottom: 1px solid #d2d2d2;
+    padding-bottom: 10px;
+    display: block;
+    position: relative;
+}
+
+.martginb {
+    margin-bottom: 20px !important;
+}
+
+.link {
+    font-weight: 600;
+}
+
+.abbr {
+    font-weight: 600;
+}
+
+/* //////////Posts////////// */
