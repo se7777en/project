@@ -8,8 +8,39 @@ window.addEventListener('DOMContentLoaded', (e) => {
         closeBtn = document.querySelector('.header .help__close');
 
 
+
+    let mytexts = document.querySelectorAll('.methods .method');
+    let linksParent = document.querySelectorAll('.descr__inner .descr__item');
+    let linkParent = document.querySelector('.main__inner-right .descr__inner');
+
+    document.addEventListener('scroll', () => {
+        let ScrollPos = window.scrollY;
+
+        mytexts.forEach((mytext) => {
+            const textPos = mytext.offsetTop;
+            const textHeight = mytext.offsetHeight;
+
+            if (ScrollPos >= textPos - 60 && ScrollPos <= (textPos + textHeight)) {
+                const postId = mytext.getAttribute('id');
+                const found = linkParent.querySelector('#' + postId + '-link');
+
+                if (found) {
+                    const element = found.querySelector('.descr__item');
+                    linksParent.forEach((item) => {
+                        item.classList.toggle('active', item === element);
+                    });
+                }
+            }
+        });
+    });
+
+
+
+
+
+
     headerContact.addEventListener('click', (e) => {
-        if(headerContact.contains(e.target)) {
+        if (headerContact.contains(e.target)) {
             helpModal.classList.toggle('show');
         }
     });
@@ -21,10 +52,10 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
 
 
-   
+
 
     document.addEventListener('click', (e) => {
-        if(!helpModal.contains(e.target) && !headerContact.contains(e.target)){
+        if (!helpModal.contains(e.target) && !headerContact.contains(e.target)) {
             helpModal.classList.remove('show');
         }
     });
