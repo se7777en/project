@@ -448,3 +448,12 @@ header {
 }
 
 /* //////////Posts////////// */
+
+
+
+
+@media (max-width: 1030px) {
+    .main__inner {
+        display: block;
+    }
+}
