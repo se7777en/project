@@ -13,6 +13,10 @@ window.addEventListener('DOMContentLoaded', (e) => {
     let linksParent = document.querySelectorAll('.descr__inner .descr__item');
     let linkParent = document.querySelector('.main__inner-right .descr__inner');
 
+
+    let menuBtn = document.querySelector('.menu__btn');
+    let menu = document.querySelector('.main__inner-right');
+
     document.addEventListener('scroll', () => {
         let ScrollPos = window.scrollY;
 
@@ -66,6 +70,13 @@ window.addEventListener('DOMContentLoaded', (e) => {
     //         helpModal.classList.remove('show');
     //     }
     // });
+
+
+
+    menuBtn.addEventListener('click', () => {
+        menu.classList.toggle('showmenu');
+        
+    });
 
 
 
