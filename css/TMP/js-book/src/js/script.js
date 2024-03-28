@@ -15,6 +15,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
 
     let menuBtn = document.querySelector('.menu__btn');
+    let menuBtnIcon = document.querySelector('.menu__btn .fa-solid');
     let menu = document.querySelector('.main__inner-right');
 
     document.addEventListener('scroll', () => {
@@ -75,7 +76,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
     menuBtn.addEventListener('click', () => {
         menu.classList.toggle('showmenu');
-        
+        menuBtnIcon.classList.toggle('fa-list');
+        menuBtnIcon.classList.toggle('fa-xmark');
     });
 
 

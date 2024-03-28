@@ -57,6 +57,18 @@ body {
     min-height: 60px;
 }
 
+.header__logo {
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.header__logo:active {
+    transition: all .1s ease-in-out;
+    scale: 1.05;
+}
+
 .logo__img {
     width: 80px;
     height: auto;
@@ -74,6 +86,11 @@ header {
 
 .header__contact {
     position: relative;
+
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .header__btn {
@@ -318,9 +335,7 @@ header {
 
 
 
-.main__inner-desc .descr__item:not(:last-child) {
-    /* margin-bottom: 10px; */
-}
+
 
 .main__inner-right {
     flex: 0 1 25%;
@@ -380,7 +395,14 @@ header {
 .descr__up-link {
     display: flex;
     gap: 8px;
+
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
+
+
 
 .descr__up-text:hover {
     text-decoration: underline;
@@ -547,8 +569,7 @@ header {
         position: fixed;
         width: 100%;
         border-radius: 15px 15px 0px 0px;
-        ;
-        padding: 24px;
+        padding: 24px 5px 24px 5px;
         overflow: initial;
         height: 40vh;
         top: initial;
@@ -572,6 +593,11 @@ header {
         height: calc(35vh - 37px);
         overflow: auto !important;
         padding-bottom: 15px;
+
+        -webkit-user-drag: none;
+        -webkit-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
     }
 
 
@@ -600,7 +626,14 @@ header {
         color: #d2d2d2;
         background-color: #fff;
         cursor: pointer;
+
+        -webkit-user-drag: none;
+        -webkit-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
     }
+
+
 
     /* showonbtn */
 
