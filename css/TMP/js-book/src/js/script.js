@@ -47,28 +47,25 @@ methods.forEach((item, index) => {
 
     /////////////////////
 
-    async function someAsyncOperation() {
-        // Выполняем какие-то асинхронные действия, например, загрузка данных или анимация
-        await new Promise(resolve => setTimeout(resolve, 200)); // Пример задержки на 1 секунду
-    }
-
-    const calcProgress = async () => {
-         let ScrollPos = window.scrollY;
+    const calcProgress = (ScrollPos) => {
+         //let ScrollPos = window.scrollY;
 
         let documentHeight = document.body.scrollHeight - window.innerHeight;
         const dasharray = progress.getAttribute('stroke-dasharray');
         const valuesArr = dasharray.split(' ');
-        const value = parseInt(valuesArr[1]);
+        const value = parseFloat(valuesArr[1]);
 
       
         const percentVal = (value / 100) * (ScrollPos * 100 / documentHeight);
         // console.log(percentVal);
-        valuesArr[0] = Math.ceil(percentVal);
+      
+        valuesArr[0] = percentVal;
+        
 
         let arrtoStr = valuesArr.join(' ');
-        await someAsyncOperation();
         progress.setAttribute('stroke-dasharray', arrtoStr);
     }
+
     let ScrollPosOnStart = window.scrollY;
     calcProgress(ScrollPosOnStart);
 
