@@ -55,11 +55,11 @@ methods.forEach((item, index) => {
         const value = Math.ceil(valuesArr[1]);
 
       
-        const percentVal = (value / 100) * (Math.ceil(ScrollPos * 100 / documentHeight));
+        const percentVal = (value / 100) * (ScrollPos * 100 / documentHeight);
         // console.log(percentVal);
-        valuesArr[0] = percentVal;
+        valuesArr[0] = Math.ceil(percentVal);
 
-        coordinates.textContent = `${percentVal} - ${value}`;
+        coordinates.textContent = `${Math.ceil(percentVal)} - ${value}`;
 
         let arrtoStr = valuesArr.join(' ');
         progress.setAttribute('stroke-dasharray', arrtoStr);
