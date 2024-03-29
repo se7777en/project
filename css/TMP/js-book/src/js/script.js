@@ -59,8 +59,6 @@ methods.forEach((item, index) => {
         // console.log(percentVal);
         valuesArr[0] = Math.ceil(percentVal);
 
-        coordinates.textContent = `${ Math.ceil(percentVal)} - ${value}`;
-
         let arrtoStr = valuesArr.join(' ');
         progress.setAttribute('stroke-dasharray', arrtoStr);
     }
