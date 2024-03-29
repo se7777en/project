@@ -52,14 +52,14 @@ methods.forEach((item, index) => {
         let documentHeight = document.body.scrollHeight - window.innerHeight;
         const dasharray = progress.getAttribute('stroke-dasharray');
         const valuesArr = dasharray.split(' ');
-        const value = Math.ceil(valuesArr[1]);
+        const value = valuesArr[1];
 
       
         const percentVal = (value / 100) * (ScrollPos * 100 / documentHeight);
         // console.log(percentVal);
         valuesArr[0] = Math.ceil(percentVal);
 
-        coordinates.textContent = `${Math.ceil(percentVal)} - ${value}`;
+        coordinates.textContent = `${ Math.ceil(percentVal)} - ${value}`;
 
         let arrtoStr = valuesArr.join(' ');
         progress.setAttribute('stroke-dasharray', arrtoStr);
