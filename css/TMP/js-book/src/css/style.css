@@ -476,7 +476,7 @@ header {
 }
 
 .method__descr {
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     line-height: 120%;
     padding: 10px 0
 }
@@ -726,11 +726,11 @@ header {
     }
 
     .method__descr {
-        margin-bottom: 10px;
+        /* margin-bottom: 10px; */
     }
 
     .method {
-        margin-bottom: 40px;
+        margin-bottom: 30px;
     }
 
     .method__example {
@@ -767,6 +767,10 @@ header {
 
     .descr__inner {
         padding-bottom: 10px;
+    }
+
+    .header {
+        margin-bottom: 7px;
     }
 
 }
