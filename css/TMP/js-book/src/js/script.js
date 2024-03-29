@@ -34,11 +34,6 @@ const codeElements = methodsContainer.querySelectorAll('.method__example');
 
 const coordinates = document.querySelector('.coordinates');
 
-//let scrollH = Math.ceil(document.documentElement.scrollHeight - innerHeight);
-
-// let computedStyle = window.getComputedStyle(document.body);
-// let scrollH = parseInt(computedStyle.height);
-
 let scrollH = 1;
 window.addEventListener('load', function() {
     scrollH = document.documentElement.scrollHeight - window.innerHeight;
@@ -54,20 +49,6 @@ methods.forEach((item, index) => {
         code.classList.add('styled');
     }
 });
-/////////styledCode border/////////
-
-//  let scrollH = Math.ceil(document.documentElement.scrollHeight);
-//  let scrollPos = Math.ceil(window.scrollY + innerHeight);
-
-
-
-
-
- //console.log(`${scrollH} - ${scrollPos}`);
-
-// height = 2966  pos = 2966.800048828125
-
-    /////////////////////
   
     
     const calcProgress = (ScrollPos) => {
@@ -76,11 +57,8 @@ methods.forEach((item, index) => {
         const valuesArr = dasharray.split(' ');
         const value = parseFloat(valuesArr[1]);
 
-        /*+++*/
-       // let scroll = Math.ceil(ScrollPos);
         let result = Math.ceil(ScrollPos * 100 / scrollH);      
-        /*+++*/
-        // console.log(result);
+     
         if(result > 96) result = 100;
 
         const percentVal = Math.ceil((value / 100) * (result));
@@ -103,8 +81,6 @@ methods.forEach((item, index) => {
     document.addEventListener('scroll', () => {
         let ScrollPos = window.scrollY;
 
-    //     console.log(scrollH);
-    // console.log(ScrollPos);
         calcProgress(ScrollPos);
 
         mytexts.forEach((mytext) => {
