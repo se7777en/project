@@ -45,6 +45,8 @@ window.addEventListener('load', function() {
 });
 
 
+
+
 methods.forEach((item, index) => {
     const info = infoElements[index];
     const code = codeElements[index];
@@ -78,8 +80,8 @@ methods.forEach((item, index) => {
        // let scroll = Math.ceil(ScrollPos);
         let result = Math.ceil(ScrollPos * 100 / scrollH);      
         /*+++*/
-         console.log(result);
-        //if(result > 96) result = 100;
+        // console.log(result);
+        if(result > 96) result = 100;
 
         const percentVal = Math.ceil((value / 100) * (result));
       
@@ -101,6 +103,8 @@ methods.forEach((item, index) => {
     document.addEventListener('scroll', () => {
         let ScrollPos = window.scrollY;
 
+    //     console.log(scrollH);
+    // console.log(ScrollPos);
         calcProgress(ScrollPos);
 
         mytexts.forEach((mytext) => {
