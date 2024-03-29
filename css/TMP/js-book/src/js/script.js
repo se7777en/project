@@ -61,7 +61,7 @@ methods.forEach((item, index) => {
         const value = parseFloat(valuesArr[1]);
 
       
-        const percentVal = (value / 100) * (ScrollPos * 100 / documentHeight);
+        const percentVal = (value / 100) * (ScrollPos * 100 / documentHeight + 10);
         // console.log(percentVal);
       
         valuesArr[0] = percentVal;
