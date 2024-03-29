@@ -18,8 +18,30 @@ window.addEventListener('DOMContentLoaded', (e) => {
     let menuBtnIcon = document.querySelector('.menu__btn .fa-solid');
     let menu = document.querySelector('.main__inner-right');
 
+
+    let progress = document.querySelector('.svg__box #reading-progress');
+
+
+    /////////////////////
+const calcProgress = (ScrollPos) => {
+   // let ScrollPos = window.scrollY;
+
+    let documentHeight = document.body.scrollHeight - window.innerHeight;
+    const dasharray = progress.getAttribute('stroke-dasharray');
+    const valuesArr = dasharray.split(' ');
+    const value = valuesArr[1];
+        
+    const percentVal = (value / 100) * (Math.floor(ScrollPos * 100 / documentHeight));
+    valuesArr[0] = percentVal;
+    let arrtoStr = valuesArr.join(' ');
+    progress.setAttribute('stroke-dasharray', arrtoStr);
+}
+    ///////////////////////////////
+
     document.addEventListener('scroll', () => {
         let ScrollPos = window.scrollY;
+
+        calcProgress(ScrollPos);
 
         mytexts.forEach((mytext) => {
             const textPos = mytext.offsetTop;
@@ -78,6 +100,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
         menu.classList.toggle('showmenu');
         menuBtnIcon.classList.toggle('fa-list');
         menuBtnIcon.classList.toggle('fa-xmark');
+        document.body.classList.toggle('dark-background');
     });
 
 
