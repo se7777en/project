@@ -45,14 +45,14 @@ methods.forEach((item, index) => {
     const calcProgress = (ScrollPos) => {
         // let ScrollPos = window.scrollY;
 
-        let documentHeight = document.body.scrollHeight - window.innerHeight - 5;
+        let documentHeight = document.body.scrollHeight - window.innerHeight;
         const dasharray = progress.getAttribute('stroke-dasharray');
         const valuesArr = dasharray.split(' ');
         const value = valuesArr[1];
 
         const percentVal = (value / 100) * (Math.floor(ScrollPos * 100 / documentHeight));
         // console.log(percentVal);
-        valuesArr[0] = percentVal;
+        valuesArr[0] = Math.ceil(percentVal);
         let arrtoStr = valuesArr.join(' ');
         progress.setAttribute('stroke-dasharray', arrtoStr);
     }
