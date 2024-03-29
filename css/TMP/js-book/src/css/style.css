@@ -731,4 +731,28 @@ header {
         margin-bottom: 7px;
     }
 
+    .descr__title {
+        font-size: 14px;
+    }
+
+    .descr__up {
+        font-size: 14px;
+    }
+
+    .main__inner-right {
+        padding: 5px;
+    }
+
+    .header__inner {
+        min-height: 40px;
+    }
+
+    .logo__img {
+        width: 60px;
+    } 
+
+    .contact__img {
+        width: 28px;
+    } 
+
 }
