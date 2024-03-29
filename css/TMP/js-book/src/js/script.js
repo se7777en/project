@@ -30,6 +30,9 @@ const methods = methodsContainer.querySelectorAll('.method');
 const infoElements = methodsContainer.querySelectorAll('.info');
 const codeElements = methodsContainer.querySelectorAll('.method__example');
 
+
+const coordinates = document.querySelector('.coordinates');
+
 methods.forEach((item, index) => {
     const info = infoElements[index];
     const code = codeElements[index];
@@ -42,6 +45,7 @@ methods.forEach((item, index) => {
 
 
     /////////////////////
+
     const calcProgress = (ScrollPos) => {
         // let ScrollPos = window.scrollY;
 
@@ -50,15 +54,21 @@ methods.forEach((item, index) => {
         const valuesArr = dasharray.split(' ');
         const value = valuesArr[1];
 
-        const percentVal = (value / 100) * (Math.floor(ScrollPos * 100 / documentHeight));
+      
+        const percentVal = (value / 100) * (Math.ceil(ScrollPos * 100 / documentHeight));
         // console.log(percentVal);
-        valuesArr[0] = Math.floor(percentVal);
+        valuesArr[0] = percentVal;
+
+        coordinates.textContent = `${percentVal} - ${value}`;
+
         let arrtoStr = valuesArr.join(' ');
         progress.setAttribute('stroke-dasharray', arrtoStr);
     }
     let ScrollPosOnStart = window.scrollY;
     calcProgress(ScrollPosOnStart);
     ///////////////////////////////
+
+   
 
     document.addEventListener('scroll', () => {
         let ScrollPos = window.scrollY;
