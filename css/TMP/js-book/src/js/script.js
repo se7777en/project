@@ -43,14 +43,19 @@ methods.forEach((item, index) => {
 });
 /////////styledCode border/////////
 
+// let scrollH = document.documentElement.scrollHeight;
+// let ScrollPos = window.scrollY + window.innerHeight;
 
+// console.log(`height = ${scrollH}  pos = ${ScrollPos}`);
+
+// height = 2966  pos = 2966.800048828125
 
     /////////////////////
 
     const calcProgress = (ScrollPos) => {
          //let ScrollPos = window.scrollY;
 
-        let documentHeight = document.body.scrollHeight - window.innerHeight;
+        let documentHeight = document.documentElement.scrollHeight - window.innerHeight;
         const dasharray = progress.getAttribute('stroke-dasharray');
         const valuesArr = dasharray.split(' ');
         const value = parseFloat(valuesArr[1]);
