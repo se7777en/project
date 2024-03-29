@@ -40,6 +40,7 @@ methods.forEach((item, index) => {
 /////////styledCode border/////////
 
 
+
     /////////////////////
     const calcProgress = (ScrollPos) => {
         // let ScrollPos = window.scrollY;
