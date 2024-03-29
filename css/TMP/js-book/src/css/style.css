@@ -675,6 +675,7 @@ header {
         /* stroke-linecap: round; */
         stroke-linecap: butt;
         position: relative;
+        transition: stroke-dasharray 0.2s ease;
     }
 
     /* for progress */

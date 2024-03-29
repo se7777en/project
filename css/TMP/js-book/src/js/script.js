@@ -20,6 +20,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
 
     let progress = document.querySelector('.svg__box #reading-progress');
+    // progress.style.transition = 'stroke-dasharray 0.3s ease';
 
    
 
@@ -46,8 +47,8 @@ methods.forEach((item, index) => {
 
     /////////////////////
 
-    const calcProgress = (ScrollPos) => {
-        // let ScrollPos = window.scrollY;
+    const calcProgress = () => {
+         let ScrollPos = window.scrollY;
 
         let documentHeight = document.body.scrollHeight - window.innerHeight;
         const dasharray = progress.getAttribute('stroke-dasharray');
@@ -71,7 +72,7 @@ methods.forEach((item, index) => {
     document.addEventListener('scroll', () => {
         let ScrollPos = window.scrollY;
 
-        calcProgress(ScrollPos);
+        calcProgress();
 
         mytexts.forEach((mytext) => {
             const textPos = mytext.offsetTop;
