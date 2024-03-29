@@ -651,6 +651,11 @@ header {
         position: absolute;
         top: -1px;
         left: -1px;
+
+        -webkit-user-drag: none;
+        -webkit-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
     }
 
     #reading-progress {
@@ -661,6 +666,7 @@ header {
         stroke-linecap: butt;
         position: relative;
     }
+
     /* for progress */
 
 }
