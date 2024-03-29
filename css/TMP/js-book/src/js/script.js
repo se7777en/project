@@ -34,6 +34,8 @@ const codeElements = methodsContainer.querySelectorAll('.method__example');
 
 const coordinates = document.querySelector('.coordinates');
 
+let scrollH = Math.ceil(document.documentElement.scrollHeight - innerHeight);
+
 methods.forEach((item, index) => {
     const info = infoElements[index];
     const code = codeElements[index];
@@ -43,26 +45,33 @@ methods.forEach((item, index) => {
 });
 /////////styledCode border/////////
 
-// let scrollH = document.documentElement.scrollHeight;
-// let ScrollPos = window.scrollY + window.innerHeight;
+//  let scrollH = Math.ceil(document.documentElement.scrollHeight);
+//  let scrollPos = Math.ceil(window.scrollY + innerHeight);
 
-// console.log(`height = ${scrollH}  pos = ${ScrollPos}`);
+
+
+
+
+ //console.log(`${scrollH} - ${scrollPos}`);
 
 // height = 2966  pos = 2966.800048828125
 
     /////////////////////
-
+  
+    
     const calcProgress = (ScrollPos) => {
-         //let ScrollPos = window.scrollY;
-
-        let documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+         
         const dasharray = progress.getAttribute('stroke-dasharray');
         const valuesArr = dasharray.split(' ');
         const value = parseFloat(valuesArr[1]);
 
-      
-        const percentVal = (value / 100) * (ScrollPos * 100 / documentHeight + 10);
-        // console.log(percentVal);
+        /*+++*/
+        let scroll = Math.ceil(ScrollPos);
+        let result = Math.ceil(scroll * 100 / scrollH);      
+        /*+++*/
+        console.log(result);
+
+        const percentVal = Math.ceil((value / 100) * (result));
       
         valuesArr[0] = percentVal;
         
