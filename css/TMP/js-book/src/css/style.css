@@ -41,7 +41,8 @@ a {
 body {
     font-family: "Montserrat", sans-serif;
     font-size: 16px;
-    color: #2d3e50;
+    /* color: #2d3e50; */
+    color: #7c7d9c;
 }
 
 .container {
@@ -503,7 +504,7 @@ header {
 
 .method__example {
     /* display: inline-block;*/
-    padding: 30px 100px 30px 30px;
+    padding: 10px 0px 10px 10px;
     max-width: 100%;
     background-color: #f0f4f9;
     border-radius: 15px;
@@ -520,7 +521,9 @@ header {
     display: none;
     background-color: #e7f3fe;
     border-left: 6px solid #2196F3;
-    padding: 10px 10px 10px 30px;
+    padding: 10px 10px 10px 13px;
+    /* text-align: justify; */
+    /* text-justify: inter-word; */
     /* border-radius: 0px 0px 7px 0px; */
 }
 
@@ -688,6 +691,44 @@ header {
 @media (max-width: 768px) {
     .code__style {
         font-size: 12px;
+    }
+
+    .method__header {
+        font-size: 20px;
+    }
+
+    .method__descr {
+        font-size: 13px;
+    }
+
+    .method__title {
+        font-size: 13px;
+    }
+
+    .descr__inner .descr__item {
+        font-size: 13px;
+        padding: 5px 10px;
+    }
+
+    .methods .info {
+        font-size: 13px;
+    }
+
+
+    .method__header {
+        margin-bottom: 10px;
+    }
+
+    .method__descr {
+        margin-bottom: 10px;
+    }
+
+    .method {
+        margin-bottom: 40px;
+    }
+
+    .method__example {
+        margin-bottom: 7px;
     }
 
 }
