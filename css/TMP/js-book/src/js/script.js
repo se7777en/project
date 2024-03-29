@@ -52,8 +52,8 @@ methods.forEach((item, index) => {
         await new Promise(resolve => setTimeout(resolve, 200)); // Пример задержки на 1 секунду
     }
 
-    const calcProgress = async (ScrollPos) => {
-         //let ScrollPos = window.scrollY;
+    const calcProgress = async () => {
+         let ScrollPos = window.scrollY;
 
         let documentHeight = document.body.scrollHeight - window.innerHeight;
         const dasharray = progress.getAttribute('stroke-dasharray');
