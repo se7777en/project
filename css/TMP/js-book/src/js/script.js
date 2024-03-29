@@ -52,7 +52,7 @@ methods.forEach((item, index) => {
         let documentHeight = document.body.scrollHeight - window.innerHeight;
         const dasharray = progress.getAttribute('stroke-dasharray');
         const valuesArr = dasharray.split(' ');
-        const value = valuesArr[1];
+        const value = Math.ceil(valuesArr[1]);
 
       
         const percentVal = (value / 100) * (Math.ceil(ScrollPos * 100 / documentHeight));
