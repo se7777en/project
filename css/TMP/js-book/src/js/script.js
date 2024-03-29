@@ -47,13 +47,13 @@ methods.forEach((item, index) => {
 
     /////////////////////
 
-    // async function someAsyncOperation() {
-    //     // Выполняем какие-то асинхронные действия, например, загрузка данных или анимация
-    //     await new Promise(resolve => setTimeout(resolve, 100)); // Пример задержки на 1 секунду
-    // }
+    async function someAsyncOperation() {
+        // Выполняем какие-то асинхронные действия, например, загрузка данных или анимация
+        await new Promise(resolve => setTimeout(resolve, 200)); // Пример задержки на 1 секунду
+    }
 
     const calcProgress = async (ScrollPos) => {
-      // let ScrollPos = window.scrollY;
+         //let ScrollPos = window.scrollY;
 
         let documentHeight = document.body.scrollHeight - window.innerHeight;
         const dasharray = progress.getAttribute('stroke-dasharray');
@@ -61,18 +61,12 @@ methods.forEach((item, index) => {
         const value = parseInt(valuesArr[1]);
 
       
-
-        const calculatePercentVal = new Promise(resolve => {
-            const percentVal = (value / 100) * (ScrollPos * 100 / documentHeight);
-            resolve(percentVal);
-        });
-
-        const percentVal = await calculatePercentVal;
+        const percentVal = (value / 100) * (ScrollPos * 100 / documentHeight);
         // console.log(percentVal);
         valuesArr[0] = Math.ceil(percentVal);
 
         let arrtoStr = valuesArr.join(' ');
-       
+        await someAsyncOperation();
         progress.setAttribute('stroke-dasharray', arrtoStr);
     }
     let ScrollPosOnStart = window.scrollY;
@@ -83,14 +77,8 @@ methods.forEach((item, index) => {
 
    
 
-    document.addEventListener('scroll', async () => {
-       
-        const calculatePercentVal = new Promise(resolve => {
-            let ScrollPos = window.scrollY;
-            resolve(ScrollPos);
-        });
-
-        const ScrollPos = await calculatePercentVal;
+    document.addEventListener('scroll', () => {
+        let ScrollPos = window.scrollY;
 
         calcProgress(ScrollPos);
 
