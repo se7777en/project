@@ -36,6 +36,8 @@ const calcProgress = (ScrollPos) => {
     let arrtoStr = valuesArr.join(' ');
     progress.setAttribute('stroke-dasharray', arrtoStr);
 }
+let ScrollPosOnStart = window.scrollY;
+calcProgress(ScrollPosOnStart);
     ///////////////////////////////
 
     document.addEventListener('scroll', () => {
