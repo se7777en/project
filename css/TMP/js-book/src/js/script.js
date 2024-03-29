@@ -47,8 +47,8 @@ methods.forEach((item, index) => {
 
     /////////////////////
 
-    const calcProgress = () => {
-         let ScrollPos = window.scrollY;
+    const calcProgress = (ScrollPos) => {
+         //let ScrollPos = window.scrollY;
 
         let documentHeight = document.body.scrollHeight - window.innerHeight;
         const dasharray = progress.getAttribute('stroke-dasharray');
@@ -72,7 +72,7 @@ methods.forEach((item, index) => {
     document.addEventListener('scroll', () => {
         let ScrollPos = window.scrollY;
 
-        calcProgress();
+        calcProgress(ScrollPos);
 
         mytexts.forEach((mytext) => {
             const textPos = mytext.offsetTop;
