@@ -725,16 +725,13 @@ header {
         margin-bottom: 10px;
     }
 
-    .method__descr {
-        /* margin-bottom: 10px; */
-    }
-
+  
     .method {
         margin-bottom: 30px;
     }
 
     .method__example {
-        margin-bottom: 7px;
+        /* margin-bottom: 7px; */
     }
 
     .descr__title {
