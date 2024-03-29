@@ -41,8 +41,8 @@ a {
 body {
     font-family: "Montserrat", sans-serif;
     font-size: 16px;
-    /* color: #2d3e50; */
-    color: #7c7d9c;
+    color: #2d3e50;
+    /* color: #7c7d9c; */
 }
 
 .container {
@@ -478,7 +478,8 @@ header {
 .method__descr {
     /* margin-bottom: 20px; */
     line-height: 120%;
-    padding: 10px 0
+    padding: 10px 0;
+    /* color: #1a2738; */
 }
 
 .method__item-decore {
