@@ -725,7 +725,10 @@ header {
         margin-bottom: 10px;
     }
 
-  
+    .method__descr {
+        /* margin-bottom: 10px; */
+    }
+
     .method {
         margin-bottom: 30px;
     }
