@@ -35,6 +35,7 @@ const codeElements = methodsContainer.querySelectorAll('.method__example');
 const coordinates = document.querySelector('.coordinates');
 
 let scrollH = Math.ceil(document.documentElement.scrollHeight - innerHeight);
+console.log(scrollH);
 
 methods.forEach((item, index) => {
     const info = infoElements[index];
@@ -67,9 +68,10 @@ methods.forEach((item, index) => {
 
         /*+++*/
         let scroll = Math.ceil(ScrollPos);
-        let result = Math.ceil(scroll * 100 / scrollH);      
+        let result = Math.floor(scroll * 100 / scrollH);      
         /*+++*/
-        console.log(result);
+        //console.log(result);
+        if(result > 96) result = 100;
 
         const percentVal = Math.ceil((value / 100) * (result));
       
