@@ -3,6 +3,39 @@
 window.addEventListener('DOMContentLoaded', (e) => {
     e.preventDefault();
 
+    let methodsContainer = document.querySelector('.methods');
+    let linkParent = document.querySelector('.main__inner-right .descr__inner');
+
+
+    let elements = '';
+    let rightLinks = '';
+    myObj.forEach((item) => {
+        elements += `<div class="method" id="${item.method}" data-id="${item.method}">
+        <div class="method__descr"><code class="method__item-decore">${item.method}</code>${item.descr}</div>
+        <div class="method__title">${item.type}</div>
+        <div class="method__example">
+            <div class="method__example-title">${item.maintype}</div>
+            <pre class="code__style">
+<code>
+${item.code}
+</code>
+</pre>
+        </div>
+        <div class="info ${item.infostatus}">
+            <pre>${item.info}</pre>
+        </div>
+    </div>`;
+
+        rightLinks += `<a href="#${item.method}" data-id="${item.method}-link" class="descr__item-link">
+    <div class="descr__item">${item.method}</div>
+</a>`;
+    });
+
+    methodsContainer.innerHTML = elements;
+    linkParent.innerHTML = rightLinks;
+
+
+
     const helpModal = document.querySelector('.header .help'),
         headerContact = document.querySelector('.header .header__btn'),
         closeBtn = document.querySelector('.header .help__close');
@@ -11,7 +44,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
     let mytexts = document.querySelectorAll('.methods .method');
     let linksParent = document.querySelectorAll('.descr__inner .descr__item');
-    let linkParent = document.querySelector('.main__inner-right .descr__inner');
+
 
 
     let menuBtn = document.querySelector('.menu__btn');
@@ -22,50 +55,47 @@ window.addEventListener('DOMContentLoaded', (e) => {
     let progress = document.querySelector('.svg__box #reading-progress');
     // progress.style.transition = 'stroke-dasharray 0.3s ease';
 
-   
 
 
-/////////styledCode border/////////
-const methodsContainer = document.querySelector('.methods');
-const methods = methodsContainer.querySelectorAll('.method');
-const infoElements = methodsContainer.querySelectorAll('.info');
-const codeElements = methodsContainer.querySelectorAll('.method__example');
 
+    /////////styledCode border/////////
 
-const coordinates = document.querySelector('.coordinates');
-
-let scrollH = 1;
-window.addEventListener('load', function() {
-    scrollH = document.documentElement.scrollHeight - window.innerHeight;
-});
+    const methods = methodsContainer.querySelectorAll('.method');
+    const infoElements = methodsContainer.querySelectorAll('.info');
+    const codeElements = methodsContainer.querySelectorAll('.method__example');
 
 
 
 
-methods.forEach((item, index) => {
-    const info = infoElements[index];
-    const code = codeElements[index];
-    if (info.classList.contains('visible')) {
-        code.classList.add('styled');
-    }
-});
-  
-    
+
+
+    let scrollH = 1;
+    window.addEventListener('load', function () {
+        scrollH = document.documentElement.scrollHeight - window.innerHeight;
+    });
+
+
+
+    methods.forEach((item, index) => {
+        const info = infoElements[index];
+        const code = codeElements[index];
+        if (info.classList.contains('visible')) {
+            code.classList.add('styled');
+        }
+    });
+
+
     const calcProgress = (ScrollPos) => {
-         
+
         const dasharray = progress.getAttribute('stroke-dasharray');
         const valuesArr = dasharray.split(' ');
         const value = parseFloat(valuesArr[1]);
+        let result = Math.ceil(ScrollPos * 100 / scrollH);
 
-        let result = Math.ceil(ScrollPos * 100 / scrollH);      
-     
-        if(result > 96) result = 100;
+        if (result > 96) result = 100;
 
         const percentVal = Math.ceil((value / 100) * (result));
-      
         valuesArr[0] = percentVal;
-        
-
         let arrtoStr = valuesArr.join(' ');
         progress.setAttribute('stroke-dasharray', arrtoStr);
     }
@@ -73,10 +103,10 @@ methods.forEach((item, index) => {
     let ScrollPosOnStart = window.scrollY;
     calcProgress(ScrollPosOnStart);
 
- 
+
     ///////////////////////////////
 
-   
+
 
     document.addEventListener('scroll', () => {
         let ScrollPos = window.scrollY;
@@ -88,8 +118,10 @@ methods.forEach((item, index) => {
             const textHeight = mytext.offsetHeight;
 
             if (ScrollPos >= textPos - 60 && ScrollPos <= (textPos + textHeight)) {
-                const postId = mytext.getAttribute('id');
-                const found = linkParent.querySelector('#' + postId + '-link');
+                const postId = mytext.dataset.id; // poluchaem id posta
+
+                const found = linkParent.querySelector(`[data-id="${postId}-link"]`);// [data-id="${postId + '-link}"]
+                //'#' + postId + '-link'
 
                 if (found) {
                     const element = found.querySelector('.descr__item');
@@ -142,6 +174,8 @@ methods.forEach((item, index) => {
         menuBtnIcon.classList.toggle('fa-xmark');
         document.body.classList.toggle('dark-background');
     });
+
+
 
 
 
