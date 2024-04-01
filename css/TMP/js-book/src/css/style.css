@@ -783,8 +783,8 @@ header {
 
 
 .tumb_two {
-    min-width: 60px;
-    min-height: 30px;
+    min-width: 56px;
+    min-height: 26px;
 }
 
 .tumb_two .wrap_two {
@@ -794,10 +794,10 @@ header {
 
 .wrap_two .btn2 {
     position: absolute;
-    width: 60px;
-    height: 30px;
+    width: 50px;
+    height: 26px;
     border: 2px solid #efefed;
-    border-radius: 65px;
+    border-radius: 20px;
     /* background-color: green; */
    
 }
@@ -806,8 +806,8 @@ header {
 .wrap_two .btn2::before {
     content: '';
     position: absolute;
-    width: 23px;
-    height: 23px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     top: 50%;
     transform: translateY(-50%);
@@ -820,7 +820,7 @@ header {
 
 
 .wrap_two input:checked+ .btn2::before {
-    left: calc(100% - 23px - 1px);
+    left: calc(100% - 20px - 1px);
     background-color: #00d54f;
 }
 
@@ -830,16 +830,16 @@ header {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    right: 36px;
+    right: 28px;
     font-size: 55px; 
     font-weight: 600;
-    color: #adadad;
+    color: #2d3e50;
     font-size: 10px;
 }
 
 .wrap_two input:checked+.btn2::after {
     content: 'RU';
-    left: 36px;
+    left: 28px;
     transition: all .5s ease-in-out;
 }
 
