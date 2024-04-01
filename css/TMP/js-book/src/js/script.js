@@ -8,13 +8,28 @@ window.addEventListener('DOMContentLoaded', (e) => {
     let lang = document.querySelector('.header__contact .tumb_two .inp2');
 
 
+    let descrTitle = document.querySelector('.descr__title');
+    let descrToUp = document.querySelector('.descr__up-text');
 
 
 
-    let elements = '';
-    let rightLinks = '';
-    myObj.forEach((item) => {
-        elements += `<div class="method" id="${item.method}" data-id="${item.method}">
+
+    let helpTitle = document.querySelector('.help__title');
+    let helpText = document.querySelector('.help__text');
+    let helpFooterText = document.querySelector('.help__footer-text');
+    let helpHeaderText = document.querySelector('.help__header-text');
+    let dayly = document.querySelector('.footer-worktime-text');
+    let daylyTo = document.querySelector('.worktime__middletext');
+
+
+
+
+
+    const addItemsOnPageRu = () => {
+        let elements = '';
+        let rightLinks = '';
+        myObj.forEach((item) => {
+            elements += `<div class="method" id="${item.method}" data-id="${item.method}">
         <div class="method__descr"><code class="method__item-decore">${item.method}</code>${item.descrRu}</div>
         <div class="method__title">${item.typeRu}</div>
         <div class="method__example">
@@ -30,25 +45,109 @@ ${item.codeRu}
         </div>
     </div>`;
 
-        rightLinks += `<a href="#${item.method}" data-id="${item.method}-link" class="descr__item-link">
+            rightLinks += `<a href="#${item.method}" data-id="${item.method}-link" class="descr__item-link">
     <div class="descr__item">${item.method}</div>
 </a>`;
-    });
+        });
 
-    methodsContainer.innerHTML = elements;
-    linkParent.innerHTML = rightLinks;
+        methodsContainer.innerHTML = elements;
+        linkParent.innerHTML = rightLinks;
 
+        descrTitle.textContent = 'Навигация';
+        descrToUp.textContent = 'Наверх';
 
-
-  lang.addEventListener('click', () => {
-
-    if(lang.checked) {
-        console.log('1');
-    }else {
-        console.log('0');
+        helpTitle.textContent = 'основатель сайта';
+        helpText.textContent = 'Задать вопрос';
+        helpHeaderText.textContent = 'Поддержка клиентов';
+        helpFooterText.textContent = 'Поддержка клиентов';
+        dayly.textContent = 'Ежедневно с';
+        daylyTo.textContent = 'до';
     }
 
-});  
+    addItemsOnPageRu();
+
+
+
+    const addItemsOnPageEn = () => {
+        let elements = '';
+        let rightLinks = '';
+        myObj.forEach((item) => {
+            elements += `<div class="method" id="${item.method}" data-id="${item.method}">
+        <div class="method__descr"><code class="method__item-decore">${item.method}</code>${item.descrEn}</div>
+        <div class="method__title">${item.typeEn}</div>
+        <div class="method__example">
+            <div class="method__example-title">${item.maintypeEn}</div>
+            <pre class="code__style">
+<code>
+${item.codeEn}
+</code>
+</pre>
+        </div>
+        <div class="info ${item.infostatus}">
+            <pre>${item.infoEn}</pre>
+        </div>
+    </div>`;
+
+            rightLinks += `<a href="#${item.method}" data-id="${item.method}-link" class="descr__item-link">
+    <div class="descr__item">${item.method}</div>
+</a>`;
+        });
+
+        methodsContainer.innerHTML = elements;
+        linkParent.innerHTML = rightLinks;
+
+        descrTitle.textContent = 'Navigation';
+        descrToUp.textContent = 'Up';
+
+        helpTitle.textContent = 'site owner';
+        helpText.textContent = 'Ask a question';
+        helpFooterText.textContent = 'Customer support';
+        helpHeaderText.textContent = 'Customer support';
+        dayly.textContent = 'Daily from';
+        daylyTo.textContent = 'to';
+    }
+
+
+    const setDataToStorage = (obj) => {
+        window.localStorage.setItem('lernjs', JSON.stringify(obj));
+    }
+    const geDataFromStorage = () => {
+        return JSON.parse(window.localStorage.getItem('lernjs')) || {};
+    }
+    const obj =  geDataFromStorage();
+
+
+
+
+    if (obj) {
+        if (obj.lang === 'RU') {
+            addItemsOnPageRu();
+            lang.checked = true;
+       
+        }
+
+        if (obj.lang === 'EN') {
+            addItemsOnPageEn();
+            lang.checked = false;
+        }
+    }
+
+
+
+
+
+    lang.addEventListener('click', () => {
+
+        if (lang.checked) {
+            addItemsOnPageRu();
+            obj.lang = 'RU';
+            
+        } else {
+            addItemsOnPageEn();
+            obj.lang = 'EN';
+        }
+        setDataToStorage(obj);
+    });
 
 
 
