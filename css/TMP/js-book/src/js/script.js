@@ -85,6 +85,7 @@ ${item.code}
     });
 
 
+    
     const calcProgress = (ScrollPos) => {
 
         const dasharray = progress.getAttribute('stroke-dasharray');

@@ -837,6 +837,7 @@ header {
     font-size: 10px;
 }
 
+
 .wrap_two input:checked+.btn2::after {
     content: 'RU';
     left: 28px;
