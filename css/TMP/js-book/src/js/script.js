@@ -5,24 +5,28 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
     let methodsContainer = document.querySelector('.methods');
     let linkParent = document.querySelector('.main__inner-right .descr__inner');
+    let lang = document.querySelector('.header__contact .tumb_two .inp2');
+
+
+
 
 
     let elements = '';
     let rightLinks = '';
     myObj.forEach((item) => {
         elements += `<div class="method" id="${item.method}" data-id="${item.method}">
-        <div class="method__descr"><code class="method__item-decore">${item.method}</code>${item.descr}</div>
-        <div class="method__title">${item.type}</div>
+        <div class="method__descr"><code class="method__item-decore">${item.method}</code>${item.descrRu}</div>
+        <div class="method__title">${item.typeRu}</div>
         <div class="method__example">
-            <div class="method__example-title">${item.maintype}</div>
+            <div class="method__example-title">${item.maintypeRu}</div>
             <pre class="code__style">
 <code>
-${item.code}
+${item.codeRu}
 </code>
 </pre>
         </div>
         <div class="info ${item.infostatus}">
-            <pre>${item.info}</pre>
+            <pre>${item.infoRu}</pre>
         </div>
     </div>`;
 
@@ -33,6 +37,18 @@ ${item.code}
 
     methodsContainer.innerHTML = elements;
     linkParent.innerHTML = rightLinks;
+
+
+
+  lang.addEventListener('click', () => {
+
+    if(lang.checked) {
+        console.log('1');
+    }else {
+        console.log('0');
+    }
+
+});  
 
 
 
@@ -85,7 +101,7 @@ ${item.code}
     });
 
 
-    
+
     const calcProgress = (ScrollPos) => {
 
         const dasharray = progress.getAttribute('stroke-dasharray');
