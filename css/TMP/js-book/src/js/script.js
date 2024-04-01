@@ -125,13 +125,13 @@ ${item.codeEn}
     if (obj) {
         if (obj.lang === 'RU') {
             addItemsOnPageRu();
-            //lang.setAttribute('checked', 'checked');
+           // language.setAttribute('checked', 'checked');
             language.checked = true;
         }
 
         if (obj.lang === 'EN') {
             addItemsOnPageEn();
-            //lang.removeAttribute('checked');
+           // language.removeAttribute('checked');
             language.checked = false;
             
         }
