@@ -127,8 +127,6 @@ ${item.codeEn}
             addItemsOnPageRu();
             //lang.setAttribute('checked', 'checked');
             language.checked = true;
-           
-       
         }
 
         if (obj.lang === 'EN') {
