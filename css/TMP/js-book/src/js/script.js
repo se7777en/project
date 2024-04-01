@@ -92,7 +92,7 @@ ${item.code}
         const value = parseFloat(valuesArr[1]);
         let result = Math.ceil(ScrollPos * 100 / scrollH);
 
-        if (result > 96) result = 100;
+        if (result > 95) result = 100;
 
         const percentVal = Math.ceil((value / 100) * (result));
         valuesArr[0] = percentVal;
