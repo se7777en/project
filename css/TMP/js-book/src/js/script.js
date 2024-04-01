@@ -5,7 +5,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
     let methodsContainer = document.querySelector('.methods');
     let linkParent = document.querySelector('.main__inner-right .descr__inner');
-    let lang = document.querySelector('.header__contact .tumb_two .inp2');
+    let language = document.querySelector('.header__contact .tumb_two .inp2');
 
 
     let descrTitle = document.querySelector('.descr__title');
@@ -108,6 +108,9 @@ ${item.codeEn}
     }
 
 
+
+
+    
     const setDataToStorage = (obj) => {
         window.localStorage.setItem('lernjs', JSON.stringify(obj));
     }
@@ -122,13 +125,17 @@ ${item.codeEn}
     if (obj) {
         if (obj.lang === 'RU') {
             addItemsOnPageRu();
-            lang.checked = true;
+            //lang.setAttribute('checked', 'checked');
+            language.checked = true;
+           
        
         }
 
         if (obj.lang === 'EN') {
             addItemsOnPageEn();
-            lang.checked = false;
+            //lang.removeAttribute('checked');
+            language.checked = false;
+            
         }
     }
 
@@ -136,9 +143,9 @@ ${item.codeEn}
 
 
 
-    lang.addEventListener('click', () => {
+    language.addEventListener('click', () => {
 
-        if (lang.checked) {
+        if (language.checked) {
             addItemsOnPageRu();
             obj.lang = 'RU';
             
