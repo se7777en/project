@@ -48,6 +48,7 @@ ${item.codeRu}
             rightLinks += `<a href="#${item.method}" data-id="${item.method}-link" class="descr__item-link">
     <div class="descr__item">${item.method}</div>
 </a>`;
+console.log(item.descrRu);
         });
 
         methodsContainer.innerHTML = elements;
@@ -91,6 +92,7 @@ ${item.codeEn}
             rightLinks += `<a href="#${item.method}" data-id="${item.method}-link" class="descr__item-link">
     <div class="descr__item">${item.method}</div>
 </a>`;
+
         });
 
         methodsContainer.innerHTML = elements;
@@ -108,6 +110,10 @@ ${item.codeEn}
     }
 
 
+    let scrollH = 1;
+    window.addEventListener('load', function () {
+        scrollH = document.documentElement.scrollHeight - window.innerHeight;
+    });
 
 
     
@@ -144,10 +150,12 @@ ${item.codeEn}
     language.addEventListener('click', () => {
 
         if (language.checked) {
+            scrollH = document.documentElement.scrollHeight - window.innerHeight;
             addItemsOnPageRu();
             obj.lang = 'RU';
             
         } else {
+            scrollH = document.documentElement.scrollHeight - window.innerHeight;
             addItemsOnPageEn();
             obj.lang = 'EN';
         }
@@ -189,11 +197,7 @@ ${item.codeEn}
 
 
 
-    let scrollH = 1;
-    window.addEventListener('load', function () {
-        scrollH = document.documentElement.scrollHeight - window.innerHeight;
-    });
-
+   
 
 
     methods.forEach((item, index) => {
