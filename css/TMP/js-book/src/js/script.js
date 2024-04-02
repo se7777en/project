@@ -154,7 +154,6 @@ ${item.codeEn}
     language.addEventListener('click', () => {
 
         if (language.checked) {
-
             addItemsOnPageRu();
             obj.lang = 'RU';
 
@@ -164,6 +163,8 @@ ${item.codeEn}
         }
         setDataToStorage(obj);
         scrollH = document.documentElement.scrollHeight - window.innerHeight;
+        // scrollPosts();
+        
     });
 
 
@@ -237,6 +238,7 @@ ${item.codeEn}
 
 
 
+  function scrollPosts() {
     document.addEventListener('scroll', () => {
         let ScrollPos = window.scrollY;
 
@@ -261,7 +263,9 @@ ${item.codeEn}
             }
         });
     });
+  }
 
+  scrollPosts();
 
 
 
