@@ -7,6 +7,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
     let linkParent = document.querySelector('.main__inner-right .descr__inner');
     let language = document.querySelector('.header__contact .tumb_two .inp2');
 
+    let doing = document.querySelector('.main .method__header');
+
 
     let descrTitle = document.querySelector('.descr__title');
     let descrToUp = document.querySelector('.descr__up-text');
@@ -28,6 +30,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     const addItemsOnPageRu = () => {
         let elements = '';
         let rightLinks = '';
+        doing.innerHTML =  'Изучаем <span class="jslang">Javascript</span>';
         myObj.forEach((item) => {
             elements += `<div class="method" id="${item.method}" data-id="${item.method}">
         <div class="method__descr"><code class="method__item-decore">${item.method}</code>${item.descrRu}</div>
@@ -69,10 +72,10 @@ ${item.codeRu}
     addItemsOnPageRu();
 
 
-
     const addItemsOnPageEn = () => {
         let elements = '';
         let rightLinks = '';
+        doing.innerHTML =  'Learning <span class="jslang">Javascript</span>';
         myObj.forEach((item) => {
             elements += `<div class="method" id="${item.method}" data-id="${item.method}">
         <div class="method__descr"><code class="method__item-decore">${item.method}</code>${item.descrEn}</div>

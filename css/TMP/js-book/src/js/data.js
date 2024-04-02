@@ -1,5 +1,11 @@
 'use strict';
 
+
+const objHeader = [{
+        headerRu: 'Изучаем Javascript',
+        headerEn: 'Изучаем Javascript'
+}];
+
 const myObj = [
     {
         method: 'for',
