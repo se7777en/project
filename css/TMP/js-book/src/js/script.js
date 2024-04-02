@@ -115,9 +115,9 @@ ${item.codeEn}
     });
 
 
-    window.addEventListener("orientationchange", function () {
-        scrollH = document.documentElement.scrollHeight - window.innerHeight;
-    });
+    // window.addEventListener("orientationchange", function () {
+    //     scrollH = document.documentElement.scrollHeight - window.innerHeight;
+    // });
 
 
 
