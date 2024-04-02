@@ -48,7 +48,6 @@ ${item.codeRu}
             rightLinks += `<a href="#${item.method}" data-id="${item.method}-link" class="descr__item-link">
     <div class="descr__item">${item.method}</div>
 </a>`;
-console.log(item.descrRu);
         });
 
         methodsContainer.innerHTML = elements;
@@ -150,16 +149,16 @@ ${item.codeEn}
     language.addEventListener('click', () => {
 
         if (language.checked) {
-            scrollH = document.documentElement.scrollHeight - window.innerHeight;
+            
             addItemsOnPageRu();
             obj.lang = 'RU';
             
         } else {
-            scrollH = document.documentElement.scrollHeight - window.innerHeight;
             addItemsOnPageEn();
             obj.lang = 'EN';
         }
         setDataToStorage(obj);
+        scrollH = document.documentElement.scrollHeight - window.innerHeight;
     });
 
 
@@ -266,6 +265,7 @@ ${item.codeEn}
     headerContact.addEventListener('click', (e) => {
         if (headerContact.contains(e.target)) {
             helpModal.classList.toggle('show');
+            scrollH = document.documentElement.scrollHeight - window.innerHeight;
         }
     });
 
