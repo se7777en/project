@@ -53,6 +53,8 @@ ${item.codeRu}
         methodsContainer.innerHTML = elements;
         linkParent.innerHTML = rightLinks;
 
+       
+
         descrTitle.textContent = 'Навигация';
         descrToUp.textContent = 'Наверх';
 
@@ -91,11 +93,12 @@ ${item.codeEn}
             rightLinks += `<a href="#${item.method}" data-id="${item.method}-link" class="descr__item-link">
     <div class="descr__item">${item.method}</div>
 </a>`;
-
         });
 
         methodsContainer.innerHTML = elements;
         linkParent.innerHTML = rightLinks;
+
+    
 
         descrTitle.textContent = 'Navigation';
         descrToUp.textContent = 'Up';
@@ -109,25 +112,16 @@ ${item.codeEn}
     }
 
 
-    let scrollH = 1;
-    window.addEventListener('load', function () {
-        scrollH = document.documentElement.scrollHeight - window.innerHeight;
-    });
 
 
-    // window.addEventListener("orientationchange", function () {
-    //     scrollH = document.documentElement.scrollHeight - window.innerHeight;
-    // });
-
-
-
+    
     const setDataToStorage = (obj) => {
         window.localStorage.setItem('lernjs', JSON.stringify(obj));
     }
     const geDataFromStorage = () => {
         return JSON.parse(window.localStorage.getItem('lernjs')) || {};
     }
-    const obj = geDataFromStorage();
+    const obj =  geDataFromStorage();
 
 
 
@@ -135,15 +129,15 @@ ${item.codeEn}
     if (obj) {
         if (obj.lang === 'RU') {
             addItemsOnPageRu();
-            // language.setAttribute('checked', 'checked');
+           // language.setAttribute('checked', 'checked');
             language.checked = true;
         }
 
         if (obj.lang === 'EN') {
             addItemsOnPageEn();
-            // language.removeAttribute('checked');
+           // language.removeAttribute('checked');
             language.checked = false;
-
+            
         }
     }
 
@@ -156,15 +150,12 @@ ${item.codeEn}
         if (language.checked) {
             addItemsOnPageRu();
             obj.lang = 'RU';
-
+            
         } else {
             addItemsOnPageEn();
             obj.lang = 'EN';
         }
-        setDataToStorage(obj);
-        scrollH = document.documentElement.scrollHeight - window.innerHeight;
-        // scrollPosts();
-        
+        setDataToStorage(obj);        
     });
 
 
@@ -175,8 +166,7 @@ ${item.codeEn}
 
 
 
-    let mytexts = document.querySelectorAll('.methods .method');
-    let linksParent = document.querySelectorAll('.descr__inner .descr__item');
+
 
 
 
@@ -202,6 +192,10 @@ ${item.codeEn}
 
 
 
+    let scrollH = 1;
+    window.addEventListener('load', function () {
+        scrollH = document.documentElement.scrollHeight - window.innerHeight;
+    });
 
 
 
@@ -238,10 +232,12 @@ ${item.codeEn}
 
 
 
-  function scrollPosts() {
+   const onsrollChange = function() {
     document.addEventListener('scroll', () => {
         let ScrollPos = window.scrollY;
-
+       
+        let mytexts = document.querySelectorAll('.methods .method');
+        let linksParent = document.querySelectorAll('.descr__inner .descr__item');
         calcProgress(ScrollPos);
 
         mytexts.forEach((mytext) => {
@@ -263,9 +259,11 @@ ${item.codeEn}
             }
         });
     });
-  }
+   }
 
-  scrollPosts();
+
+   onsrollChange();
+
 
 
 
@@ -274,7 +272,6 @@ ${item.codeEn}
     headerContact.addEventListener('click', (e) => {
         if (headerContact.contains(e.target)) {
             helpModal.classList.toggle('show');
-            scrollH = document.documentElement.scrollHeight - window.innerHeight;
         }
     });
 
