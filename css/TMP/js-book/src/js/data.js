@@ -6,6 +6,7 @@ const objHeader = [{
         headerEn: 'Изучаем Javascript'
 }];
 
+
 const myObj = [
     {
         method: 'for',
