@@ -48,7 +48,7 @@ body {
 .container {
     max-width: 1230px;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 15px 10px 15px;
 }
 
 .header__inner {
@@ -924,7 +924,7 @@ header {
 } */
 
 .footer .wrap {
-    width: 135px;
+    width: 104px;
     border: 1px solid #0071e3;
     border-radius: 15px;
     -webkit-tap-highlight-color: transparent;
@@ -957,12 +957,12 @@ header {
 .footer .wrap__inner span {
     display: inline-block;
     text-transform: capitalize;
-    font-size: 12px;
+    font-size: 6px;
     color: #0071e3;
     font-weight: 400;
-    min-width: 42px;
+    min-width: 32px;
     text-align: center;
-    padding: 1px 6px;
+    padding: 1px 5px;
     cursor: pointer;
 }
 
