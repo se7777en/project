@@ -25,6 +25,10 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
 
 
+    let scrollH = 1;
+    window.addEventListener('load', function () {
+        scrollH = document.documentElement.scrollHeight - window.innerHeight;
+    });
 
 
     const addItemsOnPageRu = () => {
@@ -158,7 +162,8 @@ ${item.codeEn}
             addItemsOnPageEn();
             obj.lang = 'EN';
         }
-        setDataToStorage(obj);        
+        setDataToStorage(obj); 
+        scrollH = document.documentElement.scrollHeight - window.innerHeight;       
     });
 
 
@@ -195,11 +200,7 @@ ${item.codeEn}
 
 
 
-    let scrollH = 1;
-    window.addEventListener('load', function () {
-        scrollH = document.documentElement.scrollHeight - window.innerHeight;
-    });
-
+  
 
 
     methods.forEach((item, index) => {
@@ -262,7 +263,7 @@ ${item.codeEn}
             }
         });
     });
-   }
+   }    
 
 
    onsrollChange();
