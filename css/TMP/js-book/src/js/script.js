@@ -23,40 +23,28 @@ window.addEventListener('DOMContentLoaded', (e) => {
     let dayly = document.querySelector('.footer-worktime-text');
     let daylyTo = document.querySelector('.worktime__middletext');
 
-
-
-
     const mainBg = document.querySelector('.footer .wrap .wrap__inner');
 
-    let wrapLight = document.querySelector('.wrap__light');
-    let wrapDark = document.querySelector('.wrap__dark');
-    let wrapAuto = document.querySelector('.wrap__auto');
+    ///////////////
+    // const body = document.querySelector('BODY');
+    // const header = document.querySelector('HEADER');
+    // const tumbler = document.querySelector('.wrap_two .btn2');
+    // const statusBg = document.querySelector('.status');
+
+    // body.classList.add('darkbg');
+    // header.classList.add('header__border');
+    // tumbler.classList.add('tumblerbg');
+    // statusBg.classList.add('about__status');
+
+    ///////////////
 
 
-   mainBg.addEventListener('click', (e) => {
-    const event = e.target;
-    if(event === mainBg){
-      console.log(event);   
-    }
 
 
-    //hi
+
+
 
     
-  
-        // if (event.closest('.wrap__light')) {
-        //     console.log('wrap__light');
-        // }
-
-        // if (event.closest('.wrap__dark .radio_btn')) {
-        //     console.log('wrap__dark');
-        // }
-
-        // if (event.closest('.wrap__auto .radio_btn')) {
-        //     console.log('wrap__auto');
-        // }
-   
-});
 
 
     let scrollH = 1;
@@ -198,6 +186,31 @@ ${item.codeEn}
         }
         setDataToStorage(obj);
         scrollH = document.documentElement.scrollHeight - window.innerHeight;
+    });
+
+    
+////////////////////////////////////////////////////
+    mainBg.addEventListener('click', (e) => {
+        const event = e.target;
+        if (event) {
+            if (event.matches('.wrap__light input')) {
+                obj.bgcolor = 'light';
+                console.log('light'); //
+                setDataToStorage(obj);
+            }
+
+            if (event.matches('.wrap__dark input')) {
+                obj.bgcolor = 'dark';
+                console.log('dark'); //
+                setDataToStorage(obj);
+            }
+
+            if (event.matches('.wrap__auto input')) {
+                obj.bgcolor = 'auto';
+                console.log('auto'); //
+                setDataToStorage(obj);
+            }   
+        }
     });
 
 

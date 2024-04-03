@@ -977,3 +977,56 @@ header {
     color: #fff;
 }
 /*theme*/
+
+.darkbg {
+    background-color: #1b1b1b;
+}
+
+.header__border {
+    border-bottom: 1px solid #858585;
+}
+
+.tumblerbg {
+    border: .10rem solid #858585 !important;
+}
+
+.tumb__enbg {
+    background-color: #858585 !important;
+}
+
+
+
+/*
+ten v konce teksta
+{
+    background: var(--background-primary);
+    content: "";
+    display: block;
+    height: calc(1em* var(--base-line-height));
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 75%);
+    mask-image: linear-gradient(90deg, transparent, #000 75%);
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: calc(2em* var(--base-line-height));
+    width: 20ch;
+}
+
+
+cveta:  
+
+#1d1d1f bg
+#1b1b1b
+
+
+border
+#858585
+
+post bg-color
+#313131
+
+#f5f5f7 text color
+
+green color 0071e3
+
+*/
