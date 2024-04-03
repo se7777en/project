@@ -927,7 +927,9 @@ header {
 } */
 
 .footer .wrap {
-    width: 104px;
+    display: block;
+    width: 103px;
+    height: 12px;
     border: 1px solid #0071e3;
     border-radius: 15px;
     -webkit-tap-highlight-color: transparent;
