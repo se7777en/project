@@ -28,34 +28,26 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
     const mainBg = document.querySelector('.footer .wrap .wrap__inner');
 
-    let wrapLight = document.querySelector('.wrap__light');
-    let wrapDark = document.querySelector('.wrap__dark');
-    let wrapAuto = document.querySelector('.wrap__auto');
 
+    mainBg.addEventListener('click', (e) => {
+        const event = e.target;
 
-   mainBg.addEventListener('click', (e) => {
-    const event = e.target;
-    if(event === mainBg){
-      console.log(event);   
-    }
+        const lightParent = event.closest('.wrap__light');
+        if (lightParent && event.matches('.wrap__light input[type="radio"]')) {
+            console.log('wrap__light1');
+        }
 
+        const darkParent = event.closest('.wrap__dark');
+        if (darkParent && event.matches('.wrap__dark input[type="radio"]')) {
+            console.log('wrap__light2');
+        }
 
+        const autoParent = event.closest('.wrap__auto');
+        if (autoParent && event.matches('.wrap__auto input[type="radio"]')) {
+            console.log('wrap__light3');
+        }
 
-    
-  
-        // if (event.closest('.wrap__light')) {
-        //     console.log('wrap__light');
-        // }
-
-        // if (event.closest('.wrap__dark .radio_btn')) {
-        //     console.log('wrap__dark');
-        // }
-
-        // if (event.closest('.wrap__auto .radio_btn')) {
-        //     console.log('wrap__auto');
-        // }
-   
-});
+   });
 
 
     let scrollH = 1;
