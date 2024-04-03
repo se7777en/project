@@ -40,6 +40,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
     }
 
 
+
+    
   
         // if (event.closest('.wrap__light')) {
         //     console.log('wrap__light');
