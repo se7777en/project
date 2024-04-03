@@ -25,6 +25,37 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
 
 
+
+    const mainBg = document.querySelector('.footer .wrap .wrap__inner');
+
+    let wrapLight = document.querySelector('.wrap__light');
+    let wrapDark = document.querySelector('.wrap__dark');
+    let wrapAuto = document.querySelector('.wrap__auto');
+
+
+   mainBg.addEventListener('click', (e) => {
+    const event = e.target;
+    if(event === mainBg){
+      console.log(event);   
+    }
+
+
+  
+        // if (event.closest('.wrap__light')) {
+        //     console.log('wrap__light');
+        // }
+
+        // if (event.closest('.wrap__dark .radio_btn')) {
+        //     console.log('wrap__dark');
+        // }
+
+        // if (event.closest('.wrap__auto .radio_btn')) {
+        //     console.log('wrap__auto');
+        // }
+   
+});
+
+
     let scrollH = 1;
     window.addEventListener('load', function () {
         scrollH = document.documentElement.scrollHeight - window.innerHeight;
@@ -34,7 +65,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     const addItemsOnPageRu = () => {
         let elements = '';
         let rightLinks = '';
-        doing.innerHTML =  'Изучаем <span class="jslang">Javascript</span>';
+        doing.innerHTML = 'Изучаем <span class="jslang">Javascript</span>';
         myObj.forEach((item) => {
             elements += `<div class="method" id="${item.method}" data-id="${item.method}">
         <div class="method__descr"><code class="method__item-decore">${item.method}</code>${item.descrRu}</div>
@@ -60,7 +91,7 @@ ${item.codeRu}
         methodsContainer.innerHTML = elements;
         linkParent.innerHTML = rightLinks;
 
-       
+
 
         descrTitle.textContent = 'Навигация';
         descrToUp.textContent = 'Наверх';
@@ -79,7 +110,7 @@ ${item.codeRu}
     const addItemsOnPageEn = () => {
         let elements = '';
         let rightLinks = '';
-        doing.innerHTML =  'Learning <span class="jslang">Javascript</span>';
+        doing.innerHTML = 'Learning <span class="jslang">Javascript</span>';
         myObj.forEach((item) => {
             elements += `<div class="method" id="${item.method}" data-id="${item.method}">
         <div class="method__descr"><code class="method__item-decore">${item.method}</code>${item.descrEn}</div>
@@ -105,7 +136,7 @@ ${item.codeEn}
         methodsContainer.innerHTML = elements;
         linkParent.innerHTML = rightLinks;
 
-    
+
 
         descrTitle.textContent = 'Navigation';
         descrToUp.textContent = 'Up';
@@ -121,14 +152,14 @@ ${item.codeEn}
 
 
 
-    
+
     const setDataToStorage = (obj) => {
         window.localStorage.setItem('lernjs', JSON.stringify(obj));
     }
     const geDataFromStorage = () => {
         return JSON.parse(window.localStorage.getItem('lernjs')) || {};
     }
-    const obj =  geDataFromStorage();
+    const obj = geDataFromStorage();
 
 
 
@@ -136,15 +167,15 @@ ${item.codeEn}
     if (obj) {
         if (obj.lang === 'RU') {
             addItemsOnPageRu();
-           // language.setAttribute('checked', 'checked');
+            // language.setAttribute('checked', 'checked');
             language.checked = true;
         }
 
         if (obj.lang === 'EN') {
             addItemsOnPageEn();
-           // language.removeAttribute('checked');
+            // language.removeAttribute('checked');
             language.checked = false;
-            
+
         }
     }
 
@@ -157,13 +188,13 @@ ${item.codeEn}
         if (language.checked) {
             addItemsOnPageRu();
             obj.lang = 'RU';
-            
+
         } else {
             addItemsOnPageEn();
             obj.lang = 'EN';
         }
-        setDataToStorage(obj); 
-        scrollH = document.documentElement.scrollHeight - window.innerHeight;       
+        setDataToStorage(obj);
+        scrollH = document.documentElement.scrollHeight - window.innerHeight;
     });
 
 
@@ -200,7 +231,7 @@ ${item.codeEn}
 
 
 
-  
+
 
 
     methods.forEach((item, index) => {
@@ -236,37 +267,37 @@ ${item.codeEn}
 
 
 
-   const onsrollChange = function() {
-    document.addEventListener('scroll', () => {
-        let ScrollPos = window.scrollY;
-       
-        let mytexts = document.querySelectorAll('.methods .method');
-        let linksParent = document.querySelectorAll('.descr__inner .descr__item');
-        calcProgress(ScrollPos);
+    const onsrollChange = function () {
+        document.addEventListener('scroll', () => {
+            let ScrollPos = window.scrollY;
 
-        mytexts.forEach((mytext) => {
-            const textPos = mytext.offsetTop;
-            const textHeight = mytext.offsetHeight;
+            let mytexts = document.querySelectorAll('.methods .method');
+            let linksParent = document.querySelectorAll('.descr__inner .descr__item');
+            calcProgress(ScrollPos);
 
-            if (ScrollPos >= textPos - 60 && ScrollPos <= (textPos + textHeight)) {
-                const postId = mytext.dataset.id; // poluchaem id posta
+            mytexts.forEach((mytext) => {
+                const textPos = mytext.offsetTop;
+                const textHeight = mytext.offsetHeight;
 
-                const found = linkParent.querySelector(`[data-id="${postId}-link"]`);// [data-id="${postId + '-link}"]
-                //'#' + postId + '-link'
+                if (ScrollPos >= textPos - 60 && ScrollPos <= (textPos + textHeight)) {
+                    const postId = mytext.dataset.id; // poluchaem id posta
 
-                if (found) {
-                    const element = found.querySelector('.descr__item');
-                    linksParent.forEach((item) => {
-                        item.classList.toggle('active', item === element);
-                    });
+                    const found = linkParent.querySelector(`[data-id="${postId}-link"]`);// [data-id="${postId + '-link}"]
+                    //'#' + postId + '-link'
+
+                    if (found) {
+                        const element = found.querySelector('.descr__item');
+                        linksParent.forEach((item) => {
+                            item.classList.toggle('active', item === element);
+                        });
+                    }
                 }
-            }
+            });
         });
-    });
-   }    
+    }
 
 
-   onsrollChange();
+    onsrollChange();
 
 
 
