@@ -124,6 +124,7 @@ ${item.codeEn}
 </a>`;
         });
 
+        
         methodsContainer.innerHTML = elements;
         linkParent.innerHTML = rightLinks;
 
