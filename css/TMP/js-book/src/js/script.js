@@ -23,7 +23,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     let dayly = document.querySelector('.footer-worktime-text');
     let daylyTo = document.querySelector('.worktime__middletext');
 
-    const mainBg = document.querySelector('.footer .wrap__inner');
+    //const mainBg = document.querySelector('.footer .wrap__inner');
 
     ///////////////
     // const body = document.querySelector('BODY');
@@ -317,6 +317,7 @@ ${item.codeEn}
 
 
 
+    
 
 
 
