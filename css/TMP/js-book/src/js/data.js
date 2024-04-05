@@ -199,5 +199,997 @@ console.log(allGreaterThanFive); // false`,
         infoRu: 'fsdjkfhsdkf',
         infoEn: 'fsdjkfhsdkf',
         infostatus: 'visible'
+    },
+    {
+        method: 'every',
+        descrRu: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        descrEn: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        typeRu: 'Функциональный метод:',
+        typeEn: 'Функциональный метод:',
+        maintypeRu: 'JavaScript:',
+        maintypeEn: 'JavaScript:',
+
+        codeRu: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        codeEn: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        infoRu: 'fsdjkfhsdkf',
+        infoEn: 'fsdjkfhsdkf',
+        infostatus: 'visible'
+    },
+    {
+        method: 'every',
+        descrRu: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        descrEn: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        typeRu: 'Функциональный метод:',
+        typeEn: 'Функциональный метод:',
+        maintypeRu: 'JavaScript:',
+        maintypeEn: 'JavaScript:',
+
+        codeRu: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        codeEn: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        infoRu: 'fsdjkfhsdkf',
+        infoEn: 'fsdjkfhsdkf',
+        infostatus: 'visible'
+    },
+    {
+        method: 'every',
+        descrRu: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        descrEn: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        typeRu: 'Функциональный метод:',
+        typeEn: 'Функциональный метод:',
+        maintypeRu: 'JavaScript:',
+        maintypeEn: 'JavaScript:',
+
+        codeRu: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        codeEn: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        infoRu: 'fsdjkfhsdkf',
+        infoEn: 'fsdjkfhsdkf',
+        infostatus: 'visible'
+    },
+    {
+        method: 'every',
+        descrRu: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        descrEn: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        typeRu: 'Функциональный метод:',
+        typeEn: 'Функциональный метод:',
+        maintypeRu: 'JavaScript:',
+        maintypeEn: 'JavaScript:',
+
+        codeRu: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        codeEn: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        infoRu: 'fsdjkfhsdkf',
+        infoEn: 'fsdjkfhsdkf',
+        infostatus: 'visible'
+    },
+    {
+        method: 'every',
+        descrRu: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        descrEn: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        typeRu: 'Функциональный метод:',
+        typeEn: 'Функциональный метод:',
+        maintypeRu: 'JavaScript:',
+        maintypeEn: 'JavaScript:',
+
+        codeRu: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        codeEn: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        infoRu: 'fsdjkfhsdkf',
+        infoEn: 'fsdjkfhsdkf',
+        infostatus: 'visible'
+    },
+    {
+        method: 'every',
+        descrRu: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        descrEn: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        typeRu: 'Функциональный метод:',
+        typeEn: 'Функциональный метод:',
+        maintypeRu: 'JavaScript:',
+        maintypeEn: 'JavaScript:',
+
+        codeRu: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        codeEn: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        infoRu: 'fsdjkfhsdkf',
+        infoEn: 'fsdjkfhsdkf',
+        infostatus: 'visible'
+    },
+    {
+        method: 'every',
+        descrRu: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        descrEn: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        typeRu: 'Функциональный метод:',
+        typeEn: 'Функциональный метод:',
+        maintypeRu: 'JavaScript:',
+        maintypeEn: 'JavaScript:',
+
+        codeRu: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        codeEn: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        infoRu: 'fsdjkfhsdkf',
+        infoEn: 'fsdjkfhsdkf',
+        infostatus: 'visible'
+    },
+    {
+        method: 'every',
+        descrRu: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        descrEn: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        typeRu: 'Функциональный метод:',
+        typeEn: 'Функциональный метод:',
+        maintypeRu: 'JavaScript:',
+        maintypeEn: 'JavaScript:',
+
+        codeRu: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        codeEn: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        infoRu: 'fsdjkfhsdkf',
+        infoEn: 'fsdjkfhsdkf',
+        infostatus: 'visible'
+    },
+    {
+        method: 'every',
+        descrRu: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        descrEn: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        typeRu: 'Функциональный метод:',
+        typeEn: 'Функциональный метод:',
+        maintypeRu: 'JavaScript:',
+        maintypeEn: 'JavaScript:',
+
+        codeRu: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        codeEn: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        infoRu: 'fsdjkfhsdkf',
+        infoEn: 'fsdjkfhsdkf',
+        infostatus: 'visible'
+    },
+    {
+        method: 'every',
+        descrRu: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        descrEn: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        typeRu: 'Функциональный метод:',
+        typeEn: 'Функциональный метод:',
+        maintypeRu: 'JavaScript:',
+        maintypeEn: 'JavaScript:',
+
+        codeRu: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        codeEn: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        infoRu: 'fsdjkfhsdkf',
+        infoEn: 'fsdjkfhsdkf',
+        infostatus: 'visible'
+    },
+    {
+        method: 'every',
+        descrRu: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        descrEn: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        typeRu: 'Функциональный метод:',
+        typeEn: 'Функциональный метод:',
+        maintypeRu: 'JavaScript:',
+        maintypeEn: 'JavaScript:',
+
+        codeRu: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        codeEn: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        infoRu: 'fsdjkfhsdkf',
+        infoEn: 'fsdjkfhsdkf',
+        infostatus: 'visible'
+    },
+    {
+        method: 'every',
+        descrRu: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        descrEn: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        typeRu: 'Функциональный метод:',
+        typeEn: 'Функциональный метод:',
+        maintypeRu: 'JavaScript:',
+        maintypeEn: 'JavaScript:',
+
+        codeRu: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        codeEn: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        infoRu: 'fsdjkfhsdkf',
+        infoEn: 'fsdjkfhsdkf',
+        infostatus: 'visible'
+    },
+    {
+        method: 'every',
+        descrRu: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        descrEn: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        typeRu: 'Функциональный метод:',
+        typeEn: 'Функциональный метод:',
+        maintypeRu: 'JavaScript:',
+        maintypeEn: 'JavaScript:',
+
+        codeRu: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        codeEn: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        infoRu: 'fsdjkfhsdkf',
+        infoEn: 'fsdjkfhsdkf',
+        infostatus: 'visible'
+    },
+    {
+        method: 'every',
+        descrRu: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        descrEn: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        typeRu: 'Функциональный метод:',
+        typeEn: 'Функциональный метод:',
+        maintypeRu: 'JavaScript:',
+        maintypeEn: 'JavaScript:',
+
+        codeRu: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        codeEn: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        infoRu: 'fsdjkfhsdkf',
+        infoEn: 'fsdjkfhsdkf',
+        infostatus: 'visible'
+    },
+    {
+        method: 'every',
+        descrRu: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        descrEn: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        typeRu: 'Функциональный метод:',
+        typeEn: 'Функциональный метод:',
+        maintypeRu: 'JavaScript:',
+        maintypeEn: 'JavaScript:',
+
+        codeRu: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        codeEn: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        infoRu: 'fsdjkfhsdkf',
+        infoEn: 'fsdjkfhsdkf',
+        infostatus: 'visible'
+    },
+    {
+        method: 'every',
+        descrRu: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        descrEn: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        typeRu: 'Функциональный метод:',
+        typeEn: 'Функциональный метод:',
+        maintypeRu: 'JavaScript:',
+        maintypeEn: 'JavaScript:',
+
+        codeRu: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        codeEn: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        infoRu: 'fsdjkfhsdkf',
+        infoEn: 'fsdjkfhsdkf',
+        infostatus: 'visible'
+    },
+    {
+        method: 'every',
+        descrRu: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        descrEn: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        typeRu: 'Функциональный метод:',
+        typeEn: 'Функциональный метод:',
+        maintypeRu: 'JavaScript:',
+        maintypeEn: 'JavaScript:',
+
+        codeRu: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        codeEn: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        infoRu: 'fsdjkfhsdkf',
+        infoEn: 'fsdjkfhsdkf',
+        infostatus: 'visible'
+    },
+    {
+        method: 'every',
+        descrRu: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        descrEn: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        typeRu: 'Функциональный метод:',
+        typeEn: 'Функциональный метод:',
+        maintypeRu: 'JavaScript:',
+        maintypeEn: 'JavaScript:',
+
+        codeRu: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        codeEn: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        infoRu: 'fsdjkfhsdkf',
+        infoEn: 'fsdjkfhsdkf',
+        infostatus: 'visible'
+    },
+    {
+        method: 'every',
+        descrRu: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        descrEn: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        typeRu: 'Функциональный метод:',
+        typeEn: 'Функциональный метод:',
+        maintypeRu: 'JavaScript:',
+        maintypeEn: 'JavaScript:',
+
+        codeRu: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        codeEn: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        infoRu: 'fsdjkfhsdkf',
+        infoEn: 'fsdjkfhsdkf',
+        infostatus: 'visible'
+    },
+    {
+        method: 'every',
+        descrRu: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        descrEn: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        typeRu: 'Функциональный метод:',
+        typeEn: 'Функциональный метод:',
+        maintypeRu: 'JavaScript:',
+        maintypeEn: 'JavaScript:',
+
+        codeRu: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        codeEn: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        infoRu: 'fsdjkfhsdkf',
+        infoEn: 'fsdjkfhsdkf',
+        infostatus: 'visible'
+    },
+    {
+        method: 'every',
+        descrRu: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        descrEn: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        typeRu: 'Функциональный метод:',
+        typeEn: 'Функциональный метод:',
+        maintypeRu: 'JavaScript:',
+        maintypeEn: 'JavaScript:',
+
+        codeRu: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        codeEn: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        infoRu: 'fsdjkfhsdkf',
+        infoEn: 'fsdjkfhsdkf',
+        infostatus: 'visible'
+    },
+    {
+        method: 'every',
+        descrRu: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        descrEn: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        typeRu: 'Функциональный метод:',
+        typeEn: 'Функциональный метод:',
+        maintypeRu: 'JavaScript:',
+        maintypeEn: 'JavaScript:',
+
+        codeRu: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        codeEn: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        infoRu: 'fsdjkfhsdkf',
+        infoEn: 'fsdjkfhsdkf',
+        infostatus: 'visible'
+    },
+    {
+        method: 'every',
+        descrRu: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        descrEn: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        typeRu: 'Функциональный метод:',
+        typeEn: 'Функциональный метод:',
+        maintypeRu: 'JavaScript:',
+        maintypeEn: 'JavaScript:',
+
+        codeRu: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        codeEn: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        infoRu: 'fsdjkfhsdkf',
+        infoEn: 'fsdjkfhsdkf',
+        infostatus: 'visible'
+    },
+    {
+        method: 'every',
+        descrRu: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        descrEn: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        typeRu: 'Функциональный метод:',
+        typeEn: 'Функциональный метод:',
+        maintypeRu: 'JavaScript:',
+        maintypeEn: 'JavaScript:',
+
+        codeRu: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        codeEn: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        infoRu: 'fsdjkfhsdkf',
+        infoEn: 'fsdjkfhsdkf',
+        infostatus: 'visible'
+    },
+    {
+        method: 'every',
+        descrRu: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        descrEn: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        typeRu: 'Функциональный метод:',
+        typeEn: 'Функциональный метод:',
+        maintypeRu: 'JavaScript:',
+        maintypeEn: 'JavaScript:',
+
+        codeRu: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        codeEn: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        infoRu: 'fsdjkfhsdkf',
+        infoEn: 'fsdjkfhsdkf',
+        infostatus: 'visible'
+    },
+    {
+        method: 'every',
+        descrRu: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        descrEn: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        typeRu: 'Функциональный метод:',
+        typeEn: 'Функциональный метод:',
+        maintypeRu: 'JavaScript:',
+        maintypeEn: 'JavaScript:',
+
+        codeRu: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        codeEn: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        infoRu: 'fsdjkfhsdkf',
+        infoEn: 'fsdjkfhsdkf',
+        infostatus: 'visible'
+    },
+    {
+        method: 'every',
+        descrRu: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        descrEn: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        typeRu: 'Функциональный метод:',
+        typeEn: 'Функциональный метод:',
+        maintypeRu: 'JavaScript:',
+        maintypeEn: 'JavaScript:',
+
+        codeRu: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        codeEn: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        infoRu: 'fsdjkfhsdkf',
+        infoEn: 'fsdjkfhsdkf',
+        infostatus: 'visible'
+    },
+    {
+        method: 'every',
+        descrRu: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        descrEn: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        typeRu: 'Функциональный метод:',
+        typeEn: 'Функциональный метод:',
+        maintypeRu: 'JavaScript:',
+        maintypeEn: 'JavaScript:',
+
+        codeRu: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        codeEn: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        infoRu: 'fsdjkfhsdkf',
+        infoEn: 'fsdjkfhsdkf',
+        infostatus: 'visible'
+    },
+    {
+        method: 'every',
+        descrRu: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        descrEn: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        typeRu: 'Функциональный метод:',
+        typeEn: 'Функциональный метод:',
+        maintypeRu: 'JavaScript:',
+        maintypeEn: 'JavaScript:',
+
+        codeRu: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        codeEn: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        infoRu: 'fsdjkfhsdkf',
+        infoEn: 'fsdjkfhsdkf',
+        infostatus: 'visible'
+    },
+    {
+        method: 'every',
+        descrRu: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        descrEn: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        typeRu: 'Функциональный метод:',
+        typeEn: 'Функциональный метод:',
+        maintypeRu: 'JavaScript:',
+        maintypeEn: 'JavaScript:',
+
+        codeRu: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        codeEn: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        infoRu: 'fsdjkfhsdkf',
+        infoEn: 'fsdjkfhsdkf',
+        infostatus: 'visible'
+    },
+    {
+        method: 'every',
+        descrRu: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        descrEn: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        typeRu: 'Функциональный метод:',
+        typeEn: 'Функциональный метод:',
+        maintypeRu: 'JavaScript:',
+        maintypeEn: 'JavaScript:',
+
+        codeRu: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        codeEn: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        infoRu: 'fsdjkfhsdkf',
+        infoEn: 'fsdjkfhsdkf',
+        infostatus: 'visible'
+    },
+    {
+        method: 'every',
+        descrRu: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        descrEn: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        typeRu: 'Функциональный метод:',
+        typeEn: 'Функциональный метод:',
+        maintypeRu: 'JavaScript:',
+        maintypeEn: 'JavaScript:',
+
+        codeRu: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        codeEn: `const numbers = [2, 4, 6, 8];
+// Проверяет, все ли элементы четные
+const allEven = numbers.every((number) => number % 2 === 0);
+console.log(allEven); // true  
+const numbers2 = [2, 4, 6, 9];   
+// Проверяет, все ли элементы больше 5
+const allGreaterThanFive = numbers2.every((number) => number > 5);    
+console.log(allGreaterThanFive); // false`,
+
+        infoRu: 'fsdjkfhsdkf',
+        infoEn: 'fsdjkfhsdkf',
+        infostatus: 'visible'
     }
 ];
