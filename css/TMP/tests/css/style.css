@@ -78,20 +78,7 @@ body {
     cursor: pointer;
 }
 
-.wrapper__box-question.wright {
-    border: 1px solid green;
-    box-shadow: 0 0.05rem 0.3rem #00000052;
-    transition: all .3s ease-in-out;
-}
 
-.wrapper__box-question.wrong {
-    border: 1px solid red;
-    transition: all .3s ease-in-out;
-}
-
-.wrapper__box-item.wrong {
-    text-decoration: line-through;
-}
 
 
 .wrapper__box-item {
@@ -128,7 +115,7 @@ body {
     cursor: pointer;
 }
 
-.castomchb.wright::before {
+.castomchb.right::before {
     content: '';
     position: absolute;
     width: 23px;
@@ -154,17 +141,22 @@ body {
     scale: 1;
 }
 
-/* .realchb:checked+.castomchb::before {
-    scale: 1;
-} */
+.wrapper__box-question.right {
+    border: 1px solid green;
+    box-shadow: 0 0.05rem 0.3rem #00000052;
+    transition: all .3s ease-in-out;
+}
 
-/* .realchb:checked+.castomchb {
-    border: 2px solid #d3d3d3;
-} */
+.wrapper__box-question.wrong {
+    border: 1px solid red;
+    transition: all .3s ease-in-out;
+}
 
-/* .realchb+.castomchb:hover {
-    border: 2px solid #d3d3d3;
-} */
+.wrapper__box-item.wrong {
+    text-decoration: line-through;
+}
+
+
 
 /* castom checkbox end*/
 
