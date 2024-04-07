@@ -181,6 +181,7 @@ body {
     border-radius: 8px;
     transform: rotate(40deg);
     opacity: .04;
+    z-index: -5;
     
 }
 
@@ -197,6 +198,7 @@ body {
     transform: rotate(40deg);
     opacity: .04;
     overflow: hidden;
+    z-index: -5;
 }
 
 
@@ -218,6 +220,7 @@ body {
     border-radius: 6px;
     transform: rotate(40deg);
     opacity: .04;
+    z-index: -5;
     
 }
 
@@ -291,7 +294,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 50%;
+    width: var(--width);
     height: 7px;
     background-color: green;
 }
