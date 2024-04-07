@@ -173,6 +173,7 @@ body {
     display: flex;
     gap: 30px;
     position: relative;
+    overflow: hidden;
 }
 
 
@@ -188,6 +189,7 @@ body {
     border-radius: 8px;
     transform: rotate(40deg);
     opacity: .04;
+    
 }
 
 .wrapper__inner::after {
@@ -202,11 +204,13 @@ body {
     border-radius: 8px;
     transform: rotate(40deg);
     opacity: .04;
+    overflow: hidden;
 }
 
 
 .wrapper__box {
     position: relative;
+    overflow: hidden;
 }
 
 .wrapper__box::after {
@@ -222,6 +226,7 @@ body {
     border-radius: 6px;
     transform: rotate(40deg);
     opacity: .04;
+    
 }
 
 .wrapper__box {
