@@ -1,18 +1,6 @@
 'use strict';
-
-const obj = {
-    'a shif(ship)': 'გემი',
-    'a shif(ship)': 'გემი',
-    'a cabin(kebin)': 'კაბინა',
-    'a text(tekst)': 'ტექსტი',
-    'a bout(bout)': 'ნავი',
-    'a deck(dek)': 'გემბანი',
-    'a door(dor)': 'კარი',
-    'an egg(eg)': 'კვერცხი',
-    'an apple(epl)': 'ვაშლი',
-    'is not': 'არ არის',
-    'yes(ies)': 'დიახ',
-};
+window.addEventListener('DOMContentLoaded', (e) => {
+    e.preventDefault();
 
 const questions = Object.keys(obj);
 const values = Object.values(obj);
@@ -43,7 +31,7 @@ const addDataToForm = () => {
     let randomIndex = Math.floor(Math.random() * values.length);
     mainques = questions[randomIndex]; // vopros
     mainAnswer = obj[mainques]; // otvet
-    ques.textContent = `${mainques} ?`;
+    ques.textContent = `${mainques}`;
 
     answs.forEach((item) => { // randomnie otveti
         let random = Math.floor(Math.random() * values.length);
@@ -111,3 +99,4 @@ onlickBtbParent.addEventListener('click', (e) => {
 });
 
 
+});

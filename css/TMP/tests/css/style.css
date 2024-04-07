@@ -233,7 +233,7 @@ body {
     background-color: transparent;
     border: 1px solid #fff;
     resize: none;
-    overflow-y: auto;
+   overflow: auto;
     padding: 10px;
     color: rgb(185, 90, 74);
     font-size: inherit;
