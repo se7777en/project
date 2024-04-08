@@ -37,7 +37,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
     // console.log(answs);
 
-    let counter = 3;
+    let counter = 120;
     let count = counter;
     wrapperCount.textContent = counter;
 
