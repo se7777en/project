@@ -19,7 +19,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
     const textarea = document.querySelector('.textarea');
     const indicator = document.querySelector('.indicator');
-   // const wrapperCount = document.querySelector('.wrapperCount');
+    // const wrapperCount = document.querySelector('.wrapperCount');
 
     const body = document.querySelector('BODY');
     const modal = document.querySelector('.modal');
@@ -29,24 +29,26 @@ window.addEventListener('DOMContentLoaded', (e) => {
     const closeIcon = document.querySelector('.modal .modal__close');
     const startNew = document.querySelector('.modal .start');
 
+    const answerTime = document.querySelector('.answer__time');
 
- 
+
+
 
 
 
 
     // console.log(answs);
 
-    let counter = 50;
+    let counter = 50; // skolko voprosov
     let count = counter;
-   // wrapperCount.textContent = counter;
+    // wrapperCount.textContent = counter;
     right.textContent = count;
 
 
     closeIcon.addEventListener('click', () => {
         modal.classList.contains('show') ? modal.classList.remove('show') : null;
         body.classList.contains('lock') ? body.classList.remove('lock') : null;
-       // wrapperCount.textContent = count;
+        // wrapperCount.textContent = count;
         counter = count;
         indicator.style.setProperty('--width', `${0}%`);
     });
@@ -61,8 +63,11 @@ window.addEventListener('DOMContentLoaded', (e) => {
         right.textContent = 0;
         textarea.value = '';
         addDataToForm();
+        startTimer(time, answerTime);
+        wrightAnswers = 0;
+        wrongAnswers = 0;
     });
-    
+
 
     let rndRight = 0;
     let mainAnswer = '';
@@ -76,7 +81,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
         mainAnswer = copyedObj[mainques]; // otvet
         ques.textContent = `${mainques}`;
 
-        if (questions.length > 5) { 
+        if (questions.length > 5) {
             delete copyedObj[mainques]; // udalyaet vopros chtobi ne povtorilsya iz skopirovanogo obiekta
             questions = Object.keys(copyedObj);
             values = Object.values(copyedObj);
@@ -101,22 +106,63 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
     addDataToForm();
 
-
+    let intervalId;
     const showModal = () => {
-          //////////////////
-          if(counter === 0) {
+        //////////////////
+        if (counter === 0) {
             modal.classList.add('show');
             body.classList.add('lock');
 
             rightAnsw.textContent = wrightAnswers;
             wrongAnsw.textContent = wrongAnswers;
             total.textContent = wrightAnswers + wrongAnswers;
+            clearInterval(intervalId);
         }
         ////////////////////
     }
 
+
+
+    let time = 30; // vremya timera
+    let timer = 0;
+    let p = 0;
+    function startTimer(duration, display) {
+        timer = duration;
+        let minutes, seconds;
+        intervalId = setInterval(() => {
+            minutes = parseInt(timer / 60, 10);
+            seconds = parseInt(timer % 60, 10);
+
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            display.textContent = minutes + ":" + seconds;
+
+          //  console.log(timer);
+            if (--timer < 0) {
+
+                // clearInterval(intervalId); // Остановить таймер
+                counter--;
+
+                let val = Math.abs(Math.floor(counter * 100 / count) - 100);
+                indicator.style.setProperty('--width', `${val}%`);
+                clicked = true;
+
+                let anw = wrong.textContent;
+                wrong.textContent = Number(anw) + 1;
+                wrongAnswers = wrongAnswers + 1;
+
+                textarea.value += mainques + ' : ' + mainAnswer + '\n';
+                addDataToForm();
+                showModal();
+                timer = duration;
+            }
+        }, 1000);
+    }
+
+
+
     let clicked = true;
-    let ind2 = ind;
     onlickBtbParent.addEventListener('click', (e) => {
         if (clicked === true) {
             // console.log(Object.keys(copyedObj).length);
@@ -127,11 +173,13 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 const itemAnsw = item.querySelector('.wrapper__box-item').textContent;
 
                 if (itemAnsw === mainAnswer) {
+                    timer = time;
                     wrightAnswers += 1;
                     // right.textContent = wrightAnswers;
                     item.classList.add('right');
                     item.querySelector('span').classList.add('right');
                 } else {
+                    timer = time;
                     wrongAnswers += 1;
                     //  wrong.textContent = wrongAnswers;
                     textarea.value += mainques + ' : ' + mainAnswer + '\n';
@@ -148,13 +196,13 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
                 }
                 counter--;
-               // wrapperCount.textContent = counter;
+                // wrapperCount.textContent = counter;
                 wrong.textContent = wrightAnswers + wrongAnswers;
             }
         }
 
 
-     
+
 
         clicked = false;
         setTimeout(() => {
@@ -167,20 +215,18 @@ window.addEventListener('DOMContentLoaded', (e) => {
             });
             addDataToForm();
 
-            // ind2--;
-             let val = Math.abs(Math.floor(counter * 100 / count) -100);
-            // console.log(val);
-            // if (val >= 100) {
-            //     val = 0;
-            //     ind2 = ind;
-            // }
+
+            let val = Math.abs(Math.floor(counter * 100 / count) - 100);
+
             indicator.style.setProperty('--width', `${val}%`);
             clicked = true;
             showModal();
         }, 1000);
 
-         
+
     });
+
+    startTimer(time, answerTime);
 
 
 });
