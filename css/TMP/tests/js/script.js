@@ -2,8 +2,10 @@
 window.addEventListener('DOMContentLoaded', (e) => {
     e.preventDefault();
 
-    const questions = Object.keys(obj);
-    const values = Object.values(obj);
+    const copyedObj = { ...obj };
+
+    let questions = Object.keys(copyedObj);
+    let values = Object.values(copyedObj);
 
     // console.log(questions);
     // console.log(values);
@@ -30,12 +32,26 @@ window.addEventListener('DOMContentLoaded', (e) => {
     const addDataToForm = () => {
         let randomIndex = Math.floor(Math.random() * values.length);
         mainques = questions[randomIndex]; // vopros
-        mainAnswer = obj[mainques]; // otvet
+        mainAnswer = copyedObj[mainques]; // otvet
         ques.textContent = `${mainques}`;
 
-        answs.forEach((item) => { // randomnie otveti
+        if (questions.length > 5) { 
+            delete copyedObj[mainques]; // udalyaet vopros chtobi ne povtorilsya iz skopirovanogo obiekta
+            questions = Object.keys(copyedObj);
+            values = Object.values(copyedObj);
+        }
+
+
+        let randomNumbers = []; // sozdaem masiv s 4 unikalnimi ciframi chtobi otveti bili raznie
+        while (randomNumbers.length < 4) {
             let random = Math.floor(Math.random() * values.length);
-            item.textContent = values[random];
+            if (!randomNumbers.includes(random)) {
+                randomNumbers.push(random);
+            }
+        }
+
+        answs.forEach((item, i) => { // randomnie otveti
+            item.textContent = values[randomNumbers[i]];
         });
 
         rndRight = Math.floor(Math.random() * 4);
@@ -44,42 +60,43 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
     addDataToForm();
 
-let clicked = true;
+    let clicked = true;
     let ind2 = ind;
     onlickBtbParent.addEventListener('click', (e) => {
-        if(clicked === true){
-        const event = e.target;
-        const rig = e.currentTarget;
-        if (event) {
-            const item = event.closest('.wrapper__box-question');
-            const itemAnsw = item.querySelector('.wrapper__box-item').textContent;
+        if (clicked === true) {
+            // console.log(Object.keys(copyedObj).length);
+            const event = e.target;
+            const rig = e.currentTarget;
+            if (event) {
+                const item = event.closest('.wrapper__box-question');
+                const itemAnsw = item.querySelector('.wrapper__box-item').textContent;
 
-            if (itemAnsw === mainAnswer) {
-                wrightAnswers += 1;
-                right.textContent = wrightAnswers;
-                item.classList.add('right');
-                item.querySelector('span').classList.add('right');
-            } else {
-                wrongAnswers += 1;
-                wrong.textContent = wrongAnswers;
-                textarea.value += mainques + ' : ' + mainAnswer + '\n';
-                item.classList.add('wrong');
-                item.querySelector('.wrapper__box-item').classList.add('wrong');
-                item.querySelector('span').classList.add('wrong');
+                if (itemAnsw === mainAnswer) {
+                    wrightAnswers += 1;
+                    right.textContent = wrightAnswers;
+                    item.classList.add('right');
+                    item.querySelector('span').classList.add('right');
+                } else {
+                    wrongAnswers += 1;
+                    wrong.textContent = wrongAnswers;
+                    textarea.value += mainques + ' : ' + mainAnswer + '\n';
+                    item.classList.add('wrong');
+                    item.querySelector('.wrapper__box-item').classList.add('wrong');
+                    item.querySelector('span').classList.add('wrong');
 
 
-                const answ = rig.querySelector(`[data-id="${rndRight + 1}"]`);
-                if (answ) {
-                    answ.classList.add('right');
-                    answ.querySelector('span').classList.add('right');
+                    const answ = rig.querySelector(`[data-id="${rndRight + 1}"]`);
+                    if (answ) {
+                        answ.classList.add('right');
+                        answ.querySelector('span').classList.add('right');
+                    }
+
                 }
-
             }
+
         }
 
-    }
-
-    clicked = false;
+        clicked = false;
 
 
         setTimeout(() => {
