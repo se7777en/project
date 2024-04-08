@@ -19,7 +19,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
     const textarea = document.querySelector('.textarea');
     const indicator = document.querySelector('.indicator');
-    const wrapperCount = document.querySelector('.wrapperCount');
+   // const wrapperCount = document.querySelector('.wrapperCount');
 
     const body = document.querySelector('BODY');
     const modal = document.querySelector('.modal');
@@ -39,13 +39,14 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
     let counter = 50;
     let count = counter;
-    wrapperCount.textContent = counter;
+   // wrapperCount.textContent = counter;
+    right.textContent = count;
 
 
     closeIcon.addEventListener('click', () => {
         modal.classList.contains('show') ? modal.classList.remove('show') : null;
         body.classList.contains('lock') ? body.classList.remove('lock') : null;
-        wrapperCount.textContent = count;
+       // wrapperCount.textContent = count;
         counter = count;
         indicator.style.setProperty('--width', `${0}%`);
     });
@@ -53,7 +54,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     startNew.addEventListener('click', () => {
         modal.classList.contains('show') ? modal.classList.remove('show') : null;
         body.classList.contains('lock') ? body.classList.remove('lock') : null;
-        wrapperCount.textContent = count;
+        //wrapperCount.textContent = count;
         counter = count;
         indicator.style.setProperty('--width', `${0}%`);
         wrong.textContent = 0;
@@ -127,12 +128,12 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
                 if (itemAnsw === mainAnswer) {
                     wrightAnswers += 1;
-                    right.textContent = wrightAnswers;
+                    // right.textContent = wrightAnswers;
                     item.classList.add('right');
                     item.querySelector('span').classList.add('right');
                 } else {
                     wrongAnswers += 1;
-                    wrong.textContent = wrongAnswers;
+                    //  wrong.textContent = wrongAnswers;
                     textarea.value += mainques + ' : ' + mainAnswer + '\n';
                     item.classList.add('wrong');
                     item.querySelector('.wrapper__box-item').classList.add('wrong');
@@ -147,7 +148,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
                 }
                 counter--;
-                wrapperCount.textContent = counter;
+               // wrapperCount.textContent = counter;
+                wrong.textContent = wrightAnswers + wrongAnswers;
             }
         }
 
