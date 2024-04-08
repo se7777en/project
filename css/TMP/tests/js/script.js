@@ -19,9 +19,49 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
     const textarea = document.querySelector('.textarea');
     const indicator = document.querySelector('.indicator');
+    const wrapperCount = document.querySelector('.wrapperCount');
+
+    const body = document.querySelector('BODY');
+    const modal = document.querySelector('.modal');
+    const rightAnsw = document.querySelector('.modal .right__answ span');
+    const wrongAnsw = document.querySelector('.modal .wrong__answ span');
+    const total = document.querySelector('.modal .total span');
+    const closeIcon = document.querySelector('.modal .modal__close');
+    const startNew = document.querySelector('.modal .start');
+
+
+ 
+
+
+
+
     // console.log(answs);
 
+    let counter = 3;
+    let count = counter;
+    wrapperCount.textContent = counter;
 
+
+    closeIcon.addEventListener('click', () => {
+        modal.classList.contains('show') ? modal.classList.remove('show') : null;
+        body.classList.contains('lock') ? body.classList.remove('lock') : null;
+        wrapperCount.textContent = count;
+        counter = count;
+        indicator.style.setProperty('--width', `${0}%`);
+    });
+
+    startNew.addEventListener('click', () => {
+        modal.classList.contains('show') ? modal.classList.remove('show') : null;
+        body.classList.contains('lock') ? body.classList.remove('lock') : null;
+        wrapperCount.textContent = count;
+        counter = count;
+        indicator.style.setProperty('--width', `${0}%`);
+        wrong.textContent = 0;
+        right.textContent = 0;
+        textarea.value = '';
+        addDataToForm();
+    });
+    
 
     let rndRight = 0;
     let mainAnswer = '';
@@ -60,6 +100,20 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
     addDataToForm();
 
+
+    const showModal = () => {
+          //////////////////
+          if(counter === 0) {
+            modal.classList.add('show');
+            body.classList.add('lock');
+
+            rightAnsw.textContent = wrightAnswers;
+            wrongAnsw.textContent = wrongAnswers;
+            total.textContent = wrightAnswers + wrongAnswers;
+        }
+        ////////////////////
+    }
+
     let clicked = true;
     let ind2 = ind;
     onlickBtbParent.addEventListener('click', (e) => {
@@ -92,13 +146,15 @@ window.addEventListener('DOMContentLoaded', (e) => {
                     }
 
                 }
+                counter--;
+                wrapperCount.textContent = counter;
             }
-
         }
 
+
+     
+
         clicked = false;
-
-
         setTimeout(() => {
 
             ['right', 'wrong'].forEach(className => {
@@ -109,15 +165,19 @@ window.addEventListener('DOMContentLoaded', (e) => {
             });
             addDataToForm();
 
-            ind2--;
-            let val = Math.abs(Math.floor(ind2 * 100 / ind) - 100);
-            if (val >= 100) {
-                val = 0;
-                ind2 = ind;
-            }
+            // ind2--;
+             let val = Math.abs(Math.floor(counter * 100 / count) -100);
+            // console.log(val);
+            // if (val >= 100) {
+            //     val = 0;
+            //     ind2 = ind;
+            // }
             indicator.style.setProperty('--width', `${val}%`);
             clicked = true;
-        }, 3000);
+            showModal();
+        }, 1000);
+
+         
     });
 
 

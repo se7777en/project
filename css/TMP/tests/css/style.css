@@ -109,7 +109,7 @@ body {
 }
 
 .wrapper__box-question:last-child {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 /* castom checkbox  start*/
@@ -310,6 +310,7 @@ body {
     height: 7px;
     background-color: #0077a2;
     position: relative;
+    margin-bottom: 10px;
 }
 
 .indicator::before {
@@ -320,6 +321,21 @@ body {
     width: var(--width);
     height: 7px;
     background-color: green;
+}
+
+.wrapperCount {
+    text-align: center;
+    padding: 10px 0px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 50px;
+    border: 1px solid #fff;
+    border-radius: 0px 0px 15px 0px;
+
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 
@@ -393,3 +409,121 @@ body {
         font-size: 24px;
     }
 }
+
+
+.modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    scale: 0;
+    visibility: hidden;
+    display: none;
+    transition: all .3s ease-in-out;
+}
+
+.show {
+    scale: 1;
+    visibility: visible;
+    display: block;
+}
+
+.lock {
+    overflow: none;
+}
+
+.modal__inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 310px;
+    height: auto;
+    background-color: rgb(255, 38, 0);
+    border-radius: 15px;
+    z-index: 5;
+    /* opacity: .95; */
+    padding: 10px;
+    position: relative;
+    box-shadow: 0 0.05rem 0.3rem #00000052;
+    
+}
+
+.modal__close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    font-size: 25px;
+
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.modal__close:active {
+    scale: 1.05;
+}
+
+
+
+.modal__inner {
+    padding: 20px;
+ 
+}
+
+.modal__inner .item {
+    font-size: 20px;
+    font-family: inherit;
+    font-weight: 500;
+    color: #fff;
+    /* text-align: center; */
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.total {
+margin-bottom: 7px;
+}
+
+.right__answ {
+    margin-bottom: 7px;
+}
+
+.wrong__answ {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.wrong__answ::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #fff;
+    top: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.modal__inner .start {
+    display: block;
+    text-align: center;
+    font-size: 25px;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    padding: 5px 0px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 600;
+}
+
+.modal__inner .start:active {
+    scale: 1.05;
+}
+
