@@ -138,7 +138,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
             display.textContent = minutes + ":" + seconds;
 
-          //  console.log(timer);
+            //  console.log(timer);
             if (--timer < 0) {
 
                 // clearInterval(intervalId); // Остановить таймер
