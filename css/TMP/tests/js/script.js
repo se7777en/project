@@ -40,7 +40,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
     // console.log(answs);
 
-    let counter = 50; // skolko voprosov
+    let counter = 4; // skolko voprosov
     let count = counter;
     let intervalId;
     // wrapperCount.textContent = counter;
@@ -62,7 +62,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
         counter = count;
         indicator.style.setProperty('--width', `${0}%`);
         wrong.textContent = 0;
-        right.textContent = 0;
+        right.textContent = counter;
         textarea.value = '';
         addDataToForm();
         startTimer(time, answerTime);
@@ -75,7 +75,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
         counter = count;
         indicator.style.setProperty('--width', `${0}%`);
         wrong.textContent = 0;
-        right.textContent = 0;
+        right.textContent = counter;
         textarea.value = '';
         addDataToForm();
         startTimer(time, answerTime);
