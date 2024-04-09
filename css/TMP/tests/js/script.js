@@ -28,6 +28,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     const total = document.querySelector('.modal .total span');
     const closeIcon = document.querySelector('.modal .modal__close');
     const startNew = document.querySelector('.modal .start');
+    const replyInner = document.querySelector('.wrapper__box .reply__inner');
 
     const answerTime = document.querySelector('.answer__time');
 
@@ -41,6 +42,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
     let counter = 50; // skolko voprosov
     let count = counter;
+    let intervalId;
     // wrapperCount.textContent = counter;
     right.textContent = count;
 
@@ -57,6 +59,19 @@ window.addEventListener('DOMContentLoaded', (e) => {
         modal.classList.contains('show') ? modal.classList.remove('show') : null;
         body.classList.contains('lock') ? body.classList.remove('lock') : null;
         //wrapperCount.textContent = count;
+        counter = count;
+        indicator.style.setProperty('--width', `${0}%`);
+        wrong.textContent = 0;
+        right.textContent = 0;
+        textarea.value = '';
+        addDataToForm();
+        startTimer(time, answerTime);
+        wrightAnswers = 0;
+        wrongAnswers = 0;
+    });
+
+    replyInner.addEventListener('click', () => {
+        clearInterval(intervalId);
         counter = count;
         indicator.style.setProperty('--width', `${0}%`);
         wrong.textContent = 0;
@@ -106,7 +121,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
     addDataToForm();
 
-    let intervalId;
+   
     const showModal = () => {
         //////////////////
         if (counter === 0) {
