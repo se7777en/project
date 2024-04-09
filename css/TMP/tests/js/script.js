@@ -117,7 +117,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
         rndRight = Math.floor(Math.random() * 4);
         answs[rndRight].textContent = mainAnswer; // vstavlyaem pravilni otvet
-    }
+    };
 
     addDataToForm();
 
@@ -134,7 +134,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
             clearInterval(intervalId);
         }
         ////////////////////
-    }
+    };
 
 
 
@@ -173,7 +173,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 timer = duration;
             }
         }, 1000);
-    }
+    };
 
 
 
