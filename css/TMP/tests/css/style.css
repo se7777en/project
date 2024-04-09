@@ -103,7 +103,8 @@ body {
     font-weight: 600;
     color: #fff;
     width: 100%;
-    overflow: hidden;
+    /* overflow: hidden; */
+    text-wrap: wrap;
 
 }
 
