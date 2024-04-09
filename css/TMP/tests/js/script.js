@@ -40,7 +40,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
     // console.log(answs);
 
-    let counter = 4; // skolko voprosov
+    let counter = 50; // skolko voprosov
     let count = counter;
     let intervalId;
     // wrapperCount.textContent = counter;
