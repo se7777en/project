@@ -125,7 +125,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
     addDataToForm();
 
-   
+
     const showModal = () => {
         //////////////////
         if (counter === 0) {
@@ -183,67 +183,68 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
     let clicked = true;
     onlickBtbParent.addEventListener('click', (e) => {
-        if(identifer) {
-            clicked = true;
-            // console.log(Object.keys(copyedObj).length);
-            const event = e.target;
-            const rig = e.currentTarget;
-            if (event) {
-                const item = event.closest('.wrapper__box-question');
-                const itemAnsw = item.querySelector('.wrapper__box-item').textContent;
+        if (identifer) {
+            if (clicked) {
+                const event = e.target;
+                const rig = e.currentTarget;
+                if (event) {
+                    const item = event.closest('.wrapper__box-question');
+                    const itemAnsw = item.querySelector('.wrapper__box-item').textContent;
 
-                if (itemAnsw === mainAnswer) {
-                    timer = time;
-                    wrightAnswers += 1;
-                    // right.textContent = wrightAnswers;
-                    item.classList.add('right');
-                    item.querySelector('span').classList.add('right');
-                } else {
-                    timer = time;
-                    wrongAnswers += 1;
-                    //  wrong.textContent = wrongAnswers;
-                    textarea.value += mainques + ' : ' + mainAnswer + '\n';
-                    item.classList.add('wrong');
-                    item.querySelector('.wrapper__box-item').classList.add('wrong');
-                    item.querySelector('span').classList.add('wrong');
+                    if (itemAnsw === mainAnswer) {
+                        timer = time;
+                        wrightAnswers += 1;
+                        // right.textContent = wrightAnswers;
+                        item.classList.add('right');
+                        item.querySelector('span').classList.add('right');
+                    } else {
+                        timer = time;
+                        wrongAnswers += 1;
+                        //  wrong.textContent = wrongAnswers;
+                        textarea.value += mainques + ' : ' + mainAnswer + '\n';
+                        item.classList.add('wrong');
+                        item.querySelector('.wrapper__box-item').classList.add('wrong');
+                        item.querySelector('span').classList.add('wrong');
 
 
-                    const answ = rig.querySelector(`[data-id="${rndRight + 1}"]`);
-                    if (answ) {
-                        answ.classList.add('right');
-                        answ.querySelector('span').classList.add('right');
+                        const answ = rig.querySelector(`[data-id="${rndRight + 1}"]`);
+                        if (answ) {
+                            answ.classList.add('right');
+                            answ.querySelector('span').classList.add('right');
+                        }
+
                     }
-
+                    counter--;
+                    // wrapperCount.textContent = counter;
+                    wrong.textContent = wrightAnswers + wrongAnswers;
                 }
-                counter--;
-                // wrapperCount.textContent = counter;
-                wrong.textContent = wrightAnswers + wrongAnswers;
+                clicked = false;
             }
-        
 
 
 
 
-       
-        setTimeout(() => {
-
-           if(clicked) {
-            ['right', 'wrong'].forEach(className => {
-                const elements = document.querySelectorAll('.' + className);
-                elements.forEach(element => {
-                    element.classList.remove(className);
-                });
-            });
-            addDataToForm();
 
 
-            let val = Math.abs(Math.floor(counter * 100 / count) - 100);
+            setTimeout(() => {
 
-            indicator.style.setProperty('--width', `${val}%`);
-           clicked = false;
-            showModal();
-           }
-        }, 1000);
+                if (!clicked) {
+                    ['right', 'wrong'].forEach(className => {
+                        const elements = document.querySelectorAll('.' + className);
+                        elements.forEach(element => {
+                            element.classList.remove(className);
+                        });
+                    });
+                    addDataToForm();
+
+
+                    let val = Math.abs(Math.floor(counter * 100 / count) - 100);
+
+                    indicator.style.setProperty('--width', `${val}%`);
+                    clicked = true;
+                    showModal();
+                }
+            }, 1000);
         }
 
 
