@@ -45,6 +45,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     let intervalId;
     // wrapperCount.textContent = counter;
     right.textContent = count;
+    let identifer = true;
 
 
     closeIcon.addEventListener('click', () => {
@@ -53,6 +54,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
         // wrapperCount.textContent = count;
         counter = count;
         indicator.style.setProperty('--width', `${0}%`);
+        identifer = false;
     });
 
     startNew.addEventListener('click', () => {
@@ -68,6 +70,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
         startTimer(time, answerTime);
         wrightAnswers = 0;
         wrongAnswers = 0;
+        identifer = true;
     });
 
     replyInner.addEventListener('click', () => {
@@ -81,6 +84,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
         startTimer(time, answerTime);
         wrightAnswers = 0;
         wrongAnswers = 0;
+        identifer = true;
     });
 
 
@@ -179,7 +183,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
     let clicked = true;
     onlickBtbParent.addEventListener('click', (e) => {
-        if (clicked === true) {
+        if(identifer) {
+            clicked = true;
             // console.log(Object.keys(copyedObj).length);
             const event = e.target;
             const rig = e.currentTarget;
@@ -214,14 +219,15 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 // wrapperCount.textContent = counter;
                 wrong.textContent = wrightAnswers + wrongAnswers;
             }
-        }
+        
 
 
 
 
-        clicked = false;
+       
         setTimeout(() => {
 
+           if(clicked) {
             ['right', 'wrong'].forEach(className => {
                 const elements = document.querySelectorAll('.' + className);
                 elements.forEach(element => {
@@ -234,9 +240,11 @@ window.addEventListener('DOMContentLoaded', (e) => {
             let val = Math.abs(Math.floor(counter * 100 / count) - 100);
 
             indicator.style.setProperty('--width', `${val}%`);
-            clicked = true;
+           clicked = false;
             showModal();
+           }
         }, 1000);
+        }
 
 
     });
