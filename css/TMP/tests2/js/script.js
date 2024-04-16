@@ -2,8 +2,9 @@
 window.addEventListener('DOMContentLoaded', (e) => {
     e.preventDefault();
     var currentUrl = window.location.href;
-    if (currentUrl.indexOf('prolingo.surge.sh') === -1) {
-    if (currentUrl.indexOf('prolingo.surge.sh') === -1) {
+    if (currentUrl.indexOf('prolingo.surge.sh') !== -1) {
+    if (currentUrl.indexOf('prolingo.surge.sh') !== -1) {
+
 
 
         const copyedObj = { ...obj };
@@ -46,7 +47,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
         // console.log(answs);
 
-        let counter = 5; // skolko voprosov
+        let counter = 30; // skolko voprosov
         let count = counter;
         let intervalId;
         // wrapperCount.textContent = counter;
