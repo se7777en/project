@@ -2,8 +2,8 @@
 window.addEventListener('DOMContentLoaded', (e) => {
     e.preventDefault();
     var currentUrl = window.location.href;
-    if (currentUrl.indexOf('prolingo.surge.sh') !== -1) {
-    if (currentUrl.indexOf('prolingo.surge.sh') !== -1) {
+    if (currentUrl.indexOf('prolingo.surge.sh') === -1) {
+    if (currentUrl.indexOf('prolingo.surge.sh') === -1) {
 
 
 
