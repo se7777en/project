@@ -739,7 +739,8 @@ document.addEventListener('DOMContentLoaded', (e) => {
     const convert = document.querySelector('.wrapper__convert a');
 
 
-    convert.addEventListener('click', () => {
+    convert.addEventListener('click', (e) => {
+        e.preventDefault();
         let obj = {};
         textarea = document.querySelector('.wrapper .textarea');
         const val = textarea.value;
