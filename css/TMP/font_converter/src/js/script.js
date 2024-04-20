@@ -789,29 +789,29 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
 
 
-        let endOftext = '';
-        for (let i = 0; i < lines.length; i++) {
-            let result = '';
-            let str = lines[i];
-            for (let j = 0; j < str.length; j++) {
-                let simb = obj[str[j]];
-                if (!simb) {
-                    simb = str[j];
-                }
-                // console.log(simb); 
-                result += simb;
-                //console.log(str[j].charCodeAt(0));
-            }
-            if (i !== lines.length - 1) {
-                endOftext = '\n';
-            } else {
-                endOftext = '';
-            }
+        // let endOftext = '';
+        // for (let i = 0; i < lines.length; i++) {
+        //     let result = '';
+        //     let str = lines[i];
+        //     for (let j = 0; j < str.length; j++) {
+        //         let simb = obj[str[j]];
+        //         if (!simb) {
+        //             simb = str[j];
+        //         }
+        //         // console.log(simb); 
+        //         result += simb;
+        //         //console.log(str[j].charCodeAt(0));
+        //     }
+        //     if (i !== lines.length - 1) {
+        //         endOftext = '\n';
+        //     } else {
+        //         endOftext = '';
+        //     }
 
-            textarea.value += (result + endOftext);
-        }
+        //     textarea.value += (result + endOftext);
+        // }
 
-        detectLangOnTextarea();
+        // detectLangOnTextarea();
 
     });
 
