@@ -2,142 +2,66 @@
 document.addEventListener('DOMContentLoaded', (e) => {
     e.preventDefault();
 
-    function detectLanguage(text) {
-        // Проверяем, содержит ли текст английские символы
-        var containsEnglish = /[a-zA-Z]/.test(text);
+    const leftBtns = document.querySelectorAll('.wrapper__btns-left .item');
+    const rightBtns = document.querySelectorAll('.wrapper__btns-right .item');
+    const allBtns = document.querySelectorAll('.wrapper__btns .item');
 
-        // Проверяем, содержит ли текст грузинские символы
-        let containsGeorgian = /[\u10A0-\u10FF]/.test(text);
+   
+    leftBtns.forEach((item) => {
+        item.addEventListener('click', () => {
 
-        if (containsEnglish && containsGeorgian) {
-            return "ge-en";
-        } else if (containsEnglish) {
-            return "en";
-        } else if (containsGeorgian) {
-            return "ge";
-        } else {
-            return "";
+            leftBtns.forEach((inneritem) => {
+                if (item !== inneritem) {
+                    inneritem.classList.remove('active');
+                }
+            });
+            item.classList.toggle('active');
+        });
+    });
+
+    rightBtns.forEach((item) => {
+        item.addEventListener('click', () => {
+
+            rightBtns.forEach((inneritem) => {
+                if (item !== inneritem) {
+                    inneritem.classList.remove('active');
+                }
+            });
+            item.classList.toggle('active');
+        });
+    });
+
+
+    function detectLang(text) {
+        let words = [];
+        for (let i = 0; i < text.length; i++) {
+            let lineWords = text[i].split(' ');
+            words.push(...lineWords);
+        }
+
+        let englishWordCount = words.filter(word => /^[a-zA-Z-_:.,\d]+$/.test(word)).length;
+        let georgianWordCount = words.filter(word => /^[ა-ჰ\d\-_:.,]+$/u.test(word)).length;
+        let containsLatinParliament = words.filter(word => /[\u00C0-\u00FF-_:.,\d]+/.test(word)).length;
+        let containsAsomtavruli = words.filter(word => /[\u10A0-\u10FF\u{10A0E}-\u{10AEF}]/u.test(word)).length;
+
+        // Если процент больше или равен 90%, возвращаем соответствующее значение
+        if (englishWordCount / words.length > 0.65) {
+            return 'en';
+        } else if (georgianWordCount / words.length > 0.65) {
+            return 'ge';
+        } else if (containsLatinParliament / words.length > 0.65) {
+            return 'ParliamentStandart';
+        }
+        else if (containsAsomtavruli / words.length > 0.65) {
+            return 'asomtavruli';
+        }
+        else {
+            return 'unknown';
         }
     }
 
-    const objgeo = {
-        'ა': 'a',
-        'ბ': 'b',
-        'გ': 'g',
-        'დ': 'd',
-        'ე': 'e',
-        'ვ': 'v',
-        'ზ': 'z',
-        'თ': 'T',
-        'ი': 'i',
-        'კ': 'k',
-        'ლ': 'l',
-        'მ': 'm',
-        'ნ': 'n',
-        'ო': 'o',
-        'პ': 'p',
-        'ჟ': 'J',
-        'რ': 'r',
-        'ს': 's',
-        'ტ': 't',
-        'უ': 'u',
-        'ფ': 'f',
-        'ქ': 'q',
-        'ღ': 'R',
-        'ყ': 'y',
-        'შ': 'S',
-        'ჩ': 'C',
-        'ც': 'c',
-        'ძ': 'Z',
-        'წ': 'w',
-        'ჭ': 'W',
-        'ხ': 'x',
-        'ჯ': 'j',
 
-        'ჰ': 'h',
-        '[': '[',
-        ']': ']',
-        '{': '{',
-        '}': '}',
-        ';': ';',
-        ':': ':',
-        '\'': '\'',
-        '"': '"',
-        '`': '`',
-        '~': '~',
-        '@': '@',
-        '$': '$',
-        '%': '%',
-        '^': '^',
-        '&': '&',
-        '*': '*',
-        '(': '(',
-        ')': ')',
-        '-': '-',
-        '_': '_',
-        '=': '=',
-        '+': '+',
-        '!': '!',
-        '<': '<',
-        '>': '>',
-        '/': '/',
-        '?': '?',
-        '.': '.',
-        ',': ',',
-        '|': '|',
-        '/': '/',
-        '\\': '\\',
-        ' ': ' ',
-        '„': '„',
-        '“': '“',
-        '—': '—',
-
-
-        '0': '0',
-        '1': '1',
-        '2': '2',
-        '3': '3',
-        '4': '4',
-        '5': '5',
-        '6': '6',
-        '7': '7',
-        '8': '8',
-        '9': '9',
-        '0': '0',
-
-        'I': 'I',
-        'II': 'II',
-        'III': 'III',
-        'IV': 'IV',
-        'V': 'V',
-        'VI': 'VI',
-        'VII': 'VII',
-        'VIII': 'VIII',
-        'IX': 'IX',
-        'X': 'X',
-        'XI': 'XI',
-        'XII': 'XII',
-        'XIII': 'XIII',
-        'XIV': 'XIV',
-        'XV': 'XV',
-        'XVI': 'XVI',
-        'XVII': 'XVII',
-        'XVIII': 'XVIII',
-        'XIX': 'XIX',
-        'XX': 'XX',
-        'XXI': 'XXI',
-        'XXII': 'XXII',
-        'XXIII': 'XXIII',
-        'XXIV': 'XXIV',
-        'XXV': 'XXV',
-        'XXVI': 'XXVI',
-        'XXVII': 'XXVII',
-        'XXVIII': 'XXVIII',
-        'XXIX': 'XXIX',
-        'XXX': 'XXX'
-    };
-
-    const objgeoen = {
+    const objGeoEn = {
         'ა': 'a',
         'ბ': 'b',
         'გ': 'g',
@@ -171,143 +95,43 @@ document.addEventListener('DOMContentLoaded', (e) => {
         'ხ': 'x',
         'ჯ': 'j',
         'ჰ': 'h',
-
-        '[': '[',
-        ']': ']',
-        '{': '{',
-        '}': '}',
-        ';': ';',
-        ':': ':',
-        '\'': '\'',
-        '"': '"',
-        '`': '`',
-        '~': '~',
-        '@': '@',
-        '$': '$',
-        '%': '%',
-        '^': '^',
-        '&': '&',
-        '*': '*',
-        '(': '(',
-        ')': ')',
-        '-': '-',
-        '_': '_',
-        '=': '=',
-        '+': '+',
-        '!': '!',
-        '<': '<',
-        '>': '>',
-        '/': '/',
-        '?': '?',
-        '.': '.',
-        ',': ',',
-        '|': '|',
-        '/': '/',
-        '\\': '\\',
-        ' ': ' ',
-        '„': '„',
-        '“': '“',
-        '—': '—',
-
-
-        '0': '0',
-        '1': '1',
-        '2': '2',
-        '3': '3',
-        '4': '4',
-        '5': '5',
-        '6': '6',
-        '7': '7',
-        '8': '8',
-        '9': '9',
-        '0': '0',
-
-        'I': 'I',
-        'II': 'II',
-        'III': 'III',
-        'IV': 'IV',
-        'V': 'V',
-        'VI': 'VI',
-        'VII': 'VII',
-        'VIII': 'VIII',
-        'IX': 'IX',
-        'X': 'X',
-        'XI': 'XI',
-        'XII': 'XII',
-        'XIII': 'XIII',
-        'XIV': 'XIV',
-        'XV': 'XV',
-        'XVI': 'XVI',
-        'XVII': 'XVII',
-        'XVIII': 'XVIII',
-        'XIX': 'XIX',
-        'XX': 'XX',
-        'XXI': 'XXI',
-        'XXII': 'XXII',
-        'XXIII': 'XXIII',
-        'XXIV': 'XXIV',
-        'XXV': 'XXV',
-        'XXVI': 'XXVI',
-        'XXVII': 'XXVII',
-        'XXVIII': 'XXVIII',
-        'XXIX': 'XXIX',
-        'XXX': 'XXX',
-
-        'a': 'a',
-        'b': 'b',
-        'c': 'c',
-        'd': 'd',
-        'e': 'e',
-        'f': 'f',
-        'g': 'g',
-        'h': 'h',
-        'i': 'i',
-        'j': 'j',
-        'k': 'k',
-        'l': 'l',
-        'm': 'm',
-        'n': 'n',
-        'o': 'o',
-        'p': 'p',
-        'q': 'q',
-        'r': 'r',
-        's': 's',
-        't': 't',
-        'u': 'u',
-        'v': 'v',
-        'w': 'w',
-        'x': 'x',
-        'y': 'y',
-        'z': 'z',
-        'A': 'A',
-        'B': 'B',
-        'C': 'C',
-        'D': 'D',
-        'E': 'E',
-        'F': 'F',
-        'G': 'G',
-        'H': 'H',
-        'I': 'I',
-        'J': 'J',
-        'K': 'K',
-        'L': 'L',
-        'M': 'M',
-        'N': 'N',
-        'O': 'O',
-        'P': 'P',
-        'Q': 'Q',
-        'R': 'R',
-        'S': 'S',
-        'T': 'T',
-        'U': 'U',
-        'V': 'V',
-        'W': 'W',
-        'X': 'X',
-        'Y': 'Y',
-        'Z': 'Z'
     };
+    //     'ა': 'a',
+    //     'ბ': 'b',
+    //     'გ': 'g',
+    //     'დ': 'd',
+    //     'ე': 'e',
+    //     'ვ': 'v',
+    //     'ზ': 'z',
+    //     'თ': 'T',
+    //     'ი': 'i',
+    //     'კ': 'k',
+    //     'ლ': 'l',
+    //     'მ': 'm',
+    //     'ნ': 'n',
+    //     'ო': 'o',
+    //     'პ': 'p',
+    //     'ჟ': 'J',
+    //     'რ': 'r',
+    //     'ს': 's',
+    //     'ტ': 't',
+    //     'უ': 'u',
+    //     'ფ': 'f',
+    //     'ქ': 'q',
+    //     'ღ': 'R',
+    //     'ყ': 'y',
+    //     'შ': 'S',
+    //     'ჩ': 'C',
+    //     'ც': 'c',
+    //     'ძ': 'Z',
+    //     'წ': 'w',
+    //     'ჭ': 'W',
+    //     'ხ': 'x',
+    //     'ჯ': 'j',
+    //     'ჰ': 'h',
+    // };
 
-    const objen = {
+    const objEnGe = {
         'a': 'ა',
         'b': 'ბ',
         'g': 'გ',
@@ -341,88 +165,157 @@ document.addEventListener('DOMContentLoaded', (e) => {
         'x': 'ხ',
         'j': 'ჯ',
         'h': 'ჰ',
-
-        '[': '[',
-        ']': ']',
-        '{': '{',
-        '}': '}',
-        ';': ';',
-        ':': ':',
-        '\'': '\'',
-        '"': '"',
-        '`': '`',
-        '~': '~',
-        '@': '@',
-        '$': '$',
-        '%': '%',
-        '^': '^',
-        '&': '&',
-        '*': '*',
-        '(': '(',
-        ')': ')',
-        '-': '-',
-        '_': '_',
-        '=': '=',
-        '+': '+',
-        '!': '!',
-        '<': '<',
-        '>': '>',
-        '/': '/',
-        '?': '?',
-        '.': '.',
-        ',': ',',
-        '|': '|',
-        '/': '/',
-        '\\': '\\',
-        ' ': ' ',
-        '„': '„',
-        '“': '“',
-        '—': '—',
-
-
-        '0': '0',
-        '1': '1',
-        '2': '2',
-        '3': '3',
-        '4': '4',
-        '5': '5',
-        '6': '6',
-        '7': '7',
-        '8': '8',
-        '9': '9',
-        '0': '0',
-
-        'I': 'I',
-        'II': 'II',
-        'III': 'III',
-        'IV': 'IV',
-        'V': 'V',
-        'VI': 'VI',
-        'VII': 'VII',
-        'VIII': 'VIII',
-        'IX': 'IX',
-        'X': 'X',
-        'XI': 'XI',
-        'XII': 'XII',
-        'XIII': 'XIII',
-        'XIV': 'XIV',
-        'XV': 'XV',
-        'XVI': 'XVI',
-        'XVII': 'XVII',
-        'XVIII': 'XVIII',
-        'XIX': 'XIX',
-        'XX': 'XX',
-        'XXI': 'XXI',
-        'XXII': 'XXII',
-        'XXIII': 'XXIII',
-        'XXIV': 'XXIV',
-        'XXV': 'XXV',
-        'XXVI': 'XXVI',
-        'XXVII': 'XXVII',
-        'XXVIII': 'XXVIII',
-        'XXIX': 'XXIX',
-        'XXX': 'XXX',
     };
+
+
+
+    //////Parliament/////
+    const objGeParliament = {
+        'ა': 'À',
+        'ბ': 'Á',
+        'გ': 'Â',
+        'დ': 'Ã',
+        'ე': 'Ä',
+        'ვ': 'Å',
+        'ზ': 'Æ',
+        'თ': 'È',
+        'ი': 'É',
+        'კ': 'Ê',
+        'ლ': 'Ë',
+        'მ': 'Ì',
+        'ნ': 'Í',
+        'ო': 'Ï',
+        'პ': 'Ð',
+        'ჟ': 'Ñ',
+        'რ': 'Ò',
+        'ს': 'Ó',
+        'ტ': 'Ô',
+        'უ': 'Ö',
+        'ფ': '×',
+        'ქ': 'Ø',
+        'ღ': 'Ù',
+        'ყ': 'Ú',
+        'შ': 'Û',
+        'ჩ': 'Ü',
+        'ც': 'Ý',
+        'ძ': 'Þ',
+        'წ': 'ß',
+        'ჭ': 'à',
+        'ხ': 'á',
+        'ჯ': 'ã',
+        'ჰ': 'ä'
+    }
+
+    const objParliamentGe = {
+        'À': 'ა',
+        'Á': 'ბ',
+        'Â': 'გ',
+        'Ã': 'დ',
+        'Ä': 'ე',
+        'Å': 'ვ',
+        'Æ': 'ზ',
+        'È': 'თ',
+        'É': 'ი',
+        'Ê': 'კ',
+        'Ë': 'ლ',
+        'Ì': 'მ',
+        'Í': 'ნ',
+        'Ï': 'ო',
+        'Ð': 'პ',
+        'Ñ': 'ჟ',
+        'Ò': 'რ',
+        'Ó': 'ს',
+        'Ô': 'ტ',
+        'Ö': 'უ',
+        '×': 'ფ',
+        'Ø': 'ქ',
+        'Ù': 'ღ',
+        'Ú': 'ყ',
+        'Û': 'შ',
+        'Ü': 'ჩ',
+        'Ý': 'ც',
+        'Þ': 'ძ',
+        'ß': 'წ',
+        'à': 'ჭ',
+        'á': 'ხ',
+        'ã': 'ჯ',
+        'ä': 'ჰ'
+    }
+    ////////////
+
+    ///////asomtavruli///////
+    const AsomtavruliGe = {
+        'Ⴀ': 'ა',
+        'Ⴁ': 'ბ',
+        'Ⴂ': 'გ',
+        'Ⴃ': 'დ',
+        'Ⴄ': 'ე',
+        'Ⴅ': 'ვ',
+        'Ⴆ': 'ზ',
+        'Ⴇ': 'თ',
+        'Ⴈ': 'ი',
+        'Ⴉ': 'კ',
+        'Ⴊ': 'ლ',
+        'Ⴋ': 'მ',
+        'Ⴌ': 'ნ',
+        'Ⴍ': 'ო',
+        'Ⴎ': 'პ',
+        'Ⴏ': 'ჟ',
+        'Ⴐ': 'რ',
+        'Ⴑ': 'ს',
+        'Ⴒ': 'ტ',
+        'Ⴓ': 'უ',
+        'Ⴔ': 'ფ',
+        'Ⴕ': 'ქ',
+        'Ⴖ': 'ღ',
+        'Ⴗ': 'ყ',
+        'Ⴘ': 'შ',
+        'Ⴙ': 'ჩ',
+        'Ⴚ': 'ც',
+        'Ⴛ': 'ძ',
+        'Ⴜ': 'წ',
+        'Ⴝ': 'ჭ',
+        'Ⴞ': 'ხ',
+        'Ⴟ': 'ჯ',
+        'Ⴠ': 'ჰ'
+    }
+
+    const GeAsomtavruli = {
+        'ა': 'Ⴀ',
+        'ბ': 'Ⴁ',
+        'გ': 'Ⴂ',
+        'დ': 'Ⴃ',
+        'ე': 'Ⴄ',
+        'ვ': 'Ⴅ',
+        'ზ': 'Ⴆ',
+        'თ': 'Ⴇ',
+        'ი': 'Ⴈ',
+        'კ': 'Ⴉ',
+        'ლ': 'Ⴊ',
+        'მ': 'Ⴋ',
+        'ნ': 'Ⴌ',
+        'ო': 'Ⴍ',
+        'პ': 'Ⴎ',
+        'ჟ': 'Ⴏ',
+        'რ': 'Ⴐ',
+        'ს': 'Ⴑ',
+        'ტ': 'Ⴒ',
+        'უ': 'Ⴓ',
+        'ფ': 'Ⴔ',
+        'ქ': 'Ⴕ',
+        'ღ': 'Ⴖ',
+        'ყ': 'Ⴗ',
+        'შ': 'Ⴘ',
+        'ჩ': 'Ⴙ',
+        'ც': 'Ⴚ',
+        'ძ': 'Ⴛ',
+        'წ': 'Ⴜ',
+        'ჭ': 'Ⴝ',
+        'ხ': 'Ⴞ',
+        'ჯ': 'Ⴟ',
+        'ჰ': 'Ⴠ'
+    };
+    ///////asomtavruli///////
 
     const convert = document.querySelector('.wrapper__convert a');
 
@@ -431,31 +324,65 @@ document.addEventListener('DOMContentLoaded', (e) => {
         let obj = {};
         const textarea = document.querySelector('.wrapper .textarea');
         const val = textarea.value;
-        const text = detectLanguage(val);
+        let lines = val.split('\n');
+        const text = detectLang(lines);
+        //console.log(text);
+
+        let dataId = '';
+        allBtns.forEach((item) => {
+            if(item.classList.contains('active')){
+                dataId += item.dataset.id + '-';
+            }
+        });
+        dataId = dataId.slice(0, -1);
+
+        console.log(dataId);
+
         textarea.value = '';
 
-        if (text === 'ge') { obj = { ...objgeo }; }
-        if (text === 'ge-en') { obj = { ...objgeoen }; }
-        if (text === 'en') { obj = { ...objen }; }
-        if (text === '') return;
+        if (dataId === 'ge-en') { obj = { ...objGeoEn }; } //1
+        if (dataId === 'ge-ParliamentStandart') { obj = { ...objGeParliament }; } //2
+        if (dataId === 'ge-asomtavruli') { obj = { ...GeAsomtavruli }; } //3
+      
+        if (dataId === 'en-ge') { obj = { ...objEnGe }; } //4
+        if (dataId === 'en-ParliamentStandart') { obj = { ...AsomtavruliGe }; }
+        if (dataId === 'en-asomtavruli') { obj = { ...AsomtavruliGe }; }
+
+
+        if (dataId === 'ParliamentStandart-ge') { obj = { ...objParliamentGe }; }
+        if (dataId === 'ParliamentStandart-en') { obj = { ...AsomtavruliGe }; }
+        if (dataId === 'ParliamentStandart-asomtavruli') { obj = { ...AsomtavruliGe }; }
+
+        if (dataId === 'asomtavruli-ge') { obj = { ...objParliamentGe }; }
+        if (dataId === 'asomtavruli-en') { obj = { ...AsomtavruliGe }; }
+        if (dataId === 'asomtavruli-ParliamentStandart') { obj = { ...AsomtavruliGe }; }
+    
+
+        if (dataId === '') return;
         //const copyedObj = { ...obj };
-        console.log(text);
-
-        let lines = val.split('\n');
+        //console.log(text);
 
 
 
-       
+
+
+
+
+
         let endOftext = '';
         for (let i = 0; i < lines.length; i++) {
             let result = '';
             let str = lines[i];
             for (let j = 0; j < str.length; j++) {
-                const simb = obj[str[j]];
+                let simb = obj[str[j]];
+                if (!simb) {
+                    simb = str[j];
+                }
+                // console.log(simb); 
                 result += simb;
                 //console.log(str[j].charCodeAt(0));
             }
-            if (i !== lines.length) {
+            if (i !== lines.length - 1) {
                 endOftext = '\n';
             } else {
                 endOftext = '';
