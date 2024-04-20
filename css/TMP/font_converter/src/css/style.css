@@ -112,7 +112,8 @@ body {
 .wrapper__convert {
     text-align: left;
     margin-bottom: 10px;
-    padding-left: 4px;
+    padding-left: 4px; 
+
 }
 
 .wrap__btn {
@@ -134,6 +135,56 @@ body {
     box-shadow: 0 0.05rem 0.3rem #00000052;
 }
 
+
+.wrapper__btns {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 10px;
+    margin-bottom: 15px;
+    padding-left: 4px;
+}
+
+.wrapper__controls {
+    display: flex;
+    justify-content: space-between;
+}
+
+.wrapper__btns-left {
+    display: flex;
+    gap: .2rem;
+}
+
+.wrapper__btns-arrow img{
+ display: block;
+}
+
+.wrapper__btns-right {
+    display: flex;
+    gap: .2rem;
+    
+}
+
+.wrapper__btns .item {
+    width: 32px;
+    height: 32px;
+    border: 1px solid #f03163;
+    cursor: pointer;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 300;
+}
+
+.wrapper__btns .item.active {
+    background-color: #f03163;
+    transition: all .2s ease-in-out;
+}
+
+/* .wrapper__btns .item:hover {
+    background-color: #f03163;
+} */
 
 /* @media (max-width: 510px) {
     .wrapper__title {

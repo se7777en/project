@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="icon" type="image/png" href="#!">
     <link rel="stylesheet" href="./css/style.css">
     <title>Font Converter</title>
@@ -16,9 +17,28 @@
     <div class="wrapper">
         <div class="container">
             <div class="wrapper__inner">
-                <div class="wrapper__title">Sylfaen to AcanNusx converter</div>
+                <div class="wrapper__title">Georgian text converter</div>
 
+                <div class="wrapper__btns">
+                    <div class="wrapper__btns-left">
+                        <div class="wrapper__btns-ge item active" data-id="ge" title="Unicode (UTF8 / Sylfaen)">GE</div>
+                        <div class="wrapper__btns-en item" data-id="en" title="Latin (English)">EN</div>
+                        <div class="wrapper__btns-parliament item" data-id="ParliamentStandart"
+                            title="Parliament Standart">ÃÌ</div>
+                        <div class="wrapper__btns-asomtavruli item" data-id="asomtavruli" title="Asomtavruli">ႣႫ</div>
+                    </div>
 
+                    <div class="wrapper__btns-arrow">
+                        <img src="./img/right.svg" alt="arrow">
+                    </div>
+
+                    <div class="wrapper__btns-right">
+                        <div class="wrapper__btns-ge item" data-id="ge" title="Unicode (UTF8 / Sylfaen)">GE</div>
+                        <div class="wrapper__btns-en item active" data-id="en" title="Latin (English)">EN</div>
+                        <div class="wrapper__btns-parliament item" data-id="ParliamentStandart">ÃÌ</div>
+                        <div class="wrapper__btns-asomtavruli item" data-id="asomtavruli" title="Asomtavruli">ႣႫ</div>
+                    </div>
+                </div>
 
                 <div class="wrapper__body">
                     <textarea class="textarea__from textarea" placeholder="Text here.."></textarea>
