@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
                     inneritem.classList.remove('active');
                 }
             });
-            item.classList.toggle('active');
+            item.classList.add('active');
         });
     });
 
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
                     inneritem.classList.remove('active');
                 }
             });
-            item.classList.toggle('active');
+            item.classList.add('active');
         });
     });
 
