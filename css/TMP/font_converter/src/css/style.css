@@ -94,7 +94,7 @@ body {
 }
 
 .wrapper__inner {
-    padding-bottom: 10px;
+    /* padding-bottom: 10px; */
     margin-bottom: 10px;
     border-bottom: 1px dashed #f03163;
 }
@@ -152,7 +152,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     padding-left: 4px;
 }
 
