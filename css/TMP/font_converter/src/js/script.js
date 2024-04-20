@@ -811,13 +811,13 @@ document.addEventListener('DOMContentLoaded', (e) => {
             textarea.value += (result + endOftext);
         }
 
-        //detectLangOnTextarea();
+        detectLangOnTextarea();
 
     });
 
-    // convert.addEventListener('contextmenu', function(e) {
-    //     e.preventDefault();
-    // });
+    convert.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
 
 
 
