@@ -6,38 +6,59 @@ document.addEventListener('DOMContentLoaded', (e) => {
     const rightBtns = document.querySelectorAll('.wrapper__btns-right .item');
     const allBtns = document.querySelectorAll('.wrapper__btns .item');
 
+    let textarea = document.querySelector('.wrapper .textarea');
+    let wordsCount = document.querySelector('.wrapper__words-length span');
+
+
+    
+    const setSelectedBtn = (btns) => {
+        btns.forEach((item) => {
+            item.addEventListener('click', () => {
+    
+                btns.forEach((inneritem) => {
+                    if (item !== inneritem) {
+                        inneritem.classList.remove('active');
+                    }
+                });
+                item.classList.add('active');
+            });
+        });
+    };
+
+    setSelectedBtn(leftBtns);
+    setSelectedBtn(rightBtns);
+
+
+    const removeSelectionOnLeftSide = () => {
+        leftBtns.forEach((item) => {
+            if(item.classList.contains('active')) {
+                item.classList.remove('active');
+            }
+        });
+    };
+
    
-    leftBtns.forEach((item) => {
-        item.addEventListener('click', () => {
+   
 
-            leftBtns.forEach((inneritem) => {
-                if (item !== inneritem) {
-                    inneritem.classList.remove('active');
-                }
-            });
-            item.classList.add('active');
-        });
-    });
-
-    rightBtns.forEach((item) => {
-        item.addEventListener('click', () => {
-
-            rightBtns.forEach((inneritem) => {
-                if (item !== inneritem) {
-                    inneritem.classList.remove('active');
-                }
-            });
-            item.classList.add('active');
-        });
-    });
+  
 
 
     function detectLang(text) {
         let words = [];
+        let wordsLength = [];
         for (let i = 0; i < text.length; i++) {
             let lineWords = text[i].split(' ');
             words.push(...lineWords);
         }
+
+        words.forEach((item) => {
+            if(item !== ''){
+                wordsLength.push(item);
+            }
+        });
+
+        wordsCount.textContent = wordsLength.length; 
+        console.log(wordsLength);
 
         let englishWordCount = words.filter(word => /^[a-zA-Z-_:.,\d]+$/.test(word)).length;
         let georgianWordCount = words.filter(word => /^[ა-ჰ\d\-_:.,]+$/u.test(word)).length;
@@ -241,6 +262,227 @@ document.addEventListener('DOMContentLoaded', (e) => {
         'ã': 'ჯ',
         'ä': 'ჰ'
     }
+
+    const objEnParliament = {
+        'a': 'À',
+        'b': 'Á',
+        'c': 'Ý',
+        'd': 'Ã',
+        'e': 'Ä',
+        'f': '×',
+        'g': 'Â',
+        'h': 'ä',
+        'i': 'É',
+        'j': 'ã',
+        'k': 'Ê',
+        'l': 'Ë',
+        'm': 'Ì',
+        'n': 'Í',
+        'o': 'Ï',
+        'p': 'Ð',
+        'q': 'Ø',
+        'r': 'Ò',
+        's': 'Ó',
+        't': 'Ô',
+        'u': 'Ö',
+        'v': 'Å',
+        'w': 'ß',
+        'x': 'á',
+        'y': 'Ú',
+        'z': 'Æ',
+        'A': 'A',
+        'B': 'B',
+        'C': 'Ü',
+        'D': 'D',
+        'E': 'E',
+        'F': 'F',
+        'G': 'G',
+        'H': 'H',
+        'I': 'I',
+        'J': 'Ñ',
+        'K': 'K',
+        'L': 'L',
+        'M': 'M',
+        'N': 'N',
+        'O': 'O',
+        'P': 'P',
+        'Q': 'Q',
+        'R': 'Ù',
+        'S': 'Û',
+        'T': 'È',
+        'U': 'U',
+        'V': 'V',
+        'W': 'à',
+        'X': 'X',
+        'Y': 'Y',
+        'Z': 'Þ'
+    }
+
+    const objParliamentEn = {
+        'À': 'a',
+        'Á': 'b',
+        'Ý': 'c',
+        'Ã': 'd',
+        'Ä': 'e',
+        '×': 'f',
+        'Â': 'g',
+        'ä': 'h',
+        'É': 'i',
+        'ã': 'j',
+        'Ê': 'k',
+        'Ë': 'l',
+        'Ì': 'm',
+        'Í': 'n',
+        'Ï': 'o',
+        'Ð': 'p',
+        'Ø': 'q',
+        'Ò': 'r',
+        'Ó': 's',
+        'Ô': 't',
+        'Ö': 'u',
+        'Å': 'v',
+        'ß': 'w',
+        'á': 'x',
+        'Ú': 'y',
+        'Æ': 'z',
+        'A': 'A',
+        'B': 'B',
+        'Ü': 'C',
+        'D': 'D',
+        'E': 'E',
+        'F': 'F',
+        'G': 'G',
+        'H': 'H',
+        'I': 'I',
+        'Ñ': 'J',
+        'K': 'K',
+        'L': 'L',
+        'M': 'M',
+        'N': 'N',
+        'O': 'O',
+        'P': 'P',
+        'Q': 'Q',
+        'Ù': 'R',
+        'Û': 'S',
+        'È': 'T',
+        'U': 'U',
+        'V': 'V',
+        'à': 'W',
+        'X': 'X',
+        'Y': 'Y',
+        'Þ': 'Z'
+    };
+
+    const objParliamentAsomtavruli = {
+        'À': 'Ⴀ',
+        'Á': 'Ⴁ',
+        'Ý': 'Ⴚ',
+        'Ã': 'Ⴃ',
+        'Ä': 'Ⴄ',
+        '×': 'Ⴔ',
+        'Â': 'Ⴂ',
+        'ä': 'Ⴠ',
+        'É': 'Ⴈ',
+        'ã': 'Ⴟ',
+        'Ê': 'Ⴉ',
+        'Ë': 'Ⴊ',
+        'Ì': 'Ⴋ',
+        'Í': 'Ⴌ',
+        'Ï': 'Ⴍ',
+        'Ð': 'Ⴎ',
+        'Ø': 'Ⴕ',
+        'Ò': 'Ⴐ',
+        'Ó': 'Ⴑ',
+        'Ô': 'Ⴒ',
+        'Ö': 'Ⴓ',
+        'Å': 'Ⴅ',
+        'ß': 'Ⴜ',
+        'á': 'Ⴞ',
+        'Ú': 'Ⴗ',
+        'Æ': 'Ⴆ',
+        'A': 'A',
+        'B': 'B',
+        'Ü': 'Ⴙ',
+        'D': 'D',
+        'E': 'E',
+        'F': 'F',
+        'G': 'G',
+        'H': 'H',
+        'I': 'I',
+        'Ñ': 'Ⴏ',
+        'K': 'K',
+        'L': 'L',
+        'M': 'M',
+        'N': 'N',
+        'O': 'O',
+        'P': 'P',
+        'Q': 'Q',
+        'Ù': 'Ⴖ',
+        'Û': 'Ⴘ',
+        'È': 'Ⴇ',
+        'U': 'U',
+        'V': 'V',
+        'à': 'Ⴝ',
+        'X': 'X',
+        'Y': 'Y',
+        'Þ': 'Ⴛ'
+    };
+
+    const objAsomtavruliParliament = {
+        'Ⴀ': 'À',
+        'Ⴁ': 'Á',
+        'Ⴚ': 'Ý',
+        'Ⴃ': 'Ã',
+        'Ⴄ': 'Ä',
+        'Ⴔ': '×',
+        'Ⴂ': 'Â',
+        'Ⴠ': 'ä',
+        'Ⴈ': 'É',
+        'Ⴟ': 'ã',
+        'Ⴉ': 'Ê',
+        'Ⴊ': 'Ë',
+        'Ⴋ': 'Ì',
+        'Ⴌ': 'Í',
+        'Ⴍ': 'Ï',
+        'Ⴎ': 'Ð',
+        'Ⴕ': 'Ø',
+        'Ⴐ': 'Ò',
+        'Ⴑ': 'Ó',
+        'Ⴒ': 'Ô',
+        'Ⴓ': 'Ö',
+        'Ⴅ': 'Å',
+        'Ⴜ': 'ß',
+        'Ⴞ': 'á',
+        'Ⴗ': 'Ú',
+        'Ⴆ': 'Æ',
+        'A': 'A',
+        'B': 'B',
+        'Ⴙ': 'Ü',
+        'D': 'D',
+        'E': 'E',
+        'F': 'F',
+        'G': 'G',
+        'H': 'H',
+        'I': 'I',
+        'Ⴏ': 'Ñ',
+        'K': 'K',
+        'L': 'L',
+        'M': 'M',
+        'N': 'N',
+        'O': 'O',
+        'P': 'P',
+        'Q': 'Q',
+        'Ⴖ': 'Ù',
+        'Ⴘ': 'Û',
+        'Ⴇ': 'È',
+        'U': 'U',
+        'V': 'V',
+        'Ⴝ': 'à',
+        'X': 'X',
+        'Y': 'Y',
+        'Ⴛ': 'Þ'
+    }
+
     ////////////
 
     ///////asomtavruli///////
@@ -315,22 +557,200 @@ document.addEventListener('DOMContentLoaded', (e) => {
         'ჯ': 'Ⴟ',
         'ჰ': 'Ⴠ'
     };
+
+
+    const EnAsomtavruli = { 
+        'a': 'Ⴀ',
+        'b': 'Ⴁ',
+        'c': 'Ⴚ',
+        'd': 'Ⴃ',
+        'e': 'Ⴄ',
+        'f': 'Ⴔ',
+        'g': 'Ⴂ',
+        'h': 'Ⴠ',
+        'i': 'Ⴈ',
+        'j': 'Ⴟ',
+        'k': 'Ⴉ',
+        'l': 'Ⴊ',
+        'm': 'Ⴋ',
+        'n': 'Ⴌ',
+        'o': 'Ⴍ',
+        'p': 'Ⴎ',
+        'q': 'Ⴕ',
+        'r': 'Ⴐ',
+        's': 'Ⴑ',
+        't': 'Ⴒ',
+        'u': 'Ⴓ',
+        'v': 'Ⴅ',
+        'w': 'Ⴜ',
+        'x': 'Ⴞ',
+        'y': 'Ⴗ',
+        'z': 'Ⴆ',
+        'A': 'A',
+        'B': 'B',
+        'C': 'Ⴙ',
+        'D': 'D',
+        'E': 'E',
+        'F': 'F',
+        'G': 'G',
+        'H': 'H',
+        'I': 'I',
+        'J': 'Ⴏ',
+        'K': 'K',
+        'L': 'L',
+        'M': 'M',
+        'N': 'N',
+        'O': 'O',
+        'P': 'P',
+        'Q': 'Q',
+        'R': 'Ⴖ',
+        'S': 'Ⴘ',
+        'T': 'Ⴇ',
+        'U': 'U',
+        'V': 'V',
+        'W': 'Ⴝ',
+        'X': 'X',
+        'Y': 'Y',
+        'Z': 'Ⴛ'
+    };
+
+    const AsomtavruliEn = {
+        'Ⴀ': 'a',
+        'Ⴁ': 'b',
+        'Ⴚ': 'c',
+        'Ⴃ': 'd',
+        'Ⴄ': 'e',
+        'Ⴔ': 'f',
+        'Ⴂ': 'g',
+        'Ⴠ': 'h',
+        'Ⴈ': 'i',
+        'Ⴟ': 'j',
+        'Ⴉ': 'k',
+        'Ⴊ': 'l',
+        'Ⴋ': 'm',
+        'Ⴌ': 'n',
+        'Ⴍ': 'o',
+        'Ⴎ': 'p',
+        'Ⴕ': 'q',
+        'Ⴐ': 'r',
+        'Ⴑ': 's',
+        'Ⴒ': 't',
+        'Ⴓ': 'u',
+        'Ⴅ': 'v',
+        'Ⴜ': 'w',
+        'Ⴞ': 'x',
+        'Ⴗ': 'y',
+        'Ⴆ': 'z',
+        'A': 'A',
+        'B': 'B',
+        'Ⴙ': 'C',
+        'D': 'D',
+        'E': 'E',
+        'F': 'F',
+        'G': 'G',
+        'H': 'H',
+        'I': 'I',
+        'Ⴏ': 'J',
+        'K': 'K',
+        'L': 'L',
+        'M': 'M',
+        'N': 'N',
+        'O': 'O',
+        'P': 'P',
+        'Q': 'Q',
+        'Ⴖ': 'R',
+        'Ⴘ': 'S',
+        'Ⴇ': 'T',
+        'U': 'U',
+        'V': 'V',
+        'Ⴝ': 'W',
+        'X': 'X',
+        'Y': 'Y',
+        'Ⴛ': 'Z'
+    };
     ///////asomtavruli///////
+
+
+    const detectLangOnTextareaInput = () => {
+        textarea.addEventListener('input', () => {
+            const val = textarea.value;
+            let lines = val.split('\n');
+            const text = detectLang(lines);
+            if(text === 'ge') {
+                removeSelectionOnLeftSide();
+                leftBtns[0].classList.add('active');
+            }
+
+            if(text === 'en') {
+                removeSelectionOnLeftSide();
+                leftBtns[1].classList.add('active');
+            }
+
+            if(text === 'ParliamentStandart') {
+                removeSelectionOnLeftSide();
+                leftBtns[2].classList.add('active');
+            }
+
+            if(text === 'asomtavruli') {
+                removeSelectionOnLeftSide();
+                leftBtns[3].classList.add('active');
+            }
+
+            if(text === 'unknown') {
+                removeSelectionOnLeftSide();
+                leftBtns[0].classList.add('active');
+            }
+    
+        });
+    }
+
+    const detectLangOnTextarea = () => {
+            const val = textarea.value;
+            let lines = val.split('\n');
+            const text = detectLang(lines);
+            if(text === 'ge') {
+                removeSelectionOnLeftSide();
+                leftBtns[0].classList.add('active');
+            }
+
+            if(text === 'en') {
+                removeSelectionOnLeftSide();
+                leftBtns[1].classList.add('active');
+            }
+
+            if(text === 'ParliamentStandart') {
+                removeSelectionOnLeftSide();
+                leftBtns[2].classList.add('active');
+            }
+
+            if(text === 'asomtavruli') {
+                removeSelectionOnLeftSide();
+                leftBtns[3].classList.add('active');
+            }
+
+            if(text === 'unknown') {
+                removeSelectionOnLeftSide();
+                leftBtns[0].classList.add('active');
+            }
+    }
+
+    detectLangOnTextareaInput();
 
     const convert = document.querySelector('.wrapper__convert a');
 
 
     convert.addEventListener('click', () => {
         let obj = {};
-        const textarea = document.querySelector('.wrapper .textarea');
+        textarea = document.querySelector('.wrapper .textarea');
         const val = textarea.value;
         let lines = val.split('\n');
         const text = detectLang(lines);
+
         //console.log(text);
 
         let dataId = '';
         allBtns.forEach((item) => {
-            if(item.classList.contains('active')){
+            if (item.classList.contains('active')) {
                 dataId += item.dataset.id + '-';
             }
         });
@@ -343,20 +763,20 @@ document.addEventListener('DOMContentLoaded', (e) => {
         if (dataId === 'ge-en') { obj = { ...objGeoEn }; } //1
         if (dataId === 'ge-ParliamentStandart') { obj = { ...objGeParliament }; } //2
         if (dataId === 'ge-asomtavruli') { obj = { ...GeAsomtavruli }; } //3
-      
+
         if (dataId === 'en-ge') { obj = { ...objEnGe }; } //4
-        if (dataId === 'en-ParliamentStandart') { obj = { ...AsomtavruliGe }; }
-        if (dataId === 'en-asomtavruli') { obj = { ...AsomtavruliGe }; }
+        if (dataId === 'en-ParliamentStandart') { obj = { ...objEnParliament }; } // 5
+        if (dataId === 'en-asomtavruli') { obj = { ...EnAsomtavruli }; } // 6
 
 
-        if (dataId === 'ParliamentStandart-ge') { obj = { ...objParliamentGe }; }
-        if (dataId === 'ParliamentStandart-en') { obj = { ...AsomtavruliGe }; }
-        if (dataId === 'ParliamentStandart-asomtavruli') { obj = { ...AsomtavruliGe }; }
+        if (dataId === 'ParliamentStandart-ge') { obj = { ...objParliamentGe }; } // 7
+        if (dataId === 'ParliamentStandart-en') { obj = { ...objParliamentEn }; } //8
+        if (dataId === 'ParliamentStandart-asomtavruli') { obj = { ...objParliamentAsomtavruli }; } // 9
 
-        if (dataId === 'asomtavruli-ge') { obj = { ...objParliamentGe }; }
-        if (dataId === 'asomtavruli-en') { obj = { ...AsomtavruliGe }; }
-        if (dataId === 'asomtavruli-ParliamentStandart') { obj = { ...AsomtavruliGe }; }
-    
+        if (dataId === 'asomtavruli-ge') { obj = { ...AsomtavruliGe }; } /// 10
+        if (dataId === 'asomtavruli-en') { obj = { ...AsomtavruliEn }; } // 11
+        if (dataId === 'asomtavruli-ParliamentStandart') { obj = { ...objAsomtavruliParliament }; } // 12
+
 
         if (dataId === '') return;
         //const copyedObj = { ...obj };
@@ -391,6 +811,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
             textarea.value += (result + endOftext);
         }
 
+        detectLangOnTextarea();
 
     });
 
