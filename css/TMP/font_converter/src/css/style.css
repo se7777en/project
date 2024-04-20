@@ -175,6 +175,10 @@ body {
     -webkit-user-select: none;
     user-select: none;
     -webkit-tap-highlight-color: transparent;
+
+    -webkit-touch-callout: none;
+    -ms-touch-action: none;
+    touch-action: none;
 }
 
 .wrap__btn:active {
