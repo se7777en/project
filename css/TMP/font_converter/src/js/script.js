@@ -811,7 +811,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
             textarea.value += (result + endOftext);
         }
 
-        detectLangOnTextarea();
+        //detectLangOnTextarea();
 
     });
 
