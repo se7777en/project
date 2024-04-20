@@ -177,10 +177,10 @@ body {
     -webkit-tap-highlight-color: transparent;
 }
 
-/* .wrap__btn:active {
+.wrap__btn:active {
     scale: 1.05;
     box-shadow: 0 0.05rem 0.3rem #00000052;
-} */
+}
 
 
 .wrapper__btns {
