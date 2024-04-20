@@ -171,10 +171,10 @@ body {
     border-radius: 2px;
     font-weight: 400;
 
-    -webkit-user-drag: none;
+    /* -webkit-user-drag: none;
     -webkit-user-select: none;
     user-select: none;
-    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent; */
 }
 
 .wrap__btn:active {
