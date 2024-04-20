@@ -758,7 +758,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
         console.log(dataId);
 
-       // textarea.value = '';
+        textarea.value = '';
 
         if (dataId === 'ge-en') { obj = { ...objGeoEn }; } //1
         if (dataId === 'ge-ParliamentStandart') { obj = { ...objGeParliament }; } //2
