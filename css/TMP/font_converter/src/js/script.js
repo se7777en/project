@@ -62,12 +62,12 @@ document.addEventListener('DOMContentLoaded', (e) => {
                 wordsCount.textContent = wordsLength.length;
                 // console.log(wordsLength);
 
-                let englishWordCount = (words.filter(word => /^[a-zA-Z-_:.,\d]+$/.test(word)).length);
-                let georgianWordCount = (words.filter(word => /^[ა-ჰ\d\-_:.,\d]+$/u.test(word)).length);
+                let englishWordCount = (words.filter(word => /^[a-zA-Z-_:.?,\d]+$/.test(word)).length);
+                let georgianWordCount = (words.filter(word => /^[ა-ჰ\d\-_:.?,\d]+$/u.test(word)).length);
                 //let containsLatinParliament = words.filter(word => /[\u00C0-\u00FF\d -_:.,]+/.test(word)).length;
-                let containsLatinParliament = (words.filter(word => /^[\u00C0-\u00FF -_:.,\d]+$/u.test(word)).length);
+                let containsLatinParliament = (words.filter(word => /^[\u00C0-\u00FF -_:.?,\d]+$/u.test(word)).length);
                 //let containsAsomtavruli = words.filter(word => /[\u10A0-\u10FF\u{10A0E}-\u{10AEF}]/u.test(word)).length;
-                let containsAsomtavruli = (words.filter(word => /^[\u10A0-\u10FF-_:.,\d]+$/u.test(word)).length);
+                let containsAsomtavruli = (words.filter(word => /^[\u10A0-\u10FF-_:.?,\d]+$/u.test(word)).length);
 
 
 
