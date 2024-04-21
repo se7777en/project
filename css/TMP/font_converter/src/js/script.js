@@ -10,11 +10,11 @@ document.addEventListener('DOMContentLoaded', (e) => {
     let wordsCount = document.querySelector('.wrapper__words-length span');
 
 
-    
+
     const setSelectedBtn = (btns) => {
         btns.forEach((item) => {
             item.addEventListener('click', () => {
-    
+
                 btns.forEach((inneritem) => {
                     if (item !== inneritem) {
                         inneritem.classList.remove('active');
@@ -31,16 +31,16 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
     const removeSelectionOnLeftSide = () => {
         leftBtns.forEach((item) => {
-            if(item.classList.contains('active')) {
+            if (item.classList.contains('active')) {
                 item.classList.remove('active');
             }
         });
     };
 
-   
-   
 
-  
+
+
+
 
 
     function detectLang(text) {
@@ -52,13 +52,13 @@ document.addEventListener('DOMContentLoaded', (e) => {
         }
 
         words.forEach((item) => {
-            if(item !== ''){
+            if (item !== '') {
                 wordsLength.push(item);
             }
         });
 
-        wordsCount.textContent = wordsLength.length; 
-       // console.log(wordsLength);
+        wordsCount.textContent = wordsLength.length;
+        // console.log(wordsLength);
 
         let englishWordCount = words.filter(word => /^[a-zA-Z-_:.,\d]+$/.test(word)).length;
         let georgianWordCount = words.filter(word => /^[ა-ჰ\d\-_:.,\d]+$/u.test(word)).length;
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
         //let containsAsomtavruli = words.filter(word => /[\u10A0-\u10FF\u{10A0E}-\u{10AEF}]/u.test(word)).length;
         let containsAsomtavruli = words.filter(word => /^[\u10A0-\u10FF\d -_:.,]+$/u.test(word)).length;
 
-        
+
 
 
 
@@ -565,7 +565,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
     };
 
 
-    const EnAsomtavruli = { 
+    const EnAsomtavruli = {
         'a': 'Ⴀ',
         'b': 'Ⴁ',
         'c': 'Ⴚ',
@@ -677,67 +677,194 @@ document.addEventListener('DOMContentLoaded', (e) => {
     ///////asomtavruli///////
 
 
+    ////////enKB/// ruKB//////
+    const objEnRu = {
+        'a': 'f',
+        'b': ',',
+        'g': 'u',
+        'd': 'l',
+        'e': 't',
+        'v': 'd',
+        'z': 'p',
+        'T': 's',
+        'i': 'b',
+        'k': 'r',
+        'l': 'k',
+        'm': 'v',
+        'n': 'y',
+        'o': 'j',
+        'p': 'g',
+        'J': ';',
+        'r': 'h',
+        's': 'c',
+        't': 'n',
+        'u': 'e',
+        'f': 'a',
+        'q': 'm',
+        'R': 'q',
+        'y': '.',
+        'S': 'i',
+        'C': 'x',
+        'c': 'w',
+        'Z': '\'',
+        'w': 'o',
+        'W': 'z',
+        'x': '[',
+        'j': ']',
+        'h': '/',
+
+        '/': '&',
+        '%': '+',
+        '-': '-',
+        '?': '0',
+        '№': '1',
+        '„': '3',
+        '“': '4',
+        ':': '5',
+        ',': '7',
+        '.': '8',
+        ';': '9',
+        '!': '=',
+        ')': '`',
+        '(': '~',
+        '—': '2',
+
+        '1': '!',
+        '2': '@',
+        '3': '#',
+        '4': '$',
+        '5': '%',
+        '6': '^',
+        '7': '*',
+        '8': '(',
+        '9': ')',
+        '0': '_'
+    }
+
+    const objRuEn = {
+        'f': 'a',
+        ',': 'b',
+        'u': 'g',
+        'l': 'd',
+        't': 'e',
+        'd': 'v',
+        'p': 'z',
+        's': 'T',
+        'b': 'i',
+        'r': 'k',
+        'k': 'l',
+        'v': 'm',
+        'y': 'n',
+        'j': 'o',
+        'g': 'p',
+        ';': 'J',
+        'h': 'r',
+        'c': 's',
+        'n': 't',
+        'e': 'u',
+        'a': 'f',
+        'm': 'q',
+        'q': 'R',
+        '.': 'y',
+        'i': 'S',
+        'x': 'C',
+        'w': 'c',
+        '\'': 'Z',
+        'o': 'w',
+        'z': 'W',
+        '[': 'x',
+        ']': 'j',
+        '/': 'h',
+        '&': '/',
+        '+': '%',
+        '-': '-',
+        '0': '?',
+        '1': '№',
+        '3': '„',
+        '4': '“',
+        '5': ':',
+        '7': ',',
+        '8': '.',
+        '9': ';',
+        '=': '!',
+        '`': ')',
+        '~': '(',
+        '2': '—',
+        '!': '1',
+        '@': '2',
+        '#': '3',
+        '$': '4',
+        '%': '5',
+        '^': '6',
+        '*': '7',
+        '(': '8',
+        ')': '9',
+        '_': '0'
+    };
+    ////////enKB/// ruKB//////
+
+
     const detectLangOnTextareaInput = () => {
         textarea.addEventListener('input', () => {
             const val = textarea.value;
             let lines = val.split('\n');
             const text = detectLang(lines);
-            if(text === 'ge') {
+            if (text === 'ge') {
                 removeSelectionOnLeftSide();
                 leftBtns[0].classList.add('active');
             }
 
-            if(text === 'en') {
+            if (text === 'en') {
                 removeSelectionOnLeftSide();
                 leftBtns[1].classList.add('active');
             }
 
-            if(text === 'ParliamentStandart') {
+            if (text === 'ParliamentStandart') {
                 removeSelectionOnLeftSide();
                 leftBtns[2].classList.add('active');
             }
 
-            if(text === 'asomtavruli') {
+            if (text === 'asomtavruli') {
                 removeSelectionOnLeftSide();
                 leftBtns[3].classList.add('active');
             }
 
-            if(text === 'unknown') {
+            if (text === 'unknown') {
                 removeSelectionOnLeftSide();
-               // leftBtns[0].classList.add('active');
+                // leftBtns[0].classList.add('active');
             }
-    
+
         });
     }
 
     const detectLangOnTextarea = () => {
-            const val = textarea.value;
-            let lines = val.split('\n');
-            const text = detectLang(lines);
-            if(text === 'ge') {
-                removeSelectionOnLeftSide();
-                leftBtns[0].classList.add('active');
-            }
+        const val = textarea.value;
+        let lines = val.split('\n');
+        const text = detectLang(lines);
+        if (text === 'ge') {
+            removeSelectionOnLeftSide();
+            leftBtns[0].classList.add('active');
+        }
 
-            if(text === 'en') {
-                removeSelectionOnLeftSide();
-                leftBtns[1].classList.add('active');
-            }
+        if (text === 'en') {
+            removeSelectionOnLeftSide();
+            leftBtns[1].classList.add('active');
+        }
 
-            if(text === 'ParliamentStandart') {
-                removeSelectionOnLeftSide();
-                leftBtns[2].classList.add('active');
-            }
+        if (text === 'ParliamentStandart') {
+            removeSelectionOnLeftSide();
+            leftBtns[2].classList.add('active');
+        }
 
-            if(text === 'asomtavruli') {
-                removeSelectionOnLeftSide();
-                leftBtns[3].classList.add('active');
-            }
+        if (text === 'asomtavruli') {
+            removeSelectionOnLeftSide();
+            leftBtns[3].classList.add('active');
+        }
 
-            if(text === 'unknown') {
-                removeSelectionOnLeftSide();
-                leftBtns[0].classList.add('active');
-            }
+        if (text === 'unknown') {
+            removeSelectionOnLeftSide();
+            leftBtns[0].classList.add('active');
+        }
     }
 
     detectLangOnTextareaInput();
@@ -785,6 +912,10 @@ document.addEventListener('DOMContentLoaded', (e) => {
         if (dataId === 'asomtavruli-ParliamentStandart') { obj = { ...objAsomtavruliParliament }; } // 12
 
 
+        if (dataId === 'en-rukb') { obj = { ...objEnRu }; } // 13
+        if (dataId === 'en-enkb') { obj = { ...objRuEn }; } // 14
+
+
         if (dataId === '') return;
         //const copyedObj = { ...obj };
         //console.log(text);
@@ -822,7 +953,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
     });
 
-    convert.addEventListener('contextmenu', function(e) {
+    convert.addEventListener('contextmenu', function (e) {
         e.preventDefault();
     });
 
