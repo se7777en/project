@@ -256,6 +256,12 @@ body {
     }
 }
 
+.wrapper__rukb,
+.wrapper__enkb {
+    font-size: 13px !important;
+    text-wrap: wrap;
+}
+
 .wrapper__btns .item.active {
     background-color: #f03163;
     transition: all .2s ease-in-out;
@@ -271,6 +277,16 @@ body {
     -webkit-user-select: none;
     user-select: none;
     -webkit-tap-highlight-color: transparent;
+}
+
+@media (max-width: 445px) {
+    .wrapper__rukb {
+        display: none !important;
+    }
+
+    .wrapper__enkb {
+        display: none !important;
+    }
 }
 
 /* .description__text:not(:last-child) {
