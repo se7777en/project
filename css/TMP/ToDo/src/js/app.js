@@ -5,6 +5,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     if (currentUrl.indexOf('tasktrackr.surge.sh') === -1) {
     if (currentUrl.indexOf('tasktrackr.surge.sh') === -1) {
 
+        
 
         const tasks = document.querySelector('.wrapper .tasks'),
             tasksCount = document.querySelector('.wrapper .created_num'),
