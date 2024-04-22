@@ -3,6 +3,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     e.preventDefault();
     const currentUrl = window.location.href;
     if (currentUrl.indexOf('tasktrackr.surge.sh') === -1) {
+    if (currentUrl.indexOf('tasktrackr.surge.sh') === -1) {
 
 
         const tasks = document.querySelector('.wrapper .tasks'),
@@ -224,5 +225,5 @@ window.addEventListener('DOMContentLoaded', (e) => {
         };
 
         restoreCheckboxState();
-    }
+    }}
 });
