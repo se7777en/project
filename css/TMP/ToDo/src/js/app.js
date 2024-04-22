@@ -163,7 +163,11 @@ window.addEventListener('DOMContentLoaded', (e) => {
         tasks.addEventListener('click', (event) => {
             const trashBtn = event.target.closest('.task__trash');
 
-            trashBtn.addEventListener('mousedown', function (e) {
+            trashBtn.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+            });
+    
+            trashBtn.addEventListener('mousedown', function(e) {
                 e.preventDefault();
             });
 
