@@ -90,7 +90,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     </div>
     <div class="task__item__descr ${textdecore}">${item.text}</div>
     <a class="task__trash trashdecore" href="#!">
-    <img src="./img/trash_2.svg" alt="trash">
+    <img class="trash" src="./img/trash_2.svg" alt="trash">
     </a>
     <span class="task__item-date ${textdecore}">${date}</span>
     </div>`;
@@ -163,13 +163,13 @@ window.addEventListener('DOMContentLoaded', (e) => {
         tasks.addEventListener('click', (event) => {
             const trashBtn = event.target.closest('.task__trash');
 
-            trashBtn.addEventListener('contextmenu', function(e) {
-                e.preventDefault();
-            });
+            // trashBtn.addEventListener('contextmenu', function(e) {
+            //     e.preventDefault();
+            // });
     
-            trashBtn.addEventListener('mousedown', function(e) {
-                e.preventDefault();
-            });
+            // trashBtn.addEventListener('mousedown', function(e) {
+            //     e.preventDefault();
+            // });
 
             if (trashBtn) {
                 let trashParent = trashBtn.closest('.task__item');
