@@ -356,14 +356,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 .task__trash img {
+    /* pointer-events: none; */
     -webkit-user-drag: none;
     -webkit-user-select: none;
     user-select: none;
     -webkit-tap-highlight-color: transparent;
-    pointer-events: none;
 }
 
 

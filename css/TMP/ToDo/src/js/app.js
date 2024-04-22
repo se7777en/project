@@ -163,6 +163,10 @@ window.addEventListener('DOMContentLoaded', (e) => {
         tasks.addEventListener('click', (event) => {
             const trashBtn = event.target.closest('.task__trash');
 
+            trashBtn.addEventListener('mousedown', function (e) {
+                e.preventDefault();
+            });
+
             if (trashBtn) {
                 let trashParent = trashBtn.closest('.task__item');
                 let parentId = trashParent.dataset.id;
