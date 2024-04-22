@@ -356,12 +356,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
 
+.task__trash img {
     -webkit-user-drag: none;
     -webkit-user-select: none;
     user-select: none;
     -webkit-tap-highlight-color: transparent;
+    /* pointer-events: none; */
 }
+
+
 
 .task__item {
     min-height: 72px;
