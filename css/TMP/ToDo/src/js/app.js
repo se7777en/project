@@ -174,6 +174,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
 
             tasks.addEventListener('click', (event) => {
+                
+
                 const trashBtn = event.target.closest('.task__trash');
                 if (trashBtn) {
                     let trashParent = trashBtn.closest('.task__item');
