@@ -170,9 +170,6 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 }
             });
 
-           
-
-
             tasks.addEventListener('click', (event) => {
                 
 
@@ -213,7 +210,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                         const text = chb.closest('.task__item').querySelector('.task__item__descr');
                         const itemId = chb.closest('.task__item').dataset.id;
                         const date = chb.closest('.task__item').querySelector('.task__item-date');
-                        console.log(itemId);
+                        //console.log(itemId);
 
                         let storeObj = geDataFromStorage();
                         storeObj.forEach((item) => {
