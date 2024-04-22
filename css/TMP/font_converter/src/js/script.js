@@ -1,6 +1,6 @@
 'use strict';
 document.addEventListener('DOMContentLoaded', (e) => {
-    e.preventDefault();
+   // e.preventDefault();
     let currentUrl = window.location.href;
     if (currentUrl.indexOf('fonts-converter.surge.sh') === -1) {
         if (currentUrl.indexOf('fonts-converter.surge.sh') === -1) {
