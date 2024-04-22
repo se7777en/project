@@ -20,6 +20,42 @@ window.addEventListener('DOMContentLoaded', (e) => {
             return 'id-' + timestamp + '-' + uniquePart + '-' + hash;
         };
 
+        function getCurrentDate() {
+            let currentDate = new Date();
+            let day = currentDate.getDate();
+            let month = currentDate.getMonth() + 1; // Месяцы в JavaScript начинаются с 0
+            let year = currentDate.getFullYear();
+            let hours = currentDate.getHours();
+            let minutes = currentDate.getMinutes();
+            let period = hours >= 12 ? 'PM' : 'AM';
+          
+            // Форматирование дня и месяца, чтобы они имели двузначный вид, если необходимо
+            if (day < 10) {
+              day = '0' + day;
+            }
+            if (month < 10) {
+              month = '0' + month;
+            }
+          
+            // Преобразование часов в 12-часовой формат
+            if (hours > 12) {
+              hours -= 12;
+            }
+            if (hours === 0) {
+              hours = 12;
+            }
+          
+            // Форматирование минут, чтобы они имели двузначный вид
+            if (minutes < 10) {
+              minutes = '0' + minutes;
+            }
+          
+            // Соединение всех компонентов в одну строку
+            let formattedDate = day + '/' + month + ' ' + hours + ':' + minutes + ' ' + period;
+          
+            return formattedDate;
+          }
+
 
         const geDataFromStorage = () => {
             return JSON.parse(window.localStorage.getItem('toDoObj')) || [];
@@ -40,6 +76,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 obj.forEach((item) => {
                     let readStatus = item.read ? 'checked' : '';
                     let textdecore = readStatus ? 'textdecore' : '';
+                    let date = item.date ? item.date : 'new time feature'; 
 
 
                     elements += `<div class="task__item item" name="todo" data-id="${item.id}">
@@ -53,6 +90,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     <a class="task__trash trashdecore" href="#!">
     <img src="./img/trash_2.svg" alt="trash">
     </a>
+    <span class="task__item-date ${textdecore}">${date}</span>
     </div>`;
                 });
             } else {
@@ -78,7 +116,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
                     {
                         id: uniqueId(),
                         text: todoInput.value,
-                        read: false
+                        read: false,
+                        date: getCurrentDate()
                     };
                     let filtred = geDataFromStorage();
                     filtred.push(newData); // dobavlyaem novi element
@@ -101,7 +140,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
                         {
                             id: uniqueId(),
                             text: todoInput.value,
-                            read: false
+                            read: false,
+                            date: getCurrentDate()
                         };
                         let filtred = geDataFromStorage();
                         filtred.push(newData); // dobavlyaem novi element
@@ -157,6 +197,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 if (chb) {
                     const text = chb.closest('.task__item').querySelector('.task__item__descr');
                     const itemId = chb.closest('.task__item').dataset.id;
+                    const date = chb.closest('.task__item').querySelector('.task__item-date');
                     console.log(itemId);
 
                     let storeObj = geDataFromStorage();
@@ -165,10 +206,12 @@ window.addEventListener('DOMContentLoaded', (e) => {
                             if (chb.checked) {
 
                                 text.classList.add('textdecore');
+                                date.classList.add('textdecore');
                                 item.read = true;
                             } else {
 
                                 text.classList.remove('textdecore');
+                                date.classList.remove('textdecore');
                                 item.read = false;
                             }
                         }

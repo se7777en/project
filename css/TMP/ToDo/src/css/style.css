@@ -282,6 +282,24 @@ body {
     background-color: #262626;
     border-radius: 8px;
     border: 1px solid #333333;
+    position: relative;
+}
+
+.task__item-date {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 5px;
+    color: #F2F2F2;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.task__item-date.textdecore {
+    color: #808080;
+    text-decoration: line-through;
 }
 
 .task__item__descr {
