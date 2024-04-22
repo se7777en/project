@@ -360,7 +360,7 @@ body {
     -webkit-user-drag: none;
     -webkit-user-select: none;
     user-select: none;
-    -webkit-tap-highlight-color: transparent; 
+    -webkit-tap-highlight-color: transparent;
 }
 
 .task__trash img {
@@ -379,4 +379,14 @@ body {
 
 .tasks .item:not(:last-child) {
     margin-bottom: 12px;
+}
+
+@media (max-width: 768px) {
+    .task__trash.trashdecore img:hover {
+        all: unset;
+    }
+
+    .task__trash.trashdecore img:active {
+        filter: invert(47%) sepia(84%) saturate(1024%) hue-rotate(325deg) brightness(94%) contrast(87%);
+    }
 }
