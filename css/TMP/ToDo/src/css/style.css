@@ -295,7 +295,13 @@ body {
     -webkit-user-select: none;
     user-select: none;
     -webkit-tap-highlight-color: transparent;
+    cursor: zoom-in;
 }
+
+.task__item-date:active {
+    scale: 1.3;
+}
+
 
 .task__item-date.textdecore {
     color: #808080;
