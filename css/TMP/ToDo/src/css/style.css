@@ -348,8 +348,13 @@ body {
 .task__chb {
     display: flex;
     justify-content: center;
+    align-items: center;
+}
 
-
+.task__chb label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .task__trash {
@@ -374,7 +379,8 @@ body {
 
 
 .task__item {
-    min-height: 72px;
+    min-height: 40px;
+    padding: 20px 0px 20px 0px;
 }
 
 .tasks .item:not(:last-child) {
