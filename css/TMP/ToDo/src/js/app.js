@@ -113,6 +113,11 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
 
             /////////////2)///////////////
+
+            addItem.addEventListener('contextmenu', (e)=>{
+                e.preventDefault();
+            });
+
             const addNewItem = () => {
                 addItem.addEventListener('click', async () => {
 
