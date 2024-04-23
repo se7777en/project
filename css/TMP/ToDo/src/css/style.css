@@ -395,4 +395,12 @@ body {
     .task__trash.trashdecore img:active {
         filter: invert(47%) sepia(84%) saturate(1024%) hue-rotate(325deg) brightness(94%) contrast(87%);
     }
+
+    .btn-task:hover {
+        background-color: #1E6F9F;
+    }
+
+    .btn-task:active {
+        background-color: #4EA8DE;
+    }
 }
