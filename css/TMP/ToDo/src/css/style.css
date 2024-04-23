@@ -245,8 +245,8 @@ body {
     position: absolute;
     width: 9px;
     height: 7px;
-    top: 50%;
-    left: 48%;
+    top: 53%;
+    left: 50%;
     transform: translate(-50%, -50%);
     background: url('../img/checked.svg') 0 0 no-repeat;
     /* transition: all .2s ease; */
