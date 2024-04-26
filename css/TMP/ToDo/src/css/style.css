@@ -286,7 +286,7 @@ body {
 }
 
 .task__item:active {
-    transform: scale(.990) !important;
+    transform: scale(.995) !important;
     transition: all .1s ease-out;
 }
 
@@ -413,5 +413,10 @@ body {
 
     .btn-task:active {
         background-color: #4EA8DE;
+    }
+
+    .task__item:active {
+        transform: scale(.990) !important;
+        transition: all .1s ease-out;
     }
 }
