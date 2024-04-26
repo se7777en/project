@@ -286,7 +286,7 @@ body {
 }
 
 .task__item:active {
-    transform: scale(.995) !important;
+    transform: scale(.990) !important;
     transition: all .2s ease-out;
 }
 
