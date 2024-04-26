@@ -304,9 +304,9 @@ body {
     cursor: zoom-in;
 }
 
-.task__item-date:active {
+/* .task__item-date:active {
     scale: 1.05;
-}
+} */
 
 
 .task__item-date.textdecore {
