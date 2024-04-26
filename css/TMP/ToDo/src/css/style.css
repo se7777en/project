@@ -285,6 +285,12 @@ body {
     position: relative;
 }
 
+.task__item:active {
+    transform: scale(.995) !important;
+}
+
+
+
 .task__item-date {
     position: absolute;
     top: 5px;
