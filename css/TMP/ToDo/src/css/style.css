@@ -286,8 +286,8 @@ body {
 }
 
 .task__item:active {
-    transform: scale(.990) !important;
-    transition: all .2s ease-out;
+    transform: scale(.995) !important;
+    transition: all .1s ease-out;
 }
 
 
