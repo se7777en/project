@@ -76,7 +76,7 @@ body {
     margin-bottom: 15px;
     position: relative;
     width: 100%;
-    height: calc(100vh - 165px);
+    height: 250px;
 }
 
 .wrapper__text .copy {
