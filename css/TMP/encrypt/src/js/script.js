@@ -59,8 +59,8 @@ encrypt.addEventListener('contextmenu', (e) => {
 
 encrypt.addEventListener('click', (e) => {
     e.preventDefault();
-    const pass = document.querySelector('.wrapper__footer input').value;
-    document.querySelector('.wrapper__footer input').value = '';
+    const pass = document.querySelector('.wrapper__inputs input').value;
+    document.querySelector('.wrapper__inputs input').value = '';
     const text = textArea.value;
     if (text.length > 0) {
         textArea.value = '';
@@ -76,8 +76,8 @@ decrypt.addEventListener('contextmenu', (e) => {
 
 decrypt.addEventListener('click', (e) => {
     e.preventDefault();
-    const pass = document.querySelector('.wrapper__footer input').value;
-    document.querySelector('.wrapper__footer input').value = '';
+    const pass = document.querySelector('.wrapper__inputs input').value;
+    document.querySelector('.wrapper__inputs input').value = '';
     const text = textArea.value;
     if (text.length > 0) {
         textArea.value = '';

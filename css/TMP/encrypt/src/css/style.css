@@ -40,12 +40,7 @@ li {
 body {
     font-family: "Montserrat", sans-serif;
     font-size: 18px;
-    /* display: flex;
-    flex-direction: column;
-    min-height: 100vh; */
     color: #000;
-
-
 }
 
 .container {
@@ -59,13 +54,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
-/* .wrapper {
-    margin: 20px 0px 15px 0px;
-} */
 
-.wrapper__inner {
-    padding: 5px;
-}
 
 .wrapper__title {
     /* 1vw eto 1% ot vidimoi oblasti wiuporta  */
@@ -86,6 +75,8 @@ body {
 .wrapper__text {
     margin-bottom: 15px;
     position: relative;
+    width: 100%;
+    height: calc(100vh - 165px);
 }
 
 .wrapper__text .copy {
@@ -108,9 +99,9 @@ body {
 
 .wrapper__text textarea {
     width: 100%;
-    /* height: 250px; */
-    /* height: calc(100vh - 150px); */
-    height: 60vh;
+    height: 100%;
+    /* height: calc(100vh - 170px); */
+    /* height: 100%; */
     border: 1px solid #d2d2d2;
     resize: none;
     padding: 10px 22px 10px 10px;
@@ -119,13 +110,6 @@ body {
     font-size: 13px;
     font-family: inherit;
 }
-
-/* .wrapper__text textarea::placeholder {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    text-wrap: nowrap;
-    white-space: nowrap;
-} */
 
 /* /////Scroll/////// */
 .wrapper__text textarea::-webkit-scrollbar {
@@ -140,21 +124,21 @@ body {
 /* /////Scroll/////// */
 
 .password {
-    padding: 5px;
+    padding: 6px;
     font-size: 12px;
     max-width: 35%;
     border: 1px solid #d2d2d2;
     border-radius: 2px;
 }
 
-.wrapper__footer {
+.wrapper__inputs {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
 }
 
-.wrapper__footer .password {
+.wrapper__inputs .password {
     letter-spacing: 1px;
 }
 
