@@ -52,14 +52,13 @@ body {
     max-width: 870px;
     padding: 0 15px;
     margin: 0 auto;
+}
 
+.items {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-
-
 }
-
 /* .wrapper {
     margin: 20px 0px 15px 0px;
 } */
