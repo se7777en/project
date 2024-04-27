@@ -55,7 +55,7 @@ body {
 .items {
     display: flex;
     flex-direction: column;
-    height: -webkit-fill-available;
+    min-height: 100dvh;
 }
 
 
