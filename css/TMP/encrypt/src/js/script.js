@@ -2,7 +2,36 @@
 
 const textArea = document.querySelector('.textarea'),
     encrypt = document.querySelector('.wrapper__btns .encrypt'),
-    decrypt = document.querySelector('.wrapper__btns .decrypt');
+    decrypt = document.querySelector('.wrapper__btns .decrypt'),
+    copyWraper = document.querySelector('.wrapper__text .copy'),
+    copyIcon = document.querySelector('.wrapper__text .copy i');
+
+
+
+copyWraper.addEventListener('click', () => {
+    copyIcon.classList.remove('fa-copy');
+    copyIcon.classList.add('fa-check');
+    copyWraper.classList.add('colored');
+    const areatext = textArea.value;
+    if (areatext.length > 0) {
+        navigator.clipboard.writeText(areatext);
+        setTimeout(() => {
+            copyIcon.classList.add('fa-copy');
+            copyIcon.classList.remove('fa-check');
+            copyWraper.classList.remove('colored');
+        }, 1000);
+    }
+});
+
+textArea.addEventListener('input', () => {
+    if(textArea.value.length > 0) {
+        copyWraper.classList.add('show');
+    }else {
+        copyWraper.classList.remove('show');
+    }
+});
+
+
 
 function encryptPassword(password, textToEncrypt) {
     // Используем AES для шифрования пароля
@@ -59,7 +88,7 @@ decrypt.addEventListener('click', (e) => {
             textArea.placeholder = 'Enter the correct password';
         }
 
-      //  console.log(decrypttext.length);
+        //  console.log(decrypttext.length);
 
     }
 
