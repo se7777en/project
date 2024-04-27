@@ -61,7 +61,7 @@ body {
 
 .wrapper__title {
     /* 1vw eto 1% ot vidimoi oblasti wiuporta  */
-    font-size: clamp(15px, 5.3vw, 32px);
+    font-size: clamp(23px, 7.5vw, 32px);
     font-weight: 500;
     margin-bottom: 15px;
     text-align: center;
