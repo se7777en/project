@@ -1,0 +1,144 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+}
+
+.container {
+    max-width: 870px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.wrapper {
+    margin: 20px 0px 15px 0px;
+}
+
+.wrapper__inner {
+    padding: 5px;
+}
+
+.wrapper__title {
+    /* 1vw eto 1% ot vidimoi oblasti wiuporta  */
+    font-size: clamp(17px, 4.1vw, 30px); 
+    font-weight: 500;
+    margin-bottom: 15px;
+    text-align: center;
+
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.wrapper__text {
+    margin-bottom: 15px;
+}
+
+.wrapper__text textarea {
+    width: 100%;
+    /* height: 250px; */
+    height: calc(100vh - 150px);
+    border: 1px solid #d2d2d2;
+    resize: none;
+    padding: 10px;
+    border-radius: 4px;
+    color: #000;
+    font-size: 18px;
+    font-family: inherit;
+}
+
+/* /////Scroll/////// */
+.wrapper__text textarea::-webkit-scrollbar {
+    width: 5px;
+}
+
+.wrapper__text textarea::-webkit-scrollbar-thumb {
+    background-color: #d2d2d2;
+    border-radius: 2px;
+}
+
+/* /////Scroll/////// */
+
+.password {
+    padding: 5px;
+    font-size: 12px;
+    max-width: 35%;
+    border: 1px solid #d2d2d2;
+     /* border-radius: 4px; */
+}
+
+.wrapper__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.wrapper__footer .password {
+    letter-spacing: 1px;
+}
+
+.wrapper__btns {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.wrapper__btns a {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 4px;
+    background-color: tomato;
+    color: #fff;
+    font-size: 13px;
+
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.wrapper__btns a:active {
+    background-color: rgb(180, 68, 48);
+    transition: all .3ss ease-in-out;
+    scale: 1.05;
+}
