@@ -97,22 +97,4 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
         // console.log(textArea.value);
     });
-
-    // Функция, которая блокирует изменение ориентации экрана
-    function preventOrientationChange() {
-        // Установка текущей ориентации экрана как блокированной
-        var currentOrientation = window.orientation;
-
-        // Обработчик события изменения ориентации
-        window.addEventListener("orientationchange", function () {
-            // Если ориентация экрана изменилась, возвращаем его к предыдущей ориентации
-            if (window.orientation !== currentOrientation) {
-                window.orientation = currentOrientation;
-            }
-        });
-    }
-
-    // Вызов функции для блокировки изменения ориентации экрана
-    preventOrientationChange();
-
 });
