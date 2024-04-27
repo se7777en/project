@@ -41,6 +41,7 @@ body {
     font-family: "Montserrat", sans-serif;
     font-size: 18px;
     color: #000;
+
 }
 
 .container {
@@ -49,10 +50,14 @@ body {
     margin: 0 auto;
 }
 
-.items {
+.wrapper {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+}
+
+.items {
+ 
 }
 
 
