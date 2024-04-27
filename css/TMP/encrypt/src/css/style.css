@@ -90,6 +90,11 @@ body {
     cursor: pointer;
     display: none;
     color: #bababa;
+
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .wrapper__text .copy.show {
