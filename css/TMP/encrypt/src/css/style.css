@@ -40,17 +40,28 @@ li {
 body {
     font-family: "Montserrat", sans-serif;
     font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+
 }
 
 .container {
     max-width: 870px;
     padding: 0 15px;
     margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+
 }
 
-.wrapper {
+/* .wrapper {
     margin: 20px 0px 15px 0px;
-}
+} */
 
 .wrapper__inner {
     padding: 5px;
@@ -62,61 +73,13 @@ body {
     font-weight: 500;
     margin-bottom: 15px;
     text-align: center;
+    padding-top: 20px;
 
     -webkit-user-drag: none;
     -webkit-user-select: none;
     user-select: none;
     -webkit-tap-highlight-color: transparent;
 }
-/* 
-@media(max-width: 540px) {
-    .wrapper__title {
-     font-size: 28px;
-    }
- }
-
- @media(max-width: 510px) {
-    .wrapper__title {
-     font-size: 26px;
-    }
- }
-
- @media(max-width: 480px) {
-    .wrapper__title {
-     font-size: 24px;
-    }
- }
-
- @media(max-width: 450px) {
-    .wrapper__title {
-     font-size: 22px;
-    }
- }
-
- @media(max-width: 420px) {
-    .wrapper__title {
-     font-size: 20px;
-    }
- }
-
- @media(max-width: 390px) {
-    .wrapper__title {
-     font-size: 19px;
-    }
- }
-
- @media(max-width: 360px) {
-    .wrapper__title {
-     font-size: 17px;
-    }
- }
-
- 
- @media(max-width: 330px) {
-    .wrapper__title {
-     font-size: 15px;
-    }
- } */
 
 
 
@@ -192,4 +155,27 @@ body {
     background-color: rgb(180, 68, 48);
     transition: all .3ss ease-in-out;
     scale: 1.05;
+}
+
+
+.wrapper__footer {
+    margin-top: auto;
+    font-size: 10px;
+    text-align: left;
+    padding-bottom: 10px;
+    color: inherit;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.wrapper__footer-text {
+    margin-bottom: 2px;
+}
+
+.wrapper__footer-about a:active,
+.wrapper__footer-about a:focus,
+.wrapper__footer-about a:hover {
+    text-decoration: underline;
 }
