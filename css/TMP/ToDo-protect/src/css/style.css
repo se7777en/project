@@ -504,8 +504,8 @@ scale: 1.04;
 
 body .box {
     position: fixed;
-    width: 100dvw;
-    height: 100dvh;
+    width: 100vw;
+    height: 100vh;
     top: 0;
     left: 0;
     z-index: 5;
