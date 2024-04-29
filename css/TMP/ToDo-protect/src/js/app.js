@@ -11,7 +11,12 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 tasksCount = document.querySelector('.wrapper .created_num'),
                 complatedNum = document.querySelector('.wrapper .completed__num'),
                 addItem = document.querySelector('.wrapper .task__btn'),
-                todoInput = document.querySelector('.wrapper .task__input');
+                todoInput = document.querySelector('.wrapper .task__input'),
+
+                modalBox = document.querySelector('.box'),
+                modal = document.querySelector('.box .modal'),
+            closeIcon = document.querySelector('.box .modal__close'),
+            body = document.querySelector('BODY');
 
 
 
@@ -122,7 +127,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
             /////////////2)///////////////
 
-            addItem.addEventListener('contextmenu', (e)=>{
+            addItem.addEventListener('contextmenu', (e) => {
                 e.preventDefault();
             });
 
@@ -178,13 +183,13 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
 
             tasks.addEventListener('contextmenu', (event) => {
-                if(event.target.closest('.trashdecore')){
+                if (event.target.closest('.trashdecore')) {
                     event.preventDefault();
                 }
             });
 
             tasks.addEventListener('click', (event) => {
-                
+
 
                 const trashBtn = event.target.closest('.task__trash');
                 if (trashBtn) {
@@ -198,7 +203,27 @@ window.addEventListener('DOMContentLoaded', (e) => {
                     calcItems();
                 }
 
+
+                ////////showmoda/////////
+                let lockIcon = event.target.closest('.secure');
+                if (lockIcon) {
+                    modal.classList.add('active');
+                    modalBox.classList.add('unlock');
+                    body.classList.add('lock');
+                    
+                }
+                ////////showmodal////////
+
             });
+
+            //////////2.1/////////////
+            closeIcon.addEventListener('click', () => {
+                modalBox.classList.remove('unlock');
+                modal.classList.remove('active');
+                body.classList.remove('lock');
+            });
+
+
 
             ///////3)//////////////
             const calcItems = () => {
