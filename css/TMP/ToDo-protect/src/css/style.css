@@ -365,7 +365,8 @@ body {
 
 .secure.trashdecore img:active {
     transition: filter 0.1s ease;
-    filter: invert(15%) sepia(84%) saturate(1024%) hue-rotate(325deg) brightness(80%) contrast(87%);
+    /* filter: invert(15%) sepia(84%) saturate(1024%) hue-rotate(325deg) brightness(80%) contrast(87%); */
+scale: 1.04;
 }
 
 /* .secure.trashdecore img:hover {
@@ -514,7 +515,7 @@ body .box {
 
 
 .active {
-    bottom: 20px !important;
+    bottom: 2% !important;
     transition: all .0055s ease-in-out;  
     
 }
