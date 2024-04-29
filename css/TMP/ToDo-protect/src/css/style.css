@@ -516,7 +516,7 @@ body .box {
 
 .active {
     bottom: 2% !important;
-    transition: all .0055s ease-in-out;  
+    /* transition: all .0055s ease-in-out;   */
     
 }
 
