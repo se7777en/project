@@ -498,7 +498,7 @@ body {
 }
 
 .unlock {
-    scale: 1 !important;
+    display: block !important;
  }
 
 body .box {
@@ -509,7 +509,7 @@ body .box {
     left: 0;
     z-index: 5;
     background-color: rgba(0, 0, 0, .4);
-    scale: 0;
+    display: none;
 }
 
 
@@ -521,7 +521,7 @@ body .box {
 
 .modal {
     position: fixed;
-    bottom: 300px;
+    bottom: -100%;
     left: 50%;
     transform: translateX(-50%);
     width: 250px;
