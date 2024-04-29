@@ -462,10 +462,10 @@ scale: 1.04;
         background-color: #4EA8DE;
     }
 
-    .task__item:active {
+    /* .task__item:active {
         transform: scale(.990);
         transition: all .1s ease-in;
-    }
+    } */
 
 }
 
@@ -587,6 +587,8 @@ body .box {
     border-radius: 4px;
     cursor: pointer;
     margin-bottom: 5px;
+    font-size: 16px;
+    font-family: inherit;
 }
 
 .modal__message {
