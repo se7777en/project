@@ -224,6 +224,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
             let itemParentId = ''; // iskomi id
             let searchedItemArr = ''; // iskomi obiekt
             let itemParent = ''; // roditelski cliknuti item
+
+            let secured = false;
             tasks.addEventListener('click', (event) => {
                 const trashBtn = event.target.closest('.task__trash');
                 if (trashBtn) {
@@ -261,6 +263,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                     //setDataToStorage(newArr); newArr - object arr
 
                     if (!searchedItemArr.lock) {
+                        secured = false;
                         console.log('unlock');
                         modal.classList.add('active'); // otobrajaem modalnoe okno pri lock
                         modalBox.classList.add('unlock');
@@ -272,6 +275,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                         modalBtn.textContent = 'Set Password';
                         passInput.placeholder = 'Enter Password';
                     } else {
+                        secured = true;
                         console.log('lock');
                         modal.classList.add('active'); // otobrajaem modalnoe okno pri unlock
                         modalBox.classList.add('unlock');
@@ -300,32 +304,59 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 const modalPassConfirm = document.querySelector('.box .pass__confirm').value;
 
 
-                if (modalPass === modalPassConfirm && modalPass.length > 0 && modalPassConfirm.length > 0) {
-                    const store = geDataFromStorage();
+                if(!secured) {
+                    console.log('not secured');
+                    if (modalPass === modalPassConfirm && modalPass.length > 0 && modalPassConfirm.length > 0) {
+                      
+                        const store = geDataFromStorage();
+                        store.forEach((item) => {
+                            if (item.id === itemParentId && !item.lock) {
+                                item.text = encryptPassword(modalPass, item.text);
+                                item.date = encryptPassword(modalPass, item.date);
+                                item.lock = true;
+                                return;
+                            }
+                        });
+                        // console.log(itemParentId);
+    
+                        setDataToStorage(store);
+                        //itemParent.classList.add('jj');
+                        wrightItemsToPage(geDataFromStorage(), itemParentId);
+    
+    
+                        // const itemImage = itemParent.querySelector('.secure__img');
+                        // console.log(itemParent);
+    
+                        // replaceImage(true, itemImage);
+    
+    
+                    } else {
+                        modalMessage.textContent = 'Passwords do not meet minimum requirements';
+                    }
+                }
 
-                    store.forEach((item) => {
-                        if (item.id === itemParentId && !item.lock) {
-                            item.text = encryptPassword(modalPass, item.text);
-                            item.date = encryptPassword(modalPass, item.date);
-                            item.lock = true;
-                            return;
-                        }
-                    });
-                    // console.log(itemParentId);
-
-                    setDataToStorage(store);
-                    //itemParent.classList.add('jj');
-                    wrightItemsToPage(geDataFromStorage(), itemParentId);
+                if(secured) {
+                  // console.log(modalPass);
 
 
-                    // const itemImage = itemParent.querySelector('.secure__img');
-                    // console.log(itemParent);
+                   const store = geDataFromStorage();
+                        store.forEach((item) => {
+                            if (item.id === itemParentId && item.lock) {
+                               
+                                item.date = decryptText(modalPass, item.date);
+                                item.text = decryptText(modalPass, item.text);
+                               
+                                item.lock = false;
+                                return;
+                            }
+                        });
+                        // console.log(itemParentId);
+                       
+    
+                        setDataToStorage(store);
+                        //itemParent.classList.add('jj');
+                        wrightItemsToPage(geDataFromStorage(), itemParentId);
 
-                    // replaceImage(true, itemImage);
-
-
-                } else {
-                    modalMessage.textContent = 'Passwords do not meet minimum requirements';
                 }
 
             });
