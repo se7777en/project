@@ -366,7 +366,7 @@ body {
 .secure.trashdecore img:active {
     transition: filter 0.1s ease;
     /* filter: invert(15%) sepia(84%) saturate(1024%) hue-rotate(325deg) brightness(80%) contrast(87%); */
-scale: 1.04;
+    scale: 1.04;
 }
 
 /* .secure.trashdecore img:hover {
@@ -500,7 +500,7 @@ scale: 1.04;
 
 .unlock {
     display: block !important;
- }
+}
 
 body .box {
     position: fixed;
@@ -517,7 +517,7 @@ body .box {
 .active {
     bottom: 2% !important;
     /* transition: all .0055s ease-in-out;   */
-    
+
 }
 
 .modal {
@@ -528,7 +528,7 @@ body .box {
     width: 250px;
     height: auto;
     border-radius: 4px;
-    background-color: rgba(51, 51, 51, 1); 
+    background-color: rgba(51, 51, 51, 1);
     box-shadow: 0 0.05rem 0.3rem #00000052;
 
     /* transform: translateY(-1px);
@@ -547,7 +547,7 @@ body .box {
     /* height: 100%; */
 }
 
-.modal__close{
+.modal__close {
     position: absolute;
     top: 4px;
     right: 2px;
@@ -577,7 +577,7 @@ body .box {
 */
 .modal .pass__confirm {
     margin-bottom: 15px;
-} 
+}
 
 .modal__btn {
     text-align: center;
@@ -609,6 +609,22 @@ body .box {
     color: #1E6F9F;
 }
 
-.old__pass {
-    display: none;
+.hide {
+    display: none !important;
 }
+
+.show {
+    display: block !important;
+}
+
+.locked {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 60px;
+    font-weight: 700;
+    color: #1A1A1A;
+}
+
