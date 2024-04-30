@@ -593,8 +593,9 @@ body .box {
 
 .modal__message {
     margin-bottom: 5px;
-    font-size: 10px;
+    font-size: 8px;
     color: tomato;
+    min-height: 11px;
 }
 
 .modal__btn:active {

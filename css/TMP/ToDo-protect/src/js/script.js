@@ -17,7 +17,14 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 modal = document.querySelector('.box .modal'),
                 closeIcon = document.querySelector('.box .modal__close'),
                 body = document.querySelector('BODY'),
-                modalBtn = document.querySelector('.box .modal__btn');
+                modalBtn = document.querySelector('.box .modal__btn'),
+
+                passconfirm = document.querySelector('.box .pass__confirm'),
+                modalMessage = document.querySelector('.box .modal__message'),
+                modalDescr = document.querySelector('.box .modal__descr'),
+
+                passInput = document.querySelector('.box .pass');
+
 
 
 
@@ -163,8 +170,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                             text: todoInput.value,
                             read: false,
                             date: getCurrentDate(),
-                            lock: false,
-                            hide: false
+                            lock: false
                         };
                         let filtred = geDataFromStorage();
                         filtred.push(newData); // dobavlyaem novi element
@@ -189,8 +195,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                                 text: todoInput.value,
                                 read: false,
                                 date: getCurrentDate(),
-                                lock: false,
-                                hide: false
+                                lock: false
                             };
                             let filtred = geDataFromStorage();
                             filtred.push(newData); // dobavlyaem novi element
@@ -214,17 +219,6 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 }
             });
 
-
-            // function replaceImage(isLocked, item) {
-            //     //const lockImg = document.querySelector('.wrapper .secure__img');
-            //     if (isLocked) {
-            //         console.log('true');
-            //         item.src = "./img/lock.svg"; // Путь к изображению при заблокированном состоянии
-            //     } else {
-            //         console.log('false');
-            //         item.src = "./img/unlock.svg"; // Путь к изображению при разблокированном состоянии
-            //     }
-            // }
 
 
             let itemParentId = ''; // iskomi id
@@ -266,16 +260,33 @@ window.addEventListener('DOMContentLoaded', (e) => {
                     // console.log(encryptPassword('123', searchedItemArr.text));
                     //setDataToStorage(newArr); newArr - object arr
 
-                    if (searchedItemArr.lock) {
-                        modal.classList.add('active');
+                    if (!searchedItemArr.lock) {
+                        console.log('unlock');
+                        modal.classList.add('active'); // otobrajaem modalnoe okno pri lock
                         modalBox.classList.add('unlock');
                         body.classList.add('lock');
+
+                        passconfirm.classList.remove('hide');
+                        modalMessage.classList.remove('hide');
+                        modalDescr.classList.remove('hide');
+                        modalBtn.textContent = 'Set Password';
+                        passInput.placeholder = 'Enter Password';
                     } else {
-                        modal.classList.add('active');
+                        console.log('lock');
+                        modal.classList.add('active'); // otobrajaem modalnoe okno pri unlock
                         modalBox.classList.add('unlock');
                         body.classList.add('lock');
-                        ///
+
+                        passconfirm.classList.add('hide');
+                        modalMessage.classList.add('hide');
+                        modalDescr.classList.add('hide');
+                        modalBtn.textContent = 'Enter Password';
+                        passInput.placeholder = '';
+
                     }
+
+
+
 
                 }
                 ////////showmodal////////
@@ -313,6 +324,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
                     // replaceImage(true, itemImage);
 
 
+                } else {
+                    modalMessage.textContent = 'Passwords do not meet minimum requirements';
                 }
 
             });
@@ -324,6 +337,11 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 modalBox.classList.remove('unlock');
                 modal.classList.remove('active');
                 body.classList.remove('lock');
+
+                passInput.value = '';
+                passconfirm.value = '';
+                modalMessage.textContent = '';
+
             });
 
 
