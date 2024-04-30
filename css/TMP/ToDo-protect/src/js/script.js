@@ -104,8 +104,9 @@ window.addEventListener('DOMContentLoaded', (e) => {
                         let textdecore = readStatus ? 'textdecore' : '';
                         let date = item.date ? item.date : 'new time feature';
 
-                        let hide = (item.id === id) ? 'hide' : '';
-                        let locked = (item.id === id) ? 'show' : '';
+                        let hide = item.lock ? 'hide' : '';
+                        let locked = item.lock ? 'show' : '';
+                        let icon = item.lock ? 'lock' : 'unlock';
 
 
 
@@ -124,7 +125,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     </a>
     
     <a class="secure trashdecore" href="#!">
-        <img class="secure__img" src="./img/unlock.svg" alt="secure">
+        <img class="secure__img" src="./img/${icon}.svg" alt="secure">
     </a>
 
 
@@ -214,14 +215,16 @@ window.addEventListener('DOMContentLoaded', (e) => {
             });
 
 
-            function replaceImage(isLocked) {
-                const lockImg = document.querySelector('.wrapper .secure__img');
-                if (isLocked) {
-                    lockImg.src = "./img/lock.svg"; // Путь к изображению при заблокированном состоянии
-                } else {
-                    lockImg.src = "./img/unlock.svg"; // Путь к изображению при разблокированном состоянии
-                }
-            }
+            // function replaceImage(isLocked, item) {
+            //     //const lockImg = document.querySelector('.wrapper .secure__img');
+            //     if (isLocked) {
+            //         console.log('true');
+            //         item.src = "./img/lock.svg"; // Путь к изображению при заблокированном состоянии
+            //     } else {
+            //         console.log('false');
+            //         item.src = "./img/unlock.svg"; // Путь к изображению при разблокированном состоянии
+            //     }
+            // }
 
 
             let itemParentId = ''; // iskomi id
@@ -302,7 +305,13 @@ window.addEventListener('DOMContentLoaded', (e) => {
                     setDataToStorage(store);
                     //itemParent.classList.add('jj');
                     wrightItemsToPage(geDataFromStorage(), itemParentId);
-                    replaceImage(true);
+
+
+                    // const itemImage = itemParent.querySelector('.secure__img');
+                    // console.log(itemParent);
+
+                    // replaceImage(true, itemImage);
+
 
                 }
 
