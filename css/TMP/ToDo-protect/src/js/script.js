@@ -105,7 +105,6 @@ window.addEventListener('DOMContentLoaded', (e) => {
                         let date = item.date ? item.date : 'new time feature';
 
                         let hide = (item.id === id) ? 'hide' : '';
-
                         let locked = (item.id === id) ? 'show' : '';
 
 
@@ -163,7 +162,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
                             text: todoInput.value,
                             read: false,
                             date: getCurrentDate(),
-                            lock: false
+                            lock: false,
+                            hide: false
                         };
                         let filtred = geDataFromStorage();
                         filtred.push(newData); // dobavlyaem novi element
@@ -188,7 +188,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
                                 text: todoInput.value,
                                 read: false,
                                 date: getCurrentDate(),
-                                lock: false
+                                lock: false,
+                                hide: false
                             };
                             let filtred = geDataFromStorage();
                             filtred.push(newData); // dobavlyaem novi element
