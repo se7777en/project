@@ -15,8 +15,10 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
                 modalBox = document.querySelector('.box'),
                 modal = document.querySelector('.box .modal'),
-            closeIcon = document.querySelector('.box .modal__close'),
-            body = document.querySelector('BODY');
+                closeIcon = document.querySelector('.box .modal__close'),
+                body = document.querySelector('BODY'),
+                modalBtn = document.querySelector('.box .modal__btn');
+
 
 
             function encryptPassword(password, textToEncrypt) {
@@ -92,7 +94,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
             let objfromStorage = geDataFromStorage();
 
-            const wrightItemsToPage = (obj) => {
+            const wrightItemsToPage = (obj, id = '') => {
                 // console.log(obj.length);
                 let elements = '';
                 if (obj.length !== 0) {
@@ -102,15 +104,20 @@ window.addEventListener('DOMContentLoaded', (e) => {
                         let textdecore = readStatus ? 'textdecore' : '';
                         let date = item.date ? item.date : 'new time feature';
 
+                        let hide = (item.id === id) ? 'hide' : '';
+
+                        let locked = (item.id === id) ? 'show' : '';
+
+
 
                         elements += `<div class="task__item item" name="todo" data-id="${item.id}">
-    <div class="task__chb">
+    <div class="task__chb ${hide}">
         <label>
             <input type="checkbox" name="chb" class="realchb" ${readStatus}>
             <span class="castomchb"></span>
         </label>
     </div>
-    <div class="task__item__descr ${textdecore}">${item.text}</div>
+    <div class="task__item__descr ${textdecore} ${hide}">${item.text}</div>
    
     
     <a class="task__trash trashdecore" href="#!">
@@ -118,11 +125,12 @@ window.addEventListener('DOMContentLoaded', (e) => {
     </a>
     
     <a class="secure trashdecore" href="#!">
-        <img class="trash" src="./img/lock.svg" alt="secure">
+        <img class="secure__img" src="./img/unlock.svg" alt="secure">
     </a>
 
 
-    <span class="task__item-date ${textdecore}">${date}</span>
+    <span class="task__item-date ${textdecore} ${hide}">${date}</span>
+    <div class="locked ${locked}">locked</div>
     </div>`;
                     });
                 } else {
@@ -197,16 +205,28 @@ window.addEventListener('DOMContentLoaded', (e) => {
             addNewItemFromKeyboard();
 
 
-            
+
             tasks.addEventListener('contextmenu', (event) => {
                 if (event.target.closest('.trashdecore')) {
                     event.preventDefault();
                 }
             });
 
+
+            function replaceImage(isLocked) {
+                const lockImg = document.querySelector('.wrapper .secure__img');
+                if (isLocked) {
+                    lockImg.src = "./img/lock.svg"; // Путь к изображению при заблокированном состоянии
+                } else {
+                    lockImg.src = "./img/unlock.svg"; // Путь к изображению при разблокированном состоянии
+                }
+            }
+
+
+            let itemParentId = ''; // iskomi id
+            let searchedItemArr = ''; // iskomi obiekt
+            let itemParent = ''; // roditelski cliknuti item
             tasks.addEventListener('click', (event) => {
-
-
                 const trashBtn = event.target.closest('.task__trash');
                 if (trashBtn) {
                     let trashParent = trashBtn.closest('.task__item');
@@ -223,34 +243,71 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 ////////showmoda/////////
                 let lockIcon = event.target.closest('.secure');
                 if (lockIcon) { // esli klick proizoshel na zamok
-                    let itemParentId = '';
-                    modal.classList.add('active');
-                    modalBox.classList.add('unlock');
-                    body.classList.add('lock');
 
-                    let itemParent = lockIcon.closest('.task__item');
+
+                    itemParent = lockIcon.closest('.task__item');
                     itemParentId = itemParent.dataset.id;
-                    console.log(itemParentId); // selected item id
-                    const store = geDataFromStorage();
+                    //console.log(itemParentId); // selected item id
 
-                    let searchedItemArr = '';
+
+                    const store = geDataFromStorage();
+                    searchedItemArr = '';
                     store.forEach((item) => {
-                        if(item.id === itemParentId) {
+                        if (item.id === itemParentId) {
                             searchedItemArr = item;
                             return;
                         }
                     });
-
                     console.log(searchedItemArr); // poluchili iskomi masiv s obiektami
-
-                    console.log(encryptPassword('123', searchedItemArr.text));
-
+                    // console.log(encryptPassword('123', searchedItemArr.text));
                     //setDataToStorage(newArr); newArr - object arr
-                    
+
+                    if (searchedItemArr.lock) {
+                        modal.classList.add('active');
+                        modalBox.classList.add('unlock');
+                        body.classList.add('lock');
+                    } else {
+                        modal.classList.add('active');
+                        modalBox.classList.add('unlock');
+                        body.classList.add('lock');
+                        ///
+                    }
+
                 }
                 ////////showmodal////////
+            });
+
+
+            modalBtn.addEventListener('click', () => {
+                // console.log('ok');//let itemParentId = '';
+                const modalMessage = document.querySelector('.box .modal__message');
+                const modalPass = document.querySelector('.box .pass').value;
+                const modalPassConfirm = document.querySelector('.box .pass__confirm').value;
+
+
+                if (modalPass === modalPassConfirm && modalPass.length > 0 && modalPassConfirm.length > 0) {
+                    const store = geDataFromStorage();
+
+                    store.forEach((item) => {
+                        if (item.id === itemParentId && !item.lock) {
+                            item.text = encryptPassword(modalPass, item.text);
+                            item.date = encryptPassword(modalPass, item.date);
+                            item.lock = true;
+                            return;
+                        }
+                    });
+                    // console.log(itemParentId);
+
+                    setDataToStorage(store);
+                    //itemParent.classList.add('jj');
+                    wrightItemsToPage(geDataFromStorage(), itemParentId);
+                    replaceImage(true);
+
+                }
 
             });
+
+
 
             //////////2.1/////////////
             closeIcon.addEventListener('click', () => {
