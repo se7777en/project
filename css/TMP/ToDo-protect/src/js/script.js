@@ -224,6 +224,23 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
             passInput.addEventListener('input', () => {
                 modalMessage.textContent = '';
+                if (passInput.value === passconfirm.value && passInput.value.length > 0 && passconfirm.value.length > 0) {
+                    modalMessage.color = '#1E6F9F';
+                    modalMessage.textContent = 'OK';
+                } else {
+                    modalMessage.color = '#ff6347';
+                }
+
+            });
+
+            passconfirm.addEventListener('input', () => {
+                modalMessage.textContent = '';
+                if (passInput.value === passconfirm.value && passInput.value.length > 0 && passconfirm.value.length > 0) {
+                    modalMessage.color = '#1E6F9F';
+                    modalMessage.textContent = 'OK';
+                } else {
+                    modalMessage.color = '#ff6347';
+                }
             });
 
 
@@ -330,19 +347,14 @@ window.addEventListener('DOMContentLoaded', (e) => {
                         //itemParent.classList.add('jj');
                         wrightItemsToPage(geDataFromStorage());
 
-
-                        // const itemImage = itemParent.querySelector('.secure__img');
-                        // console.log(itemParent);
-
-                        // replaceImage(true, itemImage);
-
+                        closeModal();
 
                     } else {
                         modalMessage.textContent = 'Passwords do not meet minimum requirements';
                     }
 
                 } else {
-                    console.log('secured');
+                    // console.log('secured');
 
                     const lockedStore = geDataFromStorage();
                     lockedStore.forEach((item) => {
@@ -357,7 +369,10 @@ window.addEventListener('DOMContentLoaded', (e) => {
                                 item.lock = false;
                                 setDataToStorage(lockedStore);
                                 wrightItemsToPage(geDataFromStorage());
+
+                                closeModal();
                                 return;
+
 
                             } else {
                                 modalMessage.textContent = 'Password error';
