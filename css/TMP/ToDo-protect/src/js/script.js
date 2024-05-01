@@ -18,12 +18,12 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 closeIcon = document.querySelector('.box .modal__close'),
                 body = document.querySelector('BODY'),
                 modalBtn = document.querySelector('.box .modal__btn'),
-
-                passconfirm = document.querySelector('.box .box__confirm'),
                 modalMessage = document.querySelector('.box .modal__message'),
                 modalDescr = document.querySelector('.box .modal__descr'),
 
-                passInput = document.querySelector('.box .pass');
+                passInput = document.querySelector('.box .pass'),
+                passconfirm = document.querySelector('.box .pass__confirm'),
+                confirmIcon = document.querySelector('.box .box__confirm img');
 
 
 
@@ -38,7 +38,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                     const decrypted = CryptoJS.AES.decrypt(encryptedText, password).toString(CryptoJS.enc.Utf8);
                     return decrypted;
                 } catch (error) {
-                    console.error("Decryption error:", error.message);
+                    //console.error("Decryption error:", error.message);
                     return null;
                 }
             };
@@ -87,7 +87,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 let formattedDate = day + '/' + month + ' ' + hours + ':' + minutes + ' ' + period;
 
                 return formattedDate;
-            }
+            };
 
 
             const geDataFromStorage = () => {
@@ -227,11 +227,12 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 if (passInput.value === passconfirm.value && passInput.value.length > 0 && passconfirm.value.length > 0) {
                     modalMessage.style.color = 'green';
                     modalMessage.textContent = 'success';
+                    // console.log('@');
                 } else {
                     modalMessage.style.color = '#ff6347';
                 }
-            }
-            
+            };
+
             passInput.addEventListener('input', checkPasswords);
             passconfirm.addEventListener('input', checkPasswords);
 
@@ -253,7 +254,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                     let objFromStorage = geDataFromStorage();
                     wrightItemsToPage(objFromStorage);
                     calcItems();
-                }
+                };
 
 
                 ////////showmoda/////////
@@ -274,7 +275,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                             return;
                         }
                     });
-                    console.log(searchedItemArr); // poluchili iskomi masiv s obiektami
+                    //console.log(searchedItemArr); // poluchili iskomi masiv s obiektami
                     // console.log(encryptPassword('123', searchedItemArr.text));
                     //setDataToStorage(newArr); newArr - object arr
 
@@ -286,6 +287,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
                         body.classList.add('lock');
 
                         passconfirm.classList.remove('hide');
+                        confirmIcon.classList.remove('hide');
+
                         modalMessage.classList.remove('hide');
                         modalDescr.classList.remove('hide');
                         modalBtn.textContent = 'Set Password';
@@ -298,11 +301,11 @@ window.addEventListener('DOMContentLoaded', (e) => {
                         body.classList.add('lock');
 
                         passconfirm.classList.add('hide');
+                        confirmIcon.classList.add('hide');
                         modalMessage.classList.remove('hide');
                         modalDescr.classList.add('hide');
                         modalBtn.textContent = 'Unlock';
                         passInput.placeholder = 'Password';
-
                     }
 
 
@@ -321,7 +324,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
 
                 if (!secured) {
-                   // console.log('not secured');
+                    // console.log('not secured');
                     if (modalPass === modalPassConfirm && modalPass.length > 0 && modalPassConfirm.length > 0) {
 
                         const store = geDataFromStorage();
@@ -363,6 +366,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
                                 wrightItemsToPage(geDataFromStorage());
 
                                 closeModal();
+
+
                                 return;
 
 
@@ -390,7 +395,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 passInput.value = '';
                 passconfirm.value = '';
                 modalMessage.textContent = '';
-            }
+            };
 
             closeIcon.addEventListener('click', () => {
                 closeModal();
@@ -410,7 +415,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 let count = 0;
                 obj.forEach((item) => {
                     if (item.read) count += 1;
-                })
+                });
+                //if(secured) {count = 0;}
                 complatedNum.textContent = `${count} of ${obj.length}`;
             };
             calcItems();

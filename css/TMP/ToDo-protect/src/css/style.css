@@ -462,8 +462,8 @@ body {
         background-color: #4EA8DE;
     }
 
-    /* .task__item:active {
-        transform: scale(.990);
+    /* .task__item.scale:active {
+        transform: scale(.990) !important;
         transition: all .1s ease-in;
     } */
 
