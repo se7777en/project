@@ -101,7 +101,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
             let objfromStorage = geDataFromStorage();
 
-            const wrightItemsToPage = (obj, id = '') => {
+            const wrightItemsToPage = (obj) => {
                 // console.log(obj.length);
                 let elements = '';
                 if (obj.length !== 0) {
@@ -114,6 +114,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
                         let hide = item.lock ? 'hide' : '';
                         let locked = item.lock ? 'show' : '';
                         let icon = item.lock ? 'lock' : 'unlock';
+
+                        // console.log(`${hide} - ${locked} - ${icon}`);
 
 
 
@@ -220,6 +222,11 @@ window.addEventListener('DOMContentLoaded', (e) => {
             });
 
 
+            passInput.addEventListener('input', () => {
+                modalMessage.textContent = '';
+            });
+
+
 
             let itemParentId = ''; // iskomi id
             let searchedItemArr = ''; // iskomi obiekt
@@ -264,7 +271,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
                     if (!searchedItemArr.lock) {
                         secured = false;
-                        console.log('unlock');
+
                         modal.classList.add('active'); // otobrajaem modalnoe okno pri lock
                         modalBox.classList.add('unlock');
                         body.classList.add('lock');
@@ -276,13 +283,13 @@ window.addEventListener('DOMContentLoaded', (e) => {
                         passInput.placeholder = 'Enter Password';
                     } else {
                         secured = true;
-                        console.log('lock');
+
                         modal.classList.add('active'); // otobrajaem modalnoe okno pri unlock
                         modalBox.classList.add('unlock');
                         body.classList.add('lock');
 
                         passconfirm.classList.add('hide');
-                        modalMessage.classList.add('hide');
+                        modalMessage.classList.remove('hide');
                         modalDescr.classList.add('hide');
                         modalBtn.textContent = 'Enter Password';
                         passInput.placeholder = '';
@@ -304,10 +311,10 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 const modalPassConfirm = document.querySelector('.box .pass__confirm').value;
 
 
-                if(!secured) {
+                if (!secured) {
                     console.log('not secured');
                     if (modalPass === modalPassConfirm && modalPass.length > 0 && modalPassConfirm.length > 0) {
-                      
+
                         const store = geDataFromStorage();
                         store.forEach((item) => {
                             if (item.id === itemParentId && !item.lock) {
@@ -318,54 +325,58 @@ window.addEventListener('DOMContentLoaded', (e) => {
                             }
                         });
                         // console.log(itemParentId);
-    
+
                         setDataToStorage(store);
                         //itemParent.classList.add('jj');
-                        wrightItemsToPage(geDataFromStorage(), itemParentId);
-    
-    
+                        wrightItemsToPage(geDataFromStorage());
+
+
                         // const itemImage = itemParent.querySelector('.secure__img');
                         // console.log(itemParent);
-    
+
                         // replaceImage(true, itemImage);
-    
-    
+
+
                     } else {
                         modalMessage.textContent = 'Passwords do not meet minimum requirements';
                     }
-                }
 
-                if(secured) {
-                  // console.log(modalPass);
+                } else {
+                    console.log('secured');
+
+                    const lockedStore = geDataFromStorage();
+                    lockedStore.forEach((item) => {
+                        if (item.id === itemParentId && item.lock) {
 
 
-                   const store = geDataFromStorage();
-                        store.forEach((item) => {
-                            if (item.id === itemParentId && item.lock) {
-                               
-                                item.date = decryptText(modalPass, item.date);
+                            const securedDate = decryptText(modalPass, item.date);
+                            if (securedDate) {
+                                console.log('ok');
+                                item.date = securedDate;
                                 item.text = decryptText(modalPass, item.text);
-                               
                                 item.lock = false;
+                                setDataToStorage(lockedStore);
+                                wrightItemsToPage(geDataFromStorage());
                                 return;
-                            }
-                        });
-                        // console.log(itemParentId);
-                       
-    
-                        setDataToStorage(store);
-                        //itemParent.classList.add('jj');
-                        wrightItemsToPage(geDataFromStorage(), itemParentId);
 
+                            } else {
+                                modalMessage.textContent = 'Password error';
+                            }
+
+                        }
+                    });
+                    // console.log(itemParentId);
                 }
 
             });
 
-            
+
 
 
             //////////2.1/////////////
-            closeIcon.addEventListener('click', () => {
+
+
+            const closeModal = () => {
                 modalBox.classList.remove('unlock');
                 modal.classList.remove('active');
                 body.classList.remove('lock');
@@ -373,8 +384,14 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 passInput.value = '';
                 passconfirm.value = '';
                 modalMessage.textContent = '';
+            }
 
+            closeIcon.addEventListener('click', () => {
+                closeModal();
             });
+
+
+
 
 
 
