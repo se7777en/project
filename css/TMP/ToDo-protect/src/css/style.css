@@ -610,6 +610,10 @@ body .box {
     color: #1E6F9F;
 }
 
+.modal__descr span {
+    display: block;
+}
+
 .hide {
     display: none !important;
 }
@@ -624,8 +628,9 @@ body .box {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 60px;
+    font-size: 34px;
     font-weight: 700;
     color: #1A1A1A;
+    opacity: .6;
 }
 
