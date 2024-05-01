@@ -528,9 +528,8 @@ body .box {
     width: 250px;
     height: auto;
     border-radius: 4px;
-    background-color: rgba(51, 51, 51, 1);
-    box-shadow: 0 0.05rem 0.3rem #00000052;
-
+    background-color: rgba(26, 26, 26, 1);
+    box-shadow: 0 0.09rem 0.8rem #00000052;
     /* transform: translateY(-1px);
     transform: translateY(1px);
     transform: translateY(0px); */
@@ -561,14 +560,15 @@ body .box {
 }
 
 .modal__inner input {
-    border: 1px solid #d2d2d2;
+    /* border: 1px solid #d2d2d2; */
     border-radius: 3px;
     width: 100%;
-    font-size: 16px;
-    padding: 4px;
+    font-size: 15px;
+    padding: 10px 10px 10px 25px;
     background-color: #262626;
-    color: #d2d2d2;
+    color: #626262;
     margin-bottom: 10px;
+    /* text-align: center; */
 }
 
 /* .modal .pass {
@@ -583,7 +583,7 @@ body .box {
     text-align: center;
     background-color: #1E6F9F;
     color: #d2d2d2;
-    padding: 4px 0px;
+    padding: 9px 0px;
     border-radius: 4px;
     cursor: pointer;
     margin-bottom: 5px;
@@ -634,3 +634,14 @@ body .box {
     opacity: .6;
 }
 
+
+.box .box__input {
+    position: relative;
+}
+
+.box .box__input img {
+    position: absolute;
+    top: 39%;
+    transform: translateY(-50%);
+    left: 6px;
+}

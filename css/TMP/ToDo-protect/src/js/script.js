@@ -19,7 +19,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 body = document.querySelector('BODY'),
                 modalBtn = document.querySelector('.box .modal__btn'),
 
-                passconfirm = document.querySelector('.box .pass__confirm'),
+                passconfirm = document.querySelector('.box .box__confirm'),
                 modalMessage = document.querySelector('.box .modal__message'),
                 modalDescr = document.querySelector('.box .modal__descr'),
 
@@ -222,26 +222,18 @@ window.addEventListener('DOMContentLoaded', (e) => {
             });
 
 
-            passInput.addEventListener('input', () => {
+            function checkPasswords() {
                 modalMessage.textContent = '';
                 if (passInput.value === passconfirm.value && passInput.value.length > 0 && passconfirm.value.length > 0) {
-                    modalMessage.color = '#1E6F9F';
-                    modalMessage.textContent = 'OK';
+                    modalMessage.style.color = 'green';
+                    modalMessage.textContent = 'success';
                 } else {
-                    modalMessage.color = '#ff6347';
+                    modalMessage.style.color = '#ff6347';
                 }
-
-            });
-
-            passconfirm.addEventListener('input', () => {
-                modalMessage.textContent = '';
-                if (passInput.value === passconfirm.value && passInput.value.length > 0 && passconfirm.value.length > 0) {
-                    modalMessage.color = '#1E6F9F';
-                    modalMessage.textContent = 'OK';
-                } else {
-                    modalMessage.color = '#ff6347';
-                }
-            });
+            }
+            
+            passInput.addEventListener('input', checkPasswords);
+            passconfirm.addEventListener('input', checkPasswords);
 
 
 
@@ -297,7 +289,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                         modalMessage.classList.remove('hide');
                         modalDescr.classList.remove('hide');
                         modalBtn.textContent = 'Set Password';
-                        passInput.placeholder = 'Enter Password';
+                        passInput.placeholder = 'Password';
                     } else {
                         secured = true;
 
@@ -308,8 +300,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
                         passconfirm.classList.add('hide');
                         modalMessage.classList.remove('hide');
                         modalDescr.classList.add('hide');
-                        modalBtn.textContent = 'Enter Password';
-                        passInput.placeholder = '';
+                        modalBtn.textContent = 'Unlock';
+                        passInput.placeholder = 'Password';
 
                     }
 
@@ -329,7 +321,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
 
                 if (!secured) {
-                    console.log('not secured');
+                   // console.log('not secured');
                     if (modalPass === modalPassConfirm && modalPass.length > 0 && modalPassConfirm.length > 0) {
 
                         const store = geDataFromStorage();
@@ -363,7 +355,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
                             const securedDate = decryptText(modalPass, item.date);
                             if (securedDate) {
-                                console.log('ok');
+                                //console.log('ok');
                                 item.date = securedDate;
                                 item.text = decryptText(modalPass, item.text);
                                 item.lock = false;
@@ -375,12 +367,11 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
 
                             } else {
-                                modalMessage.textContent = 'Password error';
+                                modalMessage.textContent = 'Password Error';
                             }
 
                         }
                     });
-                    // console.log(itemParentId);
                 }
 
             });
