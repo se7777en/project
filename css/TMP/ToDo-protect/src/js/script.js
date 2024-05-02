@@ -246,7 +246,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 let secured = false;
                 tasks.addEventListener('click', (event) => {
 
-                    console.log('ok');
+                    //console.log('ok');
                     const trashBtn = event.target.closest('.task__trash');
                     if (trashBtn) {
                         let trashParent = trashBtn.closest('.task__item');
@@ -322,7 +322,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
                 modalBtn.addEventListener('click', () => {
 
-                    console.log('ok');//let itemParentId = '';
+                    
                     const modalMessage = document.querySelector('.modal__message');
                     const modalPass = document.querySelector('.pass').value;
                     const modalPassConfirm = document.querySelector('.pass__confirm').value;
