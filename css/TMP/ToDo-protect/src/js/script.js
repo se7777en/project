@@ -279,7 +279,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                             }
                         });
                         //console.log(searchedItemArr); // poluchili iskomi masiv s obiektami
-                        // console.log(encryptPassword('123', searchedItemArr.text));
+
                         //setDataToStorage(newArr); newArr - object arr
 
                         if (!searchedItemArr.lock) {
@@ -314,7 +314,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
 
 
-                    }
+                    };
                     ////////showmodal////////
                     calcItems();
                 });
@@ -323,9 +323,9 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 modalBtn.addEventListener('click', () => {
 
                     console.log('ok');//let itemParentId = '';
-                    const modalMessage = document.querySelector('.box .modal__message');
-                    const modalPass = document.querySelector('.box .pass').value;
-                    const modalPassConfirm = document.querySelector('.box .pass__confirm').value;
+                    const modalMessage = document.querySelector('.modal__message');
+                    const modalPass = document.querySelector('.pass').value;
+                    const modalPassConfirm = document.querySelector('.pass__confirm').value;
 
 
                     if (!secured) {
@@ -381,9 +381,9 @@ window.addEventListener('DOMContentLoaded', (e) => {
                                     modalMessage.textContent = 'Password Error';
                                 }
 
-                            }
+                            };
                         });
-                    }
+                    };
                     calcItems();
                 });
 
