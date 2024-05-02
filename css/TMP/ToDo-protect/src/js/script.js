@@ -244,6 +244,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
             let secured = false;
             tasks.addEventListener('click', (event) => {
+               
+                console.log('ok');
                 const trashBtn = event.target.closest('.task__trash');
                 if (trashBtn) {
                     let trashParent = trashBtn.closest('.task__item');
@@ -251,9 +253,9 @@ window.addEventListener('DOMContentLoaded', (e) => {
                     let storeObj = geDataFromStorage();
                     const newArr = storeObj.filter((item) => item.id !== parentId);
                     setDataToStorage(newArr);
-                    let objFromStorage = geDataFromStorage();
-                    wrightItemsToPage(objFromStorage);
-                    calcItems();
+                   // let objFromStorage = geDataFromStorage();
+                    wrightItemsToPage(geDataFromStorage());
+                    
                 };
 
 
@@ -313,11 +315,13 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
                 }
                 ////////showmodal////////
+                calcItems();
             });
 
 
             modalBtn.addEventListener('click', () => {
-                // console.log('ok');//let itemParentId = '';
+                
+                 console.log('ok');//let itemParentId = '';
                 const modalMessage = document.querySelector('.box .modal__message');
                 const modalPass = document.querySelector('.box .pass').value;
                 const modalPassConfirm = document.querySelector('.box .pass__confirm').value;
@@ -343,6 +347,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                         wrightItemsToPage(geDataFromStorage());
 
                         closeModal();
+                        
 
                     } else {
                         modalMessage.textContent = 'Passwords do not meet minimum requirements';
@@ -378,7 +383,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                         }
                     });
                 }
-
+                calcItems();
             });
 
 
@@ -414,7 +419,9 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
                 let count = 0;
                 obj.forEach((item) => {
-                    if (item.read) count += 1;
+                    if (!item.lock) {
+                        if (item.read) count += 1;
+                    }
                 });
                 //if(secured) {count = 0;}
                 complatedNum.textContent = `${count} of ${obj.length}`;
