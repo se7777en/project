@@ -121,6 +121,13 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
 
                             elements += `<div class="task__item item" name="todo" data-id="${item.id}">
+<img class="menu-icon" src="./img/menu.svg" alt="menu">
+<div class="task__menu">
+<ul class="menu__list">
+    <li class="menu__item">Remove</li>
+    <li class="menu__item">Edit</li>
+</ul>
+</div>
     <div class="task__chb ${hide}">
         <label>
             <input type="checkbox" name="chb" class="realchb" ${readStatus}>
@@ -245,7 +252,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
                 let secured = false;
                 tasks.addEventListener('click', (event) => {
-
+                    event.preventDefault();
                     //console.log('ok');
                     const trashBtn = event.target.closest('.task__trash');
                     if (trashBtn) {
@@ -317,12 +324,29 @@ window.addEventListener('DOMContentLoaded', (e) => {
                     };
                     ////////showmodal////////
                     calcItems();
+
+                    /////////popup///////////
+
+                    tasks.querySelectorAll('.task__menu').forEach((item) => {
+                        if(item.classList.contains('show')){
+                            item.classList.remove('show');
+                        }
+                    });
+
+                    const popupItem = event.target.closest('.menu-icon');
+                    if (popupItem) {
+                        const clickedItemId = popupItem.closest('.task__item');
+                        const listMenu = clickedItemId.querySelector('.task__menu');
+                        listMenu.classList.toggle('show');
+                    }
+
+                    /////////popup///////////
                 });
 
 
                 modalBtn.addEventListener('click', () => {
 
-                    
+
                     const modalMessage = document.querySelector('.modal__message');
                     const modalPass = document.querySelector('.pass').value;
                     const modalPassConfirm = document.querySelector('.pass__confirm').value;
