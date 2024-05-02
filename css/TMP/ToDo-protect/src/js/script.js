@@ -4,122 +4,123 @@ window.addEventListener('DOMContentLoaded', (e) => {
     const currentUrl = window.location.href;
     if (currentUrl.indexOf('tasktrackr.surge.sh') === -1) {
         if (currentUrl.indexOf('tasktrackr.surge.sh') === -1) {
+            if (!currentUrl.includes('tasktrackr.surge.sh')) {
 
 
 
-            const tasks = document.querySelector('.wrapper .tasks'),
-                tasksCount = document.querySelector('.wrapper .created_num'),
-                complatedNum = document.querySelector('.wrapper .completed__num'),
-                addItem = document.querySelector('.wrapper .task__btn'),
-                todoInput = document.querySelector('.wrapper .task__input'),
+                const tasks = document.querySelector('.wrapper .tasks'),
+                    tasksCount = document.querySelector('.wrapper .created_num'),
+                    complatedNum = document.querySelector('.wrapper .completed__num'),
+                    addItem = document.querySelector('.wrapper .task__btn'),
+                    todoInput = document.querySelector('.wrapper .task__input'),
 
-                modalBox = document.querySelector('.box'),
-                modal = document.querySelector('.box .modal'),
-                closeIcon = document.querySelector('.box .modal__close'),
-                body = document.querySelector('BODY'),
-                modalBtn = document.querySelector('.box .modal__btn'),
-                modalMessage = document.querySelector('.box .modal__message'),
-                modalDescr = document.querySelector('.box .modal__descr'),
+                    modalBox = document.querySelector('.box'),
+                    modal = document.querySelector('.box .modal'),
+                    closeIcon = document.querySelector('.box .modal__close'),
+                    body = document.querySelector('BODY'),
+                    modalBtn = document.querySelector('.box .modal__btn'),
+                    modalMessage = document.querySelector('.box .modal__message'),
+                    modalDescr = document.querySelector('.box .modal__descr'),
 
-                passInput = document.querySelector('.box .pass'),
-                passconfirm = document.querySelector('.box .pass__confirm'),
-                confirmIcon = document.querySelector('.box .box__confirm img');
-
-
-
-
-            function encryptPassword(password, textToEncrypt) {
-                const encrypted = CryptoJS.AES.encrypt(textToEncrypt, password).toString();
-                return encrypted;
-            };
-
-            function decryptText(password, encryptedText) {
-                try {
-                    const decrypted = CryptoJS.AES.decrypt(encryptedText, password).toString(CryptoJS.enc.Utf8);
-                    return decrypted;
-                } catch (error) {
-                    //console.error("Decryption error:", error.message);
-                    return null;
-                }
-            };
+                    passInput = document.querySelector('.box .pass'),
+                    passconfirm = document.querySelector('.box .pass__confirm'),
+                    confirmIcon = document.querySelector('.box .box__confirm img');
 
 
 
-            const uniqueId = () => {
-                // return 'id-' + Math.random().toString(36).substr(2, 9);
-                const timestamp = new Date().getTime();
-                const uniquePart = (Math.random() * 100000).toFixed(0); // Уникальная случайная часть
-                const hash = (Math.random() * 100000).toString(36).replace('.', ''); // Хэш от случайного числа
-                return 'id-' + timestamp + '-' + uniquePart + '-' + hash;
-            };
 
-            function getCurrentDate() {
-                let currentDate = new Date();
-                let day = currentDate.getDate();
-                let month = currentDate.getMonth() + 1; // Месяцы в JavaScript начинаются с 0
-                let year = currentDate.getFullYear();
-                let hours = currentDate.getHours();
-                let minutes = currentDate.getMinutes();
-                let period = hours >= 12 ? 'PM' : 'AM';
+                function encryptPassword(password, textToEncrypt) {
+                    const encrypted = CryptoJS.AES.encrypt(textToEncrypt, password).toString();
+                    return encrypted;
+                };
 
-                // Форматирование дня и месяца, чтобы они имели двузначный вид, если необходимо
-                if (day < 10) {
-                    day = '0' + day;
-                }
-                if (month < 10) {
-                    month = '0' + month;
-                }
-
-                // Преобразование часов в 12-часовой формат
-                if (hours > 12) {
-                    hours -= 12;
-                }
-                if (hours === 0) {
-                    hours = 12;
-                }
-
-                // Форматирование минут, чтобы они имели двузначный вид
-                if (minutes < 10) {
-                    minutes = '0' + minutes;
-                }
-
-                // Соединение всех компонентов в одну строку
-                let formattedDate = day + '/' + month + ' ' + hours + ':' + minutes + ' ' + period;
-
-                return formattedDate;
-            };
-
-
-            const geDataFromStorage = () => {
-                return JSON.parse(window.localStorage.getItem('toDoObj')) || [];
-            };
-            const setDataToStorage = (obj) => {
-                window.localStorage.setItem('toDoObj', JSON.stringify(obj));
-            };
+                function decryptText(password, encryptedText) {
+                    try {
+                        const decrypted = CryptoJS.AES.decrypt(encryptedText, password).toString(CryptoJS.enc.Utf8);
+                        return decrypted;
+                    } catch (error) {
+                        //console.error("Decryption error:", error.message);
+                        return null;
+                    }
+                };
 
 
 
-            let objfromStorage = geDataFromStorage();
+                const uniqueId = () => {
+                    // return 'id-' + Math.random().toString(36).substr(2, 9);
+                    const timestamp = new Date().getTime();
+                    const uniquePart = (Math.random() * 100000).toFixed(0); // Уникальная случайная часть
+                    const hash = (Math.random() * 100000).toString(36).replace('.', ''); // Хэш от случайного числа
+                    return 'id-' + timestamp + '-' + uniquePart + '-' + hash;
+                };
 
-            const wrightItemsToPage = (obj) => {
-                // console.log(obj.length);
-                let elements = '';
-                if (obj.length !== 0) {
+                function getCurrentDate() {
+                    let currentDate = new Date();
+                    let day = currentDate.getDate();
+                    let month = currentDate.getMonth() + 1; // Месяцы в JavaScript начинаются с 0
+                    let year = currentDate.getFullYear();
+                    let hours = currentDate.getHours();
+                    let minutes = currentDate.getMinutes();
+                    let period = hours >= 12 ? 'PM' : 'AM';
 
-                    obj.forEach((item) => {
-                        let readStatus = item.read ? 'checked' : '';
-                        let textdecore = readStatus ? 'textdecore' : '';
-                        let date = item.date ? item.date : 'new time feature';
+                    // Форматирование дня и месяца, чтобы они имели двузначный вид, если необходимо
+                    if (day < 10) {
+                        day = '0' + day;
+                    }
+                    if (month < 10) {
+                        month = '0' + month;
+                    }
 
-                        let hide = item.lock ? 'hide' : '';
-                        let locked = item.lock ? 'show' : '';
-                        let icon = item.lock ? 'lock' : 'unlock';
+                    // Преобразование часов в 12-часовой формат
+                    if (hours > 12) {
+                        hours -= 12;
+                    }
+                    if (hours === 0) {
+                        hours = 12;
+                    }
 
-                        // console.log(`${hide} - ${locked} - ${icon}`);
+                    // Форматирование минут, чтобы они имели двузначный вид
+                    if (minutes < 10) {
+                        minutes = '0' + minutes;
+                    }
+
+                    // Соединение всех компонентов в одну строку
+                    let formattedDate = day + '/' + month + ' ' + hours + ':' + minutes + ' ' + period;
+
+                    return formattedDate;
+                };
+
+
+                const geDataFromStorage = () => {
+                    return JSON.parse(window.localStorage.getItem('toDoObj')) || [];
+                };
+                const setDataToStorage = (obj) => {
+                    window.localStorage.setItem('toDoObj', JSON.stringify(obj));
+                };
 
 
 
-                        elements += `<div class="task__item item" name="todo" data-id="${item.id}">
+                let objfromStorage = geDataFromStorage();
+
+                const wrightItemsToPage = (obj) => {
+                    // console.log(obj.length);
+                    let elements = '';
+                    if (obj.length !== 0) {
+
+                        obj.forEach((item) => {
+                            let readStatus = item.read ? 'checked' : '';
+                            let textdecore = readStatus ? 'textdecore' : '';
+                            let date = item.date ? item.date : 'new time feature';
+
+                            let hide = item.lock ? 'hide' : '';
+                            let locked = item.lock ? 'show' : '';
+                            let icon = item.lock ? 'lock' : 'unlock';
+
+                            // console.log(`${hide} - ${locked} - ${icon}`);
+
+
+
+                            elements += `<div class="task__item item" name="todo" data-id="${item.id}">
     <div class="task__chb ${hide}">
         <label>
             <input type="checkbox" name="chb" class="realchb" ${readStatus}>
@@ -141,55 +142,30 @@ window.addEventListener('DOMContentLoaded', (e) => {
     <span class="task__item-date ${textdecore} ${hide}">${date}</span>
     <div class="locked ${locked}">locked</div>
     </div>`;
-                    });
-                } else {
-                    elements = `<div class="empty__task wrapselect">
+                        });
+                    } else {
+                        elements = `<div class="empty__task wrapselect">
             <img class="empty__img" src="./img/cliboard.png" alt="empty">
             <div class="empty__descr"><div class="descr__text-one">You don't have tasks registered yet</div>
                 <div class="descr__text-two">Create tasks and organize your to-do items</div></div>
         </div>`;
-                }
-                tasks.innerHTML = elements;
-            };
-
-            wrightItemsToPage(objfromStorage);
-
-
-
-            /////////////2)///////////////
-
-            addItem.addEventListener('contextmenu', (e) => {
-                e.preventDefault();
-            });
-
-            const addNewItem = () => {
-                addItem.addEventListener('click', async () => {
-
-                    if (todoInput.value.length > 0) {
-                        const newData =
-                        {
-                            id: uniqueId(),
-                            text: todoInput.value,
-                            read: false,
-                            date: getCurrentDate(),
-                            lock: false
-                        };
-                        let filtred = geDataFromStorage();
-                        filtred.push(newData); // dobavlyaem novi element
-                        setDataToStorage(filtred);
-                        todoInput.value = '';
-
-                        calcItems();
-                        await wrightItemsToPage(filtred);
                     }
+                    tasks.innerHTML = elements;
+                };
+
+                wrightItemsToPage(objfromStorage);
+
+
+
+                /////////////2)///////////////
+
+                addItem.addEventListener('contextmenu', (e) => {
+                    e.preventDefault();
                 });
-            };
-            addNewItem();
 
+                const addNewItem = () => {
+                    addItem.addEventListener('click', async () => {
 
-            const addNewItemFromKeyboard = () => {
-                todoInput.addEventListener('keydown', async (event) => {
-                    if (event.key === 'Enter') {
                         if (todoInput.value.length > 0) {
                             const newData =
                             {
@@ -207,264 +183,290 @@ window.addEventListener('DOMContentLoaded', (e) => {
                             calcItems();
                             await wrightItemsToPage(filtred);
                         }
+                    });
+                };
+                addNewItem();
+
+
+                const addNewItemFromKeyboard = () => {
+                    todoInput.addEventListener('keydown', async (event) => {
+                        if (event.key === 'Enter') {
+                            if (todoInput.value.length > 0) {
+                                const newData =
+                                {
+                                    id: uniqueId(),
+                                    text: todoInput.value,
+                                    read: false,
+                                    date: getCurrentDate(),
+                                    lock: false
+                                };
+                                let filtred = geDataFromStorage();
+                                filtred.push(newData); // dobavlyaem novi element
+                                setDataToStorage(filtred);
+                                todoInput.value = '';
+
+                                calcItems();
+                                await wrightItemsToPage(filtred);
+                            }
+                        }
+
+                    });
+                };
+                addNewItemFromKeyboard();
+
+
+
+                tasks.addEventListener('contextmenu', (event) => {
+                    if (event.target.closest('.trashdecore')) {
+                        event.preventDefault();
                     }
-
                 });
-            };
-            addNewItemFromKeyboard();
 
 
-
-            tasks.addEventListener('contextmenu', (event) => {
-                if (event.target.closest('.trashdecore')) {
-                    event.preventDefault();
-                }
-            });
-
-
-            function checkPasswords() {
-                modalMessage.textContent = '';
-                if (passInput.value === passconfirm.value && passInput.value.length > 0 && passconfirm.value.length > 0) {
-                    modalMessage.style.color = 'green';
-                    modalMessage.textContent = 'success';
-                    // console.log('@');
-                } else {
-                    modalMessage.style.color = '#ff6347';
-                }
-            };
-
-            passInput.addEventListener('input', checkPasswords);
-            passconfirm.addEventListener('input', checkPasswords);
-
-
-
-            let itemParentId = ''; // iskomi id
-            let searchedItemArr = ''; // iskomi obiekt
-            let itemParent = ''; // roditelski cliknuti item
-
-            let secured = false;
-            tasks.addEventListener('click', (event) => {
-               
-                console.log('ok');
-                const trashBtn = event.target.closest('.task__trash');
-                if (trashBtn) {
-                    let trashParent = trashBtn.closest('.task__item');
-                    let parentId = trashParent.dataset.id;
-                    let storeObj = geDataFromStorage();
-                    const newArr = storeObj.filter((item) => item.id !== parentId);
-                    setDataToStorage(newArr);
-                   // let objFromStorage = geDataFromStorage();
-                    wrightItemsToPage(geDataFromStorage());
-                    
+                function checkPasswords() {
+                    modalMessage.textContent = '';
+                    if (passInput.value === passconfirm.value && passInput.value.length > 0 && passconfirm.value.length > 0) {
+                        modalMessage.style.color = 'green';
+                        modalMessage.textContent = 'success';
+                        // console.log('@');
+                    } else {
+                        modalMessage.style.color = '#ff6347';
+                    }
                 };
 
-
-                ////////showmoda/////////
-                let lockIcon = event.target.closest('.secure');
-                if (lockIcon) { // esli klick proizoshel na zamok
-
-
-                    itemParent = lockIcon.closest('.task__item');
-                    itemParentId = itemParent.dataset.id;
-                    //console.log(itemParentId); // selected item id
-
-
-                    const store = geDataFromStorage();
-                    searchedItemArr = '';
-                    store.forEach((item) => {
-                        if (item.id === itemParentId) {
-                            searchedItemArr = item;
-                            return;
-                        }
-                    });
-                    //console.log(searchedItemArr); // poluchili iskomi masiv s obiektami
-                    // console.log(encryptPassword('123', searchedItemArr.text));
-                    //setDataToStorage(newArr); newArr - object arr
-
-                    if (!searchedItemArr.lock) {
-                        secured = false;
-
-                        modal.classList.add('active'); // otobrajaem modalnoe okno pri lock
-                        modalBox.classList.add('unlock');
-                        body.classList.add('lock');
-
-                        passconfirm.classList.remove('hide');
-                        confirmIcon.classList.remove('hide');
-
-                        modalMessage.classList.remove('hide');
-                        modalDescr.classList.remove('hide');
-                        modalBtn.textContent = 'Set Password';
-                        passInput.placeholder = 'Password';
-                    } else {
-                        secured = true;
-
-                        modal.classList.add('active'); // otobrajaem modalnoe okno pri unlock
-                        modalBox.classList.add('unlock');
-                        body.classList.add('lock');
-
-                        passconfirm.classList.add('hide');
-                        confirmIcon.classList.add('hide');
-                        modalMessage.classList.remove('hide');
-                        modalDescr.classList.add('hide');
-                        modalBtn.textContent = 'Unlock';
-                        passInput.placeholder = 'Password';
-                    }
+                passInput.addEventListener('input', checkPasswords);
+                passconfirm.addEventListener('input', checkPasswords);
 
 
 
+                let itemParentId = ''; // iskomi id
+                let searchedItemArr = ''; // iskomi obiekt
+                let itemParent = ''; // roditelski cliknuti item
 
-                }
-                ////////showmodal////////
-                calcItems();
-            });
+                let secured = false;
+                tasks.addEventListener('click', (event) => {
 
-
-            modalBtn.addEventListener('click', () => {
-                
-                 console.log('ok');//let itemParentId = '';
-                const modalMessage = document.querySelector('.box .modal__message');
-                const modalPass = document.querySelector('.box .pass').value;
-                const modalPassConfirm = document.querySelector('.box .pass__confirm').value;
-
-
-                if (!secured) {
-                    // console.log('not secured');
-                    if (modalPass === modalPassConfirm && modalPass.length > 0 && modalPassConfirm.length > 0) {
-
-                        const store = geDataFromStorage();
-                        store.forEach((item) => {
-                            if (item.id === itemParentId && !item.lock) {
-                                item.text = encryptPassword(modalPass, item.text);
-                                item.date = encryptPassword(modalPass, item.date);
-                                item.lock = true;
-                                return;
-                            }
-                        });
-                        // console.log(itemParentId);
-
-                        setDataToStorage(store);
-                        //itemParent.classList.add('jj');
+                    console.log('ok');
+                    const trashBtn = event.target.closest('.task__trash');
+                    if (trashBtn) {
+                        let trashParent = trashBtn.closest('.task__item');
+                        let parentId = trashParent.dataset.id;
+                        let storeObj = geDataFromStorage();
+                        const newArr = storeObj.filter((item) => item.id !== parentId);
+                        setDataToStorage(newArr);
+                        // let objFromStorage = geDataFromStorage();
                         wrightItemsToPage(geDataFromStorage());
 
-                        closeModal();
-                        
-
-                    } else {
-                        modalMessage.textContent = 'Passwords do not meet minimum requirements';
-                    }
-
-                } else {
-                    // console.log('secured');
-
-                    const lockedStore = geDataFromStorage();
-                    lockedStore.forEach((item) => {
-                        if (item.id === itemParentId && item.lock) {
+                    };
 
 
-                            const securedDate = decryptText(modalPass, item.date);
-                            if (securedDate) {
-                                //console.log('ok');
-                                item.date = securedDate;
-                                item.text = decryptText(modalPass, item.text);
-                                item.lock = false;
-                                setDataToStorage(lockedStore);
-                                wrightItemsToPage(geDataFromStorage());
-
-                                closeModal();
+                    ////////showmoda/////////
+                    let lockIcon = event.target.closest('.secure');
+                    if (lockIcon) { // esli klick proizoshel na zamok
 
 
+                        itemParent = lockIcon.closest('.task__item');
+                        itemParentId = itemParent.dataset.id;
+                        //console.log(itemParentId); // selected item id
+
+
+                        const store = geDataFromStorage();
+                        searchedItemArr = '';
+                        store.forEach((item) => {
+                            if (item.id === itemParentId) {
+                                searchedItemArr = item;
                                 return;
-
-
-                            } else {
-                                modalMessage.textContent = 'Password Error';
-                            }
-
-                        }
-                    });
-                }
-                calcItems();
-            });
-
-
-
-
-            //////////2.1/////////////
-
-
-            const closeModal = () => {
-                modalBox.classList.remove('unlock');
-                modal.classList.remove('active');
-                body.classList.remove('lock');
-
-                passInput.value = '';
-                passconfirm.value = '';
-                modalMessage.textContent = '';
-            };
-
-            closeIcon.addEventListener('click', () => {
-                closeModal();
-            });
-
-
-
-
-
-
-            ///////3)//////////////
-            const calcItems = () => {
-
-                let obj = geDataFromStorage();
-                tasksCount.textContent = obj.length;
-
-                let count = 0;
-                obj.forEach((item) => {
-                    if (!item.lock) {
-                        if (item.read) count += 1;
-                    }
-                });
-                //if(secured) {count = 0;}
-                complatedNum.textContent = `${count} of ${obj.length}`;
-            };
-            calcItems();
-
-
-            function restoreCheckboxState() {
-                tasks.addEventListener('change', (e) => {
-                    const chb = e.target.closest('.realchb');
-
-                    if (chb) {
-                        const text = chb.closest('.task__item').querySelector('.task__item__descr');
-                        const itemId = chb.closest('.task__item').dataset.id;
-                        const date = chb.closest('.task__item').querySelector('.task__item-date');
-                        //console.log(itemId);
-
-                        let storeObj = geDataFromStorage();
-                        storeObj.forEach((item) => {
-                            if (item.id === itemId) {
-                                if (chb.checked) {
-
-                                    text.classList.add('textdecore');
-                                    date.classList.add('textdecore');
-                                    item.read = true;
-                                } else {
-
-                                    text.classList.remove('textdecore');
-                                    date.classList.remove('textdecore');
-                                    item.read = false;
-                                }
                             }
                         });
+                        //console.log(searchedItemArr); // poluchili iskomi masiv s obiektami
+                        // console.log(encryptPassword('123', searchedItemArr.text));
+                        //setDataToStorage(newArr); newArr - object arr
 
-                        setDataToStorage(storeObj);
+                        if (!searchedItemArr.lock) {
+                            secured = false;
+
+                            modal.classList.add('active'); // otobrajaem modalnoe okno pri lock
+                            modalBox.classList.add('unlock');
+                            body.classList.add('lock');
+
+                            passconfirm.classList.remove('hide');
+                            confirmIcon.classList.remove('hide');
+
+                            modalMessage.classList.remove('hide');
+                            modalDescr.classList.remove('hide');
+                            modalBtn.textContent = 'Set Password';
+                            passInput.placeholder = 'Password';
+                        } else {
+                            secured = true;
+
+                            modal.classList.add('active'); // otobrajaem modalnoe okno pri unlock
+                            modalBox.classList.add('unlock');
+                            body.classList.add('lock');
+
+                            passconfirm.classList.add('hide');
+                            confirmIcon.classList.add('hide');
+                            modalMessage.classList.remove('hide');
+                            modalDescr.classList.add('hide');
+                            modalBtn.textContent = 'Unlock';
+                            passInput.placeholder = 'Password';
+                        }
+
+
+
+
+                    }
+                    ////////showmodal////////
+                    calcItems();
+                });
+
+
+                modalBtn.addEventListener('click', () => {
+
+                    console.log('ok');//let itemParentId = '';
+                    const modalMessage = document.querySelector('.box .modal__message');
+                    const modalPass = document.querySelector('.box .pass').value;
+                    const modalPassConfirm = document.querySelector('.box .pass__confirm').value;
+
+
+                    if (!secured) {
+                        // console.log('not secured');
+                        if (modalPass === modalPassConfirm && modalPass.length > 0 && modalPassConfirm.length > 0) {
+
+                            const store = geDataFromStorage();
+                            store.forEach((item) => {
+                                if (item.id === itemParentId && !item.lock) {
+                                    item.text = encryptPassword(modalPass, item.text);
+                                    item.date = encryptPassword(modalPass, item.date);
+                                    item.lock = true;
+                                    return;
+                                }
+                            });
+                            // console.log(itemParentId);
+
+                            setDataToStorage(store);
+                            //itemParent.classList.add('jj');
+                            wrightItemsToPage(geDataFromStorage());
+
+                            closeModal();
+
+
+                        } else {
+                            modalMessage.textContent = 'Passwords do not meet minimum requirements';
+                        }
+
+                    } else {
+                        // console.log('secured');
+
+                        const lockedStore = geDataFromStorage();
+                        lockedStore.forEach((item) => {
+                            if (item.id === itemParentId && item.lock) {
+
+
+                                const securedDate = decryptText(modalPass, item.date);
+                                if (securedDate) {
+                                    //console.log('ok');
+                                    item.date = securedDate;
+                                    item.text = decryptText(modalPass, item.text);
+                                    item.lock = false;
+                                    setDataToStorage(lockedStore);
+                                    wrightItemsToPage(geDataFromStorage());
+
+                                    closeModal();
+
+
+                                    return;
+
+
+                                } else {
+                                    modalMessage.textContent = 'Password Error';
+                                }
+
+                            }
+                        });
                     }
                     calcItems();
                 });
-            };
-
-            restoreCheckboxState();
 
 
+
+
+                //////////2.1/////////////
+
+
+                const closeModal = () => {
+                    modalBox.classList.remove('unlock');
+                    modal.classList.remove('active');
+                    body.classList.remove('lock');
+
+                    passInput.value = '';
+                    passconfirm.value = '';
+                    modalMessage.textContent = '';
+                };
+
+                closeIcon.addEventListener('click', () => {
+                    closeModal();
+                });
+
+
+
+
+
+
+                ///////3)//////////////
+                const calcItems = () => {
+
+                    let obj = geDataFromStorage();
+                    tasksCount.textContent = obj.length;
+
+                    let count = 0;
+                    obj.forEach((item) => {
+                        if (!item.lock) {
+                            if (item.read) count += 1;
+                        }
+                    });
+                    //if(secured) {count = 0;}
+                    complatedNum.textContent = `${count} of ${obj.length}`;
+                };
+                calcItems();
+
+
+                function restoreCheckboxState() {
+                    tasks.addEventListener('change', (e) => {
+                        const chb = e.target.closest('.realchb');
+
+                        if (chb) {
+                            const text = chb.closest('.task__item').querySelector('.task__item__descr');
+                            const itemId = chb.closest('.task__item').dataset.id;
+                            const date = chb.closest('.task__item').querySelector('.task__item-date');
+                            //console.log(itemId);
+
+                            let storeObj = geDataFromStorage();
+                            storeObj.forEach((item) => {
+                                if (item.id === itemId) {
+                                    if (chb.checked) {
+
+                                        text.classList.add('textdecore');
+                                        date.classList.add('textdecore');
+                                        item.read = true;
+                                    } else {
+
+                                        text.classList.remove('textdecore');
+                                        date.classList.remove('textdecore');
+                                        item.read = false;
+                                    }
+                                }
+                            });
+
+                            setDataToStorage(storeObj);
+                        }
+                        calcItems();
+                    });
+                };
+
+                restoreCheckboxState();
+
+
+            }
         }
     }
 });
