@@ -400,9 +400,17 @@ body {
         -webkit-tap-highlight-color: transparent;
     }
 
+    .header {
+        min-height: 50px;
+    }
+
 }
 
 @media (max-width: 769px) {
+    .header {
+        min-height: 70px;
+    }
+
     .main {
         flex-direction: column;
         order: 2;
