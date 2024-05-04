@@ -130,10 +130,10 @@ body {
     left: -9px;
 }
 
-.header__arrows img {
+/* .header__arrows img {
     width: 18px;
     height: 14px;
-}
+} */
 
 .header__arrows a {
     display: inline-block;
@@ -146,17 +146,21 @@ body {
 }
 
 
-.header__arrows a:active,
 .header__arrows a:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.1)
+}
+
+.header__arrows a:active {
+    background-color: rgba(0, 0, 0, 0.2);
     transition: transform 0.15s ease, background 0.1s;
     cursor: pointer;
 }
 
 
-.header__arrow-right img {
+
+/* .header__arrow-right img {
     transform: scaleX(-1);
-}
+} */
 
 .main {
     display: flex;
@@ -188,10 +192,28 @@ body {
     gap: 15px;
 }
 
-.color__btns img {
+.color__box {
+    cursor: pointer;
+    padding: 7px;
+    border-radius: 7px;
+}
+
+.color__box:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.color__box:active {
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: transform 0.15s ease, background 0.1s;
+    cursor: pointer;
+}
+
+
+/* .color__btns img {
     width: 18px;
     height: 18px;
-}
+} */
 
 .color__btns .item {
     min-width: 35px;
@@ -200,11 +222,16 @@ body {
     justify-content: center;
     align-items: center;
     border-radius: 10px;
+    cursor: pointer;
 }
 
-.color__btns .item:hover,
-.color__btns .item:active {
+
+.color__btns .item:hover {
     background-color: rgba(0, 0, 0, 0.1);
+}
+
+.color__btns .item:active {
+    background-color: rgba(0, 0, 0, 0.2);
     transition: transform 0.15s ease, background 0.1s;
     cursor: pointer;
 }
@@ -236,12 +263,24 @@ body {
     font-family: inherit;
     text-transform: uppercase;
     color: #000;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .color__descr .color__title {
     font-size: 11.2px;
     opacity: .6;
+    cursor: pointer;
+
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
+
+
 
 .one {
     background-color: #f7f4ea;
@@ -372,6 +411,18 @@ body {
 
     .color__btns .item:active {
         background-color: rgba(0, 0, 0, 0.1);
+        transition: transform 0.15s ease, background 0.1s;
+        cursor: pointer;
+    }
+
+
+    .color__box:hover {
+        background-color: transparent;
+        cursor: pointer;
+    }
+    
+    .color__box:active {
+        background-color: rgba(0, 0, 0, 0.2);
         transition: transform 0.15s ease, background 0.1s;
         cursor: pointer;
     }
