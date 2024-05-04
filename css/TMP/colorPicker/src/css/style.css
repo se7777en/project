@@ -97,7 +97,7 @@ body {
     /* box-shadow: inset #d8d8da 0 0 0 1px; */
     line-height: 100%;
     cursor: pointer;
-    box-shadow: 0 0.04rem 0.5rem #00000052;
+    box-shadow: 0 0.025rem 0.25rem #00000052;
 
     -webkit-user-drag: none;
     -webkit-user-select: none;
@@ -163,6 +163,15 @@ body {
     flex-grow: 1;
     order: 3;
 }
+
+.main .fa-arrows-left-right {
+    display: inline;
+}
+
+.main .fa-arrows-up-down {
+    display: none;
+}
+
 
 .main__item {
     flex-grow: 1;
@@ -331,6 +340,21 @@ body {
         height: 80%;
     }
 
+    .main .fa-arrows-left-right {
+        display: none;
+    }
+    
+    .main .fa-arrows-up-down {
+        display: inline;
+    }
+
+    .main .color {
+        font-size: 20px;
+    }
+
+    .main i {
+        font-size: 20px;
+    }
 
    
 
