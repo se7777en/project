@@ -323,12 +323,21 @@ body {
 
     }
 
-    .header__arrows a:active,
     .header__arrows a:hover {
+        background-color: transparent;
+    }
+
+    .header__arrows a:active {
         background-color: unset;
         color: #0066ff;
         transition: transform 0.15s ease, background 0.1s;
         cursor: pointer;
+
+        scale: 1.05;
+        -webkit-user-drag: none;
+        -webkit-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
     }
 
     .main .fa-solid {
@@ -343,7 +352,7 @@ body {
     .main .fa-arrows-left-right {
         display: none;
     }
-    
+
     .main .fa-arrows-up-down {
         display: inline;
     }
@@ -354,9 +363,20 @@ body {
 
     .main i {
         font-size: 20px;
+        opacity: .6;
     }
 
-   
+    .color__btns .item:hover {
+        background-color: transparent;
+    }
+
+    .color__btns .item:active {
+        background-color: rgba(0, 0, 0, 0.1);
+        transition: transform 0.15s ease, background 0.1s;
+        cursor: pointer;
+    }
+
+
 
     /* .color__btns .item:hover,
     .color__btns .item:focus,
