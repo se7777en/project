@@ -329,7 +329,7 @@ body {
     }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 900px) {
 
     .main .color__box {
         transform: rotate(90deg);
