@@ -32,7 +32,108 @@ document.addEventListener('DOMContentLoaded', (e) => {
         fiveColorBtns = document.querySelector('.five .color__btns');
 
     //color__btns 
-
+    let colorNames = {
+        "#000000": "Black",
+        "#FFFFFF": "White",
+        "#FF0000": "Red",
+        "#00FF00": "Green",
+        "#0000FF": "Blue",
+        "#FFFF00": "Yellow",
+        "#00FFFF": "Cyan",
+        "#FF00FF": "Magenta",
+        "#800000": "Maroon",
+        "#808000": "Olive",
+        "#008000": "Green",
+        "#008080": "Teal",
+        "#000080": "Navy",
+        "#800080": "Purple",
+        "#808080": "Gray",
+        "#C0C0C0": "Silver",
+        "#FFA500": "Orange",
+        "#800000": "Maroon",
+        "#8B4513": "SaddleBrown",
+        "#A0522D": "Sienna",
+        "#D2691E": "Chocolate",
+        "#CD853F": "Peru",
+        "#F4A460": "SandyBrown",
+        "#D2B48C": "Tan",
+        "#DEB887": "BurlyWood",
+        "#FFDAB9": "PeachPuff",
+        "#F5DEB3": "Wheat",
+        "#F5F5DC": "Beige",
+        "#FFE4B5": "Moccasin",
+        "#FFDEAD": "NavajoWhite",
+        "#FAEBD7": "AntiqueWhite",
+        "#FFEBCD": "BlanchedAlmond",
+        "#FFEFD5": "PapayaWhip",
+        "#FFFAF0": "FloralWhite",
+        "#F0E68C": "Khaki",
+        "#BDB76B": "DarkKhaki",
+        "#EEE8AA": "PaleGoldenRod",
+        "#F0DC82": "Khaki",
+        "#FFF8DC": "Cornsilk",
+        "#DAA520": "GoldenRod",
+        "#FFD700": "Gold",
+        "#FFDAB9": "PeachPuff",
+        "#F5DEB3": "Wheat",
+        "#F5F5DC": "Beige",
+        "#FAFAD2": "LightGoldenRodYellow",
+        "#FFFFE0": "LightYellow",
+        "#FFFF00": "Yellow",
+        "#FFD700": "Gold",
+        "#FFFFE0": "LightYellow",
+        "#FFFACD": "LemonChiffon",
+        "#FFF5EE": "SeaShell",
+        "#F0FFF0": "HoneyDew",
+        "#F5FFFA": "MintCream",
+        "#F0FFFF": "Azure",
+        "#F0FFFF": "AliceBlue",
+        "#F0FFFF": "Azure",
+        "#F0F8FF": "AliceBlue",
+        "#F8F8FF": "GhostWhite",
+        "#F0FFF0": "HoneyDew",
+        "#F0F8FF": "LightBlue",
+        "#E6E6FA": "Lavender",
+        "#FFF0F5": "LavenderBlush",
+        "#7B68EE": "MediumSlateBlue",
+        "#9370DB": "MediumPurple",
+        "#4B0082": "Indigo",
+        "#6A5ACD": "SlateBlue",
+        "#483D8B": "DarkSlateBlue",
+        "#4169E1": "RoyalBlue",
+        "#6495ED": "CornflowerBlue",
+        "#B0C4DE": "LightSteelBlue",
+        "#778899": "LightSlateGray",
+        "#708090": "SlateGray",
+        "#1E90FF": "DodgerBlue",
+        "#4682B4": "SteelBlue",
+        "#87CEFA": "LightSkyBlue",
+        "#87CEEB": "SkyBlue",
+        "#00BFFF": "DeepSkyBlue",
+        "#ADD8E6": "LightBlue",
+        "#B0E0E6": "PowderBlue",
+        "#5F9EA0": "CadetBlue",
+        "#7FFFD4": "Aquamarine",
+        "#66CDAA": "MediumAquaMarine",
+        "#20B2AA": "LightSeaGreen",
+        "#40E0D0": "Turquoise",
+        "#48D1CC": "MediumTurquoise",
+        "#00CED1": "DarkTurquoise",
+        "#AFEEEE": "PaleTurquoise",
+        "#00FFFF": "Aqua",
+        "#00FFFF": "Cyan",
+        "#E0FFFF": "LightCyan",
+        "#87CEEB": "SkyBlue",
+        "#87CEFA": "LightSkyBlue",
+        "#4682B4": "SteelBlue",
+        "#B0C4DE": "LightSteelBlue",
+        "#6495ED": "CornflowerBlue",
+        "#1E90FF": "DodgerBlue",
+        "#ADD8E6": "LightBlue",
+        "#5F9EA0": "CadetBlue",
+        "#7FFFD4": "Aquamarine"
+        // Продолжайте добавлять другие цвета по мере необходимости
+    };
 
 
     function generateRandomColor() {
@@ -64,9 +165,18 @@ document.addEventListener('DOMContentLoaded', (e) => {
    // itemColorate(generateRandomColor(), oneColorTitle, oneColor, oneColorBtns, oneItem);
 
 
-    function itemColorate(randomColor, oneColorTitle, oneColor, oneColorBtns, oneItem) {
+    function itemColorate(randomColor, oneColorTitle, oneColor, oneColorBtns, oneItem, title) {
         oneItem.style.cssText = `background-color: ${randomColor} !important;`;
         oneColor.textContent = randomColor;
+
+    
+        //oneColorTitle
+        if(colorNames[randomColor]) {
+            title.textContent = colorNames.randomColor;
+        }else {
+            title.textContent = '';
+        }
+
         if (getColorIntensity(randomColor) !== 'light') {
 
             oneColorTitle.classList.remove('colorBlack');
@@ -74,6 +184,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
             oneColor.classList.remove('colorBlack');
             oneColor.classList.add('colorWhite');
             oneColorBtns.style.cssText = 'color: #ffffff';
+            
 
         } else {
             oneColor.classList.remove('colorWhite');
@@ -93,24 +204,24 @@ document.addEventListener('DOMContentLoaded', (e) => {
             //oneColor.textContent = randomColor;
             if (i === 1) {
                 let randomColor = generateRandomColor();
-                itemColorate(randomColor, oneColorTitle, oneColor, oneColorBtns, oneItem);
+                itemColorate(randomColor, oneColorTitle, oneColor, oneColorBtns, oneItem, oneColorTitle);
             }
 
             if (i === 2) {
                 let randomColor = generateRandomColor();
-                itemColorate(randomColor, twoColorTitle, twoColor, twoColorBtns, twoItem);
+                itemColorate(randomColor, twoColorTitle, twoColor, twoColorBtns, twoItem, twoColorTitle);
             }
             if (i === 3) {
                 let randomColor = generateRandomColor();
-                itemColorate(randomColor, threeColorTitle, threeColor, threeColorBtns, threeItem);
+                itemColorate(randomColor, threeColorTitle, threeColor, threeColorBtns, threeItem, threeColorTitle);
             }
             if (i === 4) {
                 let randomColor = generateRandomColor();
-                itemColorate(randomColor, fourColorTitle, fourColor, fourColorBtns, fourItem);
+                itemColorate(randomColor, fourColorTitle, fourColor, fourColorBtns, fourItem, fourColorTitle);
             }
             if (i === 5) {
                 let randomColor = generateRandomColor();
-                itemColorate(randomColor, fiveColorTitle, fiveColor, fiveColorBtns, fiveItem);
+                itemColorate(randomColor, fiveColorTitle, fiveColor, fiveColorBtns, fiveItem, fiveColorTitle);
             }
         }
 
