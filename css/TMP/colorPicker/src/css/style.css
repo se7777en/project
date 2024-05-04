@@ -147,12 +147,14 @@ body {
 
 
 .header__arrows a:hover {
-    background-color: rgba(0, 0, 0, 0.1)
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: all .2s ease-in-out;
 }
 
 .header__arrows a:active {
     background-color: rgba(0, 0, 0, 0.2);
-    transition: transform 0.15s ease, background 0.1s;
+    /* transition: transform 0.15s ease, background 0.1s; */
+    transition: all .2s ease-in-out;
     cursor: pointer;
 }
 
@@ -166,6 +168,7 @@ body {
     display: flex;
     flex-grow: 1;
     order: 3;
+    background-color:white;
 }
 
 .main .fa-arrows-left-right {
@@ -228,11 +231,13 @@ body {
 
 .color__btns .item:hover {
     background-color: rgba(0, 0, 0, 0.1);
+    transition: all .2s ease-in-out;
 }
 
 .color__btns .item:active {
     background-color: rgba(0, 0, 0, 0.2);
-    transition: transform 0.15s ease, background 0.1s;
+    /* transition: transform 0.15s ease, background 0.1s; */
+    transition: all .2s ease-in-out;
     cursor: pointer;
 }
 
