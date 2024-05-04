@@ -171,7 +171,7 @@ body {
     display: flex;
     flex-grow: 1;
     order: 3;
-    background-color:white;
+    background-color: white;
 }
 
 .main .fa-arrows-left-right {
@@ -207,13 +207,11 @@ body {
 .color__box:hover {
     background-color: rgba(0, 0, 0, 0.1);
     transition: all .2s ease-in-out;
-    overflow: hidden;
     cursor: pointer;
 }
 
 .color__box:active {
     background-color: rgba(0, 0, 0, 0.2);
-    overflow: hidden;
     /* transition: transform 0.15s ease, background 0.1s; */
     transition: all .2s ease-in-out;
     cursor: pointer;
@@ -233,20 +231,20 @@ body {
     align-items: center;
     border-radius: 10px;
     cursor: pointer;
-    overflow: hidden;
+
 }
 
 
 .color__btns .item:hover {
     background-color: rgba(0, 0, 0, 0.1);
     transition: all .2s ease-in-out;
-    overflow: hidden;
+
 }
 
 .color__btns .item:active {
     background-color: rgba(0, 0, 0, 0.2);
     /* transition: transform 0.15s ease, background 0.1s; */
-    overflow: hidden;
+
     transition: all .2s ease-in-out;
     cursor: pointer;
 }
@@ -421,40 +419,47 @@ body {
     }
 
     .color__btns .item:hover {
-        background-color: transparent;
-        overflow: hidden;
+        background-color:transparent;
+        -webkit-user-drag: none;
+        -webkit-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
     }
 
     .color__btns .item:active {
-        background-color: rgba(0, 0, 0, 0.1);
-        /* transition: transform 0.15s ease, background 0.1s; */
+        background-color: rgba(0, 0, 0, 0.2);
         transition: all .3s ease-in-out;
-        overflow: hidden;
         cursor: pointer;
+
+        -webkit-user-drag: none;
+        -webkit-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+
+
     }
 
 
     .color__box:hover {
-        background-color: transparent;
-        overflow: hidden;
+        background-color:transparent;
         cursor: pointer;
+
+        -webkit-user-drag: none;
+        -webkit-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
     }
-    
+
     .color__box:active {
         background-color: rgba(0, 0, 0, 0.2);
-        /* transition: transform 0.15s ease, background 0.1s; */
         transition: all .3s ease-in-out;
-        overflow: hidden;
         cursor: pointer;
+
+        -webkit-user-drag: none;
+        -webkit-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
     }
 
 
-
-    /* .color__btns .item:hover,
-    .color__btns .item:focus,
-    .color__btns .item:active {
-        background-color: rgba(185, 21, 21, 0.1);
-        transition: transform 0.15s ease, background 0.1s;
-        cursor: pointer;
-    } */
 }
