@@ -76,7 +76,7 @@ body {
 .header__title {
     /* font-family: "Comfortaa", sans-serif; */
     font-family: "Federo", sans-serif;
-    font-size: 50px;
+    font-size: 40px;
     color: #0066ff;
     text-transform: uppercase;
     font-weight: 400;
@@ -150,11 +150,13 @@ body {
 
 .header__arrows a:hover {
     background-color: rgba(0, 0, 0, 0.1);
+    overflow: hidden;
     transition: all .2s ease-in-out;
 }
 
 .header__arrows a:active {
     background-color: rgba(0, 0, 0, 0.2);
+    overflow: hidden;
     transition: all .2s ease-in-out;
     cursor: pointer;
 }
@@ -204,12 +206,16 @@ body {
 
 .color__box:hover {
     background-color: rgba(0, 0, 0, 0.1);
+    transition: all .2s ease-in-out;
+    overflow: hidden;
     cursor: pointer;
 }
 
 .color__box:active {
     background-color: rgba(0, 0, 0, 0.2);
-    transition: transform 0.15s ease, background 0.1s;
+    overflow: hidden;
+    /* transition: transform 0.15s ease, background 0.1s; */
+    transition: all .2s ease-in-out;
     cursor: pointer;
 }
 
@@ -234,11 +240,13 @@ body {
 .color__btns .item:hover {
     background-color: rgba(0, 0, 0, 0.1);
     transition: all .2s ease-in-out;
+    overflow: hidden;
 }
 
 .color__btns .item:active {
     background-color: rgba(0, 0, 0, 0.2);
     /* transition: transform 0.15s ease, background 0.1s; */
+    overflow: hidden;
     transition: all .2s ease-in-out;
     cursor: pointer;
 }
@@ -414,23 +422,29 @@ body {
 
     .color__btns .item:hover {
         background-color: transparent;
+        overflow: hidden;
     }
 
     .color__btns .item:active {
         background-color: rgba(0, 0, 0, 0.1);
-        transition: transform 0.15s ease, background 0.1s;
+        /* transition: transform 0.15s ease, background 0.1s; */
+        transition: all .3s ease-in-out;
+        overflow: hidden;
         cursor: pointer;
     }
 
 
     .color__box:hover {
         background-color: transparent;
+        overflow: hidden;
         cursor: pointer;
     }
     
     .color__box:active {
         background-color: rgba(0, 0, 0, 0.2);
-        transition: transform 0.15s ease, background 0.1s;
+        /* transition: transform 0.15s ease, background 0.1s; */
+        transition: all .3s ease-in-out;
+        overflow: hidden;
         cursor: pointer;
     }
 
