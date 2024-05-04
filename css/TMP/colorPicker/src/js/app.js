@@ -60,13 +60,14 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
 
 
+
    // itemColorate(generateRandomColor(), oneColorTitle, oneColor, oneColorBtns, oneItem);
 
 
     function itemColorate(randomColor, oneColorTitle, oneColor, oneColorBtns, oneItem) {
         oneItem.style.cssText = `background-color: ${randomColor} !important;`;
         oneColor.textContent = randomColor;
-        if (getColorIntensity(randomColor) === 'light') {
+        if (getColorIntensity(randomColor) !== 'light') {
 
             oneColorTitle.classList.remove('colorBlack');
             oneColorTitle.classList.add('colorWhite');
