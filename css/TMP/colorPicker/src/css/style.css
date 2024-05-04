@@ -74,11 +74,13 @@ body {
 }
 
 .header__title {
-    font-family: "Comfortaa", sans-serif;
+    /* font-family: "Comfortaa", sans-serif; */
+    font-family: "Federo", sans-serif;
     font-size: 50px;
     color: #0066ff;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 400;
+    letter-spacing: 2px;
 }
 
 .header__operations {
@@ -153,7 +155,6 @@ body {
 
 .header__arrows a:active {
     background-color: rgba(0, 0, 0, 0.2);
-    /* transition: transform 0.15s ease, background 0.1s; */
     transition: all .2s ease-in-out;
     cursor: pointer;
 }
