@@ -329,7 +329,7 @@ body {
     }
 }
 
-@media (max-width: 769px) {
+@media (max-width: 900px) {
     .main {
         flex-direction: column;
         order: 2;
