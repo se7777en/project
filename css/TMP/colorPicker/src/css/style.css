@@ -329,7 +329,7 @@ body {
     }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 980px) {
 
     .main .color__box {
         transform: rotate(90deg);
@@ -340,7 +340,7 @@ body {
     }
 
     .color__btns .item:hover {
-        background-color:transparent;
+        background-color: transparent;
         -webkit-user-drag: none;
         -webkit-user-select: none;
         user-select: none;
@@ -362,7 +362,7 @@ body {
 
 
     .color__box:hover {
-        background-color:transparent;
+        background-color: transparent;
         cursor: pointer;
 
         -webkit-user-drag: none;
@@ -434,7 +434,7 @@ body {
         display: flex;
         justify-content: space-between;
         flex-direction: row;
-        padding: 0px 30px;
+        padding: 0px 22px;
     }
 
     /* .color__descr .color {
@@ -502,7 +502,7 @@ body {
     }
 
     .color__btns .item:hover {
-        background-color:transparent;
+        background-color: transparent;
         -webkit-user-drag: none;
         -webkit-user-select: none;
         user-select: none;
@@ -524,7 +524,7 @@ body {
 
 
     .color__box:hover {
-        background-color:transparent;
+        background-color: transparent;
         cursor: pointer;
 
         -webkit-user-drag: none;
