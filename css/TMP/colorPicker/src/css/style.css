@@ -353,16 +353,6 @@ body {
 
 @media (max-width: 980px) {
 
- .color__descr {
-
-        position: static;
-        transform: none;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-
     .main .color__box {
         transform: rotate(90deg);
     }
@@ -578,6 +568,14 @@ body {
         -webkit-tap-highlight-color: transparent;
     }
 
+    .color__descr {
+        position: static;
+        transform: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
 
 }
 
