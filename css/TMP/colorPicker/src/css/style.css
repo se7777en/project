@@ -324,9 +324,64 @@ body {
 }
 
 @media (max-width: 1060px) {
-    .color__descr .color {
+    .main .color {
         font-size: 22px;
     }
+}
+
+@media (max-width: 1000px) {
+
+    .main .color {
+        transform: rotate(90deg);
+    }
+
+    .color__title {
+        display: none;
+    }
+
+    .color__btns .item:hover {
+        background-color:transparent;
+        -webkit-user-drag: none;
+        -webkit-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .color__btns .item:active {
+        background-color: rgba(0, 0, 0, 0.2);
+        transition: all .3s ease-in-out;
+        cursor: pointer;
+
+        -webkit-user-drag: none;
+        -webkit-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+
+
+    }
+
+
+    .color__box:hover {
+        background-color:transparent;
+        cursor: pointer;
+
+        -webkit-user-drag: none;
+        -webkit-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .color__box:active {
+        background-color: rgba(0, 0, 0, 0.2);
+        transition: all .3s ease-in-out;
+        cursor: pointer;
+
+        -webkit-user-drag: none;
+        -webkit-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+    }
+
 }
 
 @media (max-width: 769px) {
@@ -356,10 +411,10 @@ body {
         padding: 0px 30px;
     }
 
-    .color__descr .color {
-        font-size: 13px;
+    /* .color__descr .color {
+        font-size: 16px;
         font-weight: 500;
-    }
+    } */
 
     .header__operations {
         padding: 9px 0px 9px 10px;
@@ -411,6 +466,8 @@ body {
 
     .main .color {
         font-size: 20px;
+        /* font-weight: 500; */
+        transform: rotate(0deg);
     }
 
     .main i {
