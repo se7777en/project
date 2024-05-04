@@ -29,8 +29,11 @@ document.addEventListener('DOMContentLoaded', (e) => {
         fiveItem = document.querySelector('.five'),
         fiveColor = document.querySelector('.five .color'),
         fiveColorTitle = document.querySelector('.five .color__title'),
-        fiveColorBtns = document.querySelector('.five .color__btns');
+        fiveColorBtns = document.querySelector('.five .color__btns'),
+        main = document.querySelector('.main');
 
+
+    let lockId = false;
     //color__btns 
     let colorNames = {
         "#000000": "Black",
@@ -136,6 +139,31 @@ document.addEventListener('DOMContentLoaded', (e) => {
     };
 
 
+
+
+    main.addEventListener('click', (e) => {
+
+        const item = e.target.closest('.secure__img');
+
+        if (item) {
+            lockId = item.dataset.id;
+            item.dataset.id = lockId === '0' ? '1' : '0';
+           
+            const sec = item.querySelector('.fa-solid');
+            sec.classList.toggle('fa-lock-open');
+            sec.classList.toggle('fa-lock');
+        }
+    });
+
+    const lockStatus = (elem) => {
+        const item = elem.querySelector('.secure__img');
+        const id = item.dataset.id;
+        return id !== '1';
+        // if (id === '1') { return false; } else {
+        //     return true;
+        // }
+    };
+
     function generateRandomColor() {
         let letters = '0123456789ABCDEF';
         let color = '#';
@@ -162,18 +190,18 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
 
 
-   // itemColorate(generateRandomColor(), oneColorTitle, oneColor, oneColorBtns, oneItem);
+    // itemColorate(generateRandomColor(), oneColorTitle, oneColor, oneColorBtns, oneItem);
 
 
     function itemColorate(randomColor, oneColorTitle, oneColor, oneColorBtns, oneItem, title) {
         oneItem.style.cssText = `background-color: ${randomColor} !important;`;
         oneColor.textContent = randomColor;
 
-    
+
         //oneColorTitle
-        if(colorNames[randomColor]) {
+        if (colorNames[randomColor]) {
             title.textContent = colorNames.randomColor;
-        }else {
+        } else {
             title.textContent = '';
         }
 
@@ -184,7 +212,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
             oneColor.classList.remove('colorBlack');
             oneColor.classList.add('colorWhite');
             oneColorBtns.style.cssText = 'color: #ffffff';
-            
+
 
         } else {
             oneColor.classList.remove('colorWhite');
@@ -203,25 +231,36 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
             //oneColor.textContent = randomColor;
             if (i === 1) {
-                let randomColor = generateRandomColor();
-                itemColorate(randomColor, oneColorTitle, oneColor, oneColorBtns, oneItem, oneColorTitle);
+
+                if (lockStatus(oneItem)) {
+                    let randomColor = generateRandomColor();
+                    itemColorate(randomColor, oneColorTitle, oneColor, oneColorBtns, oneItem, oneColorTitle);
+                }
             }
 
             if (i === 2) {
-                let randomColor = generateRandomColor();
-                itemColorate(randomColor, twoColorTitle, twoColor, twoColorBtns, twoItem, twoColorTitle);
+                if (lockStatus(twoItem)) {
+                    let randomColor = generateRandomColor();
+                    itemColorate(randomColor, twoColorTitle, twoColor, twoColorBtns, twoItem, twoColorTitle);
+                }
             }
             if (i === 3) {
-                let randomColor = generateRandomColor();
-                itemColorate(randomColor, threeColorTitle, threeColor, threeColorBtns, threeItem, threeColorTitle);
+                if (lockStatus(threeItem)) {
+                    let randomColor = generateRandomColor();
+                    itemColorate(randomColor, threeColorTitle, threeColor, threeColorBtns, threeItem, threeColorTitle);
+                }
             }
             if (i === 4) {
-                let randomColor = generateRandomColor();
-                itemColorate(randomColor, fourColorTitle, fourColor, fourColorBtns, fourItem, fourColorTitle);
+                if (lockStatus(fourItem)) {
+                    let randomColor = generateRandomColor();
+                    itemColorate(randomColor, fourColorTitle, fourColor, fourColorBtns, fourItem, fourColorTitle);
+                }
             }
             if (i === 5) {
-                let randomColor = generateRandomColor();
-                itemColorate(randomColor, fiveColorTitle, fiveColor, fiveColorBtns, fiveItem, fiveColorTitle);
+                if (lockStatus(fiveItem)) {
+                    let randomColor = generateRandomColor();
+                    itemColorate(randomColor, fiveColorTitle, fiveColor, fiveColorBtns, fiveItem, fiveColorTitle);
+                }
             }
         }
 
