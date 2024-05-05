@@ -260,7 +260,6 @@ body {
     padding: 7px;
     border-radius: 7px;
     display: block;
-    position: relative;
 }
 
 .color__box:hover {
@@ -397,6 +396,7 @@ body {
 @media (max-width: 1060px) {
     .main .color {
         font-size: 22px;
+        line-height: 120% !important;
     }
 }
 
