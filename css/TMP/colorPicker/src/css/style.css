@@ -259,6 +259,8 @@ body {
     cursor: pointer;
     padding: 7px;
     border-radius: 7px;
+    display: block;
+    position: relative;
 }
 
 .color__box:hover {
