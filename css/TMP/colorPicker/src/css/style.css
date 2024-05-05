@@ -40,6 +40,7 @@ li {
 body {
     font-family: "Montserrat", sans-serif;
     font-size: 16px;
+    position: relative;
     /* box-shadow: rgba(0, 0, 0, 0.075) 0 1px; 
     
     text #b1b0b5;
@@ -61,7 +62,44 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100svh;
-    flex-grow: 1;
+    /* flex-grow: 1; */
+}
+
+.modal {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -50%;
+    width: 180px;
+    height: 50px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: rgba(0, 0, 0, 0.1);
+    color: #fff;
+    font-size: 13px;
+    padding: 5px;
+    transition: all .3s ease-in-out;
+    
+}
+
+.modal.showmodal {
+    animation: slideUp 0.1s ease-in-out forwards;
+}
+
+@keyframes slideUp {
+    0% {
+        bottom: 2.5%; /* Начальное положение внизу */
+    }
+    50% {
+        bottom: 1.5%; /* Положение вверху */
+    }
+    100% {
+        bottom: 2%; /* Положение вверху */
+    }
 }
 
 .header {
@@ -81,7 +119,15 @@ body {
     text-transform: uppercase;
     font-weight: 400;
     letter-spacing: 2px;
+    cursor: pointer;
 
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.header__title a {
     -webkit-user-drag: none;
     -webkit-user-select: none;
     user-select: none;
@@ -117,16 +163,16 @@ body {
     scale: 1.05;
 }
 
-.header__arrows {
-    display: flex;
+.header__comunity {
+    /* display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 10px; */
     font-size: 18px;
     color: rgba(0, 0, 0, 0.3);
     position: relative;
 }
 
-.header__arrows::before {
+.header__comunity::before {
     content: '';
     position: absolute;
     width: 1px;
@@ -137,12 +183,12 @@ body {
     left: -9px;
 }
 
-/* .header__arrows img {
+/* .header__comunity img {
     width: 18px;
     height: 14px;
 } */
 
-.header__arrows a {
+.header__comunity a {
     display: inline-block;
     min-width: 35px;
     min-height: 35px;
@@ -158,13 +204,13 @@ body {
 }
 
 
-.header__arrows a:hover {
+.header__comunity a:hover {
     background-color: rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: all .2s ease-in-out;
 }
 
-.header__arrows a:active {
+.header__comunity a:active {
     background-color: rgba(0, 0, 0, 0.2);
     overflow: hidden;
     transition: all .2s ease-in-out;
@@ -411,11 +457,11 @@ body {
     }
 
 
-    .header__arrows a:hover {
+    .header__comunity a:hover {
         background-color: transparent;
     }
 
-    .header__arrows a:active {
+    .header__comunity a:active {
         background-color: unset;
         color: #0066ff;
         transition: transform 0.15s ease, background 0.1s;
@@ -476,21 +522,21 @@ body {
         padding: 9px 0px 9px 10px;
     }
 
-    .header__arrows {
+    /* .header__comunity {
         gap: 20px;
-    }
+    } */
 
-    .header__arrows a {
+    /* .header__comunity a {
         min-width: unset;
         min-height: unset;
 
-    }
+    } */
 
-    .header__arrows a:hover {
+    .header__comunity a:hover {
         background-color: transparent;
     }
 
-    .header__arrows a:active {
+    .header__comunity a:active {
         background-color: unset;
         color: #0066ff;
         transition: transform 0.15s ease, background 0.1s;
@@ -507,10 +553,10 @@ body {
         color: rgba(132, 129, 120, .9);
     } */
 
-    .header__arrows::before {
+    /* .header__comunity::before {
         left: -13px;
         height: 80%;
-    }
+    } */
 
     .main .fa-arrows-left-right {
         display: none;
@@ -533,7 +579,7 @@ body {
 
     .color__btns .item:hover,
     .color__btns .item:focus,
-    .color__btns .item:visited{
+    .color__btns .item:visited {
         background-color: transparent;
         -webkit-user-drag: none;
         -webkit-user-select: none;
@@ -557,7 +603,7 @@ body {
 
     .color__box:hover,
     .color__box:focus,
-    .color__box:visited{
+    .color__box:visited {
         background-color: transparent;
         cursor: pointer;
 
