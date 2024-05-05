@@ -290,19 +290,19 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
 
     let colorsInObj = [];
-    let hashes = false;
+    let hashes = true;
     const addColorsOnPage = () => {
 
         const colorsFromPage = document.querySelectorAll('.main .color');
         //console.log(colorsFromPage[0].textContent);
 
         let hashColors = [];
-        // if (window.location.hash.length > 24 && hashes) {
-        //     hashColors = UUIDStringToColors(window.location.hash.slice(1));
-        //     //console.log(hashColors);
-        // } else {
-        //     hashes = false;
-        // }
+        if (window.location.hash.length > 24 && hashes) {
+            hashColors = UUIDStringToColors(window.location.hash.slice(1));
+            //console.log(hashColors);
+        } else {
+            hashes = false;
+        }
         for (let i = 1; i < 6; i++) {
             //console.log(i);
 
