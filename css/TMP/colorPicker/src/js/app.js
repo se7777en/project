@@ -32,7 +32,8 @@ document.addEventListener('DOMContentLoaded', (e) => {
         fiveColorBtns = document.querySelector('.five .color__btns'),
         main = document.querySelector('.main'),
         headerShare = document.querySelector('.header__share'),
-        modal = document.querySelector('BODY .modal');
+        modal = document.querySelector('BODY .modal'),
+        modalInner = document.querySelector('BODY .modal .modal__inner');
 
 
 
@@ -41,6 +42,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
         e.preventDefault();
 
         if (window.location.hash.length > 20) {
+            modalInner.textContent = 'Link copied to clipboard';
             navigator.clipboard.writeText(window.location.href);
             modal.classList.add('showmodal');
             setTimeout(() => {
@@ -169,6 +171,8 @@ document.addEventListener('DOMContentLoaded', (e) => {
     main.addEventListener('click', (e) => {
 
         const item = e.target.closest('.secure__img');
+        const copy = e.target.closest('.copy__img');
+
 
         if (item) {
             lockId = item.dataset.id;
@@ -178,7 +182,24 @@ document.addEventListener('DOMContentLoaded', (e) => {
             sec.classList.toggle('fa-lock-open');
             sec.classList.toggle('fa-lock');
         }
+
+        if (copy) {
+            const copyParent = copy.closest('.color__btns');
+            const colorParent = copyParent.closest('.main__item');
+            const color = colorParent.querySelector('.color').textContent;
+            if (color.length > 0) {
+                navigator.clipboard.writeText(color);
+                modalInner.textContent = 'Color copied to clipboard';
+                modal.classList.add('showmodal');
+                setTimeout(() => {
+                    modal.classList.remove('showmodal');
+                }, 2500);
+            }
+        }
     });
+
+
+
 
 
     function colorsToUUIDString(colors) {
