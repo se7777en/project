@@ -396,7 +396,8 @@ body {
 @media (max-width: 1060px) {
     .main .color {
         font-size: 22px;
-        line-height: 120% !important;
+        line-height: 120%;
+        display: block;
     }
 }
 
@@ -495,8 +496,8 @@ body {
         order: 2;
     }
 
-    .header__operations {
-        order: 3;
+    body .wrapper .header__operations {
+        order: 3 !important;
     }
 
     .color__title {
