@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
-  
-    <link href="https://fonts.googleapis.com/css2?family=Federo&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Federo&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <title>Color Picker</title>
 </head>
@@ -14,24 +16,29 @@
 <body>
     <div class="wrapper">
         <div class="header">
-            <div class="header__title">colors</div>
+            <div class="header__title">
+                <a href="http://127.0.0.1:5500/css/TMP/colorPicker/src/index.html">colors</a>
+            </div>
+
+
         </div>
 
         <div class="header__operations">
             <div class="header__btn">Generate</div>
-            <div class="header__arrows">
-                <a href="#!" class="header__arrow-left">
+            <div class="header__comunity">
+                <a href="#!" class="header__share">
                     <!-- <img class="left__img" src="./img/arrow.png" alt="left"> -->
-                    <i class="fa-sharp fa-solid fa-reply"></i>
+                    <i class="fa-solid fa-share-nodes"></i>
                 </a>
-                <a href="#!" class="header__arrow-right">
-                    <!-- <img class="right__img" src="./img/arrow.png" alt="right"> -->
+                <!-- <a href="#!" class="header__arrow-right">
+                    <img class="right__img" src="./img/arrow.png" alt="right">
                     <i class="fa-sharp fa-solid fa-reply fa-flip-horizontal"></i>
-                </a>
+                </a> -->
             </div>
         </div>
 
         <div class="main">
+            <input type="color" id="color-picker" style="display: none;">
             <div class="main__item one">
                 <div class="color__descr">
                     <div class="color__box">
@@ -88,7 +95,7 @@
                     <div class="color__box">
                         <div class="color">#c0b9dd</div>
                     </div>
-                    
+
                     <div class="color__title">Electric blue</div>
                 </div>
                 <div class="color__btns">
@@ -149,16 +156,16 @@
                     </div>
                 </div>
             </div>
-
-
-
-
-
-
-
-
         </div>
 
+
+
+        
+
+    </div>
+
+    <div class="modal">
+        <div class="modal__inner">Link copied to clipboard</div>
     </div>
 
 

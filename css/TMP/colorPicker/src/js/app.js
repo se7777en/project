@@ -30,7 +30,32 @@ document.addEventListener('DOMContentLoaded', (e) => {
         fiveColor = document.querySelector('.five .color'),
         fiveColorTitle = document.querySelector('.five .color__title'),
         fiveColorBtns = document.querySelector('.five .color__btns'),
-        main = document.querySelector('.main');
+        main = document.querySelector('.main'),
+        headerShare = document.querySelector('.header__share'),
+        modal = document.querySelector('BODY .modal');
+
+
+
+
+    headerShare.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        if (window.location.hash.length > 20) {
+            navigator.clipboard.writeText(window.location.href);
+            modal.classList.add('showmodal');
+            setTimeout(() => {
+                modal.classList.remove('showmodal');
+            }, 2500);
+        }
+
+    });
+    // window.location.hash = '#123';
+    // console.log(window.location.hash);
+
+
+
+
+
 
 
     let lockId = false;
@@ -155,6 +180,24 @@ document.addEventListener('DOMContentLoaded', (e) => {
         }
     });
 
+
+    function colorsToUUIDString(colors) {
+        const uuidString = colors.join('').replace(/#/g, '');
+        return uuidString.toLowerCase();
+    }
+
+    function UUIDStringToColors(uuidString) {
+        const colors = [];
+        const cleanedUUIDString = uuidString.replace(/-/g, '');
+        for (let i = 0; i < cleanedUUIDString.length; i += 6) {
+            const color = '#' + cleanedUUIDString.substring(i, i + 6);
+            colors.push(color);
+        }
+        return colors;
+    }
+
+    //////////////////////////////////////   
+
     const lockStatus = (elem) => {
         const item = elem.querySelector('.secure__img');
         const id = item.dataset.id;
@@ -221,11 +264,21 @@ document.addEventListener('DOMContentLoaded', (e) => {
             oneColorTitle.classList.add('colorBlack');
             oneColorBtns.style.cssText = 'color: #000000';
         }
-
     };
 
 
-    generate.addEventListener('click', () => {
+
+    let colorsInObj = [];
+    let hashes = true;
+    const addColorsOnPage = () => {
+
+        let hashColors = [];
+        if (window.location.hash.length > 24 && hashes) {
+            hashColors = UUIDStringToColors(window.location.hash.slice(1));
+            //console.log(hashColors);
+        } else {
+            hashes = false;
+        }
         for (let i = 1; i < 6; i++) {
             //console.log(i);
 
@@ -234,6 +287,9 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
                 if (lockStatus(oneItem)) {
                     let randomColor = generateRandomColor();
+                    if (hashes) { randomColor = hashColors[0]; }
+
+                    colorsInObj.push(randomColor);
                     itemColorate(randomColor, oneColorTitle, oneColor, oneColorBtns, oneItem, oneColorTitle);
                 }
             }
@@ -241,29 +297,63 @@ document.addEventListener('DOMContentLoaded', (e) => {
             if (i === 2) {
                 if (lockStatus(twoItem)) {
                     let randomColor = generateRandomColor();
+                    if (hashes) { randomColor = hashColors[1]; }
+                    colorsInObj.push(randomColor);
                     itemColorate(randomColor, twoColorTitle, twoColor, twoColorBtns, twoItem, twoColorTitle);
                 }
             }
             if (i === 3) {
                 if (lockStatus(threeItem)) {
                     let randomColor = generateRandomColor();
+                    if (hashes) { randomColor = hashColors[2]; }
+                    colorsInObj.push(randomColor);
                     itemColorate(randomColor, threeColorTitle, threeColor, threeColorBtns, threeItem, threeColorTitle);
                 }
             }
             if (i === 4) {
                 if (lockStatus(fourItem)) {
                     let randomColor = generateRandomColor();
+                    if (hashes) { randomColor = hashColors[3]; }
+                    colorsInObj.push(randomColor);
                     itemColorate(randomColor, fourColorTitle, fourColor, fourColorBtns, fourItem, fourColorTitle);
                 }
             }
             if (i === 5) {
                 if (lockStatus(fiveItem)) {
                     let randomColor = generateRandomColor();
+                    if (hashes) { randomColor = hashColors[4]; }
+                    colorsInObj.push(randomColor);
                     itemColorate(randomColor, fiveColorTitle, fiveColor, fiveColorBtns, fiveItem, fiveColorTitle);
                 }
             }
         }
 
+        hashes = false;
+    }
+
+    addColorsOnPage();
+    if (colorsInObj.length > 0) {
+        window.location.hash = colorsToUUIDString(colorsInObj);
+    }
+
+    //    let hashColors = [];
+    //    if(window.location.hash.length > 0) {
+    //        hashColors = UUIDStringToColors(window.location.hash);
+    //    }
+    // console.log(colorsInObj);
+    //colorsToUUIDString
+
+
+
+    generate.addEventListener('click', () => {
+        colorsInObj = [];
+        addColorsOnPage();
+        // console.log(colorsInObj);
+        // console.log(colorsToUUIDString(colorsInObj));
+
+        if (colorsInObj.length > 0) {
+            window.location.hash = colorsToUUIDString(colorsInObj);
+        }
     });
 
     //let intensity = getColorIntensity(randomColor);
