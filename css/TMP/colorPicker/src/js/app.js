@@ -380,7 +380,8 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
 
 
-    generate.addEventListener('click', () => {
+    generate.addEventListener('click', (e) => {
+        e.preventDefault();
         colorsInObj = [];
         addColorsOnPage();
         // console.log(colorsInObj);
@@ -433,6 +434,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
         });
 
         tasksListElement.addEventListener('touchstart', (evt) => {
+            evt.preventDefault();
             const targetTask = evt.target.closest('.main__item');
             if (targetTask) {
                 activeTask = {
@@ -444,7 +446,8 @@ document.addEventListener('DOMContentLoaded', (e) => {
             }
         });
 
-        tasksListElement.addEventListener('touchend', () => {
+        tasksListElement.addEventListener('touchend', (e) => {
+            e.preventDefault();
             if (activeTask) {
                 activeTask.element.classList.remove('selected');
                 activeTask = null;
