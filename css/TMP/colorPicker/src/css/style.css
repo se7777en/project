@@ -364,6 +364,7 @@ body {
 
 
     .color__btns .item:hover,
+    .color__btns .item:visited,
     .color__btns .item:focus {
         background-color: transparent;
         -webkit-user-drag: none;
@@ -387,7 +388,8 @@ body {
 
 
     .color__box:hover,
-    .color__box:focus {
+    .color__box:focus,
+    .color__box:visited {
         background-color: transparent;
         cursor: pointer;
 
@@ -529,7 +531,9 @@ body {
         opacity: .6;
     }
 
-    .color__btns .item:hover {
+    .color__btns .item:hover,
+    .color__btns .item:focus,
+    .color__btns .item:visited{
         background-color: transparent;
         -webkit-user-drag: none;
         -webkit-user-select: none;
@@ -551,7 +555,9 @@ body {
     }
 
 
-    .color__box:hover {
+    .color__box:hover,
+    .color__box:focus,
+    .color__box:visited{
         background-color: transparent;
         cursor: pointer;
 
