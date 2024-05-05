@@ -272,6 +272,9 @@ document.addEventListener('DOMContentLoaded', (e) => {
     let hashes = true;
     const addColorsOnPage = () => {
 
+        const colorsFromPage = document.querySelectorAll('.main .color');
+        //console.log(colorsFromPage[0].textContent);
+
         let hashColors = [];
         if (window.location.hash.length > 24 && hashes) {
             hashColors = UUIDStringToColors(window.location.hash.slice(1));
@@ -288,18 +291,21 @@ document.addEventListener('DOMContentLoaded', (e) => {
                 if (lockStatus(oneItem)) {
                     let randomColor = generateRandomColor();
                     if (hashes) { randomColor = hashColors[0]; }
-
                     colorsInObj.push(randomColor);
                     itemColorate(randomColor, oneColorTitle, oneColor, oneColorBtns, oneItem, oneColorTitle);
+                } else {
+                    colorsInObj.push(colorsFromPage[0].textContent);
                 }
             }
 
             if (i === 2) {
-                if (lockStatus(twoItem)) {
+                if (lockStatus(twoItem)) { // if not locked
                     let randomColor = generateRandomColor();
                     if (hashes) { randomColor = hashColors[1]; }
                     colorsInObj.push(randomColor);
                     itemColorate(randomColor, twoColorTitle, twoColor, twoColorBtns, twoItem, twoColorTitle);
+                } else {
+                    colorsInObj.push(colorsFromPage[1].textContent);
                 }
             }
             if (i === 3) {
@@ -308,6 +314,8 @@ document.addEventListener('DOMContentLoaded', (e) => {
                     if (hashes) { randomColor = hashColors[2]; }
                     colorsInObj.push(randomColor);
                     itemColorate(randomColor, threeColorTitle, threeColor, threeColorBtns, threeItem, threeColorTitle);
+                } else {
+                    colorsInObj.push(colorsFromPage[2].textContent);
                 }
             }
             if (i === 4) {
@@ -316,6 +324,8 @@ document.addEventListener('DOMContentLoaded', (e) => {
                     if (hashes) { randomColor = hashColors[3]; }
                     colorsInObj.push(randomColor);
                     itemColorate(randomColor, fourColorTitle, fourColor, fourColorBtns, fourItem, fourColorTitle);
+                } else {
+                    colorsInObj.push(colorsFromPage[3].textContent);
                 }
             }
             if (i === 5) {
@@ -324,6 +334,8 @@ document.addEventListener('DOMContentLoaded', (e) => {
                     if (hashes) { randomColor = hashColors[4]; }
                     colorsInObj.push(randomColor);
                     itemColorate(randomColor, fiveColorTitle, fiveColor, fiveColorBtns, fiveItem, fiveColorTitle);
+                } else {
+                    colorsInObj.push(colorsFromPage[4].textContent);
                 }
             }
         }
@@ -332,9 +344,6 @@ document.addEventListener('DOMContentLoaded', (e) => {
     }
 
     addColorsOnPage();
-    if (colorsInObj.length > 0) {
-        window.location.hash = colorsToUUIDString(colorsInObj);
-    }
 
     //    let hashColors = [];
     //    if(window.location.hash.length > 0) {
