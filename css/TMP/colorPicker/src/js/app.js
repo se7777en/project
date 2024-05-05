@@ -269,9 +269,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
     //let intensity = getColorIntensity(randomColor);
 
     //////////////////////////////////drag drop//////////////////////////////////////////////////////
-
-
-    /////////1////////for mobile/////
+    
     const tasksListElement = document.querySelector(`.main`);
     const taskElements = tasksListElement.querySelectorAll(`.main__item`);
     
@@ -314,6 +312,13 @@ document.addEventListener('DOMContentLoaded', (e) => {
             return;
         }
     
+        // Добавляем плавное перемещение
+        activeElement.style.transition = 'transform 0.2s ease-in-out';
+        activeElement.style.transform = 'translateY(10px)'; // Можете изменить значение для адаптации
+    
+        // Добавляем плавное изменение цвета
+        activeElement.style.backgroundColor = 'lightgray';
+    
         tasksListElement.insertBefore(activeElement, nextElement);
     });
     
@@ -328,6 +333,15 @@ document.addEventListener('DOMContentLoaded', (e) => {
         return nextElement;
     };
     
+
+
+
+
+
+
+
+
+
 
 
 });
