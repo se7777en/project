@@ -366,6 +366,11 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
     addColorsOnPage();
 
+    
+    if (colorsInObj.length > 0) {
+        window.location.hash = colorsToUUIDString(colorsInObj);
+    }
+
     //    let hashColors = [];
     //    if(window.location.hash.length > 0) {
     //        hashColors = UUIDStringToColors(window.location.hash);
