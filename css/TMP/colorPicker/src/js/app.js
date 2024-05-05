@@ -199,6 +199,9 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
 
 
+               
+
+
 
                 function colorsToUUIDString(colors) {
                     const uuidString = colors.join('').replace(/#/g, '');
@@ -226,6 +229,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
                     // }
                 };
 
+
                 function generateRandomColor() {
                     let letters = '0123456789ABCDEF';
                     let color = '#';
@@ -238,30 +242,42 @@ document.addEventListener('DOMContentLoaded', (e) => {
                 function getColorIntensity(hexColor) {
                     // Удаляем символ # из шестнадцатеричного значения
                     hexColor = hexColor.replace('#', '');
-
+                
                     // Получаем значения RGB
                     let r = parseInt(hexColor.substr(0, 2), 16);
                     let g = parseInt(hexColor.substr(2, 2), 16);
                     let b = parseInt(hexColor.substr(4, 2), 16);
-
-                    // Вычисляем яркость по формуле
-                    let brightness = (r * 299 + g * 587 + b * 114) / 1000;
-                    return brightness >= 128 ? "light" : "dark";
+                
+                    // Вычисляем яркость с учетом человеческого восприятия цвета
+                    let brightness = (r * 0.299 + g * 0.587 + b * 0.114);
+                
+                    // Определяем контраст между фоном и текстом
+                    let contrast = Math.abs(brightness - 128);
+                
+                    // Возвращаем результат
+                    if (brightness >= 128 && contrast >= 70) {
+                        return "light";
+                    } else if (brightness < 128 && contrast >= 70) {
+                        return "dark";
+                    } else {
+                        return "uncertain"; // Фон не является достаточно светлым или темным для хорошей видимости текста
+                    }
                 };
 
-
-                function itemColorate(randomColor, oneColorTitle, oneColor, oneColorBtns, oneItem, title) {
+                function itemColorate(randomColor, oneColorTitle, oneColor, oneColorBtns, oneItem) {
                     oneItem.style.cssText = `background-color: ${randomColor} !important;`;
                     oneColor.textContent = randomColor;
-
-
-                    //oneColorTitle
-                    if (colorNames[randomColor]) {
-                        title.textContent = colorNames.randomColor;
+                   // console.log(randomColor);
+                    if (colorNames[randomColor.toUpperCase()]) {
+                        oneColorTitle.textContent = colorNames[randomColor.toUpperCase()];
                     } else {
-                        title.textContent = '';
+                        oneColorTitle.textContent = '';
                     }
 
+
+                    
+
+        
                     if (getColorIntensity(randomColor) !== 'light') {
 
                         oneColorTitle.classList.remove('colorBlack');
@@ -290,7 +306,9 @@ document.addEventListener('DOMContentLoaded', (e) => {
                     //console.log(colorsFromPage[0].textContent);
 
                     let hashColors = [];
+                    
                     if (window.location.hash.length > 24 && hashes) {
+                       // console.log('ok');
                         hashColors = UUIDStringToColors(window.location.hash.slice(1));
                     } else {
                         hashes = false;
@@ -302,7 +320,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
                                 let randomColor = generateRandomColor();
                                 if (hashes) { randomColor = hashColors[0]; }
                                 colorsInObj.push(randomColor);
-                                itemColorate(randomColor, oneColorTitle, oneColor, oneColorBtns, oneItem, oneColorTitle);
+                                itemColorate(randomColor, oneColorTitle, oneColor, oneColorBtns, oneItem);
                             } else {
                                 colorsInObj.push(colorsFromPage[0].textContent);
                             }
@@ -313,7 +331,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
                                 let randomColor = generateRandomColor();
                                 if (hashes) { randomColor = hashColors[1]; }
                                 colorsInObj.push(randomColor);
-                                itemColorate(randomColor, twoColorTitle, twoColor, twoColorBtns, twoItem, twoColorTitle);
+                                itemColorate(randomColor, twoColorTitle, twoColor, twoColorBtns, twoItem);
                             } else {
                                 colorsInObj.push(colorsFromPage[1].textContent);
                             }
@@ -323,7 +341,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
                                 let randomColor = generateRandomColor();
                                 if (hashes) { randomColor = hashColors[2]; }
                                 colorsInObj.push(randomColor);
-                                itemColorate(randomColor, threeColorTitle, threeColor, threeColorBtns, threeItem, threeColorTitle);
+                                itemColorate(randomColor, threeColorTitle, threeColor, threeColorBtns, threeItem);
                             } else {
                                 colorsInObj.push(colorsFromPage[2].textContent);
                             }
@@ -333,7 +351,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
                                 let randomColor = generateRandomColor();
                                 if (hashes) { randomColor = hashColors[3]; }
                                 colorsInObj.push(randomColor);
-                                itemColorate(randomColor, fourColorTitle, fourColor, fourColorBtns, fourItem, fourColorTitle);
+                                itemColorate(randomColor, fourColorTitle, fourColor, fourColorBtns, fourItem);
                             } else {
                                 colorsInObj.push(colorsFromPage[3].textContent);
                             }
@@ -343,7 +361,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
                                 let randomColor = generateRandomColor();
                                 if (hashes) { randomColor = hashColors[4]; }
                                 colorsInObj.push(randomColor);
-                                itemColorate(randomColor, fiveColorTitle, fiveColor, fiveColorBtns, fiveItem, fiveColorTitle);
+                                itemColorate(randomColor, fiveColorTitle, fiveColor, fiveColorBtns, fiveItem);
                             } else {
                                 colorsInObj.push(colorsFromPage[4].textContent);
                             }
