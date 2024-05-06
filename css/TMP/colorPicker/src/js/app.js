@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
                         setTimeout(() => {
                             modal.classList.remove('showmodal');
                         }, 2500);
-                    }
+                    };
 
                 });
 
@@ -192,8 +192,8 @@ document.addEventListener('DOMContentLoaded', (e) => {
                             setTimeout(() => {
                                 modal.classList.remove('showmodal');
                             }, 2500);
-                        }
-                    }
+                        };
+                    };
                 });
 
 
@@ -393,7 +393,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
                     document.querySelectorAll(item).forEach((subitem) => {
                         subitem.addEventListener('click', (e) => {
                             e.preventDefault();
-                            subitem.classList.add('hover')
+                            subitem.classList.add('hover');
                             setTimeout(() => {
                                 subitem.classList.remove('hover');
                             }, 900);
