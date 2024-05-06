@@ -417,12 +417,24 @@ body {
     }
 
 
-    @media (hover: hover) {
+    @media (hover: none) {
         .color__btns .item:hover {
+            background-color: transparent;
+            -webkit-user-drag: none;
+            -webkit-user-select: none;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: none;
+        }
+    }
+
+
+
+    @media (hover: hover) {
+        .color__btns .item:active {
             background-color: rgba(0, 0, 0, 0.2);
             transition: all .3s ease-in-out;
             cursor: pointer;
-
             -webkit-user-drag: none;
             -webkit-user-select: none;
             user-select: none;
@@ -431,13 +443,8 @@ body {
         }
     }
 
-
-
     @media (hover: none) {
-        .color__btns .item:active {
-
-
-
+        .color__box:hover {
             background-color: transparent;
             -webkit-user-drag: none;
             -webkit-user-select: none;
@@ -448,38 +455,18 @@ body {
     }
 
     @media (hover: hover) {
-        .color__box:hover {
+        .color__box:active {
             background-color: rgba(0, 0, 0, 0.2);
             transition: all .3s ease-in-out;
-
-
             -webkit-user-drag: none;
             -webkit-user-select: none;
             user-select: none;
             -webkit-tap-highlight-color: transparent;
-        }
-    }
-
-    @media (hover: none) {
-        .color__box:active {
-            background-color: transparent;
-
-
-            -webkit-user-drag: none;
-            -webkit-user-select: none;
-            user-select: none;
-            -webkit-tap-highlight-color: transparent;
-            touch-action: none;
         }
     }
 
 
     .header__comunity a:hover {
-        background-color: transparent;
-        touch-action: none;
-    }
-
-    .header__comunity a:active {
         background-color: unset;
         color: #0066ff;
         transition: transform 0.15s ease, background 0.1s;
@@ -490,6 +477,11 @@ body {
         -webkit-user-select: none;
         user-select: none;
         -webkit-tap-highlight-color: transparent;
+    }
+
+    .header__comunity a:active {
+        background-color: transparent;
+        touch-action: none;
     }
 
     .header {
@@ -550,8 +542,17 @@ body {
 
     } */
 
-    @media (hover: hover) {
+    @media (hover: none) {
         .header__comunity a:hover {
+
+
+            background-color: transparent;
+            touch-action: none;
+        }
+    }
+
+    @media (hover: hover) {
+        .header__comunity a:active {
             background-color: unset;
             color: #0066ff;
             transition: transform 0.15s ease, background 0.1s;
@@ -562,13 +563,6 @@ body {
             -webkit-user-select: none;
             user-select: none;
             -webkit-tap-highlight-color: transparent;
-        }
-    }
-
-    @media (hover: none) {
-        .header__comunity a:active {
-            background-color: transparent;
-            touch-action: none;
         }
     }
 
@@ -600,21 +594,8 @@ body {
         opacity: .6;
     }
 
-    @media (hover: hover) {
+    @media (hover: none) {
         .color__btns .item:hover {
-            background-color: rgba(0, 0, 0, 0.2);
-            transition: all .3s ease-in-out;
-            cursor: pointer;
-
-            -webkit-user-drag: none;
-            -webkit-user-select: none;
-            user-select: none;
-            -webkit-tap-highlight-color: transparent;
-        }
-    }
-
-    @media (hover: none) {
-        .color__btns .item:active {
             background-color: transparent;
             -webkit-user-drag: none;
             -webkit-user-select: none;
@@ -623,10 +604,9 @@ body {
             touch-action: none;
         }
     }
-
 
     @media (hover: hover) {
-        .color__box:hover {
+        .color__btns .item:active {
             background-color: rgba(0, 0, 0, 0.2);
             transition: all .3s ease-in-out;
             cursor: pointer;
@@ -638,8 +618,9 @@ body {
         }
     }
 
+
     @media (hover: none) {
-        .color__box:active {
+        .color__box:hover {
             background-color: transparent;
             cursor: pointer;
             -webkit-user-drag: none;
@@ -647,6 +628,21 @@ body {
             user-select: none;
             -webkit-tap-highlight-color: transparent;
             touch-action: none;
+        }
+    }
+
+    @media (hover: hover) {
+        .color__box:active {
+
+
+            background-color: rgba(0, 0, 0, 0.2);
+            transition: all .3s ease-in-out;
+            cursor: pointer;
+
+            -webkit-user-drag: none;
+            -webkit-user-select: none;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
         }
     }
 
