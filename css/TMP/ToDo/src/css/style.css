@@ -421,3 +421,7 @@ body {
     }
 
 }
+
+.selected {
+    opacity: .2;
+}
