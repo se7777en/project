@@ -390,51 +390,45 @@ document.addEventListener('DOMContentLoaded', (e) => {
                 });
 
                 //////////////////////////////////drag drop//////////////////////////////////////////////////////
+
                 const tasksListElement = document.querySelector('.main');
                 const taskElements = tasksListElement.querySelectorAll('.main__item');
                 let activeTask = null;
-                let clonedTask = null;
-                
                 if (window.innerWidth < 980) {
                     for (const task of taskElements) {
                         task.draggable = true;
                     }
-                
-                    document.addEventListener('touchmove', (evt) => {
+
+                    tasksListElement.addEventListener('touchmove', (evt) => {
                         evt.preventDefault();
-                
+
                         const activeElement = tasksListElement.querySelector('.selected');
                         const currentElement = document.elementFromPoint(evt.touches[0].clientX, evt.touches[0].clientY);
-                
+
+                        // Проверяем, что текущий элемент не null и является дочерним элементом tasksListElement
                         if (!currentElement || !tasksListElement.contains(currentElement)) {
                             return;
                         }
-                
+
                         const isMoveable = activeElement !== currentElement &&
                             currentElement.classList.contains('main__item');
-                
+
                         if (!isMoveable) {
                             return;
                         }
-                
+
                         const nextElement = getNextElement(evt.touches[0].clientY, currentElement);
-                
+
                         if (nextElement &&
                             (activeElement === nextElement.previousElementSibling ||
                                 activeElement === nextElement)) {
                             return;
                         }
-                
+
                         tasksListElement.insertBefore(activeElement, nextElement);
-                
-                        // Обновляем позицию копии элемента, если она существует
-                        if (clonedTask) {
-                            clonedTask.style.left = `${evt.touches[0].clientX}px`;
-                            clonedTask.style.top = `${evt.touches[0].clientY}px`;
-                        }
                     });
-                
-                    document.addEventListener('touchstart', (evt) => {
+
+                    tasksListElement.addEventListener('touchstart', (evt) => {
                         const targetTask = evt.target.closest('.main__item');
                         if (targetTask) {
                             activeTask = {
@@ -443,58 +437,28 @@ document.addEventListener('DOMContentLoaded', (e) => {
                                 startY: evt.touches[0].clientY
                             };
                             targetTask.classList.add('selected');
-                
-                            // Создаем копию перемещаемого элемента
-                            clonedTask = targetTask.cloneNode(true);
-                            clonedTask.classList.add('cloned');
-                            clonedTask.style.position = 'absolute';
-                            clonedTask.style.zIndex = '999'; // Устанавливаем высокий z-index
-                            document.body.appendChild(clonedTask);
-                
-                            // Устанавливаем начальные координаты для копии элемента
-                            clonedTask.style.left = `${evt.touches[0].clientX}px`;
-                            clonedTask.style.top = `${evt.touches[0].clientY}px`;
                         }
                     });
-                
-                    document.addEventListener('touchend', () => {
+
+                    tasksListElement.addEventListener('touchend', () => {
                         if (activeTask) {
                             activeTask.element.classList.remove('selected');
                             activeTask = null;
-                
-                            // Удаляем копию элемента
-                            if (clonedTask) {
-                                clonedTask.remove();
-                                clonedTask = null;
-                            }
                         }
                     });
-                
+
                     const getNextElement = (cursorPosition, currentElement) => {
                         const currentElementCoord = currentElement.getBoundingClientRect();
                         const currentElementCenter = currentElementCoord.y + currentElementCoord.height / 2;
-                
+
                         const nextElement = (cursorPosition < currentElementCenter) ?
                             currentElement :
                             currentElement.nextElementSibling;
-                
+
                         return nextElement;
                     };
                 }
-                
-                
-                
-                
-                
-                
-                
-                
 
-
-
-
-
-                
 
             }
         }
