@@ -189,10 +189,6 @@ body {
     left: -9px;
 }
 
-/* .header__comunity img {
-    width: 18px;
-    height: 14px;
-} */
 
 .header__comunity a {
     display: inline-block;
@@ -223,11 +219,6 @@ body {
     cursor: pointer;
 }
 
-
-
-/* .header__arrow-right img {
-    transform: scaleX(-1);
-} */
 
 .main {
     display: flex;
@@ -264,27 +255,14 @@ body {
     cursor: pointer;
     padding: 7px;
     border-radius: 7px;
-    display: block;
-}
-
-.color__box:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+   
     transition: all .2s ease-in-out;
     cursor: pointer;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;  
 }
-
-.color__box:active {
-    background-color: rgba(0, 0, 0, 0.2);
-    /* transition: transform 0.15s ease, background 0.1s; */
-    transition: all .2s ease-in-out;
-    cursor: pointer;
-}
-
-
-/* .color__btns img {
-    width: 18px;
-    height: 18px;
-} */
 
 .color__btns .item {
     min-width: 35px;
@@ -295,29 +273,13 @@ body {
     border-radius: 10px;
     cursor: pointer;
 
+    /* background-color: transparent; */
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+
 }
-
-
-.color__btns .item:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-    transition: all .2s ease-in-out;
-
-}
-
-.color__btns .item:active {
-    background-color: rgba(0, 0, 0, 0.2);
-    /* transition: transform 0.15s ease, background 0.1s; */
-
-    transition: all .2s ease-in-out;
-    cursor: pointer;
-}
-
-
-
-
-
-
-
 
 .main__item {
     display: flex;
@@ -417,52 +379,6 @@ body {
     }
 
 
-
-
-    .color__btns .item:hover {
-        background-color: transparent;
-        -webkit-user-drag: none;
-        -webkit-user-select: none;
-        user-select: none;
-        -webkit-tap-highlight-color: transparent;
-    }
-
-    .color__btns .item:active {
-        background-color: rgba(0, 0, 0, 0.2);
-        transition: all .3s ease-in-out;
-        cursor: pointer;
-
-        -webkit-user-drag: none;
-        -webkit-user-select: none;
-        user-select: none;
-        -webkit-tap-highlight-color: transparent;
-
-
-    }
-
-
-    .color__box:hover {
-        background-color: transparent;
-        cursor: pointer;
-
-        -webkit-user-drag: none;
-        -webkit-user-select: none;
-        user-select: none;
-        -webkit-tap-highlight-color: transparent;
-    }
-
-    .color__box:active {
-        background-color: rgba(0, 0, 0, 0.2);
-        transition: all .3s ease-in-out;
-        cursor: pointer;
-
-        -webkit-user-drag: none;
-        -webkit-user-select: none;
-        user-select: none;
-        -webkit-tap-highlight-color: transparent;
-    }
-
-
     .header__comunity a:hover {
         background-color: transparent;
     }
@@ -519,24 +435,10 @@ body {
         padding: 0px 22px;
     }
 
-    /* .color__descr .color {
-        font-size: 16px;
-        font-weight: 500;
-    } */
-
     .header__operations {
         padding: 9px 0px 9px 10px;
     }
 
-    /* .header__comunity {
-        gap: 20px;
-    } */
-
-    /* .header__comunity a {
-        min-width: unset;
-        min-height: unset;
-
-    } */
 
     .header__comunity a:hover {
         background-color: transparent;
@@ -555,14 +457,6 @@ body {
         -webkit-tap-highlight-color: transparent;
     }
 
-    /* .main .fa-solid {
-        color: rgba(132, 129, 120, .9);
-    } */
-
-    /* .header__comunity::before {
-        left: -13px;
-        height: 80%;
-    } */
 
     .main .fa-arrows-left-right {
         display: none;
@@ -583,48 +477,7 @@ body {
         opacity: .6;
     }
 
-    .color__btns .item:hover {
-        background-color: transparent;
-        -webkit-user-drag: none;
-        -webkit-user-select: none;
-        user-select: none;
-        -webkit-tap-highlight-color: transparent;
-    }
-
-    .color__btns .item:active {
-        background-color: rgba(0, 0, 0, 0.2);
-        transition: all .3s ease-in-out;
-        cursor: pointer;
-
-        -webkit-user-drag: none;
-        -webkit-user-select: none;
-        user-select: none;
-        -webkit-tap-highlight-color: transparent;
-
-
-    }
-
-
-    .color__box:hover {
-        background-color: transparent;
-        cursor: pointer;
-        transition: all .3s ease-in-out;
-        -webkit-user-drag: none;
-        -webkit-user-select: none;
-        user-select: none;
-        -webkit-tap-highlight-color: transparent;
-    }
-
-    .color__box:active {
-        background-color: rgba(0, 0, 0, 0.2);
-        cursor: pointer;
-        -webkit-user-drag: none;
-        -webkit-user-select: none;
-        user-select: none;
-        -webkit-tap-highlight-color: transparent;
-    }
-
-
+  
 
     .color__descr {
         position: static;
@@ -635,6 +488,16 @@ body {
         gap: 20px;
     }
 
+}
+
+.hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: all .2s ease-in-out;
+
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 
