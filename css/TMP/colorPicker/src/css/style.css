@@ -617,9 +617,7 @@ body {
 
     .color__box:active {
         background-color: rgba(0, 0, 0, 0.2);
-        
         cursor: pointer;
-
         -webkit-user-drag: none;
         -webkit-user-select: none;
         user-select: none;
