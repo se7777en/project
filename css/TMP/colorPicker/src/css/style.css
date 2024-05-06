@@ -425,6 +425,7 @@ body {
         -webkit-user-select: none;
         user-select: none;
         -webkit-tap-highlight-color: transparent;
+        touch-action: none;
     }
 
     .color__btns .item:active {
@@ -436,6 +437,7 @@ body {
         -webkit-user-select: none;
         user-select: none;
         -webkit-tap-highlight-color: transparent;
+        touch-action: none;
 
 
     }
@@ -449,6 +451,7 @@ body {
         -webkit-user-select: none;
         user-select: none;
         -webkit-tap-highlight-color: transparent;
+        touch-action: none;
     }
 
     .color__box:active {
@@ -465,6 +468,7 @@ body {
 
     .header__comunity a:hover {
         background-color: transparent;
+        touch-action: none;
     }
 
     .header__comunity a:active {
@@ -540,6 +544,7 @@ body {
 
     .header__comunity a:hover {
         background-color: transparent;
+        touch-action: none;
     }
 
     .header__comunity a:active {
@@ -589,6 +594,7 @@ body {
         -webkit-user-select: none;
         user-select: none;
         -webkit-tap-highlight-color: transparent;
+        touch-action: none;
     }
 
     .color__btns .item:active {
@@ -613,6 +619,7 @@ body {
         -webkit-user-select: none;
         user-select: none;
         -webkit-tap-highlight-color: transparent;
+        touch-action: none;
     }
 
     .color__box:active {
