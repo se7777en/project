@@ -81,10 +81,10 @@ body {
     box-shadow: rgba(0, 0, 0, 0.1);
     color: #fff;
     font-size: .8em;
-    
+
     transition: all .3s ease-in-out;
     text-wrap: nowrap;
-    
+
 }
 
 .modal.showmodal {
@@ -93,13 +93,18 @@ body {
 
 @keyframes slideUp {
     0% {
-        bottom: 2.5%; /* Начальное положение внизу */
+        bottom: 2.5%;
+        /* Начальное положение внизу */
     }
+
     50% {
-        bottom: 1.5%; /* Положение вверху */
+        bottom: 1.5%;
+        /* Положение вверху */
     }
+
     100% {
-        bottom: 2%; /* Положение вверху */
+        bottom: 2%;
+        /* Положение вверху */
     }
 }
 
@@ -413,9 +418,8 @@ body {
 
 
 
-    .color__btns .item:hover,
-    .color__btns .item:visited,
-    .color__btns .item:focus {
+
+    .color__btns .item:hover {
         background-color: transparent;
         -webkit-user-drag: none;
         -webkit-user-select: none;
@@ -437,9 +441,7 @@ body {
     }
 
 
-    .color__box:hover,
-    .color__box:focus,
-    .color__box:visited {
+    .color__box:hover {
         background-color: transparent;
         cursor: pointer;
 
@@ -581,9 +583,7 @@ body {
         opacity: .6;
     }
 
-    .color__btns .item:hover,
-    .color__btns .item:focus,
-    .color__btns .item:visited {
+    .color__btns .item:hover {
         background-color: transparent;
         -webkit-user-drag: none;
         -webkit-user-select: none;
@@ -605,9 +605,7 @@ body {
     }
 
 
-    .color__box:hover,
-    .color__box:focus,
-    .color__box:visited {
+    .color__box:hover {
         background-color: transparent;
         cursor: pointer;
 
