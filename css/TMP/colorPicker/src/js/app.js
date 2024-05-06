@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
 
 
-               
+
 
 
 
@@ -242,18 +242,18 @@ document.addEventListener('DOMContentLoaded', (e) => {
                 function getColorIntensity(hexColor) {
                     // Удаляем символ # из шестнадцатеричного значения
                     hexColor = hexColor.replace('#', '');
-                
+
                     // Получаем значения RGB
                     let r = parseInt(hexColor.substr(0, 2), 16);
                     let g = parseInt(hexColor.substr(2, 2), 16);
                     let b = parseInt(hexColor.substr(4, 2), 16);
-                
+
                     // Вычисляем яркость с учетом человеческого восприятия цвета
                     let brightness = (r * 0.299 + g * 0.587 + b * 0.114);
-                
+
                     // Определяем контраст между фоном и текстом
                     let contrast = Math.abs(brightness - 128);
-                
+
                     // Возвращаем результат
                     if (brightness >= 128 && contrast >= 70) {
                         return "light";
@@ -267,7 +267,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
                 function itemColorate(randomColor, oneColorTitle, oneColor, oneColorBtns, oneItem) {
                     oneItem.style.cssText = `background-color: ${randomColor} !important;`;
                     oneColor.textContent = randomColor;
-                   // console.log(randomColor);
+                    // console.log(randomColor);
                     if (colorNames[randomColor.toUpperCase()]) {
                         oneColorTitle.textContent = colorNames[randomColor.toUpperCase()];
                     } else {
@@ -275,9 +275,9 @@ document.addEventListener('DOMContentLoaded', (e) => {
                     }
 
 
-                    
 
-        
+
+
                     if (getColorIntensity(randomColor) !== 'light') {
 
                         oneColorTitle.classList.remove('colorBlack');
@@ -306,9 +306,9 @@ document.addEventListener('DOMContentLoaded', (e) => {
                     //console.log(colorsFromPage[0].textContent);
 
                     let hashColors = [];
-                    
+
                     if (window.location.hash.length > 24 && hashes) {
-                       // console.log('ok');
+                        // console.log('ok');
                         hashColors = UUIDStringToColors(window.location.hash.slice(1));
                     } else {
                         hashes = false;
@@ -387,6 +387,18 @@ document.addEventListener('DOMContentLoaded', (e) => {
                     if (colorsInObj.length > 0) {
                         window.location.hash = colorsToUUIDString(colorsInObj);
                     }
+                });
+
+                ['.color__box', '.color__btns .item'].forEach((item) => {
+                    document.querySelectorAll(item).forEach((subitem) => {
+                        subitem.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            subitem.classList.add('hover')
+                            setTimeout(() => {
+                                subitem.classList.remove('hover');
+                            }, 900);
+                        });
+                    });
                 });
 
                 //////////////////////////////////drag drop//////////////////////////////////////////////////////
