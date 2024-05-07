@@ -13,9 +13,6 @@ window.addEventListener('DOMContentLoaded', (e) => {
     let descrTitle = document.querySelector('.descr__title');
     let descrToUp = document.querySelector('.descr__up-text');
 
-
-
-
     let helpTitle = document.querySelector('.help__title');
     let helpText = document.querySelector('.help__text');
     let helpFooterText = document.querySelector('.help__footer-text');
@@ -23,31 +20,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     let dayly = document.querySelector('.footer-worktime-text');
     let daylyTo = document.querySelector('.worktime__middletext');
 
-    //const mainBg = document.querySelector('.footer .wrap__inner');
-
-    ///////////////
-    // const body = document.querySelector('BODY');
-    // const header = document.querySelector('HEADER');
-    // const tumbler = document.querySelector('.wrap_two .btn2');
-    // const statusBg = document.querySelector('.status');
-
-    // body.classList.add('darkbg');
-    // header.classList.add('header__border');
-    // tumbler.classList.add('tumblerbg');
-    // statusBg.classList.add('about__status');
-
-    ///////////////
-
-
-
-
-
-
-
-    
-
-
-    let scrollH = 1;
+      let scrollH = 1;
     window.addEventListener('load', function () {
         scrollH = document.documentElement.scrollHeight - window.innerHeight;
     });
@@ -173,8 +146,6 @@ ${item.codeEn}
 
 
 
-
-
     language.addEventListener('click', () => {
 
         if (language.checked) {
@@ -189,42 +160,10 @@ ${item.codeEn}
         scrollH = document.documentElement.scrollHeight - window.innerHeight;
     });
 
-    
-////////////////////theme colored////////////////////////////////
-    // mainBg.addEventListener('click', (e) => {
-    //     const event = e.target;
-    //     if (event) {
-    //         if (event.matches('.wrap__light input')) {
-    //             obj.bgcolor = 'light';
-    //             console.log('light'); //
-    //             setDataToStorage(obj);
-    //         }
-
-    //         if (event.matches('.wrap__dark input')) {
-    //             obj.bgcolor = 'dark';
-    //             console.log('dark'); //
-    //             setDataToStorage(obj);
-    //         }
-
-    //         if (event.matches('.wrap__auto input')) {
-    //             obj.bgcolor = 'auto';
-    //             console.log('auto'); //
-    //             setDataToStorage(obj);
-    //         }   
-    //     }
-    // });
-
-
 
     const helpModal = document.querySelector('.header .help'),
         headerContact = document.querySelector('.header .header__btn'),
         closeBtn = document.querySelector('.header .help__close');
-
-
-
-
-
-
 
     let menuBtn = document.querySelector('.menu__btn');
     let menuBtnIcon = document.querySelector('.menu__btn .fa-solid');
@@ -299,7 +238,7 @@ ${item.codeEn}
                 if (ScrollPos >= textPos - 60 && ScrollPos <= (textPos + textHeight)) {
                     const postId = mytext.dataset.id; // poluchaem id posta
 
-                    const found = linkParent.querySelector(`[data-id="${postId}-link"]`);// [data-id="${postId + '-link}"]
+                    const found = linkParent.querySelector(`[data-id="${postId}-link"]`);
                     //'#' + postId + '-link'
 
                     if (found) {
@@ -344,25 +283,12 @@ ${item.codeEn}
     });
 
 
-    // document.addEventListener('click', (e) => {
-    //     if (!e.target.closest('#helpModal') && !e.target.closest('.header__btn')) {
-    //         helpModal.classList.remove('show');
-    //     }
-    // });
-
-
-
-    menuBtn.addEventListener('click', () => {
+     menuBtn.addEventListener('click', () => {
         menu.classList.toggle('showmenu');
         menuBtnIcon.classList.toggle('fa-list');
         menuBtnIcon.classList.toggle('fa-xmark');
         document.body.classList.toggle('dark-background');
     });
-
-
-
-
-
 
 
 
