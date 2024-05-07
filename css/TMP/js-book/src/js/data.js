@@ -33,6 +33,8 @@ console.log(arr[i]);
         infoEn: 'fsdjkfhsdkfen',
         infostatus: ''
     },
+
+    
     {
         method: 'for...of',
         descrRu: ': Это более современный цикл, который позволяет перебирать элементы массива без использования индекса.',
