@@ -36,8 +36,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
                     let rightLinks = '';
                     doing.innerHTML = 'Изучаем <span class="jslang">Javascript</span>';
                     myObj.forEach((item) => {
-                        elements += `<div class="method" id="${item.method}" data-id="${item.method}">
-        <div class="method__descr"><code class="method__item-decore">${item.method}</code>${item.descrRu}</div>
+                        elements += `<div class="method" id="${item.methodRu}" data-id="${item.methodRu}">
+        <div class="method__descr"><code class="method__item-decore">${item.methodRu}</code>${item.descrRu}</div>
         <div class="method__title">${item.typeRu}</div>
         <div class="method__example">
             <div class="method__example-title">${item.maintypeRu}</div>
@@ -52,8 +52,8 @@ ${item.codeRu}
         </div>
     </div>`;
 
-                        rightLinks += `<a href="#${item.method}" data-id="${item.method}-link" class="descr__item-link">
-    <div class="descr__item">${item.method}</div>
+                        rightLinks += `<a href="#${item.methodRu}" data-id="${item.methodRu}-link" class="descr__item-link">
+    <div class="descr__item">${item.methodRu}</div>
 </a>`;
                     });
 
@@ -81,8 +81,8 @@ ${item.codeRu}
                     let rightLinks = '';
                     doing.innerHTML = 'Learning <span class="jslang">Javascript</span>';
                     myObj.forEach((item) => {
-                        elements += `<div class="method" id="${item.method}" data-id="${item.method}">
-        <div class="method__descr"><code class="method__item-decore">${item.method}</code>${item.descrEn}</div>
+                        elements += `<div class="method" id="${item.methodEn}" data-id="${item.methodEn}">
+        <div class="method__descr"><code class="method__item-decore">${item.methodEn}</code>${item.descrEn}</div>
         <div class="method__title">${item.typeEn}</div>
         <div class="method__example">
             <div class="method__example-title">${item.maintypeEn}</div>
@@ -97,8 +97,8 @@ ${item.codeEn}
         </div>
     </div>`;
 
-                        rightLinks += `<a href="#${item.method}" data-id="${item.method}-link" class="descr__item-link">
-    <div class="descr__item">${item.method}</div>
+                        rightLinks += `<a href="#${item.methodEn}" data-id="${item.methodEn}-link" class="descr__item-link">
+    <div class="descr__item">${item.methodEn}</div>
 </a>`;
                     });
 
