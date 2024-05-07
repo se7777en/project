@@ -502,6 +502,7 @@ body::-webkit-scrollbar-thumb {
     font-size: 26px;
     font-weight: 600;
     margin-bottom: 25px;
+    padding-top: 10px;
 }
 
 .method__header span {
