@@ -310,6 +310,7 @@ header {
     border: 1px solid #f5f5f4;
     border-radius: 10px;
     padding: 20px 10px 20px 20px;
+    overflow: auto;
     /* height: calc(100vh - 80px); */
 }
 
@@ -352,8 +353,9 @@ header {
     height: 70vh;
     position: sticky;
     top: 0px;
-    overflow-y: auto;
+    overflow: auto;
     background-color: #fff;
+
 }
 
 .descr__item {
@@ -520,7 +522,7 @@ header {
     padding: 5px 0px 5px 10px;
     max-width: 100%;
     background-color: #f0f4f9;
-    border-radius: 10px;
+    border-radius: 10px 10px 0px 0px;
     margin-bottom: 5px;
 }
 
@@ -698,10 +700,10 @@ header {
         display: none;
     }
 
-    .footer  .footer__inner-copyright {
-        /* display: block; */
-        /* padding-bottom: 10px; */
-    }
+    /* .footer  .footer__inner-copyright {
+       display: block; 
+         padding-bottom: 10px;
+    } */
 
     /* .footer .wrap__inner {
         width: 135px !important;
@@ -752,9 +754,9 @@ header {
         margin-bottom: 10px;
     }
 
-    .method__descr {
-        /* margin-bottom: 10px; */
-    }
+    /* .method__descr {
+        margin-bottom: 10px;
+    } */
 
     .method {
         margin-bottom: 30px;
