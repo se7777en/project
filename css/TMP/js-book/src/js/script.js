@@ -93,7 +93,7 @@ ${item.codeRu}
         helpFooterText.textContent = 'Поддержка клиентов';
         dayly.textContent = 'Ежедневно с';
         daylyTo.textContent = 'до';
-    }
+    };
 
     addItemsOnPageRu();
 
@@ -139,7 +139,7 @@ ${item.codeEn}
         helpHeaderText.textContent = 'Customer support';
         dayly.textContent = 'Daily from';
         daylyTo.textContent = 'to';
-    }
+    };
 
 
 
@@ -147,10 +147,10 @@ ${item.codeEn}
 
     const setDataToStorage = (obj) => {
         window.localStorage.setItem('lernjs', JSON.stringify(obj));
-    }
+    };
     const geDataFromStorage = () => {
         return JSON.parse(window.localStorage.getItem('lernjs')) || {};
-    }
+    };
     const obj = geDataFromStorage();
 
 
@@ -168,8 +168,8 @@ ${item.codeEn}
             // language.removeAttribute('checked');
             language.checked = false;
 
-        }
-    }
+        };
+    };
 
 
 
@@ -256,7 +256,7 @@ ${item.codeEn}
         const code = codeElements[index];
         if (info.classList.contains('visible')) {
             code.classList.add('styled');
-        }
+        };
     });
 
 
@@ -274,7 +274,7 @@ ${item.codeEn}
         valuesArr[0] = percentVal;
         let arrtoStr = valuesArr.join(' ');
         progress.setAttribute('stroke-dasharray', arrtoStr);
-    }
+    };
 
     let ScrollPosOnStart = window.scrollY;
     calcProgress(ScrollPosOnStart);
@@ -311,7 +311,7 @@ ${item.codeEn}
                 }
             });
         });
-    }
+    };
 
 
     onsrollChange();
