@@ -15,7 +15,7 @@ const myObj = [
         descrRu: ' :Значение в JavaScript всегда относится к данным определённого типа. Например, это может быть строка или число. Есть восемь основных типов данных в JavaScript. Переменная в JavaScript может содержать любые данные. В один момент там может быть строка, а в другой – число:',
         typeRu: 'Примеры:',
 
-        descrEn: ': In JavaScript, a value always refers to data of a specific type. For example, it can be a string or a number. There are eight primary data types in JavaScript. A variable in JavaScript can contain any data. At one moment, it could be a string, and at another, a number.',
+        descrEn: ' :In JavaScript, a value always refers to data of a specific type. For example, it can be a string or a number. There are eight primary data types in JavaScript. A variable in JavaScript can contain any data. At one moment, it could be a string, and at another, a number.',
         typeEn: 'Examlpes',
         
         maintypeRu: 'JavaScript:',
