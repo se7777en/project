@@ -141,6 +141,63 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
     <span class="task__item-date ${textdecore} ${hide}">${date}</span>
     <div class="locked ${locked}">locked</div>
+   
+   
+   
+   
+
+
+    <div class="status__icon icon-status">
+    <i class="fa-solid fa-flag flag"></i>
+
+    <div class="status__modal">
+        <div class="status__items">
+            <div class="urgent__wrap wrap">
+                <div class="ugent__icons icons">
+                    <div class="urgent__icon status-item">
+                        <i class="fa-solid fa-flag"></i>
+                        <div class="urgen__title modal__text">Ugent</div>
+                    </div>
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+            </div>
+           <div class="hight__wrap wrap">
+            <div class="hight__icons icons">
+                <div class="hight__icon status-item">
+                    <i class="fa-solid fa-flag"></i>
+                    <div class="hight__title modal__text">Hight</div>
+                </div>
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+           </div>
+           <div class="normal__wrap wrap">
+            <div class="normal__icos icons">
+                <div class="normal__icon status-item">
+                    <i class="fa-solid fa-flag"></i>
+                    <div class="normal__title modal__text">Normal</div>
+                </div>
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+           </div>
+            <div class="low__wrap wrap">
+                <div class="low__icons icons">
+                    <div class="low__icon status-item">
+                        <i class="fa-solid fa-flag"></i>
+                        <div class="low__title modal__text">Low</div>
+                    </div>
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+            </div>
+        </div>
+        <div class="clear__wrap wrap">
+            <div class="clear__icons status-item">
+                <i class="fa-solid fa-ban"></i>
+                <div class="clear__title modal__text">Clear</div>
+            </div>
+        </div>
+    </div>
+</div>
+
     </div>`;
                         });
                     } else {
@@ -238,6 +295,17 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 passconfirm.addEventListener('input', checkPasswords);
 
 
+                const hideAllStatusModal = () => {
+
+                    tasks.querySelectorAll('.status__modal').forEach((item) => {
+                        if (item.classList.contains('show')) {
+                            item.classList.remove('show');
+                        }
+                    });
+
+                };
+
+
 
                 let itemParentId = ''; // iskomi id
                 let searchedItemArr = ''; // iskomi obiekt
@@ -317,12 +385,28 @@ window.addEventListener('DOMContentLoaded', (e) => {
                     };
                     ////////showmodal////////
                     calcItems();
+
+                    //hideAllStatusModal();
+                    ///////status////////
+                    let statusitem = event.target.closest('.status__icon');
+                    if (statusitem) { // esli klick proizoshel na status
+                        hideAllStatusModal();
+                        const statusParent = statusitem.closest('.task__item');
+                        const statusId = statusParent.dataset.id;
+                        console.log(statusId);
+                        const statusModal = statusitem.querySelector('.status__modal');
+                        statusModal.classList.add('show');
+                    } else {
+                        hideAllStatusModal();
+                    }
+
+                    ///////status////////
                 });
 
 
                 modalBtn.addEventListener('click', () => {
 
-                    
+
                     const modalMessage = document.querySelector('.modal__message');
                     const modalPass = document.querySelector('.pass').value;
                     const modalPassConfirm = document.querySelector('.pass__confirm').value;
