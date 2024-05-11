@@ -116,6 +116,55 @@ window.addEventListener('DOMContentLoaded', (e) => {
                             let locked = item.lock ? 'show' : '';
                             let icon = item.lock ? 'lock' : 'unlock';
 
+
+                            let statusClasses = {
+                                'Urgent': '',
+                                'Hight': '',
+                                'Normal': '',
+                                'Low': ''
+                            };
+                            statusClasses[item.status] = 'status__active';
+
+                            let urgent = statusClasses['Urgent'];
+                            let hight = statusClasses['Hight'];
+                            let normal = statusClasses['Normal'];
+                            let low = statusClasses['Low'];
+
+
+                            let statusFonts = {
+                                'Urgent': '',
+                                'Hight': '',
+                                'Normal': '',
+                                'Low': ''
+                            };
+                            statusFonts[item.status] = 'active-weight';
+
+                            let urgentFont = statusFonts['Urgent'];
+                            let hightFont = statusFonts['Hight'];
+                            let normalFont = statusFonts['Normal'];
+                            let lowFont = statusFonts['Low'];
+
+
+
+                            let statusColor = {
+                                'Urgent': 'urgent',
+                                'Hight': 'hight',
+                                'Normal': 'normal',
+                                'Low': 'low'
+                            };
+                          const colored =  statusColor[item.status];
+
+                          console.log(colored);
+                            
+
+
+
+
+
+
+
+
+
                             // console.log(`${hide} - ${locked} - ${icon}`);
 
 
@@ -148,7 +197,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
 
     <div class="status__icon icon-status">
-    <i class="fa-solid fa-flag flag"></i>
+    <i class="fa-solid fa-flag flag ${colored}"></i>
 
     <div class="status__modal">
         <div class="status__items">
@@ -156,36 +205,36 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 <div class="ugent__icons icons">
                     <div class="urgent__icon status-item">
                         <i class="fa-solid fa-flag"></i>
-                        <div class="urgen__title modal__text">Ugent</div>
+                        <div class="urgen__title modal__text ${urgentFont}">Urgent</div>
                     </div>
-                    <i class="fa-solid fa-circle-check"></i>
+                    <i class="fa-solid fa-circle-check ${urgent}"></i>
                 </div>
             </div>
            <div class="hight__wrap wrap">
             <div class="hight__icons icons">
                 <div class="hight__icon status-item">
                     <i class="fa-solid fa-flag"></i>
-                    <div class="hight__title modal__text">Hight</div>
+                    <div class="hight__title modal__text ${hightFont}">Hight</div>
                 </div>
-                <i class="fa-solid fa-circle-check"></i>
+                <i class="fa-solid fa-circle-check ${hight}"></i>
             </div>
            </div>
            <div class="normal__wrap wrap">
             <div class="normal__icos icons">
                 <div class="normal__icon status-item">
                     <i class="fa-solid fa-flag"></i>
-                    <div class="normal__title modal__text">Normal</div>
+                    <div class="normal__title modal__text ${normalFont}">Normal</div>
                 </div>
-                <i class="fa-solid fa-circle-check"></i>
+                <i class="fa-solid fa-circle-check ${normal}"></i>
             </div>
            </div>
             <div class="low__wrap wrap">
                 <div class="low__icons icons">
                     <div class="low__icon status-item">
                         <i class="fa-solid fa-flag"></i>
-                        <div class="low__title modal__text">Low</div>
+                        <div class="low__title modal__text ${lowFont}">Low</div>
                     </div>
-                    <i class="fa-solid fa-circle-check"></i>
+                    <i class="fa-solid fa-circle-check ${low}"></i>
                 </div>
             </div>
         </div>
@@ -230,7 +279,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
                                 text: todoInput.value,
                                 read: false,
                                 date: getCurrentDate(),
-                                lock: false
+                                lock: false,
+                                status: null
                             };
                             let filtred = geDataFromStorage();
                             filtred.push(newData); // dobavlyaem novi element
@@ -255,7 +305,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
                                     text: todoInput.value,
                                     read: false,
                                     date: getCurrentDate(),
-                                    lock: false
+                                    lock: false,
+                                    status: null
                                 };
                                 let filtred = geDataFromStorage();
                                 filtred.push(newData); // dobavlyaem novi element
@@ -299,12 +350,16 @@ window.addEventListener('DOMContentLoaded', (e) => {
                     const items = document.querySelectorAll('.status__modal');
                     items.forEach((item) => {
                         const parentId = item.closest('.task__item').dataset.id;
-                        console.log(parentId);
-                        if(parentId !== id) {
+                        //console.log(parentId);
+                        if (parentId !== id) {
                             item.classList.remove('show');
                         };
                     });
+
                 };
+
+
+
 
 
 
@@ -394,7 +449,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                     if (statusitem) { // esli klick proizoshel na status
                         const statusParent = statusitem.closest('.task__item');
                         const statusId = statusParent.dataset.id;
-                        console.log(statusId);
+                        //console.log(statusId);
                         statusModal = statusitem.querySelector('.status__modal');
                         hideAllStatusModal(statusId);
                         statusModal.classList.toggle('show');
@@ -404,7 +459,68 @@ window.addEventListener('DOMContentLoaded', (e) => {
                     }
 
                     ///////status////////
+
+                    ////////status items/////////
+
+
+                    const statuIconOnCklick = event.target.closest('.status__icon .wrap');
+                    if (statuIconOnCklick) {
+                        // console.log('ok');
+                        let storeObjStatus = geDataFromStorage();
+                        //  statuIconOnCklick.addEventListener('click', (e) => {
+                        //     e.preventDefault();
+
+                        const itemText = statuIconOnCklick.querySelector('.modal__text').textContent;
+                        const statusItemId = statuIconOnCklick.closest('.task__item').dataset.id;
+
+                        // console.log(itemText);
+                        // console.log(statusItemId);
+
+
+                        storeObjStatus.forEach((item) => {
+                            if (item.id === statusItemId) {
+                                item.status = itemText;
+                                return;
+                            }
+                        });
+
+                        setDataToStorage(storeObjStatus);
+                        wrightItemsToPage(geDataFromStorage());
+
+                    }
+
+                    const clearStatus = event.target.closest('.clear__wrap');
+                    //console.log(clearStatus);
+                    if (clearStatus) {
+                        let storeObjStatus = geDataFromStorage();
+                        const statusItemId = statuIconOnCklick.closest('.task__item').dataset.id;
+                        storeObjStatus.forEach((item) => {
+                            if (item.id === statusItemId) {
+                                item.status = 'null';
+                                return;
+                            }
+                        });
+
+                        setDataToStorage(storeObjStatus);
+                        wrightItemsToPage(geDataFromStorage());
+                    }
+
+
+
+
+
+                    // document.querySelectorAll('.status__modal .wrap').forEach((item) => {
+
+
+                    // });
+
+
+
+                    ////////status items/////////
                 });
+
+
+
 
 
                 modalBtn.addEventListener('click', () => {

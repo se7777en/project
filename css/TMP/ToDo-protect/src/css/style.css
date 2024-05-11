@@ -342,6 +342,10 @@ body {
     visibility: visible !important;
 }
 
+.active-weight {
+    font-weight: 700 !important;
+}
+
 .status__modal i {
     font-size: 12px;
 }
@@ -400,6 +404,25 @@ body {
 .low__icon i {
     color: #87909E;
 }
+
+
+
+
+.urgent {
+    color: #B13A41 !important;
+} 
+
+.hight {
+    color: #CF940A !important;
+} 
+
+.normal {
+    color: #4466FF !important;
+} 
+
+.low {
+    color: #87909E !important;
+} 
 
 
 
