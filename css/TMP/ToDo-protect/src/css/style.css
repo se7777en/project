@@ -310,9 +310,9 @@ body {
 
 .status__modal {
     position: absolute;
-    top: 14px;
+    top: auto;
     left: 19px;
-    
+
     display: none !important;
     padding: 5px;
     border-radius: 5px;

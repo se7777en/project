@@ -295,14 +295,15 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 passconfirm.addEventListener('input', checkPasswords);
 
 
-                const hideAllStatusModal = () => {
-
-                    tasks.querySelectorAll('.status__modal').forEach((item) => {
-                        if (item.classList.contains('show')) {
+                const hideAllStatusModal = (id = '') => {
+                    const items = document.querySelectorAll('.status__modal');
+                    items.forEach((item) => {
+                        const parentId = item.closest('.task__item').dataset.id;
+                        console.log(parentId);
+                        if(parentId !== id) {
                             item.classList.remove('show');
-                        }
+                        };
                     });
-
                 };
 
 
@@ -386,16 +387,18 @@ window.addEventListener('DOMContentLoaded', (e) => {
                     ////////showmodal////////
                     calcItems();
 
-                    //hideAllStatusModal();
+
                     ///////status////////
                     let statusitem = event.target.closest('.status__icon');
+                    let statusModal = '';
                     if (statusitem) { // esli klick proizoshel na status
-                        hideAllStatusModal();
                         const statusParent = statusitem.closest('.task__item');
                         const statusId = statusParent.dataset.id;
                         console.log(statusId);
-                        const statusModal = statusitem.querySelector('.status__modal');
-                        statusModal.classList.add('show');
+                        statusModal = statusitem.querySelector('.status__modal');
+                        hideAllStatusModal(statusId);
+                        statusModal.classList.toggle('show');
+
                     } else {
                         hideAllStatusModal();
                     }
