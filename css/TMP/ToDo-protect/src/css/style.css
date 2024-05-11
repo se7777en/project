@@ -287,6 +287,123 @@ body {
     position: relative;
 }
 
+.status__icon {
+    position: absolute !important;
+    top: 5px;
+    left: 5px;
+    width: 18px;
+    height: 18px;
+    color: #191919;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.status__icon .flag {
+    color: #d2d2d2;
+    opacity: .4;
+}
+
+.icon-status {
+    position: relative;
+}
+
+
+.status__modal {
+    position: absolute;
+    top: 14px;
+    left: 19px;
+    
+    display: none !important;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, .2);
+    width: 120px;
+    background-color: #fff;
+
+    display: flex;
+    flex-direction: column;
+    cursor: initial;
+}
+
+
+
+.status__items {
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #d2d2d2;
+}
+
+.status__items .fa-circle-check {
+    visibility: hidden;
+}
+
+.status__active {
+    color: green;
+    visibility: visible !important;
+}
+
+.status__modal i {
+    font-size: 12px;
+}
+
+.clear__icons i {
+    font-size: 10px;
+}
+
+.status__modal .modal__text {
+    font-size: 12px;
+}
+
+
+.status__modal .icons {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    align-items: center;
+}
+
+.status__modal .wrap {
+    padding: 6px;
+}
+
+.status__modal .wrap:hover {
+    background-color: #d2d2d2;
+    border-radius: 3px;
+}
+
+.status__modal .wrap:not(:last-child) {
+    margin-bottom: 0px;
+}
+
+
+
+.status-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+
+.urgent__icon i {
+    color: #B13A41;
+}
+
+.hight__icon i {
+    color: #CF940A;
+}
+
+.normal__icon i {
+    color: #4466FF;
+}
+
+.low__icon i {
+    color: #87909E;
+}
+
+
+
+
 /* .task__item:active {
     transform: scale(.995);
     transition: all .1s ease-in;
