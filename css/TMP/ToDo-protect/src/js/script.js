@@ -161,21 +161,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                                     'Low': 'low'
                                 };
                                 colored = statusColor[item.status] ? statusColor[item.status] : 'null';
-
                                // console.log(colored);
-                           // }
-
-
-
-
-
-
-
-
-
-
-                            // console.log(`${hide} - ${locked} - ${icon}`);
-
 
 
                             elements += `<div class="task__item item" name="todo" data-id="${item.id}">
@@ -442,7 +428,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                             modalDescr.classList.add('hide');
                             modalBtn.textContent = 'Unlock';
                             passInput.placeholder = 'Password';
-                        }
+                        };
 
 
 
@@ -486,10 +472,10 @@ window.addEventListener('DOMContentLoaded', (e) => {
                     ///////status////////
 
                     ////////status items/////////
-                    const statuIconOnCklick = event.target.closest('.status__icon .wrap');
+                    const statuIconOnCklick = event.target.closest('.wrap');
                     if (statuIconOnCklick) {
                         let storeObjStatus = geDataFromStorage();
-
+                        console.log('ok');
                         const itemText = statuIconOnCklick.querySelector('.modal__text').textContent;
                         const statusItemId = statuIconOnCklick.closest('.task__item').dataset.id;
 
@@ -497,7 +483,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                             if (item.id === statusItemId) {
                                 item.status = itemText;
                                 return;
-                            }
+                            };
                         });
 
                         setDataToStorage(storeObjStatus);
@@ -514,12 +500,12 @@ window.addEventListener('DOMContentLoaded', (e) => {
                             if (item.id === statusItemId) {
                                 item.status = 'null';
                                 return;
-                            }
+                            };
                         });
 
                         setDataToStorage(storeObjStatus);
                         wrightItemsToPage(geDataFromStorage());
-                    }
+                    };
 
                     ////////status items/////////
                 });
