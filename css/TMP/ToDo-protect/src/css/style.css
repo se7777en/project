@@ -291,16 +291,20 @@ body {
     position: absolute !important;
     top: 5px;
     left: 5px;
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
     color: #191919;
     cursor: pointer;
     z-index: 5;
 }
 
+.status__icon:active {
+    scale: 1.05;
+}
+
 .status__icon .flag {
     color: #d2d2d2;
-    opacity: .4;
+    opacity: .6;
 }
 
 .icon-status {
@@ -409,19 +413,19 @@ body {
 
 .urgent {
     color: #B13A41 !important;
-} 
+}
 
 .hight {
     color: #CF940A !important;
-} 
+}
 
 .normal {
     color: #4466FF !important;
-} 
+}
 
 .low {
     color: #87909E !important;
-} 
+}
 
 
 
@@ -759,6 +763,10 @@ body .box {
 
 .show {
     display: block !important;
+}
+
+.lastitem {
+    top: -100px !important;
 }
 
 .locked {

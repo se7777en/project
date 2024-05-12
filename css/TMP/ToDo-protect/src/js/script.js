@@ -108,7 +108,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                     let elements = '';
                     if (obj.length !== 0) {
 
-                        obj.forEach((item) => {
+                        obj.forEach((item, i) => {
                             let readStatus = item.read ? 'checked' : '';
                             let textdecore = readStatus ? 'textdecore' : '';
                             let date = item.date ? item.date : 'new time feature';
@@ -116,6 +116,10 @@ window.addEventListener('DOMContentLoaded', (e) => {
                             let hide = item.lock ? 'hide' : '';
                             let locked = item.lock ? 'show' : '';
                             let icon = item.lock ? 'lock' : 'unlock';
+
+
+                            let lastitem = (i === obj.length - 1) ? 'lastitem' : '';
+
 
 
                             let statusClasses = {
@@ -153,7 +157,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                                 'Normal': 'normal',
                                 'Low': 'low'
                             };
-                            const colored = statusColor[item.status];
+                            const colored = statusColor[item.status] ? statusColor[item.status]: 'null';
 
                             console.log(colored);
 
@@ -200,7 +204,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     <div class="status__icon icon-status">
     <i class="fa-solid fa-flag flag ${colored}"></i>
 
-    <div class="status__modal">
+    <div class="status__modal ${lastitem}">
         <div class="status__items">
             <div class="urgent__wrap wrap">
                 <div class="ugent__icons icons">
