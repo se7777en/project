@@ -291,16 +291,15 @@ body {
     position: absolute !important;
     top: 5px;
     left: 5px;
-    width: 20px;
-    height: 20px;
+    font-size: 18px;
     color: #191919;
     cursor: pointer;
     z-index: 5;
 }
 
-.status__icon:active {
+/* .status__icon:active {
     scale: 1.05;
-}
+} */
 
 .status__icon .flag {
     color: #d2d2d2;
@@ -767,6 +766,10 @@ body .box {
 
 .lastitem {
     top: -100px !important;
+}
+
+.icon__size {
+    font-size: 12px !important;
 }
 
 .locked {

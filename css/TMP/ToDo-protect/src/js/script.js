@@ -116,50 +116,54 @@ window.addEventListener('DOMContentLoaded', (e) => {
                             let hide = item.lock ? 'hide' : '';
                             let locked = item.lock ? 'show' : '';
                             let icon = item.lock ? 'lock' : 'unlock';
-
-
-                            let lastitem = (i === obj.length - 1) ? 'lastitem' : '';
-
-
-
-                            let statusClasses = {
-                                'Urgent': '',
-                                'Hight': '',
-                                'Normal': '',
-                                'Low': ''
-                            };
-                            statusClasses[item.status] = 'status__active';
-
-                            let urgent = statusClasses['Urgent'];
-                            let hight = statusClasses['Hight'];
-                            let normal = statusClasses['Normal'];
-                            let low = statusClasses['Low'];
-
-
-                            let statusFonts = {
-                                'Urgent': '',
-                                'Hight': '',
-                                'Normal': '',
-                                'Low': ''
-                            };
-                            statusFonts[item.status] = 'active-weight';
-
-                            let urgentFont = statusFonts['Urgent'];
-                            let hightFont = statusFonts['Hight'];
-                            let normalFont = statusFonts['Normal'];
-                            let lowFont = statusFonts['Low'];
+                            let iconSize = item.lock ? 'icon__size' : '';
 
 
 
-                            let statusColor = {
-                                'Urgent': 'urgent',
-                                'Hight': 'hight',
-                                'Normal': 'normal',
-                                'Low': 'low'
-                            };
-                            const colored = statusColor[item.status] ? statusColor[item.status]: 'null';
 
-                            console.log(colored);
+                            let lastitem, urgent, hight, normal, low, urgentFont, hightFont, normalFont, lowFont, colored;
+                           // if (!item.lock) {
+                                lastitem = (i === obj.length - 1) ? 'lastitem' : '';
+
+                                let statusClasses = {
+                                    'Urgent': '',
+                                    'Hight': '',
+                                    'Normal': '',
+                                    'Low': ''
+                                };
+                                statusClasses[item.status] = 'status__active';
+
+                                urgent = statusClasses['Urgent'];
+                                hight = statusClasses['Hight'];
+                                normal = statusClasses['Normal'];
+                                low = statusClasses['Low'];
+
+
+                                let statusFonts = {
+                                    'Urgent': '',
+                                    'Hight': '',
+                                    'Normal': '',
+                                    'Low': ''
+                                };
+                                statusFonts[item.status] = 'active-weight';
+
+                                urgentFont = statusFonts['Urgent'];
+                                hightFont = statusFonts['Hight'];
+                                normalFont = statusFonts['Normal'];
+                                lowFont = statusFonts['Low'];
+
+
+
+                                let statusColor = {
+                                    'Urgent': 'urgent',
+                                    'Hight': 'hight',
+                                    'Normal': 'normal',
+                                    'Low': 'low'
+                                };
+                                colored = statusColor[item.status] ? statusColor[item.status] : 'null';
+
+                                console.log(colored);
+                           // }
 
 
 
@@ -202,7 +206,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
 
     <div class="status__icon icon-status">
-    <i class="fa-solid fa-flag flag ${colored}"></i>
+    <i class="fa-solid fa-flag flag ${colored} ${iconSize}"></i>
 
     <div class="status__modal ${lastitem}">
         <div class="status__items">
@@ -464,7 +468,16 @@ window.addEventListener('DOMContentLoaded', (e) => {
                         //console.log(statusId);
                         statusModal = statusitem.querySelector('.status__modal');
                         hideAllStatusModal(statusId);
-                        statusModal.classList.toggle('show');
+
+                        let storeObjStatus = geDataFromStorage(); // proveryaem esli item ne zablokirovani togda otobrajat menu
+                        storeObjStatus.forEach((item) => {
+                            if(item.id === statusId) {
+                                if(!item.lock){
+                                    statusModal.classList.toggle('show');
+                                }
+                            }
+                        });
+                        
 
                     } else {
                         hideAllStatusModal();
