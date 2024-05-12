@@ -475,7 +475,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                     const statuIconOnCklick = event.target.closest('.wrap');
                     if (statuIconOnCklick) {
                         let storeObjStatus = geDataFromStorage();
-                        console.log('ok');
+                        //console.log('ok');
                         const itemText = statuIconOnCklick.querySelector('.modal__text').textContent;
                         const statusItemId = statuIconOnCklick.closest('.task__item').dataset.id;
 
