@@ -9,6 +9,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
 
                 const tasks = document.querySelector('.wrapper .tasks'),
+                    wrapper = document.querySelector('.wrapper'),
                     tasksCount = document.querySelector('.wrapper .created_num'),
                     complatedNum = document.querySelector('.wrapper .completed__num'),
                     addItem = document.querySelector('.wrapper .task__btn'),
@@ -152,10 +153,10 @@ window.addEventListener('DOMContentLoaded', (e) => {
                                 'Normal': 'normal',
                                 'Low': 'low'
                             };
-                          const colored =  statusColor[item.status];
+                            const colored = statusColor[item.status];
 
-                          console.log(colored);
-                            
+                            console.log(colored);
+
 
 
 
@@ -443,6 +444,13 @@ window.addEventListener('DOMContentLoaded', (e) => {
                     calcItems();
 
 
+
+
+
+                });
+
+
+                wrapper.addEventListener('click', (event) => {
                     ///////status////////
                     let statusitem = event.target.closest('.status__icon');
                     let statusModal = '';
@@ -461,21 +469,12 @@ window.addEventListener('DOMContentLoaded', (e) => {
                     ///////status////////
 
                     ////////status items/////////
-
-
                     const statuIconOnCklick = event.target.closest('.status__icon .wrap');
                     if (statuIconOnCklick) {
-                        // console.log('ok');
                         let storeObjStatus = geDataFromStorage();
-                        //  statuIconOnCklick.addEventListener('click', (e) => {
-                        //     e.preventDefault();
 
                         const itemText = statuIconOnCklick.querySelector('.modal__text').textContent;
                         const statusItemId = statuIconOnCklick.closest('.task__item').dataset.id;
-
-                        // console.log(itemText);
-                        // console.log(statusItemId);
-
 
                         storeObjStatus.forEach((item) => {
                             if (item.id === statusItemId) {
@@ -504,17 +503,6 @@ window.addEventListener('DOMContentLoaded', (e) => {
                         setDataToStorage(storeObjStatus);
                         wrightItemsToPage(geDataFromStorage());
                     }
-
-
-
-
-
-                    // document.querySelectorAll('.status__modal .wrap').forEach((item) => {
-
-
-                    // });
-
-
 
                     ////////status items/////////
                 });

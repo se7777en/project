@@ -312,14 +312,12 @@ body {
     position: absolute;
     top: auto;
     left: 19px;
-
     display: none !important;
     padding: 5px;
     border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, .2);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 10px !important;
     width: 120px;
-    background-color: #fff;
-
+    background-color: #413b3b;
     display: flex;
     flex-direction: column;
     cursor: initial;
@@ -356,6 +354,7 @@ body {
 
 .status__modal .modal__text {
     font-size: 12px;
+    color: #ebebeb;
 }
 
 
@@ -371,7 +370,7 @@ body {
 }
 
 .status__modal .wrap:hover {
-    background-color: #d2d2d2;
+    background-color: #4f4949;
     border-radius: 3px;
 }
 
