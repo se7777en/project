@@ -162,7 +162,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                                 };
                                 colored = statusColor[item.status] ? statusColor[item.status] : 'null';
 
-                                console.log(colored);
+                               // console.log(colored);
                            // }
 
 
@@ -674,7 +674,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 restoreCheckboxState();
 
 
-            }
-        }
-    }
+            };
+        };
+    };
 });
