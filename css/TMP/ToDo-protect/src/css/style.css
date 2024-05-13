@@ -368,6 +368,15 @@ body {
     align-items: center;
 }
 
+.clear__icons {
+    margin-left: -.01rem;
+    gap: 8.8px !important;
+}
+
+.clear__wrap i {
+    font-size: 12px;
+}
+
 .status__modal .wrap {
     padding: 6px;
 }
