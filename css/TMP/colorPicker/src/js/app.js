@@ -429,29 +429,6 @@ document.addEventListener('DOMContentLoaded', (e) => {
                 
                         const touch = evt.touches[0];
                         const activeElement = activeTask.element;
-                        const currentElement = document.elementFromPoint(touch.clientX, touch.clientY);
-                
-                        if (!currentElement || !tasksListElement.contains(currentElement)) {
-                            return;
-                        }
-                
-                        const isMoveable = activeElement !== currentElement &&
-                            currentElement.classList.contains('main__item');
-                
-                        if (!isMoveable) {
-                            return;
-                        }
-                
-                        const nextElement = getNextElement(touch.clientY, currentElement);
-                
-                        if (nextElement &&
-                            (activeElement === nextElement.previousElementSibling ||
-                                activeElement === nextElement)) {
-                            return;
-                        }
-                
-                        // Перемещаем placeholder на новое место
-                        tasksListElement.insertBefore(placeholder, nextElement);
                 
                         // Обновляем позицию активного элемента
                         activeElement.style.top = `${touch.clientY - activeTask.offsetY}px`;
@@ -475,7 +452,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
                             placeholder.classList.add('placeholder');
                             placeholder.style.width = `${rect.width}px`;
                             placeholder.style.height = `${rect.height}px`;
-                            targetTask.parentNode.insertBefore(placeholder, targetTask.nextSibling);
+                            tasksListElement.appendChild(placeholder);
                 
                             targetTask.classList.add('selected');
                             targetTask.style.width = `${rect.width}px`;  // Фиксируем ширину
@@ -485,13 +462,6 @@ document.addEventListener('DOMContentLoaded', (e) => {
                             targetTask.style.margin = '0';  // Сбрасываем отступы
                 
                             // Обновляем позицию активного элемента
-                            const containerRect = tasksListElement.getBoundingClientRect();
-                            const newTop = Math.max(containerRect.top, Math.min(containerRect.bottom - targetTask.offsetHeight, touch.clientY - activeTask.offsetY));
-                            const newLeft = Math.max(containerRect.left, Math.min(containerRect.right - targetTask.offsetWidth, touch.clientX - activeTask.offsetX));
-                            targetTask.style.top = `${newTop - containerRect.top}px`;
-                            targetTask.style.left = `${newLeft - containerRect.left}px`;
-                
-                            // Обновляем позицию элемента сразу при касании
                             targetTask.style.top = `${touch.clientY - activeTask.offsetY}px`;
                             targetTask.style.left = `${touch.clientX - activeTask.offsetX}px`;
                 
@@ -499,7 +469,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
                         }
                     });
                 
-                    tasksListElement.addEventListener('touchend', () => {
+                    tasksListElement.addEventListener('touchend', (evt) => {
                         if (activeTask) {
                             activeTask.element.classList.remove('selected');
                             activeTask.element.style.position = '';
@@ -509,30 +479,29 @@ document.addEventListener('DOMContentLoaded', (e) => {
                             activeTask.element.style.width = '';
                             activeTask.element.style.height = '';
                             activeTask.element.style.margin = '';  // Восстанавливаем отступы
-                            tasksListElement.insertBefore(activeTask.element, placeholder);
-                            placeholder.remove();
-                            activeTask = null;
                 
+                            const touch = evt.changedTouches[0];
+                            const targetElement = document.elementFromPoint(touch.clientX, touch.clientY);
+                            if (targetElement && targetElement.classList.contains('main__item')) {
+                                tasksListElement.insertBefore(activeTask.element, targetElement);
+                            } else {
+                                tasksListElement.appendChild(activeTask.element); // Если цель не найдена, просто вставляем в конец списка
+                            }
+                
+                            // Удаляем placeholder
+                            placeholder.remove();
+                
+                            activeTask = null;
                             enableScroll(); // Включаем прокрутку
                         }
                     });
-                
-                    const getNextElement = (cursorPosition, currentElement) => {
-                        const currentElementCoord = currentElement.getBoundingClientRect();
-                        const currentElementCenter = currentElementCoord.y + currentElementCoord.height / 2;
-                
-                        const nextElement = (cursorPosition < currentElementCenter) ?
-                            currentElement :
-                            currentElement.nextElementSibling;
-                
-                        return nextElement;
-                    };
                 }
                 
                 
                 
                 
-                
+
+
             }
         }
     }
