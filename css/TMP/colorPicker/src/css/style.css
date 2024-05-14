@@ -520,7 +520,7 @@ body {
 
 
 .main__item {
-    user-select: none;
+    /* user-select: none; */
 }
 .selected {
     opacity: 0.5;
