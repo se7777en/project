@@ -402,7 +402,6 @@ document.addEventListener('DOMContentLoaded', (e) => {
                 });
 
                 //////////////////////////////////drag drop//////////////////////////////////////////////////////
-
                 const tasksListElement = document.querySelector('.main');
                 const taskElements = tasksListElement.querySelectorAll('.main__item');
                 let activeTask = null;
@@ -410,10 +409,12 @@ document.addEventListener('DOMContentLoaded', (e) => {
                 
                 const disableScroll = () => {
                     document.body.style.overflow = 'hidden';
+                    document.documentElement.style.overflow = 'hidden';
                 };
                 
                 const enableScroll = () => {
                     document.body.style.overflow = '';
+                    document.documentElement.style.overflow = '';
                 };
                 
                 if (window.innerWidth < 980) {
@@ -449,10 +450,10 @@ document.addEventListener('DOMContentLoaded', (e) => {
                             return;
                         }
                 
-                        // Move the placeholder to the new position
+                        // Перемещаем placeholder на новое место
                         tasksListElement.insertBefore(placeholder, nextElement);
                 
-                        // Update the position of the active element to follow the touch
+                        // Обновляем позицию активного элемента
                         activeElement.style.top = `${touch.clientY - activeTask.offsetY}px`;
                         activeElement.style.left = `${touch.clientX - activeTask.offsetX}px`;
                     });
@@ -476,17 +477,25 @@ document.addEventListener('DOMContentLoaded', (e) => {
                             placeholder.style.height = `${rect.height}px`;
                             targetTask.parentNode.insertBefore(placeholder, targetTask.nextSibling);
                 
-                            const computedStyle = getComputedStyle(targetTask);
                             targetTask.classList.add('selected');
-                            targetTask.style.width = `${rect.width}px`;  // Fix width
-                            targetTask.style.height = `${rect.height}px`;  // Fix height
+                            targetTask.style.width = `${rect.width}px`;  // Фиксируем ширину
+                            targetTask.style.height = `${rect.height}px`;  // Фиксируем высоту
                             targetTask.style.position = 'absolute';
                             targetTask.style.zIndex = '1000';
+                            targetTask.style.margin = '0';  // Сбрасываем отступы
+                
+                            // Обновляем позицию активного элемента
+                            const containerRect = tasksListElement.getBoundingClientRect();
+                            const newTop = Math.max(containerRect.top, Math.min(containerRect.bottom - targetTask.offsetHeight, touch.clientY - activeTask.offsetY));
+                            const newLeft = Math.max(containerRect.left, Math.min(containerRect.right - targetTask.offsetWidth, touch.clientX - activeTask.offsetX));
+                            targetTask.style.top = `${newTop - containerRect.top}px`;
+                            targetTask.style.left = `${newLeft - containerRect.left}px`;
+                
+                            // Обновляем позицию элемента сразу при касании
                             targetTask.style.top = `${touch.clientY - activeTask.offsetY}px`;
                             targetTask.style.left = `${touch.clientX - activeTask.offsetX}px`;
-                            targetTask.style.margin = '0';  // Reset margin to avoid unexpected shrink
                 
-                            disableScroll(); // Disable scrolling
+                            disableScroll(); // Отключаем прокрутку
                         }
                     });
                 
@@ -499,12 +508,12 @@ document.addEventListener('DOMContentLoaded', (e) => {
                             activeTask.element.style.zIndex = '';
                             activeTask.element.style.width = '';
                             activeTask.element.style.height = '';
-                            activeTask.element.style.margin = '';  // Reset margin to its original value
+                            activeTask.element.style.margin = '';  // Восстанавливаем отступы
                             tasksListElement.insertBefore(activeTask.element, placeholder);
                             placeholder.remove();
                             activeTask = null;
                 
-                            enableScroll(); // Enable scrolling again
+                            enableScroll(); // Включаем прокрутку
                         }
                     });
                 
@@ -519,6 +528,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
                         return nextElement;
                     };
                 }
+                
                 
                 
                 
