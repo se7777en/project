@@ -519,17 +519,22 @@ body {
 
 
 
-.main__item {
-    /* user-select: none; */
-}
-.selected {
-    opacity: 0.5;
-    background-color: #f0f0f0;
-    box-sizing: border-box; /* Убедитесь, что padding и border включены в общие размеры элемента */
+.main__item,
+.placeholder {
+    transition: transform 0.2s ease, top 0.2s ease, left 0.2s ease;
 }
 .placeholder {
-    border: 2px dashed #ccc;
-    background-color: #e0e0e0;
-    box-sizing: border-box; /* Убедитесь, что padding и border включены в общие размеры элемента */
+    background-color: #f0f0f0;
+    /* border: 2px dashed #ccc; */
+}
+.selected {
+    transition: none; /* Отключаем переход для выбранного элемента */
 }
 
+.black-line {
+    position: absolute;
+    background-color: black; /* Измените на цвет, который вам нужен */
+    height: 3px; /* Высота линии */
+    width: 100%; /* Ширина линии */
+    z-index: 999; /* Убедитесь, что линия находится выше других элементов */
+}
