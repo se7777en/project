@@ -525,7 +525,7 @@ body {
 }
 .placeholder {
     background-color: #f0f0f0;
-    /* border: 2px dashed #ccc; */
+    border: 2px dashed #ccc;
 }
 .selected {
     transition: none; /* Отключаем переход для выбранного элемента */

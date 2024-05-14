@@ -436,36 +436,39 @@ document.addEventListener('DOMContentLoaded', (e) => {
                     });
                 
                     tasksListElement.addEventListener('touchstart', (evt) => {
-                        const targetTask = evt.target.closest('.main__item');
-                        if (targetTask) {
-                            const touch = evt.touches[0];
-                            const rect = targetTask.getBoundingClientRect();
-                            activeTask = {
-                                element: targetTask,
-                                startX: touch.clientX,
-                                startY: touch.clientY,
-                                offsetX: touch.clientX - rect.left,
-                                offsetY: touch.clientY - rect.top
-                            };
+                        const targetIcon = evt.target.closest('.drag__img');
+                        if (targetIcon) {
+                            const targetTask = targetIcon.closest('.main__item');
+                            if (targetTask) {
+                                const touch = evt.touches[0];
+                                const rect = targetTask.getBoundingClientRect();
+                                activeTask = {
+                                    element: targetTask,
+                                    startX: touch.clientX,
+                                    startY: touch.clientY,
+                                    offsetX: touch.clientX - rect.left,
+                                    offsetY: touch.clientY - rect.top
+                                };
                 
-                            placeholder = document.createElement('div');
-                            placeholder.classList.add('placeholder');
-                            placeholder.style.width = `${rect.width}px`;
-                            placeholder.style.height = `${rect.height}px`;
-                            tasksListElement.appendChild(placeholder);
+                                placeholder = document.createElement('div');
+                                placeholder.classList.add('placeholder');
+                                placeholder.style.width = `${rect.width}px`;
+                                placeholder.style.height = `${rect.height}px`;
+                                tasksListElement.appendChild(placeholder);
                 
-                            targetTask.classList.add('selected');
-                            targetTask.style.width = `${rect.width}px`;  // Фиксируем ширину
-                            targetTask.style.height = `${rect.height}px`;  // Фиксируем высоту
-                            targetTask.style.position = 'absolute';
-                            targetTask.style.zIndex = '1000';
-                            targetTask.style.margin = '0';  // Сбрасываем отступы
+                                targetTask.classList.add('selected');
+                                targetTask.style.width = `${rect.width}px`;  // Фиксируем ширину
+                                targetTask.style.height = `${rect.height}px`;  // Фиксируем высоту
+                                targetTask.style.position = 'absolute';
+                                targetTask.style.zIndex = '1000';
+                                targetTask.style.margin = '0';  // Сбрасываем отступы
                 
-                            // Обновляем позицию активного элемента
-                            targetTask.style.top = `${touch.clientY - activeTask.offsetY}px`;
-                            targetTask.style.left = `${touch.clientX - activeTask.offsetX}px`;
+                                // Обновляем позицию активного элемента
+                                targetTask.style.top = `${touch.clientY - activeTask.offsetY}px`;
+                                targetTask.style.left = `${touch.clientX - activeTask.offsetX}px`;
                 
-                            disableScroll(); // Отключаем прокрутку
+                                disableScroll(); // Отключаем прокрутку
+                            }
                         }
                     });
                 
@@ -497,6 +500,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
                     });
                 }
                 
+
                 
                 
                 
