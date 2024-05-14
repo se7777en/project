@@ -406,72 +406,123 @@ document.addEventListener('DOMContentLoaded', (e) => {
                 const tasksListElement = document.querySelector('.main');
                 const taskElements = tasksListElement.querySelectorAll('.main__item');
                 let activeTask = null;
+                let placeholder = null;
+                
+                const disableScroll = () => {
+                    document.body.style.overflow = 'hidden';
+                };
+                
+                const enableScroll = () => {
+                    document.body.style.overflow = '';
+                };
+                
                 if (window.innerWidth < 980) {
                     for (const task of taskElements) {
                         task.draggable = true;
                     }
-
+                
                     tasksListElement.addEventListener('touchmove', (evt) => {
                         evt.preventDefault();
-
-                        const activeElement = tasksListElement.querySelector('.selected');
-                        const currentElement = document.elementFromPoint(evt.touches[0].clientX, evt.touches[0].clientY);
-
-                        // Проверяем, что текущий элемент не null и является дочерним элементом tasksListElement
+                
+                        if (!activeTask) return;
+                
+                        const touch = evt.touches[0];
+                        const activeElement = activeTask.element;
+                        const currentElement = document.elementFromPoint(touch.clientX, touch.clientY);
+                
                         if (!currentElement || !tasksListElement.contains(currentElement)) {
                             return;
                         }
-
+                
                         const isMoveable = activeElement !== currentElement &&
                             currentElement.classList.contains('main__item');
-
+                
                         if (!isMoveable) {
                             return;
                         }
-
-                        const nextElement = getNextElement(evt.touches[0].clientY, currentElement);
-
+                
+                        const nextElement = getNextElement(touch.clientY, currentElement);
+                
                         if (nextElement &&
                             (activeElement === nextElement.previousElementSibling ||
                                 activeElement === nextElement)) {
                             return;
                         }
-
-                        tasksListElement.insertBefore(activeElement, nextElement);
+                
+                        // Move the placeholder to the new position
+                        tasksListElement.insertBefore(placeholder, nextElement);
+                
+                        // Update the position of the active element to follow the touch
+                        activeElement.style.top = `${touch.clientY - activeTask.offsetY}px`;
+                        activeElement.style.left = `${touch.clientX - activeTask.offsetX}px`;
                     });
-
+                
                     tasksListElement.addEventListener('touchstart', (evt) => {
                         const targetTask = evt.target.closest('.main__item');
                         if (targetTask) {
+                            const touch = evt.touches[0];
+                            const rect = targetTask.getBoundingClientRect();
                             activeTask = {
                                 element: targetTask,
-                                startX: evt.touches[0].clientX,
-                                startY: evt.touches[0].clientY
+                                startX: touch.clientX,
+                                startY: touch.clientY,
+                                offsetX: touch.clientX - rect.left,
+                                offsetY: touch.clientY - rect.top
                             };
+                
+                            placeholder = document.createElement('div');
+                            placeholder.classList.add('placeholder');
+                            placeholder.style.width = `${rect.width}px`;
+                            placeholder.style.height = `${rect.height}px`;
+                            targetTask.parentNode.insertBefore(placeholder, targetTask.nextSibling);
+                
+                            const computedStyle = getComputedStyle(targetTask);
                             targetTask.classList.add('selected');
+                            targetTask.style.width = `${rect.width}px`;  // Fix width
+                            targetTask.style.height = `${rect.height}px`;  // Fix height
+                            targetTask.style.position = 'absolute';
+                            targetTask.style.zIndex = '1000';
+                            targetTask.style.top = `${touch.clientY - activeTask.offsetY}px`;
+                            targetTask.style.left = `${touch.clientX - activeTask.offsetX}px`;
+                            targetTask.style.margin = '0';  // Reset margin to avoid unexpected shrink
+                
+                            disableScroll(); // Disable scrolling
                         }
                     });
-
+                
                     tasksListElement.addEventListener('touchend', () => {
                         if (activeTask) {
                             activeTask.element.classList.remove('selected');
+                            activeTask.element.style.position = '';
+                            activeTask.element.style.top = '';
+                            activeTask.element.style.left = '';
+                            activeTask.element.style.zIndex = '';
+                            activeTask.element.style.width = '';
+                            activeTask.element.style.height = '';
+                            activeTask.element.style.margin = '';  // Reset margin to its original value
+                            tasksListElement.insertBefore(activeTask.element, placeholder);
+                            placeholder.remove();
                             activeTask = null;
+                
+                            enableScroll(); // Enable scrolling again
                         }
                     });
-
+                
                     const getNextElement = (cursorPosition, currentElement) => {
                         const currentElementCoord = currentElement.getBoundingClientRect();
                         const currentElementCenter = currentElementCoord.y + currentElementCoord.height / 2;
-
+                
                         const nextElement = (cursorPosition < currentElementCenter) ?
                             currentElement :
                             currentElement.nextElementSibling;
-
+                
                         return nextElement;
                     };
                 }
-
-
+                
+                
+                
+                
             }
         }
     }
