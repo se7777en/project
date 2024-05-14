@@ -515,10 +515,9 @@ body {
 
 
 
-.main {
-    /* position: relative;  */
-     overflow: hidden;
-}
+
+
+
 
 .main__item {
     user-select: none;
