@@ -406,17 +406,17 @@ document.addEventListener('DOMContentLoaded', (e) => {
                 const taskElements = tasksListElement.querySelectorAll('.main__item');
                 let activeTask = null;
                 let placeholder = null;
-
+                
                 const disableScroll = () => {
                     document.body.style.overflow = 'hidden';
                     document.documentElement.style.overflow = 'hidden';
                 };
-
+                
                 const enableScroll = () => {
                     document.body.style.overflow = '';
                     document.documentElement.style.overflow = '';
                 };
-
+                
                 const findInsertionIndex = (mouseY) => {
                     const taskElements = tasksListElement.querySelectorAll('.main__item');
                     for (const task of taskElements) {
@@ -428,44 +428,49 @@ document.addEventListener('DOMContentLoaded', (e) => {
                     }
                     return null; // Если не найдено место вставки
                 };
-
+                
                 const highlightInsertionPoint = (insertionPoint) => {
                     if (insertionPoint) {
                         insertionPoint.classList.add('insertion-highlight');
                     }
                 };
-
+                
                 const removeHighlight = () => {
                     const highlightedElement = document.querySelector('.insertion-highlight');
                     if (highlightedElement) {
                         highlightedElement.classList.remove('insertion-highlight');
                     }
                 };
-
+                
+                const removeAllHighlights = () => {
+                    const highlightedElements = document.querySelectorAll('.insertion-highlight');
+                    highlightedElements.forEach(el => el.classList.remove('insertion-highlight'));
+                };
+                
                 if (window.innerWidth < 980) {
                     for (const task of taskElements) {
                         task.draggable = true;
                     }
-
+                
                     tasksListElement.addEventListener('touchmove', (evt) => {
                         evt.preventDefault();
-
+                
                         if (!activeTask) return;
-
+                
                         const touch = evt.touches[0];
                         const activeElement = activeTask.element;
-
+                
                         // Обновляем позицию активного элемента
                         activeElement.style.top = `${touch.clientY - activeTask.offsetY}px`;
                         activeElement.style.left = `${touch.clientX - activeTask.offsetX}px`;
-
+                
                         // Определяем место вставки на основе координат касания
                         const mouseY = touch.clientY + window.scrollY; // Учитываем прокрутку страницы
                         const insertionPoint = findInsertionIndex(mouseY);
                         removeHighlight();
                         highlightInsertionPoint(insertionPoint);
                     });
-
+                
                     tasksListElement.addEventListener('touchstart', (evt) => {
                         const targetIcon = evt.target.closest('.drag__img');
                         if (targetIcon) {
@@ -473,6 +478,10 @@ document.addEventListener('DOMContentLoaded', (e) => {
                             if (targetTask) {
                                 const touch = evt.touches[0];
                                 const rect = targetTask.getBoundingClientRect();
+                
+                                // Удаляем все выделения перед началом перетаскивания
+                                removeAllHighlights();
+                
                                 activeTask = {
                                     element: targetTask,
                                     startX: touch.clientX,
@@ -480,28 +489,29 @@ document.addEventListener('DOMContentLoaded', (e) => {
                                     offsetX: touch.clientX - rect.left,
                                     offsetY: touch.clientY - rect.top
                                 };
-
+                
                                 placeholder = document.createElement('div');
                                 placeholder.classList.add('placeholder');
                                 placeholder.style.width = `${rect.width}px`;
                                 placeholder.style.height = `${rect.height}px`;
                                 tasksListElement.appendChild(placeholder);
-
+                
                                 targetTask.classList.add('selected');
                                 targetTask.style.width = `${rect.width}px`;  // Фиксируем ширину
                                 targetTask.style.height = `${rect.height}px`;  // Фиксируем высоту
                                 targetTask.style.position = 'absolute';
                                 targetTask.style.zIndex = '1000';
                                 targetTask.style.margin = '0';  // Сбрасываем отступы
-
+                
                                 // Обновляем позицию активного элемента
                                 targetTask.style.top = `${touch.clientY - activeTask.offsetY}px`;
                                 targetTask.style.left = `${touch.clientX - activeTask.offsetX}px`;
-
+                
                                 disableScroll(); // Отключаем прокрутку
                             }
                         }
                     });
+                
                     tasksListElement.addEventListener('touchend', (evt) => {
                         if (activeTask) {
                             // Удаляем класс selected у активного элемента
@@ -515,37 +525,25 @@ document.addEventListener('DOMContentLoaded', (e) => {
                             activeTask.element.style.width = '';
                             activeTask.element.style.height = '';
                             activeTask.element.style.margin = '';  // Восстанавливаем отступы
-
+                
                             const insertionPoint = document.querySelector('.insertion-highlight');
                             if (insertionPoint) {
                                 insertionPoint.insertAdjacentElement('beforebegin', activeTask.element);
                             } else {
                                 tasksListElement.appendChild(activeTask.element); // Если элемент с синей обводкой не найден, просто вставляем в конец списка
                             }
-
+                
                             // Удаляем placeholder и подсветку места вставки
                             placeholder.remove();
                             removeHighlight();
-
+                
                             activeTask = null;
                             enableScroll(); // Включаем прокрутку
                         }
                     });
-
-
-                    // Получаем все элементы, которые могут быть перетащены
-                    const draggableElements = document.querySelectorAll('.main__item');
-
-                    // Добавляем обработчик события selectstart для каждого перетаскиваемого элемента
-                    draggableElements.forEach(element => {
-                        element.addEventListener('selectstart', (event) => {
-                            // Предотвращаем стандартное действие браузера при выделении текста
-                            event.preventDefault();
-                            // Возвращаем false, чтобы гарантировать, что событие не продолжит всплывать
-                            return false;
-                        });
-                    });
                 }
+                
+
 
 
 
