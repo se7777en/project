@@ -501,10 +501,6 @@ document.addEventListener('DOMContentLoaded', (e) => {
                 }
                 
 
-                
-                
-                
-
 
             }
         }
