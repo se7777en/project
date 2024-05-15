@@ -502,17 +502,13 @@ document.addEventListener('DOMContentLoaded', (e) => {
                                 targetTask.style.position = 'absolute';
                                 targetTask.style.zIndex = '1000';
                                 targetTask.style.margin = '0';  // Сбрасываем отступы
+                                targetTask.style.border = 'none';  // Убираем бордер
                 
                                 // Обновляем позицию активного элемента
                                 targetTask.style.top = `${touch.clientY - activeTask.offsetY}px`;
                                 targetTask.style.left = `${touch.clientX - activeTask.offsetX}px`;
                 
                                 disableScroll(); // Отключаем прокрутку
-                
-                                // Добавляем задержку перед началом перетаскивания
-                                setTimeout(() => {
-                                    activeTask.element.classList.add('dragging');
-                                }, 200);
                             }
                         }
                     });
@@ -523,8 +519,6 @@ document.addEventListener('DOMContentLoaded', (e) => {
                             activeTask.element.classList.remove('selected');
                             // Удаляем класс insertion-highlight у активного элемента
                             activeTask.element.classList.remove('insertion-highlight');
-                            // Удаляем класс dragging у активного элемента
-                            activeTask.element.classList.remove('dragging');
                             activeTask.element.style.position = '';
                             activeTask.element.style.top = '';
                             activeTask.element.style.left = '';
@@ -532,6 +526,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
                             activeTask.element.style.width = '';
                             activeTask.element.style.height = '';
                             activeTask.element.style.margin = '';  // Восстанавливаем отступы
+                            activeTask.element.style.border = '';  // Восстанавливаем бордер
                 
                             const insertionPoint = document.querySelector('.insertion-highlight');
                             if (insertionPoint) {
@@ -549,6 +544,8 @@ document.addEventListener('DOMContentLoaded', (e) => {
                         }
                     });
                 }
+                
+                
                 
                 
 
