@@ -530,3 +530,7 @@ body {
 .selected {
     transition: none; /* Отключаем переход для выбранного элемента */
 }
+
+.insertion-highlight {
+    border: 2px solid blue;
+}
