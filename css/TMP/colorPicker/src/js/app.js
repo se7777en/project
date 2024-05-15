@@ -402,7 +402,74 @@ document.addEventListener('DOMContentLoaded', (e) => {
                 });
 
                 //////////////////////////////////drag drop//////////////////////////////////////////////////////
-                const tasksListElement = document.querySelector('.main');
+               
+                const tasksListElement = document.querySelector(`.main`);
+                const taskElements = tasksListElement.querySelectorAll(`.main__item`);
+                
+                for (const task of taskElements) {
+                    task.draggable = true;
+                }
+                
+                tasksListElement.addEventListener(`touchstart`, (evt) => {
+                    const targetTask = evt.target.closest('.main__item');
+                    if (targetTask) {
+                        targetTask.classList.add(`selected`);
+                    }
+                });
+                
+                tasksListElement.addEventListener(`touchend`, (evt) => {
+                    const selectedTask = tasksListElement.querySelector('.main__item.selected');
+                    if (selectedTask) {
+                        selectedTask.classList.remove(`selected`);
+                    }
+                });
+                
+                tasksListElement.addEventListener(`touchmove`, (evt) => {
+                    evt.preventDefault();
+                
+                    const activeElement = tasksListElement.querySelector(`.selected`);
+                    const currentElement = document.elementFromPoint(evt.touches[0].clientX, evt.touches[0].clientY);
+                    const isMoveable = activeElement !== currentElement &&
+                        currentElement.classList.contains(`main__item`);
+                
+                    if (!isMoveable) {
+                        return;
+                    }
+                
+                    const nextElement = getNextElement(evt.touches[0].clientY, currentElement);
+                
+                    if (
+                        nextElement &&
+                        activeElement === nextElement.previousElementSibling ||
+                        activeElement === nextElement) {
+                        return;
+                    }
+                
+                    tasksListElement.insertBefore(activeElement, nextElement);
+                });
+                
+                const getNextElement = (cursorPosition, currentElement) => {
+                    const currentElementCoord = currentElement.getBoundingClientRect();
+                    const currentElementCenter = currentElementCoord.y + currentElementCoord.height / 2;
+                
+                    const nextElement = (cursorPosition < currentElementCenter) ?
+                        currentElement :
+                        currentElement.nextElementSibling;
+                
+                    return nextElement;
+                };
+
+
+            }
+        }
+    }
+});
+/////////5////////////
+
+
+
+/*
+ const tasksListElement = document.querySelector('.main');
                 const taskElements = tasksListElement.querySelectorAll('.main__item');
                 let activeTask = null;
                 let placeholder = null;
@@ -545,119 +612,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
                     });
                 }
                 
-                
-                
-                
-
-
-
-
-            }
-        }
-    }
-});
-/////////5////////////
-
-
-
-/*
-      const tasksListElement = document.querySelector('.main');
-                const taskElements = tasksListElement.querySelectorAll('.main__item');
-                let activeTask = null;
-                let placeholder = null;
-                
-                const disableScroll = () => {
-                    document.body.style.overflow = 'hidden';
-                    document.documentElement.style.overflow = 'hidden';
-                };
-                
-                const enableScroll = () => {
-                    document.body.style.overflow = '';
-                    document.documentElement.style.overflow = '';
-                };
-                
-                if (window.innerWidth < 980) {
-                    for (const task of taskElements) {
-                        task.draggable = true;
-                    }
-                
-                    tasksListElement.addEventListener('touchmove', (evt) => {
-                        evt.preventDefault();
-                
-                        if (!activeTask) return;
-                
-                        const touch = evt.touches[0];
-                        const activeElement = activeTask.element;
-                
-                        // Обновляем позицию активного элемента
-                        activeElement.style.top = `${touch.clientY - activeTask.offsetY}px`;
-                        activeElement.style.left = `${touch.clientX - activeTask.offsetX}px`;
-                    });
-                
-                    tasksListElement.addEventListener('touchstart', (evt) => {
-                        const targetIcon = evt.target.closest('.drag__img');
-                        if (targetIcon) {
-                            const targetTask = targetIcon.closest('.main__item');
-                            if (targetTask) {
-                                const touch = evt.touches[0];
-                                const rect = targetTask.getBoundingClientRect();
-                                activeTask = {
-                                    element: targetTask,
-                                    startX: touch.clientX,
-                                    startY: touch.clientY,
-                                    offsetX: touch.clientX - rect.left,
-                                    offsetY: touch.clientY - rect.top
-                                };
-                
-                                placeholder = document.createElement('div');
-                                placeholder.classList.add('placeholder');
-                                placeholder.style.width = `${rect.width}px`;
-                                placeholder.style.height = `${rect.height}px`;
-                                tasksListElement.appendChild(placeholder);
-                
-                                targetTask.classList.add('selected');
-                                targetTask.style.width = `${rect.width}px`;  // Фиксируем ширину
-                                targetTask.style.height = `${rect.height}px`;  // Фиксируем высоту
-                                targetTask.style.position = 'absolute';
-                                targetTask.style.zIndex = '1000';
-                                targetTask.style.margin = '0';  // Сбрасываем отступы
-                
-                                // Обновляем позицию активного элемента
-                                targetTask.style.top = `${touch.clientY - activeTask.offsetY}px`;
-                                targetTask.style.left = `${touch.clientX - activeTask.offsetX}px`;
-                
-                                disableScroll(); // Отключаем прокрутку
-                            }
-                        }
-                    });
-                
-                    tasksListElement.addEventListener('touchend', (evt) => {
-                        if (activeTask) {
-                            activeTask.element.classList.remove('selected');
-                            activeTask.element.style.position = '';
-                            activeTask.element.style.top = '';
-                            activeTask.element.style.left = '';
-                            activeTask.element.style.zIndex = '';
-                            activeTask.element.style.width = '';
-                            activeTask.element.style.height = '';
-                            activeTask.element.style.margin = '';  // Восстанавливаем отступы
-                
-                            const touch = evt.changedTouches[0];
-                            const targetElement = document.elementFromPoint(touch.clientX, touch.clientY);
-                            if (targetElement && targetElement.classList.contains('main__item')) {
-                                tasksListElement.insertBefore(activeTask.element, targetElement);
-                            } else {
-                                tasksListElement.appendChild(activeTask.element); // Если цель не найдена, просто вставляем в конец списка
-                            }
-                
-                            // Удаляем placeholder
-                            placeholder.remove();
-                
-                            activeTask = null;
-                            enableScroll(); // Включаем прокрутку
-                        }
-                    });
-                }
+     
                 
 
 */

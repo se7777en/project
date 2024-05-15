@@ -537,12 +537,12 @@ body {
     margin-top: -3px; /* Сдвигаем элемент вверх на 3 пикселя, чтобы граница не увеличивала его размер */
 }
 
-.drag__img {
-    border: none !important; /* Убираем границу у изображения */
-}
+/* .drag__img {
+    border: none !important;  Убираем границу у изображения 
+} */
 
-.main__item.draggable {
+/* .main__item.draggable {
     pointer-events: none;
     touch-action: none;
-}
+} */
 
