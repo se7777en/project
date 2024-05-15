@@ -522,6 +522,7 @@ body {
 .main__item,
 .placeholder {
     transition: transform 0.2s ease, top 0.2s ease, left 0.2s ease;
+    user-select: none;
 }
 .placeholder {
     background-color: #f0f0f0;
@@ -532,5 +533,16 @@ body {
 }
 
 .insertion-highlight {
-    border: 2px solid blue;
+    border-top: 3px solid rgba(0, 0, 255, .8); /* Верхняя граница синего цвета толщиной 3 пикселя */
+    margin-top: -3px; /* Сдвигаем элемент вверх на 3 пикселя, чтобы граница не увеличивала его размер */
 }
+
+.drag__img {
+    border: none !important; /* Убираем границу у изображения */
+}
+
+.main__item.draggable {
+    pointer-events: none;
+    touch-action: none;
+}
+
