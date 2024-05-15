@@ -508,6 +508,11 @@ document.addEventListener('DOMContentLoaded', (e) => {
                                 targetTask.style.left = `${touch.clientX - activeTask.offsetX}px`;
                 
                                 disableScroll(); // Отключаем прокрутку
+                
+                                // Добавляем задержку перед началом перетаскивания
+                                setTimeout(() => {
+                                    activeTask.element.classList.add('dragging');
+                                }, 200);
                             }
                         }
                     });
@@ -518,6 +523,8 @@ document.addEventListener('DOMContentLoaded', (e) => {
                             activeTask.element.classList.remove('selected');
                             // Удаляем класс insertion-highlight у активного элемента
                             activeTask.element.classList.remove('insertion-highlight');
+                            // Удаляем класс dragging у активного элемента
+                            activeTask.element.classList.remove('dragging');
                             activeTask.element.style.position = '';
                             activeTask.element.style.top = '';
                             activeTask.element.style.left = '';
@@ -542,6 +549,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
                         }
                     });
                 }
+                
                 
 
 
