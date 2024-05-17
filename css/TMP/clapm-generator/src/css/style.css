@@ -151,6 +151,12 @@ body {
     position: relative;
     cursor: pointer;
     color: #A9A0B9;
+    transition: all .3s ease-in-out;
+
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .values__px.active {
@@ -171,6 +177,7 @@ body {
     border-radius: 2px;
     opacity: 1;
     cursor: pointer;
+    
 }
 
 .values__px.active::before {
@@ -184,6 +191,7 @@ body {
     background-color: #fff;
     border-radius: 2px;
     z-index: 3;
+    
 }
 
 .values__rem.active::before {
@@ -197,6 +205,7 @@ body {
     background-color: #fff;
     border-radius: 2px;
     z-index: 3;
+
 }
 
 .units__cover::before {
