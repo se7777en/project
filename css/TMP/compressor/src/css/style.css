@@ -39,4 +39,25 @@ h6 {
 
 body {
     font-family: "Montserrat", sans-serif;
+    
+    font-size: 16px;
 }
+
+
+.container {
+    max-width: 1044px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+
+.wrapper {
+    padding-top: 50px;
+}
+
+.wrapper h2 {
+    /* font-size: clamp(10px, 0.843vw, 36px); */
+    font-size: clamp(10px, -0.114rem + 3.693vw, 36px);
+    display: block;
+    text-align: center;
+}
+
