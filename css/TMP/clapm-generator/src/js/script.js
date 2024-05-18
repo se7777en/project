@@ -34,25 +34,25 @@ document.addEventListener('DOMContentLoaded', (e) => {
         }, 1200);
     });
 
-    const remPadding = (unit) => {
+    const remPadding = (measureitem) => {
         [valuesMin, valuesMax].forEach((item) => {
-            // if (unit === 'px') {
+            // if (measureitem === 'px') {
             //     item.classList.remove('fontset');
             // }
 
-            // if (unit === 'rem') {
+            // if (measureitem === 'rem') {
             //     item.classList.add('fontset');
             // }
-            unit === 'px' ? item.classList.remove('fontset') : unit === 'rem' ? item.classList.add('fontset') : null;
+            measureitem === 'px' ? item.classList.remove('fontset') : measureitem === 'rem' ? item.classList.add('fontset') : null;
         });
-    }
+    };
 
 
 
 
 
 
-    let units = '';
+    let measure = '';
 
     function toggleActive(elementToAdd, elementToRemove) {
         if (!elementToAdd.matches('.active')) {
@@ -65,8 +65,8 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
     valuesPx.addEventListener('click', () => {
         toggleActive(valuesPx, valuesRem);
-        units = 'px';
-        remPadding(units);
+        measure = 'px';
+        remPadding(measure);
 
         if (k) {
             valuesMin.value = valuesMin.value * +base.value;
@@ -83,8 +83,8 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
     valuesRem.addEventListener('click', () => {
         toggleActive(valuesRem, valuesPx);
-        units = 'rem';
-        remPadding(units);
+        measure = 'rem';
+        remPadding(measure);
 
 
 
@@ -120,12 +120,12 @@ document.addEventListener('DOMContentLoaded', (e) => {
             viewportMax_ = viewportMax.value,
             base_ = base.value;
 
-        if (units === 'rem') {
+        if (measure === 'rem') {
             valuesMin_ = valuesMin.value * base_;
             valuesMax_ = valuesMax.value * base_;
         }
 
-        if (units === 'px') {
+        if (measure === 'px') {
             valuesMin_ = valuesMin.value;
             valuesMax_ = valuesMax.value;
         }
@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
         let val5 = `${roundUpToThreeDecimals(val4)}rem`;
         let valMin = `${roundUpToThreeDecimals(valuesMin_ / +base_)}rem`;
         let valMax = `${roundUpToThreeDecimals(valuesMax_ / +base_)}rem`;
-        let reszult1 = `clamp(${valMin}, ${val5} + ${val3}, ${valMax})`;
+        let reszult1 = `clamp(${valMin},${" "}${val5}${" "}+${" "}${val3},${" "}${valMax})`;
         param.value = reszult1;
     };
 
