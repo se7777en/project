@@ -12,7 +12,37 @@ document.addEventListener('DOMContentLoaded', (e) => {
         valuesMax = document.querySelector('.values__max-val'),
         viewportMin = document.querySelector('.viewport__min-val'),
         viewportMax = document.querySelector('.viewport__max-val'),
-        base = document.querySelector('.base');
+        base = document.querySelector('.base'),
+        valueMin = document.querySelector('.value-min'),
+        valueMax = document.querySelector('.value-max'),
+        copy = document.querySelector('.copy'),
+        copyIcon = document.querySelector('.copy i');
+
+
+    copy.addEventListener('click', () => {
+        navigator.clipboard.writeText(result.value);
+
+        copyIcon.classList.remove('fa-copy');
+        copyIcon.classList.add('fa-check');
+        setTimeout(() => {
+            copyIcon.classList.remove('fa-check');
+            copyIcon.classList.add('fa-copy');
+        }, 1200);
+    });
+
+    const remPadding = (unit) => {
+        [valuesMin, valuesMax].forEach((item) => {
+            // if (unit === 'px') {
+            //     item.classList.remove('fontset');
+            // }
+
+            // if (unit === 'rem') {
+            //     item.classList.add('fontset');
+            // }
+            unit === 'px' ? item.classList.remove('fontset') : unit === 'rem' ? item.classList.add('fontset') : null;
+        });
+    }
+
 
 
 
@@ -25,17 +55,43 @@ document.addEventListener('DOMContentLoaded', (e) => {
             elementToAdd.classList.add('active');
             elementToRemove.classList.remove('active');
         }
-    }
+    };
+
+    let k = false;
 
     valuesPx.addEventListener('click', () => {
         toggleActive(valuesPx, valuesRem);
         units = 'px';
+        remPadding(units);
+
+        if (k) {
+            valuesMin.value = valuesMin.value * +base.value;
+            valuesMax.value = valuesMax.value * +base.value;
+            k = false;
+        };
+
+        valueMin.classList.remove('rem');
+        valueMax.classList.remove('rem');
+
         calcClamp(result);
+
     });
 
     valuesRem.addEventListener('click', () => {
         toggleActive(valuesRem, valuesPx);
         units = 'rem';
+        remPadding(units);
+
+
+
+        if (!k) {
+            valuesMin.value = valuesMin.value / +base.value;
+            valuesMax.value = valuesMax.value / +base.value;
+            k = true;
+        };
+
+        valueMin.classList.add('rem');
+        valueMax.classList.add('rem');
         calcClamp(result);
     });
 
@@ -43,57 +99,35 @@ document.addEventListener('DOMContentLoaded', (e) => {
     function roundUpToFiveDecimals(value) {
         const factor = Math.pow(10, 5);
         return Math.round(value * factor) / factor;
-    }
+    };
 
 
     function roundUpToThreeDecimals(value) {
         const factor = Math.pow(10, 3);
         return Math.round(value * factor) / factor;
-    }
+    };
 
 
     function calcClamp(param) {
+
         let valuesMin_ = valuesMin.value,
             valuesMax_ = valuesMax.value,
             viewportMin_ = viewportMin.value,
             viewportMax_ = viewportMax.value,
             base_ = base.value;
 
-        // if (units === 'rem') {
-        //     let min = document.querySelector('.values__min-val');
-        //     let max = document.querySelector('.values__max-val');
+        if (units === 'rem') {
+            valuesMin_ = valuesMin.value * base_;
+            valuesMax_ = valuesMax.value * base_;
+        }
 
-        //     const val1 =  min.value; 
-        //     const val2 =  max.value;
+        if (units === 'px') {
+            valuesMin_ = valuesMin.value;
+            valuesMax_ = valuesMax.value;
+        }
 
-        //     min.value = val1 * base_;
-        //     max.value = val2 * base_;
 
-        //      valuesMin_ = val1 / base_;
-        //      valuesMax_ = val2 / base_;
-        //      units = '';
-        // }
-       
 
-        // if (units === 'px') {
-        //     let min = document.querySelector('.values__min-val');
-        //     let max = document.querySelector('.values__max-val');
-
-        //     const val1 =  min.value; 
-        //     const val2 =  max.value;
-
-        //     min.value = val1 / base_;
-        //     max.value = val2 / base_;
-
-        //      valuesMin_ = val1 * base_;
-        //      valuesMax_ = val2 * base_;
-
-        //      console.log(valuesMin_);
-        //      console.log(valuesMax_);
-        //      units = '';
-        // }
-
-       
 
 
         let val1 = (valuesMax_ - valuesMin_) / (viewportMax_ - viewportMin_);
@@ -105,7 +139,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
         let valMax = `${roundUpToThreeDecimals(valuesMax_ / +base_)}rem`;
         let reszult1 = `clamp(${valMin}, ${val5} + ${val3}, ${valMax})`;
         param.value = reszult1;
-    }
+    };
 
     calcClamp(result);
 

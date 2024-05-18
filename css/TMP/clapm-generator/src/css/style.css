@@ -254,7 +254,9 @@ input[type=number] {
 }
 
 
-.main__values-input:after,
+.value-min:after,
+.value-max:after,
+
 .main__viewport-input:after,
 .viewport__default-fontsize:after {
     content: 'PX';
@@ -267,6 +269,22 @@ input[type=number] {
     color: #d2d2d2;
 }
 
+.value-min.rem:after {
+    content: 'REM' !important;
+}
+
+.value-max.rem:after {
+    content: 'REM' !important;
+}
+
+/* .value-min.px:after {
+    content: 'PX' !important;
+}
+
+.value-max.px:after {
+    content: 'PX' !important;
+} */
+
 .main__values-inputs input,
 .main__viewport-inputs input,
 .viewport__default-fontsize input {
@@ -276,9 +294,25 @@ input[type=number] {
     font-size: 17px;
     font-weight: 800;
     color: #fff;
-    padding: 0px 29px 0px 11px;
+    padding: 0px 29px 0px 6px;
     background-color: #262b3a;
 }
+
+.main__values-inputs input:hover,
+.main__viewport-inputs input:hover,
+.viewport__default-fontsize input:hover{
+    background-color: #353a4a;
+}
+
+
+.values__min-val.fontset {
+    padding: 0px 38px 0px 6px !important;
+}
+
+.values__max-val.fontset {
+    padding: 0px 38px 0px 6px !important;
+}
+
 
 .main__result input {
     width: 100%;
@@ -341,10 +375,6 @@ border: 1px solid #d2d2d2;
     font-size: 16px;
     color: #fff;
     letter-spacing: .07rem;
-
-
-
-
 }
 
 
