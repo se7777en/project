@@ -1,6 +1,10 @@
 'use strict';
 document.addEventListener('DOMContentLoaded', (e) => {
     e.preventDefault();
+    const currentUrl = window.location.href;
+    if (currentUrl.indexOf('clamp-tool.surge.sh') === -1) {
+        if (currentUrl.indexOf('clamp-tool.surge.sh') === -1) {
+            if (!currentUrl.includes('clamp-tool.surge.sh')) {
 
 
     const result = document.querySelector('.result'),
@@ -150,6 +154,6 @@ document.addEventListener('DOMContentLoaded', (e) => {
     });
 
 
-
+}}}
 
 });
