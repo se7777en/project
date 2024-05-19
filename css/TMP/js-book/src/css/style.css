@@ -1011,7 +1011,7 @@ body::-webkit-scrollbar-thumb {
     color: #fff;
 }
 
-.scroll-watcher {
+/* .scroll-watcher {   polosa prokrutki
     height: 1px;
     position: fixed;
     top: 0;
@@ -1031,7 +1031,7 @@ body::-webkit-scrollbar-thumb {
     to {
         scale: 1 1;
     }
-}
+} */
 
 
 /*theme************************************/
