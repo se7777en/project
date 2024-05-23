@@ -117,9 +117,10 @@ h1 {
     opacity: .4;
 }
 
-@media (orientation: landscape) {
+@media (max-height: 600px) {
     .container {
-        max-width: 500px;
+        max-width: 600px;
+        object-fit: contain;
     }
 
     .wrapper {
