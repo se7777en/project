@@ -43,6 +43,7 @@ body {
     font-size: 16px;
     /* background-color: rgba(0, 0, 0, .01); */
     background-color: #e0e0e0db;
+    position: relative;
 }
 
 .container {
@@ -52,7 +53,7 @@ body {
 }
 
 .wrapper {
-    padding-top: 30px;
+    padding-top: 15px;
 }
 
 
@@ -62,7 +63,7 @@ h1 {
     font-weight: 600;
     font-size: clamp(1.375rem, -0.069rem + 7.222vw, 2.188rem);
     color: #d2d2d2;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .svg__container {
@@ -146,14 +147,25 @@ fill: red;
 } */
 
 
-@media screen and (orientation: landscape) {
+@media only screen and (max-device-width: 767px) and (orientation: landscape)  {
     .container {
         max-width: 600px;
         object-fit: contain;
     }
 
     h1 {
-        margin-bottom: 10px !important;
+        margin-bottom: 0px !important;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        transform: translateX(-7%);
+        width: 150px;
+        /* display: inline-block; */
+        text-align: right;
+        /*! display: flex; */
+        /*! justify-content: left; */
+        font-size: 15px;
+        text-transform: uppercase;
     }
 
     .wrapper {
