@@ -10,13 +10,13 @@ document.addEventListener('DOMContentLoaded', (e) => {
     activeItems.addEventListener('click', (e) => {
         const event = e.target;
         const closestItem = event.closest('.item');
-        if (closestItem && event) {
+        if (closestItem && !event.closest('.point') && event) {
             if (!closestItem.matches('.scal')) {
 
                 closestItem.querySelectorAll('.municipal').forEach((item)=>{
                     item.classList.add('stroke');
                 });
-                
+
                 //console.log('ok');
                 activeItems.appendChild(closestItem);
                 closestItem.classList.add('scal');
