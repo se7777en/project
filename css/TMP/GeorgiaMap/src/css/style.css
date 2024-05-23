@@ -95,7 +95,7 @@ h1 {
 
 
 .item {
-    transition: all .1s ease-in-out;
+    /* transition: all .1s ease-in-out; */
     cursor: pointer;
     transform-origin: center center;
     transform-box: fill-box;
