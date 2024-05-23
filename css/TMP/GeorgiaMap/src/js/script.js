@@ -1,21 +1,39 @@
 'use strict';
-// document.addEventListener('DOMContentLoaded', (e) => {
-//     e.preventDefault();
+document.addEventListener('DOMContentLoaded', (e) => {
+    e.preventDefault();
 
-//     const kartli = document.querySelector('.kartli');
-//     const border = document.querySelectorAll('.border');
+    const items = document.querySelectorAll('.item');
+    const activeItems = document.querySelector('.active-items');
+    const borders = document.querySelector('.borders');
+   // console.log(items);
 
-//     kartli.addEventListener('click', () => {
-//         kartli.classList.add('scal');
+   // const border = document.querySelectorAll('.border');
 
-//         // border.forEach((item) => {
-//         //     item.classList.add('index');
-//         // });
-//         setTimeout(() => {
-//             kartli.classList.remove('scal');
-//             // border.forEach((item) => {
-//             //     item.classList.remove('index');
-//             // });
-//         }, 3000);
-//     });
-// });
+    items.forEach((item) => {
+        item.addEventListener('click', () => {
+            activeItems.appendChild(item); 
+           
+            item.classList.add('scal');
+          
+            setTimeout(() => {
+                item.classList.remove('scal');
+                activeItems.appendChild(borders);
+            }, 3000);
+
+        });
+    });
+
+    // kartli.addEventListener('click', () => {
+    //     kartli.classList.add('scal');
+
+    //     // border.forEach((item) => {
+    //     //     item.classList.add('index');
+    //     // });
+    //     setTimeout(() => {
+    //         kartli.classList.remove('scal');
+    //         // border.forEach((item) => {
+    //         //     item.classList.remove('index');
+    //         // });
+    //     }, 3000);
+    // });
+});
