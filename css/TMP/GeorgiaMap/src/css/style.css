@@ -147,11 +147,11 @@ fill: red;
 } */
 
 
-@media only screen and (max-device-width: 767px) and (orientation: landscape)  {
-    .container {
+@media only screen and (max-device-width: 980px) and (orientation: landscape)  {
+    /* .container {
         max-width: 600px;
         object-fit: contain;
-    }
+    } */
 
     h1 {
         margin-bottom: 0px !important;
