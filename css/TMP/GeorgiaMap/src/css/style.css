@@ -125,4 +125,8 @@ h1 {
     .wrapper {
         padding-top: 10px;
     }
+
+    h1 {
+        margin-bottom: 5px;
+    }
 }
