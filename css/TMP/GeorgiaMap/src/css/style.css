@@ -145,9 +145,13 @@ h1 {
 fill: red;
 } */
 
-/* @media (max-height: 600px) {
+
+@media screen and (orientation: landscape) {
     .container {
         max-width: 600px;
         object-fit: contain;
     }
+  }
+/* @media (max-height: 600px) {
+
 } */
