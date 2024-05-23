@@ -108,16 +108,21 @@ h1 {
     /* Увеличение размера при активации */
     box-shadow: 0 0 0 0 rgba(0, 0, 0, .8);
     fill: #3a3b34;
-    position: relative; /* Для использования z-index */
+    position: relative;
+    /* Для использования z-index */
     z-index: 10;
 }
 
 .index {
-   opacity: .4;
+    opacity: .4;
 }
 
 @media (orientation: landscape) {
     .container {
         max-width: 500px;
+    }
+
+    .wrapper {
+        padding-top: 10px;
     }
 }
