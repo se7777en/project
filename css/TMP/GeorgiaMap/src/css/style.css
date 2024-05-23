@@ -68,7 +68,7 @@ h1 {
     display: flex;
     justify-content: center;
     /* align-items: center; */
-    width: 100%;
+    max-width: 100%;
     /* Контейнер занимает всю ширину родительского элемента */
     height: auto;
     /* Высота контейнера подстраивается пропорционально ширине */
@@ -88,9 +88,9 @@ h1 {
 
 
 .item {
-    /* transition: all .1s ease; */
+    transition: all .1s ease-in-out;
     cursor: pointer;
-    /* transform-origin: left top; */
+    transform-origin: center center;
     transform-box: fill-box;
 }
 
@@ -100,20 +100,20 @@ h1 {
 }
 
 .item.scal {
-    /* position: relative;
-    transform: scale(3.5);
+    position: relative;
+    transform: scale(2.5);
     box-shadow: 0 0 0 0 rgba(0, 0, 0, .8);
     fill: #3a3b34;
     position: relative;
-    z-index: 10; */
+    z-index: 10;
 
-    position: fixed;
+    /* position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(100%, -100%) scale(2.5);
             z-index: 10;
             box-shadow: 0 0 0 0 rgba(0, 0, 0, .8);
-            fill: #3a3b34;
+            fill: #3a3b34; */
 
 
 }
