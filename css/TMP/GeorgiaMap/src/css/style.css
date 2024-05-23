@@ -114,10 +114,25 @@ h1 {
             z-index: 10;
             box-shadow: 0 0 0 0 rgba(0, 0, 0, .8);
             fill: #3a3b34; */
-
-
 }
 
+.red-border {
+    filter: url(#shadow);
+}
+
+.stroke {
+    stroke-width: 1.47;
+    fill: #4f5048;
+}
+
+.point {
+    cursor: zoom-in;
+}
+
+.point:hover {
+    transition: all .2s ease-in-out;
+    fill: tomato;
+}
 
 
 .index {
