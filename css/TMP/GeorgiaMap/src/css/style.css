@@ -151,7 +151,16 @@ fill: red;
         max-width: 600px;
         object-fit: contain;
     }
-  }
+
+    h1 {
+        margin-bottom: 10px;
+    }
+
+    .wrapper {
+        padding-top: 5px;
+    }
+}
+
 /* @media (max-height: 600px) {
 
 } */
