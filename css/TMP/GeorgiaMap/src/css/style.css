@@ -115,3 +115,9 @@ h1 {
 .index {
    opacity: .4;
 }
+
+@media (orientation: landscape) {
+    .container {
+        max-width: 500px;
+    }
+}
