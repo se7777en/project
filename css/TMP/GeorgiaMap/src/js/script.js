@@ -5,20 +5,25 @@ document.addEventListener('DOMContentLoaded', (e) => {
     const items = document.querySelectorAll('.item');
     const activeItems = document.querySelector('.active-items');
     const borders = document.querySelector('.borders');
-   // console.log(items);
+    // console.log(items);
 
-   // const border = document.querySelectorAll('.border');
+    // const border = document.querySelectorAll('.border');
 
     items.forEach((item) => {
         item.addEventListener('click', () => {
-            activeItems.appendChild(item); 
-           
-            item.classList.add('scal');
-          
-            setTimeout(() => {
-                item.classList.remove('scal');
+            activeItems.appendChild(item);
+            item.classList.toggle('scal');
+
+            if (!item.matches('.scal')) {
                 activeItems.appendChild(borders);
-            }, 3000);
+            } else {
+                activeItems.prepend(borders);
+            }
+
+            // setTimeout(() => {
+            //     item.classList.remove('scal');
+            //     activeItems.appendChild(borders);
+            // }, 3000);
 
         });
     });
