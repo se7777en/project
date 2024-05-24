@@ -150,7 +150,9 @@ h1 {
     opacity: .4;
 }
 
-.municipal, .cover, .item {
+.municipal,
+.cover,
+.item {
     -webkit-user-drag: none;
     -webkit-user-select: none;
     user-select: none;
@@ -166,8 +168,56 @@ h1 {
 fill: red;
 } */
 
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 300px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px dashed #d2d2d2;
+    background-color: #d2d2d2;
+    opacity: .9;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+        rgba(0, 0, 0, 0.12) 0px -12px 30px,
+        rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px,
+        rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
 
-@media only screen and (max-device-width: 980px) and (orientation: landscape)  {
+.modal__inner img {
+    width: 90px;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    float: left;
+    margin-right: 10px;
+    cursor: pointer;
+    /* transform-origin: center center; */
+    /* transform-box: fill-box; */
+}
+
+
+@media (hover: hover) {
+    .modal__inner img:hover {
+        scale: 1.02;
+    }
+}
+
+@media (hover: none) {
+    .modal__inner img:hover {
+        scale: 1.01;
+    }
+}
+
+.modal__descr {
+    text-align: left;
+    line-height: 110%;
+}
+
+
+@media only screen and (max-device-width: 980px) and (orientation: landscape) {
     .container {
         max-width: 550px;
         object-fit: contain;
@@ -196,11 +246,11 @@ fill: red;
         fill: tomato !important;
     }
 
-    .point:active{
+    .point:active {
         fill: initial;
-       
+
     }
-   
+
 }
 
 /* @media (max-height: 600px) {
