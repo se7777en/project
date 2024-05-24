@@ -194,6 +194,7 @@ fill: red;
     float: left;
     margin-right: 10px;
     cursor: pointer;
+    /* transition: all .3s ease-in-out; */
     /* transform-origin: center center; */
     /* transform-box: fill-box; */
 }
@@ -201,7 +202,7 @@ fill: red;
 
 @media (hover: hover) {
     .modal__inner img:hover {
-        scale: 1.02;
+        scale: 1.01;
     }
 }
 
