@@ -29,6 +29,15 @@ document.addEventListener('DOMContentLoaded', (e) => {
                 });
             }
         }
+
+
+        if (event && closestItem && event.closest('.point')) {
+           // console.log(event);
+           if(event.dataset && event.dataset.info){
+            console.log(event.dataset.info);
+           }
+           
+        }
     });
 
     // const border = document.querySelectorAll('.border');

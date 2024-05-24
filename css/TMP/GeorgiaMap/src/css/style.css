@@ -155,7 +155,10 @@ h1 {
     -webkit-user-select: none;
     user-select: none;
     -webkit-tap-highlight-color: transparent;
-    
+}
+
+.kobuleti-point {
+    position: relative;
 }
 
 
