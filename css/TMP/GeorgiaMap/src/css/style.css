@@ -85,9 +85,9 @@ h1 {
 
 
 .svg-container svg {
-    width: 100%;
+    width: 100% !important;
     /* SVG занимает всю ширину контейнера */
-    height: auto;
+    height: auto !important;
     /* Высота SVG подстраивается пропорционально ширине */
     display: block;
     /* Убирает возможные пробелы снизу */
