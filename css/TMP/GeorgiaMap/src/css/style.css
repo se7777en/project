@@ -150,11 +150,12 @@ h1 {
     opacity: .4;
 }
 
-.municipal {
+.municipal, .cover, .item {
     -webkit-user-drag: none;
     -webkit-user-select: none;
     user-select: none;
     -webkit-tap-highlight-color: transparent;
+    
 }
 
 
