@@ -140,7 +140,7 @@ h1 {
     -webkit-tap-highlight-color: transparent;
 }
 
-.point:hover {
+.point:active {
     transition: all .1s ease-in;
     fill: tomato;
 }
@@ -188,6 +188,19 @@ fill: red;
     overflow-y: auto;
 }
 
+/* .modal__win {
+    position: relative;
+} */
+
+.modal__close {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    font-size: 10px;
+    color: #000;
+    cursor: pointer;
+}
+
 .modal::-webkit-scrollbar {
     width: 5px;
 }
@@ -204,6 +217,7 @@ fill: red;
     border-radius: 10px;
     float: left;
     margin-right: 10px;
+    pointer-events: none;
     cursor: pointer;
     /* transition: all .3s ease-in-out; */
     /* transform-origin: center center; */
@@ -215,23 +229,21 @@ fill: red;
     -webkit-tap-highlight-color: transparent;
 }
 
-
-@media (hover: hover) {
-    .modal__inner img:hover {
-        scale: 1.01;
-    }
-}
-
-@media (hover: none) {
-    .modal__inner img:hover {
-        scale: 1.01;
-    }
+.modal__inner img:active {
+    scale: 1.01;
 }
 
 .modal__descr {
     text-align: left;
     line-height: 110%;
     font-size: 12px;
+}
+
+.location {
+    font-size: 10px;
+    color:tomato;
+    text-align: right;
+    text-decoration: underline;
 }
 
 
