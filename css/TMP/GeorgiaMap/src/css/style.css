@@ -305,7 +305,7 @@ fill: red;
 
 @media only screen and (max-device-width: 980px) and (orientation: landscape) {
     .container {
-        max-width: 680px;
+        max-width: 630px;
         object-fit: contain;
     }
 
