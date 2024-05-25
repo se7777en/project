@@ -46,14 +46,34 @@ body {
     position: relative;
 }
 
+
+
 .container {
     max-width: 1044px;
     margin: 0 auto;
     padding: 0 10px;
 }
 
+
+.container__cover {
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+}
+
+.wrapper__footer-about {
+  margin-top: auto;
+  font-size: 8px;
+  color: #b1b1b1;
+  padding: 0px 0px 5px 5px;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
 .wrapper {
-    padding-top: 15px;
+    /* padding-top: 15px; */
 }
 
 
@@ -64,11 +84,11 @@ h1 {
     font-size: clamp(1.375rem, -0.069rem + 7.222vw, 2.188rem);
     color: #d2d2d2;
     margin-bottom: 10px;
-
     -webkit-user-drag: none;
     -webkit-user-select: none;
     user-select: none;
     -webkit-tap-highlight-color: transparent;
+    padding-top: 15px;
 }
 
 .svg__container {
