@@ -141,10 +141,13 @@ h1 {
 }
 
 .point.selected {
-    transition: all .1s ease-in;
+    /* transition: all .1s ease-in; */
     fill: green;
 }
 
+.point:active {
+    fill: tomato;
+}
 /* .point:active {
     transition: all .1s ease-in;
     fill: green;
@@ -226,7 +229,7 @@ fill: red;
 .modal__close {
     position: absolute;
     top: 2px;
-    right: 2px;
+    right: 4px;
     font-size: 10px;
     color: #000;
     cursor: pointer;
@@ -261,7 +264,7 @@ fill: red;
     line-height: 110%;
     font-size: 12px;
     height: 80.2px;
-    overflow-y: auto;
+    overflow-y: scroll;
 }
 
 .modal__descr::-webkit-scrollbar {
