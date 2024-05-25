@@ -344,11 +344,12 @@ fill: red;
     .wrapper__footer-about {
         display: none;
     }
+}
 
+@media (max-width: 980px) {
     .modal {
         opacity: 1;
     }
-
 }
 
 /* @media (max-height: 600px) {
