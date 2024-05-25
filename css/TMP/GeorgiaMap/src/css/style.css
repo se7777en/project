@@ -305,7 +305,7 @@ fill: red;
 
 @media only screen and (max-device-width: 980px) and (orientation: landscape) {
     .container {
-        max-width: 550px;
+        max-width: 680px;
         object-fit: contain;
     }
 
@@ -325,7 +325,7 @@ fill: red;
     }
 
     .wrapper {
-        padding-top: 5px !important;
+        /* padding-top: 5px !important; */
     }
 
     .point:active {
