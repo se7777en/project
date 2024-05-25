@@ -76,9 +76,11 @@ body {
 h1 {
     text-align: center;
     font-weight: 600;
-    font-size: clamp(1.375rem, -0.069rem + 7.222vw, 2.188rem);
+    font-size: clamp(1.125rem, 0.373rem + 3.759vw, 1.75rem);
     color: #d2d2d2;
+    padding-top: 10px;
     margin-bottom: 10px;
+
 
     -webkit-user-drag: none;
     -webkit-user-select: none;
