@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
         'img': './img/bilberry.jpeg',
         'location': 'https://maps.app.goo.gl/Km29RGUYk9MZYEk68@@'
       },
-    }
+    };
 
     
 
