@@ -58,7 +58,7 @@ body {
 .container__cover {
     display: flex;
     flex-direction: column;
-    min-height: 100dvh;
+    height: 100dvh;
 }
 
 .wrapper__footer-about {
@@ -328,7 +328,7 @@ fill: red;
     }
 
     .wrapper {
-        padding-top: 5px !important;
+        /* padding-top: 5px !important; */
     }
 
     .point:active {
