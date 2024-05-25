@@ -195,7 +195,7 @@ fill: red;
     scale: 0;
     visibility: hidden;
     position: absolute;
-    top: 50%;
+    top: 18%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 305px;
@@ -210,6 +210,11 @@ fill: red;
         rgba(0, 0, 0, 0.17) 0px 12px 13px,
         rgba(0, 0, 0, 0.09) 0px -3px 5px;
     /* overflow-y: auto; */
+    opacity: 0.5;
+}
+
+.modal:hover {
+    opacity: 1;
 }
 
 .modal.active {
@@ -338,6 +343,10 @@ fill: red;
 
     .wrapper__footer-about {
         display: none;
+    }
+
+    .modal {
+        opacity: 1;
     }
 
 }
