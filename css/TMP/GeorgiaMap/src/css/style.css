@@ -53,7 +53,7 @@ body {
 }
 
 .wrapper {
-    /* padding-top: 15px; */
+    /* padding-bottom: 10px; */
 }
 
 .container__cover {
@@ -64,7 +64,7 @@ body {
 
 .wrapper__footer-about {
     margin-top: auto;
-    font-size: 10px;
+    font-size: 8px;
     color: #b1b1b1;
     padding-bottom: 5px;
 }
@@ -325,7 +325,7 @@ fill: red;
     }
 
     .wrapper {
-        /* padding-top: 5px !important; */
+        padding-top: 5px !important;
     }
 
     .point:active {
