@@ -174,7 +174,7 @@ fill: red;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 300px;
-    max-height: 220px;
+    height: 112.8px;
     padding: 10px;
     border-radius: 5px;
     border: 1px dashed #d2d2d2;
@@ -185,7 +185,7 @@ fill: red;
         rgba(0, 0, 0, 0.12) 0px 4px 6px,
         rgba(0, 0, 0, 0.17) 0px 12px 13px,
         rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    overflow-y: auto;
+    /* overflow-y: auto; */
 }
 
 /* .modal__win {
@@ -194,21 +194,14 @@ fill: red;
 
 .modal__close {
     position: absolute;
-    top: 4px;
-    right: 4px;
+    top: 2px;
+    right: 2px;
     font-size: 10px;
     color: #000;
     cursor: pointer;
 }
 
-.modal::-webkit-scrollbar {
-    width: 5px;
-}
 
-.modal::-webkit-scrollbar-thumb {
-    background-color: #858585;
-    border-radius: 2px;
-}
 
 .modal__inner img {
     width: 90px;
@@ -237,6 +230,17 @@ fill: red;
     text-align: left;
     line-height: 110%;
     font-size: 12px;
+    height: 80.2px;
+    overflow-y: auto;
+}
+
+.modal__descr::-webkit-scrollbar {
+    width: 5px;
+}
+
+.modal__descr::-webkit-scrollbar-thumb {
+    background-color: #858585;
+    border-radius: 1px;
 }
 
 .location {
