@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
         'location': 'https://maps.app.goo.gl/Km29RGUYk9MZYEk68'
       },
       '02': {
-        'text': '2Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+        'text': '2Lorem ipsum dolor sit amet consectetur adipisicing elit.',
         'img': './img/bilberry.jpeg',
         'location': 'https://maps.app.goo.gl/Km29RGUYk9MZYEk68'
       },
