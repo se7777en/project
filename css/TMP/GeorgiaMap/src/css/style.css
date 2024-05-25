@@ -53,8 +53,23 @@ body {
 }
 
 .wrapper {
-    padding-top: 15px;
+    /* padding-top: 15px; */
 }
+
+.container__cover {
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+}
+
+.wrapper__footer-about {
+    margin-top: auto;
+    font-size: 10px;
+    color: #b1b1b1;
+    padding-bottom: 5px;
+}
+
+
 
 
 
@@ -286,6 +301,8 @@ fill: red;
 }
 
 
+
+
 @media only screen and (max-device-width: 980px) and (orientation: landscape) {
     .container {
         max-width: 550px;
@@ -317,6 +334,10 @@ fill: red;
 
     .point:active {
         fill: initial;
+    }
+
+    .wrapper__footer-about {
+        display: none;
     }
 
 }
