@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
             const data  = event.dataset.info;
 
             if(dataObj[data]) {
-                console.log(dataObj[data]);
+               // console.log(dataObj[data]);
                 modalImg.src = dataObj[data].img;
                 modalDescr.textContent = dataObj[data].text;
                 location.href = dataObj[data].location;
