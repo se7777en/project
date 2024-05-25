@@ -344,6 +344,9 @@ fill: red;
     .wrapper__footer-about {
         display: none;
     }
+    .modal {
+        top: 25% !important;
+    }
 }
 
 @media (max-width: 980px) {
