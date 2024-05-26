@@ -147,14 +147,14 @@ document.addEventListener('DOMContentLoaded', (e) => {
   document.addEventListener('click', (e) => { // esli klick proizoshel vne aktivnix aitemov
     const ev = e.target;
     if (!ev.closest('.active-items')) {
-      console.log('out');
+      //console.log('out');
       modal.classList.remove('active');
       modal.classList.remove('anime');
 
-      activeItems.querySelectorAll('.scal').forEach((item) => {
+      activeItems.querySelectorAll('.scal').forEach((item) => { // uberaem u vse elementov uvelichenie
         item.classList.remove('scal');
       });
-      activeItems.appendChild(borders);
+      activeItems.appendChild(borders); // i stavim border v konec
     }
   });
 
