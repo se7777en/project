@@ -155,6 +155,10 @@ document.addEventListener('DOMContentLoaded', (e) => {
         item.classList.remove('scal');
       });
       activeItems.appendChild(borders); // i stavim border v konec
+
+      activeItems.querySelectorAll('.municipal').forEach((item) => { // stavim u vsex municipalitetov pervonochalni cvet
+        item.classList.remove('stroke');
+      });
     }
   });
 
