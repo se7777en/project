@@ -165,6 +165,7 @@ h1 {
 .point:active {
     fill: tomato;
 }
+
 /* .point:active {
     transition: all .1s ease-in;
     fill: green;
@@ -182,6 +183,11 @@ h1 {
     -webkit-user-select: none;
     user-select: none;
     -webkit-tap-highlight-color: transparent;
+}
+
+.municipal:hover {
+    transition: fill .09s ease-in-out;
+    fill: #43443d !important;
 }
 
 .kobuleti-point {
@@ -223,7 +229,7 @@ fill: red;
     scale: 1;
     visibility: visible;
     /* transition: all .3s ease-in-out; */
-    
+
 }
 
 .modal.anime {
@@ -233,15 +239,28 @@ fill: red;
 
 
 @keyframes shake {
-    0%, 100% { transform: translate(-50%, -50%); }
-    25% { transform: translate(-51%, -50%); }
-    50% { transform: translate(-49%, -50%); }
-    75% { transform: translate(-51%, -50%); }
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%);
+    }
+
+    25% {
+        transform: translate(-51%, -50%);
+    }
+
+    50% {
+        transform: translate(-49%, -50%);
+    }
+
+    75% {
+        transform: translate(-51%, -50%);
+    }
 }
 
 
 
-.modal__inner{
+.modal__inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -301,7 +320,7 @@ fill: red;
 
 .location {
     font-size: 10px;
-    color:tomato;
+    color: tomato;
     text-align: right;
     text-decoration: underline;
     line-height: 100%;
@@ -346,6 +365,7 @@ fill: red;
     .wrapper__footer-about {
         display: none;
     }
+
     .modal {
         top: 25% !important;
     }
