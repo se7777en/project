@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
   modalClose.addEventListener('click', (e) => {
     e.preventDefault();
     modal.classList.remove('active');
-    activePoint.classList.remove('selected');
+    //activePoint.classList.remove('selected');
   });
 
   const dataObj = {
@@ -146,8 +146,9 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
   document.addEventListener('click', (e) => { // esli klick proizoshel vne aktivnix aitemov
     const ev = e.target;
-    if (!ev.closest('.active-items')) {
-      //console.log('out');
+    console.log(ev);
+    if (!ev.closest('.active-items') && !ev.closest('.modal')) {
+      console.log('out');
       modal.classList.remove('active');
       modal.classList.remove('anime');
 
@@ -205,3 +206,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
   //     }, 3000);
   // });
 });
+
+
+
+
