@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 
             
+            
             if (closest) {
                console.log(`${closest} -  closest`);
             }
