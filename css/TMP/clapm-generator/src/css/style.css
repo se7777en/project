@@ -41,7 +41,8 @@ body {
     font-family: "Montserrat", sans-serif;
     /* font-family: "Roboto", sans-serif; */
     /* font-family: "Space Mono", monospace; */
-    background-color: #10131A;
+    background-color: #193880;
+    /* background-color: #10131A; */
     color: #fff;
 }
 
@@ -78,7 +79,7 @@ body {
 .wrapper h2 {
     text-align: center;
     font-size: clamp(0.625rem, 0.125rem + 2.5vw, 0.813rem);
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 
     -webkit-user-drag: none;
     -webkit-user-select: none;
