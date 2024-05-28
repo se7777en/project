@@ -492,7 +492,7 @@ border: 1px solid #d2d2d2;
         }
 
         .wrapper__main-inner::after {
-            width: 100%;
+            width: calc(100% - 10px);
             height: 1px;
         }
 
