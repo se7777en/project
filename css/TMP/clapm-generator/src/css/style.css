@@ -51,8 +51,16 @@ body {
     padding: 0 10px;
 }
 
-.wrapper {
+/* .wrapper {
     padding-top: 30px;
+} */
+
+.wpapper__inner {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
 }
 
 .wrapper h1 {
@@ -93,6 +101,7 @@ body {
     justify-content: space-between;
     position: relative;
     gap: 30px;
+    margin-bottom: 100px;
 }
 
 .wrapper__main-inner::after {
@@ -129,7 +138,7 @@ body {
     font-weight: 700;
     text-transform: uppercase;
     color: #00305E;
-       -webkit-user-drag: none;
+    -webkit-user-drag: none;
     -webkit-user-select: none;
     user-select: none;
     -webkit-tap-highlight-color: transparent;
@@ -177,7 +186,7 @@ body {
     border-radius: 2px;
     opacity: 1;
     cursor: pointer;
-    
+
 }
 
 .values__px.active::before {
@@ -191,7 +200,7 @@ body {
     background-color: #fff;
     border-radius: 2px;
     z-index: 3;
-    
+
 }
 
 .values__rem.active::before {
@@ -300,7 +309,7 @@ input[type=number] {
 
 .main__values-inputs input:hover,
 .main__viewport-inputs input:hover,
-.viewport__default-fontsize input:hover{
+.viewport__default-fontsize input:hover {
     background-color: #353a4a;
 }
 
@@ -440,36 +449,45 @@ border: 1px solid #d2d2d2;
         justify-content: left;
         display: inline-block;
     }  */
+
+    .main__values-inputs,
+    .main__viewport-inputs {
+        flex-direction: column;
+    }
+
+    .main__result {
+        margin-top: auto;
+    }
 }
 
 
-@media (max-width: 560px) {
-    .wrapper__main-inner {
-        display: block;
+    @media (max-width: 560px) {
+        .wrapper__main-inner {
+            display: block;
+        }
+
+        .main__values-input,
+        .main__viewport-input,
+        .viewport__default-fontsize {
+            width: 100%;
+        }
+
+        .main__values {
+            margin-bottom: 40px;
+        }
+
+        .wrapper__main {
+            gap: 30px;
+            padding: 10px 10px 20px 10px;
+            border-radius: 20px;
+        }
+
+        .wrapper__main-inner::after {
+            width: 100%;
+            height: 1px;
+        }
+
+
+
+
     }
-
-    .main__values-input,
-    .main__viewport-input,
-    .viewport__default-fontsize {
-        width: 100%;
-    }
-
-    .main__values {
-        margin-bottom: 40px;
-    }
-
-    .wrapper__main {
-        gap: 30px;
-        padding: 10px 10px 20px 10px;
-        border-radius: 20px;
-    }
-
-    .wrapper__main-inner::after {
-        width: 100%;
-        height: 1px;
-    }
-
-
-
-
-}
