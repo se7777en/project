@@ -104,7 +104,7 @@ body {
     gap: 30px;
     margin-bottom: 100px;
 
-    padding: 10px;
+    padding: 20px;
     background-color: #1a377b;
     border-radius: 15px;
 }
@@ -462,6 +462,10 @@ border: 1px solid #d2d2d2;
 
     .main__result {
         margin-top: auto;
+    }
+
+    .wrapper__main-inner {
+        padding: 5px 5px 10px 5px;
     }
 }
 
