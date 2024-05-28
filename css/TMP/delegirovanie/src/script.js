@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     parent.addEventListener('click', (e) => {
         const ev = e.target;
         if (ev) {
+           // console.log(ev);
            const closest = ev.closest('.childe'); // ishet blijaishi roditelski element
             const contains = ev.contains(childe); // proveryaet esli e.target kliknuti element soderjit node child
             const containsClass = ev.classList.contains('childe'); // proveryaet esli e.target kliknuti element soderjit class child na tomje urovne
