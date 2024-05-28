@@ -1,0 +1,48 @@
+'use strict';
+
+document.addEventListener('DOMContentLoaded', (e) => {
+    e.preventDefault();
+    let textArea = document.querySelector('.wprapper__textarea');
+    
+
+    if(textArea) {
+        textArea.value = `<pre><code>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>position</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="wrapper__inner">
+                <div class="wrapper__header">
+                    <div class="wrapper__header-head">
+                        <h1 class="wrapper__title">Lorem ipsum dolor sit.</h1>
+                    </div>
+                    <div class="wrapper__header-footer">
+                        <div class="wrapper__content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis esse facere nisi aliquam exercitationem quo eaque aperiam hic. Porro eveniet minima distinctio dolorem magnam totam doloribus perspiciatis quam repudiandae ullam.</div>
+                    </div>
+                </div>
+                <div class="wprapper__textarea-cover">
+                    <textarea class="wprapper__textarea"></textarea>
+                </div>
+        
+                <div class="wrapper__footer">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/script.js"></script>
+</body>
+</html>        
+        </code></pre>`;
+    }
+
+
+
+
+});
