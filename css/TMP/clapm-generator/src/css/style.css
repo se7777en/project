@@ -41,8 +41,8 @@ body {
     font-family: "Montserrat", sans-serif;
     /* font-family: "Roboto", sans-serif; */
     /* font-family: "Space Mono", monospace; */
-    /* background-color: #193880; */
-    background-color: #10131A;
+    background-color: #193880;
+    /* background-color: #10131A; */
     color: #fff;
 }
 
@@ -103,6 +103,10 @@ body {
     position: relative;
     gap: 30px;
     margin-bottom: 100px;
+
+    padding: 35px;
+    background-color: #1a377b;
+    border-radius: 15px;
 }
 
 .wrapper__main-inner::after {
@@ -112,8 +116,8 @@ body {
     top: 50%;
     transform: translate(-50%, -50%);
     width: 1px;
-    height: 100%;
-    background-color: rgba(0, 48, 94, .4);
+    height: 80%;
+    background-color: rgba(255, 255, 255, .4);
 }
 
 .values__title {
