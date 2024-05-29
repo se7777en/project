@@ -35,8 +35,16 @@ document.addEventListener('DOMContentLoaded', (e) => {
                     } else {
                         iconStatus.setAttribute('d', 'M4 11h12v2H4zm0-5h16v2H4zm0 12h7.235v-2H4z'); // opened
                     }
+                });
 
-
+                document.addEventListener('click', (e) => {
+                    const event = e.target;
+                    if(event){
+                        if(event.closest('.menu__modal')) {
+                            // menuModal.classList.remove('open');
+                           // console.log('fsdf');
+                        }
+                    }
                 });
 
 
