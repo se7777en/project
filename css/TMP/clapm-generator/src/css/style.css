@@ -58,7 +58,7 @@ body {
 
 .wpapper__inner {
     padding-top: 15px;
-    padding-bottom: 15px;
+    /* padding-bottom: 15px; */
     display: flex;
     flex-direction: column;
     min-height: 100dvh;
@@ -372,6 +372,11 @@ input[type=number] {
 border: 1px solid #d2d2d2;
 } */
 
+.main__result-cover {
+    padding: 10px 5px;
+    background-color: #1a377b;
+    border-radius: 10px;
+}
 
 
 .main__result {
@@ -431,6 +436,13 @@ border: 1px solid #d2d2d2;
     }
 }
 
+/* @media (max-width: 900px) {
+    .wrapper__main-inner {
+     
+        margin-bottom: 0px;
+    }
+} */
+
 @media (max-width: 768px) {
     .value-min {
         gap: 14px;
@@ -461,14 +473,19 @@ border: 1px solid #d2d2d2;
         flex-direction: column;
     }
 
-    .main__result {
+    .main__result-cover {
         margin-top: auto;
     }
 
     .wrapper__main-inner {
         padding: 5px 5px 10px 5px;
+        margin-bottom: 0px;
+
     }
+
 }
+
+
 
 
     @media (max-width: 560px) {
