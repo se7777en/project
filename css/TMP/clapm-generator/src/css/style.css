@@ -141,9 +141,15 @@ body {
     cursor: initial;
     transition: all .3s ease-in-out;
     text-align: center;
-    
+
     /* scale: 0; */
     /* visibility: hidden; */
+}
+
+@media only screen and (max-device-width: 768px) and (orientation: landscape) {
+    .menu__modal {
+        height: 100dvh !important;
+    }
 }
 
 .menu__modal.open {
