@@ -24,8 +24,10 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
 
                     menu = document.querySelector('.menu'),
-                    menuModal = document.querySelector('.menu .menu__modal'),
-                    iconStatus = document.getElementById('myPath');
+                    menuModal = document.querySelector('.menu__modal'),
+                    iconStatus = document.getElementById('myPath'),
+                    closeIcon = document.querySelector('.close__icon');
+
 
 
                 menu.addEventListener('click', () => {
@@ -37,13 +39,22 @@ document.addEventListener('DOMContentLoaded', (e) => {
                     }
                 });
 
+                closeIcon.addEventListener('click', () => {
+                    menuModal.classList.remove('open');
+                    if (menuModal.classList.contains('open')) {
+                        iconStatus.setAttribute('d', 'M4 6h16v2H4zm4 5h12v2H8zm5 5h7v2h-7z'); // closed
+                    } else {
+                        iconStatus.setAttribute('d', 'M4 11h12v2H4zm0-5h16v2H4zm0 12h7.235v-2H4z'); // opened
+                    }
+                });
+
                 document.addEventListener('click', (e) => {
                     const event = e.target;
                     if(event){
-                        if(event.closest('.menu__modal')) {
-                            // menuModal.classList.remove('open');
-                           // console.log('fsdf');
-                        }
+                        // if(!event.closest('menu__modal')) {
+                        //     // menuModal.classList.remove('open');
+                        //     console.log('fsdf');
+                        // }
                     }
                 });
 
