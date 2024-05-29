@@ -148,7 +148,7 @@ body {
 
 @media only screen and (max-device-width: 768px) and (orientation: landscape) {
     .menu__modal {
-        height: 100dvh !important;
+        height: 100vh !important;
     }
 }
 
