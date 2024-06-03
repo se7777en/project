@@ -1,0 +1,31 @@
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70px;
+    order: 1;
+    box-shadow: rgba(0, 0, 0, 0.075) 0 1px;
+}
+
+.header__title {
+    /* font-family: "Comfortaa", sans-serif; */
+    font-family: "Federo", sans-serif;
+    font-size: 40px;
+    color: #0066ff;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 2px;
+    cursor: pointer;
+
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.header__title a {
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
