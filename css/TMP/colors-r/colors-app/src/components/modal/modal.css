@@ -1,3 +1,4 @@
+
 .modal {
     position: fixed;
     left: 50%;
@@ -14,30 +15,29 @@
     box-shadow: rgba(0, 0, 0, 0.1);
     color: #fff;
     font-size: .8em;
-  
+
     transition: all .3s ease-in-out;
     text-wrap: nowrap;
-  
-  }
-  
-  .modal.showmodal {
+
+}
+
+.modal.showmodal {
     animation: slideUp 0.1s ease-in-out forwards;
-  }
-  
-  @keyframes slideUp {
+}
+
+@keyframes slideUp {
     0% {
         bottom: 2.5%;
         /* Начальное положение внизу */
     }
-  
+
     50% {
         bottom: 1.5%;
         /* Положение вверху */
     }
-  
+
     100% {
         bottom: 2%;
         /* Положение вверху */
     }
-  }
-  
+}
