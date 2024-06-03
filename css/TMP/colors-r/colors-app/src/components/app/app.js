@@ -7,8 +7,13 @@ import ColorOne from '../color-one/color-one';
  import ColorFour from '../color-four/color-four';
  import ColorFive from '../color-five/color-five';
 
+ import Modal from '../modal/modal';
+
+ import './app.css';
+
 function App() {
     return (
+        <>
         <div className="wrapper">
             <Header />
             <HeaderOps />
@@ -21,6 +26,8 @@ function App() {
                 <ColorFive />
             </div>
         </div>
+        <Modal/>
+        </>
     );
 }
 

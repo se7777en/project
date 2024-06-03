@@ -1,0 +1,78 @@
+.header__operations {
+    display: flex;
+    padding: 11px 0px 11px 40px;
+    align-items: center;
+    order: 2;
+    gap: 30px;
+}
+
+.header__btn {
+    color: #000;
+    padding: 11px 10px;
+    border-radius: 10px;
+    font-weight: 600;
+    /* box-shadow: inset #d8d8da 0 0 0 1px; */
+    line-height: 100%;
+    cursor: pointer;
+    box-shadow: 0 0.025rem 0.25rem #00000052;
+
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.header__btn:active,
+.header__btn:focus {
+    scale: 1.05;
+}
+
+.header__comunity {
+    /* display: flex;
+    align-items: center;
+    gap: 10px; */
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.header__comunity::before {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 55%;
+    background-color: rgba(0, 0, 0, 0.3);
+    top: 50%;
+    transform: translateY(-50%);
+    left: -9px;
+}
+
+
+.header__comunity a {
+    display: inline-block;
+    min-width: 35px;
+    min-height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+.header__comunity a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all .2s ease-in-out;
+}
+
+.header__comunity a:active {
+    background-color: rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+}
