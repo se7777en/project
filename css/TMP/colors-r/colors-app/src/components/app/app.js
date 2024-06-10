@@ -9,14 +9,18 @@ import ColorOne from '../color-one/color-one';
 
  import Modal from '../modal/modal';
 
+
  import './app.css';
 
 function App() {
+    const data = [
+        {name: 'melik', age: '38'}
+    ];
     return (
         <>
         <div className="wrapper">
             <Header />
-            <HeaderOps />
+            <HeaderOps data={data}/>
 
             <div className="main">
                 <ColorOne />
