@@ -8,19 +8,24 @@ import ColorOne from '../color-one/color-one';
  import ColorFive from '../color-five/color-five';
 
  import Modal from '../modal/modal';
-
-
  import './app.css';
 
+import {generateRandomColor} from '../utils/utils';
+
+
 function App() {
+    
     const data = [
         {name: 'melik', age: '38'}
     ];
+
+  
+
     return (
         <>
         <div className="wrapper">
             <Header />
-            <HeaderOps data={data}/>
+            <HeaderOps data={data} generateRandomColor={generateRandomColor()}/>
 
             <div className="main">
                 <ColorOne />
