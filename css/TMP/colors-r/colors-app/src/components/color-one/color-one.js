@@ -1,35 +1,40 @@
+ import { Component } from 'react';
  import './color-one.css';
 
- const ColorOne = () => {
-    return (
-        <div className="main__item one">
-                <div className="color__descr">
-                    <div className="color__box">
-                        <div className="color">#f7f4ea</div>
+ class ColorOne extends Component {
+ 
+    render() {
+        const {color} = this.props
+        return (
+            <div className="main__item one" style={{backgroundColor:color}}>
+                    <div className="color__descr">
+                        <div className="color__box">
+                            <div className="color">{color}</div>
+                        </div>
+                        <div className="color__title">Electric blue</div>
                     </div>
-                    <div className="color__title">Electric blue</div>
+                    <div className="color__btns">
+                        <div className="drag__img item">
+                            <i className="fa-solid fa-arrows-left-right color__btns-drag"></i>
+                            <i className="fa-solid fa-arrows-up-down color__btns-drag"></i>
+    
+    
+                        </div>
+    
+                        <div className="copy__img item">
+                            <i className="fa-solid fa-copy color__btns-copy"></i>
+    
+                        </div>
+                        <div className="secure__img item" data-id="0">
+    
+                            <i className="fa-solid fa-lock-open color__btns-secure"></i>
+    
+                        </div>
+                    </div>
                 </div>
-                <div className="color__btns">
-                    <div className="drag__img item">
-                        <i className="fa-solid fa-arrows-left-right color__btns-drag"></i>
-                        <i className="fa-solid fa-arrows-up-down color__btns-drag"></i>
-
-
-                    </div>
-
-                    <div className="copy__img item">
-                        <i className="fa-solid fa-copy color__btns-copy"></i>
-
-                    </div>
-                    <div className="secure__img item" data-id="0">
-
-                        <i className="fa-solid fa-lock-open color__btns-secure"></i>
-
-                    </div>
-                </div>
-            </div>
-
-    )
+    
+        )
+    }
 }
 
 export default ColorOne;
