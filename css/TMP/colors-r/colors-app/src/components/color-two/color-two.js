@@ -1,11 +1,14 @@
+import { Component } from 'react';
 import './color-two.css';
 
-const ColorTwo = () => {
-    return (
-        <div className="main__item two">
+class ColorTwo extends Component {
+    render() {
+        const { color } = this.props
+        return (
+            <div className="main__item two" style={{backgroundColor:color}}>
                 <div className="color__descr">
                     <div className="color__box">
-                        <div className="color">#ded9e2</div>
+                        <div className="color">{color}</div>
                     </div>
                     <div className="color__title">Electric blue</div>
                 </div>
@@ -23,7 +26,8 @@ const ColorTwo = () => {
                     </div>
                 </div>
             </div>
-    )
+        )
+    }
 }
 
 export default ColorTwo;
