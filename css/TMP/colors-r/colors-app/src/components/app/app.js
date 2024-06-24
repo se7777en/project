@@ -109,7 +109,7 @@ class App extends Component {
 
     render() {
         const { colorOne, colorTwo, colorThree, colorFour, colorFive } = this.state;
-        
+
 
         return (
             <>
