@@ -1,31 +1,57 @@
+import { Component } from 'react';
 import './color-three.css';
 
-const ColorThree = () => {
-    return (
-        <div className="main__item three">
-                <div className="color__descr">
-                    <div className="color__box">
-                        <div className="color">#c0b9dd</div>
-                    </div>
+class ColorThree extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            dragActive: false,
+            colorActive: false,
+            copyActive: false,
+            lockActive: false
+        };
+    }
 
+    setTemporaryState = (stateName) => {
+        this.setState({ [stateName]: true });
+        setTimeout(() => {
+            this.setState({ [stateName]: false });
+        }, 900);
+    }
+
+    render() {
+        const { dragActive, colorActive, copyActive, lockActive } = this.state;
+        const {colorThree} = this.props;
+
+        const itemColor = `color__box ${colorActive ? 'hover' : ''}`;
+        const dragOn = `drag__img item ${dragActive ? 'hover' : ''}`;
+        const itemCopy = `copy__img item ${copyActive ? 'hover' : ''}`;
+        const itemLock = `secure__img item ${lockActive ? 'hover' : ''}`;
+
+        return (
+            <div className="main__item three" style={{backgroundColor:colorThree}}>
+                <div className="color__descr">
+                    <div className={itemColor} onClick={() => this.setTemporaryState('colorActive')}>
+                        <div className="color">{colorThree}</div>
+                    </div>
                     <div className="color__title">Electric blue</div>
                 </div>
                 <div className="color__btns">
-                    <div className="drag__img item">
+                    <div className={dragOn} onClick={() => this.setTemporaryState('dragActive')}>
                         <i className="fa-solid fa-arrows-left-right color__btns-drag"></i>
                         <i className="fa-solid fa-arrows-up-down color__btns-drag"></i>
                     </div>
 
-                    <div className="copy__img item">
+                    <div className={itemCopy} onClick={() => this.setTemporaryState('copyActive')}>
                         <i className="fa-solid fa-copy color__btns-copy"></i>
                     </div>
-                    <div className="secure__img item" data-id="0">
+                    <div className={itemLock} onClick={() => this.setTemporaryState('lockActive')} data-id="0">
                         <i className="fa-solid fa-lock-open color__btns-secure"></i>
                     </div>
                 </div>
             </div>
-
-    )
+        );
+    }
 }
 
 export default ColorThree;
