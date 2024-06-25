@@ -21,7 +21,9 @@ class ColorFour extends Component {
 
     render() {
         const { dragActive, colorActive, copyActive, lockActive } = this.state;
-        const { colorFour } = this.props;
+        const { colorFour, getColorIntensity, colorsArr } = this.props;
+        const textColor = getColorIntensity(colorFour) !== 'light' ? '#ffffff' : '#000000';
+        const colorName = colorsArr[colorFour.toUpperCase()] ? colorsArr[colorFour.toUpperCase()] : '';
 
         const itemColor = `color__box ${colorActive ? 'hover' : ''}`;
         const dragOn = `drag__img item ${dragActive ? 'hover' : ''}`;
@@ -32,11 +34,11 @@ class ColorFour extends Component {
             <div className="main__item four" style={{ backgroundColor: colorFour }}>
                 <div className="color__descr">
                     <div className={itemColor} onClick={() => this.setTemporaryState('colorActive')}>
-                        <div className="color">{colorFour}</div>
+                        <div className="color" style={{ color: textColor }}>{colorFour}</div>
                     </div>
-                    <div className="color__title">Electric blue</div>
+                    <div className="color__title" style={{ color: textColor }}>{colorName}</div>
                 </div>
-                <div className="color__btns">
+                <div className="color__btns" style={{color: textColor}}>
                     <div className={dragOn} onClick={() => this.setTemporaryState('dragActive')}>
                         <i className="fa-solid fa-arrows-left-right color__btns-drag"></i>
                         <i className="fa-solid fa-arrows-up-down color__btns-drag"></i>
