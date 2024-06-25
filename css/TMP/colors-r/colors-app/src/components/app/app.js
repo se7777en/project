@@ -82,6 +82,8 @@ class App extends Component {
     }
 
 
+
+
     getColorIntensity(hexColor) {
         // Удаляем символ # из шестнадцатеричного значения
         hexColor = hexColor.replace('#', '');
@@ -107,6 +109,87 @@ class App extends Component {
         }
     };
 
+
+    colorNames = {
+        "#000000": "Black",
+        "#FFFFFF": "White",
+        "#FF0000": "Red",
+        "#00FF00": "Green",
+        "#0000FF": "Blue",
+        "#FF00FF": "Magenta",
+        "#800000": "Maroon",
+        "#808000": "Olive",
+        "#008000": "Green",
+        "#008080": "Teal",
+        "#000080": "Navy",
+        "#800080": "Purple",
+        "#808080": "Gray",
+        "#C0C0C0": "Silver",
+        "#FFA500": "Orange",
+        "#8B4513": "SaddleBrown",
+        "#A0522D": "Sienna",
+        "#D2691E": "Chocolate",
+        "#CD853F": "Peru",
+        "#F4A460": "SandyBrown",
+        "#D2B48C": "Tan",
+        "#DEB887": "BurlyWood",
+        "#FFDAB9": "PeachPuff",
+        "#F5DEB3": "Wheat",
+        "#F5F5DC": "Beige",
+        "#FFE4B5": "Moccasin",
+        "#FFDEAD": "NavajoWhite",
+        "#FAEBD7": "AntiqueWhite",
+        "#FFEBCD": "BlanchedAlmond",
+        "#FFEFD5": "PapayaWhip",
+        "#FFFAF0": "FloralWhite",
+        "#F0E68C": "Khaki",
+        "#BDB76B": "DarkKhaki",
+        "#EEE8AA": "PaleGoldenRod",
+        "#FFF8DC": "Cornsilk",
+        "#DAA520": "GoldenRod",
+        "#FFD700": "Gold",
+        "#FAFAD2": "LightGoldenRodYellow",
+        "#FFFFE0": "LightYellow",
+        "#FFFF00": "Yellow",
+        "#FFFACD": "LemonChiffon",
+        "#FFF5EE": "SeaShell",
+        "#F5FFFA": "MintCream",
+        "#F0FFFF": "Azure",
+        "#F8F8FF": "GhostWhite",
+        "#F0FFF0": "HoneyDew",
+        "#F0F8FF": "LightBlue",
+        "#E6E6FA": "Lavender",
+        "#FFF0F5": "LavenderBlush",
+        "#7B68EE": "MediumSlateBlue",
+        "#9370DB": "MediumPurple",
+        "#4B0082": "Indigo",
+        "#6A5ACD": "SlateBlue",
+        "#483D8B": "DarkSlateBlue",
+        "#4169E1": "RoyalBlue",
+        "#6495ED": "CornflowerBlue",
+        "#B0C4DE": "LightSteelBlue",
+        "#778899": "LightSlateGray",
+        "#708090": "SlateGray",
+        "#1E90FF": "DodgerBlue",
+        "#4682B4": "SteelBlue",
+        "#87CEFA": "LightSkyBlue",
+        "#00BFFF": "DeepSkyBlue",
+        "#ADD8E6": "LightBlue",
+        "#B0E0E6": "PowderBlue",
+        "#66CDAA": "MediumAquaMarine",
+        "#20B2AA": "LightSeaGreen",
+        "#40E0D0": "Turquoise",
+        "#48D1CC": "MediumTurquoise",
+        "#00CED1": "DarkTurquoise",
+        "#AFEEEE": "PaleTurquoise",
+        "#00FFFF": "Cyan",
+        "#E0FFFF": "LightCyan",
+        "#87CEEB": "SkyBlue",
+        "#5F9EA0": "CadetBlue",
+        "#7FFFD4": "Aquamarine"
+        // Продолжайте добавлять другие цвета по мере необходимости
+    };
+
     render() {
         const { colorOne, colorTwo, colorThree, colorFour, colorFive } = this.state;
 
@@ -118,11 +201,11 @@ class App extends Component {
                     <HeaderOps generateRandomColor={this.generateRandomColor} />
 
                     <div className="main">
-                        <ColorOne colorOne={colorOne} getColorIntensity={this.getColorIntensity} />
-                        <ColorTwo colorTwo={colorTwo} getColorIntensity={this.getColorIntensity} />
-                        <ColorThree colorThree={colorThree} getColorIntensity={this.getColorIntensity} />
-                        <ColorFour colorFour={colorFour} getColorIntensity={this.getColorIntensity} />
-                        <ColorFive colorFive={colorFive} getColorIntensity={this.getColorIntensity} />
+                        <ColorOne colorOne={colorOne} colorsArr={this.colorNames} getColorIntensity={this.getColorIntensity} />
+                        <ColorTwo colorTwo={colorTwo} colorsArr={this.colorNames} getColorIntensity={this.getColorIntensity} />
+                        <ColorThree colorThree={colorThree} colorsArr={this.colorNames} getColorIntensity={this.getColorIntensity} />
+                        <ColorFour colorFour={colorFour} colorsArr={this.colorNames} getColorIntensity={this.getColorIntensity} />
+                        <ColorFive colorFive={colorFive} colorsArr={this.colorNames} getColorIntensity={this.getColorIntensity} />
                     </div>
                 </div>
                 <Modal />

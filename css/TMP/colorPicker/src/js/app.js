@@ -402,60 +402,60 @@ document.addEventListener('DOMContentLoaded', (e) => {
                 });
 
                 //////////////////////////////////drag drop//////////////////////////////////////////////////////
-               
+
                 const tasksListElement = document.querySelector(`.main`);
                 const taskElements = tasksListElement.querySelectorAll(`.main__item`);
-                
+
                 for (const task of taskElements) {
                     task.draggable = true;
                 }
-                
+
                 tasksListElement.addEventListener(`touchstart`, (evt) => {
                     const targetTask = evt.target.closest('.main__item');
                     if (targetTask) {
                         targetTask.classList.add(`selected`);
                     }
                 });
-                
+
                 tasksListElement.addEventListener(`touchend`, (evt) => {
                     const selectedTask = tasksListElement.querySelector('.main__item.selected');
                     if (selectedTask) {
                         selectedTask.classList.remove(`selected`);
                     }
                 });
-                
+
                 tasksListElement.addEventListener(`touchmove`, (evt) => {
                     evt.preventDefault();
-                
+
                     const activeElement = tasksListElement.querySelector(`.selected`);
                     const currentElement = document.elementFromPoint(evt.touches[0].clientX, evt.touches[0].clientY);
                     const isMoveable = activeElement !== currentElement &&
                         currentElement.classList.contains(`main__item`);
-                
+
                     if (!isMoveable) {
                         return;
                     }
-                
+
                     const nextElement = getNextElement(evt.touches[0].clientY, currentElement);
-                
+
                     if (
                         nextElement &&
                         activeElement === nextElement.previousElementSibling ||
                         activeElement === nextElement) {
                         return;
                     }
-                
+
                     tasksListElement.insertBefore(activeElement, nextElement);
                 });
-                
+
                 const getNextElement = (cursorPosition, currentElement) => {
                     const currentElementCoord = currentElement.getBoundingClientRect();
                     const currentElementCenter = currentElementCoord.y + currentElementCoord.height / 2;
-                
+
                     const nextElement = (cursorPosition < currentElementCenter) ?
                         currentElement :
                         currentElement.nextElementSibling;
-                
+
                     return nextElement;
                 };
 
