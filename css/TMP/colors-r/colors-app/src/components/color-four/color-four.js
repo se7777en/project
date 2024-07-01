@@ -71,4 +71,5 @@ class ColorFour extends Component {
     }
 }
 
+
 export default ColorFour;

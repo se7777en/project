@@ -12,6 +12,7 @@ class HeaderOps extends Component {
     // }
 
 
+    
 
     render() {
         const { generateRandomColor } = this.props;

@@ -118,6 +118,7 @@ class App extends Component {
         // Определяем контраст между фоном и текстом
         let contrast = Math.abs(brightness - 128);
 
+        
         // Возвращаем результат
         if (brightness >= 128 && contrast >= 70) {
             return "light";
