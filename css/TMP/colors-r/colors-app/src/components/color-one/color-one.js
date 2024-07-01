@@ -8,8 +8,8 @@ class ColorOne extends Component {
             dragActive: false,
             colorActive: false,
             copyActive: false,
-            lockActive: false,
-            isLocked: false
+            isLocked: false,
+            lockActive: false
         };
     }
 
@@ -20,19 +20,24 @@ class ColorOne extends Component {
     }
 
     setTemporaryState = (stateName) => {
-        this.toggleLock();
+        // this.toggleLock();
         this.setState({ [stateName]: true });
         setTimeout(() => {
             this.setState({ [stateName]: false });
         }, 900);
     }
 
+    handleColorChange = () => {
+        this.props.colorChange({ colorOne: this.state.isLocked ? true : false });
+    }
+
 
 
     render() {
-        const { dragActive, colorActive, copyActive, lockActive } = this.state;
+        const { dragActive, colorActive, copyActive, isLocked, lockActive } = this.state;
         const { colorOne, getColorIntensity, colorsArr } = this.props;
         // console.log(colorNames)
+
 
         const textColor = getColorIntensity(colorOne) !== 'light' ? '#ffffff' : '#000000';
         const colorName = colorsArr[colorOne.toUpperCase()] ? colorsArr[colorOne.toUpperCase()] : '';
@@ -46,9 +51,17 @@ class ColorOne extends Component {
         const itemLock = `secure__img item ${lockActive ? 'hover' : ''}`;
 
 
-        const { isLocked } = this.state;
+        // const { isLocked } = this.state;
         const lockClass = isLocked ? 'fa-lock' : 'fa-lock-open';
+
+
         const idStatus = isLocked ? '0' : '1';
+
+      
+
+        //console.log('ok');
+
+
 
         return (
             <div className="main__item one" style={{ backgroundColor: colorOne }}>
@@ -67,7 +80,7 @@ class ColorOne extends Component {
                     <div className={itemCopy} onClick={() => this.setTemporaryState('copyActive')}>
                         <i className="fa-solid fa-copy color__btns-copy"></i>
                     </div>
-                    <div className={itemLock} onClick={() => this.setTemporaryState('lockActive')} data-id={idStatus}>
+                    <div className={itemLock} onClick={() => { this.setTemporaryState('lockActive'); this.toggleLock(); this.handleColorChange(); }} data-id={idStatus}>
                         <i className={`fa-solid ${lockClass} color__btns-secure`}></i>
                     </div>
                 </div>

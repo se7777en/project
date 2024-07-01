@@ -19,7 +19,14 @@ class App extends Component {
             colorTwo: '#ffffff',
             colorThree: '#ffffff',
             colorFour: '#ffffff',
-            colorFive: '#ffffff'
+            colorFive: '#ffffff',
+            colorsStatus: {
+                colorOne: true,
+                colorTwo: true,
+                colorThree: true,
+                colorFour: true,
+                colorFive: true
+            }
         }
     }
 
@@ -38,27 +45,39 @@ class App extends Component {
         return colors;
     };
 
+    colorChange = (newColorsStatus) => {
+        this.setState(({ colorsStatus }) => ({
+            colorsStatus: { ...colorsStatus, ...newColorsStatus }
+        }))
+    }
+
+
+
     generateRandomColor = () => {
         let letters = '0123456789ABCDEF';
-        let updatedColors = [];
+        let updatedColors = {};
 
-        for (let j = 0; j < 5; j++) {
-            let color = '#';
-            for (let i = 0; i < 6; i++) {
-                color += letters[Math.floor(Math.random() * 16)];
+        for (let key in this.state.colorsStatus) {
+            if (this.state.colorsStatus[key]) {
+                let color = '#';
+                for (let i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                updatedColors[key] = color;
             }
-            updatedColors.push(color);
         }
 
-        // Update window.location.hash with the new colors
-        window.location.hash = this.colorsToUUIDString(updatedColors);
+        // Generate the new hash based on updated colors and existing colors
+        const newColors = {
+            ...this.state,
+            ...updatedColors
+        };
+        const colorValues = [newColors.colorOne, newColors.colorTwo, newColors.colorThree, newColors.colorFour, newColors.colorFive];
+        window.location.hash = this.colorsToUUIDString(colorValues);
 
+        // Update state with the new colors
         this.setState({
-            colorOne: updatedColors[0],
-            colorTwo: updatedColors[1],
-            colorThree: updatedColors[2],
-            colorFour: updatedColors[3],
-            colorFive: updatedColors[4]
+            ...updatedColors
         });
     };
 
@@ -191,8 +210,8 @@ class App extends Component {
     };
 
     render() {
-        const { colorOne, colorTwo, colorThree, colorFour, colorFive } = this.state;
-
+        const { colorOne, colorTwo, colorThree, colorFour, colorFive, colorsStatus } = this.state;
+        console.log(colorsStatus);
 
         return (
             <>
@@ -201,11 +220,11 @@ class App extends Component {
                     <HeaderOps generateRandomColor={this.generateRandomColor} />
 
                     <div className="main">
-                        <ColorOne colorOne={colorOne} colorsArr={this.colorNames} getColorIntensity={this.getColorIntensity} />
-                        <ColorTwo colorTwo={colorTwo} colorsArr={this.colorNames} getColorIntensity={this.getColorIntensity} />
-                        <ColorThree colorThree={colorThree} colorsArr={this.colorNames} getColorIntensity={this.getColorIntensity} />
-                        <ColorFour colorFour={colorFour} colorsArr={this.colorNames} getColorIntensity={this.getColorIntensity} />
-                        <ColorFive colorFive={colorFive} colorsArr={this.colorNames} getColorIntensity={this.getColorIntensity} />
+                        <ColorOne colorOne={colorOne} colorsArr={this.colorNames} getColorIntensity={this.getColorIntensity} colorChange={this.colorChange} />
+                        <ColorTwo colorTwo={colorTwo} colorsArr={this.colorNames} getColorIntensity={this.getColorIntensity} colorChange={this.colorChange} />
+                        <ColorThree colorThree={colorThree} colorsArr={this.colorNames} getColorIntensity={this.getColorIntensity} colorChange={this.colorChange} />
+                        <ColorFour colorFour={colorFour} colorsArr={this.colorNames} getColorIntensity={this.getColorIntensity} colorChange={this.colorChange} />
+                        <ColorFive colorFive={colorFive} colorsArr={this.colorNames} getColorIntensity={this.getColorIntensity} colorChange={this.colorChange} />
                     </div>
                 </div>
                 <Modal />
