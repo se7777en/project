@@ -8,8 +8,15 @@ class ColorFive extends Component {
             dragActive: false,
             colorActive: false,
             copyActive: false,
-            lockActive: false
+            lockActive: false,
+            isLocked: false
         };
+    }
+
+    toggleLock = () => {
+        this.setState(({ isLocked }) => ({
+            isLocked: !isLocked
+        }));
     }
 
     setTemporaryState = (stateName) => {
@@ -17,6 +24,10 @@ class ColorFive extends Component {
         setTimeout(() => {
             this.setState({ [stateName]: false });
         }, 900);
+    }
+
+    handleColorChange = () => {
+        this.props.colorChange({ colorFive: this.state.isLocked ? true : false });
     }
 
     render() {
@@ -29,6 +40,10 @@ class ColorFive extends Component {
         const dragOn = `drag__img item ${dragActive ? 'hover' : ''}`;
         const itemCopy = `copy__img item ${copyActive ? 'hover' : ''}`;
         const itemLock = `secure__img item ${lockActive ? 'hover' : ''}`;
+
+        const { isLocked } = this.state;
+        const lockClass = isLocked ? 'fa-lock' : 'fa-lock-open';
+        const idStatus = isLocked ? '0' : '1';
 
         return (
             <div className="main__item five" style={{backgroundColor: colorFive}}>
@@ -47,8 +62,8 @@ class ColorFive extends Component {
                     <div className={itemCopy} onClick={() => this.setTemporaryState('copyActive')}>
                         <i className="fa-solid fa-copy color__btns-copy"></i>
                     </div>
-                    <div className={itemLock} onClick={() => this.setTemporaryState('lockActive')} data-id="0">
-                        <i className="fa-solid fa-lock-open color__btns-secure"></i>
+                    <div className={itemLock} onClick={() => {this.setTemporaryState('lockActive'); this.toggleLock(); this.handleColorChange();}} data-id={idStatus}>
+                        <i className={`fa-solid ${lockClass} color__btns-secure`}></i>
                     </div>
                 </div>
             </div>
