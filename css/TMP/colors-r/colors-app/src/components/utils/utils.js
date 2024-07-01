@@ -8,6 +8,7 @@ export function generateRandomColor() {
 };
 
 
+
 // let colorsInObj = [];
 // let hashes = true;
 

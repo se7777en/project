@@ -72,4 +72,5 @@ class ColorThree extends Component {
     }
 }
 
+
 export default ColorThree;

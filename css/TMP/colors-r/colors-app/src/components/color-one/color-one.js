@@ -77,6 +77,7 @@ class ColorOne extends Component {
                         <i className="fa-solid fa-arrows-up-down color__btns-drag"></i>
                     </div>
 
+
                     <div className={itemCopy} onClick={() => this.setTemporaryState('copyActive')}>
                         <i className="fa-solid fa-copy color__btns-copy"></i>
                     </div>

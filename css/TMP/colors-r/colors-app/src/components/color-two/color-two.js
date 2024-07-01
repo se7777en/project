@@ -72,4 +72,5 @@ class ColorTwo extends Component {
     }
 }
 
+
 export default ColorTwo;
