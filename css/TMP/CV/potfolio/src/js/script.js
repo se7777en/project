@@ -21,6 +21,7 @@ active.addEventListener('click', () => {
 
 
 
+
 // function downloadResumeAsPDF() {
 //   const element = document.body; // Выбираем весь HTML документ
 
