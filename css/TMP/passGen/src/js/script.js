@@ -38,7 +38,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                     symbols: '!@#$%&?!@#$%&?!@#$%&?'
                 };
 
-                let strange = 24;
+                let strange = 15;
 
 
                 const valurColored = (str) => {
@@ -74,75 +74,203 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
 
                 const addClassToIndicator = () => {
-                    const rangeValue = document.querySelector('.wrapper__range .rage__val').value;
+                    const rangeValue = +document.querySelector('.wrapper__range .rage__val').value;
                     spanValue.textContent = rangeValue;
 
-                    if (rangeValue >= 1 && rangeValue < 4) {
+                    // console.log(rangeValue);
+                    // console.log(strange);
+
+                    if (rangeValue < 9 && +strange <= 25) {
                         classRemover('indicator');
-                        indicator.classList.add('very-weak');
                         description.innerHTML = ObjDescr.veryWeek;
-                        // console.log(strange);
+                        indicator.classList.add('very-weak');
                     }
 
-                    if (rangeValue >= 5 && rangeValue < 9) {
+
+
+                    //////////////////////////////////////////////
+                    if (rangeValue === 9 && +strange === 5) {
                         classRemover('indicator');
-                        //indicator.classList.toggle('weak');
-                        //description.innerHTML = ObjDescr.weak;
+                        description.innerHTML = ObjDescr.veryWeek;
+                        indicator.classList.add('very-weak');
+                    }
+
+                    if (rangeValue === 9 && +strange === 10) {
+                        classRemover('indicator');
+                        description.innerHTML = ObjDescr.veryWeek;
+                        indicator.classList.add('very-weak');
+
+                    }
+
+                    if (rangeValue === 9 && +strange === 15) {
+                        classRemover('indicator');
+                        description.innerHTML = ObjDescr.veryWeek;
+                        indicator.classList.add('very-weak');
+
+                    }
+
+                    if (rangeValue === 9 && +strange === 20) {
+                        classRemover('indicator');
+                        description.innerHTML = ObjDescr.weak;
+                        indicator.classList.add('weak');
+
+                    }
+
+                    if (rangeValue === 9 && +strange === 25) {
+                        classRemover('indicator');
+                        description.innerHTML = ObjDescr.weak;
+                        indicator.classList.add('weak');
+                    }
+
+
+                    ///////////////////////////////////
+                    if (rangeValue > 9 && +rangeValue < 12 && +strange === 5) {
+                        classRemover('indicator');
+                        description.innerHTML = ObjDescr.veryWeek;
+                        indicator.classList.add('very-weak');
+                    }
+
+                    if (rangeValue > 9 && +rangeValue < 12 && +strange === 10) {
                         //console.log(strange);
-
-                        if (strange < 15) {
-                            description.innerHTML = ObjDescr.veryWeek;
-                            indicator.classList.toggle('very-weak');
-                        } else {
-                            description.innerHTML = ObjDescr.weak;
-                            indicator.classList.toggle('weak');
-                        }
+                        classRemover('indicator');
+                        description.innerHTML = ObjDescr.weak;
+                        indicator.classList.add('weak');
                     }
 
-                    if (rangeValue >= 9 && rangeValue <= 11) {
+                    if (rangeValue > 9 && rangeValue < 12 && +strange === 15) {
+                        // console.log(strange);
                         classRemover('indicator');
-                        indicator.classList.toggle('moderate');
+                        description.innerHTML = ObjDescr.weak;
+                        indicator.classList.add('weak');
+                    }
+
+                    if (rangeValue > 9 && rangeValue < 12 && +strange === 20) {
+                        // console.log(strange);
+                        classRemover('indicator');
+                        description.innerHTML = ObjDescr.weak;
+                        indicator.classList.add('weak');
+                    }
+
+                    if (rangeValue > 9 && rangeValue < 12 && +strange === 25) {
+                        // console.log(strange);
+                        classRemover('indicator');
                         description.innerHTML = ObjDescr.moderate;
+                        indicator.classList.add('moderate');
+                    }
+
+
+                    /////////////////////////////////
+                    if (rangeValue > 11 && rangeValue < 14 && +strange === 5) {
                         // console.log(strange);
+                        classRemover('indicator');
+                        description.innerHTML = ObjDescr.veryWeek;
+                        indicator.classList.add('very-weak');
                     }
 
-                    if (rangeValue >= 12 && rangeValue <= 15) {
-                        classRemover('indicator');
-
-
-                        console.log(strange);
-                        if (strange < 15) {
-                            description.innerHTML = ObjDescr.moderate;
-                            indicator.classList.toggle('moderate');
-                        } else {
-                            description.innerHTML = ObjDescr.strong;
-                            indicator.classList.toggle('strong');
-                        }
-                    }
-
-                    if (rangeValue >= 16 && rangeValue <= 19) {
-                        classRemover('indicator');
-                        //indicator.classList.toggle('very-strong');
-                        //description.innerHTML = ObjDescr.veryStrong;
+                    if (rangeValue > 11 && rangeValue < 14 && +strange === 10) {
                         // console.log(strange);
 
-                        if (strange < 15) {
-                            description.innerHTML = ObjDescr.strong;
-                            indicator.classList.toggle('strong');
-                        } else {
-                            description.innerHTML = ObjDescr.veryStrong;
-                            indicator.classList.toggle('very-strong');
-                        }
+                        classRemover('indicator');
+                        description.innerHTML = ObjDescr.weak;
+                        indicator.classList.add('weak');
                     }
 
-                    if (rangeValue >= 20 && rangeValue <= 25) {
+                    if (rangeValue > 11 && rangeValue < 14 && +strange === 15) {
+                        //  console.log(strange);
                         classRemover('indicator');
-                        indicator.classList.toggle('very-strong');
+                        description.innerHTML = ObjDescr.moderate;
+                        indicator.classList.add('moderate');
+                    }
+
+                    if (rangeValue > 11 && rangeValue < 14 && +strange === 20) {
+                        //  console.log(strange);
+                        classRemover('indicator');
+                        description.innerHTML = ObjDescr.moderate;
+                        indicator.classList.add('moderate');
+                    }
+
+                    if (rangeValue > 11 && rangeValue < 14 && +strange === 25) {
+                        // console.log(strange);
+                        classRemover('indicator');
+                        description.innerHTML = ObjDescr.strong;
+                        indicator.classList.add('strong');
+                    }
+
+                    ///////////////////////////////////
+                    if (rangeValue > 13 && rangeValue < 16 && +strange === 5) {
+                        // console.log(strange);
+                        classRemover('indicator');
+                        description.innerHTML = ObjDescr.moderate;
+                        indicator.classList.add('moderate');
+                    }
+
+                    if (rangeValue > 13 && rangeValue < 16 && +strange === 10) {
+                        //console.log(strange);
+                        classRemover('indicator');
+                        description.innerHTML = ObjDescr.moderate;
+                        indicator.classList.add('moderate');
+                    }
+
+                    if (rangeValue > 13 && rangeValue < 16 && +strange === 15) {
+                        //console.log(strange);
+                        classRemover('indicator');
+                        description.innerHTML = ObjDescr.strong;
+                        indicator.classList.add('strong');
+                    }
+
+                    if (rangeValue > 13 && rangeValue < 16 && +strange === 20) {
+                        //console.log(strange);
+                        classRemover('indicator');
+                        description.innerHTML = ObjDescr.strong;
+                        indicator.classList.add('strong');
+                    }
+
+                    if (rangeValue > 13 && rangeValue < 16 && +strange === 25) {
+                        // console.log(strange);
+                        classRemover('indicator');
                         description.innerHTML = ObjDescr.veryStrong;
-                        // console.log(strange);
+                        indicator.classList.add('very-strong');
                     }
+
+                    //////////////////////////////
+                    if (rangeValue > 15 && rangeValue < 25 && +strange === 5) {
+                        classRemover('indicator');
+                        description.innerHTML = ObjDescr.moderate;
+                        indicator.classList.add('moderate');
+                    }
+
+                    if (rangeValue > 15 && rangeValue < 25 && +strange === 10) {
+                        // console.log(strange);
+                        classRemover('indicator');
+                        description.innerHTML = ObjDescr.strong;
+                        indicator.classList.add('strong');
+                    }
+
+                    if (rangeValue > 15 && rangeValue < 25 && +strange === 15) {
+                        // console.log(strange);
+                        classRemover('indicator');
+                        description.innerHTML = ObjDescr.veryStrong;
+                        indicator.classList.add('very-strong');
+                    }
+
+                    if (rangeValue > 15 && rangeValue < 25 && +strange === 20) {
+                        // console.log(strange);
+                        classRemover('indicator');
+                        description.innerHTML = ObjDescr.veryStrong;
+                        indicator.classList.add('very-strong');
+                    }
+
+                    if (rangeValue > 15 && rangeValue < 25 && +strange === 25) {
+                        // console.log(strange);
+                        classRemover('indicator');
+                        description.innerHTML = ObjDescr.veryStrong;
+                        indicator.classList.add('very-strong');
+                    }
+
                 };
                 addClassToIndicator();
+
+
 
 
 
@@ -169,7 +297,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
                             if (dataId === 'numbers') {
                                 allSymbols += passObj.numbers;
-                                strange += 4;
+                                strange += 5;
                             }
 
                             if (dataId === 'symbols') {
