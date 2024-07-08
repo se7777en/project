@@ -58,7 +58,7 @@ const classRemover = (clasname) => {
     const list = document.querySelector('.tumblers .indicator');
     const arr = Array.from(list.classList);
     arr.forEach((item) => {
-        console.log(item);
+      //  console.log(item);
         if (item !== clasname) {
             list.classList.remove(item);
         }
@@ -76,14 +76,14 @@ const addClassToIndicator = () => {
         classRemover('indicator');
         indicator.classList.add('very-weak');
         description.innerHTML = ObjDescr.veryWeek;
-        console.log(strange);
+       // console.log(strange);
     }
 
     if (rangeValue >= 5 && rangeValue < 9) {
         classRemover('indicator');
         //indicator.classList.toggle('weak');
         //description.innerHTML = ObjDescr.weak;
-        console.log(strange);
+        //console.log(strange);
 
         if (strange < 15) {
             description.innerHTML = ObjDescr.veryWeek;
@@ -98,14 +98,14 @@ const addClassToIndicator = () => {
         classRemover('indicator');
         indicator.classList.toggle('moderate');
         description.innerHTML = ObjDescr.moderate;
-        console.log(strange);
+       // console.log(strange);
     }
 
     if (rangeValue >= 12 && rangeValue <= 15) {
         classRemover('indicator');
 
 
-        console.log(strange);
+       // console.log(strange);
         if (strange < 15) {
             description.innerHTML = ObjDescr.moderate;
             indicator.classList.toggle('moderate');
@@ -119,7 +119,7 @@ const addClassToIndicator = () => {
         classRemover('indicator');
         //indicator.classList.toggle('very-strong');
         //description.innerHTML = ObjDescr.veryStrong;
-        console.log(strange);
+       // console.log(strange);
 
         if (strange < 15) {
             description.innerHTML = ObjDescr.strong;
@@ -134,7 +134,7 @@ const addClassToIndicator = () => {
         classRemover('indicator');
         indicator.classList.toggle('very-strong');
         description.innerHTML = ObjDescr.veryStrong;
-        console.log(strange);
+       // console.log(strange);
     }
 }
 addClassToIndicator();
@@ -151,7 +151,7 @@ const getCheckedSymbols = () => {
         if (item.checked) {
             let head = item.closest('.tumbler');
             dataId = head.dataset.case;
-            console.log(dataId);
+           // console.log(dataId);
             if (dataId === 'uppercase') {
                 allSymbols += passObj.uppercase;
                 strange += 5;
@@ -236,7 +236,7 @@ refreshPass.addEventListener('click', () => {
 
 
 copyIcon.addEventListener('click', () => {
-    console.log('ok');
+    //console.log('ok');
     navigator.clipboard.writeText(password.textContent);
 
     modalPassword.textContent = password.textContent;
