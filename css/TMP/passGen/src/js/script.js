@@ -23,11 +23,11 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
 
                 const ObjDescr = {
-                    veryWeek: `This password is <span class="very-weak">very weak</span>. It is highly recommended to choose a stronger password for better security.`,
-                    weak: `Oh no, it’s a bit <span class="weak">weak</span>. Make it stronger by adding length, special characters & uppercase letters.`,
-                    moderate: `This password has <span class="moderate">moderate</span> strength. Consider enhancing it with additional characters and complexity for better security.`,
-                    strong: `Congratulations! This is a <span class="strong">strong</span> password. Ensure you keep it secure and avoid sharing it with others.`,
-                    veryStrong: `Excellent! Your password is <span class="very-strong">very strong</span>. Keep it safe and avoid using it for multiple accounts.`
+                    veryWeek: `This password is&nbsp;<span class="very-weak">very weak</span>.&nbsp;It is highly recommended to choose a stronger password for better security.`,
+                    weak: `Oh no, it’s a bit&nbsp;<span class="weak">weak</span>.&nbsp;Make it stronger by adding length, special characters & uppercase letters.`,
+                    moderate: `This password has&nbsp;<span class="moderate">moderate</span>&nbsp;strength. Consider enhancing it with additional characters and complexity for better security.`,
+                    strong: `Congratulations! This is a&nbsp;<span class="strong">strong</span>&nbsp;password. Ensure you keep it secure and avoid sharing it with others.`,
+                    veryStrong: `Excellent! Your password is&nbsp;<span class="very-strong">very strong</span>.&nbsp;Keep it safe and avoid using it for multiple accounts.`
                 };
 
 
