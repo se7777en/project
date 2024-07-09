@@ -318,8 +318,7 @@ body {
 
 
 .footer__about a:hover,
-.footer__about a:active
-{
+.footer__about a:active {
   color: #3d3d3d;
   transition: .1s ease-in-out;
 }
@@ -342,6 +341,20 @@ transition: .1s ease-in-out;
   color: #3d3d3d;
   transition: .1s ease-in-out;
   } */
+
+
+/* .featured-img {
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+.featured-img:hover {
+  scale: 1.01;
+  transition: all .1s ease-in-out;
+} */
 
 
 
