@@ -69,6 +69,7 @@ body {
     user-select: none;
 }
 
+
 .card span:hover {
     background-color: rgb(244, 244, 0);
     transition: all .3s ease-in-out;
