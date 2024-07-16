@@ -86,7 +86,7 @@ body {
 
 .header__subtitle {
   color: #21243D;
-  margin-bottom: 38px;
+  margin-bottom: 20px;
 }
 
 .header__body {
@@ -261,7 +261,7 @@ body {
 }
 
 .main {
-  margin-bottom: 134px;
+  margin-bottom: 35px;
 }
 
 .footer__inner-items {
@@ -429,7 +429,7 @@ transition: .1s ease-in-out;
 
 @media (max-width: 800px) {
   .main {
-    margin-bottom: 60px;
+    margin-bottom: 35px;
   }
 }
 
@@ -547,6 +547,10 @@ transition: .1s ease-in-out;
 
   /*borger_menu*/
   /*--------------------*/
+
+  .header__body {
+    margin-bottom: 0px;
+  }
 }
 
 
