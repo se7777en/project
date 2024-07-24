@@ -25,8 +25,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
                     passInput = document.querySelector('.box .pass'),
                     passconfirm = document.querySelector('.box .pass__confirm'),
-                    confirmIcon = document.querySelector('.box .box__confirm img'),
-                    modalInner = document.querySelector('.box .modal__inner');
+                    confirmIcon = document.querySelector('.box .box__confirm img');
 
 
 
@@ -416,7 +415,6 @@ window.addEventListener('DOMContentLoaded', (e) => {
                             modalDescr.classList.remove('hide');
                             modalBtn.textContent = 'Set Password';
                             passInput.placeholder = 'Password';
-                            modalInner.classList.remove('box__footer');
                         } else {
                             secured = true;
 
@@ -430,7 +428,6 @@ window.addEventListener('DOMContentLoaded', (e) => {
                             modalDescr.classList.add('hide');
                             modalBtn.textContent = 'Unlock';
                             passInput.placeholder = 'Password';
-                            modalInner.classList.add('box__footer');
                         };
 
 
