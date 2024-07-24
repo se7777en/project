@@ -666,16 +666,16 @@ body .box {
 
 
 .active {
-    bottom: auto !important;
+    bottom: 2% !important;
     /* transition: all .0055s ease-in-out;   */
+
 }
 
 .modal {
     position: fixed;
     bottom: -100%;
     left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     width: 250px;
     height: auto;
     border-radius: 4px;
@@ -688,7 +688,7 @@ body .box {
 
 
 .modal__inner {
-    padding: 20px 20px 20px 20px;
+    padding: 20px 20px 5px 20px;
     position: relative;
     /* display: flex;
     flex-direction: column;
@@ -779,10 +779,6 @@ body .box {
 
 .icon__size {
     font-size: 12px !important;
-}
-
-.box__footer {
-    padding-bottom: 0px;
 }
 
 .locked {
