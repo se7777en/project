@@ -571,9 +571,13 @@ body::-webkit-scrollbar-thumb {
 }
 
 .array__methods pre {
-    /* white-space: pre-wrap;
-    text-wrap: wrap; */
+    /* white-space: pre-wrap;*/
+    
     overflow: auto;
+}
+
+.info pre {
+    text-wrap: wrap; 
 }
 
 /* //////////Posts////////// */
