@@ -62,6 +62,7 @@ body {
 .slider__inner {
     display: flex;
     gap: 1px;
+    transition: all .3s ease-in-out;
 }
 
 
