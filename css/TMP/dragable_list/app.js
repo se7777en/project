@@ -8,3 +8,5 @@ const dragArea = document.querySelector('.slides');
             swapThreshold: 1,
             direction: 'vertical'
           });
+
+          

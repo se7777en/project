@@ -60,6 +60,7 @@
     z-index: 5;
   }
   
+  
   .slide::before {
     position: absolute;
     bottom: 0;
