@@ -433,5 +433,52 @@ console.log(allGreaterThanFive); // false`,
         infoRu: 'fsdjkfhsdkf',
         infoEn: 'fsdjkfhsdkf',
         infostatus: 'visible'
-    }
+    },
+    {
+      methodRu: 'closest',
+      methodEn: 'closest',
+      descrRu: ': В JavaScript "closest" — это метод, который используется для поиска ближайшего предка элемента, удовлетворяющего заданному селектору CSS. Этот метод применяется к элементам DOM и позволяет быстро находить элементы, соответствующие определенным критериям.',
+      descrEn: ': In JavaScript, closest is a method used to find the nearest ancestor of an element that matches a given CSS selector. This method is applied to DOM elements and allows you to quickly find elements that meet specific criteria.',
+      typeRu: 'Функциональный метод:',
+      typeEn: 'Functional method:',
+      maintypeRu: 'JavaScript:',
+      maintypeEn: 'JavaScript:',
+
+      codeRu: `let element = document.querySelector('.child'); // Находим элемент с классом 'child'
+let closestAncestor = element.closest('.parent'); // Находим ближайшего предка с классом 'parent'
+`,
+
+      codeEn: `let element = document.querySelector('.child'); // Find the element with class 'child'
+let closestAncestor = element.closest('.parent'); // Find the nearest ancestor with class 'parent'
+`,
+
+      infoRu: 'Метод closest будет искать по дереву DOM, начиная с самого элемента и двигаясь вверх по иерархии, пока не найдет элемент, соответствующий селектору. Если элемент не найден, возвращается null.',
+      infoEn: 'The closest method will search up the DOM tree, starting from the element itself and moving upwards through the hierarchy, until it finds an element that matches the selector. If no such element is found, it returns null.',
+      infostatus: 'visible'
+  },
+
+  {
+    methodRu: 'contains',
+    methodEn: 'contains',
+    descrRu: ': В JavaScript метод contains обычно используется для проверки, содержится ли один DOM-узел в другом. В вашем коде',
+    descrEn: ': In JavaScript, the contains method is typically used to check whether one DOM node is contained within another.',
+    typeRu: 'Функциональный метод:',
+    typeEn: 'Functional method:',
+    maintypeRu: 'JavaScript:',
+    maintypeEn: 'JavaScript:',
+
+    codeRu: `const parent = document.getElementById('parent');
+const child = document.getElementById('child');
+const contains = parent.contains(child); // true, если 'child' находится внутри 'parent'
+`,
+
+    codeEn: `const parent = document.getElementById('parent');
+const child = document.getElementById('child');
+const contains = parent.contains(child); // true if 'child' is inside 'parent'
+`,
+
+    infoRu: 'В этом примере contains возвращает true, если элемент с идентификатором child находится внутри элемента с идентификатором parent. Если child не является потомком parent, метод возвращает false. Если ev и childe в вашем коде являются не DOM-узлами, то contains может не быть доступен или может использоваться в другом контексте, специфичном для вашей библиотеки или фреймворка.',
+    infoEn: 'In this example, contains returns true if the element with the ID child is inside the element with the ID parent. If child is not a descendant of parent, the method returns false. If ev and childe in your code are not DOM nodes, contains may not be available or may be used in a different context specific to your library or framework.',
+    infostatus: 'visible'
+}
 ];

@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     const pathBig = './img/big/';
+    const width = 106 + 1;
 
     slideFooter.addEventListener('click', (e) => {
         const event = e.target;
@@ -24,27 +25,67 @@ document.addEventListener('DOMContentLoaded', () => {
 
     ///////////////////////////////
     let shift = 0;
-    let forLeft = (sliderInnerItems.length * 106) - (106 * 3);
-   // console.log(sliderInnerItems.length);
+    let forLeft = (sliderInnerItems.length * width) - (width * 3);
+
+    ////////////////
+    const leftSlide = () => {
+        if (shift > -forLeft) {
+            shift -= width;
+            sliderInner.style.transform = `translateX(${shift}px)`;
+
+
+            let p = 0;
+            if (shift < 0) {
+                p = Math.abs(shift) / width;
+            }
+            const item = document.querySelectorAll('.slider__inner .slide__footer-item')[1 + p];
+            const path = item.querySelector('img').src;
+            const fileName = path.substring(path.lastIndexOf('/') + 1).replace('small', 'big');
+            headerImage.src = pathBig + fileName;
+           
+
+
+        }
+    }
 
 
     leftArr.addEventListener('click', () => {
-        if (shift > -forLeft) {
-            shift -= 106;
-            console.log(shift);
-            sliderInner.style.transform = `translateX(${shift}px)`;
-        } 
+        leftSlide();
     });
+
+
+    ////////////////
+    const rightSlide = () => {
+        if (shift < 0) {
+            shift += width;
+            sliderInner.style.transform = `translateX(${shift}px)`;
+
+
+            let p = 0;
+            if (shift < 0) {
+                p = Math.abs(shift) / width;
+            }
+            const item = document.querySelectorAll('.slider__inner .slide__footer-item')[1 + p];
+            const path = item.querySelector('img').src;
+            const fileName = path.substring(path.lastIndexOf('/') + 1).replace('small', 'big');
+            headerImage.src = pathBig + fileName;
+
+        }
+    }
 
     rightArr.addEventListener('click', () => {
-
-        if (shift < 0) {
-            shift += 106;
-            console.log(shift);
-            sliderInner.style.transform = `translateX(${shift}px)`;
-        } 
-
+        rightSlide();
     });
+
+    /////////////////////////////////////
+    document.addEventListener('keydown', (event) => {
+        if (event.key === "ArrowLeft") {
+            rightSlide();
+        } else if (event.key === "ArrowRight") {
+            leftSlide();
+        }
+    });
+
 
 
 
