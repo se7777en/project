@@ -340,6 +340,8 @@ ${item.codeEn}
                                 // event.classList.add('fa-copy');
 
 
+                                
+
                             }, 1500);
 
                         }
