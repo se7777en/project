@@ -315,12 +315,31 @@ ${item.codeEn}
                     const event = e.target; // Используем e.target для проверки
                     if (event) {
                         if (event.closest('.method__example-copy')) {
-                            event.classList.remove('fa-copy');
-                            event.classList.add('fa-check','colored');
+
+                            if (event.classList.contains('fa-solid')) {
+                                event.classList.remove('fa-copy');
+                                event.classList.add('fa-check', 'colored');
+                            }else {
+                                const el = event.querySelector('i');
+                                el.classList.remove('fa-copy');
+                                el.classList.add('fa-check', 'colored');
+                            }
                             navigator.clipboard.writeText(event.closest('.method__example').querySelector('.code__style code').textContent);
                             setTimeout(() => {
-                                event.classList.remove('fa-check','colored');
-                                event.classList.add('fa-copy');
+
+                                if (event.classList.contains('fa-solid')) {
+                                    event.classList.remove('fa-check', 'colored');
+                                    event.classList.add('fa-copy');
+                                }else {
+                                    const el = event.querySelector('i');
+                                    el.classList.remove('fa-check', 'colored');
+                                    el.classList.add('fa-copy');
+                                }
+
+                                // event.classList.remove('fa-check', 'colored');
+                                // event.classList.add('fa-copy');
+
+
                             }, 1500);
 
                         }
