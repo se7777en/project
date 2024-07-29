@@ -264,9 +264,9 @@ And one is not "primitive" and stands apart:
         methodRu: 'for...of',
         methodEn: 'for...of',
         descrRu: ': Это более современный цикл, который позволяет перебирать элементы массива без использования индекса.',
-        descrEn: ': Это более современный цикл, который позволяет перебирать элементы массива без использования индекса.',
+        descrEn: ': It is a more modern loop that allows iterating over array elements without using an index.',
         typeRu: 'Цикл:',
-        typeEn: 'Цикл:',
+        typeEn: 'loop:',
         maintypeRu: 'JavaScript:',
         maintypeEn: 'JavaScript:',
 
@@ -280,17 +280,17 @@ for (const element of arr) {
 console.log(element);
 }`,
 
-        infoRu: 'fsdjkfhsdkf',
-        infoEn: 'fsdjkfhsdkf',
-        infostatus: 'visible'
+        infoRu: '',
+        infoEn: '',
+        infostatus: ''
     },
     {
         methodRu: 'forEach',
         methodEn: 'forEach',
-        descrRu: '22222222222222',
-        descrEn: ': Этот метод позволяет перебирать элементы массива и выполнять для каждого элемента заданную функцию.',
+        descrRu: ': Метод Array.prototype.forEach выполняет заданную функцию один раз для каждого элемента массива. Этот метод часто используется для выполнения операций над каждым элементом массива.',
+        descrEn: ': The Array.prototype.forEach method executes a given function once for each element in the array. This method is commonly used to perform operations on each element of the array.',
         typeRu: 'Цикл:',
-        typeEn: 'Цикл:',
+        typeEn: 'loop:',
         maintypeRu: 'JavaScript:',
         maintypeEn: 'JavaScript:',
 
@@ -302,15 +302,15 @@ console.log(element);});`,
 arr.forEach((element) => {
 console.log(element);});`,
 
-        infoRu: 'fsdjkfhsdkf',
-        infoEn: 'fsdjkfhsdkf',
+        infoRu: '',
+        infoEn: '',
         infostatus: ''
     },
     {
         methodRu: 'map',
         methodEn: 'map',
         descrRu: ': Этот метод позволяет преобразовать каждый элемент массива в новый элемент, используя заданную функцию.',
-        descrEn: ': Этот метод позволяет преобразовать каждый элемент массива в новый элемент, используя заданную функцию.',
+        descrEn: ': This method allows you to transform each element of an array into a new element using a given function.',
         typeRu: 'Функциональный метод:',
         typeEn: 'Функциональный метод:',
         maintypeRu: 'JavaScript:',
@@ -324,15 +324,15 @@ console.log(doubledArr); // [2, 4, 6]`,
 const doubledArr = arr.map((element) => element * 2);  
 console.log(doubledArr); // [2, 4, 6]`,
 
-        infoRu: 'fsdjkfhsdkf',
-        infoEn: 'fsdjkfhsdkf',
+        infoRu: '',
+        infoEn: '',
         infostatus: ''
     },
     {
         methodRu: 'filter',
         methodEn: 'filter',
         descrRu: ': Этот метод позволяет отфильтровать элементы массива, оставляя только те, для которых заданная функция возвращает true',
-        descrEn: ': Этот метод позволяет отфильтровать элементы массива, оставляя только те, для которых заданная функция возвращает true',
+        descrEn: ': This method allows you to filter the elements of an array, keeping only those for which the given function returns `true`.',
         typeRu: 'Функциональный метод:',
         typeEn: 'Функциональный метод:',
         maintypeRu: 'JavaScript:',
@@ -346,15 +346,15 @@ console.log(evenArr); // [2, 4]`,
 const evenArr = arr.filter((element) => element % 2 === 0);     
 console.log(evenArr); // [2, 4]`,
 
-        infoRu: 'fsdjkfhsdkf',
-        infoEn: 'fsdjkfhsdkf',
+        infoRu: '',
+        infoEn: '',
         infostatus: ''
     },
     {
         methodRu: 'reduce',
         methodEn: 'reduce',
         descrRu: ': Этот метод позволяет свести массив к одному значению, используя заданную функцию.',
-        descrEn: ': Этот метод позволяет свести массив к одному значению, используя заданную функцию.',
+        descrEn: ': This method allows you to reduce an array to a single value using a given function.',
         typeRu: 'Функциональный метод:',
         typeEn: 'Функциональный метод:',
         maintypeRu: 'JavaScript:',
@@ -368,15 +368,15 @@ console.log(sum); // 15`,
 const sum = arr.reduce((accumulator, currentValue) => accumulator + currentValue);   
 console.log(sum); // 15`,
 
-        infoRu: 'fsdjkfhsdkf',
-        infoEn: 'fsdjkfhsdkf',
+        infoRu: '',
+        infoEn: '',
         infostatus: ''
     },
     {
         methodRu: 'some',
         methodEn: 'some',
-        descrEn: ': Этот метод проверяет, существует ли хотя бы один элемент массива, для которого заданная функция возвращает true',
-        descrRu: ': Этот метод проверяет, существует ли хотя бы один элемент массива, для которого заданная функция возвращает true',
+        descrEn: ': This method checks if there is at least one element in the array for which the given function returns `true`.',
+        descrRu: ': Этот метод проверяет, существует ли хотя бы один элемент массива, для которого заданная функция возвращает true.',
         typeEn: 'Функциональный метод:',
         typeRu: 'Функциональный метод:',
         maintypeRu: 'JavaScript:',
@@ -391,10 +391,10 @@ const hasGreaterThanTen = numbers.some((number) => number > 10);
 console.log(hasGreaterThanTen); // false`,
 
         codeEn: `const numbers = [1, 2, 3, 4, 5];
-// Проверяет, есть ли хотя бы одно четное число
+// Checks if there is at least one even number
 const hasEven = numbers.some((number) => number % 2 === 0);   
 console.log(hasEven); // true   
-// Проверяет, есть ли хотя бы одно число больше 10
+// Checks if there is at least one number greater than 10
 const hasGreaterThanTen = numbers.some((number) => number > 10);  
 console.log(hasGreaterThanTen); // false`,
 
@@ -406,7 +406,7 @@ console.log(hasGreaterThanTen); // false`,
         methodRu: 'every',
         methodEn: 'every',
         descrRu: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
-        descrEn: ': Этот метод проверяет, для всех ли элементов массива заданная функция возвращает true',
+        descrEn: ': This method checks if the given function returns `true` for all elements in the array.',
         typeRu: 'Функциональный метод:',
         typeEn: 'Функциональный метод:',
         maintypeRu: 'JavaScript:',
@@ -430,9 +430,9 @@ const numbers2 = [2, 4, 6, 9];
 const allGreaterThanFive = numbers2.every((number) => number > 5);    
 console.log(allGreaterThanFive); // false`,
 
-        infoRu: 'fsdjkfhsdkf',
-        infoEn: 'fsdjkfhsdkf',
-        infostatus: 'visible'
+        infoRu: '',
+        infoEn: '',
+        infostatus: ''
     },
     {
       methodRu: 'closest',
@@ -469,7 +469,8 @@ let closestAncestor = element.closest('.parent'); // Find the nearest ancestor w
 
     codeRu: `const parent = document.getElementById('parent');
 const child = document.getElementById('child');
-const contains = parent.contains(child); // true, если 'child' находится внутри 'parent'
+const contains = parent.contains(child); // true, если 'child' находится внутри 'parent', где-либо внутри элемента 'parent'
+const containsClass = e.classList.contains('childe'); // Метод classList.contains проверяет наличие указанного класса только на том элементе, к которому он применяется, независимо от уровня вложенности.
 `,
 
     codeEn: `const parent = document.getElementById('parent');
@@ -477,8 +478,84 @@ const child = document.getElementById('child');
 const contains = parent.contains(child); // true if 'child' is inside 'parent'
 `,
 
-    infoRu: 'В этом примере contains возвращает true, если элемент с идентификатором child находится внутри элемента с идентификатором parent. Если child не является потомком parent, метод возвращает false. Если ev и childe в вашем коде являются не DOM-узлами, то contains может не быть доступен или может использоваться в другом контексте, специфичном для вашей библиотеки или фреймворка.',
+    infoRu: 'В этом примере contains возвращает true, если элемент с идентификатором child находится внутри элемента с идентификатором parent. Если child не является потомком parent, метод возвращает false. Если "e" и childe в вашем коде являются не DOM-узлами, то contains может не быть доступен или может использоваться в другом контексте, специфичном для вашей библиотеки или фреймворка.',
     infoEn: 'In this example, contains returns true if the element with the ID child is inside the element with the ID parent. If child is not a descendant of parent, the method returns false. If ev and childe in your code are not DOM nodes, contains may not be available or may be used in a different context specific to your library or framework.',
     infostatus: 'visible'
+},
+
+{
+  methodRu: 'matches',
+  methodEn: 'matches',
+  descrRu: ': Метод element.matches(\'.childe\') проверяет соответствие селектору только на самом элементе, на котором он вызывается, и не ищет внутри его дочерних элементов.',
+  descrEn: 'The method element.matches(\'.childe\') checks for a match to the selector only on the element on which it is called and does not search within its child elements.',
+  typeRu: 'Функциональный метод:',
+  typeEn: 'Functional method:',
+  maintypeRu: 'JavaScript:',
+  maintypeEn: 'JavaScript:',
+
+  codeRu: `
+\< div id="parent" \>
+  \< div id="child" class="childe" \>
+    < div id="grandchild" > \< /\>
+  \< />
+\< />
+
+const parent = document.getElementById('parent');
+const child = document.getElementById('child');
+const grandchild = document.getElementById('grandchild');
+
+const parentMatches = parent.matches('.childe');       // false
+const childMatches = child.matches('.childe');         // true
+const grandchildMatches = grandchild.matches('.childe'); // false
+  `,
+
+  codeEn: `\< div id="parent" \>
+  \< div id="child" class="childe" \>
+    < div id="grandchild" > \< /\>
+  \< />
+\< />
+
+const parent = document.getElementById('parent');
+const child = document.getElementById('child');
+const grandchild = document.getElementById('grandchild');
+
+const parentMatches = parent.matches('.childe');       // false
+const childMatches = child.matches('.childe');         // true
+const grandchildMatches = grandchild.matches('.childe'); // false
+  `,
+  infoRu: '',
+  infoEn: '',
+  infostatus: ''
+},
+
+{
+  methodRu: 'includes',
+  methodEn: 'includes',
+  descrRu: ': Если у вас есть массив элементов, и вы хотите проверить, был ли клик на одном из этих элементов, вы можете использовать includes после создания массива из элементов.',
+  descrEn: ': If you have an array of elements and you want to check if the click occurred on one of these elements, you can use includes after creating an array from the elements.',
+  typeRu: 'Функциональный метод:',
+  typeEn: 'Functional method:',
+  maintypeRu: 'JavaScript:',
+  maintypeEn: 'JavaScript:',
+
+  codeRu: `const items = Array.from(document.querySelectorAll('.item'));
+
+document.getElementById('parent').addEventListener('click', function(event) {
+  if (items.includes(event.target)) {
+    console.log('Clicked on one of the items:', event.target.textContent);
+  }
+});`,
+
+  codeEn: `const items = Array.from(document.querySelectorAll('.item'));
+
+document.getElementById('parent').addEventListener('click', function(event) {
+  if (items.includes(event.target)) {
+    console.log('Clicked on one of the items:', event.target.textContent);
+  }
+});`,
+
+  infoRu: 'Метод Array.prototype.includes используется для определения, содержит ли данный массив определенное значение среди своих элементов, возвращая true, если содержит, и false в противном случае.',
+  infoEn: 'The Array.prototype.includes method is used to determine whether a given array contains a certain value among its elements, returning true if it does and false otherwise.',
+  infostatus: 'visible'
 }
 ];

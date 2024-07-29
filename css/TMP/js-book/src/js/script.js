@@ -40,6 +40,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
         <div class="method__descr"><code class="method__item-decore">${item.methodRu}</code>${item.descrRu}</div>
         <div class="method__title">${item.typeRu}</div>
         <div class="method__example">
+        <span class="method__example-copy" title="copy"><i class="fa-solid fa-copy"></i></span>
             <div class="method__example-title">${item.maintypeRu}</div>
             <pre class="code__style">
 <code>
@@ -85,6 +86,7 @@ ${item.codeRu}
         <div class="method__descr"><code class="method__item-decore">${item.methodEn}</code>${item.descrEn}</div>
         <div class="method__title">${item.typeEn}</div>
         <div class="method__example">
+        <span class="method__example-copy" title="copy"><i class="fa-solid fa-copy"></i></span>
             <div class="method__example-title">${item.maintypeEn}</div>
             <pre class="code__style">
 <code>
@@ -294,6 +296,36 @@ ${item.codeEn}
                     menuBtnIcon.classList.toggle('fa-xmark');
                     document.body.classList.toggle('dark-background');
                 });
+
+
+                ////////for copy code/////////////
+
+                document.querySelectorAll('.method__example').forEach((item) => {
+                    item.addEventListener('mouseenter', () => {
+                        item.querySelector('.method__example-copy').classList.add('copy');
+                    });
+
+                    item.addEventListener('mouseleave', () => {
+                        item.querySelector('.method__example-copy').classList.remove('copy');
+                    });
+                });
+
+
+                methodsContainer.addEventListener('click', (e) => {
+                    const event = e.target; // Используем e.target для проверки
+                    if (event) {
+                        if (event.closest('.method__example-copy')) {
+                            event.classList.add('fa-check','colored');
+                            navigator.clipboard.writeText(event.closest('.method__example').querySelector('.code__style code').textContent);
+                            setTimeout(() => {
+                                event.classList.remove('fa-check','colored');
+                            }, 1500);
+
+                        }
+                    }
+
+                });
+                ////////for copy code/////////////
 
 
             }

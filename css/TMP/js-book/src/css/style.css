@@ -547,7 +547,36 @@ body::-webkit-scrollbar-thumb {
     background-color: #f0f4f9;
     border-radius: 10px 10px 0px 0px;
     margin-bottom: 5px;
+    position: relative;
 }
+
+.method__example-copy {
+
+    visibility: hidden;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+    color: #b5babe;
+    transition: all .3s ease-in-out;
+}
+
+.method__example-copy.copy {
+    visibility: visible;
+}
+
+.colored {
+   color: #00afca;
+}
+
+
+
+
+
+
+
+
+
 
 .method {
     margin-bottom: 60px;
@@ -572,12 +601,12 @@ body::-webkit-scrollbar-thumb {
 
 .array__methods pre {
     /* white-space: pre-wrap;*/
-    
+
     overflow: auto;
 }
 
 .info pre {
-    text-wrap: wrap; 
+    text-wrap: wrap;
 }
 
 /* //////////Posts////////// */
