@@ -72,6 +72,8 @@ ${item.codeRu}
                     helpFooterText.textContent = 'Поддержка клиентов';
                     dayly.textContent = 'Ежедневно с';
                     daylyTo.textContent = 'до';
+
+                  
                 };
 
                 addItemsOnPageRu();
@@ -119,6 +121,8 @@ ${item.codeEn}
                     helpHeaderText.textContent = 'Customer support';
                     dayly.textContent = 'Daily from';
                     daylyTo.textContent = 'to';
+
+                  
                 };
 
 
@@ -141,12 +145,16 @@ ${item.codeEn}
                         addItemsOnPageRu();
                         // language.setAttribute('checked', 'checked');
                         language.checked = true;
+                        
+                        
                     }
 
                     if (obj.lang === 'EN') {
                         addItemsOnPageEn();
                         // language.removeAttribute('checked');
                         language.checked = false;
+                        
+                        
 
                     };
                 };
@@ -158,10 +166,12 @@ ${item.codeEn}
                     if (language.checked) {
                         addItemsOnPageRu();
                         obj.lang = 'RU';
+                        copyCode();
 
                     } else {
                         addItemsOnPageEn();
                         obj.lang = 'EN';
+                        copyCode();
                     }
                     setDataToStorage(obj);
                     scrollH = document.documentElement.scrollHeight - window.innerHeight;
@@ -300,54 +310,58 @@ ${item.codeEn}
 
                 ////////for copy code/////////////
 
-                document.querySelectorAll('.method__example').forEach((item) => {
-                    item.addEventListener('mouseenter', () => {
-                        item.querySelector('.method__example-copy').classList.add('copy');
+                function copyCode() {
+                    document.querySelectorAll('.method__example').forEach((item) => {
+                        item.addEventListener('mouseenter', () => {
+                            item.querySelector('.method__example-copy').classList.add('copy');
+                        });
+
+                        item.addEventListener('mouseleave', () => {
+                            item.querySelector('.method__example-copy').classList.remove('copy');
+                        });
                     });
 
-                    item.addEventListener('mouseleave', () => {
-                        item.querySelector('.method__example-copy').classList.remove('copy');
-                    });
-                });
 
-
-                methodsContainer.addEventListener('click', (e) => {
-                    const event = e.target; // Используем e.target для проверки
-                    if (event) {
-                        if (event.closest('.method__example-copy')) {
-
-                            if (event.classList.contains('fa-solid')) {
-                                event.classList.remove('fa-copy');
-                                event.classList.add('fa-check', 'colored');
-                            }else {
-                                const el = event.querySelector('i');
-                                el.classList.remove('fa-copy');
-                                el.classList.add('fa-check', 'colored');
-                            }
-                            navigator.clipboard.writeText(event.closest('.method__example').querySelector('.code__style code').textContent);
-                            setTimeout(() => {
+                    methodsContainer.addEventListener('click', (e) => {
+                        const event = e.target; // Используем e.target для проверки
+                        if (event) {
+                            if (event.closest('.method__example-copy')) {
 
                                 if (event.classList.contains('fa-solid')) {
-                                    event.classList.remove('fa-check', 'colored');
-                                    event.classList.add('fa-copy');
-                                }else {
+                                    event.classList.remove('fa-copy');
+                                    event.classList.add('fa-check', 'colored');
+                                } else {
                                     const el = event.querySelector('i');
-                                    el.classList.remove('fa-check', 'colored');
-                                    el.classList.add('fa-copy');
+                                    el.classList.remove('fa-copy');
+                                    el.classList.add('fa-check', 'colored');
                                 }
+                                navigator.clipboard.writeText(event.closest('.method__example').querySelector('.code__style code').textContent);
+                                setTimeout(() => {
 
-                                // event.classList.remove('fa-check', 'colored');
-                                // event.classList.add('fa-copy');
+                                    if (event.classList.contains('fa-solid')) {
+                                        event.classList.remove('fa-check', 'colored');
+                                        event.classList.add('fa-copy');
+                                    } else {
+                                        const el = event.querySelector('i');
+                                        el.classList.remove('fa-check', 'colored');
+                                        el.classList.add('fa-copy');
+                                    }
+
+                                    // event.classList.remove('fa-check', 'colored');
+                                    // event.classList.add('fa-copy');
 
 
-                                
 
-                            }, 1500);
 
+                                }, 1500);
+
+                            }
                         }
-                    }
 
-                });
+                    });
+                };
+
+                copyCode();
                 ////////for copy code/////////////
 
 
