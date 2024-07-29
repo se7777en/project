@@ -558,7 +558,12 @@ body::-webkit-scrollbar-thumb {
     top: 10px;
     cursor: pointer;
     color: #b5babe;
-    transition: all .3s ease-in-out;
+    /* transition: all .3s ease-in-out; */
+
+    -webkit-user-drag: none;
+        -webkit-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
 }
 
 .method__example-copy.copy {
