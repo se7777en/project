@@ -315,10 +315,12 @@ ${item.codeEn}
                     const event = e.target; // Используем e.target для проверки
                     if (event) {
                         if (event.closest('.method__example-copy')) {
+                            event.classList.remove('fa-copy');
                             event.classList.add('fa-check','colored');
                             navigator.clipboard.writeText(event.closest('.method__example').querySelector('.code__style code').textContent);
                             setTimeout(() => {
                                 event.classList.remove('fa-check','colored');
+                                event.classList.add('fa-copy');
                             }, 1500);
 
                         }
