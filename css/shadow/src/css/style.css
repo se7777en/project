@@ -66,6 +66,11 @@ body {
     position: relative;
     padding: 10px;
 
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+
 }
 
 .wrapper__item i {
@@ -92,7 +97,20 @@ body {
     height: 40px;
 }
 
-.wrapper__item:active::before {
-    width: 40px;
-    height: 40px;
+
+
+
+
+@media (max-width: 840px) {
+
+    .wrapper__item:hover::before {
+        width: 0px;
+        height: 0px;
+    }
+
+    .wrapper__item:active::before {
+        width: 40px !important;
+        height: 40px !important;
+        transition: all .01s ease-in-out;
+    }
 }
