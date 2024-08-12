@@ -74,7 +74,7 @@ body {
 }
 
 .wrapper__item i {
-    transition: all .3s ease-in-out;
+
 }
 
 .wrapper__item::before {
@@ -88,7 +88,7 @@ body {
     border-radius: 50%;
     background-color: rgba(32, 33, 36, 0.122);
     /* visibility: hidden; */
-    transition: all .15s ease-in-out;
+    transition: all .2s ease-out;
     z-index: -1;
 }
 
@@ -111,6 +111,6 @@ body {
     .wrapper__item:active::before {
         width: 40px !important;
         height: 40px !important;
-        transition: all .01s ease-in-out;
+        /* transition: all .15s ease-out; */
     }
 }
