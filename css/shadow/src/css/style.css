@@ -73,10 +73,6 @@ body {
 
 }
 
-.wrapper__item i {
-
-}
-
 .wrapper__item::before {
     content: "";
     position: absolute;
@@ -88,7 +84,7 @@ body {
     border-radius: 50%;
     background-color: rgba(32, 33, 36, 0.122);
     /* visibility: hidden; */
-    transition: all .2s ease-out;
+    transition: all .08s ease-out;
     z-index: -1;
 }
 
