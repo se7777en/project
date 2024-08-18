@@ -1,1 +1,226 @@
-/* font-family: "Play", sans-serif; */
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+body {
+    font-family: "Play", sans-serif;
+    font-size: 20px;
+    min-height: 100%;
+    background: url("../img/bg.webp") 0 0 no-repeat;
+    background-size: cover;
+}
+
+.container {
+    max-width: 1620px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.header {
+    min-height: 80px;
+    background: rgba(29, 1, 65, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin-bottom: 22px;
+}
+
+.header__logo {
+    cursor: pointer;
+}
+
+.header__menu {
+    display: flex;
+    align-items: center;
+}
+
+.header__list {
+    display: flex;
+    align-items: center;
+}
+
+.header__search {
+    cursor: pointer;
+}
+
+.header__list-item {
+    padding: 12px;
+    color: #E9DEFF;
+    text-transform: uppercase;
+    margin-right: 24px;
+    cursor: pointer;
+}
+
+
+
+.header__list-item:hover {
+    text-shadow: 0px 0px 10px #ffffff;
+}
+
+
+.header__contacts {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.header__contacts-phone {
+    color: #fff;
+    position: relative;
+}
+
+.header__contacts-phone:hover {
+    text-shadow: 0px 0px 20px #D795FF, 0px 0px 4px #D795FF;
+    color: #fff;
+}
+
+.header__contacts-phone a {
+    display: inline-block;
+    padding-left: 24px;
+}
+
+.header__contacts-phone a:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    width: 14px;
+    height: 14px;
+    /* padding-right: 15px; */
+    background: url("../img/heade-phone.svg") 0 0 no-repeat;
+    background-size: contain;
+}
+
+.header__contacts-ask {
+    border-radius: 10px;
+    border: 1px solid #fff;
+    color: #fff;
+    text-transform: uppercase;
+    position: relative;
+    cursor: pointer;
+}
+
+.header__contacts-ask a {
+    display: inline-block;
+    padding: 15px 40px 15px 20px;
+}
+
+
+
+.header__contacts-ask::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 22px;
+    width: 12px;
+    height: 12px;
+    background: url("../img/arrow-up.svg") 0 0 no-repeat;
+    background-size: contain;
+}
+
+.header__contacts-ask:hover {
+    box-shadow: 0px 0px 3.14815px 0px rgba(162, 45, 247, 0.1), 0px 0px 3.51852px 0px rgba(162, 45, 247, 0.1), 0px 0px 13px 0px rgba(162, 45, 247, 0.1), 0px 0px 25.48148px 0px rgba(162, 45, 247, 0.1), 0px 0px 25.85185px 0px rgba(162, 45, 247, 0.1), 0px 0px 19px 9px rgba(162, 45, 247, 0.1), 0px 0px 20px 0px #29D9FF !important;
+    color: #ffffff;
+}
+
+/* ----------------------------- */
+.pagecrm__crm-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    color: #E9DEFF;
+}
+
+.pagecrm__crm-breadcrumb img {
+    display: flex;
+    padding-top: 3px;
+}
+
+.pagecrm__crm-breadcrumb>*:hover,
+.pagecrm__crm-breadcrumb>*:active {
+    text-shadow: 0px 0px 20px #D795FF, 0px 0px 4px #D795FF;
+    color: #fff;
+    cursor: pointer;
+}
+
+.pagecrm__crm-breadcrumb {
+    margin-bottom: 134px;
+}
+
+.pagecrm__crm-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pagecrm__crm-title {
+    font-size: 64px;
+    color: #fff;
+    line-height: 150%;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.pagecrm__crm-img img {
+    max-width: 700px;
+    height: auto;
+}
+
+.pagecrm__crm-img {
+    margin-bottom: 50px;
+}
+
+.pagecrm__crm-btn {
+    padding: 20px 40px;
+    border-radius: 20px;
+    font-size: 24px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+/* .pagecrm__crm-title {
+    text-align: center;
+} */
+
+/* ----------------------------- */
