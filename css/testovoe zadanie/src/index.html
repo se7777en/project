@@ -7,55 +7,60 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Play:wght@400;700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Alpha Marketing | Рекламное Агентство | Реклама и Сайты</title>
 </head>
 
 <body>
     <header class="header">
-        <div class="header__logo">
-            <img class="logo" src="./img/logo.svg" alt="logo">
-        </div>
-        <div class="header__menu">
-            <ul class="header__list">
-                <li class="header__list-item">услуги</li>
-                <li class="header__list-item">кейсы</li>
-                <li class="header__list-item">ЕЩЁ</li>
-            </ul>
-            <div class="header__search">
-                <img class="search" src="./img/search.svg" alt="search">
+        <!-- <div class="container"> -->
+            <div class="header__logo">
+                <img class="logo" src="./img/logo.svg" alt="logo">
             </div>
-        </div>
-        <div class="header__contacts">
-            <div class="header__contacts-phone">
-                <a href="tel:88124095222">8 812 409-52-22</a>
+            <div class="header__menu">
+                <ul class="header__list">
+                    <li class="header__list-item">услуги</li>
+                    <li class="header__list-item">кейсы</li>
+                    <li class="header__list-item">ЕЩЁ</li>
+                </ul>
+                <div class="header__search">
+                    <img class="search" src="./img/search.svg" alt="search">
+                </div>
             </div>
-            <div class="header__contacts-ask">
-                <button class="header__contacts-btn">задать вопрос</button>
+            <div class="header__contacts">
+                <div class="header__contacts-phone">
+                    <a href="tel:88124095222">8 812 409-52-22</a>
+                </div>
+                <div class="header__contacts-ask">
+                    <a class="header__contacts-btn" href="#!">задать вопрос</a>
+                </div>
             </div>
-        </div>
+        <!-- </div> -->
     </header>
 
     <main class="main">
+       
         <section class="pagecrm__crm">
-            <div class="pagecrm__crm-breadcrumb">
-                <div class="breadcrumb-item">Главная</div>
-                <div class="breadcrumb__delimiter"><img src="./img/crm/arrow-right.svg" alt="delimiter"></div>
-                <div class="breadcrumb-item">Услуги Альфа маркетинг</div>
-                <div class="breadcrumb__delimiter"><img src="./img/crm/arrow-right.svg" alt="delimiter"></div>
-                <div class="breadcrumb-item">CRM</div>
-            </div>
-            <div class="container pagecrm__crm-container">
-                <div class="pagecrm__crm-inner">
-                    <h1 class="pagecrm__crm-title">crm</h1>
-                    <div class="pagecrm__crm-img">
-                        <img src="./img/crm/main-img.webp" alt="image">
+            <div class="container">
+                <div class="pagecrm__crm-breadcrumb">
+                    <div class="breadcrumb-item item">Главная</div>
+                    <div class="breadcrumb__delimiter"><img src="./img/crm/arrow-right.svg" alt="delimiter"></div>
+                    <div class="breadcrumb-item item">Услуги Альфа маркетинг</div>
+                    <div class="breadcrumb__delimiter"><img src="./img/crm/arrow-right.svg" alt="delimiter"></div>
+                    <div class="breadcrumb-item item">CRM</div>
+                </div>
+                <div class="pagecrm__crm-container">
+                    <div class="pagecrm__crm-inner">
+                        <h1 class="pagecrm__crm-title">crm</h1>
+                        <div class="pagecrm__crm-img">
+                            <img src="./img/crm/main-img.webp" alt="image">
+                        </div>
+                        <button class="pagecrm__crm-btn">оставить заявку</button>
                     </div>
-                    <button class="pagecrm__crm-btn">оставить заявку</button>
                 </div>
             </div>
         </section>
-        
-
+ <!--
         <section class="pagecrm__management">
             <div class="container">
                 <h2 class="pagecrm__management__title">Управление бизнес-процессами</h2>
@@ -301,54 +306,58 @@
             </div>
         </section>
 
-        <footer class="footer">
-            <div class="container">
-                <div class="footer__items">
-                    <div class="footer__item">
-                        <h3 class="footer__item-title">Меню</h3>
-                        <ul class="footer__menu">
-                            <li class="footer__menu-item">Услуги</li>
-                            <li class="footer__menu-item">Кейсы</li>
-                            <li class="footer__menu-item">Ещё</li>
-                        </ul>
-                        <div class="footer__logo">
-                            <img src="./img/footer/logo-min.svg" alt="logo-min">
-                        </div>
-                    </div>
-                    <div class="footer__item">
-                        <h3 class="footer__item-title">Меню</h3>
-                        <p class="footer__contacts">
-                            <a href="#!" class="footer__contact">Контакты</a>
-                        </p>
-                        <p class="footer__address">Санкт-Петербург Заозёрная 8, к.2, офис 202</p>
-                        <p class="footer__time">Пн-Пт, 10:00 - 18:00</p>
-                        <p class="footer__phone">
-                            <a href="tel:88124095222">8 (812) 409-52-22</a>
-                        </p>
-                        <div class="footer__email">
-                            <a href="mailto:info@alpham.pro">info@alpham.pro</a>
-                        </div>
+         -->
+    </main>
 
-                        <div class="footer__social-list">
-                            <ul class="footer__social-list">
-                                <li class="footer__social-item">
-                                    <a class="footer__social-link" href="./img/footer/tg.svg"></a>
-                                </li>
-                                <li class="footer__social-item">
-                                    <a class="footer__social-link" href="./img/footer/vk.svg"></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="footer__item">
-                        <div class="footer__map"></div>
+    <!--
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__items">
+                <div class="footer__item">
+                    <h3 class="footer__item-title">Меню</h3>
+                    <ul class="footer__menu">
+                        <li class="footer__menu-item">Услуги</li>
+                        <li class="footer__menu-item">Кейсы</li>
+                        <li class="footer__menu-item">Ещё</li>
+                    </ul>
+                    <div class="footer__logo">
+                        <img src="./img/footer/logo-min.svg" alt="logo-min">
                     </div>
                 </div>
+                <div class="footer__item">
+                    <h3 class="footer__item-title">Меню</h3>
+                    <p class="footer__contacts">
+                        <a href="#!" class="footer__contact">Контакты</a>
+                    </p>
+                    <p class="footer__address">Санкт-Петербург Заозёрная 8, к.2, офис 202</p>
+                    <p class="footer__time">Пн-Пт, 10:00 - 18:00</p>
+                    <p class="footer__phone">
+                        <a href="tel:88124095222">8 (812) 409-52-22</a>
+                    </p>
+                    <div class="footer__email">
+                        <a href="mailto:info@alpham.pro">info@alpham.pro</a>
+                    </div>
 
+                    <div class="footer__social-list">
+                        <ul class="footer__social-list">
+                            <li class="footer__social-item">
+                                <a class="footer__social-link" href="./img/footer/tg.svg"></a>
+                            </li>
+                            <li class="footer__social-item">
+                                <a class="footer__social-link" href="./img/footer/vk.svg"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer__item">
+                    <div class="footer__map"></div>
+                </div>
             </div>
-        </footer>
 
-    </main>
+        </div>
+    </footer>
+
+     df -->
 
 
 
