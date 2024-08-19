@@ -7,13 +7,14 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Play:wght@400;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/main.css">
     <title>Alpha Marketing | Рекламное Агентство | Реклама и Сайты</title>
 </head>
 
 <body>
     <header class="header">
         <!-- <div class="container"> -->
+        <div class="header__inner">
             <div class="header__logo">
                 <img class="logo" src="./img/logo.svg" alt="logo">
             </div>
@@ -35,11 +36,21 @@
                     <a class="header__contacts-btn" href="#!">задать вопрос</a>
                 </div>
             </div>
+        </div>
+        <div class="header__burger-wrap">
+            <div class="burger__menu">
+                <span></span>
+            </div>
+            <div class="header__menu-search">
+                <input type="text">
+            </div>
+        </div>
+
         <!-- </div> -->
     </header>
 
     <main class="main">
-       
+
         <section class="pagecrm__crm">
             <div class="container">
                 <div class="pagecrm__crm-breadcrumb">
@@ -60,7 +71,7 @@
                 </div>
             </div>
         </section>
- <!--
+        <!--
         <section class="pagecrm__management">
             <div class="container">
                 <h2 class="pagecrm__management__title">Управление бизнес-процессами</h2>
@@ -360,6 +371,13 @@
      df -->
 
 
+
+    <div class="body__links-wrap">
+        <ul class="body__links">
+            <li class="body__links-item"><img src="./img/fixed-icons/question.svg" alt="ask_q"></li>
+            <li class="body__links-item"><img src="./img/fixed-icons/call.svg" alt="phone"></li>
+        </ul>
+    </div>
 
     <script src="./js/script.js"></script>
 </body>
