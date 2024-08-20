@@ -348,3 +348,76 @@ body {
         width: 140px;
     }
 }
+
+
+
+.pagecrm__info-items {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.pagecrm__info-item {
+    display: flex;
+    border: 1px solid #B195FF;
+
+    border-radius: 32px; /* скругленные углы */
+    
+    overflow: hidden;
+    box-shadow: 0 0 8px rgba(215, 149, 255, 1);
+    height: 266px;
+}
+
+.pagecrm__info_item-img {
+    background: linear-gradient(to bottom left, #ffffff, #0E9DDD) padding-box;
+}
+
+.pagecrm__info_item-img img {
+    width: 345px;
+    padding: 23px;
+}
+
+.pagecrm__item-descr {
+    width: 345px;
+    padding: 15px 15px 15px 30px;
+}
+
+.pagecrm__item-title {
+    font-family: inherit;
+    font-size: clamp(1rem, 0.875rem + 0.625vw, 1.5rem);
+    background: linear-gradient(to right, #B195FF, #E9C6FF) padding-box;
+    -webkit-background-clip: text;
+    color: transparent;
+    line-height: 45px;
+    padding-bottom: 20px;
+}
+
+.pagecrm__item-element {
+    color: #fff;
+    font-size: clamp(0.875rem, 0.781rem + 0.469vw, 1.25rem);
+    position: relative;
+    padding-left: 36px;
+    padding-bottom: 20px;
+}
+
+.pagecrm__item-element::before {
+    content: '';
+    background: url('../img/card-info/check.svg') 0 0 no-repeat;
+    position: absolute;
+    left: 0px;
+    top: 4px;
+    width: 16px;
+    height: 16px;
+}
+
+.pagecrm__item-element::after {
+    content: '';
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    background-color: rgba(82, 67, 194, .15);
+    top: -3px;
+    left: -6px;
+    border-radius: 50%;
+}
