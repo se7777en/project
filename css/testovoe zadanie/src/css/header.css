@@ -177,9 +177,9 @@
 
 /*borger menu*/
 
-/* .header__burger-wrap {
+.header__burger-wrap {
     display: none;
-} */
+}
 
 
 @media (max-width: 1130px) {
@@ -201,14 +201,17 @@
         display: none;
     }
 
- 
+    .header__list-item {
+       
+        /* -webkit-tap-highlight-color: rgba(0, 0, 0, 0); */
+    }
 
     .header__burger-wrap {
-        /* display: flex;
+        display: flex;
         padding: 0 20px;
         margin-bottom: 22px;
         gap: 20px;
-        align-items: center; */
+        align-items: center;
     }
 
 
