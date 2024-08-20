@@ -203,7 +203,7 @@
 
     .header__list-item {
        
-        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        /* -webkit-tap-highlight-color: rgba(0, 0, 0, 0); */
     }
 
     .header__burger-wrap {
