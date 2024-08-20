@@ -111,7 +111,7 @@ body {
 
 /* ----------------------------- */
 .pagecrm__crm {
-    /* margin-bottom: 120px; */
+    margin-bottom: clamp(4.688rem, 3.984rem + 3.516vw, 7.5rem);
     position: relative;
 }
 
@@ -202,9 +202,149 @@ body {
     scale: .99;
 }
 
-/* .pagecrm__crm-title {
+
+.pagecrm__management {
+    margin-bottom: clamp(4.688rem, 3.984rem + 3.516vw, 7.5rem);
+}
+
+
+.pagecrm__management__title {
     text-align: center;
-} */
+    font-family: inherit;
+    color: #fff;
+    font-size: clamp(1.5rem, 1.172rem + 1.641vw, 2.813rem);
+    font-weight: 500;
+    margin-bottom: 50px;
+}
 
-/* ----------------------------- */
+.pagecrm__management-items {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
 
+.pagecrm__management-item {
+    width: 319px;
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+
+}
+
+.pagecrm__management-item img {
+    width: 145px;
+    height: 145px;
+    align-self: center;
+
+}
+
+.pagecrm__management_item-subtitle {
+    font-size: 32px;
+    font-weight: 500;
+    color: #fff;
+    line-height: 40px;
+    text-align: center;
+}
+
+
+@media (max-width: 1290px) {
+    .pagecrm__management-items {
+        gap: 50px;
+        /* justify-content: center; */
+    }
+}
+
+@media (max-width: 1100px) {
+    .pagecrm__management-item img {
+        width: 120px;
+        height: 120px;
+    }
+
+
+
+    .pagecrm__management_item-subtitle {
+        font-size: 24px;
+        line-height: 36px;
+    }
+}
+
+@media (max-width: 1076px) {
+    .pagecrm__management-items {
+        /* gap: 50px; */
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .pagecrm__management-item img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .pagecrm__management_item-subtitle {
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    .pagecrm__management-item {
+        width: 250px;
+    }
+}
+
+@media (max-width: 570px) {
+    .pagecrm__management-item {
+        width: 220px;
+    }
+}
+
+@media (max-width: 510px) {
+    .pagecrm__management-item {
+        width: 190px;
+    }
+}
+
+@media (max-width: 460px) {
+    .pagecrm__management-item img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .pagecrm__management_item-subtitle {
+        font-size: 17px;
+        line-height: 25px;
+    }
+
+    .pagecrm__management-item {
+        gap: 20px;
+    }
+}
+
+
+@media (max-width: 460px) {
+    .pagecrm__management-item img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .pagecrm__management_item-subtitle {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .pagecrm__management-items {
+        gap: 20px;
+    }
+}
+
+
+@media (max-width: 420px) {
+    .pagecrm__management-item {
+        width: 184px;
+    }
+}
+
+@media (max-width: 410px) {
+    .pagecrm__management-item {
+        width: 140px;
+    }
+}
