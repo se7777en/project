@@ -200,6 +200,11 @@
         display: none;
     }
 
+    .header__list-item {
+       
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
     .header__burger-wrap {
         padding: 0 20px;
         display: flex;
