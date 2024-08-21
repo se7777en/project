@@ -366,7 +366,7 @@ body {
     
     overflow: hidden;
     box-shadow: 0 0 8px rgba(215, 149, 255, 1);
-    height: 266px;
+    height: clamp(10.625rem, 9.125rem + 7.500vw, 16.625rem);
 }
 
 .pagecrm__info_item-img {
@@ -374,12 +374,12 @@ body {
 }
 
 .pagecrm__info_item-img img {
-    width: 345px;
-    padding: 23px;
+    width: clamp(9.375rem, 6.328rem + 15.234vw, 21.563rem);
+    padding-top: 23px;
 }
 
 .pagecrm__item-descr {
-    width: 345px;
+    width: clamp(9.375rem, 6.328rem + 15.234vw, 21.563rem);
     padding: 15px 15px 15px 30px;
 }
 
@@ -389,35 +389,26 @@ body {
     background: linear-gradient(to right, #B195FF, #E9C6FF) padding-box;
     -webkit-background-clip: text;
     color: transparent;
-    line-height: 45px;
-    padding-bottom: 20px;
+    /* line-height: 45px; */
+    padding-top: 10px;
+    padding-bottom: clamp(0.625rem, 0.469rem + 0.781vw, 1.25rem);
 }
 
 .pagecrm__item-element {
     color: #fff;
-    font-size: clamp(0.875rem, 0.781rem + 0.469vw, 1.25rem);
+    font-size: clamp(0.563rem, 0.391rem + 0.859vw, 1.25rem);
     position: relative;
-    padding-left: 36px;
-    padding-bottom: 20px;
+    padding-left: clamp(1.188rem, 0.922rem + 1.328vw, 2.25rem);
+    padding-bottom: clamp(0.625rem, 0.469rem + 0.781vw, 1.25rem);
 }
 
 .pagecrm__item-element::before {
     content: '';
     background: url('../img/card-info/check.svg') 0 0 no-repeat;
+    background-size:contain;
     position: absolute;
     left: 0px;
-    top: 4px;
-    width: 16px;
-    height: 16px;
-}
-
-.pagecrm__item-element::after {
-    content: '';
-    position: absolute;
-    width: 28px;
-    height: 28px;
-    background-color: rgba(82, 67, 194, .15);
-    top: -3px;
-    left: -6px;
-    border-radius: 50%;
+    top: 0px;
+    width: clamp(0.813rem, 0.578rem + 1.172vw, 1.75rem);
+    height: clamp(0.813rem, 0.578rem + 1.172vw, 1.75rem);
 }
