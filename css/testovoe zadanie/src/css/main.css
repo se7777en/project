@@ -45,8 +45,8 @@ body {
     font-size: 20px;
     min-height: 100%;
     background: url("../img/bg.webp") 0 0 no-repeat;
-    /* background-size: cover;
-    background-position: center; */
+    background-size: cover;
+    /*background-position: center;    */
     position: relative;
 }
 
@@ -121,14 +121,20 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: url("../img/crm/bg.webp") center center no-repeat;
-    background-size: contain;
+    background: url("../img/crm/bg.webp") 0 0 no-repeat;
+    background-size: cover;
     width: 100%;
     height: 100%;
     opacity: .4;
     z-index: -1;
     /* overflow: hidden; */
 }
+
+/* @media (max-width: 2400px) {
+    .pagecrm__crm::after {
+        background-size: cover;
+    }
+} */
 
 .pagecrm__crm-breadcrumb {
     display: flex;
@@ -350,6 +356,10 @@ body {
 }
 
 
+.pagecrm__info {
+    margin-bottom: clamp(4.688rem, 3.984rem + 3.516vw, 7.5rem);
+}
+
 
 .pagecrm__info-items {
     display: flex;
@@ -362,8 +372,9 @@ body {
     display: flex;
     border: 1px solid #B195FF;
 
-    border-radius: 32px; /* скругленные углы */
-    
+    border-radius: 32px;
+    /* скругленные углы */
+
     overflow: hidden;
     box-shadow: 0 0 8px rgba(215, 149, 255, 1);
     height: clamp(10.625rem, 9.125rem + 7.500vw, 16.625rem);
@@ -405,10 +416,59 @@ body {
 .pagecrm__item-element::before {
     content: '';
     background: url('../img/card-info/check.svg') 0 0 no-repeat;
-    background-size:contain;
+    background-size: contain;
     position: absolute;
     left: 0px;
     top: 0px;
     width: clamp(0.813rem, 0.578rem + 1.172vw, 1.75rem);
     height: clamp(0.813rem, 0.578rem + 1.172vw, 1.75rem);
 }
+
+
+.pagecrm__form {
+    display: flex;
+}
+
+.pagecrm__form-inner {
+    padding: 44px 100px;
+    background-color: rgba(72, 5, 114, .49);
+    box-shadow: 0 0 10px 0 #9662FF;
+    border-radius: 32px;
+    max-width: 650px;
+    text-align: center;
+}
+
+.form__title {
+    font-size: 42px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, .5);
+    line-height: 50px;
+    margin-bottom: 3px;
+}
+
+.form__subtitle {
+    font-size: 20px;
+    line-height: 26px;
+    color: #fff;
+}
+
+.pagecrm__form-inner .form {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+}
+
+.pagecrm__form-inner .form input,
+.pagecrm__form-inner .form .system-select {
+    width: 100%;
+    padding: 24px;
+    font-size: 20px;
+    font-weight: 26px;
+
+    background-color: transparent;
+    color: #fff;
+    border: 5px solid #9400FF;
+    box-shadow: 0 0 3px rgba(215, 149, 255, 1);
+    border-radius: 10px;
+}
+
