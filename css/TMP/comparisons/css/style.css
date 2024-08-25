@@ -102,12 +102,13 @@ body {
     border: 1px solid #454545;
     border-radius: 3px;
     /* background-color: green; */
-    cursor: pointer;
+    /* cursor: pointer; */
     position: relative;
 }
 
 .wrapper__inner-item.active {
     background-color: rgb(11, 76, 11);
+    cursor: pointer;
 }
 
 .wrapper__inner-item.active:hover {
