@@ -58,7 +58,7 @@ body {
     font-weight: 500;
     color: rgba(119, 119, 119, 0.8);
     margin-bottom: clamp(4.375rem, 1.875rem + 12.500vw, 6.25rem);  /*clamp(4.375rem, 1.875rem + 12.500vw, 6.25rem)  ot 100px do 70px s 560px*/
-    padding-left: 40px;
+    /* padding-left: 40px; */
     padding-top: 7px;
 }
 
