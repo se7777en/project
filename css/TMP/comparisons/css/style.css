@@ -126,8 +126,10 @@ body {
 }
 
 
-.wrapper__inner-item.active:active {
-    background-color: rgb(9, 63, 9);
+@media(any-hover: hover) {
+    .wrapper__inner-item.active:hover {
+        background-color: rgb(9, 63, 9);
+    }
 }
 
 @media (max-width: 769px) {
@@ -138,6 +140,10 @@ body {
     /*  .wrapper__inner-item.active:hover {
         background-color: unset;
     } */
+
+    .wrapper__inner-item.active:active {
+        background-color: rgb(9, 63, 9);
+    }
 
 }
 
