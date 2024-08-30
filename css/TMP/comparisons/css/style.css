@@ -132,7 +132,7 @@ body {
     }
 }
 
-@media (max-width: 769px) {
+@media (max-width: 900px) {
     /* .wrapper__inner-item.active:active {
         background-color: rgb(11, 76, 11);
     } */
