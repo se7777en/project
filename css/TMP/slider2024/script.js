@@ -8,10 +8,18 @@ let touchendY = 0;
 
 // Get the slider, set the slider length, slider width and current index
 
-const slider = document.querySelector('#slider')
-const sliderWrapper = document.querySelector('#slider__wrapper');
+
+
+
+
+
+
+
+const slider = document.querySelector('.slider')
+const sliderWrapper = document.querySelector('.slider__items');
 const sliderLength = document.querySelectorAll('.slider__item').length
-const sliderWidth = 375;
+const sliderWidth = window.innerWidth; // menyaem
+const sliderToShow = 2; // menyaem
 let index = 0;
 
 
@@ -100,7 +108,7 @@ document.addEventListener('mouseup', function(event) {
 const snap = (value) => {
   // check the value from the slide, 
   // to decide the slider to slide in which direction
-  if (value < -60 && index < sliderLength - 1) {
+  if (value < -60 && index < sliderLength - sliderToShow) {/*menyaem kolichestvo slaidov*/
       index += 1;
     } else if (value > 60 && index > 0) {
       index -= 1;
@@ -128,7 +136,7 @@ const slideAndSnap = () => {
     sliderWrapper.classList.remove('transition')
     notAnimated = true;
     touched = false
-   }, 300)
+   }, 1500)
 }
 
 // this function will handle when there is a drag motion
@@ -138,13 +146,14 @@ const swipe = () => {
   // check if it's the last of the first element to apply 'heavy slide' effect
   if ((
       index  === sliderLength - 1 && value < 0) || 
-      (index === 0 && value > 0)) 
+(index === 0 && value > 1)) 
   {
     holdValue += (value - holdValue) / 6;
     sliderSlide(sliderProcess + holdValue)
     return ;
   } 
   sliderSlide(sliderProcess + value)
+  
 }
 
 // this function will aplly the style to slider when its dragged  

@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
           
           mainMenu = document.querySelector('.header__inner'),
           activeMenu = document.querySelector('.burge__menu'),
-          burgerClose = document.querySelector('.burger__close');
+          burgerClose = document.querySelector('.burger__close'),
+          body = document.querySelector('BODY');
 
           
 
@@ -14,12 +15,13 @@ document.addEventListener('DOMContentLoaded', () => {
           burgerIcon.addEventListener('click', () => {
             mainMenu.classList.toggle('active');
             activeMenu.classList.toggle('active');
+            body.classList.toggle('lock');
           });
 
           burgerClose.addEventListener('click', () => {
-            console.log('yy');
             mainMenu.classList.toggle('active');
             activeMenu.classList.toggle('active');
+            body.classList.toggle('lock');
             
           });
 
@@ -28,17 +30,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    let swiper = new Swiper(".mySwiper", {
-        speed: 1000,
+    new Swiper(".mySwiper", {
+        speed: 1500,
         pagination: {
           el: ".swiper-pagination",
           dynamicBullets: true,
           clickable: true,
         },
         autoplay: {
-            delay: 150000,
+            delay: 1500,
           }
       });
+
+     
+    //  const swip =  new Swiper(".info__items", {
+    //     speed: 1500,
+
+    //     navigation: {
+    //       nextEl: '.swiper-button-next',
+    //       prevEl: '.swiper-button-prev',
+    //     },
+
+    //     // pagination: {
+    //     //   el: ".swiper-pagination2",
+    //     //   dynamicBullets: true,
+    //     //   clickable: true,
+    //     // },
+    //     autoplay: {
+    //         delay: 1500,
+    //       }
+    //   });
+    
 
 
 
