@@ -88,6 +88,10 @@ body {
     top: 0;
 }
 
+.burge__menu .burger__close {
+    cursor: pointer;
+}
+
 .burge__menu.active .burger__close {
     position: fixed;
     top: 15px;
@@ -145,7 +149,7 @@ body {
     display: flex;
     align-items: center;
     column-gap: 10px;
-    font-size: 15px;
+    font-size: 17px;
 }
 
 .header__icons i {
@@ -171,8 +175,37 @@ body {
         display: block;
     } */
 
+    /* .header__burger-icon {
+        display: block;
+        font-size: 20px;
+    } */
+
     .header__burger-icon {
         display: block;
+        position: relative;
+        width: 20px;
+        cursor: pointer;
+    }
+
+    .header__burger-icon span::before {
+        content: '';
+        position: absolute;
+        top: 3px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #151515;
+        margin-bottom: 10px;
+    }
+
+    .header__burger-icon span::after {
+        content: '';
+        position: absolute;
+        bottom: 3px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #151515;
     }
 
     .header__lang {
