@@ -1,33 +1,63 @@
-* {
-    box-sizing: border-box;
-  }
-  body {
-     height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color:black;
-    font-family: 'Poppins', sans-serif;
+html {
+  box-sizing: border-box;
+}
 
-  }
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+img {
+  vertical-align: top;
+}
+
+*::before,
+*::after {
+  display: inline-block;
+}
 
 /* slider style */
 
-  #slider {
-    width: 375px;
-    height: 667px;
+  .slider {
+    /* width: 375px;  menyaem*/
+    width: 100%;
+    height: 100%;
     background-color: white;
     position: relative;
     overflow:hidden;
-    border-radius: 5px;
-   box-shadow: 0px 16px 32px rgba(0,0,0,.5);
+    /* border-radius: 5px;
+   box-shadow: 0px 16px 32px rgba(0,0,0,.5); */
   }
 
   .transition {
     transition : transform .3s ease;
   }
 
-  .header {
+  /* .header {
     display : flex;
     width: 100%;
     height: 48px;
@@ -39,149 +69,52 @@
     font-size: 16px;
     height: 52px;
     position: relative;
-  }
+  } */
 
 /* note that the "touch-action" property is really crucial for the gesture events. */
 
-  #slider__wrapper {
-    height: 100%;
+  .slider__items {
     width: 100%;
+    height: auto;
     position: relative;
     display: flex;
     touch-action: none;
   }
 
   .slider__item {
+    /* min-width: 100%;  menyaem*/
     min-width: 100%;
-    height: 100%;
-    float: left;
-    padding: 24px 12px;
-    
+    height: auto;
+    /* float: left; */
+    /* padding: 24px 12px; */
+
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* max-height: 170px; */
+
   }
 
-/* home slider styles */
+  .slider__item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+   
+  }
 
-.home {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  max-height: 170px;
-}
+
 
 .list__card {
-  display: flex;
-  flex-direction: column;
-  width: 48%;
-  margin-bottom: 16px;
-}
+  /* display: flex;
+  flex-direction: column; */
 
-.list__card_image{
-  background-color: grey;
+  /* width: 48%; */
   width: 100%;
-  height: 124px;
-  border-radius: 5px;
-   background-size:cover;
-  position: center center;
-}
+  display: block;
 
-
-.list__card:nth-child(1) .list__card_image {
-  background-image: url('https://image.ibb.co/dc24FA/image.png');
+  /* margin-bottom: 16px; */
+  /* border: 1px solid #000; */
 }
-
-.list__card:nth-child(2) .list__card_image {
-  background-image: url('https://image.ibb.co/e9MT8V/image.png');
-}
-
-.list__card:nth-child(3) .list__card_image {
-  background-image: url('https://image.ibb.co/ncoEhq/image.png');
-}
-
-.list__card:nth-child(4) .list__card_image {
-  background-image: url('https://image.ibb.co/gCey8V/image.png');
-}
-
-.list__card:nth-child(5) .list__card_image {
-  background-image: url('https://image.ibb.co/kOHh2q/image.png');
-}
-
-.list__card:nth-child(6) .list__card_image {
-  background-image: url('https://image.ibb.co/iwD5Nq/image.png');
-}
-
-.list__card_desc {
-  display:flex;
-  flex-direction: column;
-  margin-top: 8px;
-  margin-left: 4px;
-}
-
-.list__card_desc_title {
-  font-weight: 700;
-  font-size: 14px;
-}
-
-.list__card_desc_date {
-  font-weight: 600;
-  color: #808093;
-  font-size: 13px;
-}
-
-.list__card_desc_more {
-  font-weight: 400;
-}
-
-/* home gallery styles */
-
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  max-height: 170px;
-}
-
-.gallery__card {
-  display: flex;
-  flex-direction: column;
-  width: 48%;
-  margin-bottom: 16px;
-}
-
-.gallery__card_image{
-  width: 100%;
-  height: 144px;
-  border-radius: 5px;
-  background-size:cover;
-  position: center center;
-}
-
-.gallery__card:nth-child(1) .gallery__card_image {
-  background-image: url('https://image.ibb.co/d2enJV/image.png');
-}
-.gallery__card:nth-child(2) .gallery__card_image {
-  background-image: url('https://image.ibb.co/hO4yQA/image.png');
-}
-.gallery__card:nth-child(3) .gallery__card_image {
-  background-image: url('https://image.ibb.co/mmXJQA/image.png');
-}
-
-.gallery__card:nth-child(4) .gallery__card_image {
-  background-image: url('https://image.ibb.co/dc24FA/image.png');
-}
-
-.gallery__card:nth-child(5) .gallery__card_image {
-  background-image: url('https://image.ibb.co/k3sPyV/image.png');
-}
-
-.gallery__card:nth-child(6) .gallery__card_image {
-  background-image: url('https://image.ibb.co/mfc2kA/image.png');
-}
-
-.gallery__card:nth-child(7) .gallery__card_image {
-  background-image: url('https://image.ibb.co/fHPCJV/image.png');
-}
-
-.gallery__card:nth-child(8) .gallery__card_image {
-  background-image: url('https://image.ibb.co/iwD5Nq/image.png');
-}
-
