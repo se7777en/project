@@ -1,0 +1,61 @@
+@import url(../css/null.css);
+@import url(../css/fonts.css);
+
+
+[class*="__container"] {
+    margin: 0 auto;
+    padding-inline: 5px;
+    max-width: 1034px;
+}
+
+
+body {
+    font-family: 'Helvetica_Light', sans-serif;
+    font-size: 16px;
+    padding-block: 15px;
+    color: #151515;
+}
+
+.wrapper__header {
+    font-feature-settings: "case" on;
+    text-transform: uppercase;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.wrapper__item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    /* aspect-ratio: 16 / 6; */
+    
+}
+
+
+
+.wrapper__item video {
+    min-height: 195px;
+}
+
+.wrapper__item-descr {
+    font-family: 'Helvetica_Medium', sans-serif;
+    font-size: 12px;
+    color: #4b4b4b;
+}
+
+.wrapper__item-descr span {
+    color: rgb(0, 180, 0);
+}
+
+.wrapper__items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 25px;
+}
+
+
+/* https://video-converter.com/ */
+/* https://www.youtube.com/watch?v=C5q0ULg0nmY */
