@@ -1,0 +1,43 @@
+@import url(./null.css);
+
+body {
+    font-size: 16px;
+}
+
+.wrapper {
+    padding-top: 20px;
+}
+
+.wrapper__items {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+
+
+    scroll-behavior: smooth;
+    /* Плавная прокрутка */
+    scrollbar-width: none;
+    /* Скрываем скроллбар для Firefox */
+    -ms-overflow-style: none;
+    /* Скрываем скроллбар для IE и Edge */
+}
+
+
+.wrapper__items::-webkit-scrollbar {
+    display: none;
+    /* Скрываем скроллбар для Chrome, Safari и Opera */
+}
+
+.wrapper__item {
+    min-width: 100vw;
+    height: 300px;
+    scroll-snap-align: start;
+    background-color: antiquewhite;
+}
+
+.wrapper__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
