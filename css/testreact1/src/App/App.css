@@ -1,0 +1,82 @@
+.cotainer {
+  max-width: 810px;
+  margin: 0 auto;
+  padding: 20px 5px 0px 5px;
+}
+
+.header {
+  text-align: center;
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+form {
+  border: 1px solid #d2d2d2;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+form input:not(:last-child) {
+  display: block;
+  border: 1px solid #d2d2d2;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.textarea {
+  width: 100%;
+  height: 60px;
+  border: 1px solid #d2d2d2;
+  border-radius: 4px;
+  resize: none;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.submit {
+  font-size: 16px;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 500;
+  background-color: #0000FF;
+}
+
+.submit:active {
+  scale: .97;
+}
+
+.form__btns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form__btns-left {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.form__btns-left .btn {
+  padding: 8px 15px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 500;
+  background-color: #0000FF;
+  border-radius: 4px;
+}
+
+.form__btns-left .btn:active {
+  scale: .97;
+}
+
+.form__num {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
