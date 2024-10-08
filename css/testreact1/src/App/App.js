@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 
-import { useCallback, useState, useEffect } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import './App.css';
 
 
@@ -18,22 +18,35 @@ const Form = () => {
     setToggle(toggle => !toggle)
   }
 
+  const callb = useCallback(() => { // hook funkciya use callBack robotoet kogda mi ee peredaem cherez props v drugoi komponent kak funkciu v docherni komponent
+    console.log(`log: ${val}`);
+    return [
+      'link1',
+      'link2',
+      'link3',
+    ]
+  }, [val])
 
 
 
 
-  const printLog = useCallback(() => {
-    return (
-      ['1']
-    )
-  },[val])
+
+  // const changeToggle = useCallback(() => {
+  //   console.log('log..');
+  //     setToggle(toggle => !toggle)
+  //   }, [val])
 
 
   return (
     <>
       {
-        //  printLog()
-         <PrintCallback printLog={printLog} />
+        // callb().map((item, i) => {
+        //   return  <p key={i}>{item}</p>
+        // })
+
+
+        // callb()
+        <PrintCallback callb={callb} />
       }
 
       <div className="cotainer">
@@ -58,16 +71,20 @@ const Form = () => {
   );
 }
 
-const PrintCallback = ({ printLog }) => {
+const PrintCallback = ({ callb }) => {
   const [loging, setLoging] = useState([]);
 
   useEffect(() => {
-    setLoging(printLog())
-  }, [printLog])
+    setLoging(callb())
+  }, [callb])
 
   return (
     <>
-       {console.log(loging)}
+      {
+        loging.map((item, i) => (
+          <p key={i}>{item}</p>
+        ))
+      }
     </>
   )
 }
