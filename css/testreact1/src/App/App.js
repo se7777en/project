@@ -46,7 +46,7 @@ const Form = () => {
 
 
         // callb()
-        <PrintCallback callb={callb} />
+        <PrintCallback callb={callb} /> // peredaem v docherni funkcionalni komponent
       }
 
       <div className="cotainer">
@@ -71,7 +71,7 @@ const Form = () => {
   );
 }
 
-const PrintCallback = ({ callb }) => {
+const PrintCallback = ({ callb }) => { // sozdaem komponent
   const [loging, setLoging] = useState([]);
 
   useEffect(() => {
