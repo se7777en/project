@@ -19,13 +19,9 @@ const Form = () => {
   }
 
 
-
-
-
-  const printLog = useCallback(() => {
-    return (
-      ['1']
-    )
+  const printLog = useCallback(()=>{
+    // console.log('log...');
+    return ['1','2','3']
   },[val])
 
 
@@ -59,7 +55,7 @@ const Form = () => {
 }
 
 const PrintCallback = ({ printLog }) => {
-  const [loging, setLoging] = useState([]);
+  const [loging, setLoging] = useState('');
 
   useEffect(() => {
     setLoging(printLog())
@@ -67,7 +63,9 @@ const PrintCallback = ({ printLog }) => {
 
   return (
     <>
-       {console.log(loging)}
+       {
+        <h2>{loging}</h2>
+       }
     </>
   )
 }
