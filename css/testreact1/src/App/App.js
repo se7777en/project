@@ -19,13 +19,13 @@ const Form = () => {
   }
 
   const callb = useCallback(() => { // hook funkciya use callBack robotoet kogda mi ee peredaem cherez props v drugoi komponent kak funkciu v docherni komponent
-    console.log(`log: ${val}`);
+    console.log(`log: ${toggle}`);
     return [
       'link1',
       'link2',
       'link3',
     ]
-  }, [val])
+  }, [toggle])
 
 
 
