@@ -56,7 +56,7 @@ body {
 }
 
 .wrapper__left.active .wrapper__left-plus {
-    width: 52%;
+    width: 110px;
     border-radius: 25px;
 }
 
@@ -79,6 +79,11 @@ body {
 
     width: 38px;
     height: 38px;
+
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .wrapper__left-header {
@@ -98,6 +103,11 @@ body {
     display: flex;
     align-items: center;
     gap: 5px;
+
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .wrapper__left-plus span {
@@ -173,6 +183,11 @@ body {
     /* padding: 8px 10px 8px 8px;
     border-radius: 5px; */
     cursor: pointer;
+
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 /* .right__header-leftside:hover {
@@ -204,6 +219,19 @@ body {
     border-radius: 7px;
     transition: all .2s ease-in-out;
     cursor: pointer;
+
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.rightside__advance-icon {
+    width: 16px;
+    height: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .header__rightside-advance:hover {
@@ -226,6 +254,11 @@ body {
     padding: 8px;
     border-radius: 50%;
     transition: all .2s ease-in-out;
+
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .header__rightside-menu:hover {
@@ -248,6 +281,11 @@ body {
     color: #fff;
     font-weight: 600;
     cursor: pointer;
+
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .container {
@@ -314,7 +352,6 @@ body {
     transform: translateY(-50%);
     right: 10px;
     opacity: .8;
-    cursor: pointer;
 }
 
 /* 
@@ -344,6 +381,13 @@ body {
     padding: 10px;
     border-radius: 50%;
     /* transition: all .2s ease-in-out; */
+
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+
+
 }
 
 .show {
@@ -409,6 +453,11 @@ body {
     display: flex;
     align-items: center;
     gap: 5px;
+
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
     /* font-size: 13px; */
 }
 
