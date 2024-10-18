@@ -1,15 +1,19 @@
 'use strict';
 document.addEventListener('DOMContentLoaded', (e) => {
     e.preventDefault();
-    const leftSide = document.querySelector('.wrapper__left-burger');
+    const burger = document.querySelector('.wrapper__left-burger');
+    const leftSide = document.querySelector('.wrapper__left');
+    const rightSide = document.querySelector('.wrapper__right');
+
     const sendBtn = document.querySelector('.wrapper__right-icons .input__send');
     const input = document.querySelector('.wrapper__right-input input');
 
-    leftSide.addEventListener('click', (e) => {
-        const parent = leftSide.closest('.wrapper__left');
-        if (parent) {
-            parent.classList.toggle('active');
-        }
+    burger.addEventListener('click', (e) => {
+        // const parent = leftSide.closest('.wrapper__left');
+        // if (parent) {
+            leftSide.classList.toggle('active');
+            rightSide.classList.toggle('active');
+        // }
     });
 
     input.addEventListener('input', () => {
