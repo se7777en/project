@@ -584,7 +584,7 @@ document.getElementById('parent').addEventListener('click', function(event) {
     });
     
     //////////////
-
+    
 async function fetchData() {
 try {
     // Тестовый URL
