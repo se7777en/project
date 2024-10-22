@@ -557,5 +557,91 @@ document.getElementById('parent').addEventListener('click', function(event) {
   infoRu: 'Метод Array.prototype.includes используется для определения, содержит ли данный массив определенное значение среди своих элементов, возвращая true, если содержит, и false в противном случае.',
   infoEn: 'The Array.prototype.includes method is used to determine whether a given array contains a certain value among its elements, returning true if it does and false otherwise.',
   infostatus: 'visible'
+},
+
+{
+  methodRu: 'fetch',
+  methodEn: 'fetch',
+  descrRu: ': Fetch - это метод для выполнения запросов к серверу.',
+  descrEn: ': fetch is a method for making requests to a server.',
+  typeRu: 'Встроенная функция:',
+  typeEn: 'Built-in function:',
+  maintypeRu: 'JavaScript:',
+  maintypeEn: 'JavaScript:',
+
+  codeRu: `fetch('https://jsonplaceholder.typicode.com/posts/1') // Тестовый URL
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+        }
+        return response.json(); // Парсим JSON из ответа
+    })
+    .then(data => {
+        console.log(data); // Выводим данные в консоль
+    })
+    .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+    });
+    
+    //////////////
+
+async function fetchData() {
+try {
+    // Тестовый URL
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts/1');
+
+    if (!response.ok) {
+        throw new Error('Network response was not ok ' + response.statusText);
+    }
+
+    const data = await response.json(); // Парсим JSON из ответа
+    console.log(data); // Выводим данные в консоль
+
+} catch (error) {
+    console.error('There was a problem with the fetch operation:', error);
+}
+}
+
+fetchData(); // Вызываем функцию
+`,
+
+  codeEn: `fetch('https://jsonplaceholder.typicode.com/posts/1') // Test URL
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+        }
+        return response.json(); // Parsing JSON from the response
+    })
+    .then(data => {
+        console.log(data); // Outputting data to the console
+    })
+    .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+    });
+
+    //////////////
+
+async function fetchData() {
+try {
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts/1'); // Test URL
+
+    if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+    }
+
+    const data = await response.json(); // Parsing JSON from the response
+    console.log(data); // Outputting data to the console
+
+} catch (error) {
+        console.error('There was a problem with the fetch operation:', error);
+}
+}
+
+fetchData(); // Calling the function
+`,
+
+  infoRu: 'fetch - это встроенная функция в современных браузерах и в Node.js (начиная с версии 18), которая используется для выполнения асинхронных HTTP-запросов, таких как получение данных с сервера (GET-запрос) или отправка данных на сервер (POST-запрос).',
+  infoEn: 'fetch is a built-in function in modern browsers and in Node.js (starting from version 18) that is used to perform asynchronous HTTP requests, such as retrieving data from a server (GET request) or sending data to a server (POST request).',
+  infostatus: 'visible'
 }
 ];
