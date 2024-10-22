@@ -37,3 +37,18 @@ class TbsCurrency {
 }
 
 export default TbsCurrency;
+
+
+// fetch('https://jsonplaceholder.typicode.com/posts/1') // Тестовый URL
+//   .then(response => {
+//     if (!response.ok) {
+//       throw new Error('Network response was not ok ' + response.statusText);
+//     }
+//     return response.json(); // Парсим JSON из ответа
+//   })
+//   .then(data => {
+//     console.log(data); // Выводим данные в консоль
+//   })
+//   .catch(error => {
+//     console.error('There was a problem with the fetch operation:', error);
+//   });
