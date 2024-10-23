@@ -1,3 +1,7 @@
+/////////////toje robochi metod no bez ispolzovaniya katomnogo hooka
+///////////// kotori nezavisimi i ego mojno peremeshat iz proektav proekt kastomni hook on vishe
+
+
 //import { v4 as uuidv4 } from 'uuid';
 
 class MarvelService {   //funkciya polucheniya Api v object
@@ -14,6 +18,9 @@ class MarvelService {   //funkciya polucheniya Api v object
         return await res.json();
     }
 
+
+
+    
 
 
     getAllCharacters = async (offset = this._baseOffset) => { /*personaji*/
