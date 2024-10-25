@@ -3,12 +3,17 @@ import { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import Spinner from '../spinner/Spinner';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import ErrorMessage from '../errorMessage/ErrorMessage';
 import useMarvelService from '../../services/MarvelService';
 =======
 import ErrorMessage from '../errorMessage/errorMessage';
 import MarvelService from '../../services/MarvelService';
 >>>>>>> 80c569597 (-ajavascript_in_work)
+=======
+import ErrorMessage from '../errorMessage/ErrorMessage';
+import useMarvelService from '../../services/MarvelService';
+>>>>>>> 9e18b2bd5 (-acastom__hooks)
 import './charList.scss';
 
 
@@ -17,12 +22,17 @@ const CharList = (props) => {
 
     const [charList, setCharList] = useState([]);
 <<<<<<< HEAD
+<<<<<<< HEAD
     // const [loading, setLoading] = useState(true);
     // const [error, setError] = useState(false);
 =======
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
 >>>>>>> 80c569597 (-ajavascript_in_work)
+=======
+    // const [loading, setLoading] = useState(true);
+    // const [error, setError] = useState(false);
+>>>>>>> 9e18b2bd5 (-acastom__hooks)
     const [newItemLoading, setNewItemLoading] = useState(false);
     const [offset, setOffset] = useState(210);
     const [charEnded, setCharEnded] = useState(false);
@@ -37,11 +47,16 @@ const CharList = (props) => {
     // }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     const { loading, error, getAllCharacters } = useMarvelService();
 
 =======
     const marvelService = new MarvelService();
 >>>>>>> 80c569597 (-ajavascript_in_work)
+=======
+    const { loading, error, getAllCharacters } = useMarvelService();
+
+>>>>>>> 9e18b2bd5 (-acastom__hooks)
 
     // componentDidMount() {
     //     this.onRequest()
@@ -49,14 +64,19 @@ const CharList = (props) => {
 
     useEffect(() => {
 <<<<<<< HEAD
+<<<<<<< HEAD
         onRequest(offset, true)
 =======
         onRequest()
 >>>>>>> 80c569597 (-ajavascript_in_work)
+=======
+        onRequest(offset, true)
+>>>>>>> 9e18b2bd5 (-acastom__hooks)
     }, [])
 
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     const onRequest = (offset, initial) => {
         // onCharListLoading();
@@ -74,14 +94,27 @@ const CharList = (props) => {
     const onRequest = (offset) => {
         onCharListLoading();
         marvelService.getAllCharacters(offset)
+=======
+    const onRequest = (offset, initial) => {
+        // onCharListLoading();
+        initial ? setNewItemLoading(false) : setNewItemLoading(true) 
+        // setNewItemLoading(true);
+        getAllCharacters(offset)
+>>>>>>> 9e18b2bd5 (-acastom__hooks)
             .then(onCharListLoaded)
-            .catch(onError)
+            // .catch(onError)
     }
 
+<<<<<<< HEAD
     const onCharListLoading = () => {
         setNewItemLoading(true)
     }
 >>>>>>> 80c569597 (-ajavascript_in_work)
+=======
+    // const onCharListLoading = () => {
+    //     setNewItemLoading(true)
+    // }
+>>>>>>> 9e18b2bd5 (-acastom__hooks)
 
     const onCharListLoaded = (newCharList) => {
         let ended = false;
@@ -91,26 +124,36 @@ const CharList = (props) => {
 
         setCharList(charList => [...charList, ...newCharList]);
 <<<<<<< HEAD
+<<<<<<< HEAD
         // setLoading(loading => false);
 =======
         setLoading(loading => false);
 >>>>>>> 80c569597 (-ajavascript_in_work)
+=======
+        // setLoading(loading => false);
+>>>>>>> 9e18b2bd5 (-acastom__hooks)
         setNewItemLoading(newItemLoading => false);
         setOffset(offset => offset + 9);
         setCharEnded(charEnded => ended);
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 9e18b2bd5 (-acastom__hooks)
     // const onError = () => {
     //     setLoading(false);
     //     setError(true);
     // }
+<<<<<<< HEAD
 =======
     const onError = () => {
         setLoading(false);
         setError(true);
     }
 >>>>>>> 80c569597 (-ajavascript_in_work)
+=======
+>>>>>>> 9e18b2bd5 (-acastom__hooks)
 
     const itemRefs = useRef([]);
     const focusOnItem = (id) => {
@@ -180,23 +223,33 @@ const CharList = (props) => {
 
     const errorMessage = error ? <ErrorMessage /> : null;
 <<<<<<< HEAD
+<<<<<<< HEAD
     const spinner = loading && !newItemLoading ? <Spinner /> : null;
     // const content = !(loading || error) ? items : null;
 =======
     const spinner = loading ? <Spinner /> : null;
     const content = !(loading || error) ? items : null;
 >>>>>>> 80c569597 (-ajavascript_in_work)
+=======
+    const spinner = loading && !newItemLoading ? <Spinner /> : null;
+    // const content = !(loading || error) ? items : null;
+>>>>>>> 9e18b2bd5 (-acastom__hooks)
 
     return (
         <div className="char__list">
             {errorMessage}
             {spinner}
 <<<<<<< HEAD
+<<<<<<< HEAD
             {/* {content} */}
             {items}
 =======
             {content}
 >>>>>>> 80c569597 (-ajavascript_in_work)
+=======
+            {/* {content} */}
+            {items}
+>>>>>>> 9e18b2bd5 (-acastom__hooks)
             <button
                 className="button button__main button__long"
                 disabled={newItemLoading}

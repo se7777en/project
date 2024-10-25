@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 import useMarvelService from '../../services/MarvelService';
 import Spinner from '../spinner/Spinner';
 import ErrorMessage from '../errorMessage/ErrorMessage';
@@ -10,6 +11,11 @@ import MarvelService from '../../services/MarvelService';
 import Spinner from '../spinner/Spinner';
 import ErrorMessage from '../errorMessage/errorMessage';
 >>>>>>> 80c569597 (-ajavascript_in_work)
+=======
+import useMarvelService from '../../services/MarvelService';
+import Spinner from '../spinner/Spinner';
+import ErrorMessage from '../errorMessage/ErrorMessage';
+>>>>>>> 9e18b2bd5 (-acastom__hooks)
 import Skeleton from '../skeleton/Skeleton';
 
 
@@ -18,6 +24,7 @@ import './charInfo.scss';
 const CharInfo = (props) => {
 
     const [char, setChar] = useState(null);
+<<<<<<< HEAD
 <<<<<<< HEAD
     // const [loading, setLoading] = useState(false);
     // const [error, setError] = useState(false);
@@ -29,6 +36,12 @@ const CharInfo = (props) => {
 
     const marvelService = new MarvelService();
 >>>>>>> 80c569597 (-ajavascript_in_work)
+=======
+    // const [loading, setLoading] = useState(false);
+    // const [error, setError] = useState(false);
+
+    const {loading, error, getCharacter, clearError} = useMarvelService();
+>>>>>>> 9e18b2bd5 (-acastom__hooks)
 
 
     useEffect(() => {
@@ -37,18 +50,26 @@ const CharInfo = (props) => {
 
     const updateChar = () => {
 <<<<<<< HEAD
+<<<<<<< HEAD
         
 =======
 >>>>>>> 80c569597 (-ajavascript_in_work)
+=======
+        
+>>>>>>> 9e18b2bd5 (-acastom__hooks)
         const { charId } = props;
         if (!charId) {
             return;
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 9e18b2bd5 (-acastom__hooks)
         clearError();
         // onCharLoading();
         // marvelService.getCharacter(charId)
          getCharacter(charId)
+<<<<<<< HEAD
             .then(onCharLoaded)
             // .catch(onError)
     }
@@ -69,24 +90,33 @@ const CharInfo = (props) => {
 =======
         onCharLoading();
         marvelService.getCharacter(charId)
+=======
+>>>>>>> 9e18b2bd5 (-acastom__hooks)
             .then(onCharLoaded)
-            .catch(onError)
+            // .catch(onError)
     }
 
     const onCharLoaded = (char) => {
-        setLoading(false);
+        // setLoading(false);
         setChar(char);
     }
 
-    const onCharLoading = () => {
-        setLoading(true);
-    }
+    // const onCharLoading = () => {
+    //     setLoading(true);
+    // }
 
+<<<<<<< HEAD
     const onError = () => {
         setError(true);
         setLoading(false);
     }
 >>>>>>> 80c569597 (-ajavascript_in_work)
+=======
+    // const onError = () => {
+    //     setError(true);
+    //     setLoading(false);
+    // }
+>>>>>>> 9e18b2bd5 (-acastom__hooks)
 
     const skeleton = char || loading || error ? null : <Skeleton />;
     const errorMessage = error ? <ErrorMessage /> : null;

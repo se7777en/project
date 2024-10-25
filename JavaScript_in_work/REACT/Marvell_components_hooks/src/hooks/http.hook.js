@@ -1,19 +1,27 @@
 // kastomnie xuki ispolzuut hooki reakta
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { useState, useCallback } from "react";
 =======
 import { useState, useCallBack } from "react";
 >>>>>>> 80c569597 (-ajavascript_in_work)
+=======
+import { useState, useCallback } from "react";
+>>>>>>> 9e18b2bd5 (-acastom__hooks)
 
 export const useHttp = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     const request = useCallback(async (url, method = 'GET', body = null, headers = { 'Content-Type': 'application/json' }) => {
 =======
     const request = useCallBack(async (url, method = 'GET', body = 'null', headers = { 'Content-Type': 'application/json' }) => {
 >>>>>>> 80c569597 (-ajavascript_in_work)
+=======
+    const request = useCallback(async (url, method = 'GET', body = null, headers = { 'Content-Type': 'application/json' }) => {
+>>>>>>> 9e18b2bd5 (-acastom__hooks)
         setLoading(true);
 
         try {
@@ -36,10 +44,14 @@ export const useHttp = () => {
     }, []);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     const clearError = useCallback(() => {
 =======
     const clearError = useCallBack(() => {
 >>>>>>> 80c569597 (-ajavascript_in_work)
+=======
+    const clearError = useCallback(() => {
+>>>>>>> 9e18b2bd5 (-acastom__hooks)
         setError(null)
     }, []);
 
