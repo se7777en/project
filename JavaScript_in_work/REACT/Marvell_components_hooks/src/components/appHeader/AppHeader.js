@@ -23,6 +23,7 @@ const AppHeader = () => {
                     <li><NavLink end
                         style={({ isActive }) => ({ color: isActive ? '#9f0013' : 'inherit' })}
                         to="/">Characters</NavLink></li>
+<<<<<<< HEAD
                     <li><NavLink 
                         style={({ isActive }) => ({ color: isActive ? '#9f0013' : 'inherit' })}
                         to="/comics">Comics</NavLink></li>
@@ -49,6 +50,11 @@ const AppHeader = () => {
                     style={({isActive}) => ({color: isActive ? '#9f0013': 'inherit'})} 
                     to="/comics">Comics</NavLink></li>
 >>>>>>> 5b640d350 (-aMarvell_components_hook_router)
+=======
+                    <li><NavLink end
+                        style={({ isActive }) => ({ color: isActive ? '#9f0013' : 'inherit' })}
+                        to="/comics">Comics</NavLink></li>
+>>>>>>> 1e38af11c (-aMarvell_components_hook_router)
                 </ul>
             </nav>
         </header>
