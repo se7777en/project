@@ -41,11 +41,11 @@ const CharList = (props) => {
 
     const onRequest = (offset, initial) => {
         // onCharListLoading();
-        initial ? setNewItemLoading(false) : setNewItemLoading(true) 
+        initial ? setNewItemLoading(false) : setNewItemLoading(true)
         // setNewItemLoading(true);
         getAllCharacters(offset)
             .then(onCharListLoaded)
-            // .catch(onError)
+        // .catch(onError)
     }
 
     // const onCharListLoading = () => {
@@ -84,6 +84,9 @@ const CharList = (props) => {
         itemRefs.current[id].focus();
     }
 
+
+
+   
     function renderItems(arr) {
         const items = arr.map((item, i) => {
             let imgStyle = { 'objectFit': 'cover' };
@@ -96,7 +99,7 @@ const CharList = (props) => {
                     className="char__item"
                     tabIndex={0}
                     ref={el => itemRefs.current[i] = el}
-                    key={item.id}
+                    key={`${item.id}-${i * i}`}
                     onClick={() => {
                         props.onCharSelected(item.id);
                         focusOnItem(i);
