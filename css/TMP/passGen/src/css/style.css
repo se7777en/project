@@ -76,16 +76,23 @@ body {
 }
 
 .password {
-    width: 65%;
-    padding: 3px 0px 3px 15px;
+    font-family: "Montserrat", sans-serif;
+    /* width: 65%; */
+    /* padding: 3px 0px 3px 15px; */
     color: #020f66;
     font-weight: 600;
-    font-size: 25px;
+    /* font-size: 25px; */
     background-color: transparent;
     text-overflow: ellipsis;
     overflow: hidden;
     text-wrap: nowrap;
     white-space: nowrap;
+}
+
+.password__content-icons {
+    display: flex;
+    gap: 15px;
+    /* font-size: 22px; */
 }
 
 /* .password__content input {
@@ -96,9 +103,15 @@ body {
 } */
 
 .password__content {
-    position: relative;
+    font-family: "Montserrat", sans-serif;
+    /* position: relative; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     /* margin-bottom: 20px;
     padding-bottom: 20px; */
+    padding: 0 15px;
+    font-size: clamp(1.25rem, -0.417rem + 8.333vw, 1.563rem)
 }
 
 
@@ -216,13 +229,13 @@ input[type=range]::-moz-range-thumb {
 
 
 .refresh__icon {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 30px;
+    /* position: absolute; */
+    /* top: 50%; */
+    /* transform: translateY(-50%); */
+    /* right: 30px; */
     color: #4c535e;
     cursor: pointer;
-    font-size: 22px;
+    /* font-size: 22px; */
     /* transition: all .3s ease-in-out; */
 }
 
@@ -247,14 +260,13 @@ input[type=range]::-moz-range-thumb {
 }
 
 .copy__icon {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 85px;
+    /* position: absolute; */
+    /* top: 50%; */
+    /* transform: translateY(-50%); */
+    /* right: 85px; */
     color: #4c535e;
     cursor: pointer;
-    font-size: 22px;
-
+    /* font-size: 22px; */
 }
 
 /* .copy__icon i {
@@ -553,8 +565,8 @@ input[type=range]::-moz-range-thumb {
 @media (max-width: 920px) {
     .container__border {
         border-radius: none;
-        overflow: initial;
-        box-shadow: initial;
+        /* overflow: initial; */
+        /* box-shadow: initial; */
     }
 
     .tumbler__container {
