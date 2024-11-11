@@ -991,9 +991,7 @@ body::-webkit-scrollbar-thumb {
 
 /*theme****************************/
 
-.wrap {
-   
-}
+
 
 
 .wrap__inner {
@@ -1001,16 +999,16 @@ body::-webkit-scrollbar-thumb {
     height: 20px;
     border: 1px solid #0071e3;
     border-radius: 15px;
-   
+
     font-size: 12px;
     color: #0071e3;
-    
+
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0px 1px;
 
-       -webkit-user-drag: none;
+    -webkit-user-drag: none;
     -webkit-user-select: none;
     user-select: none;
     -webkit-tap-highlight-color: transparent;
@@ -1022,7 +1020,7 @@ body::-webkit-scrollbar-thumb {
     cursor: pointer;
     width: 40px;
     height: 17px;
-    
+
 }
 
 .wrap .item.active {
