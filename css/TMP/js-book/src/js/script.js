@@ -381,6 +381,7 @@ ${item.codeEn}
                 wrapInner.forEach((item) => {
                     item.addEventListener('click', () => {
                         clearActive();
+                        // console.log(item.dataset.id);
                         item.classList.toggle('active');
                     });
                 });
