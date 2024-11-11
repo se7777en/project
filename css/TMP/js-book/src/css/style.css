@@ -1006,6 +1006,7 @@ body::-webkit-scrollbar-thumb {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: 100%;
     
 }
 
@@ -1015,6 +1016,7 @@ body::-webkit-scrollbar-thumb {
     align-items:center;
     padding: 1px;
     cursor: pointer;
+    height: 100%;
 
 }
 
