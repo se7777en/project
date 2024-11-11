@@ -995,8 +995,8 @@ body::-webkit-scrollbar-thumb {
     /* position: absolute;
     bottom: 20px;
     right: 20px; */
-    width: 136px;
-    /* height: 24px; */
+    width: 8.6rem;
+    height: 1.28rem;
     border: 1px solid #0071e3;
     border-radius: 15px;
     -webkit-tap-highlight-color: transparent;
