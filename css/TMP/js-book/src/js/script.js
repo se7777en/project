@@ -24,6 +24,10 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 let helpHeaderText = document.querySelector('.help__header-text');
                 let dayly = document.querySelector('.footer-worktime-text');
                 let daylyTo = document.querySelector('.worktime__middletext');
+                let wrapInner = document.querySelectorAll('.wrap__inner .item');
+
+
+               
 
                 let scrollH = 1;
                 window.addEventListener('load', function () {
@@ -73,7 +77,7 @@ ${item.codeRu}
                     dayly.textContent = 'Ежедневно с';
                     daylyTo.textContent = 'до';
 
-                  
+
                 };
 
                 addItemsOnPageRu();
@@ -122,7 +126,7 @@ ${item.codeEn}
                     dayly.textContent = 'Daily from';
                     daylyTo.textContent = 'to';
 
-                  
+
                 };
 
 
@@ -145,16 +149,16 @@ ${item.codeEn}
                         addItemsOnPageRu();
                         // language.setAttribute('checked', 'checked');
                         language.checked = true;
-                        
-                        
+
+
                     }
 
                     if (obj.lang === 'EN') {
                         addItemsOnPageEn();
                         // language.removeAttribute('checked');
                         language.checked = false;
-                        
-                        
+
+
 
                     };
                 };
@@ -363,6 +367,25 @@ ${item.codeEn}
 
                 copyCode();
                 ////////for copy code/////////////
+
+
+                /////for theme/////
+                const clearActive = () => {
+                    wrapInner.forEach((item) => {
+                        if (item.classList.contains('active')) {
+                            item.classList.remove('active');
+                        }
+                    })
+                }
+
+                wrapInner.forEach((item) => {
+                    item.addEventListener('click', () => {
+                        clearActive();
+                        item.classList.toggle('active');
+                    });
+                });
+
+                /////for theme/////
 
 
             }
