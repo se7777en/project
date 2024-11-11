@@ -1,4 +1,4 @@
-import { useState, memo } from 'react';
+import { useState, memo, useCallback } from 'react';
 import { Container } from 'react-bootstrap';
 
 
@@ -33,14 +33,14 @@ function App() {
   });
 
 
-  // const onLog = useCallback(() => {
-  //   console.log('wow');
-  // }, [])
-
-
-  const onLog = () => {
+  const onLog = useCallback(() => {
     console.log('wow');
-  }
+  }, [])
+
+
+  // const onLog = () => {
+  //   console.log('wow');
+  // }
 
 
 

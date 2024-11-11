@@ -8,7 +8,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
                 const range = document.querySelector('.wrapper__range .rage__val'),
                     spanValue = document.querySelector('.wrapper__range span'),
-                    indicator = document.querySelector('.tumblers .indicator'),
+                    indiczator = document.querySelector('.tumblers .indicator'),
                     tumblers = document.querySelectorAll('.tumblers__inner .inp'),
                     password = document.querySelector('.password__content .password'),
                     refreshPass = document.querySelector('.password__content .refresh__icon'),
