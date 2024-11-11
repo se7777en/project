@@ -376,7 +376,7 @@ ${item.codeEn}
                             item.classList.remove('active');
                         }
                     })
-                }
+                };
 
                 wrapInner.forEach((item) => {
                     item.addEventListener('click', () => {
