@@ -10,6 +10,10 @@ const objHeader = [{
 
 const myObj = [
     {
+        // methodTitle: 'Изучаем',
+        // methodSubTitle: 'React',
+        // methodStatus: 'visible',
+
         methodRu: 'Типы данных',
         methodEn: 'Data Types',
         descrRu: ' :Значение в JavaScript всегда относится к данным определённого типа. Например, это может быть строка или число. Есть восемь основных типов данных в JavaScript. Переменная в JavaScript может содержать любые данные. В один момент там может быть строка, а в другой – число:',
@@ -642,6 +646,113 @@ fetchData(); // Calling the function
 
   infoRu: 'fetch - это встроенная функция в современных браузерах и в Node.js (начиная с версии 18), которая используется для выполнения асинхронных HTTP-запросов, таких как получение данных с сервера (GET-запрос) или отправка данных на сервер (POST-запрос).',
   infoEn: 'fetch is a built-in function in modern browsers and in Node.js (starting from version 18) that is used to perform asynchronous HTTP requests, such as retrieving data from a server (GET request) or sending data to a server (POST request).',
+  infostatus: 'visible'
+},
+
+{
+
+  methodTitle: 'Изучаем',
+  methodSubTitle: 'React',
+  methodStatus: 'visible',
+
+  methodRu: 'useReducer',
+  methodEn: 'useReducer',
+  descrRu: ': useReducer - это хук в React, который позволяет управлять состоянием компонента более гибко и структурированно по сравнению с useState, особенно когда состояние компонента сложное или требует много логики обновления. Он напоминает паттерн Redux, где состояние управляется через действия (actions) и редюсеры (reducers).',
+  descrEn: ': useReducer - is a hook in React that allows for more flexible and structured state management within a component compared to useState, especially when the component\'s state is complex or requires extensive update logic. It resembles the Redux pattern, where the state is managed through actions and reducers.',
+  typeRu: 'Встроенный хук:',
+  typeEn: 'Built-in hook:',
+  maintypeRu: 'react:',
+  maintypeEn: 'react:',
+
+  codeRu: `import React, { useReducer } from 'react';
+
+// Начальное состояние, где есть два состояния: count и isVisible
+const initialState = { 
+  count: 0, 
+  isVisible: true 
+};
+
+// Редюсер обрабатывает действия для каждого состояния
+function reducer(state, action) {
+  switch (action.type) {
+    case 'increment':
+      return { ...state, count: state.count + 1 };
+    case 'decrement':
+      return { ...state, count: state.count - 1 };
+    case 'reset':
+      return { ...state, count: 0 };
+    case 'toggleVisibility':
+      return { ...state, isVisible: !state.isVisible };
+    default:
+      throw new Error();
+  }
+}
+
+function Counter() {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  return (
+    \< div>
+      {state.isVisible && \< p>Count: {state.count}\< p/>}
+      \< button onClick={() => dispatch({ type: 'increment' })}>Increment\< />
+      \< button onClick={() => dispatch({ type: 'decrement' })}>Decrement\< />
+      \< button onClick={() => dispatch({ type: 'reset' })}>Reset\< />
+      
+      \< button onClick={() => dispatch({ type: 'toggleVisibility' })}>
+        Toggle Visibility
+      \< /button>
+    \< /div>
+  );
+}
+
+export default Counter;
+`,
+
+  codeEn: `import React, { useReducer } from 'react';
+
+// Initial state, with two states: count and isVisible
+const initialState = { 
+  count: 0, 
+  isVisible: true 
+};
+
+// Reducer handles actions for each state
+function reducer(state, action) {
+  switch (action.type) {
+    case 'increment':
+      return { ...state, count: state.count + 1 };
+    case 'decrement':
+      return { ...state, count: state.count - 1 };
+    case 'reset':
+      return { ...state, count: 0 };
+    case 'toggleVisibility':
+      return { ...state, isVisible: !state.isVisible };
+    default:
+      throw new Error();
+  }
+}
+
+function Counter() {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  return (
+    \< div>
+      {state.isVisible && \< p>Count: {state.count} \< p/> }
+      \< button onClick={() => dispatch({ type: 'increment' })}>Increment\< />
+      \< button onClick={() => dispatch({ type: 'decrement' })}>Decrement\< />
+      \< button onClick={() => dispatch({ type: 'reset' })}>Reset\< />
+      
+      \< button onClick={() => dispatch({ type: 'toggleVisibility' })}>
+        Toggle Visibility
+      \< /button>
+    \< /div>
+  );
+}
+
+export default Counter;`,
+
+  infoRu: 'Начальное состояние: initialState определяет начальное значение состояния.\nReducer-функция: reducer принимает текущее состояние и действие, возвращает новое состояние на основе типа действия.\nuseReducer: хук, который возвращает текущее состояние и функцию dispatch.\n\nКогда вы используете useReducer, вместо создания нескольких состояний через useState, вы управляете всеми состояниями в одном объекте, используя редюсер. В редюсере вы можете определять действия (actions) для изменения отдельных частей состояния, и все состояние будет храниться в одном месте, в виде объекта. Это упрощает управление и делает код более организованным, особенно когда состояний много.',
+  infoEn: 'Initial state: initialState defines the initial value of the state.\nReducer function: reducer takes the current state and an action, returning a new state based on the action type.\nuseReducer: a hook that returns the current state and a dispatch function.\n\nWhen you use useReducer, instead of creating multiple states with useState, you manage all states in a single object using a reducer. In the reducer, you can define actions to change individual parts of the state, and all state is stored in one place as an object. This simplifies management and makes the code more organized, especially when there are many states.',
   infostatus: 'visible'
 }
 ];

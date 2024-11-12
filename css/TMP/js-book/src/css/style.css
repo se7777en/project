@@ -589,6 +589,18 @@ body::-webkit-scrollbar-thumb {
     border-bottom: 1px solid #d2d2d2; */
 }
 
+.methodRuTitle {
+    display: none;
+    
+}
+
+.title__jslang {
+    padding: 3px 4px;
+    background-color: #ebe8cf;
+    border-radius: 3px;
+    font-weight: 500;
+}
+
 .info {
     display: none;
     background-color: #e7f3fe;
