@@ -93,7 +93,13 @@ ${item.codeRu}
                     let rightLinks = '';
                     doing.innerHTML = 'Learning <span class="jslang">Javascript</span>';
                     myObj.forEach((item) => {
+
+                        const status = item.methodStatus ? item.methodStatus: '';
+                        const methodTitle = item.methodTitleEn ? item.methodTitleEn: '';
+                        const methodSubTitle = item.methodSubTitleEn ? item.methodSubTitleEn: '';
+
                         elements += `<div class="method" id="${item.methodEn}" data-id="${item.methodEn}">
+                        <div class="methodRuTitle ${status}">${methodTitle} <span class="title__jslang">${methodSubTitle}</span></div>
         <div class="method__descr"><code class="method__item-decore">${item.methodEn}</code>${item.descrEn}</div>
         <div class="method__title">${item.typeEn}</div>
         <div class="method__example">

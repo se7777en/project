@@ -564,6 +564,15 @@ document.getElementById('parent').addEventListener('click', function(event) {
 },
 
 {
+
+  methodTitle: 'Изучаем',
+  methodSubTitle: 'React',
+
+  methodTitleEn: 'Learning',
+  methodSubTitleEn: 'React',
+  
+  methodStatus: 'visible',
+  
   methodRu: 'fetch',
   methodEn: 'fetch',
   descrRu: ': Fetch - это метод для выполнения запросов к серверу.',
@@ -653,6 +662,10 @@ fetchData(); // Calling the function
 
   methodTitle: 'Изучаем',
   methodSubTitle: 'React',
+
+  methodTitleEn: 'Learning',
+  methodSubTitleEn: 'React',
+  
   methodStatus: 'visible',
 
   methodRu: 'useReducer',
