@@ -40,7 +40,12 @@ window.addEventListener('DOMContentLoaded', (e) => {
                     let rightLinks = '';
                     doing.innerHTML = 'Изучаем <span class="jslang">Javascript</span>';
                     myObj.forEach((item) => {
+                        const status = item.methodStatus ? item.methodStatus: '';
+                        const methodTitle = item.methodTitle ? item.methodTitle: '';
+                        const methodSubTitle = item.methodSubTitle ? item.methodSubTitle: '';
+                        
                         elements += `<div class="method" id="${item.methodRu}" data-id="${item.methodRu}">
+                        <div class="methodRuTitle ${status}">${methodTitle} <span class="title__jslang">${methodSubTitle}</span></div>
         <div class="method__descr"><code class="method__item-decore">${item.methodRu}</code>${item.descrRu}</div>
         <div class="method__title">${item.typeRu}</div>
         <div class="method__example">
