@@ -700,7 +700,7 @@ body::-webkit-scrollbar-thumb {
         left: 50%;
         transform: translateX(-50%);
         border-radius: 5px;
-        opacity: .6;
+        opacity: .3;
     }
 
     .main__inner-right.showmenu {
