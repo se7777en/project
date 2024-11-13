@@ -459,9 +459,8 @@ let closestAncestor = element.closest('.parent'); // Find the nearest ancestor w
       infoRu: 'Метод closest будет искать по дереву DOM, начиная с самого элемента и двигаясь вверх по иерархии, пока не найдет элемент, соответствующий селектору. Если элемент не найден, возвращается null.',
       infoEn: 'The closest method will search up the DOM tree, starting from the element itself and moving upwards through the hierarchy, until it finds an element that matches the selector. If no such element is found, it returns null.',
       infostatus: 'visible'
-  },
-
-  {
+    },
+    {
     methodRu: 'contains',
     methodEn: 'contains',
     descrRu: ': В JavaScript метод contains обычно используется для проверки, содержится ли один DOM-узел в другом. В вашем коде',
@@ -485,9 +484,8 @@ const contains = parent.contains(child); // true if 'child' is inside 'parent'
     infoRu: 'В этом примере contains возвращает true, если элемент с идентификатором child находится внутри элемента с идентификатором parent. Если child не является потомком parent, метод возвращает false. Если "e" и childe в вашем коде являются не DOM-узлами, то contains может не быть доступен или может использоваться в другом контексте, специфичном для вашей библиотеки или фреймворка.',
     infoEn: 'In this example, contains returns true if the element with the ID child is inside the element with the ID parent. If child is not a descendant of parent, the method returns false. If ev and childe in your code are not DOM nodes, contains may not be available or may be used in a different context specific to your library or framework.',
     infostatus: 'visible'
-},
-
-{
+    },
+    {
   methodRu: 'matches',
   methodEn: 'matches',
   descrRu: ': Метод element.matches(\'.childe\') проверяет соответствие селектору только на самом элементе, на котором он вызывается, и не ищет внутри его дочерних элементов.',
@@ -530,9 +528,8 @@ const grandchildMatches = grandchild.matches('.childe'); // false
   infoRu: '',
   infoEn: '',
   infostatus: ''
-},
-
-{
+    },
+    {
   methodRu: 'includes',
   methodEn: 'includes',
   descrRu: ': Если у вас есть массив элементов, и вы хотите проверить, был ли клик на одном из этих элементов, вы можете использовать includes после создания массива из элементов.',
@@ -561,9 +558,78 @@ document.getElementById('parent').addEventListener('click', function(event) {
   infoRu: 'Метод Array.prototype.includes используется для определения, содержит ли данный массив определенное значение среди своих элементов, возвращая true, если содержит, и false в противном случае.',
   infoEn: 'The Array.prototype.includes method is used to determine whether a given array contains a certain value among its elements, returning true if it does and false otherwise.',
   infostatus: 'visible'
-},
+    },
+    {
+      methodRu: 'Update Object',
+      methodEn: 'Update Object',
+      descrRu: ': Этот код корректно обновляет объект inventory (инвентарь) на основе объекта update (обновление), добавляя или вычитая указанные количества. Если количество становится отрицательным, выбрасывается ошибка.',
+      descrEn: 'This code correctly updates the inventory object based on the update object, adding or subtracting the specified quantities. If any quantity becomes negative, an error is thrown.',
+      typeRu: 'Функциональный метод:',
+      typeEn: 'Functional method:',
+      maintypeRu: 'JavaScript:',
+      maintypeEn: 'JavaScript:',
+    
+      codeRu: `const inventory = {
+    wood: 10,
+    steel: 5,
+    coal: 8
+  };
+  
+  const update = {
+    wood: 3,
+    steel: -5,
+    copper: 4
+  }; 
 
-{
+function updateInventory(inventory, update) {
+    return Object.entries(update).reduce((acc, [item, change]) => {
+      const newQuantity = (acc[item] || 0) + change;
+  
+      if (newQuantity < 0) {
+        throw new Error(\`Количество \${item} не может быть отрицательным.\`);
+      }
+  
+      acc[item] = newQuantity;
+      return acc;
+    }, { ...inventory });
+  }
+
+  console.log(updateInventory(inventory, update));
+`,
+
+codeEn: `const inventory = {
+    wood: 10,
+    steel: 5,
+    coal: 8
+  };
+  
+  const update = {
+    wood: 3,
+    steel: -5,
+    copper: 4
+  }; 
+
+function updateInventory(inventory, update) {
+    return Object.entries(update).reduce((acc, [item, change]) => {
+      const newQuantity = (acc[item] || 0) + change;
+  
+      if (newQuantity < 0) {
+        throw new Error(\`The quantity of \${item} cannot be negative..\`);
+      }
+  
+      acc[item] = newQuantity;
+      return acc;
+    }, { ...inventory });
+  }
+
+  console.log(updateInventory(inventory, update));
+`,
+    
+      infoRu: 'Для каждого товара вычисляется новое количество: берется текущее значение acc[item] (или 0, если товара еще нет в acc) и прибавляется change.',
+      infoEn: 'For each item, the new quantity is calculated by taking the current value of acc[item] (or 0 if the item is not yet in acc) and adding change.',
+      infostatus: 'visible'
+    },
+    {
 
   methodTitle: 'Изучаем',
   methodSubTitle: 'React',
@@ -656,9 +722,8 @@ fetchData(); // Calling the function
   infoRu: 'fetch - это встроенная функция в современных браузерах и в Node.js (начиная с версии 18), которая используется для выполнения асинхронных HTTP-запросов, таких как получение данных с сервера (GET-запрос) или отправка данных на сервер (POST-запрос).',
   infoEn: 'fetch is a built-in function in modern browsers and in Node.js (starting from version 18) that is used to perform asynchronous HTTP requests, such as retrieving data from a server (GET request) or sending data to a server (POST request).',
   infostatus: 'visible'
-},
-
-{
+    },
+    {
 
   methodTitle: 'Изучаем',
   methodSubTitle: 'React',
@@ -767,5 +832,5 @@ export default Counter;`,
   infoRu: 'Начальное состояние: initialState определяет начальное значение состояния.\nReducer-функция: reducer принимает текущее состояние и действие, возвращает новое состояние на основе типа действия.\nuseReducer: хук, который возвращает текущее состояние и функцию dispatch.\n\nКогда вы используете useReducer, вместо создания нескольких состояний через useState, вы управляете всеми состояниями в одном объекте, используя редюсер. В редюсере вы можете определять действия (actions) для изменения отдельных частей состояния, и все состояние будет храниться в одном месте, в виде объекта. Это упрощает управление и делает код более организованным, особенно когда состояний много.',
   infoEn: 'Initial state: initialState defines the initial value of the state.\nReducer function: reducer takes the current state and an action, returning a new state based on the action type.\nuseReducer: a hook that returns the current state and a dispatch function.\n\nWhen you use useReducer, instead of creating multiple states with useState, you manage all states in a single object using a reducer. In the reducer, you can define actions to change individual parts of the state, and all state is stored in one place as an object. This simplifies management and makes the code more organized, especially when there are many states.',
   infostatus: 'visible'
-}
+    }
 ];
