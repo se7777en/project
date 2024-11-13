@@ -481,8 +481,8 @@ const child = document.getElementById('child');
 const contains = parent.contains(child); // true if 'child' is inside 'parent'
 `,
 
-    infoRu: 'В этом примере contains возвращает true, если элемент с идентификатором child находится внутри элемента с идентификатором parent. Если child не является потомком parent, метод возвращает false. Если "e" и childe в вашем коде являются не DOM-узлами, то contains может не быть доступен или может использоваться в другом контексте, специфичном для вашей библиотеки или фреймворка.',
-    infoEn: 'In this example, contains returns true if the element with the ID child is inside the element with the ID parent. If child is not a descendant of parent, the method returns false. If ev and childe in your code are not DOM nodes, contains may not be available or may be used in a different context specific to your library or framework.',
+    infoRu: 'В этом примере contains возвращает true, если элемент с идентификатором child находится внутри элемента с идентификатором parent. Если child не является потомком parent, метод возвращает false. Если "e" и childe в вашем коде являются не DOM-узлами, то contains может не быть доступен или может использоваться в другом контексте, специфичном для вашей библиотеки или фреймворка.\ncontains - для проверки, является ли один элемент DOM потомком другого.',
+    infoEn: 'In this example, contains returns true if the element with the ID child is inside the element with the ID parent. If child is not a descendant of parent, the method returns false. If ev and childe in your code are not DOM nodes, contains may not be available or may be used in a different context specific to your library or framework.\ncontains - to check if one DOM element is a child of another.',
     infostatus: 'visible'
     },
     {
@@ -555,8 +555,8 @@ document.getElementById('parent').addEventListener('click', function(event) {
   }
 });`,
 
-  infoRu: 'Метод Array.prototype.includes используется для определения, содержит ли данный массив определенное значение среди своих элементов, возвращая true, если содержит, и false в противном случае.',
-  infoEn: 'The Array.prototype.includes method is used to determine whether a given array contains a certain value among its elements, returning true if it does and false otherwise.',
+  infoRu: 'Метод Array.prototype.includes используется для определения, содержит ли данный массив определенное значение среди своих элементов, возвращая true, если содержит, и false в противном случае.\nincludes – для поиска значения в массиве или подстроки в строке.',
+  infoEn: 'The Array.prototype.includes method is used to determine whether a given array contains a certain value among its elements, returning true if it does and false otherwise.\nincludes – to search for a value in an array or a substring in a string.',
   infostatus: 'visible'
     },
     {
