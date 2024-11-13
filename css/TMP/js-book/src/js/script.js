@@ -26,8 +26,25 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 let daylyTo = document.querySelector('.worktime__middletext');
                 let wrapInner = document.querySelectorAll('.wrap__inner .item');
 
-
-               
+                const operators = [
+                    'function ',
+                    'return ', 
+                    'const ', 
+                    'let ',
+                    'var ',
+                    'if ', 
+                    'throw ', 
+                    '$', 
+                    '{', 
+                    '}', 
+                    '(', 
+                    ')', 
+                    ' || ',
+                    '.querySelector(',
+                    '.querySelectorAll(',
+                    '.addEventListener(',
+                    '.forEach'
+                   ];
 
                 let scrollH = 1;
                 window.addEventListener('load', function () {
@@ -40,10 +57,10 @@ window.addEventListener('DOMContentLoaded', (e) => {
                     let rightLinks = '';
                     doing.innerHTML = 'Изучаем <span class="jslang">Javascript</span>';
                     myObj.forEach((item) => {
-                        const status = item.methodStatus ? item.methodStatus: '';
-                        const methodTitle = item.methodTitle ? item.methodTitle: '';
-                        const methodSubTitle = item.methodSubTitle ? item.methodSubTitle: '';
-                        
+                        const status = item.methodStatus ? item.methodStatus : '';
+                        const methodTitle = item.methodTitle ? item.methodTitle : '';
+                        const methodSubTitle = item.methodSubTitle ? item.methodSubTitle : '';
+
                         elements += `<div class="method" id="${item.methodRu}" data-id="${item.methodRu}">
                         <div class="methodRuTitle ${status}">${methodTitle} <span class="title__jslang">${methodSubTitle}</span></div>
         <div class="method__descr"><code class="method__item-decore">${item.methodRu}</code>${item.descrRu}</div>
@@ -53,7 +70,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
             <div class="method__example-title">${item.maintypeRu}</div>
             <pre class="code__style">
 <code>
-${item.codeRu}
+${codeColor(item.codeRu, operators)}
 </code>
 </pre>
         </div>
@@ -94,9 +111,9 @@ ${item.codeRu}
                     doing.innerHTML = 'Learning <span class="jslang">Javascript</span>';
                     myObj.forEach((item) => {
 
-                        const status = item.methodStatus ? item.methodStatus: '';
-                        const methodTitle = item.methodTitleEn ? item.methodTitleEn: '';
-                        const methodSubTitle = item.methodSubTitleEn ? item.methodSubTitleEn: '';
+                        const status = item.methodStatus ? item.methodStatus : '';
+                        const methodTitle = item.methodTitleEn ? item.methodTitleEn : '';
+                        const methodSubTitle = item.methodSubTitleEn ? item.methodSubTitleEn : '';
 
                         elements += `<div class="method" id="${item.methodEn}" data-id="${item.methodEn}">
                         <div class="methodRuTitle ${status}">${methodTitle} <span class="title__jslang">${methodSubTitle}</span></div>
@@ -107,7 +124,7 @@ ${item.codeRu}
             <div class="method__example-title">${item.maintypeEn}</div>
             <pre class="code__style">
 <code>
-${item.codeEn}
+${codeColor(item.codeEn, operators)}
 </code>
 </pre>
         </div>
@@ -399,6 +416,41 @@ ${item.codeEn}
 
                 /////for theme/////
 
+
+                /////for codeColor/////
+                //const string = " function updateInventory(inventory, update) {";
+                   
+                
+
+                
+                function codeColor(text, arr) {
+                      arr.forEach((item) => {
+
+                        let classname = item;
+                        if(item === '{') classname = 'figurescobe_l';
+                        if(item === '}') classname = 'figurescobe_r';
+                        if(item === '$') classname = 'dolar';
+                        if(item === '>') classname = 'scobe_r';
+                        if(item === '<') classname = 'scobe_l';
+                        if(item === '(') classname = 'parenthesis_l';
+                        if(item === ')') classname = 'parenthesis_r';
+                        if(item === ' || ') classname = 'class_or';
+
+                        if(item === '.querySelector(') classname = 'querySel';
+                        if(item === '.querySelectorAll(') classname = 'querySelAll';
+                        if(item === '.addEventListener(') classname = 'addEvtLis';
+                        if(item === '.forEach') classname = 'foreach';
+
+
+                       
+                        text = text.replaceAll(item.trim(), `<span class="${classname}">${item.trim()}</span>`)
+                    });
+                    return text;
+                }
+
+                // console.log(codeColor(string, operators));
+           
+                /////for codeColor/////
 
             }
         }

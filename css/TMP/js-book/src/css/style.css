@@ -1145,3 +1145,31 @@ post bg-color
 green color 0071e3
 
 */
+
+.function,
+.return,
+.const,
+.if,
+.throw,
+.dolar,
+.scobe_r,
+.scobe_l,
+.parenthesis_l,
+.parenthesis_r,
+.querySel,
+.querySelAll,
+.addEvtLis,
+.class_or,
+.foreach,
+.let,
+.const
+{
+    color: #1D5CB4;
+}
+
+.figurescobe_l,
+.figurescobe_r {
+    color: #e2c35e;
+}
+
+
