@@ -1003,13 +1003,15 @@ body::-webkit-scrollbar-thumb {
 .footer__copy {
     color: #716f6e;
     font-size: 10px;
+    margin-bottom: 20px;
 }
 
 .footer__inner-copyright {
-    display: flex;
+    /* display: flex; */
     justify-content: space-between;
     align-items: center;
-    min-height: 33px;
+    /* min-height: 33px; */
+    padding: 10px 0;
 }
 
 
@@ -1032,19 +1034,16 @@ body::-webkit-scrollbar-thumb {
 
 
 .wrap__inner {
-    width: 134px;
-    height: 20px;
+    width: 64px;
+    /* height: 10px; */
     border: 1px solid #0071e3;
-    border-radius: 15px;
-
-    font-size: 12px;
+    border-radius: 5px;
+    font-size: 5px;
     color: #0071e3;
-
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: space-between;
-    padding: 0px 1px;
-
+    padding: 1px;
     -webkit-user-drag: none;
     -webkit-user-select: none;
     user-select: none;
@@ -1052,12 +1051,13 @@ body::-webkit-scrollbar-thumb {
 }
 
 .wrap .item {
-    padding: 1px 6px;
+    /* padding: 0px 3px; */
     border-radius: 10px;
     cursor: pointer;
-    width: 40px;
-    height: 17px;
-
+    /* width: 40px; */
+    /* height: 17px; */
+    width: 15px;
+    text-align: center;
 }
 
 .wrap .item.active {
