@@ -2,6 +2,7 @@
 
 window.addEventListener('DOMContentLoaded', (e) => {
     e.preventDefault();
+   
 
     const currentUrl = window.location.href;
     if (currentUrl.indexOf('js-book.surge.sh') === -1) {
@@ -26,25 +27,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 let daylyTo = document.querySelector('.worktime__middletext');
                 let wrapInner = document.querySelectorAll('.wrap__inner .item');
 
-                const operators = [
-                    'function ',
-                    'return ', 
-                    'const ', 
-                    'let ',
-                    'var ',
-                    'if ', 
-                    'throw ', 
-                    '$', 
-                    '{', 
-                    '}', 
-                    '(', 
-                    ')', 
-                    ' || ',
-                    '.querySelector(',
-                    '.querySelectorAll(',
-                    '.addEventListener(',
-                    '.forEach'
-                   ];
+               
 
                 let scrollH = 1;
                 window.addEventListener('load', function () {
@@ -69,8 +52,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
         <span class="method__example-copy" title="copy"><i class="fa-solid fa-copy"></i></span>
             <div class="method__example-title">${item.maintypeRu}</div>
             <pre class="code__style">
-<code>
-${codeColor(item.codeRu, operators)}
+<code class="language-js">
+${item.codeRu}
 </code>
 </pre>
         </div>
@@ -123,8 +106,8 @@ ${codeColor(item.codeRu, operators)}
         <span class="method__example-copy" title="copy"><i class="fa-solid fa-copy"></i></span>
             <div class="method__example-title">${item.maintypeEn}</div>
             <pre class="code__style">
-<code>
-${codeColor(item.codeEn, operators)}
+<code class="language-js">
+${item.codeEn}
 </code>
 </pre>
         </div>
@@ -199,17 +182,20 @@ ${codeColor(item.codeEn, operators)}
                         addItemsOnPageRu();
                         obj.lang = 'RU';
                         copyCode();
+                        hljs.highlightAll(); // zakrashivaem cod
 
                     } else {
                         addItemsOnPageEn();
                         obj.lang = 'EN';
                         copyCode();
+                        hljs.highlightAll(); // zakrashivaem cod
                     }
                     setDataToStorage(obj);
                     scrollH = document.documentElement.scrollHeight - window.innerHeight;
                 });
 
-
+                hljs.highlightAll(); // zakrashivaem cod
+               
                 const helpModal = document.querySelector('.header .help'),
                     headerContact = document.querySelector('.header .header__btn'),
                     closeBtn = document.querySelector('.header .help__close');
@@ -303,6 +289,9 @@ ${codeColor(item.codeEn, operators)}
 
 
                 onsrollChange();
+
+
+               
 
 
 
@@ -416,41 +405,6 @@ ${codeColor(item.codeEn, operators)}
 
                 /////for theme/////
 
-
-                /////for codeColor/////
-                //const string = " function updateInventory(inventory, update) {";
-                   
-                
-
-                
-                function codeColor(text, arr) {
-                      arr.forEach((item) => {
-
-                        let classname = item;
-                        if(item === '{') classname = 'figurescobe_l';
-                        if(item === '}') classname = 'figurescobe_r';
-                        if(item === '$') classname = 'dolar';
-                        if(item === '>') classname = 'scobe_r';
-                        if(item === '<') classname = 'scobe_l';
-                        if(item === '(') classname = 'parenthesis_l';
-                        if(item === ')') classname = 'parenthesis_r';
-                        if(item === ' || ') classname = 'class_or';
-
-                        if(item === '.querySelector(') classname = 'querySel';
-                        if(item === '.querySelectorAll(') classname = 'querySelAll';
-                        if(item === '.addEventListener(') classname = 'addEvtLis';
-                        if(item === '.forEach') classname = 'foreach';
-
-
-                       
-                        text = text.replaceAll(item.trim(), `<span class="${classname}">${item.trim()}</span>`)
-                    });
-                    return text;
-                }
-
-                // console.log(codeColor(string, operators));
-           
-                /////for codeColor/////
 
             }
         }
