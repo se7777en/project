@@ -592,7 +592,7 @@ body::-webkit-scrollbar-thumb {
 .methodRuTitle {
     display: none;
     padding: 10px 0px;
-    
+
 }
 
 .title__jslang {
@@ -1145,31 +1145,12 @@ post bg-color
 green color 0071e3
 
 */
-
-.function,
-.return,
-.const,
-.if,
-.throw,
-.dolar,
-.scobe_r,
-.scobe_l,
-.parenthesis_l,
-.parenthesis_r,
-.querySel,
-.querySelAll,
-.addEvtLis,
-.class_or,
-.foreach,
-.let,
-.const
-{
-    color: #1D5CB4;
+.hljs {
+    background: none !important;
+    /* Убираем фон у всех элементов */
 }
 
-.figurescobe_l,
-.figurescobe_r {
-    color: #e2c35e;
+/* Убираем фон для конкретных блоков, если нужно */
+.hljs-code {
+    background: none !important;
 }
-
-
