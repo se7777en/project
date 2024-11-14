@@ -4,13 +4,14 @@ import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-// import Memo from './memo';
-// import PureComponent from './PureComponent';
-// import ShouldComponentUpdate from './ShouldComponentUpdate';
+// import Memo from './memo/memo';
+// import PureComponent from './memo/PureComponent';
+// import ShouldComponentUpdate from './memo/ShouldComponentUpdate';
 // import Context from './ReactContext_class';
 // import ReactContextFunc from './ReactContext_func';
 // import CombinedContext from './CombinedContext/Main';
-   import USEReducer from './useReducer';
+ import Lazycomp from './ReactLazy/LazyComponent';
+  //  import USEReducer from './useReducer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -21,7 +22,8 @@ root.render(
     {/* <Context /> */}
     {/* <ReactContextFunc /> */}
     {/* <CombinedContext /> */}
-    <USEReducer />
+    <Lazycomp />
+    {/* <USEReducer /> */}
   </React.StrictMode>
 );
 
