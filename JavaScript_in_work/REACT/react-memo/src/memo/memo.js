@@ -6,6 +6,9 @@ function propsCompare(prevProps, nextProps) {
   return prevProps.mail.name === nextProps.mail.name && prevProps.text === nextProps.text;
 }
 
+// ispolzuem memo v etom primere: kogda prixodyat odinakovie propsi on ne budet pererenderivatsya
+// a zavisimost eto dlya vlojenosti bez zavisimosti memo robotaet poverxnostno no esli mi znaem 
+//kakaya vlojenost budet u propsov ispolzuem funkciu propsCompare i sravnivaem predidushee propsi s obnovlenimi
 const Form = memo((props) => {
   console.log('render1');
   return (
