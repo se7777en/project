@@ -11,16 +11,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // import ReactContextFunc from './ReactContext_func';
 // import CombinedContext from './CombinedContext/Main';
 //  import Lazycomp from './ReactLazy/LazyComponent';
- import USEReducer from './useReducer';
+ //import USEReducer from './useReducer';
 // import Outlet from './Outlet';
 //  import Router from './Router';
   // import UseNavigate from './UseNavigate';
   // import NavLink from './NavLink';
   //  import ImportFrom from './dinamicImport/ImportFrom';
+    import HOC from './HOC';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  <>
     {/* <Memo /> */}
     {/* <PureComponent /> */}
     {/* <ShouldComponentUpdate /> */}
@@ -28,12 +29,14 @@ root.render(
     {/* <ReactContextFunc /> */}
     {/* <CombinedContext /> */}
     {/* <Lazycomp /> */}
-    <USEReducer />
+    {/* <USEReducer /> */}
     {/* <Outlet /> */}
     {/* <Router /> */}
     {/* <UseNavigate /> */}
     {/* <NavLink /> */}
     {/* <ImportFrom /> */}
-  </React.StrictMode>
+    <HOC />
+  </>
+  //React.StrictMode
 );
 
