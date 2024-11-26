@@ -2,8 +2,13 @@ import { useState, useEffect, useRef } from 'react';
 
 import PropTypes from 'prop-types';
 import Spinner from '../spinner/Spinner';
+<<<<<<< HEAD
 import ErrorMessage from '../errorMessage/ErrorMessage';
 import useMarvelService from '../../services/MarvelService';
+=======
+import ErrorMessage from '../errorMessage/errorMessage';
+import MarvelService from '../../services/MarvelService';
+>>>>>>> 80c569597 (-ajavascript_in_work)
 import './charList.scss';
 
 
@@ -11,8 +16,13 @@ const CharList = (props) => {
 
 
     const [charList, setCharList] = useState([]);
+<<<<<<< HEAD
     // const [loading, setLoading] = useState(true);
     // const [error, setError] = useState(false);
+=======
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(false);
+>>>>>>> 80c569597 (-ajavascript_in_work)
     const [newItemLoading, setNewItemLoading] = useState(false);
     const [offset, setOffset] = useState(210);
     const [charEnded, setCharEnded] = useState(false);
@@ -26,19 +36,28 @@ const CharList = (props) => {
     //     charEnded: false
     // }
 
+<<<<<<< HEAD
     const { loading, error, getAllCharacters } = useMarvelService();
 
+=======
+    const marvelService = new MarvelService();
+>>>>>>> 80c569597 (-ajavascript_in_work)
 
     // componentDidMount() {
     //     this.onRequest()
     // }
 
     useEffect(() => {
+<<<<<<< HEAD
         onRequest(offset, true)
+=======
+        onRequest()
+>>>>>>> 80c569597 (-ajavascript_in_work)
     }, [])
 
 
 
+<<<<<<< HEAD
     const onRequest = (offset, initial) => {
         // onCharListLoading();
         initial ? setNewItemLoading(false) : setNewItemLoading(true)
@@ -51,6 +70,18 @@ const CharList = (props) => {
     // const onCharListLoading = () => {
     //     setNewItemLoading(true)
     // }
+=======
+    const onRequest = (offset) => {
+        onCharListLoading();
+        marvelService.getAllCharacters(offset)
+            .then(onCharListLoaded)
+            .catch(onError)
+    }
+
+    const onCharListLoading = () => {
+        setNewItemLoading(true)
+    }
+>>>>>>> 80c569597 (-ajavascript_in_work)
 
     const onCharListLoaded = (newCharList) => {
         let ended = false;
@@ -59,16 +90,27 @@ const CharList = (props) => {
         }
 
         setCharList(charList => [...charList, ...newCharList]);
+<<<<<<< HEAD
         // setLoading(loading => false);
+=======
+        setLoading(loading => false);
+>>>>>>> 80c569597 (-ajavascript_in_work)
         setNewItemLoading(newItemLoading => false);
         setOffset(offset => offset + 9);
         setCharEnded(charEnded => ended);
     }
 
+<<<<<<< HEAD
     // const onError = () => {
     //     setLoading(false);
     //     setError(true);
     // }
+=======
+    const onError = () => {
+        setLoading(false);
+        setError(true);
+    }
+>>>>>>> 80c569597 (-ajavascript_in_work)
 
     const itemRefs = useRef([]);
     const focusOnItem = (id) => {
@@ -84,9 +126,12 @@ const CharList = (props) => {
         itemRefs.current[id].focus();
     }
 
+<<<<<<< HEAD
 
 
    
+=======
+>>>>>>> 80c569597 (-ajavascript_in_work)
     function renderItems(arr) {
         const items = arr.map((item, i) => {
             let imgStyle = { 'objectFit': 'cover' };
@@ -99,7 +144,11 @@ const CharList = (props) => {
                     className="char__item"
                     tabIndex={0}
                     ref={el => itemRefs.current[i] = el}
+<<<<<<< HEAD
                     key={`${item.id}-${i * i}`}
+=======
+                    key={item.id}
+>>>>>>> 80c569597 (-ajavascript_in_work)
                     onClick={() => {
                         props.onCharSelected(item.id);
                         focusOnItem(i);
@@ -130,15 +179,24 @@ const CharList = (props) => {
     const items = renderItems(charList)
 
     const errorMessage = error ? <ErrorMessage /> : null;
+<<<<<<< HEAD
     const spinner = loading && !newItemLoading ? <Spinner /> : null;
     // const content = !(loading || error) ? items : null;
+=======
+    const spinner = loading ? <Spinner /> : null;
+    const content = !(loading || error) ? items : null;
+>>>>>>> 80c569597 (-ajavascript_in_work)
 
     return (
         <div className="char__list">
             {errorMessage}
             {spinner}
+<<<<<<< HEAD
             {/* {content} */}
             {items}
+=======
+            {content}
+>>>>>>> 80c569597 (-ajavascript_in_work)
             <button
                 className="button button__main button__long"
                 disabled={newItemLoading}

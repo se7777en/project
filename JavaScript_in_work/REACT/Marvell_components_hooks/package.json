@@ -7,11 +7,17 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "prop-types": "^15.8.1",
+<<<<<<< HEAD
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.27.0",
     "react-scripts": "^5.0.1",
     "react-transition-group": "^4.4.5",
+=======
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "^5.0.1",
+>>>>>>> 80c569597 (-ajavascript_in_work)
     "web-vitals": "^1.0.1"
   },
   "scripts": {

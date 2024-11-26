@@ -1,5 +1,9 @@
 import { Component } from "react";
+<<<<<<< HEAD
  import ErrorMessage from "../errorMessage/ErrorMessage";
+=======
+ import ErrorMessage from "../errorMessage/errorMessage";
+>>>>>>> 80c569597 (-ajavascript_in_work)
 
 class ErrorBoundary extends Component {
     state = {
