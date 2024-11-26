@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -41,16 +42,29 @@ root.render(
   //React.StrictMode
 =======
 import Memo from './memo';
+=======
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+// import Memo from './memo';
+>>>>>>> 1dad9c6a7 (-ajs-book)
 // import PureComponent from './PureComponent';
 // import ShouldComponentUpdate from './ShouldComponentUpdate';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import Context from './ReactContext_class';
+// import ReactContextFunc from './ReactContext_func';
+// import CombinedContext from './CombinedContext/Main';
+   import USEReducer from './useReducer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Memo />
+    {/* <Memo /> */}
     {/* <PureComponent /> */}
     {/* <ShouldComponentUpdate /> */}
+    {/* <Context /> */}
+    {/* <ReactContextFunc /> */}
+    {/* <CombinedContext /> */}
+    <USEReducer />
   </React.StrictMode>
 >>>>>>> e5bfd7728 (-amemo)
 );
