@@ -1,8 +1,0 @@
-1) install surge:   npm i -g surge
-2) add project to serv:   surge
-3) edit project: surge --domain tasktrackr.surge.sh
-
-
-4) save projectName: echo tasktrackr.surge.sh > CNAME
-
-5) how remove surge teardown tasktrackr.surge.sh

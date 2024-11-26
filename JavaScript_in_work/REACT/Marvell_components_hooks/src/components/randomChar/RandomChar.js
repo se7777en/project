@@ -1,7 +1,17 @@
 import { useState, useEffect } from 'react';
 import Spinner from '../spinner/Spinner'
+<<<<<<< HEAD
+<<<<<<< HEAD
 import ErrorMessage from '../errorMessage/ErrorMessage';
 import useMarvelService from '../../services/MarvelService';
+=======
+import ErrorMessage from '../errorMessage/errorMessage';
+import MarvelService from '../../services/MarvelService';
+>>>>>>> 80c569597 (-ajavascript_in_work)
+=======
+import ErrorMessage from '../errorMessage/ErrorMessage';
+import useMarvelService from '../../services/MarvelService';
+>>>>>>> 9e18b2bd5 (-acastom__hooks)
 
 import './randomChar.scss';
 // import thor from '../../resources/img/thor.jpeg';
@@ -11,15 +21,37 @@ import mjolnir from '../../resources/img/mjolnir.png';
 
 const RandomChar = () => {
     const [char, setChar] = useState({});
+<<<<<<< HEAD
+<<<<<<< HEAD
     // const [loading, setLoading] = useState(true);
     // const [error, setError] = useState(false); 
     const {loading, error, getCharacter, clearError} = useMarvelService();
 
+=======
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(false);
+
+    const marvelService = new MarvelService();
+>>>>>>> 80c569597 (-ajavascript_in_work)
+=======
+    // const [loading, setLoading] = useState(true);
+    // const [error, setError] = useState(false); 
+    const {loading, error, getCharacter, clearError} = useMarvelService();
+
+>>>>>>> 9e18b2bd5 (-acastom__hooks)
 
 
     useEffect(() => {
         updateChar()
+<<<<<<< HEAD
+<<<<<<< HEAD
         const timer = setInterval(updateChar, 60000);
+=======
+        const timer = setInterval(updateChar, 6000);
+>>>>>>> 80c569597 (-ajavascript_in_work)
+=======
+        const timer = setInterval(updateChar, 60000);
+>>>>>>> 9e18b2bd5 (-acastom__hooks)
         return () => {
             clearInterval(timer)
         }
@@ -27,6 +59,8 @@ const RandomChar = () => {
 
     const onCharLoaded = (char) => {
         console.log('update');
+<<<<<<< HEAD
+<<<<<<< HEAD
         // setLoading(false);
         setChar(char);
     }
@@ -50,6 +84,42 @@ const RandomChar = () => {
             getCharacter(id)
             .then(onCharLoaded);
             // .catch(onError)
+=======
+        setLoading(false);
+=======
+        // setLoading(false);
+>>>>>>> 9e18b2bd5 (-acastom__hooks)
+        setChar(char);
+    }
+
+    // const onCharLoading = () => {
+    //     setLoading(true);
+    // }
+
+    // const onError = () => {
+    //     setLoading(false);
+    //     setError(true);
+
+    // }
+
+    const updateChar = () => {
+        clearError();
+        const id = Math.floor(Math.random() * (1011400 - 1011000) + 1011000);
+<<<<<<< HEAD
+        onCharLoading();
+        marvelService
+            .getCharacter(id)
+            .then(onCharLoaded)
+            .catch(onError)
+>>>>>>> 80c569597 (-ajavascript_in_work)
+=======
+        // onCharLoading();
+        // marvelService
+        //     .
+            getCharacter(id)
+            .then(onCharLoaded);
+            // .catch(onError)
+>>>>>>> 9e18b2bd5 (-acastom__hooks)
     }
 
 
