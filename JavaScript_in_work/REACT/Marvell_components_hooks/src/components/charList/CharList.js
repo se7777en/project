@@ -7,6 +7,8 @@ import useMarvelService from '../../services/MarvelService';
 import './charList.scss';
 
 
+
+
 const CharList = (props) => {
 
 
