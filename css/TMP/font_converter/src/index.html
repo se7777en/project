@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="icon" type="image/png" href="./img/favicon.png">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Font Converter</title>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="container items">
+            <div class="wrapper__inner">
+                <div class="wrapper__title">Georgian Text Encoding Converter</div>
+
+                <div class="wrapper__btns">
+                    <div class="wrapper__btns-left">
+                        <div class="wrapper__btns-ge item active" data-id="ge" title="Unicode (UTF8 / Sylfaen)">GE</div>
+                        <div class="wrapper__btns-en item" data-id="en" title="Latin (English)">EN</div>
+                        <div class="wrapper__btns-parliament item" data-id="ParliamentStandart"
+                            title="Parliament Standart">ÃÌ</div>
+                        <div class="wrapper__btns-asomtavruli item" data-id="asomtavruli" title="Asomtavruli">ႣႫ</div>
+                    </div>
+
+                    <div class="wrapper__btns-arrow">
+                        <img src="./img/right.svg" alt="arrow">
+                    </div>
+
+                    <div class="wrapper__btns-right">
+                        <div class="wrapper__btns-ge item" data-id="ge" title="Unicode (UTF8 / Sylfaen)">GE</div>
+                        <div class="wrapper__btns-en item active" data-id="en" title="Latin (English)">EN</div>
+                        <div class="wrapper__btns-parliament item" data-id="ParliamentStandart">ÃÌ</div>
+                        <div class="wrapper__btns-asomtavruli item" data-id="asomtavruli" title="Asomtavruli">ႣႫ</div>
+                        <div class="wrapper__rukb item" data-id="rukb" title="russian keyboard">RU<br>KB</div>
+                        <div class="wrapper__enkb item" data-id="enkb" title="english keyboard">EN<br>KB</div>
+                    </div>
+                </div>
+
+                <div class="wrapper__body">
+                    <textarea class="textarea__from textarea" placeholder="Text here.."></textarea>
+                    <!-- <textarea class="textarea__to textarea" placeholder="converted text.."></textarea> -->
+                    <img class="wrapper__icon" src="./img/georgia.png" alt="geo">
+                </div>
+
+                <div class="wrapper__convert">
+                    <a class="wrap__btn" href="#!">Convert</a>
+                    <div class="wrapper__words-length"><span>0</span> სიტყვა</div>
+                </div>
+
+            </div>
+
+            <div class="wrapper__description">
+                <p class="description__text">ამ ინსტრუმენტით შეგიძლიათ გადაიყვანოთ ქართული ტექსტი სხვადასხვა კოდირებებში. ხელმისაწვდომია ლათინური განლაგება (ინგლისური, ე.წ. qwerty, მაგ. შრიფტი AcadNusx), უნიკოდის განლაგება (სტანდარტული, მაგ. შრიფტი Sylfaen, BPG-ოჯახის შრიფტები), ე.წ. პარლამენტ-სოროსის სტანდარტი (Std8/SP, მაგ. შრიფტები GEO_Times, Geo_Academiuri) და უნიკოდის ასომთავრული შუალედი (მაგ. შრიფტი Arial Unicode MS, BPG-ოჯახის შრიფტებში კი - მხედრულის მთავრული ვარიანტები). ჩასვით გადასაყვანი ტექსტი, აირჩიეთ საწყისი და საბოლოო კოდირება და დააჭირეთ გადაყვანის ღილაკს. ტექსტის ჩასმისას სისტემა თავად ეცდება საწყისი კოდირების გარკვევას.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

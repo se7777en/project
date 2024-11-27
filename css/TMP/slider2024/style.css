@@ -1,0 +1,120 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+img {
+  vertical-align: top;
+}
+
+*::before,
+*::after {
+  display: inline-block;
+}
+
+/* slider style */
+
+  .slider {
+    /* width: 375px;  menyaem*/
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    position: relative;
+    overflow:hidden;
+    /* border-radius: 5px;
+   box-shadow: 0px 16px 32px rgba(0,0,0,.5); */
+  }
+
+  .transition {
+    transition : transform .3s ease;
+  }
+
+  /* .header {
+    display : flex;
+    width: 100%;
+    height: 48px;
+    align-items:center;
+    justify-content:space-around;
+    font-weight: 700;
+    color: white;
+    background-color: #9675CE;
+    font-size: 16px;
+    height: 52px;
+    position: relative;
+  } */
+
+/* note that the "touch-action" property is really crucial for the gesture events. */
+
+  .slider__items {
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: flex;
+    touch-action: none;
+  }
+
+  .slider__item {
+    /* min-width: 100%;  menyaem*/
+    min-width: 100%;
+    height: auto;
+    /* float: left; */
+    /* padding: 24px 12px; */
+
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* max-height: 170px; */
+
+  }
+
+  .slider__item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+   
+  }
+
+
+
+.list__card {
+  /* display: flex;
+  flex-direction: column; */
+
+  /* width: 48%; */
+  width: 100%;
+  display: block;
+
+  /* margin-bottom: 16px; */
+  /* border: 1px solid #000; */
+}

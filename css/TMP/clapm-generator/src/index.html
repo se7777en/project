@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="icon" type="image/svg" href="./img/favicon.svg">
+    <title>Clamp Interpolation</title>
+</head>
+
+
+
+<body>
+
+    <div class="wrapper">
+        <div class="container">
+            <div class="wpapper__inner">
+                <div class="wrapper__header">
+                    <h1 class="wrapper__title">Font-size Clamp Generator</h1>
+                    <h2 class="wrapper__subtitle">Generate linearly scale font-size with clamp()</h2>
+                </div>
+                <div class="wrapper__main-inner">
+                    <div class="main__values">
+                        <div class="values__title">
+                            <div class="values__text">VALUES</div>
+                            <div class="values__units">
+                                <div class="values__px active">px</div>
+                                <div class="values__rem">rem</div>
+                                <span class="units__footer"></span>
+                            </div>
+                        </div>
+                        <div class="main__values-inputs">
+                            <div class="main__values-input value-min">
+                                <label for="min">min</label>
+                                <input class="min-val values values__min-val" id="min" type="number" value="16"
+                                    autocomplete="off">
+                            </div>
+                            <div class="main__values-input value-max">
+                                <label for="max">max</label>
+                                <input class="max-val values values__max-val" id="max" type="number" value="24"
+                                    autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="main__values-descr">can be negative, e.g. for margins or absolute positioning
+                        </div>
+                    </div>
+                    <div class="main__viewport">
+                        <div class="viewport__title">
+                            <div class="viewport__text">viewport</div>
+                        </div>
+
+                        <div class="main__viewport-inputs">
+                            <div class="main__viewport-input viewport-min">
+                                <label for="viewport__min">min</label>
+                                <input class="min-val viewport__min-val" id="viewport__min" type="number" value="375"
+                                    autocomplete="off">
+                            </div>
+                            <div class="main__viewport-input viewport-max">
+                                <label for="viewport__max">max</label>
+                                <input class="max-val viewport__max-val" id="viewport__max" type="number" value="1200"
+                                    autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="viewport__default-fontsize base-value" title="default font size (16px=1em)">
+                            <label for="default">base</label>
+                            <input class="base" id="default" type="number" autocomplete="off" value="16">
+                        </div>
+                    </div>
+                    <div class="menu">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"
+                            style="fill: rgba(0, 0, 0, .6);transform: msFilter;">
+                            <path id="myPath" d="M4 11h12v2H4zm0-5h16v2H4zm0 12h7.235v-2H4z"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="main__result-cover">
+                    <div class="main__result">
+                        <input class="result" type="text" autocomplete="off" name="res">
+                        <span class="copy" title="Copy"><i class="fa-solid fa-copy"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+        <div class="menu__modal">
+            <div class="menu__modal-inner">
+                <div class="list__title">Tools</div>
+                <div class="close__icon">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+
+                <div class="menu__list-cover">
+
+                    <!-- <ul class="menu__list">
+                    <li class="menu__list-item">1</li>
+                    <li class="menu__list-item">2</li>
+                    <li class="menu__list-item">3</li>
+                </ul> -->
+                </div>
+
+
+            </div>
+        </div>
+    
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

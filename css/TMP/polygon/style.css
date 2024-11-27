@@ -1,0 +1,39 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+ position: relative;
+ width: 500px;
+ height: 500px;
+ border: 1px solid #000;
+ overflow: hidden; 
+}
+
+
+.polygon {
+     position: absolute;
+    top: 0;
+    left: 0;
+  /*  transform: translate(-50%, -50%); */
+    /* clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%); */
+     /* background-color: tomato; */
+   /* border: 4px solid #000; */
+    width: 100px;
+    height: 100px;
+}
+
+
+
+.elipse:hover {
+    transition: all .3s ease-in-out;
+    fill: #000;
+    cursor: pointer;
+
+}
+
+
+

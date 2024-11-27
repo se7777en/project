@@ -1,0 +1,370 @@
+/* 
+240 240 350 240
+gap: 22px
+
+240 900px
+
+#f7f7f7 fon
+
+#282c34 text
+
+font-family: "Roboto", sans-serif;
+*/
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 100px 15px 0px 15px;
+}
+
+.container__inner {
+    display: flex;
+    gap: 22px;
+    min-height: 396px;
+}
+
+.descr {
+    min-width: 140px;
+}
+
+.mounting {
+    min-width: 240px;
+}
+
+.updating {
+    min-width: 350px;
+}
+
+.unmounting {
+    min-width: 240px;
+}
+
+
+.mounting__header,
+.updating__header,
+.unmounting__header {
+    flex: 0 1 60%;
+}
+
+.item__footer {
+    flex: 0 1 40%;
+    padding: 20px;
+}
+
+.bg {
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #b2b2b2;
+    padding: 20px;
+}
+
+.container__item {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #6a6a6a;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.descr {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 24px;
+    margin-bottom: 52px;
+}
+
+.descr .render {
+    border-bottom: 2px dotted #282c34;
+    padding-bottom: 20px;
+}
+
+.descr .render,
+.descr .commit {
+    font-weight: 300;
+    font-size: 14px;
+    text-align: center;
+    color: #282c34;
+}
+
+
+.descr span {
+    display: block;
+    text-align: center;
+    margin-bottom: 14px;
+    font-family: inherit;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+
+
+.mounting__header-title,
+.updating__header-title,
+.unmounting__header-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    color: #282c34;
+}
+
+.updating__header-title {
+    margin-bottom: 70px;
+}
+
+.updating__header-list {
+    display: flex;
+    justify-content: space-around;
+}
+
+.updating__header-item {
+    font-size: 14px;
+    color: #282c34;
+    font-weight: 300;
+}
+
+.container__inner {
+    position: relative;
+}
+
+/* .container__inner .render,
+.container__inner .react_dom,
+.container__inner .compdidmount,
+.container__inner .compdidupdate,
+.container__inner .comp­will­unmount,
+.container__inner .constructor {
+display: none;
+} */
+
+/* .psudo__elements span {
+    
+    width: 0;
+   
+} */
+/* //////////// */
+.container__inner .constructor::after {
+    content: 'constructor';
+    position: absolute;
+    width: 200px;
+    height: 40px;
+    top: 96px;
+    left: 20.18%;
+    background-color: #cce1ff;
+    color: #282c34;
+    font-weight: 500;
+    font-size: 17px;
+    border: 1px solid rgba(0, 106, 255, .64);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+    /* transition: background-color 0.3s ease; */
+}
+
+.container__inner .constructor:hover::after {
+    background-color: #fff;
+    border-width: 2px;
+}
+
+/* //////////// */
+
+.container__inner .render::after {
+    content: 'render';
+    position: absolute;
+    width: 573px;
+    height: 40px;
+    top: 176px;
+    left: 20.18%;
+    background-color: #cce1ff;
+    color: #282c34;
+    font-weight: 500;
+    font-size: 17px;
+    border: 1px solid rgba(0, 106, 255, .64);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+}
+
+.container__inner .render:hover::after {
+    background-color: #fff;
+    border-width: 2px;
+}
+
+/* //////////// */
+
+.container__inner .react_dom::after {
+    content: 'React updates ­D­O­M and refs';
+    position: absolute;
+    width: 573px;
+    height: 40px;
+    top: 256px;
+    left: 20.18%;
+    background-color: #fdf0cc;
+    color: #282c34;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 17px;
+    border: 1px solid rgba(245, 179, 0, .64);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+}
+
+/*///////////////*/
+
+.container__inner .compdidmount::after {
+    content: 'component­Did­Mount';
+    position: absolute;
+    width: 200px;
+    height: 40px;
+    top: 336px;
+    left: 20.18%;
+    background-color: #cee4cc;
+    color: #282c34;
+    font-weight: 500;
+    font-size: 17px;
+    border: 1px solid rgba(12, 120, 0, .64);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+    /* transition: background-color 0.3s ease; */
+}
+
+.container__inner .compdidmount:hover::after {
+    background-color: #fff;
+    border-width: 2px;
+}
+
+/*////////////*/
+
+
+
+.container__inner .compdidupdate::after {
+    content: 'component­Did­Update';
+    position: absolute;
+    width: 312px;
+    height: 40px;
+    top: 336px;
+    left: 44.57%;
+    background-color: #cee4cc;
+    color: #282c34;
+    font-weight: 500;
+    font-size: 17px;
+    border: 1px solid rgba(12, 120, 0, .64);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+    /* transition: background-color 0.3s ease; */
+}
+
+.container__inner .compdidupdate:hover::after {
+    background-color: #fff;
+    border-width: 2px;
+}
+
+/*////////////*/
+
+
+.container__inner .comp­will­unmount::after {
+    content: 'component­Will­Unmount';
+    position: absolute;
+    width: 200px;
+    height: 40px;
+    top: 336px;
+    left: 79.34%;
+    background-color: #cee4cc;
+    color: #282c34;
+    font-weight: 500;
+    font-size: 17px;
+    border: 1px solid rgba(12, 120, 0, .64);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+    /* transition: background-color 0.3s ease; */
+}
+
+.container__inner .comp­will­unmount:hover::after {
+    background-color: #fff;
+    border-width: 2px;
+}
+
+
+
+
+.arrow1 span::after {
+ content: '';
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 30px;
+ height: 30px;
+
+}
+
+.arrow1::before {
+    content: '';
+} 
+

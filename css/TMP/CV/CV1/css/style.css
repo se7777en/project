@@ -1,0 +1,559 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    vertical-align: top;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+
+body {
+    font-family: 'Cambria__windows';
+    font-size: 18px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.part-one__inner {
+    display: flex;
+}
+
+.part-one__inner .side:not(:last-child) {
+    margin-right: 59px;
+}
+
+
+.side_left {
+    flex: 0 1 35%;
+    background-color: #305FEC;
+    /* padding: 25px 25px 50px 26px; */
+    border-radius: 42px 0px 0px 42px;
+    box-shadow: 10px 0 10px -5px rgba(0, 0, 0, .5);
+}
+
+.side_right {
+    flex: 0 1 65%;
+}
+
+.part-one .left-side__title {
+    font-size: 70px;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 800;
+    margin-bottom: 20px;
+    padding: 25px 0px 0px 25px;
+}
+
+
+
+.left-side__list li:not(:last-child) {
+    padding-bottom: 15px;
+}
+
+.left-side__list .item {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding-left: 37px;
+}
+
+.part-one .left-side__items {
+    margin-bottom: 35px;
+    padding: 0px 0px 0px 25px;
+}
+
+.part-one .left-side__phone {
+    position: relative;
+}
+
+.part-one .left-side__mail {
+    position: relative;
+}
+
+.part-one .left-side__address {
+    position: relative;
+}
+
+.part-one .left-side__phone i {
+    position: absolute;
+    top: -5px;
+    left: 11px;
+    width: 30px;
+    height: 30px;
+    color: #fff;
+}
+
+.part-one .left-side__mail i {
+    position: absolute;
+    top: 17px;
+    left: 3px;
+    width: 30px;
+    height: 30px;
+    color: #fff;
+}
+
+.part-one .left-side__address i {
+    position: absolute;
+    top: 14px;
+    left: 3px;
+    width: 30px;
+    height: 30px;
+    color: #fff;
+}
+
+
+.part-one .left-side__skills {
+    width: 100%;
+    font-size: 24px;
+    color: #fff;
+    padding: 10px 10px 10px 25px;
+    background-color: #1947A3;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 7px;
+    margin-bottom: 23px;
+}
+
+.left-side__skills-item {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.left-side__skills-items .left-side__skills-item:not(:last-child) {
+    padding-bottom: 8px;
+}
+
+
+.left-side__skills_list {
+    padding: 0px 0px 0px 33px;
+    margin-bottom: 174px;
+}
+
+.left-side__skills-item {
+    position: relative;
+    padding-left: 25px;
+}
+
+.left-side__skills-items .left-side__skills-item::before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    left: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+
+.right-side {
+    padding: 33px 10px 10px 10px;
+    max-width: 90%;
+}
+
+.right-side__title {
+    font-size: 35px;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: #305FEC;
+    letter-spacing: 9px;
+    margin-bottom: 24px;
+}
+
+.right-side__text {
+    font-size: 25px;
+    font-weight: 500;
+    color: #6B6B6B;
+    margin-bottom: 27px;
+}
+
+.right-side__experience {
+    padding-bottom: 31px;
+}
+
+.right-side__name,
+.right-side__location,
+.right-side__status,
+/* .right-side__experience, */
+.right-side__item {
+    font-size: 25px;
+    font-weight: 500;
+    color: #6B6B6B;
+    margin-bottom: 7px;
+}
+
+.right-side__position {
+    font-size: 35px;
+    color: #305FEC;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+}
+
+.right-side__item {
+    position: relative;
+    padding-left: 23px;
+}
+
+.right-side__item::before {
+    content: '';
+    position: absolute;
+    left: 3px;
+    top: 10px;
+    /* transform: translateY(-50%); */
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background-color: #6B6B6B;
+}
+
+.left-side__lang_items {
+    padding: 0px 0px 0px 33px;
+    margin-bottom: 32px;
+}
+
+.left-side__lang_item,
+.item-size {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.left-side__lang_item:not(:last-child) {
+    padding-bottom: 8px;
+}
+
+.left-side__skill_work {
+    padding: 0px 0px 0px 33px;
+}
+
+.left-side__skill_work {
+    line-height: 36px;
+    margin-bottom: 23px;
+}
+
+.list-skills .left-side__skills-item::before {
+    content: '';
+    transform: none;
+    top: 10px;
+}
+
+.left-side__list_skills {
+    padding: 0px 0px 0px 33px;
+    /* margin-bottom: 174px; */
+}
+
+
+.right-side .right-side__text {
+    font-size: 25px;
+    font-weight: 500;
+    color: #6B6B6B;
+    margin-bottom: 10px;
+}
+
+
+.experience__side {
+    padding-bottom: 31px;
+}
+
+
+.right-side .right-side__education {
+    color: #305FEC;
+    font-size: 35px;
+    letter-spacing: 7px;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 31px;
+}
+
+.right-side .right-side__diploma {
+    color: #305FEC;
+    font-size: 22px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    line-height: 31px;
+}
+
+.right-side .right__side-university {
+    font-size: 25px;
+    font-weight: 500;
+    color: #6B6B6B;
+    margin-bottom: 31px;
+}
+
+/* .right-side .right-side__education {
+    color: #305FEC;
+    font-size: 35px;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 31px;
+} */
+
+.right-side .right__side-school {
+    font-size: 25px;
+    font-weight: 500;
+    color: #6B6B6B;
+    margin-bottom: 31px;
+}
+
+.right-side .school-side {
+    margin-bottom: 0;
+}
+
+/* .right-side .right-side__ams {
+    color: #305FEC;
+    font-size: 35px;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 31px;
+} */
+
+.right-side.side {
+    position: relative;
+}
+
+.right-side.side::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: #2319a3;
+    top: 0;
+    right: 15%;
+    filter: blur(102px);
+}
+
+.right-side.side::before {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: #2319a3;
+    bottom: 0;
+    left: 1%;
+    filter: blur(102px);
+}
+
+
+/* ///////////////////// */
+
+.right__mobile {
+    display: none;
+    position: relative;
+}
+
+.right__mobile .left-side__title-back {
+    font-size: 60px;
+    text-transform: uppercase;
+    color: #305fec;
+    font-weight: 800;
+    /* margin-bottom: 20px; */
+
+}
+
+.right__mobile li:not(:last-child) {
+    padding-bottom: 15px;
+}
+
+.right__mobile .left-side__phone-back {
+    position: relative;
+}
+
+
+.right__mobile .item-back {
+    color: #305fec;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding-left: 37px;
+}
+
+.right__mobile .left-side__phone-back {
+    position: relative;
+}
+
+.right__mobile .left-side__mail-back {
+    position: relative;
+}
+
+.right__mobile .left-side__address-back {
+    position: relative;
+}
+
+.right__mobile .left-side__phone-back i {
+    position: absolute;
+    top: -5px;
+    left: 11px;
+    width: 30px;
+    height: 30px;
+    color: #305fec;
+}
+
+.right__mobile .left-side__mail-back i {
+    position: absolute;
+    top: 17px;
+    left: 3px;
+    width: 30px;
+    height: 30px;
+    color: #305fec;
+}
+
+.right__mobile .left-side__list-back .item-back {
+    color: #305fec;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding-left: 37px;
+}
+
+
+.right__mobile .left-side__address-back i {
+    position: absolute;
+    top: 14px;
+    left: 3px;
+    width: 30px;
+    height: 30px;
+    color: #305fec;
+}
+
+
+@media (max-width: 1350px) {
+    .right__mobile {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 38px;
+        margin-bottom: 30px;
+        flex-wrap: wrap;
+        /* align-items: center; */
+        gap: 20px;
+    }
+
+    .right__mobile::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        height: 1px;
+        background-color: #305fec;
+        border-radius: 9px;
+    }
+
+    .part-one__inner .left-side {
+        display: none;
+    }
+
+    .part-one__inner {
+        display: block;
+    }
+
+    .right-side {
+        max-width: 100%;
+    }
+
+    .wrapper {
+        margin-top: 15px;
+    }
+
+    .right-side {
+        padding: 0px;
+    }
+}
+
+
+
+
+@media (max-width: 690px) {
+    .right-side__title {
+        font-size: 20px;
+        letter-spacing: 7px;
+    }
+
+    .right-side__position {
+        font-size: 20px;
+        letter-spacing: 7px;
+    }
+
+    .right-side .right-side__education {
+        font-size: 20px;
+    }
+
+    .right-side .right-side__diploma {
+        letter-spacing: 7px;
+        font-size: 18px;
+    }
+
+    .right-side .right-side__text {
+        font-size: 18px;
+    }
+
+    .right-side__name,
+    .right-side__location,
+    .right-side__status,
+    /* .right-side__experience, */
+    .right-side__item {
+        font-size: 18px;
+    }
+
+    .right-side .right__side-university {
+        font-size: 18px;
+    }
+
+    .right-side .right__side-school {
+        font-size: 18px;
+    }
+
+    .right-side__item::before {
+        content: '';
+        top: 8px;
+        /* transform: translateY(-50%); */
+        width: 6px;
+        height: 6px;
+    }
+
+
+}

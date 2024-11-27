@@ -1,0 +1,31 @@
+.inp {
+    position: relative;
+
+    input {
+        max-width: 209px;
+        height: 50px;
+        border-radius: 8px;
+        background-color: #fff;
+        border: none;
+        border: 1px solid #ddd;
+        padding: 14px 82px 14px 13px;
+        color: #999;
+        font-size: 15px;
+        text-transform: uppercase;
+    }
+
+    input[type="date"]::-webkit-calendar-picker-indicator {
+        display: block;
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        right: 12px;
+        width: 19px;
+        height: 24px;
+
+        transform: translateY(-50%);
+        background-image: url('../img/date_icon.svg');
+        background-repeat: no-repeat;
+    }
+
+}
