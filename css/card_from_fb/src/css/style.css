@@ -1,3 +1,4 @@
+@import url(./fonts.css);
 html {
     box-sizing: border-box;
 }
@@ -103,6 +104,11 @@ body {
     font-size: 8px;
     color: #68676a;
     margin-bottom: 19px;
+
+    font-family: 'Helvetica_Light', sans-serif;
+    font-feature-settings: "case" on;
+    text-transform: uppercase;
+    font-weight: 500;
 }
 
 
@@ -113,6 +119,10 @@ body {
     text-align: center;
     display: inline-block;
     width: 100%;
+    font-family: 'Helvetica_Light', sans-serif;
+    font-feature-settings: "case" on;
+    text-transform: uppercase;
+    font-weight: 500;
 }
 
 .card__btn-like {
@@ -143,6 +153,7 @@ body {
 
 .card__btn-like {
     position: relative;
+    padding-left: 7px;
 }
 
 .card__btn-like i{
@@ -163,6 +174,10 @@ body {
 
 .title__descr-estate {
     position: relative;
+    font-family: 'Helvetica_Light', sans-serif;
+    font-feature-settings: "case" on;
+    text-transform: uppercase;
+    font-weight: 400;
 }
 
 .title__descr-estate .point {
@@ -174,7 +189,9 @@ body {
     transform: translateY(-50%);
     left: 20px;
     border-radius: 50%;
+
 }
+
 
 .wrapper {
 
