@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <style>
+        /* Universal Selector */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Type Selectors */
+        h1 {
+            text-align: center;
+            color: darkblue;
+        }
+
+        h2 {
+            font-size: 24px;
+            text-decoration: underline;
+        }
+
+        h3 {
+            font-size: 20px;
+            color: darkgreen;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        /* ID Selectors */
+        #about {
+            background-color: lightgray;
+            text-align: center;
+            padding: 20px;
+        }
+
+        #skills {
+            background-color: lightyellow;
+            padding: 20px;
+        }
+
+        /* Class Selectors */
+        .project1 {
+            background-color: #f8d7da;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #f5c6cb;
+        }
+
+        .project2 {
+            background-color: #d4edda;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #c3e6cb;
+        }
+
+        .project3 {
+            background-color: #d1ecf1;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #bee5eb;
+        }
+
+        /* Descendant Selector */
+        nav ul li {
+            list-style-type: none;
+            color: darkred;
+        }
+
+        /* Child Selector */
+        #projects>h3 {
+            font-weight: bold;
+        }
+
+        /* Attribute Selector */
+        img[src] {
+            border: 2px solid black;
+            border-radius: 50%;
+        }
+
+        /* Pseudo-Class */
+        nav a:hover {
+            color: orange;
+            text-decoration: underline;
+        }
+
+        /* Pseudo-Element */
+        #skills li::before {
+            content: "⭐ ";
+        }
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Welcome to My Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hello! I'm a fictional developer who loves creating web pages with clean HTML and CSS.</p>
+        <img src="https://via.placeholder.com/150" alt="Profile Picture">
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="project1">
+            <h3>Project 1</h3>
+            <p>This is the first project description.</p>
+        </div>
+        <div class="project2">
+            <h3>Project 2</h3>
+            <p>This is the second project description.</p>
+        </div>
+        <div class="project3">
+            <h3>Project 3</h3>
+            <p>This is the third project description.</p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>My Skills</h2>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>Problem Solving</li>
+            <li>Communication</li>
+        </ul>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>© 2024 My Portfolio</p>
+    </footer>
+</body>
+
+</html>
