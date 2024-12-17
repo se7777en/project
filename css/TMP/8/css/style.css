@@ -1,0 +1,19 @@
+@import url(./null.css);
+@import url(./fonts.css);
+
+body {
+    font-family: 'Helvetica_Light', sans-serif;
+    /* font-family: 'BPG Nino Mtavruli', sans-serif; */
+    /* font-family: 'Calibri'; */
+    font-weight: 400;
+    font-size: 70px;
+
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-feature-settings: "case" on;
+    text-transform: uppercase;
+    font-weight: 500;
+}
