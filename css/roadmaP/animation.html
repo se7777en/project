@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Animations</title>
+  <style>
+    @keyframes fade-in {
+        0% { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    .animate-fade-in {
+        animation: fade-in 0.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    @keyframes fade-slide-up {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-fade-slide-up {
+        animation: fade-slide-up 0.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    @keyframes ping {
+        75%, to {
+            transform: scale(2);
+            opacity: 0;
+        }
+    }
+
+    .animate-ping {
+        animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+    }
+
+    @keyframes pulse {
+        50% { opacity: 0.5; }
+    }
+
+    .animate-pulse {
+        animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    @keyframes spin {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    .animate-spin {
+        animation: spin 1s linear infinite;
+    }
+
+    /* Общие стили */
+    div {
+        display: inline-block;
+        margin: 20px;
+        padding: 10px;
+        background-color: #3498db;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="animate-fade-in">Fade-in</div>
+  <div class="animate-fade-slide-up">Fade-slide-up</div>
+  <div class="animate-ping">Ping</div>
+  <div class="animate-pulse">Pulse</div>
+  <div class="animate-spin">Spin</div>
+</body>
+</html>
