@@ -1,0 +1,156 @@
+@import url(./null.css);
+
+body {
+    font-family: "Roboto", serif;
+    font-size: 16px;
+    color: #9ca3af;
+    background: linear-gradient(to bottom, #0f172a, #0b111f);
+    height: 100vh;
+
+}
+
+.container {
+    max-width: 840px;
+    padding: 0 5px;
+    margin: 0 auto;
+}
+
+header {
+    min-height: 30px;
+    padding: 32px 0;
+}
+
+header nav .burger {
+    position: relative;
+    width: 17px;
+    height: 12px;
+    cursor: pointer;
+    
+
+}
+
+header nav .burger::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 0.125rem;
+    top: 0px;
+    background-color: #9ca3af;
+    border-radius: 1px;
+    /* transition: .3s all ease-in-out; */
+}
+
+
+header nav .burger.active::before {
+    transition: .3s all ease-in-out;
+    transform: rotate(45deg);
+    top: 50%;
+}
+
+header nav .burger.active::after {
+    transition: .3s all ease-in-out;
+    transform: rotate(-45deg);
+    top: 50%;
+}
+
+header nav .burger::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 0.125rem;
+    bottom: 0px;
+    background-color: #9ca3af;
+    border-radius: 1px;
+    /* transition: .3s all ease-in-out; */
+}
+
+header nav .burger span {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 0.125rem;
+    background-color: #9ca3af;
+    border-radius: 1px;
+}
+
+header nav .burger.active span {
+    visibility: hidden;
+}
+
+
+header nav .burger:hover span,
+header nav .burger:hover::before,
+header nav .burger:hover::after {
+    background-color: #ffffff;
+}
+
+.header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header nav ul {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    cursor: pointer;
+}
+
+header .header__map {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+header .header__map img {
+    width: .75rem;
+    height: .75rem;
+
+}
+
+header .signup {
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+}
+
+header .signup__btn {
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 99px;
+    background: linear-gradient(to right, #3b82f6, #3b81f5);
+}
+
+header .signup__btn:hover {
+    background: linear-gradient(to right, #3b82f6, #3d7add);
+}
+
+
+.signup__btn span {
+    padding: 0px 15px;
+}
+
+header .signup__login:hover {
+    color: #ffffff;
+}
+
+header nav ul li:hover {
+    color: #ffffff;
+}
+
+.changelog {
+    position: relative;
+}
+
+.changelog::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #0ea5e9;
+    top: -4px;
+    right: -12px;
+}
