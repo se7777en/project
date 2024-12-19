@@ -399,9 +399,11 @@ h1 {
     height: 8px;
     border-radius: 50%;
     background-color: #a855f7;
-    left: 0px;
+    /* left: 0px;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%); */
+    left: 0px;
+    top: 0.200rem;
 }
 
 .role__item .fresh::after {
@@ -411,8 +413,13 @@ h1 {
     height: 8px;
     border-radius: 50%;
     background-color: #a855f7;
+    /* left: 0px;
+    top: .1966rem; */
+    /* left: 0px;
+    top: 25%;
+    transform: translateY(-50%); */
     left: 0px;
-    top: .1966rem;
+    top: 0.200rem;
 
 }
 
@@ -573,6 +580,11 @@ h1 {
 
     .role__item .fresh {
         font-size: 10px;
+    }
+
+    .role__item .fresh::before,
+    .role__item .fresh::after {
+        top: .120rem;
     }
 
     .practice__btn {
