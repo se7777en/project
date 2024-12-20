@@ -1,0 +1,80 @@
+@import url(./null.css);
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
+label {
+    position: relative;
+    cursor: pointer;
+}
+
+label span {
+    position: absolute;
+    width: 228px;
+    height: 118px;
+    border: 3px solid #1c0b5b;
+    border-radius: 65px;
+    background-color: #1c0b5b;
+
+}
+
+
+label span::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    left: calc(100% - 100px - 9px);
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, .4);
+    transition: all .2s ease-in-out;
+}
+
+
+
+label input:checked+span::before {
+    left: 9px;
+    background-color: #c1c1c1;
+}
+
+label input:checked+span {
+    background-color: #d2d2d2;
+    border: 3px solid #d2d2d2;
+}
+
+/* 
+label span::after {
+    content: 'Off';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 24px;
+    font-size: 55px;
+    font-weight: 600;
+    color: #adadad;
+}
+
+label input:checked+span::after {
+    content: 'On';
+    left: 24px;
+    transition: all .5s ease-in-out;
+} */
+
+label input {
+    appearance: none;
+    width: 1px;
+    height: 1px;
+    margin-left: -1px;
+}
