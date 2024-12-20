@@ -1,5 +1,5 @@
 @import url(./null.css);
-@import url(./fonts.css);
+/* @import url(./fonts.css); */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 
@@ -10,7 +10,10 @@ body {
     font-weight: 500; */
     font-family: "Montserrat", serif;
     font-size: 16px;
+    background-color: #161625;
 }
+
+
 
 .container {
     max-width: 1010px;
@@ -29,7 +32,7 @@ body {
 
 h1 {
     font-size: 30px;
-    color: #111111;
+    color: #c3d2e8;
     font-weight: 500;
     text-align: center;
     margin-bottom: 20px;
@@ -46,7 +49,7 @@ h1 span::after {
     left: 0;
     width: 100%;
     height: 4px;
-    background-color: tomato;
+    background-color: #ff5a50;
     opacity: .8;
 }
 
@@ -60,6 +63,7 @@ h1 span::after {
     align-items: center;
     gap: 15px;
     margin-bottom: 40px;
+    color: #c3d2e8;
 }
 
 .convert__item {
@@ -75,16 +79,19 @@ h1 span::after {
     text-align: center;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 2px;
+    border-radius: 8px;
+    background-color: #232c42;
+    color: #c3d2e8;
 }
 
 .convert__item input:focus {
+    /* color: #ff5a50; */
     color: #1a79ff;
 }
 
 .convert__item input:hover {
-    background-color: #f5f5f585;
-    border: 1px solid #1a79ff
+    /* background-color: #f5f5f585; */
+    border: 1px solid #1a79ff;
 }
 
 
@@ -106,7 +113,7 @@ h1 span::after {
     transform: translateY(-50%);
     right: 10px;
     font-size: 25px;
-    color: #111111a6;
+    color: #86aaf9;
 }
 
 .convert__item label {
@@ -127,13 +134,21 @@ input[type=number] {
 
 .converter__descr {
     text-align: center;
-    color: #11111169;
+    color: #c3d2e8;
+    background-color: #232c42;
+    padding: 3px 0px;
+    border-radius: 4px;
+}
+
+.converter__descr .descr__root {
+    color: #86aaf9;
 }
 
 
 .converter__descr label {
     margin-left: -3px;
     /*font-size: 10px; */
+    padding-right: 2px;
 }
 
 .converter__descr svg {
@@ -145,9 +160,11 @@ input[type=number] {
 
 .converter__descr input {
     width: 21px;
-    padding: 1px 2px 1px 2px;
-    color: #00000066;
+    /* padding: 1px 2px 1px 2px; */
+    padding: 0.115rem 0.125rem 0.020rem 0.095rem;
+    color: #c3d2e8;
     border-radius: 3px;
+    background-color: transparent;
 }
 
 .converter__descr input:focus {
@@ -164,7 +181,7 @@ input[type=number] {
     text-align: right;
     padding: 0px 10px 10px 0px;
     font-size: 8px;
-    color: #d2d2d2;
+    color: #c3d2e8;
 }
 
 .wrapper__footer span {
@@ -178,10 +195,11 @@ input[type=number] {
     left: 0px;
     height: 2px;
     width: 100%;
-    background-color: red;
-    opacity: .1;
+    background-color: #ff5a50;
+    opacity: .8;
 
 }
+
 
 
 
@@ -221,31 +239,12 @@ input[type=number] {
     .converter__descr {
         font-size: clamp(0.688rem, -0.312rem + 5.000vw, 1rem);
     }
-}
-/* 
-@media (max-width: 400px) {
-    .converter__descr {
-        font-size: 13px;
-    }
-}
 
-@media (max-width: 350px) {
-    .converter__descr {
-        font-size: 12px;
+    .converter__descr svg {
+       
+        margin-left: -4px;
     }
 }
-
-@media (max-width: 330px) {
-    .converter__descr {
-        font-size: 10px;
-    }
-} */
-
-/* @media (max-width: 324px) {
-    .converter__descr {
-        font-size: 10px;
-    }
-} */
 
 @media (max-width: 375px) {
     h1 {
