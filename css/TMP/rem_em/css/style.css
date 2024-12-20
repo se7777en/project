@@ -32,7 +32,6 @@ h1 {
     color: #111111;
     font-weight: 500;
     text-align: center;
-    padding-top: 40px;
     margin-bottom: 20px;
 }
 
@@ -49,7 +48,10 @@ h1 span::after {
     height: 4px;
     background-color: tomato;
     opacity: .8;
+}
 
+.converter {
+    padding-top: 40px;
 }
 
 .converter__inner {
@@ -209,5 +211,45 @@ input[type=number] {
 
     .container {
         max-width: 500px;
+        padding: 0 15px;
     }
 }
+
+
+
+@media (max-width: 420px) {
+    .converter__descr {
+        font-size: clamp(0.688rem, -0.312rem + 5.000vw, 1rem);
+    }
+}
+/* 
+@media (max-width: 400px) {
+    .converter__descr {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 350px) {
+    .converter__descr {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 330px) {
+    .converter__descr {
+        font-size: 10px;
+    }
+} */
+
+/* @media (max-width: 324px) {
+    .converter__descr {
+        font-size: 10px;
+    }
+} */
+
+@media (max-width: 375px) {
+    h1 {
+        font-size: 26px;
+    }
+}
+
